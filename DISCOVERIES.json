@@ -39,9 +39,9 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Compile the centered-vanishing statement against the pinned source definitions and record either the transport proof or its first exact obstruction.",
+      "next_obligation": "Prove or disprove the proposed entry_closed_form against the pinned native entry definition; the isolated integer cancellation core is compiled but native correspondence remains open.",
       "promotion_blockers": [
-        "source-bound Lean file is uncompiled",
+        "four source-transport theorems remain admitted in the compiled Lean module",
         "reference-to-native statement correspondence is unresolved",
         "public finite verifier and novelty comparison are not yet qualified"
       ],

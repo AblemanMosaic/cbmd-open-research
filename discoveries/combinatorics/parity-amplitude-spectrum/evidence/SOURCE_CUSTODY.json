@@ -8,7 +8,8 @@
     {"path": "research/PB_OBSTRUCTION_HUNT_RESULTS.md", "sha256": "c32877ef7286982ce6c694a3c5bc6e6641cba6f3dcf1c2dc9bc17bbee2df3bb2"},
     {"path": "research/SPECTRUM_AND_VALUATION.md", "sha256": "b0a0155d4209878194798e4c311f2b37f17ddc7181d7784796b9ab67a22f48a6"},
     {"path": "formal/CenteredVanishing.lean", "sha256": "958568011d56a153192c9075a0dfb962279ef843253a39146fc138d7345c86d1"},
-    {"path": "evidence/pb/theorem_check.py", "sha256": "4aab99f664412b058f51ce5776a6151a6a0badcfb33073297c26293b7fca05e0"}
+    {"path": "evidence/pb/theorem_check.py", "sha256": "4aab99f664412b058f51ce5776a6151a6a0badcfb33073297c26293b7fca05e0"},
+    {"path": "formal-successor/CenteredVanishingCore.lean", "public_copy": "verification/lean/CenteredVanishingCore.lean", "sha256": "d8811eca2b49403b89ba06ea2991cb7cfd0e75731c23a8c8fc20b869af7f730f"}
   ],
   "meaning_not_inferred_from_hashes": true,
   "public_reproduction": "NOT_YET_IMPORTED"

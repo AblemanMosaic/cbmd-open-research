@@ -1,0 +1,30 @@
+{
+  "schema": "cbmd.open-research.lean-receipt.v1",
+  "claim_id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+  "subclaim": "centralCoefficient A d = 0 for odd d",
+  "source": {
+    "path": "verification/lean/CenteredVanishingCore.lean",
+    "sha256": "d8811eca2b49403b89ba06ea2991cb7cfd0e75731c23a8c8fc20b869af7f730f"
+  },
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "toolchain_pin_sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+  "lake_manifest_sha256": "803ab78b3c31c41b8c07c558ac07fd99b7d7954eb4e4856f8026e027db9000a8",
+  "operation": {
+    "id": "LEAN-F172D2B2FC60D88C6D8B1DF3",
+    "request_root": "9336a6079bf9ac675e86ce60c0a71fbe94fa4b8fa1408bc5a78dc9d8bf865de1",
+    "terminal_root": "fa2a229d5195bfd63bb51c011a85a6b3939f4f48cba0702ed5b53d8204643a1f",
+    "status": "PASS",
+    "exit_code": 0,
+    "timed_out": false
+  },
+  "escape_scan": {"status": "PASS", "tokens": ["sorry", "admit", "axiom"]},
+  "claim_ceiling": "COMPILED_PROOF",
+  "promotion_decision_root": "a9775f7407bea4a7b626768a346aee4c5009d65c6a702e516a41863e47ee0a44",
+  "harness_commit": "bf04893",
+  "known_remainder": [
+    "This proves the isolated integer cancellation lemma, not correspondence to LayoutNumerator.entry.",
+    "Four source-transport statements remain admitted in the separate workbench module.",
+    "The receipt is produced by the same local control plane and is not independent verification."
+  ],
+  "authority_effect": "NONE"
+}

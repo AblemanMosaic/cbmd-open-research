@@ -7,20 +7,24 @@
   "public_version": "0.1.0-candidate",
   "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
   "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
-  "verified": [],
+  "verified": [
+    "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom."
+  ],
   "unresolved": [
-    "compilation of the source-bound Lean statements",
-    "correspondence to the pinned native entry definition",
+    "proof of the four source-transport statements presently admitted in the compiled workbench module",
+    "correspondence of the proposed closed form to the pinned native entry definition",
     "standalone public finite reproduction",
     "source-specific novelty assessment"
   ],
   "nonclaims": [
-    "not a compiled formal proof",
+    "not a compiled proof of the native source-transport theorem",
     "not a native algorithmic improvement",
     "not a ring-transport certificate",
     "not a novelty determination"
   ],
   "smallest_decisive_test": "Compile the centered-line theorem against the pinned source definitions at the smallest nontrivial odd-d case, or report the first signature or statement mismatch that prevents the transport.",
-  "checks": [],
+  "checks": [
+    {"id":"LEAN_CORE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"],"required":true}
+  ],
   "authority_effect": "NONE"
 }

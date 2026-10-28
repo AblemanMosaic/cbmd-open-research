@@ -11,12 +11,12 @@ The reference integer amplitude has a coefficient-extraction formula depending o
 
 ## Current standing
 
-The retained r6 source package contains a written derivation, finite checks, and an uncompiled Lean statement against pinned source signatures. It also records that the Krawtchouk orthogonality and symmetry ingredients are classical; novelty of the source-specific identification remains unassessed.
+The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core now compiles under pinned Lean 4.34.1 with no `sorry`, `admit`, or added `axiom` in that proof boundary. The larger native-transport module also compiles, but its four correspondence theorems remain admitted. The Krawtchouk orthogonality and symmetry ingredients are classical; novelty of the source-specific identification remains unassessed.
 
 ## Next obligation
 
-Compile the centered-vanishing theorem against the pinned `entry`, `integerDifference`, `swapPositions`, `mismatches`, and `parityCoefficients` definitions. Either a proof or the first exact correspondence failure is a successful resolution.
+Prove or disprove the proposed `entry_closed_form` against the pinned `entry`, `integerDifference`, `swapPositions`, `mismatches`, and `parityCoefficients` definitions. Only after that correspondence closes may the compiled cancellation core support a native centered-vanishing theorem.
 
 ## Nonclaims
 
-No native algorithmic speedup, compiled formal proof, literature-wide novelty, or coefficient transport across rings is claimed.
+No native algorithmic speedup, compiled proof of source transport, literature-wide novelty, or coefficient transport across rings is claimed.
