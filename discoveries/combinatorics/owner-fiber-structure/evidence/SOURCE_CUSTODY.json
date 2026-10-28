@@ -1,0 +1,15 @@
+{
+  "schema": "cbmd.open-research.source-custody.v1",
+  "source_archive": {
+    "filename": "CBMD_Complexity_Batch5_r6_CANONICAL_RESEARCH.zip",
+    "sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0"
+  },
+  "members": [
+    {"path": "research/OWNER_SUM_PROOF.md", "sha256": "63be5328cf0eed3fa289b68a195eb83c56322d166487e4beac331904c49b29d3"},
+    {"path": "research/PB_OBSTRUCTION_HUNT_RESULTS.md", "sha256": "c32877ef7286982ce6c694a3c5bc6e6641cba6f3dcf1c2dc9bc17bbee2df3bb2"},
+    {"path": "evidence/owner_results.json", "sha256": "a4481b1091b0f28c6fe614b822b59c93c0e1cb1944f8686859f119fbf6676f95"},
+    {"path": "tests/check_owner_reference.py", "sha256": "2fa9220fd68a7f91f3bb3e8022d0107c69a75937a0d6889127808792d45b0bd4"}
+  ],
+  "meaning_not_inferred_from_hashes": true,
+  "public_reproduction": "NOT_YET_IMPORTED"
+}

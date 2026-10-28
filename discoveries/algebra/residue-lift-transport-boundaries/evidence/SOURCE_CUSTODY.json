@@ -1,0 +1,16 @@
+{
+  "schema": "cbmd.open-research.source-custody.v1",
+  "source_archive": {
+    "filename": "CBMD_Complexity_Batch5_r6_CANONICAL_RESEARCH.zip",
+    "sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0"
+  },
+  "members": [
+    {"path": "research/B4_source_trace_and_results.md", "sha256": "b9b030ae1bf8ca6b0b0b4e33f61d4e1e5c03acab5f3eb298bf873371f87b5205"},
+    {"path": "research/PB_OBSTRUCTION_HUNT_RESULTS.md", "sha256": "c32877ef7286982ce6c694a3c5bc6e6641cba6f3dcf1c2dc9bc17bbee2df3bb2"},
+    {"path": "research/SPECTRUM_AND_VALUATION.md", "sha256": "b0a0155d4209878194798e4c311f2b37f17ddc7181d7784796b9ab67a22f48a6"},
+    {"path": "evidence/pb/spectrum.py", "sha256": "773aab0c089757f1ddc10e2a415f1e7fabb1e0dd9ec7b1ea84166421a629d5ba"},
+    {"path": "evidence/pb/spectrum.log", "sha256": "eba90076941d9ded52e57afb625a98bfd885f5e1cf61c61cab68ea9eb4762ab6"}
+  ],
+  "meaning_not_inferred_from_hashes": true,
+  "public_reproduction": "NOT_YET_IMPORTED"
+}

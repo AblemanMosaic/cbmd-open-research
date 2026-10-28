@@ -30,6 +30,12 @@
     "rational ECH direct-limit identification",
     "absolute grading, coefficient transport, and novelty"
   ],
+  "nonclaims": [
+    "not a geometric ECH certification",
+    "not an absolute ECH grading",
+    "not a specialist review",
+    "not a novelty determination"
+  ],
   "smallest_decisive_test": "At g=2, b=3, Gamma=1, determine whether Psi_0^epsilon(1 tensor F_1^epsilon(u^2 omega)) = 1 follows from the intended cap/fill composition theorem with the asserted conventions.",
   "checks": [
     {

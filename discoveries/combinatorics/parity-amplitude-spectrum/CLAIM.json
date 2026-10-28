@@ -1,0 +1,26 @@
+{
+  "schema": "cbmd.open-research.claim.v1",
+  "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+  "title": "Parity-amplitude spectrum",
+  "field": "combinatorics",
+  "slug": "parity-amplitude-spectrum",
+  "public_version": "0.1.0-candidate",
+  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
+  "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
+  "verified": [],
+  "unresolved": [
+    "compilation of the source-bound Lean statements",
+    "correspondence to the pinned native entry definition",
+    "standalone public finite reproduction",
+    "source-specific novelty assessment"
+  ],
+  "nonclaims": [
+    "not a compiled formal proof",
+    "not a native algorithmic improvement",
+    "not a ring-transport certificate",
+    "not a novelty determination"
+  ],
+  "smallest_decisive_test": "Compile the centered-line theorem against the pinned source definitions at the smallest nontrivial odd-d case, or report the first signature or statement mismatch that prevents the transport.",
+  "checks": [],
+  "authority_effect": "NONE"
+}

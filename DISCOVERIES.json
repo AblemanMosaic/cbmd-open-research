@@ -16,6 +16,66 @@
         "EXACT_MODEL_VERIFIED",
         "GEOMETRIC_TRANSPORT_UNRESOLVED"
       ]
+    },
+    {
+      "id": "CBMD-COMB-OWNER-FIBER-001",
+      "field": "combinatorics",
+      "slug": "owner-fiber-structure",
+      "path": "discoveries/combinatorics/owner-fiber-structure",
+      "title": "Owner-fiber structure and support",
+      "pipeline_stage": "CLAIM_BOUND",
+      "next_obligation": "Import a standalone non-degenerate reference verifier and reproduce the fixed-target owner-fiber identity from a clean checkout.",
+      "promotion_blockers": [
+        "public standalone verifier not yet imported",
+        "native source correspondence remains unproved",
+        "targeted novelty review remains unperformed"
+      ],
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+    },
+    {
+      "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+      "field": "combinatorics",
+      "slug": "parity-amplitude-spectrum",
+      "path": "discoveries/combinatorics/parity-amplitude-spectrum",
+      "title": "Parity-amplitude spectrum",
+      "pipeline_stage": "CLAIM_BOUND",
+      "next_obligation": "Compile the centered-vanishing statement against the pinned source definitions and record either the transport proof or its first exact obstruction.",
+      "promotion_blockers": [
+        "source-bound Lean file is uncompiled",
+        "reference-to-native statement correspondence is unresolved",
+        "public finite verifier and novelty comparison are not yet qualified"
+      ],
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+    },
+    {
+      "id": "CBMD-ALG-AMPLITUDE-COST-001",
+      "field": "algorithms",
+      "slug": "reference-amplitude-cost-model",
+      "path": "discoveries/algorithms/reference-amplitude-cost-model",
+      "title": "Reference amplitude evaluation and cost model",
+      "pipeline_stage": "CLAIM_BOUND",
+      "next_obligation": "Correct the per-amplitude cost wording, state every unit hypothesis, and reproduce the revised reference-model checks.",
+      "promotion_blockers": [
+        "T1 currently says per row where the exact count is per amplitude call",
+        "T2 inverse accounting and ring-unit hypotheses require correction",
+        "nonunit-node behavior is not exercised by the shipped modular box"
+      ],
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+    },
+    {
+      "id": "CBMD-ALG-RESIDUE-LIFT-001",
+      "field": "algebra",
+      "slug": "residue-lift-transport-boundaries",
+      "path": "discoveries/algebra/residue-lift-transport-boundaries",
+      "title": "Residue and lift transport boundaries",
+      "pipeline_stage": "CLAIM_BOUND",
+      "next_obligation": "Extract the smallest source-bound example separating integer, residue-ring, and lifted zero sets under explicit ring and precision hypotheses.",
+      "promotion_blockers": [
+        "standalone public counterexample has not been extracted",
+        "ring, precision, node, and source-identity hypotheses need one bounded statement",
+        "novelty remains unassessed"
+      ],
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
     }
   ]
 }

@@ -28,7 +28,12 @@ This repository is the intended public research surface for selected CBMD discov
 
 ### Candidate pipeline
 
-No candidates are currently admitted.
+| ID | Discovery | Claim standing | Stage | Next obligation | Promotion blockers |
+|---|---|---|---|---|---|
+| `CBMD-COMB-OWNER-FIBER-001` | [Owner-fiber structure and support](discoveries/combinatorics/owner-fiber-structure/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Import a standalone non-degenerate reference verifier and reproduce the fixed-target owner-fiber identity from a clean checkout. | public standalone verifier not yet imported; native source correspondence remains unproved; targeted novelty review remains unperformed |
+| `CBMD-COMB-PARITY-AMPLITUDE-001` | [Parity-amplitude spectrum](discoveries/combinatorics/parity-amplitude-spectrum/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Compile the centered-vanishing statement against the pinned source definitions and record either the transport proof or its first exact obstruction. | source-bound Lean file is uncompiled; reference-to-native statement correspondence is unresolved; public finite verifier and novelty comparison are not yet qualified |
+| `CBMD-ALG-AMPLITUDE-COST-001` | [Reference amplitude evaluation and cost model](discoveries/algorithms/reference-amplitude-cost-model/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Correct the per-amplitude cost wording, state every unit hypothesis, and reproduce the revised reference-model checks. | T1 currently says per row where the exact count is per amplitude call; T2 inverse accounting and ring-unit hypotheses require correction; nonunit-node behavior is not exercised by the shipped modular box |
+| `CBMD-ALG-RESIDUE-LIFT-001` | [Residue and lift transport boundaries](discoveries/algebra/residue-lift-transport-boundaries/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Extract the smallest source-bound example separating integer, residue-ring, and lifted zero sets under explicit ring and precision hypotheses. | standalone public counterexample has not been extracted; ring, precision, node, and source-identity hypotheses need one bounded statement; novelty remains unassessed |
 
 <!-- END GENERATED DISCOVERY INDEX -->
 

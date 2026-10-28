@@ -84,6 +84,9 @@ def main() -> int:
             fail(f"unknown claim states at {relative}: {sorted(unknown)}")
         if claim_states != row.get("status"):
             fail(f"registry and claim status differ at {relative}")
+        nonclaims = claim.get("nonclaims")
+        if not isinstance(nonclaims, list) or not nonclaims or any(not isinstance(value, str) or not value.strip() for value in nonclaims):
+            fail(f"explicit nonclaims absent at {relative}")
         if row.get("pipeline_stage") not in PIPELINE_STAGES:
             fail(f"invalid pipeline stage at {relative}")
         if not isinstance(row.get("next_obligation"), str) or not row["next_obligation"].strip():

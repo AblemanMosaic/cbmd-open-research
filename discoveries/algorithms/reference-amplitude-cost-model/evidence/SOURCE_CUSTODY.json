@@ -1,0 +1,17 @@
+{
+  "schema": "cbmd.open-research.source-custody.v1",
+  "source_archive": {
+    "filename": "CBMD_Complexity_Batch5_r6_CANONICAL_RESEARCH.zip",
+    "sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0"
+  },
+  "members": [
+    {"path": "research/COST_THEOREM.md", "sha256": "1cf3509f415d223c9cd3177055e628676a322b2cbf717bfec59321266dabb6e9"},
+    {"path": "research/ALGORITHMIC_EFFICIENCY.md", "sha256": "40c510367a91808b9b37bfe5b8875764797a2ffcab27cba530c52ebe1f12cf6f"},
+    {"path": "evidence/pb/cost_theorem.py", "sha256": "6e4b0a774704c4f55ecdf42ec250ed2cf5017ea52b8a9933ecfea599737308e4"},
+    {"path": "evidence/pb/cost_theorem.json", "sha256": "f642175e3d06b07bae7e7ef411027a06fe02296449cf9280212c0aba659c08f2"},
+    {"path": "evidence/pb/efficiency.py", "sha256": "4e304e6516e1a73ecc2ea4cd87c3835fcf1b1279e24e076d7e945fcb17fdef90"},
+    {"path": "evidence/pb/efficiency.json", "sha256": "a515ec301bf68c9f5c04ad047f6789c5ed7c49f215b068707e548636ac501ef9"}
+  ],
+  "meaning_not_inferred_from_hashes": true,
+  "public_reproduction": "NOT_YET_IMPORTED"
+}

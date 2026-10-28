@@ -1,0 +1,26 @@
+{
+  "schema": "cbmd.open-research.claim.v1",
+  "id": "CBMD-ALG-RESIDUE-LIFT-001",
+  "title": "Residue and lift transport boundaries",
+  "field": "algebra",
+  "slug": "residue-lift-transport-boundaries",
+  "public_version": "0.1.0-candidate",
+  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
+  "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity.",
+  "verified": [],
+  "unresolved": [
+    "standalone public extraction and replay",
+    "independent source-correspondence check",
+    "scope inside a produced native leaf",
+    "targeted novelty comparison"
+  ],
+  "nonclaims": [
+    "not a fault in the upstream solver",
+    "not a full produced-leaf realization",
+    "not a native SAT correctness conclusion",
+    "not a novelty determination"
+  ],
+  "smallest_decisive_test": "Reproduce the selected degree-six fixture at residue precision and at two compatible lifted precisions, checking the linear coefficient exactly and binding every ring, node, center, amplitude, and source-row parameter.",
+  "checks": [],
+  "authority_effect": "NONE"
+}
