@@ -11,12 +11,12 @@ The reference integer amplitude has a coefficient-extraction formula depending o
 
 ## Current standing
 
-The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core compiles under pinned Lean 4.34.1 with no proof escapes. The first proposed native closed form was then disproved directly against the pinned `entry` definition: at `Q=2,A=0,R=1`, its two sides are `0` and `-1`. The defect is truncated natural subtraction in the lower binomial index. A guarded revision passed 134,370 finite comparisons but is not yet proved. Seven no-escape source-bridge components now compile, including operator-level inactive-coordinate cancellation and the exact guarded powerset count. The Krawtchouk ingredients are classical; novelty of the source-specific identification remains unassessed.
+The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core compiles under pinned Lean 4.34.1 with no proof escapes. The first proposed native closed form was then disproved directly against the pinned `entry` definition: at `Q=2,A=0,R=1`, its two sides are `0` and `-1`. The defect is truncated natural subtraction in the lower binomial index. The corrected guarded theorem now compiles against that same pinned native `entry`: the proof identifies the unique active subword, evaluates its sign, cancels inactive selected coordinates, applies the exact guarded powerset count, and assembles the outer coefficient sum. The earlier 134,370-case finite audit and two mutant families remain adverse evidence, not a substitute for the proof. The Krawtchouk ingredients are classical; novelty of the source-specific identification remains unassessed.
 
 ## Next obligation
 
-Prove that native delta selects exactly the active subword `mismatches.erase t`, with sign `(-1)^(mismatches.card-1)`, and assemble the guarded `entry_closed_form` from the compiled bridge components.
+Use the compiled guarded `entry_closed_form` to transport the centered parity-amplitude law to native source rows, while replacing the admitted `parityInterpolant_reflect` step with a no-escape proof or a precise obstruction.
 
 ## Nonclaims
 
-No native algorithmic speedup, compiled proof of source transport, literature-wide novelty, or coefficient transport across rings is claimed.
+No native algorithmic speedup, compiled centered-vanishing source theorem, clean-checkout independent replay, literature-wide novelty, or coefficient transport across rings is claimed.

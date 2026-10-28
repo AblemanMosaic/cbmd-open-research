@@ -37,8 +37,16 @@
   },
   "revised_formula": "Use zero for each summand with j < |M|-1; otherwise use choose(|D|-|M|, j-(|M|-1)).",
   "revised_formula_finite_status": "PASS_ON_134370_LICENSED_BINARY_COMPARISONS",
-  "revised_formula_formal_status": "UNPROVED",
+  "revised_formula_formal_status": "COMPILED_PROOF",
+  "revised_formula_lean": {
+    "path": "verification/lean/EntryClosedFormAssemble.lean",
+    "sha256": "9f36ef5033b84c4588de538bd2dca2e6b39573c8f5a9a85b4cd506bc0d02c1df",
+    "operation_id": "LEAN-0BF79A41476C3E449BDEF7D0",
+    "terminal_root": "af9caee351c0af1767df7a55ce018423f6889f27f341df4ebdf399b228b08e95",
+    "decision_root": "029255b8cc9b86d51afc8d0337fb08a2809c3c3217e3b1cdbfb530e988cfbd1b",
+    "escape_scan": "PASS"
+  },
   "promotion_decision_root": "b5988a575873e50df55d21a3123cc08ba209071c60e306f81e31a4a3eec8449b",
-  "nonclaims": ["corrected general theorem", "native centered-vanishing theorem", "novelty", "independent verification"],
+  "nonclaims": ["native centered-vanishing theorem", "novelty", "independent verification", "clean-checkout replay"],
   "authority_effect": "NONE"
 }

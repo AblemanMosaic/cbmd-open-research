@@ -39,9 +39,9 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Prove that native delta selects exactly the active subword mismatches.erase t, then assemble the guarded entry_closed_form.",
+      "next_obligation": "Use the compiled guarded entry_closed_form to prove the native centered-vanishing corollary, replacing the admitted reflection step or recording its exact obstruction.",
       "promotion_blockers": [
-        "the revised guarded entry_closed_form is not yet formally proved",
+        "the centered native source-vanishing corollary is not yet formally proved",
         "clean-checkout Lean replay of the copied proof modules is not yet packaged",
         "source-specific novelty remains unassessed"
       ],
