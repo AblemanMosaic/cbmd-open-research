@@ -11,7 +11,9 @@
     {"path": "evidence/pb/theorem_check.py", "sha256": "4aab99f664412b058f51ce5776a6151a6a0badcfb33073297c26293b7fca05e0"},
     {"path": "formal-successor/CenteredVanishingCore.lean", "public_copy": "verification/lean/CenteredVanishingCore.lean", "sha256": "d8811eca2b49403b89ba06ea2991cb7cfd0e75731c23a8c8fc20b869af7f730f"},
     {"path": "formal-successor/EntryClosedFormCounterexample.lean", "public_copy": "verification/lean/EntryClosedFormCounterexample.lean", "sha256": "ffaf68ea3aad6e0a9c03dcc39f6673afe3d913e50724f9edad329a1f7971f8df"},
-    {"path": "checks/check_entry_closed_form.py", "public_copy": "verification/reference-model/check_entry_closed_form.py", "sha256": "5dcd7ec7c4a461cb6f3f355212620cda1b2aa5d4938a35c2fd38137ce57a45e8"}
+    {"path": "checks/check_entry_closed_form.py", "public_copy": "verification/reference-model/check_entry_closed_form.py", "sha256": "5dcd7ec7c4a461cb6f3f355212620cda1b2aa5d4938a35c2fd38137ce57a45e8"},
+    {"path": "formal-successor/EntryClosedFormOrbit.lean", "public_copy": "verification/lean/EntryClosedFormOrbit.lean", "sha256": "530c53351a9d777e8af5aa904bdeb353f9df1d5c742409e10b2823aaa7194d52"},
+    {"path": "formal-successor/EntryClosedFormDifference.lean", "public_copy": "verification/lean/EntryClosedFormDifference.lean", "sha256": "62d3099aa46bab0409d87372bc8f1ae2ba3ec788e7c7e3f153db2ba546b180d0"}
   ],
   "meaning_not_inferred_from_hashes": true,
   "public_reproduction": "FINITE_AUDIT_IMPORTED; CLEAN_LEAN_REPLAY_NOT_YET_PACKAGED"

@@ -39,10 +39,10 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Prove the revised guarded entry_closed_form; the first natural-subtraction version is formally refuted and the revision currently has finite evidence only.",
+      "next_obligation": "Complete the revised guarded entry_closed_form by proving inactive-coordinate cancellation and the remaining powerset count.",
       "promotion_blockers": [
         "the revised guarded entry_closed_form is not yet formally proved",
-        "clean-checkout Lean replay of the copied counterexample is not yet packaged",
+        "clean-checkout Lean replay of the copied proof modules is not yet packaged",
         "source-specific novelty remains unassessed"
       ],
       "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"]
