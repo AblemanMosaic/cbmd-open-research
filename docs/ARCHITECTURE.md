@@ -27,6 +27,12 @@ revisions/
 
 Files may be added freely inside the appropriate root. A new top-level category requires an architecture revision because tools and readers rely on this separation.
 
+## Pipeline and standing
+
+Operational pipeline stage and mathematical claim standing are separate axes. `DISCOVERIES.json` records both and is the source for the generated README index. See `docs/PIPELINE.md` for stage admission rules.
+
+A README row identifies a coherent discovery line, not every lemma or finite observation inside it. Split a line when claims have different hypotheses, proof status, transport obligations, or likely review outcomes.
+
 ## Identity layers
 
 Keep these objects distinct:

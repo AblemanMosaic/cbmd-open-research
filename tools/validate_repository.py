@@ -20,6 +20,7 @@ VALID_STATES = {
     "SUPERSEDED",
 }
 REQUIRED_DIRS = ("argument", "explorer", "verification", "evidence", "review", "revisions")
+PIPELINE_STAGES = {"INTAKE", "CLAIM_BOUND", "QUALIFYING", "REVIEW_READY", "RELEASED", "CLOSED"}
 
 
 def fail(message: str) -> None:
@@ -83,6 +84,29 @@ def main() -> int:
             fail(f"unknown claim states at {relative}: {sorted(unknown)}")
         if claim_states != row.get("status"):
             fail(f"registry and claim status differ at {relative}")
+        if row.get("pipeline_stage") not in PIPELINE_STAGES:
+            fail(f"invalid pipeline stage at {relative}")
+        if not isinstance(row.get("next_obligation"), str) or not row["next_obligation"].strip():
+            fail(f"next obligation absent at {relative}")
+        blockers = row.get("promotion_blockers")
+        if not isinstance(blockers, list) or any(not isinstance(value, str) or not value.strip() for value in blockers):
+            fail(f"invalid promotion blockers at {relative}")
+        checks = claim.get("checks", [])
+        if not isinstance(checks, list):
+            fail(f"checks must be a list at {relative}")
+        check_ids: set[str] = set()
+        for check in checks:
+            if not isinstance(check, dict) or set(check) != {"id", "command", "required"}:
+                fail(f"invalid check declaration at {relative}")
+            if not isinstance(check["id"], str) or not check["id"] or check["id"] in check_ids:
+                fail(f"invalid or duplicate check id at {relative}")
+            check_ids.add(check["id"])
+            if not isinstance(check["command"], list) or not check["command"] or any(not isinstance(value, str) or not value for value in check["command"]):
+                fail(f"invalid check command at {relative}")
+            if not isinstance(check["required"], bool):
+                fail(f"invalid check requirement at {relative}")
+        if row["pipeline_stage"] in {"REVIEW_READY", "RELEASED"} and not checks:
+            fail(f"qualified pipeline stage requires declared checks at {relative}")
         if claim.get("authority_effect") != "NONE":
             fail(f"public candidate cannot claim authority effect at {relative}")
 

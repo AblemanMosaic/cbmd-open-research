@@ -31,6 +31,23 @@
     "absolute grading, coefficient transport, and novelty"
   ],
   "smallest_decisive_test": "At g=2, b=3, Gamma=1, determine whether Psi_0^epsilon(1 tensor F_1^epsilon(u^2 omega)) = 1 follows from the intended cap/fill composition theorem with the asserted conventions.",
+  "checks": [
+    {
+      "id": "deterministic-explorer-build",
+      "command": ["{python}", "-B", "discoveries/ech/genus-two-low-sector/explorer/source/build.py", "--check"],
+      "required": true
+    },
+    {
+      "id": "exact-model-oracle",
+      "command": ["node", "discoveries/ech/genus-two-low-sector/verification/test_pairing_explorer.cjs"],
+      "required": true
+    },
+    {
+      "id": "second-reader-grid-audit",
+      "command": ["node", "discoveries/ech/genus-two-low-sector/verification/grid-audit/grid_audit.js"],
+      "required": true
+    }
+  ],
   "model_scope": {
     "genus": 2,
     "primary_grid": {

@@ -18,9 +18,19 @@ This repository is the intended public research surface for selected CBMD discov
 
 ## Current discoveries
 
-| ID | Discovery | Standing | Most valuable open question |
+<!-- BEGIN GENERATED DISCOVERY INDEX -->
+
+### Current review-ready discoveries
+
+| ID | Discovery | Claim standing | Most valuable open question |
 |---|---|---|---|
-| `CBMD-ECH-G2-LS-001` | [Genus-two low-sector pairing](discoveries/ech/genus-two-low-sector/README.md) | Exact algebra model verified; geometric transport unresolved | Does the cap/fill composition formula apply to the unstable initial-sector representatives with the asserted classes, signs, and orientations? |
+| `CBMD-ECH-G2-LS-001` | [Genus-two low-sector pairing](discoveries/ech/genus-two-low-sector/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED`<br>`GEOMETRIC_TRANSPORT_UNRESOLVED` | Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations. |
+
+### Candidate pipeline
+
+No candidates are currently admitted.
+
+<!-- END GENERATED DISCOVERY INDEX -->
 
 Statuses describe the evidence currently present in this repository. They are not endorsements, peer review, or claims of novelty.
 
@@ -43,7 +53,7 @@ review/         Public review dispositions, not private correspondence
 revisions/      Supersession notes and correction records
 ```
 
-The [repository architecture](docs/ARCHITECTURE.md) explains the invariants. The [refactor and publication plan](docs/REFACTOR_PLAN.md) records what still must happen before the first public release.
+The [repository architecture](docs/ARCHITECTURE.md) explains the invariants. The [candidate-discovery pipeline](docs/PIPELINE.md) defines admission and promotion. The [refactor and publication plan](docs/REFACTOR_PLAN.md) records what still must happen before the first public release.
 
 ## What the evidence states
 
@@ -74,10 +84,7 @@ Use the structured issue forms under [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TE
 Python 3.10+ and Node.js 18+ are sufficient for the default checks:
 
 ```text
-python -B tools/validate_repository.py
-python -B discoveries/ech/genus-two-low-sector/explorer/source/build.py --check
-node discoveries/ech/genus-two-low-sector/verification/test_pairing_explorer.cjs
-node discoveries/ech/genus-two-low-sector/verification/grid-audit/grid_audit.js
+python -B tools/qualify_repository.py
 ```
 
 The grid-audit command checks the implemented model's extended block structure and the evidentiary reach of its adverse control. The browser-level explorer check is optional and additionally requires Playwright plus a supported installed browser. No browser or network service is required to inspect the Markdown or run either exact-model check.
@@ -86,9 +93,9 @@ The grid-audit command checks the implemented model's extended block structure a
 
 1. Copy `templates/discovery/` to `discoveries/<field>/<slug>/`.
 2. Assign a permanent discovery ID and complete `CLAIM.json`.
-3. Add one registry entry to `DISCOVERIES.json` and this README table.
+3. Add one registry entry to `DISCOVERIES.json`; the README table is generated from it.
 4. Put claims, executable checks, receipts, reviews, and revisions in their designated directories.
-5. Run `python -B tools/validate_repository.py`.
+5. Run `python -B tools/render_discovery_index.py --write` and `python -B tools/qualify_repository.py`.
 6. Complete the [publication checklist](docs/PUBLICATION_CHECKLIST.md) before proposing a public release.
 
 Adding ordinary supporting files inside an existing discovery does not require changing the global architecture.

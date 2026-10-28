@@ -8,6 +8,9 @@
       "slug": "genus-two-low-sector",
       "path": "discoveries/ech/genus-two-low-sector",
       "title": "Genus-two low-sector pairing",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations.",
+      "promotion_blockers": [],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",
         "EXACT_MODEL_VERIFIED",
