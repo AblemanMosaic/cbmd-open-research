@@ -4,15 +4,20 @@
   "title": "Reference amplitude evaluation and cost model",
   "field": "algorithms",
   "slug": "reference-amplitude-cost-model",
-  "public_version": "0.1.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
+  "public_version": "0.2.0-candidate",
+  "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "EXACT_MODEL_VERIFIED"],
   "statement": "Under BCM-1, the closed coefficient formula evaluates one reference amplitude in O(R) big-integer operations, the frozen enumeration producer performs exactly sum_{j<R} C(Q-1,j)2^j indicator tests per amplitude call, and all amplitude classes fit in a table of at most QR entries; row assembly is conditional on explicit ring-unit hypotheses.",
-  "verified": [],
+  "verified": [
+    "closed coefficient route equals the frozen enumeration producer on 163,912 bounded calls",
+    "row assembly equals the reference route on 10,476 rows over the rationals and Z/25",
+    "the required unit hypotheses refuse node 5 modulo 25 and denominator 2 modulo 8",
+    "the corrected evidence replays from a clean extraction of the sealed r7 source package and from this repository checkout"
+  ],
   "unresolved": [
-    "corrected public evidence and terminology",
-    "complete ring-unit hypothesis for row assembly",
-    "nonunit-node adverse test",
-    "native executable realization and cost model"
+    "native executable realization and cost model",
+    "reference-to-native source correspondence",
+    "targeted novelty review",
+    "external mathematical review"
   ],
   "nonclaims": [
     "not a native SAT speedup",
@@ -20,7 +25,13 @@
     "not a total owner-sum cost theorem",
     "not a claim about an executable native entry"
   ],
-  "smallest_decisive_test": "Regenerate the corrected spectrum-table evidence and show that the row-assembly route succeeds exactly when 2^(R-1) and every required node factor are units, while refusing a smallest nonunit case such as node 5 over Z/25.",
-  "checks": [],
+  "smallest_decisive_test": "Bind the closed amplitude route to an executable native entry under an explicit cost model, or exhibit the first exact source-level obstruction to that transport.",
+  "checks": [
+    {
+      "id": "reference-amplitude-cost-replay",
+      "command": ["{python}", "-B", "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"],
+      "required": true
+    }
+  ],
   "authority_effect": "NONE"
 }

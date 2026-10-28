@@ -1,17 +1,30 @@
 {
   "schema": "cbmd.open-research.source-custody.v1",
   "source_archive": {
+    "filename": "CBMD_Complexity_Batch5_r7_CANONICAL_RESEARCH.zip",
+    "sha256": "7387f4c5db76564752f69e7a300820892c64e1d55c73c8274f421f34499ae474",
+    "content_root": "58af67fe3a5d392c727d6e0aaf2f5eecdad1f00ddc83e40d05e437173fb91026",
+    "journal_head": "42f8de3882c4c19c7fc023a999611c644994f07845a228a93c4685f6ec50c1d2"
+  },
+  "predecessor_archive": {
     "filename": "CBMD_Complexity_Batch5_r6_CANONICAL_RESEARCH.zip",
-    "sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0"
+    "sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0",
+    "journal_head": "eaa838cb0eca7780d6689b113738e419333984c9fbae61863a42f0e47a250878"
   },
   "members": [
-    {"path": "research/COST_THEOREM.md", "sha256": "1cf3509f415d223c9cd3177055e628676a322b2cbf717bfec59321266dabb6e9"},
-    {"path": "research/ALGORITHMIC_EFFICIENCY.md", "sha256": "40c510367a91808b9b37bfe5b8875764797a2ffcab27cba530c52ebe1f12cf6f"},
-    {"path": "evidence/pb/cost_theorem.py", "sha256": "6e4b0a774704c4f55ecdf42ec250ed2cf5017ea52b8a9933ecfea599737308e4"},
-    {"path": "evidence/pb/cost_theorem.json", "sha256": "f642175e3d06b07bae7e7ef411027a06fe02296449cf9280212c0aba659c08f2"},
-    {"path": "evidence/pb/efficiency.py", "sha256": "4e304e6516e1a73ecc2ea4cd87c3835fcf1b1279e24e076d7e945fcb17fdef90"},
-    {"path": "evidence/pb/efficiency.json", "sha256": "a515ec301bf68c9f5c04ad047f6789c5ed7c49f215b068707e548636ac501ef9"}
+    {"path": "research/COST_THEOREM.md", "public_copy": "argument/COST_THEOREM.md", "sha256": "1cf3509f415d223c9cd3177055e628676a322b2cbf717bfec59321266dabb6e9"},
+    {"path": "research/ALGORITHMIC_EFFICIENCY.md", "public_copy": "argument/ALGORITHMIC_EFFICIENCY.md", "sha256": "ba5ae291265a0b1b3166c8b2aeea39544648e91df450e8d1e1380340a20e2c61"},
+    {"path": "evidence/pb/cost_theorem.py", "public_copy": "verification/reference-model/cost_theorem.py", "sha256": "6e4b0a774704c4f55ecdf42ec250ed2cf5017ea52b8a9933ecfea599737308e4"},
+    {"path": "evidence/pb/cost_theorem.json", "public_copy": "verification/reference-model/cost_theorem.json", "sha256": "f642175e3d06b07bae7e7ef411027a06fe02296449cf9280212c0aba659c08f2"},
+    {"path": "evidence/pb/efficiency.py", "public_copy": "verification/reference-model/efficiency.py", "sha256": "b425158f8a6381fd298d1097dd259f8172172e0ffd4055a6a925eb50bb3861ea"},
+    {"path": "evidence/pb/efficiency.json", "public_copy": "verification/reference-model/efficiency.json", "sha256": "917f8bc3f4a24c5757bdb9892aa11bbd8053d953e55a69e16f564f81643d0fb1"},
+    {"path": "src/owner_sum.py", "public_copy": "verification/reference-model/src/owner_sum.py", "sha256": "72ba4a22b99eb31d14ef961f88681c44998876a0a97a89fc4cf41615d50f4882"},
+    {"path": "src/common.py", "public_copy": "verification/reference-model/src/common.py", "sha256": "b5a1bb91f736deac7ebbacc057c6a48ec60bb64da63980096b492589ad9c257b"}
   ],
+  "detached_receipt": {
+    "path": "evidence/COLD_VERIFICATION_RECEIPT_r7.json",
+    "sha256": "dbc9c1f9ca18d83e3d52f2e3c538267a26148b97588f84d4ea5ab82ea44d5f58"
+  },
   "meaning_not_inferred_from_hashes": true,
-  "public_reproduction": "NOT_YET_IMPORTED"
+  "public_reproduction": "IMPORTED_AND_QUALIFIED"
 }

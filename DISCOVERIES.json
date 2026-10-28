@@ -53,14 +53,10 @@
       "slug": "reference-amplitude-cost-model",
       "path": "discoveries/algorithms/reference-amplitude-cost-model",
       "title": "Reference amplitude evaluation and cost model",
-      "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Correct the per-amplitude cost wording, state every unit hypothesis, and reproduce the revised reference-model checks.",
-      "promotion_blockers": [
-        "T1 currently says per row where the exact count is per amplitude call",
-        "T2 inverse accounting and ring-unit hypotheses require correction",
-        "nonunit-node behavior is not exercised by the shipped modular box"
-      ],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Bind the closed amplitude route to an executable native entry under an explicit cost model, or record the first exact source-level obstruction.",
+      "promotion_blockers": [],
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "EXACT_MODEL_VERIFIED"]
     },
     {
       "id": "CBMD-ALG-RESIDUE-LIFT-001",

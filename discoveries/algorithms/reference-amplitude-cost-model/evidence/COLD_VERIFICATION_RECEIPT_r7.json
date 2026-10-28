@@ -1,0 +1,38 @@
+{
+  "archive_bytes": 37567518,
+  "archive_sha256": "7387f4c5db76564752f69e7a300820892c64e1d55c73c8274f421f34499ae474",
+  "artifact": "cbmd-complexity-b5-r7",
+  "authenticity": "NOT_ESTABLISHED_BY_HASH",
+  "authority_effect": "NONE",
+  "claims": 63,
+  "clean_extraction_qualification": "PASS",
+  "cold_replay_host": {
+    "operating_system": "Windows",
+    "directory_fsync_capability": "UNAVAILABLE_THROUGH_TESTED_HOST_API",
+    "validated_replace_status": "COMMITTED_WITH_DURABILITY_LIMITATION"
+  },
+  "content_root": "58af67fe3a5d392c727d6e0aaf2f5eecdad1f00ddc83e40d05e437173fb91026",
+  "date": "2026-10-27",
+  "embedded_qualification_matches": true,
+  "embedded_qualification_sha256": "d3cc95b74ff9bd14ff468c58c0bc8daa78fec6ad878faa465c7e58c4497522d8",
+  "events": 94,
+  "files": 177,
+  "journal_events_sha256": "d0a48f86b40d2d43ae48c880da47a1dbf22a13c515dbc263fa99ae151dd44a34",
+  "journal_head": "42f8de3882c4c19c7fc023a999611c644994f07845a228a93c4685f6ec50c1d2",
+  "manifest_sha256": "2b8c9887339425bedb77afe356e0829205f79b7a4b5073ad657073b000c2af38",
+  "predecessor": {
+    "archive_sha256": "9fec4cf4a588877382f29a1dc0976de275f54030536015a3be95c8595dd9bbc0",
+    "artifact": "cbmd-complexity-b5-r6",
+    "events": 87,
+    "journal_head": "eaa838cb0eca7780d6689b113738e419333984c9fbae61863a42f0e47a250878"
+  },
+  "qualification": {
+    "cost_exactness_calls": 163912,
+    "required_gates": 12,
+    "row_exactness_checks": 10476,
+    "tests": 55,
+    "unit_adverse_controls": 2
+  },
+  "schema": "cbmd.cold_verification_receipt.v1",
+  "standing": "INFORMATION_ONLY"
+}

@@ -1,3 +1,5 @@
-# Verification status
+# Verification
 
-No public executable check is yet declared. Required checks include formula/enumeration agreement, exact enumeration counts, table coverage, row equality under unit hypotheses, and deliberate nonunit refusal.
+`reference-model/verify.py` checks the exact imported member hashes, reruns both independent bounded evidence producers, removes wall-clock diagnostics before comparison, and requires both adverse unit controls to pass.
+
+Expected result: 163,912 amplitude equalities, 10,476 row equalities, two adverse-control refusals, and `native_transport: NOT_EVALUATED`.

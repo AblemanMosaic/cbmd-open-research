@@ -1,0 +1,197 @@
+{
+ "schema": "cbmd.efficiency.v2",
+ "T2_exactness": {
+  "rows_equal": 10476,
+  "mismatch": 0,
+  "reference_ring_ops_total": 123588,
+  "reference_enumeration_tests_total": 80628,
+  "closed_ring_ops_total": 120876
+ },
+ "T2_unit_hypotheses": {
+  "required_units": [
+   "2^(R-1)",
+   "s+1 for every s in E"
+  ],
+  "adverse_controls": [
+   {
+    "case": "node_5_nonunit_mod_25",
+    "modulus": 25,
+    "status": "PASS",
+    "expected": "NONUNIT_REFUSAL"
+   },
+   {
+    "case": "denominator_2_nonunit_mod_8",
+    "modulus": 8,
+    "status": "PASS",
+    "expected": "NONUNIT_REFUSAL"
+   }
+  ],
+  "status": "PASS"
+ },
+ "T1_table": [
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "table_entries": 390,
+   "table_bigint_ops": {
+    "mul": 3150,
+    "div": 1580,
+    "add": 1180
+   },
+   "peak_bits": 22,
+   "per_amplitude_enumeration_tests_replaced": 24685131,
+   "distinct_targets_sharing_table": "all 2^160 targets and all orbit columns"
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "table_entries": 612,
+   "table_bigint_ops": {
+    "mul": 7776,
+    "div": 4368,
+    "add": 2796
+   },
+   "peak_bits": 34,
+   "per_amplitude_enumeration_tests_replaced": 389575972971,
+   "distinct_targets_sharing_table": "all 2^160 targets and all orbit columns"
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "table_entries": 154,
+   "table_bigint_ops": {
+    "mul": 1016,
+    "div": 472,
+    "add": 390
+   },
+   "peak_bits": 15,
+   "per_amplitude_enumeration_tests_replaced": 76155,
+   "distinct_targets_sharing_table": "all 2^80 targets and all orbit columns"
+  }
+ ],
+ "T3_crossover": [
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "delta": 6,
+   "live_columns_incl_diagonal": 63,
+   "row_centric_cost": "63 row assemblies + 63 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 63"
+  },
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "delta": 39,
+   "live_columns_incl_diagonal": 584936,
+   "row_centric_cost": "584936 row assemblies + 584936 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 584936"
+  },
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "delta": 40,
+   "live_columns_incl_diagonal": 760099,
+   "row_centric_cost": "760099 row assemblies + 760099 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 760099"
+  },
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "delta": 80,
+   "live_columns_incl_diagonal": 25706997,
+   "row_centric_cost": "25706997 row assemblies + 25706997 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 25706997"
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "delta": 9,
+   "live_columns_incl_diagonal": 511,
+   "row_centric_cost": "511 row assemblies + 511 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 511"
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "delta": 38,
+   "live_columns_incl_diagonal": 51738692,
+   "row_centric_cost": "51738692 row assemblies + 51738692 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 51738692"
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "delta": 40,
+   "live_columns_incl_diagonal": 100146724,
+   "row_centric_cost": "100146724 row assemblies + 100146724 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 100146724"
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "delta": 80,
+   "live_columns_incl_diagonal": 32490460747,
+   "row_centric_cost": "32490460747 row assemblies + 32490460747 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 32490460747"
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "delta": 5,
+   "live_columns_incl_diagonal": 31,
+   "row_centric_cost": "31 row assemblies + 31 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 31"
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "delta": 18,
+   "live_columns_incl_diagonal": 3214,
+   "row_centric_cost": "3214 row assemblies + 3214 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 3214"
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "delta": 20,
+   "live_columns_incl_diagonal": 6196,
+   "row_centric_cost": "6196 row assemblies + 6196 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 6196"
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "delta": 40,
+   "live_columns_incl_diagonal": 102091,
+   "row_centric_cost": "102091 row assemblies + 102091 owner lookups (all nonzero owner sums at once)",
+   "owner_centric_cost": "|V| candidate constructions (Q coordinate tests each) + |V| vertex lookups + <= |V| row assemblies",
+   "row_centric_wins_when": "|V| > 102091"
+  }
+ ]
+}

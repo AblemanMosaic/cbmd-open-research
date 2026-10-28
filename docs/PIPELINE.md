@@ -41,6 +41,8 @@ Qualification examines five independent boundaries:
 
 Each discovery declares executable checks in `CLAIM.json`. `tools/qualify_repository.py` runs the repository gates and all declared discovery checks without a shell. GitHub Actions runs that command on Windows and Ubuntu.
 
+When `evidence/SOURCE_CUSTODY.json` gives a `public_copy` for an archive member, the repository validator requires that file and checks its SHA-256. A declared detached receipt is checked the same way. This keeps the readable projection tied to the sealed source without placing the full internal archive in the repository.
+
 ## Promotion procedure
 
 1. Add or revise the discovery directory and registry row.

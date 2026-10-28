@@ -1,0 +1,164 @@
+{
+ "schema": "cbmd.cost_theorem.v1",
+ "cost_model": "BCM-1 (see docstring)",
+ "exactness": {
+  "closed_eq_enum": 163912,
+  "mismatch": 0,
+  "enum_count_formula_ok": 163912,
+  "enum_count_formula_bad": 0
+ },
+ "measurements": [
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "closed_route_worst_case": {
+    "mul": 14,
+    "div": 8,
+    "add": 5,
+    "mul_bitops": 674,
+    "div_bitops": 219,
+    "add_bitops": 86,
+    "peak_bits": 22,
+    "delta": 80,
+    "f": 0
+   },
+   "enumeration_indicator_tests_per_amplitude": 24685131,
+   "enumeration_coordinate_ops_lower_bound": 1974810480,
+   "parity_solve_rational_cells_lower_bound": 30
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "closed_route_worst_case": {
+    "mul": 23,
+    "div": 14,
+    "add": 8,
+    "mul_bitops": 2073,
+    "div_bitops": 631,
+    "add_bitops": 210,
+    "peak_bits": 34,
+    "delta": 80,
+    "f": 0
+   },
+   "enumeration_indicator_tests_per_amplitude": 389575972971,
+   "enumeration_coordinate_ops_lower_bound": 31166077837680,
+   "parity_solve_rational_cells_lower_bound": 72
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "closed_route_worst_case": {
+    "mul": 11,
+    "div": 6,
+    "add": 4,
+    "mul_bitops": 230,
+    "div_bitops": 84,
+    "add_bitops": 42,
+    "peak_bits": 15,
+    "delta": 40,
+    "f": 0
+   },
+   "enumeration_indicator_tests_per_amplitude": 76155,
+   "enumeration_coordinate_ops_lower_bound": 3046200,
+   "parity_solve_rational_cells_lower_bound": 20
+  },
+  {
+   "A": 0,
+   "R": 3,
+   "Q": 3,
+   "closed_route_worst_case": {
+    "mul": 6,
+    "div": 2,
+    "add": 3,
+    "mul_bitops": 11,
+    "div_bitops": 6,
+    "add_bitops": 3,
+    "peak_bits": 3,
+    "delta": 1,
+    "f": 0
+   },
+   "enumeration_indicator_tests_per_amplitude": 9,
+   "enumeration_coordinate_ops_lower_bound": 27,
+   "parity_solve_rational_cells_lower_bound": 12
+  },
+  {
+   "A": 1,
+   "R": 2,
+   "Q": 3,
+   "closed_route_worst_case": {
+    "mul": 5,
+    "div": 2,
+    "add": 2,
+    "mul_bitops": 10,
+    "div_bitops": 3,
+    "add_bitops": 3,
+    "peak_bits": 3,
+    "delta": 1,
+    "f": 0
+   },
+   "enumeration_indicator_tests_per_amplitude": 5,
+   "enumeration_coordinate_ops_lower_bound": 15,
+   "parity_solve_rational_cells_lower_bound": 6
+  }
+ ],
+ "timing_diagnostic": {
+  "closed_400_amplitudes_Q80_seconds": 0.0027,
+  "enum_one_amplitude_Q7_seconds": 0.0004,
+  "note": "wall-clock, Python, diagnostic only; not part of any claim"
+ },
+ "centered_skip": [
+  {
+   "A": 17,
+   "R": 5,
+   "delta": 39,
+   "orbit_candidates_1_le_E_le_R": 667927,
+   "identically_zero_over_Z": 82992,
+   "skip_fraction": 0.1243,
+   "additional_zero_mod_3^1": 39,
+   "additional_zero_mod_3^2": 39
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "delta": 38,
+   "orbit_candidates_1_le_E_le_R": 64869363,
+   "identically_zero_over_Z": 13130672,
+   "skip_fraction": 0.2024,
+   "additional_zero_mod_3^1": 2834496,
+   "additional_zero_mod_3^2": 0
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "delta": 18,
+   "orbit_candidates_1_le_E_le_R": 4047,
+   "identically_zero_over_Z": 834,
+   "skip_fraction": 0.2061,
+   "additional_zero_mod_3^1": 0,
+   "additional_zero_mod_3^2": 0
+  },
+  {
+   "A": 2,
+   "R": 4,
+   "delta": 8,
+   "orbit_candidates_1_le_E_le_R": 162,
+   "identically_zero_over_Z": 64,
+   "skip_fraction": 0.3951,
+   "additional_zero_mod_3^1": 0,
+   "additional_zero_mod_3^2": 0
+  },
+  {
+   "A": 1,
+   "R": 3,
+   "delta": 5,
+   "orbit_candidates_1_le_E_le_R": 25,
+   "identically_zero_over_Z": 10,
+   "skip_fraction": 0.4,
+   "additional_zero_mod_3^1": 0,
+   "additional_zero_mod_3^2": 0
+  }
+ ]
+}

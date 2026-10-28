@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path, PurePosixPath
 import sys
 
@@ -112,6 +113,30 @@ def main() -> int:
             fail(f"qualified pipeline stage requires declared checks at {relative}")
         if claim.get("authority_effect") != "NONE":
             fail(f"public candidate cannot claim authority effect at {relative}")
+
+        custody_path = discovery / "evidence" / "SOURCE_CUSTODY.json"
+        if custody_path.is_file():
+            custody = json.loads(custody_path.read_text(encoding="utf-8"))
+            for member in custody.get("members", []):
+                public_copy = member.get("public_copy")
+                if public_copy is None:
+                    continue
+                copy_relative = safe_relative(public_copy)
+                copy_path = discovery.joinpath(*copy_relative.parts)
+                if not copy_path.is_file():
+                    fail(f"missing public custody copy at {relative / copy_relative}")
+                actual = hashlib.sha256(copy_path.read_bytes()).hexdigest()
+                if actual != member.get("sha256"):
+                    fail(f"public custody hash mismatch at {relative / copy_relative}")
+            detached = custody.get("detached_receipt")
+            if detached is not None:
+                receipt_relative = safe_relative(detached.get("path", ""))
+                receipt_path = discovery.joinpath(*receipt_relative.parts)
+                if not receipt_path.is_file():
+                    fail(f"missing detached receipt at {relative / receipt_relative}")
+                actual = hashlib.sha256(receipt_path.read_bytes()).hexdigest()
+                if actual != detached.get("sha256"):
+                    fail(f"detached receipt hash mismatch at {relative / receipt_relative}")
 
     actual_claims = {path.resolve() for path in (ROOT / "discoveries").rglob("CLAIM.json")}
     if actual_claims != registered_claims:
