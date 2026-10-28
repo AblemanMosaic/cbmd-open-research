@@ -4,16 +4,18 @@
   "title": "Parity-amplitude spectrum",
   "field": "combinatorics",
   "slug": "parity-amplitude-spectrum",
-  "public_version": "0.1.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
+  "public_version": "0.2.0-candidate",
+  "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"],
   "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
   "verified": [
-    "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom."
+    "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom.",
+    "A no-escape Lean counterexample proves the first entry_closed_form candidate false as stated; the native entry is 0 while its proposed right side is -1.",
+    "The guarded revision passed 134370 licensed binary comparisons and two deliberate mutant families."
   ],
   "unresolved": [
-    "proof of the four source-transport statements presently admitted in the compiled workbench module",
-    "correspondence of the proposed closed form to the pinned native entry definition",
-    "standalone public finite reproduction",
+    "general proof of the revised guarded entry_closed_form",
+    "proof of the remaining centered-vanishing and A=0 source-transport statements",
+    "clean-checkout Lean replay of the copied counterexample under the pinned toolchain",
     "source-specific novelty assessment"
   ],
   "nonclaims": [
@@ -22,9 +24,11 @@
     "not a ring-transport certificate",
     "not a novelty determination"
   ],
-  "smallest_decisive_test": "Compile the centered-line theorem against the pinned source definitions at the smallest nontrivial odd-d case, or report the first signature or statement mismatch that prevents the transport.",
+  "smallest_decisive_test": "Prove the guarded entry_closed_form against the pinned source definitions, or produce the smallest counterexample to that revision.",
   "checks": [
-    {"id":"LEAN_CORE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"],"required":true}
+    {"id":"LEAN_CORE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"],"required":true},
+    {"id":"ENTRY_CLOSED_FORM_CORRECTION_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"],"required":true},
+    {"id":"ENTRY_CLOSED_FORM_FINITE_AUDIT","command":["python","-B","discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"],"required":true}
   ],
   "authority_effect": "NONE"
 }

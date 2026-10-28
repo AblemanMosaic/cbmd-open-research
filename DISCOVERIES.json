@@ -39,13 +39,13 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Prove or disprove the proposed entry_closed_form against the pinned native entry definition; the isolated integer cancellation core is compiled but native correspondence remains open.",
+      "next_obligation": "Prove the revised guarded entry_closed_form; the first natural-subtraction version is formally refuted and the revision currently has finite evidence only.",
       "promotion_blockers": [
-        "four source-transport theorems remain admitted in the compiled Lean module",
-        "reference-to-native statement correspondence is unresolved",
-        "public finite verifier and novelty comparison are not yet qualified"
+        "the revised guarded entry_closed_form is not yet formally proved",
+        "clean-checkout Lean replay of the copied counterexample is not yet packaged",
+        "source-specific novelty remains unassessed"
       ],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+      "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"]
     },
     {
       "id": "CBMD-ALG-AMPLITUDE-COST-001",

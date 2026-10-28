@@ -1,0 +1,44 @@
+{
+  "schema": "cbmd.open-research.correction-receipt.v1",
+  "claim_id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+  "corrected_subclaim": "entry_closed_form candidate",
+  "disposition": "REFUTED_AS_STATED",
+  "cause": "Lean natural subtraction makes j-(m-1)=0 when j<m-1, creating spurious constant binomial terms.",
+  "lean_counterexample": {
+    "path": "verification/lean/EntryClosedFormCounterexample.lean",
+    "sha256": "ffaf68ea3aad6e0a9c03dcc39f6673afe3d913e50724f9edad329a1f7971f8df",
+    "toolchain": "leanprover/lean4:v4.34.1",
+    "operation_id": "LEAN-82164B029901F27545D6B66C",
+    "request_root": "a530765afa8130ba3217bf9adcfb98737114c9c2beb08e305f4deee6b0e97e72",
+    "terminal_root": "216264c4e74a948b27b64acc983c50a6a60c7b101425d14e03cf3094a1f6d269",
+    "status": "PASS",
+    "escape_scan": "PASS"
+  },
+  "finite_audit": {
+    "path": "verification/reference-model/check_entry_closed_form.py",
+    "sha256": "5dcd7ec7c4a461cb6f3f355212620cda1b2aa5d4938a35c2fd38137ce57a45e8",
+    "operation_id": "PY-AUDIT-ENTRY-CLOSED-5DCD7EC7C4A4",
+    "terminal_root": "349b99de3f241011ac5e8e16446e06f80b06aba01824680d9f0c46c7c1988c5b",
+    "licensed_comparisons": 134370,
+    "state_fixtures": 1364,
+    "active_cardinality_mutant_detections": 32128,
+    "sign_mutant_detections": 70722
+  },
+  "smallest_counterexample": {
+    "Q": 2,
+    "A": 0,
+    "R": 1,
+    "t": 0,
+    "active_set": [0, 1],
+    "mismatches": [0, 1],
+    "u_equals_y": true,
+    "entry": 0,
+    "candidate_rhs": -1
+  },
+  "revised_formula": "Use zero for each summand with j < |M|-1; otherwise use choose(|D|-|M|, j-(|M|-1)).",
+  "revised_formula_finite_status": "PASS_ON_134370_LICENSED_BINARY_COMPARISONS",
+  "revised_formula_formal_status": "UNPROVED",
+  "promotion_decision_root": "b5988a575873e50df55d21a3123cc08ba209071c60e306f81e31a4a3eec8449b",
+  "nonclaims": ["corrected general theorem", "native centered-vanishing theorem", "novelty", "independent verification"],
+  "authority_effect": "NONE"
+}
