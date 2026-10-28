@@ -90,4 +90,15 @@ theorem swapPositions_eq_iff_inter_activeSet (i : Fin Δ)
           by_cases hla : l ∈ a <;> simp [hla, heq]
       · simp [swapPositions_slot_other, hji]
 
+/-- Swapping one inactive coordinate leaves the universal state unchanged. -/
+theorem swapPositions_singleton_eq_self_of_not_mem_activeSet (i : Fin Δ)
+    (a : Fin Q) (u : UniversalType r Q Δ) (ha : a ∉ activeSet i u) :
+    swapPositions i {a} u = u := by
+  have hinter : ({a} : Finset (Fin Q)) ∩ activeSet i u =
+      (∅ : Finset (Fin Q)) ∩ activeSet i u := by
+    ext l
+    simp [ha]
+  have h := (swapPositions_eq_iff_inter_activeSet i {a} ∅ u).2 hinter
+  simpa using h
+
 end OAI.Algorithms.SubexponentialSAT.SqrtLog.LayoutNumerator

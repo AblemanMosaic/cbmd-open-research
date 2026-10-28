@@ -4,17 +4,19 @@
   "title": "Parity-amplitude spectrum",
   "field": "combinatorics",
   "slug": "parity-amplitude-spectrum",
-  "public_version": "0.3.0-candidate",
+  "public_version": "0.4.0-candidate",
   "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"],
   "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
   "verified": [
     "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom.",
     "A no-escape Lean counterexample proves the first entry_closed_form candidate false as stated; the native entry is 0 while its proposed right side is -1.",
     "The guarded revision passed 134370 licensed binary comparisons and two deliberate mutant families.",
-    "Five source-bridge facts compile without proof escapes: orbit mismatch characterization and support, active-coordinate swap-state equality, exact integer signed-subword expansion, and native delta characterization."
+    "Five source-bridge facts compile without proof escapes: orbit mismatch characterization and support, active-coordinate swap-state equality, exact integer signed-subword expansion, and native delta characterization.",
+    "Inactive selected coordinates make the native ordered difference vanish at every point in the source swap orbit.",
+    "The guarded binomial term is the exact cardinality of the fixed-size active subsets containing mismatches.erase t."
   ],
   "unresolved": [
-    "signed cancellation for inactive selected coordinates and the final powerset count needed for the revised guarded entry_closed_form",
+    "proof that native delta selects exactly the active subword mismatches.erase t, followed by assembly of the revised guarded entry_closed_form",
     "proof of the remaining centered-vanishing and A=0 source-transport statements",
     "clean-checkout Lean replay of the copied proof modules under the pinned toolchain",
     "source-specific novelty assessment"
@@ -25,7 +27,7 @@
     "not a ring-transport certificate",
     "not a novelty determination"
   ],
-  "smallest_decisive_test": "Prove the guarded entry_closed_form against the pinned source definitions, or produce the smallest counterexample to that revision.",
+  "smallest_decisive_test": "Prove the unique-active-subword lemma against the pinned source definitions, or produce the smallest counterexample.",
   "checks": [
     {"id":"LEAN_CORE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"],"required":true},
     {"id":"ENTRY_CLOSED_FORM_CORRECTION_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"],"required":true},

@@ -39,7 +39,7 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Complete the revised guarded entry_closed_form by proving inactive-coordinate cancellation and the remaining powerset count.",
+      "next_obligation": "Prove that native delta selects exactly the active subword mismatches.erase t, then assemble the guarded entry_closed_form.",
       "promotion_blockers": [
         "the revised guarded entry_closed_form is not yet formally proved",
         "clean-checkout Lean replay of the copied proof modules is not yet packaged",

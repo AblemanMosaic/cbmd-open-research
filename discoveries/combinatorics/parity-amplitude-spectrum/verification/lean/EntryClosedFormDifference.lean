@@ -33,6 +33,38 @@ theorem integerDifference_expansion (i : Fin Δ) (as : List (Fin Q))
     rw [List.sum_map_mul_right]
     ring
 
+/-- If one coordinate in an ordered difference fixes the evaluation point,
+the whole difference vanishes.  Commutativity of position swaps propagates
+the fixed-point property through the remaining factors. -/
+theorem integerDifference_eq_zero_of_mem_of_swap_fixed (i : Fin Δ)
+    (as : List (Fin Q)) (a : Fin Q) (f : UniversalType r Q Δ → ℤ)
+    (u : UniversalType r Q Δ) (ha : a ∈ as)
+    (hfixed : swapPositions i {a} u = u) :
+    integerDifference i as f u = 0 := by
+  induction as generalizing u with
+  | nil => simp at ha
+  | cons b bs ih =>
+    simp only [List.mem_cons] at ha
+    rcases ha with rfl | ha
+    · simp [integerDifference, hfixed]
+    · have hfixed' :
+          swapPositions i {a} (swapPositions i {b} u) =
+            swapPositions i {b} u := by
+        rw [swapPositions_commute, hfixed]
+      rw [integerDifference, ih u ha hfixed,
+        ih (swapPositions i {b} u) ha hfixed', sub_self]
+
+/-- Any difference list containing a coordinate inactive in the source state
+vanishes at every point in that source's swap orbit. -/
+theorem integerDifference_eq_zero_of_mem_not_activeSet (i : Fin Δ)
+    (as : List (Fin Q)) (a : Fin Q) (f : UniversalType r Q Δ → ℤ)
+    (L : Finset (Fin Q)) (u : UniversalType r Q Δ) (ha : a ∈ as)
+    (hinactive : a ∉ activeSet i u) :
+    integerDifference i as f (swapPositions i L u) = 0 := by
+  apply integerDifference_eq_zero_of_mem_of_swap_fixed i as a f _ ha
+  rw [swapPositions_commute,
+    swapPositions_singleton_eq_self_of_not_mem_activeSet i a u hinactive]
+
 /-- Native integer delta between two orbit states depends only on their swap
 sets restricted to active coordinates. -/
 theorem integerDelta_swapPositions (i : Fin Δ) (a b : Finset (Fin Q))
