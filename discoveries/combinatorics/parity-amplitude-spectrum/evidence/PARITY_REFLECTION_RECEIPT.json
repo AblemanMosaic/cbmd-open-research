@@ -1,0 +1,46 @@
+{
+  "schema": "cbmd.open-research.lean-reflection-receipt.v1",
+  "status": "PASS",
+  "authority_effect": "NONE",
+  "claim_id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+  "compiled_proof": {
+    "path": "verification/lean/ParityReflection.lean",
+    "sha256": "d9c496292c0b1850258335c3e89d79a413f1127bf735a54686b95760f4b48e72",
+    "terminal_root": "743acd9bd33bc26efaab9e904d426bd04948df2b4b8a48c38cd7340bb35253ad",
+    "decision_root": "455167f973053f36d0f2ad676d3eaea4c2e6a9c35c110a02073c5e326688c133",
+    "operation_id": "LEAN-9210D8D4AF0074A25626AEA8"
+  },
+  "source_inputs": [
+    {
+      "role": "native integer coefficient bridge",
+      "path": "OAI/Algorithms/SubexponentialSAT/SqrtLog/LayoutNumerator.lean",
+      "sha256": "ae55281444576112eec473413fbeca313d35e6c5186c038c8f7836bed9eba97a"
+    },
+    {
+      "role": "binomial interpolation construction",
+      "path": "OAI/Algorithms/SubexponentialSAT/BinomialInterpolation.lean",
+      "sha256": "f7f08d1d5b8458037b7b0d10f041c783c4aa771f9fd7f1fe5b1698dbc3c770ae"
+    },
+    {
+      "role": "source-boundary provenance",
+      "path": "provenance/LEAN_SOURCE_BOUNDARY.json",
+      "sha256": "497d2263883c9c0ef108e892e62c091b2afb3085aadf5a03869e3ba85d2633e8"
+    }
+  ],
+  "projection_boundary": {
+    "manifest_sha256": "f19dda30767c5348723fc0cbfd393589ace17050fd03b38783ae8dd2818ab83d",
+    "envelope_root": "2d419ad8ea4ea31a245d49f2ad6e335a45600c8fb9f65029a6d38837545eb86d",
+    "source_status": "PASS",
+    "staged_status": "PASS"
+  },
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "standing": "COMPILED_PROOF",
+  "proved_scope": "The integer-valued parity interpolant reflects across its interpolation interval with sign (-1)^(R-1), under R >= 1 and the stated natural-number bound.",
+  "remaining_obligation": "Compose the reflection theorem and guarded native entry formula into a no-escape centered native source-vanishing theorem.",
+  "nonclaims": [
+    "native centered-vanishing source theorem",
+    "clean-checkout replay",
+    "independent verification",
+    "novelty"
+  ]
+}

@@ -11,11 +11,11 @@ The reference integer amplitude has a coefficient-extraction formula depending o
 
 ## Current standing
 
-The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core compiles under pinned Lean 4.34.1 with no proof escapes. The first proposed native closed form was then disproved directly against the pinned `entry` definition: at `Q=2,A=0,R=1`, its two sides are `0` and `-1`. The defect is truncated natural subtraction in the lower binomial index. The corrected guarded theorem now compiles against that same pinned native `entry`: the proof identifies the unique active subword, evaluates its sign, cancels inactive selected coordinates, applies the exact guarded powerset count, and assembles the outer coefficient sum. The earlier 134,370-case finite audit and two mutant families remain adverse evidence, not a substitute for the proof. The Krawtchouk ingredients are classical; novelty of the source-specific identification remains unassessed.
+The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core compiles under pinned Lean 4.34.1 with no proof escapes. The first proposed native closed form was then disproved directly against the pinned `entry` definition: at `Q=2,A=0,R=1`, its two sides are `0` and `-1`. The defect is truncated natural subtraction in the lower binomial index. The corrected guarded theorem now compiles against that same pinned native `entry`: the proof identifies the unique active subword, evaluates its sign, cancels inactive selected coordinates, applies the exact guarded powerset count, and assembles the outer coefficient sum. The parity-interpolant reflection law also now compiles in a separate no-escape module, using rational-polynomial interpolation uniqueness rather than an admission. The earlier 134,370-case finite audit and two mutant families remain adverse evidence, not a substitute for the proofs. The Krawtchouk ingredients are classical; novelty of the source-specific identification remains unassessed.
 
 ## Next obligation
 
-Use the compiled guarded `entry_closed_form` to transport the centered parity-amplitude law to native source rows, while replacing the admitted `parityInterpolant_reflect` step with a no-escape proof or a precise obstruction.
+Compose the compiled guarded `entry_closed_form` and compiled parity-reflection theorem into the native centered-vanishing corollary, recording the first exact obstruction if the source-level coefficient transport does not close.
 
 ## Nonclaims
 

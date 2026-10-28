@@ -39,7 +39,7 @@
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Parity-amplitude spectrum",
       "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Use the compiled guarded entry_closed_form to prove the native centered-vanishing corollary, replacing the admitted reflection step or recording its exact obstruction.",
+      "next_obligation": "Compose the compiled guarded entry_closed_form and compiled parity-reflection theorem into the native centered-vanishing corollary, or record the first exact source-level obstruction.",
       "promotion_blockers": [
         "the centered native source-vanishing corollary is not yet formally proved",
         "clean-checkout Lean replay of the copied proof modules is not yet packaged",
