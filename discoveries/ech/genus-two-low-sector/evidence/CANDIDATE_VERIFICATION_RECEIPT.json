@@ -1,0 +1,68 @@
+{
+  "schema": "cbmd.open-research.candidate-verification.v1",
+  "date": "2026-10-27",
+  "claim_id": "CBMD-ECH-G2-LS-001",
+  "status": "PASS",
+  "standing": "LOCAL_PUBLIC_CANDIDATE_ENGINEERING_AND_EXACT_MODEL_CHECKS_ONLY",
+  "authority_effect": "NONE",
+  "clean_clone_qualification": false,
+  "checks": {
+    "repository_validator": {
+      "status": "PASS",
+      "expected_discovery_count": 1,
+      "expected_checked_files_after_receipt": 47
+    },
+    "deterministic_explorer_build": {
+      "status": "PASS",
+      "bytes": 38330,
+      "sha256": "3e63eb702a30611545d4ef9708608f4dedb9fbee3f4856d58be5d406d1130881"
+    },
+    "exact_model_oracle": {
+      "status": "PASS",
+      "oracle_cases": 6,
+      "source_columns": 1317,
+      "exact_vector_comparisons": 3951,
+      "residual_checks": 3951,
+      "deliberate_mutant_failed_rows": 90,
+      "repeated_U_traces": 3951,
+      "trace_transitions": 23706,
+      "homogeneous_weight_checks": 26974
+    },
+    "second_reader_grid_audit": {
+      "status": "PASS",
+      "standing": "EXACT_FINITE_MODEL_AUDIT_ONLY",
+      "extended_block_cases": 16,
+      "primary_junction_cases": 36,
+      "unique_nonzero_block_in_every_extended_case": true,
+      "nonzero_entries_in_block": 8,
+      "raw_and_coordinated_residual_mismatches": 0,
+      "invalid_deletion_sources_per_primary_case": 15,
+      "gram_integer_inverse_checked_through_n": 26,
+      "independent_derivation": false
+    },
+    "offline_browser": {
+      "status": "PASS",
+      "external_requests": 0,
+      "page_errors": [],
+      "viewports": [1240, 360],
+      "dark_mode": true,
+      "document_overflow_at_360": false
+    }
+  },
+  "bound_inputs": {
+    "discovery_registry_sha256": "784d7bc4ff08bd20e653d4d82b94b3dc9b5a448a79b4f0a8e61dc5ed97a1082b",
+    "claim_sha256": "9d7622251a8d792ee0a84770b1ddc9ab82761ce75d859fbfc3bb01affac974b4",
+    "model_core_sha256": "e8d3dbd2f42eb17419eb0d39865b6a869efeb4231dab43e202f614db1d7e2d9a",
+    "reference_fixtures_sha256": "9965710dd1f816a07c1c728a0e2217a03385da86f725f720de069e6ac42cb85f",
+    "grid_audit_script_sha256": "375bc300b31dd520fd5a39caeac036eb78bc938ed17336e5b7d2d50de320d3f5",
+    "grid_audit_result_sha256": "c7f884d631fb9ae45154e9a6a7c44bed91bf5a5603aafe7c7f0427c679a7067b"
+  },
+  "nonclaims": [
+    "not a clean-clone or release qualification",
+    "not geometric ECH certification",
+    "not specialist review",
+    "not proof-assistant verification",
+    "not a novelty determination",
+    "not publication authorization"
+  ]
+}

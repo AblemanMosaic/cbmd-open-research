@@ -1,0 +1,18 @@
+{
+  "schema": "cbmd.open-research.discovery-registry.v1",
+  "repository_standing": "LOCAL_PUBLIC_CANDIDATE_NOT_YET_PUBLISHED",
+  "discoveries": [
+    {
+      "id": "CBMD-ECH-G2-LS-001",
+      "field": "ech",
+      "slug": "genus-two-low-sector",
+      "path": "discoveries/ech/genus-two-low-sector",
+      "title": "Genus-two low-sector pairing",
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED",
+        "GEOMETRIC_TRANSPORT_UNRESOLVED"
+      ]
+    }
+  ]
+}

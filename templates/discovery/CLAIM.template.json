@@ -1,0 +1,14 @@
+{
+  "schema": "cbmd.open-research.claim.v1",
+  "id": "CBMD-FIELD-SLUG-NNN",
+  "title": "Discovery title",
+  "field": "field",
+  "slug": "discovery-slug",
+  "public_version": "0.1.0-candidate",
+  "status": ["CONJECTURE"],
+  "statement": "Exact falsifiable statement.",
+  "verified": [],
+  "unresolved": [],
+  "smallest_decisive_test": "Describe the shortest decisive test.",
+  "authority_effect": "NONE"
+}

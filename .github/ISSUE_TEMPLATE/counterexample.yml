@@ -1,0 +1,33 @@
+name: Counterexample
+description: Submit a concrete counterexample to a public claim.
+title: "[Counterexample]: "
+labels: ["counterexample", "triage"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+      placeholder: CBMD-ECH-G2-LS-001
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Challenged statement
+      description: Quote the exact statement or link the file and line.
+    validations:
+      required: true
+  - type: textarea
+    id: witness
+    attributes:
+      label: Counterexample or decisive witness
+      description: Give the smallest complete witness and all conventions needed to evaluate it.
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Independent check
+      description: Explain how the witness was checked and include code or references where possible.
+    validations:
+      required: true

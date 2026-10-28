@@ -1,0 +1,48 @@
+{
+  "schema": "cbmd.open-research.claim.v1",
+  "id": "CBMD-ECH-G2-LS-001",
+  "title": "Genus-two low-sector pairing",
+  "field": "ech",
+  "slug": "genus-two-low-sector",
+  "public_version": "0.2.0-candidate",
+  "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED",
+    "GEOMETRIC_TRANSPORT_UNRESOLVED"
+  ],
+  "statement": "For genus two, e=-b with b>=3, and torsion representatives Gamma in {1,2}, the proposed raw cap bases and cap/fill pairing determine the displayed filtered rational U-recurrence; if the stated geometric continuation and direct-limit identifications hold, the union is sixteen ungraded U-towers.",
+  "verified": [
+    "explicit upper-triangular pairing model with one raw off-diagonal junction",
+    "eight junction entries and rank six in the declared model",
+    "denominator-free U-recurrence satisfying P U = Q",
+    "coordinated integral shear and adverse deletion control",
+    "extended finite audit finding exactly one eight-entry off-diagonal block in all 16 declared cases through depth 6",
+    "exactly 15 sector-one sources detect the invalid junction deletion in every one of the 36 audited primary-grid cases",
+    "3951 pinned-oracle operator-vector comparisons",
+    "3951 pairing residual checks",
+    "23706 repeated-U trace transitions"
+  ],
+  "unresolved": [
+    "low-sector applicability of the geometric cap/fill composition formulas",
+    "relative classes, signs, homology orientations, and point-action convention",
+    "filtered strong-cobordism support",
+    "geometric continuation and chamber comparison",
+    "rational ECH direct-limit identification",
+    "absolute grading, coefficient transport, and novelty"
+  ],
+  "smallest_decisive_test": "At g=2, b=3, Gamma=1, determine whether Psi_0^epsilon(1 tensor F_1^epsilon(u^2 omega)) = 1 follows from the intended cap/fill composition theorem with the asserted conventions.",
+  "model_scope": {
+    "genus": 2,
+    "primary_grid": {
+      "b": [3, 8],
+      "Gamma": [1, 2],
+      "finite_depth": [0, 3]
+    },
+    "extended_block_audit": {
+      "b": [3, 4, 5, 6, 7, 8, 10, 12],
+      "Gamma": [1, 2],
+      "finite_depth": 6
+    }
+  },
+  "authority_effect": "NONE"
+}

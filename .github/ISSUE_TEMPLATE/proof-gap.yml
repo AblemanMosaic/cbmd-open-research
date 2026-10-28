@@ -1,0 +1,29 @@
+name: Proof gap or missing hypothesis
+description: Identify the first unsupported inference, missing condition, or convention mismatch.
+title: "[Proof gap]: "
+labels: ["proof-gap", "triage"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Exact location
+      description: Link the file and line or quote the inference.
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Gap or missing hypothesis
+    validations:
+      required: true
+  - type: textarea
+    id: resolution
+    attributes:
+      label: What would resolve it?
+      description: Suggest an applicable theorem, condition, calculation, or counterexample if known.

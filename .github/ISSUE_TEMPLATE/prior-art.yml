@@ -1,0 +1,25 @@
+name: Prior art or coordinate match
+description: Identify an existing result that may contain or subsume the proposed discovery.
+title: "[Prior art]: "
+labels: ["prior-art", "triage"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Exact reference
+      description: Include version, theorem or section, and a stable link or bibliographic identifier.
+    validations:
+      required: true
+  - type: textarea
+    id: correspondence
+    attributes:
+      label: Coordinate and convention correspondence
+      description: Match parameters, coefficients, gradings, orientations, and the exact conclusion.
+    validations:
+      required: true

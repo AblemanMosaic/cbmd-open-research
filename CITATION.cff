@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "This private candidate is not yet a released citable edition. After release, cite the exact version and discovery ID."
+type: software
+title: "CBMD Open Research"
+authors:
+  - family-names: "Mazurk"
+    given-names: "Adam Ableman"
+version: "0.1.0-dev"

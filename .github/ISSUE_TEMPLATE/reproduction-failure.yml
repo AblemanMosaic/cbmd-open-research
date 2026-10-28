@@ -1,0 +1,30 @@
+name: Reproduction failure
+description: Report a failed documented check or artifact mismatch.
+title: "[Reproduction]: "
+labels: ["reproduction", "triage"]
+body:
+  - type: input
+    id: claim
+    attributes:
+      label: Claim ID
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, runtime versions, commit, and exact artifact hash.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and complete output
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected versus observed behavior
+    validations:
+      required: true
