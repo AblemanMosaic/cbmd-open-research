@@ -1,6 +1,6 @@
 {
   "schema": "cbmd.open-research.discovery-registry.v1",
-  "repository_standing": "LOCAL_PUBLIC_CANDIDATE_NOT_YET_PUBLISHED",
+  "repository_standing": "PUBLIC_PROVISIONAL_RESEARCH_SNAPSHOT",
   "discoveries": [
     {
       "id": "CBMD-ECH-G2-LS-001",

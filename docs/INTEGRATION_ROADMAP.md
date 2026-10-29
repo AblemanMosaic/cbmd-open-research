@@ -1,6 +1,6 @@
 # CBMD integration roadmap
 
-Standing: private research snapshot; authority effect `NONE`.
+Standing: public provisional research snapshot; authority effect `NONE`.
 
 This roadmap closes the documentation boundary of the current bootstrap
 iteration and prepares a bounded successor investigation. It does not start
@@ -11,8 +11,9 @@ records the local evidence being summarized; the
 separates those observations from checks available in this checkout.
 
 The existing ECH discovery has its own geometric transport question and is
-outside this integration. Private GitHub staging does not change visibility,
-create a release, contact a reviewer, or establish novelty.
+outside this integration. Public availability of this provisional snapshot
+does not create a release, contact a reviewer, establish novelty, or supply
+independent verification.
 
 ## Terms and evidence scope
 
@@ -44,9 +45,9 @@ were subsequently discharged.
 
 ## Integration phases and acceptance gates
 
-The bounded private snapshot may be shared after its own projection checks
-pass while proof import and cost work remain visibly `OPEN`. Full cost
-accounting is not a prerequisite for sharing that limited snapshot.
+The bounded public provisional snapshot may be uploaded after its own
+projection checks pass while proof import and cost work remain visibly `OPEN`.
+Full cost accounting is not a prerequisite for sharing that limited snapshot.
 
 ### 1. Exact inventory and custody — OPEN
 
@@ -137,7 +138,7 @@ an explicit joint regime. Historical sealed source copies are preserved, and
 any corrected interpretation receives a revision note. Complete runtime cost,
 deployment, and SAT asymptotics may remain `OPEN` in a bounded review snapshot.
 
-### 6. Freeze the bounded private snapshot — OPEN
+### 6. Freeze the bounded public provisional snapshot — OPEN
 
 Dependency: the chosen snapshot scope, its custody checks, and repository
 qualification. Phases 2–5 are prerequisites only for claims that rely on their
@@ -152,15 +153,17 @@ checkout; require the declared Windows and Ubuntu CI jobs for the same commit
 before calling its cross-platform checks complete. Existing CI does not replay
 Lean unless a successor check explicitly installs and runs that chain.
 
-Review rights and attribution for each newly projected path. Pending public
-licensing remains visible. Private staging is the only external repository
-effect in scope; public visibility, release preparation, and reviewer contact
-are `DEFERRED`.
+Review rights and attribution for each newly projected path. Public licensing
+remains pending; all rights are reserved until a license is selected. The
+repository is public, and upload of the prepared bounded snapshot is
+authorized. A later tag, release, DOI, or reviewer contact requires separate
+authorization and remains `DEFERRED`.
 
 Acceptance: the receipt's claim ceiling matches what the checkout actually
 checks; no local-only result appears as checkout-replayed; failed or missing CI
-is reported accurately; the private repository remains private. A successful
-repository qualification does not establish mathematical review or novelty.
+is reported accurately; public status and pending licensing are stated
+accurately. A successful repository qualification does not establish
+mathematical review, independent verification, or novelty.
 
 ## Explicit pause and feedback boundary
 

@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "This private candidate is not yet a released citable edition. After release, cite the exact version and discovery ID."
+message: "This public provisional research snapshot is not a release. When referencing it, cite the exact commit and discovery ID. A versioned release and DOI remain deferred."
 type: software
 title: "CBMD Open Research"
 authors:

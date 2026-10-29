@@ -40,11 +40,14 @@ states that narrower boundary.
 
 The [integration roadmap](../../docs/INTEGRATION_ROADMAP.md) separates exact
 inventory, proof staging, cold replay, a separate formula verifier, cost scope,
-and a frozen private snapshot. Existing discovery checks continue to define
-what this repository verifies. The ECH line retains its own geometric
-transport obligations.
+and a frozen public provisional snapshot. Existing discovery checks continue
+to define what this repository verifies. The ECH line retains its own
+geometric transport obligations.
 
-Current standing is a private research snapshot with authority effect `NONE`.
-The discovery loop is paused for feedback. This method description does not
-start another investigation, change repository visibility, issue a release,
-contact a reviewer, or establish novelty.
+Current standing is a public provisional research snapshot with authority
+effect `NONE`. Public licensing is pending; all rights are reserved until a
+license is selected. The discovery loop is paused for feedback. This method
+description does not start another investigation, issue a release, contact a
+reviewer, establish novelty, or supply independent verification. Upload of the
+prepared snapshot is authorized; a later tag, release, DOI, or reviewer contact
+requires separate authorization.

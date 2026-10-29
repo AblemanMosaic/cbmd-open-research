@@ -1,6 +1,6 @@
 # CBMD public-repository refactor plan
 
-Historical bootstrap plan. The repository has since been created and privately staged. The current work order and acceptance gates are in [INTEGRATION_ROADMAP.md](INTEGRATION_ROADMAP.md); unchecked bootstrap bullets below are not a current status report.
+Historical bootstrap plan. The repository was initially staged privately; on 2026-10-28 the owner confirmed its public visibility and authorized uploading the prepared update. The current work order and acceptance gates are in [INTEGRATION_ROADMAP.md](INTEGRATION_ROADMAP.md); unchecked bootstrap bullets below are not a current status report.
 
 ## Objective
 

@@ -19,7 +19,7 @@ These are exact copies of local harness summaries, promotion decisions, and the 
 
 ## Interpretation
 
-These reports preserve their original bytes, including the obligations that were open when each report was produced. Read them chronologically: later decisions close some earlier obligations. The historical restriction on remote updates was subsequently lifted by the user's request to update the existing private repository; the research pause continues.
+These reports preserve their original bytes, including the obligations that were open when each report was produced. Read them chronologically: later decisions close some earlier obligations. On 2026-10-28 the owner confirmed the repository's public visibility and authorized uploading the prepared update. The historical restriction on remote updates is superseded for this upload; the research pause continues.
 
 Some summaries also list supporting lemmas or static audits. Only the claim IDs explicitly named in a linked promotion decision receive that decision's standing; the snapshot does not promote every ancillary summary claim.
 

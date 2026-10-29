@@ -1,6 +1,6 @@
 # Publication checklist
 
-Complete this checklist before creating or making the repository public.
+The owner has confirmed that the repository is public and authorized uploading the prepared provisional snapshot. This checklist tracks continuing publication hygiene and preparation for any later release. Unchecked items remain open; public visibility does not certify their completion.
 
 ## Content
 

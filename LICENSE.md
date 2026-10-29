@@ -1,6 +1,6 @@
 # Licensing status
 
-This directory is a private public-release candidate. No public redistribution license has yet been selected.
+This repository is a public provisional research snapshot. No general reuse license has yet been selected.
 
 All rights are reserved pending a path-level licensing review for:
 
@@ -11,4 +11,4 @@ All rights are reserved pending a path-level licensing review for:
 
 The Mosaic name and `assets/mosaic-rainbow-sun.png` are reserved branding assets and are not included in any future code or research-content license unless an explicit brand-use grant says otherwise. See [BRANDING.md](BRANDING.md).
 
-Private staging in `AblemanMosaic/cbmd-open-research` is authorized. Do not make the repository public, issue a public release, or redistribute this candidate outside authorized private collaborators until the licensing decision is completed and this file is replaced by the intended public license boundary.
+The owner has authorized public availability of this prepared snapshot in `AblemanMosaic/cbmd-open-research`. This update does not select an open-source license or change the separate branding boundary. Any path-specific or third-party license notices remain applicable.

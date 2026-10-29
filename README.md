@@ -8,7 +8,7 @@
 
 Public provisional mathematics for verification, correction, or disproof.
 
-This repository is the intended public research surface for selected CBMD discovery lines. Its current GitHub home is a private staging repository, not a public release, and it is not a mirror of the internal CBMD archive. A result appears here only after it has been separated from private correspondence, assigned an explicit standing, given reproducible evidence where available, and checked for publication-sensitive material.
+This public repository presents selected CBMD research for verification, correction, or disproof. It contains provisional research snapshots, with no tagged release yet issued, and is not a mirror of the internal CBMD archive. Each research line has an explicit standing, reproducible evidence where available, and visible remaining obligations.
 
 ## What CBMD means
 
@@ -128,11 +128,11 @@ Adding ordinary supporting files inside an existing discovery does not require c
 - Internal canonical packages, private correspondence, unpublished third-party texts, credentials, and personal machine paths are excluded.
 - A public review packet must not imply that a prospective reviewer participated or endorsed the work.
 - AI assistance is disclosed in [AI_DISCLOSURE.md](AI_DISCLOSURE.md).
-- Licensing remains pending for this private release candidate; see [LICENSE.md](LICENSE.md). Private repository staging is authorized, but the repository must not be made public until the path-level license decision is complete.
+- The repository is public by the owner's authorization. A general reuse license remains pending; the current rights and branding boundaries are recorded in [LICENSE.md](LICENSE.md).
 - The Mosaic name and rainbow sun identify the project; their provenance and separate reuse boundary are recorded in [BRANDING.md](BRANDING.md).
 
 ## Author and standing
 
 Research direction and authorship: Adam Ableman Mazurk. Repository preparation and substantial portions of the mathematical development used AI assistance. Every discovery carries its own more specific provenance and nonclaims.
 
-This candidate is staged in the private GitHub repository `AblemanMosaic/cbmd-open-research`. It has not been made public and no GitHub release has been issued.
+These provisional research snapshots are available in the public GitHub repository `AblemanMosaic/cbmd-open-research`. Public visibility does not establish mathematical review, novelty, or completion of the integration roadmap. No GitHub release has been issued.
