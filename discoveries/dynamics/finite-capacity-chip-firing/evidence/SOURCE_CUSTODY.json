@@ -1,0 +1,29 @@
+{
+  "schema": "cbmd.open-research.source-custody.v1",
+  "source_repository": {
+    "commit": "6162015e529a66cb549a8510c1f132f4bcb02f73",
+    "qualification_run": "Q10",
+    "qualification_receipt_sha256": "47d46afbd7999b311bb2ddfe0c9f3ac3555086a6c1aecea3cf58cf7e2a43874e",
+    "source_root": "a537655caa6f2c845ee2aecf430f4514a5ab77970f6bcaf5f1c4fb9d2c21de88",
+    "generated_root": "6e0e24a384bc442f97920f112b788d94f274756097f1b62686c55546da7a6b71"
+  },
+  "members": [
+    {"path": "WRITTEN_ARGUMENT.md", "public_copy": "argument/WRITTEN_ARGUMENT.md", "sha256": "1127ad923c13bf6933b99237fbaee1e14047ce931de1b656cf5fe98c5b4931ae"},
+    {"path": "PROBLEM_CONTRACT.md", "public_copy": "argument/PROBLEM_CONTRACT.md", "sha256": "fb02136d344b29350b9db8d5f906c1ce391857dd24738b9fa75b8f11996db3ae"},
+    {"path": "prior_art/LEAN_CHIP_FIRING_BINDING_AUDIT.md", "public_copy": "review/LEAN_CHIP_FIRING_BINDING_AUDIT.md", "sha256": "fdae2f251633eb7aa1fe37b6ce20bf08b6054e5503101021c74ae88d1d03dd44"},
+    {"path": "evidence/QUALIFICATION_Q8.FAILURE.md", "public_copy": "revisions/0.1.0-qualification-path-repair.md", "sha256": "4294da1c19c9af7b7a6f91f7682260b8efaf59a734d2aeafd61c9256c8bec5c3"},
+    {"path": "model/capacity_blocked.py", "public_copy": "verification/reference/capacity_blocked.py", "sha256": "279f25f4013afc4dfff8d90bfd4633bfdd6616b7550b4a14c0f05be59b750ece"},
+    {"path": "model/search_minimal.py", "public_copy": "verification/reference/search_minimal.py", "sha256": "9e3513cd1edd9b9996e52122efb99f544e8424306b7478d93bb747570a037e83"},
+    {"path": "model/search_boundaries.py", "public_copy": "verification/reference/search_boundaries.py", "sha256": "db4a1c981e7dae0ef73808cade0a46951cb93890b2c1fcc798ae7fff823c5ea6"},
+    {"path": "verification/independent_check.py", "public_copy": "verification/independent/independent_check.py", "sha256": "837e5519191021f883b2d4bbae5077e85861c8d6626178d3f6f4046515a81f4e"},
+    {"path": "CBMDFiniteDynamics.lean", "public_copy": "verification/lean/CBMDFiniteDynamics.lean", "sha256": "33af9099f4ef3f66ce240524a9e455d8673da712e00deabfdb31ed38c8ec8ae4"},
+    {"path": "CBMDFiniteDynamics/CapacityBlocked.lean", "public_copy": "verification/lean/CBMDFiniteDynamics/CapacityBlocked.lean", "sha256": "c7a97c43e1734cdc4b42dbcb5ca7c2d652669ad932f7bdde747e2bdecdf9ecda"},
+    {"path": "CBMDFiniteDynamics/FullTheorem.lean", "public_copy": "verification/lean/CBMDFiniteDynamics/FullTheorem.lean", "sha256": "3a0a147b241a33324377f4c26cfe7a397e5c2741cacbbe9e3730ebbeaf022d88"},
+    {"path": "CBMDFiniteDynamics/ConcreteModel.lean", "public_copy": "verification/lean/CBMDFiniteDynamics/ConcreteModel.lean", "sha256": "6db6f5fdef0ad2fb0522c78082721e19288d660ada3c17588999cfa5e88f2899"},
+    {"path": "lakefile.toml", "public_copy": "verification/lean/lakefile.toml", "sha256": "c5d92815ebecb49d4a99a2523e332ab24409dc67ea62831bcee8460f42f4e320"},
+    {"path": "lake-manifest.json", "public_copy": "verification/lean/lake-manifest.json", "sha256": "5d0c21086b23efb860a05a2a45d868f93608dcc54c50e2394f43d4a8e6b63ec7"},
+    {"path": "lean-toolchain", "public_copy": "verification/lean/lean-toolchain", "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"}
+  ],
+  "meaning_not_inferred_from_hashes": true,
+  "public_reproduction": "FINITE_REPLAY_AND_PINNED_LEAN_SOURCE_ENVELOPE_INCLUDED"
+}

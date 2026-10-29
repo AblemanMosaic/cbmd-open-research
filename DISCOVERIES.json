@@ -96,6 +96,25 @@
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT"
       ]
+    },
+    {
+      "id": "CBMD-DYN-CAPACITY-FIRING-001",
+      "field": "dynamics",
+      "slug": "finite-capacity-chip-firing",
+      "path": "discoveries/dynamics/finite-capacity-chip-firing",
+      "title": "Finite-capacity chip-firing preservation on ordered DAGs",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Determine whether the sharp weighted-transfer candidate C(v) >= d(v) + max_u m(u,v) - 1 is sufficient and already known.",
+      "promotion_blockers": [
+        "specialist novelty and prior-art assessment remains open",
+        "external graph-instance decoding is not certified by the Lean theorem"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "SOURCE_BOUND_COMPILED",
+        "EXACT_MODEL_VERIFIED",
+        "INDEPENDENTLY_REPRODUCED"
+      ]
     }
   ]
 }

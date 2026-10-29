@@ -7,4 +7,5 @@ Thumbs.db
 tmp/
 dist/
 proofs/native/.lake/
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/.lake/
 .cbmd-work/

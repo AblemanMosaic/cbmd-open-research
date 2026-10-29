@@ -18,3 +18,16 @@
 software/harness/** -text
 proofs/native/** -text
 proofs/native/SOURCE_MANIFEST.json -diff
+
+# Exact finite-dynamics copies are hash-bound to the sealed local Q10 source.
+discoveries/dynamics/finite-capacity-chip-firing/argument/PROBLEM_CONTRACT.md -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/argument/WRITTEN_ARGUMENT.md -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/review/LEAN_CHIP_FIRING_BINDING_AUDIT.md -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/revisions/0.1.0-qualification-path-repair.md -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/verification/reference/** -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/verification/independent/** -text whitespace=-trailing-space
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/CBMDFiniteDynamics.lean -text
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/CBMDFiniteDynamics/** -text
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/lakefile.toml -text
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/lake-manifest.json -text
+discoveries/dynamics/finite-capacity-chip-firing/verification/lean/lean-toolchain -text

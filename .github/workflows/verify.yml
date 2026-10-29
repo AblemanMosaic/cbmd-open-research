@@ -15,11 +15,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "20"
       - run: python -B tools/qualify_repository.py
@@ -28,8 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
@@ -43,3 +43,23 @@ jobs:
           use-github-cache: false
       - name: Recompile pinned proof targets and audit logical dependencies
         run: python -B tools/replay_lean.py --prepare --fresh
+
+  finite-dynamics-formal-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          lake-package-directory: discoveries/dynamics/finite-capacity-chip-firing/verification/lean
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - name: Recompile finite-capacity chip-firing theorem
+        run: python -B discoveries/dynamics/finite-capacity-chip-firing/verification/lean/replay.py --build

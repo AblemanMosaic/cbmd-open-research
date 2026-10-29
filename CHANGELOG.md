@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Added the review-ready finite-capacity chip-firing dossier with a concrete
+  Lean 4.35.0 theorem, independently reproduced 420,840-state finite box, and
+  sharp cyclic and parallel-transfer adverse witnesses.
+- Added an isolated finite-dynamics formal replay job and exact source custody
+  bound to local commit `6162015` and qualification Q10.
+- Preserved the failed Q8 import-path qualification and its Q9/Q10 repair.
+
 ## 0.1.0 — 2026-10-28
 
 - Added the portable, disabled-by-default CBMD governed operation harness with exact intent/terminal custody, recovery states, claim ceilings, and 37 required tests.

@@ -1,0 +1,26 @@
+{
+  "schema": "cbmd.finite_dynamics.public_source_binding.v1",
+  "status": "PASS",
+  "source_binding": {
+    "commit": "6162015e529a66cb549a8510c1f132f4bcb02f73",
+    "qualification_run": "Q10",
+    "qualification_receipt_sha256": "47d46afbd7999b311bb2ddfe0c9f3ac3555086a6c1aecea3cf58cf7e2a43874e",
+    "source_root": "a537655caa6f2c845ee2aecf430f4514a5ab77970f6bcaf5f1c4fb9d2c21de88",
+    "generated_root": "6e0e24a384bc442f97920f112b788d94f274756097f1b62686c55546da7a6b71"
+  },
+  "claim_ceiling": "SOURCE_BOUND_COMPILED",
+  "finite_box": {"graphs": 340, "systems": 5222, "initial_states": 420840},
+  "lean": {
+    "toolchain": "leanprover/lean4:v4.35.0",
+    "lake": "5.0.0",
+    "no_sorry_admit_or_new_axiom": true,
+    "compiled_scope": "concrete unit-edge update, ordinary termination and unique stabilization, and complete capacity transfer"
+  },
+  "sanitization": {
+    "internal_receipt_redistributed": false,
+    "reason": "The internal receipt records personal machine paths. Its digest and Merkle roots are retained instead.",
+    "mathematical_content_changed": false
+  },
+  "novelty": "NOT_CERTIFIED",
+  "authority_effect": "NONE"
+}

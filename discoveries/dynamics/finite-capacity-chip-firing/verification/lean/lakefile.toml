@@ -1,0 +1,6 @@
+name = "CBMDFiniteDynamics"
+version = "0.1.0"
+defaultTargets = ["CBMDFiniteDynamics"]
+
+[[lean_lib]]
+name = "CBMDFiniteDynamics"

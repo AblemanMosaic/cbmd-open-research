@@ -16,9 +16,9 @@ This public repository presents selected CBMD research for verification, correct
 
 “Discovery” here names the inquiry process, not a guarantee that every generated statement is new or true. A CBMD artifact is provisional until its stated obligations are discharged, and neither the workflow nor the Mosaic branding substitutes for proof, specialist review, novelty review, or publication.
 
-## Current iteration: v0.1 toolkit, research paused
+## Current iteration: v0.1 toolkit and provisional finite dynamics
 
-The mathematical investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, minimal native Lean source closure, pinned replay driver, and public discovery dossiers in one checkout. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) now distinguishes the completed toolkit work from the mathematical remainder.
+The original complexity investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, minimal native Lean source closure, pinned replay driver, and public discovery dossiers in one checkout. A separate finite-dynamics line now adds a source-bound Lean theorem and independently reproduced finite evidence for capacity-blocked chip-firing. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) distinguishes the completed toolkit work from the mathematical remainder.
 
 | Layer | Meaning | Current outcome |
 |---|---|---|
@@ -59,6 +59,7 @@ The harness ships with execution disabled. Its local-workspace example, the refe
 | `CBMD-COMB-PARITY-AMPLITUDE-001` | [Classical Krawtchouk identification and native vanishing](discoveries/combinatorics/parity-amplitude-spectrum/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`REVISED` | Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements. |
 | `CBMD-ALG-AMPLITUDE-COST-001` | [Reference amplitude cost model (no native speedup claim)](discoveries/algorithms/reference-amplitude-cost-model/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED` | Review the reference-only cost model and parameter regimes; the successor native evaluator is tracked separately. |
 | `CBMD-ALG-NATIVE-JOINT-001` | [Source-equal joint evaluator and BCM-1 arithmetic counts](discoveries/algorithms/native-joint-realization/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | Bind one executable native consumer and charge the complete per-cell and traversal route before making any speed claim. |
+| `CBMD-DYN-CAPACITY-FIRING-001` | [Finite-capacity chip-firing preservation on ordered DAGs](discoveries/dynamics/finite-capacity-chip-firing/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`SOURCE_BOUND_COMPILED`<br>`EXACT_MODEL_VERIFIED`<br>`INDEPENDENTLY_REPRODUCED` | Determine whether the sharp weighted-transfer candidate C(v) >= d(v) + max_u m(u,v) - 1 is sufficient and already known. |
 
 ### Candidate pipeline
 
