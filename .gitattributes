@@ -12,3 +12,7 @@
 *.yml text eol=lf
 
 *.png binary
+
+# The portable harness binds exact source bytes, including its nested ignore file.
+software/harness/** -text
+proofs/native/SOURCE_MANIFEST.json -text -diff

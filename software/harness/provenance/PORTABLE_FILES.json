@@ -1,0 +1,133 @@
+{
+  "schema": "cbmd.portable-harness-files.v1",
+  "version": "0.1.0",
+  "hash_algorithm": "SHA256",
+  "files": [
+    {
+      "sha256": "0ac586a5227646dbbe8e53b51b4090083df3a59fb6ec4fffac88d1fb25a87ddf",
+      "path": ".gitignore"
+    },
+    {
+      "sha256": "a681ae6aa2ada0e0db5fe2937d8f564bc95a26a79593944d9106a5e13379a070",
+      "path": "cbmd_harness/__init__.py"
+    },
+    {
+      "sha256": "904b35799134b50ebe161a97aec23050dbd0a533c0ee7dc4692e24b492407e21",
+      "path": "cbmd_harness/adapters.py"
+    },
+    {
+      "sha256": "31fae79f4666c462bac6287ccc1882357fb63e110c0b8894915e20cdf68c8701",
+      "path": "cbmd_harness/canonical.py"
+    },
+    {
+      "sha256": "91814fae3e311e54e8e53fed01894dae3086f5a77ccc07187371ac29c843e396",
+      "path": "cbmd_harness/cli.py"
+    },
+    {
+      "sha256": "f184346da29ba88ac744257860a9da1547e05cd7941ae7ac46df73d7ef928f0f",
+      "path": "cbmd_harness/contracts.py"
+    },
+    {
+      "sha256": "00c8b6e310516b0eecb2d009ed48d1b816d345c76a072c9d9095fb2243cdb79e",
+      "path": "cbmd_harness/courts.py"
+    },
+    {
+      "sha256": "f34b62bb34e607e5d08041643b33d297ec07a171b4425e45cd007b94a5ebb65f",
+      "path": "cbmd_harness/evidence.py"
+    },
+    {
+      "sha256": "c6eb795892a862d410e9e68fb43882f8b5eaf395233894095903bb2182f87ba7",
+      "path": "cbmd_harness/ledger.py"
+    },
+    {
+      "sha256": "f5d61c36f213175e401e156cc557bfee85c0cc8936b42a5ee0b9e04042c7e0e4",
+      "path": "cbmd_harness/promotion.py"
+    },
+    {
+      "sha256": "718f41fa2134ea59e3437771703250caf7d972c7fdb9a7f20d01f9fa916dfe81",
+      "path": "cbmd_harness/recovery.py"
+    },
+    {
+      "sha256": "3cc61afce28dda99d9a134a263e680334051221ad953f995b2088b0517c7797c",
+      "path": "cbmd_harness/refusals.py"
+    },
+    {
+      "sha256": "e7e19d193d28b3ab5846b496483ed495ea143c03e00b0a13fa61de845f811ae4",
+      "path": "cbmd_harness/runner.py"
+    },
+    {
+      "sha256": "de9556a1ecdb8c90e524e3ed610200d36c63a7ced93288b2dd3aa840bdbcacb8",
+      "path": "cbmd_harness/state.py"
+    },
+    {
+      "sha256": "aa3ef8b182055e3fb6dd5e4ab54f8ba1a66c98d68024e55a973e9dae66a1e0aa",
+      "path": "cbmd_harness/workspace.py"
+    },
+    {
+      "sha256": "7155a8b14d27248b87cadd6053207fbcca41d6c7d0c289d5708be1f38662f0e8",
+      "path": "cbmd.py"
+    },
+    {
+      "sha256": "fed29294fb4ccbd99f61bc0af438763f639c89f98451efeb72f68ba742417a75",
+      "path": "examples/probe.py"
+    },
+    {
+      "sha256": "bd710fc73514ed76bae4382bcd29ead5be00a56090835caf4bad9c4d6ce92ea3",
+      "path": "PORTABLE_SUCCESSOR.md"
+    },
+    {
+      "sha256": "452d8c93ae58b1f52c777f5c0d4096c301b1151f8f5bc79f02e3cb3bf986c883",
+      "path": "provenance/LOCAL_PREDECESSOR.json"
+    },
+    {
+      "sha256": "cda579092a50440f25a9eed6502a0dc8a685e2a70d71b07813d17978b42bc4da",
+      "path": "provenance/TEST_CONTRACT.json"
+    },
+    {
+      "sha256": "a7ca1af48e27c7c25c87a64af7bce995bd10d0abc54bcca8fdd5ccd05579bfc6",
+      "path": "README.md"
+    },
+    {
+      "sha256": "95d8daecdf327c02e718f9950fde786550c5c9a94cf254c39fe08c1cb0acaf97",
+      "path": "spec/CBMD-AUTHORITY.json"
+    },
+    {
+      "sha256": "d6644f70fe4ca54cae6251d8837968f2a32be7e76a55cd9c194f22d1bd87108e",
+      "path": "spec/CBMD-CAPABILITY-LATTICE.json"
+    },
+    {
+      "sha256": "ed78d025ce7a36087856a263b7d06000fb61000a50aacbbdda7c328c2fa86c6f",
+      "path": "spec/CBMD-COP-ROLE-MAP.json"
+    },
+    {
+      "sha256": "24a6161051a357296cd89ae5ac90957cef9d2db2f0bed4eb67d65c2fdc021b42",
+      "path": "spec/CBMD-EVIDENCE-HEALTH-PROFILE.json"
+    },
+    {
+      "sha256": "1d717c43339edd1941828c12ef396444f01e45d3f3c5c908e3d2c9d10739cf9e",
+      "path": "spec/CBMD-GOORRT-MAP.json"
+    },
+    {
+      "sha256": "73da998c7cdb1d737f504c333d5531ae4e5b1b95a95f18eadc940269fc7b5edf",
+      "path": "spec/CBMD-REALIZATION-SPACE-CONTRACT.json"
+    },
+    {
+      "sha256": "4e34ac5e8f24966abe08194463a07fa72b091a2696074f7c232209734d685561",
+      "path": "spec/CBMD-REALIZATION-SPACE-DESIGN-NOTE.md"
+    },
+    {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "path": "tests/__init__.py"
+    },
+    {
+      "sha256": "6282d26f39cc34f683b6d93ee35d8cdbd65f17f37fe0f92ff59f3c32d2098668",
+      "path": "tests/test_portable.py"
+    },
+    {
+      "sha256": "da5dba7feb9ddfb276e9083e25254eceeeb6ca29443e0b7f9b4615a8a3f0d05f",
+      "path": "tests/test_system.py"
+    }
+  ],
+  "authority_effect": "NONE",
+  "claim_boundary": "This manifest excludes itself and runtime; retain a release archive or commit identity outside the checkout to detect wholesale replacement."
+}

@@ -1,0 +1,125 @@
+{
+  "schema": "cbmd.portable-harness-source-provenance.v1",
+  "source": "Local CBMD governed discovery harness, Cycle 17 snapshot",
+  "portable_successor": "0.1.0",
+  "authority_effect": "NONE",
+  "original_files": [
+    {
+      "path": "cbmd.py",
+      "sha256": "e45dc977c88124277e788d5208ee817080546206666eb6ac94e86e9bf86414d0"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "tests/test_system.py",
+      "sha256": "1acd0a2a3c1c6faa0a72cf9d44dd741d35a27d9eafc61dcb20d5a51735d1d9c3"
+    },
+    {
+      "path": "cbmd_harness/__init__.py",
+      "sha256": "27987dd708b231a7b3c4d2743b3048ddb0986feac675436348e647f3c5a56ad8"
+    },
+    {
+      "path": "cbmd_harness/adapters.py",
+      "sha256": "5e5f51705d9672dd6fde894dadb8d5db5187fab353d6852118d511fabfebc573"
+    },
+    {
+      "path": "cbmd_harness/canonical.py",
+      "sha256": "94e053920868163246f2f36a3cf8cf1620a14a25957025763fa38f5431ea09bc"
+    },
+    {
+      "path": "cbmd_harness/cli.py",
+      "sha256": "9d7e39e977bb6e624708fd500d73fd7e45f402cc1210e5c6f9b0fd7529105b74"
+    },
+    {
+      "path": "cbmd_harness/contracts.py",
+      "sha256": "ada13721940fd0bd2a78d93ef7229a804c6e38a8a18c8806d5f21444c0ca83af"
+    },
+    {
+      "path": "cbmd_harness/courts.py",
+      "sha256": "da3630458ba9f940ad3695db3d67a10dbc7facff0220e10a7fb3d600e6e59907"
+    },
+    {
+      "path": "cbmd_harness/evidence.py",
+      "sha256": "df85278ead2de12e6a1d8be0d91ab6ec7a3e3e98264a784055cee8a1d49e4915"
+    },
+    {
+      "path": "cbmd_harness/ledger.py",
+      "sha256": "1bfbba5e59d20cad56b6a9550028a880e0d89765b7aeb7e44e0a9147271aec46"
+    },
+    {
+      "path": "cbmd_harness/promotion.py",
+      "sha256": "24c44cad0251172e0b9018a8fa9acf879f5b49b93181fcbe1eb6cb6b9cfb2a58"
+    },
+    {
+      "path": "cbmd_harness/recovery.py",
+      "sha256": "842b392c57aa163d73c19934656c727078c7ba22eaaf916bc977b6b141e22632"
+    },
+    {
+      "path": "cbmd_harness/refusals.py",
+      "sha256": "3eaf6d5f7683d820a747e65199d6a4033cd5a9ed308e3d7d4fbed4789902c755"
+    },
+    {
+      "path": "cbmd_harness/runner.py",
+      "sha256": "a48d90c63daf65f443f97a1a2ce0c1fd76205d2c5b2810e8ff46f1bdaa45376e"
+    },
+    {
+      "path": "cbmd_harness/state.py",
+      "sha256": "de9556a1ecdb8c90e524e3ed610200d36c63a7ced93288b2dd3aa840bdbcacb8"
+    },
+    {
+      "path": "spec/CBMD-AUTHORITY.json",
+      "sha256": "f8fcc692e86d3ad8d650cfa2063ae9b1873ce825d6392b57427515a5540e7f9f"
+    },
+    {
+      "path": "spec/CBMD-CAPABILITY-LATTICE.json",
+      "sha256": "f922b3a11e5f6a40292605da242152870d47dfca2444a948830aea4cb12175c1"
+    },
+    {
+      "path": "spec/CBMD-COP-ROLE-MAP.json",
+      "sha256": "ed78d025ce7a36087856a263b7d06000fb61000a50aacbbdda7c328c2fa86c6f"
+    },
+    {
+      "path": "spec/CBMD-EVIDENCE-HEALTH-PROFILE.json",
+      "sha256": "24a6161051a357296cd89ae5ac90957cef9d2db2f0bed4eb67d65c2fdc021b42"
+    },
+    {
+      "path": "spec/CBMD-GOORRT-MAP.json",
+      "sha256": "1d717c43339edd1941828c12ef396444f01e45d3f3c5c908e3d2c9d10739cf9e"
+    },
+    {
+      "path": "spec/CBMD-REALIZATION-SPACE-CONTRACT.json",
+      "sha256": "73da998c7cdb1d737f504c333d5531ae4e5b1b95a95f18eadc940269fc7b5edf"
+    },
+    {
+      "path": "spec/CBMD-REALIZATION-SPACE-DESIGN-NOTE.md",
+      "sha256": "98e347fcab338208470b1bd1af943bcb0fa8fd8e49b3809c4a5865a031333c07"
+    }
+  ],
+  "preserved_predecessor_test_identities": [
+    "tests.test_system.CanonicalTests.test_key_order_is_stable",
+    "tests.test_system.CanonicalTests.test_float_refuses",
+    "tests.test_system.ContractTests.test_specs_validate_and_root",
+    "tests.test_system.ContractTests.test_dangling_lattice_edge_refuses",
+    "tests.test_system.LedgerTests.test_append_and_verify",
+    "tests.test_system.LedgerTests.test_tamper_refuses",
+    "tests.test_system.LedgerTests.test_append_once_is_idempotent_and_conflict_sensitive",
+    "tests.test_system.LeanCourtTests.test_comments_do_not_trigger_but_sorry_does",
+    "tests.test_system.LeanCourtTests.test_nested_block_comments_are_ignored",
+    "tests.test_system.LeanAdapterTests.test_plan_pins_minimal_path_provenance_and_package_safe_directories",
+    "tests.test_system.RunnerTests.test_exact_run_and_idempotent_return",
+    "tests.test_system.RunnerTests.test_changed_request_same_operation_refuses",
+    "tests.test_system.RunnerTests.test_keyboard_interrupt_writes_aborted_terminal",
+    "tests.test_system.RunnerTests.test_uncertain_recovery_is_unobserved_and_not_claim_eligible",
+    "tests.test_system.RunnerTests.test_controller_disappearance_recovery_is_unobserved",
+    "tests.test_system.RunnerTests.test_secret_environment_refuses_before_intent",
+    "tests.test_system.RunnerTests.test_stdout_tamper_is_detected",
+    "tests.test_system.PromotionTests.test_compiled_proof_promotes",
+    "tests.test_system.PromotionTests.test_escape_refuses_proof",
+    "tests.test_system.PromotionTests.test_finite_check_cannot_promote_to_general_proof",
+    "tests.test_system.StateTests.test_state_is_rooted_and_idempotent",
+    "tests.test_system.HealthTests.test_health_exposes_remainder"
+  ],
+  "claim_boundary": "Hashes identify predecessor bytes. Portable files are explicit successors; historical runtime, requests, evidence, ledger, state, and personal execution roots are excluded."
+}

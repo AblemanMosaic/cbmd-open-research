@@ -1,0 +1,36 @@
+{
+  "schema": "cbmd.public-lean-replay-summary.v1",
+  "release_candidate": "0.1.0",
+  "as_of": "2026-10-28",
+  "status": "PASS",
+  "scope": "PINNED_SOURCE_RECOMPILE_AND_LOGICAL_DEPENDENCY_AUDIT",
+  "source_manifest_sha256": "3f530077acc23400b44c8d1a99f9d36d52c2e1de32ef83136581f16c257bf39d",
+  "lake_manifest_sha256": "803ab78b3c31c41b8c07c558ac07fd99b7d7954eb4e4856f8026e027db9000a8",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "local_oai_source_modules": 42,
+  "target_modules": 9,
+  "audit_module": "OAI.CBMDReplay",
+  "audited_terminal_theorems": 16,
+  "allowed_logical_dependencies": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "fresh_project_proof_outputs": true,
+  "dependency_realization": "PINNED_EXISTING_CACHE; revisions and tracked-file cleanliness rechecked before build",
+  "build_exit_code": 0,
+  "build_stdout_sha256": "e7016ad902c72f7fa01048c25464f1977b22cab13588c293b3ce830e1b4615c6",
+  "audit_exit_code": 0,
+  "audit_stdout_sha256": "ff1e70201197f5a1205a1a3045d45ca519b00b66eea6adcfba7582eb6f3c17e0",
+  "kernel_check_disabled": false,
+  "independent_verification": false,
+  "authority_effect": "NONE",
+  "nonclaims": [
+    "DEPENDENCIES_REBUILT_FROM_RAW_COMPILER_SOURCE",
+    "EXTERNAL_INDEPENDENT_REVIEW",
+    "NOVELTY",
+    "TOTAL_NATIVE_SPEEDUP",
+    "SAT_ASYMPTOTIC_IMPROVEMENT"
+  ]
+}

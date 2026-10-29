@@ -4,7 +4,7 @@
   "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
   "field": "algorithms",
   "slug": "native-joint-realization",
-  "public_version": "0.1.0-candidate",
+  "public_version": "0.2.0",
   "status": [
     "PROVISIONAL_WRITTEN_ARGUMENT"
   ],
@@ -12,21 +12,21 @@
   "verified": [
     "The imported historical local source-bridge decision records SOURCE_BOUND_PROOF for the native entry/master numerator identity under exact orbit and mismatch hypotheses.",
     "The imported local kernel, cost, total-joint and coordinate-orbit decisions record compiled value equivalences and arithmetic counts.",
-    "The repository snapshot check verifies the digests and claim bindings of those records only."
+    "The repository snapshot check verifies the digests and claim bindings of those records only.",
+    "The v0.1 public envelope binds and recompiles the minimal native source-to-coordinate-joint chain under Lean 4.34.1 and the pinned mathlib revision.",
+    "The standalone standard-library audit agrees across the recurrence, falling-factorial and exact-interpolation oracles and the literal native difference expansion on the declared finite boxes; all nine adverse mutations are detected."
   ],
   "unresolved": [
-    "complete newer Lean sources, dependency closure, audit sources and cold replay are not yet staged in this repository",
     "exact coordinate-comparison, mismatch, active-set, traversal, allocation and whole-consumer costs",
     "a deployed executable consumer and an appropriate end-to-end comparison",
     "external independent review and source-specific novelty assessment"
   ],
   "nonclaims": [
-    "not a claim of full Lean replay from this checkout",
     "not a total per-cell, whole-algorithm, bit-cost or machine-time theorem",
     "not a SAT speedup or deployed native replacement",
     "not novelty, external review or independent verification"
   ],
-  "smallest_decisive_test": "Import the exact source dependency closure, verify its manifest, and compile the complete no-escape native-to-coordinate-joint chain under pinned Lean/Lake dependencies from a clean checkout; re-run exact adverse audits separately.",
+  "smallest_decisive_test": "Bind one executable native consumer, charge coordinate comparison, mismatch and active-set construction plus traversal and allocation, and compare the complete route under a declared parameter regime.",
   "ledger_binding": {
     "snapshot": "evidence/iterations/bootstrap-2026-10/SNAPSHOT.json",
     "claim_ids": [
@@ -36,7 +36,7 @@
       "urn:cbmd:complexity:batch5:B5-K1:executable-joint-bcm1",
       "urn:cbmd:complexity:batch5:B5-K1:coordinate-orbit-bcm1"
     ],
-    "scope": "Historical local source-bound results; no full proof replay from this checkout yet."
+    "scope": "Historical claim roots plus the public v0.1 native proof envelope and finite standalone audit; whole-route cost and external review remain open."
   },
   "checks": [
     {
@@ -54,6 +54,24 @@
         "{python}",
         "-B",
         "tools/test_iteration_snapshot.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "public-proof-source-custody",
+      "command": [
+        "{python}",
+        "-B",
+        "tools/verify_proof_sources.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "standalone-native-finite-audit",
+      "command": [
+        "{python}",
+        "-B",
+        "tools/verify_standalone.py"
       ],
       "required": true
     }

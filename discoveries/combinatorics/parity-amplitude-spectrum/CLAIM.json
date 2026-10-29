@@ -4,7 +4,7 @@
   "title": "Classical Krawtchouk identification and native vanishing",
   "field": "combinatorics",
   "slug": "parity-amplitude-spectrum",
-  "public_version": "0.7.0-candidate",
+  "public_version": "0.8.0",
   "status": [
     "PROVISIONAL_WRITTEN_ARGUMENT",
     "REVISED"
@@ -20,20 +20,19 @@
     "The corrected guarded entry_closed_form compiles against the pinned native LayoutNumerator.entry under the declared orbit and pivot-mismatch hypotheses, with no proof escapes in the copied source boundary.",
     "The parity interpolant reflection law compiles in a separate no-escape Lean module by rational-polynomial interpolation uniqueness; the earlier admitted reflection step is no longer a mathematical blocker.",
     "Hash-bound local Cycle 9 receipts report a fresh exact replay of the no-escape native centered-vanishing and A=0 collapse chain; the replay archive and complete newer source chain are not yet imported into this checkout.",
-    "Hash-bound local Cycle 11 receipts report compiled parity-coefficient closed-form and translation-matrix proofs; copied historical receipt checks do not rebuild these proofs."
+    "Hash-bound local Cycle 11 receipts report compiled parity-coefficient closed-form and translation-matrix proofs; copied historical receipt checks do not rebuild these proofs.",
+    "The v0.1 public envelope binds the complete 41-module transitive OAI closure for the nine shared native targets, exact Lean and mathlib pins, and an executable logical-dependency ceiling.",
+    "The public replay driver recompiles the centered-vanishing, A=0 and parity-coefficient targets from a project with no pre-existing CBMD proof objects; its dedicated CI job performs the same pinned replay."
   ],
   "unresolved": [
-    "import of the complete newer proof sources, exact definitions, dependency manifest and replay launcher",
-    "clean-checkout replay of the newer native centered-vanishing, A=0 and coefficient proofs",
     "source-specific novelty assessment and external review"
   ],
   "nonclaims": [
-    "not a claim that the complete newer Lean proof chain replays from this checkout",
     "not a native algorithmic improvement",
     "not a ring-transport certificate",
     "not a novelty determination or external independent verification"
   ],
-  "smallest_decisive_test": "From a clean checkout, verify the staged source manifest and compile the complete no-escape native vanishing and coefficient proof chain under pinned dependencies.",
+  "smallest_decisive_test": "Independently rederive the source-specific coefficient identity or identify the first hypothesis or coordinate convention at which the bundled native correspondence fails.",
   "checks": [
     {
       "id": "LEAN_CORE_RECEIPT",
@@ -75,6 +74,24 @@
         "discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"
       ],
       "required": true
+    },
+    {
+      "id": "PUBLIC_PROOF_SOURCE_CUSTODY",
+      "command": [
+        "python",
+        "-B",
+        "tools/verify_proof_sources.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "PUBLIC_PROOF_PACKAGING_ADVERSE_CONTROLS",
+      "command": [
+        "python",
+        "-B",
+        "tools/test_proof_packaging.py"
+      ],
+      "required": true
     }
   ],
   "authority_effect": "NONE",
@@ -85,6 +102,6 @@
       "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse",
       "urn:cbmd:complexity:batch5:B5-M7:parity-coefficient-closed-form"
     ],
-    "scope": "Historical local evidence; complete proof replay from this checkout is pending."
+    "scope": "Historical claim roots plus the public v0.1 proof-source and replay envelope; external independence remains unassessed."
   }
 }

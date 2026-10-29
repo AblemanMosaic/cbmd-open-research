@@ -1,0 +1,22 @@
+{
+  "schema": "cbmd.evidence-health-profile.v1",
+  "profile_id": "CBMD.MAX_DIAGNOSTIC.V1",
+  "standing": "LOCAL_CANDIDATE",
+  "authority_effect": "NONE",
+  "dimensions": [
+    "AUTHORITY_SCOPE_VISIBLE",
+    "IDENTITIES_BOUND",
+    "INTENT_BEFORE_EXECUTION",
+    "TERMINAL_CUSTODY",
+    "STDOUT_STDERR_EXIT_CAPTURED",
+    "CHAIN_CONTINUITY",
+    "REFUSAL_VISIBILITY",
+    "SOURCE_CORRESPONDENCE",
+    "ADVERSE_COVERAGE",
+    "INDEPENDENCE_DISCLOSURE",
+    "CLAIM_CEILING_ENFORCED",
+    "KNOWN_REMAINDER_VISIBLE"
+  ],
+  "outcomes": ["HEALTHY","DEGRADED","GAP","CONFLICT","STALE","UNOBSERVED","UNKNOWN"],
+  "score_rule": "Report numerator, denominator, each dimension, common-mode limits, and remainder; never use score alone as a verdict."
+}

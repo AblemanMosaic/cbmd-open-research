@@ -8,7 +8,7 @@
 
 Public provisional mathematics for verification, correction, or disproof.
 
-This public repository presents selected CBMD research for verification, correction, or disproof. It contains provisional research snapshots, with no tagged release yet issued, and is not a mirror of the internal CBMD archive. Each research line has an explicit standing, reproducible evidence where available, and visible remaining obligations.
+This public repository presents selected CBMD research for verification, correction, or disproof. Release v0.1 packages a portable review toolkit around the provisional research; it is not a mirror of the internal CBMD archive. Each research line has an explicit standing, reproducible evidence where available, and visible remaining obligations.
 
 ## What CBMD means
 
@@ -16,22 +16,36 @@ This public repository presents selected CBMD research for verification, correct
 
 “Discovery” here names the inquiry process, not a guarantee that every generated statement is new or true. A CBMD artifact is provisional until its stated obligations are discharged, and neither the workflow nor the Mosaic branding substitutes for proof, specialist review, novelty review, or publication.
 
-## Current iteration: research paused, integration in progress
+## Current iteration: v0.1 toolkit, research paused
 
-The mathematical investigation is paused after Cycle 17. The [integration roadmap](docs/INTEGRATION_ROADMAP.md) defines the work needed to freeze a reproducible review snapshot and prepare the next investigation. This README and the [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) record the latest local results; packaging the complete newer proof chain for replay from this repository is still open.
+The mathematical investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, minimal native Lean source closure, pinned replay driver, and public discovery dossiers in one checkout. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) now distinguishes the completed toolkit work from the mathematical remainder.
 
 | Layer | Meaning | Current outcome |
 |---|---|---|
 | CBMD | Constraint-Bound Mathematical Discovery, the research method | Claims, corrections, adverse tests and remaining obligations stay visible. |
-| Governed harness | Software operating that method | Local execution custody, evidence checks and claim ceilings; UCM native proof adapter remains unbound. |
-| Complexity investigation | Mathematics about the pinned source entries and joint matrix | Local proofs connect the native definition to an executable evaluator. |
+| Governed harness | Software operating that method | Portable execution custody, evidence checks and claim ceilings; UCM native proof adapter remains unbound. |
+| Complexity investigation | Mathematics about the pinned source entries and joint matrix | The minimal public Lean envelope recompiles the native chain under exact pins. |
 | BCM-1 | Declared arithmetic cost model used to count that evaluator's core | Exact counts of multiplications, divisions and additions; whole-algorithm cost remains open. |
 
-The local result chain establishes native centered vanishing and A=0 collapse, an explicit parity-coefficient formula, a source-to-master-numerator identity, a recurrence evaluator with checked arithmetic counts, and a total joint realization using coordinatewise orbit compatibility. The evidence snapshot binds these reports to source hashes, claim IDs and promotion roots. It does not itself recompile Lean.
+The result chain establishes native centered vanishing and A=0 collapse, an explicit parity-coefficient formula, a source-to-master-numerator identity, a recurrence evaluator with checked arithmetic counts, and a total joint realization using coordinatewise orbit compatibility. The bootstrap snapshot binds the original reports; `proofs/native/` now carries the minimal public sources and exact replay boundary.
 
 The parity identification reduces to classical Krawtchouk ingredients. Source-specific novelty remains unassessed. The ECH review request is a separate investigation and retains its unresolved geometric transport question.
 
-Start with the [integration roadmap](docs/INTEGRATION_ROADMAP.md), the [native evaluator dossier](discoveries/algorithms/native-joint-realization/README.md), or the [CBMD method and harness guide](methods/governed-discovery/README.md). Reviewers can challenge the [recorded corrections](docs/CORRECTIONS.md) alongside the positive results.
+Start with the [toolkit guide](docs/TOOLKIT.md), the [native evaluator dossier](discoveries/algorithms/native-joint-realization/README.md), or the [CBMD method and harness guide](methods/governed-discovery/README.md). Reviewers can challenge the [recorded corrections](docs/CORRECTIONS.md) alongside the positive results.
+
+## Toolkit v0.1
+
+```text
+python -B tools/qualify_repository.py
+```
+
+That one command checks the repository structure, every review-ready discovery, all 37 harness tests, the standalone finite reference audit and mutations, and formal-source custody. The full Lean replay is deliberately separate because it installs or uses pinned compiler dependencies:
+
+```text
+python -B tools/replay_lean.py --prepare --fresh
+```
+
+The harness ships with execution disabled. Its local-workspace example, the reference evaluator CLI, and the exact distinction between source custody and proof recompilation are documented in the [toolkit guide](docs/TOOLKIT.md). Release notes and retained limits are in [RELEASE_NOTES_v0.1.0.md](RELEASE_NOTES_v0.1.0.md).
 
 ## Current discoveries
 
@@ -42,15 +56,15 @@ Start with the [integration roadmap](docs/INTEGRATION_ROADMAP.md), the [native e
 | ID | Discovery | Claim standing | Most valuable open question |
 |---|---|---|---|
 | `CBMD-ECH-G2-LS-001` | [Genus-two low-sector pairing](discoveries/ech/genus-two-low-sector/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED`<br>`GEOMETRIC_TRANSPORT_UNRESOLVED` | Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations. |
+| `CBMD-COMB-PARITY-AMPLITUDE-001` | [Classical Krawtchouk identification and native vanishing](discoveries/combinatorics/parity-amplitude-spectrum/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`REVISED` | Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements. |
 | `CBMD-ALG-AMPLITUDE-COST-001` | [Reference amplitude cost model (no native speedup claim)](discoveries/algorithms/reference-amplitude-cost-model/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED` | Review the reference-only cost model and parameter regimes; the successor native evaluator is tracked separately. |
+| `CBMD-ALG-NATIVE-JOINT-001` | [Source-equal joint evaluator and BCM-1 arithmetic counts](discoveries/algorithms/native-joint-realization/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | Bind one executable native consumer and charge the complete per-cell and traversal route before making any speed claim. |
 
 ### Candidate pipeline
 
 | ID | Discovery | Claim standing | Stage | Next obligation | Promotion blockers |
 |---|---|---|---|---|---|
 | `CBMD-COMB-OWNER-FIBER-001` | [Owner-fiber structure and support](discoveries/combinatorics/owner-fiber-structure/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Import a standalone non-degenerate reference verifier and reproduce the fixed-target owner-fiber identity from a clean checkout. | public standalone verifier not yet imported; native source correspondence remains unproved; targeted novelty review remains unperformed |
-| `CBMD-COMB-PARITY-AMPLITUDE-001` | [Classical Krawtchouk identification and native vanishing](discoveries/combinatorics/parity-amplitude-spectrum/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`REVISED` | `QUALIFYING` | Import and replay the completed local centered-vanishing, A=0 and parity-coefficient proofs from this checkout. | complete newer proof sources and replay envelope not yet imported; local receipts do not recompile Lean here; source-specific novelty and external review remain unassessed |
-| `CBMD-ALG-NATIVE-JOINT-001` | [Source-equal joint evaluator and BCM-1 arithmetic counts](discoveries/algorithms/native-joint-realization/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `QUALIFYING` | Package the source-to-evaluator Lean chain and exact audits for clean-checkout replay; total-cost analysis remains separate. | newer Lean sources and pinned dependency envelope not yet staged; snapshot check verifies receipts only; whole-cell and whole-algorithm costs remain unproved; external review and novelty assessment remain open |
 | `CBMD-ALG-RESIDUE-LIFT-001` | [Residue and lift transport boundaries](discoveries/algebra/residue-lift-transport-boundaries/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Extract the smallest source-bound example separating integer, residue-ring, and lifted zero sets under explicit ring and precision hypotheses. | standalone public counterexample has not been extracted; ring, precision, node, and source-identity hypotheses need one bounded statement; novelty remains unassessed |
 
 <!-- END GENERATED DISCOVERY INDEX -->
@@ -104,13 +118,13 @@ Use the structured issue forms under [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TE
 
 ## Reproduce the repository checks
 
-Python 3.10+ and Node.js 18+ are sufficient for the default checks:
+Python 3.12+ is sufficient for the default checks:
 
 ```text
 python -B tools/qualify_repository.py
 ```
 
-The grid-audit command checks the implemented model's extended block structure and the evidentiary reach of its adverse control. The browser-level explorer check is optional and additionally requires Playwright plus a supported installed browser. No browser or network service is required to inspect the Markdown or run the existing exact-model checks. The iteration-snapshot check verifies copied records and claim bindings; it is not a Lean replay.
+The grid-audit command checks the implemented model's extended block structure and the evidentiary reach of its adverse control. The browser-level explorer check is optional and additionally requires Node.js, Playwright, and a supported installed browser. No browser or network service is required for the default qualification. The iteration-snapshot check verifies copied historical records and claim bindings; the separate Lean replay recompiles the public proof envelope.
 
 ## Add another discovery
 
@@ -135,4 +149,4 @@ Adding ordinary supporting files inside an existing discovery does not require c
 
 Research direction and authorship: Adam Ableman Mazurk. Repository preparation and substantial portions of the mathematical development used AI assistance. Every discovery carries its own more specific provenance and nonclaims.
 
-These provisional research snapshots are available in the public GitHub repository `AblemanMosaic/cbmd-open-research`. Public visibility does not establish mathematical review, novelty, or completion of the integration roadmap. No GitHub release has been issued.
+These provisional research snapshots and the v0.1 toolkit are available in the public GitHub repository `AblemanMosaic/cbmd-open-research`. Public visibility and a release tag do not establish mathematical review, novelty, or resolution of the listed open obligations.

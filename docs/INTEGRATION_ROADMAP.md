@@ -1,26 +1,37 @@
 # CBMD integration roadmap
 
-Standing: public provisional research snapshot; authority effect `NONE`.
+Standing: v0.1 public toolkit integration candidate; authority effect `NONE`.
 
-This roadmap closes the documentation boundary of the current bootstrap
-iteration and prepares a bounded successor investigation. It does not start
-another discovery cycle. The retained harness state is Cycle 17, `PAUSED`.
+This roadmap closes the current bootstrap integration and prepares a bounded
+successor investigation. It does not start another discovery cycle. The
+retained research state is Cycle 17, `PAUSED`.
 The [bootstrap evidence index](../evidence/iterations/bootstrap-2026-10/README.md)
 records the local evidence being summarized; the
 [native joint realization dossier](../discoveries/algorithms/native-joint-realization/README.md)
 separates those observations from checks available in this checkout.
 
 The existing ECH discovery has its own geometric transport question and is
-outside this integration. Public availability of this provisional snapshot
-does not create a release, contact a reviewer, establish novelty, or supply
-independent verification.
+outside this integration. Public availability and a toolkit release do not
+contact a reviewer, establish novelty, or supply independent verification.
+
+## v0.1 disposition
+
+| Integration obligation | v0.1 result |
+|---|---|
+| Exact proof inventory and custody | Complete: nine targets, 41-module local closure, exact hashes and toolchain/dependency pins. |
+| Public proof chain | Complete for the declared target set under `proofs/native/`; obsolete workbench modules and compiled objects are excluded. |
+| Fresh project replay | Complete locally and required by the dedicated public CI job; dependency-cache reuse is declared separately from project proof objects. |
+| Separate formula verifier | Complete as a standard-library toolkit with independently structured exact oracles, boundary cases and nine adverse mutations. |
+| Cost-scope audit | Complete for BCM-1's scalar recurrence boundary; whole-cell, consumer and SAT-runtime costs remain open and are not release claims. |
+| Portable governed harness | Complete as a disabled-by-default, single-writer operation recorder with 37 required tests; UCM-native proof remains a declared gap. |
+| Release archive and detached receipt | Produced from the clean Git index by `tools/build_release.py`; GitHub publication is the final release operation. |
 
 ## Terms and evidence scope
 
 | Term | Role | Boundary |
 |---|---|---|
 | CBMD | Constraint-Bound Mathematical Discovery: the research method. | A method for posing and revising bounded claims, not an arithmetic algorithm or proof certificate. |
-| Governed discovery harness | The local control plane implementing question selection, input custody, execution records, evidence checks, claim ceilings, and pause state. | Its self-checks establish only their declared scope; the implementation is not installed in this research checkout. |
+| Governed discovery harness | The portable control plane implementing input custody, execution records, evidence checks, claim ceilings, and pause state. | The v0.1 implementation is under `software/harness`; its self-checks establish only their declared scope and the UCM-native proof adapter remains unbound. |
 | BCM-1 | The declared arithmetic cost model used for the amplitude evaluator. | Arithmetic counts and any separately justified bit-cost bounds exclude the listed surrounding work. |
 | Evaluator | A particular implementation of the scalar formula or total joint value realization. | Value equality, counted operations, total cost, and deployment are separate obligations. |
 
@@ -39,7 +50,7 @@ were subsequently discharged.
 | K1 scalar bridge and recurrence evaluator | `DONE` locally | Retained evidence records source equality at the actual active-set and mismatch cardinalities under the stated orbit and selected-mismatch hypotheses. |
 | K1 BCM-1 arithmetic semantics | `DONE` locally | Retained evidence records the exact vector `(3d+2, 2d, d+1)` for multiplications, exact divisions, and additions, with bounds `(3R-1, 2R-2, R)` when `d = R-1-f` and `f < R`. |
 | K1 total joint value realization | `DONE` locally | Zero branches complete the value correspondence. A proved coordinatewise orbit decision replaces the earlier exhaustive search. Its comparison and short-circuit costs remain uncharged. |
-| Research-checkout proof integration | `OPEN` | The newer M3 and K1 proof chain, its exact dependencies, and a fresh replay command are not yet packaged here. Existing receipt checks do not perform that replay. |
+| Research-checkout proof integration | `DONE` for v0.1 scope | The minimal M3 and K1 source closure, exact dependencies, custody verifier and fresh replay command are packaged under `proofs/native/`. |
 | Full per-cell or consumer cost | `OPEN` | Orbit comparisons, mismatch and active-set construction, matrix materialization, allocation, traversal, and consumers remain outside the scalar count. No deployed charged consumer is bound. |
 | Independent verification and novelty | `DEFERRED` | Separate implementations and local replay remain self-verification. No specialist or novelty determination is recorded. |
 
@@ -49,7 +60,7 @@ The bounded public provisional snapshot may be uploaded after its own
 projection checks pass while proof import and cost work remain visibly `OPEN`.
 Full cost accounting is not a prerequisite for sharing that limited snapshot.
 
-### 1. Exact inventory and custody — OPEN
+### 1. Exact inventory and custody — COMPLETE IN v0.1
 
 Dependency: the retained bootstrap evidence and source packages.
 
@@ -66,7 +77,7 @@ the complete required envelope; no private correspondence, credentials, or
 personal machine paths enter the projection. Missing or uncertain custody is
 recorded as a blocker rather than inferred from a passing summary.
 
-### 2. Stage the proof chain — OPEN
+### 2. Stage the proof chain — COMPLETE IN v0.1
 
 Dependency: Phase 1.
 
@@ -81,7 +92,7 @@ is accounted for; no obsolete admitted declaration lies in the asserted proof
 boundary; theorem statements preserve their actual source hypotheses. The
 staging step alone does not promote mathematical standing.
 
-### 3. Cold replay M3 and K1 — OPEN
+### 3. Cold replay M3 and K1 — COMPLETE IN v0.1 SCOPE
 
 Dependency: Phase 2. The historical M3 r5 replay is a useful baseline, not a
 substitute for this successor integration test.
@@ -98,7 +109,7 @@ tree and manifests, with no missing required check. A hash-only receipt check
 must remain labelled as custody verification. Replaying the author's evidence
 does not establish independent verification.
 
-### 4. Separate formula verifier and mutations — OPEN
+### 4. Separate formula verifier and mutations — COMPLETE IN v0.1
 
 Dependency: the exact statement inventory in Phase 1. Implementation may run
 in parallel with proof staging.
@@ -115,7 +126,7 @@ power-of-two scale, ordinary-binomial substitution, and damaged support or
 orbit branch. Record exact witnesses. Finite success does not prove a general
 identity, and a separate local implementation is not external review.
 
-### 5. Source and cost scope audit — OPEN
+### 5. Source and cost scope audit — COMPLETE FOR DECLARED BCM-1 SCOPE
 
 Dependency: Phases 3 and 4 for claims about the integrated realization.
 
@@ -138,7 +149,7 @@ an explicit joint regime. Historical sealed source copies are preserved, and
 any corrected interpretation receives a revision note. Complete runtime cost,
 deployment, and SAT asymptotics may remain `OPEN` in a bounded review snapshot.
 
-### 6. Freeze the bounded public provisional snapshot — OPEN
+### 6. Freeze the bounded public provisional snapshot — RELEASE OPERATION AUTHORIZED
 
 Dependency: the chosen snapshot scope, its custody checks, and repository
 qualification. Phases 2–5 are prerequisites only for claims that rely on their
@@ -155,9 +166,9 @@ Lean unless a successor check explicitly installs and runs that chain.
 
 Review rights and attribution for each newly projected path. Public licensing
 remains pending; all rights are reserved until a license is selected. The
-repository is public, and upload of the prepared bounded snapshot is
-authorized. A later tag, release, DOI, or reviewer contact requires separate
-authorization and remains `DEFERRED`.
+repository is public, and upload, tag, and GitHub release of v0.1 are
+authorized. A DOI, reviewer contact, public-visibility change, or later release
+still requires separate authorization.
 
 Acceptance: the receipt's claim ceiling matches what the checkout actually
 checks; no local-only result appears as checkout-replayed; failed or missing CI

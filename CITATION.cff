@@ -1,8 +1,10 @@
 cff-version: 1.2.0
-message: "This public provisional research snapshot is not a release. When referencing it, cite the exact commit and discovery ID. A versioned release and DOI remain deferred."
+message: "When referencing the toolkit, cite release v0.1.0 and the exact discovery ID; provisional mathematical standing and nonclaims remain part of the citation context."
 type: software
 title: "CBMD Open Research"
 authors:
   - family-names: "Mazurk"
     given-names: "Adam Ableman"
-version: "0.1.0-dev"
+version: "0.1.0"
+date-released: 2026-10-28
+repository-code: "https://github.com/AblemanMosaic/cbmd-open-research"

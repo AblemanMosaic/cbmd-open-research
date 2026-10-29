@@ -6,3 +6,5 @@ Thumbs.db
 *.log
 tmp/
 dist/
+proofs/native/.lake/
+.cbmd-work/

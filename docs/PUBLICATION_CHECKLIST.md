@@ -1,15 +1,15 @@
 # Publication checklist
 
-The owner has confirmed that the repository is public and authorized uploading the prepared provisional snapshot. This checklist tracks continuing publication hygiene and preparation for any later release. Unchecked items remain open; public visibility does not certify their completion.
+The owner has confirmed that the repository is public and authorized v0.1 upload and release. This checklist tracks continuing publication hygiene. Unchecked items remain open; public visibility and a release tag do not certify their completion.
 
 ## Content
 
-- [ ] No private correspondence, cover letters, or prospective-reviewer association.
-- [ ] No credentials, access tokens, personal machine paths, or hidden history containing them.
-- [ ] No unpublished third-party source text or redistribution-restricted files.
-- [ ] Every discovery has an exact statement, standing, nonclaims, and smallest decisive test.
-- [ ] Historical completion language is excluded or visibly superseded.
-- [ ] AI assistance is disclosed.
+- [x] No private correspondence, cover letters, or prospective-reviewer association in the v0.1 tree.
+- [x] No credentials, access tokens, or personal machine paths in the v0.1 tracked tree.
+- [x] No unpublished third-party source text or redistribution-restricted files in the v0.1 additions.
+- [x] Every discovery has an exact statement, standing, nonclaims, and smallest decisive test.
+- [x] Historical completion language is excluded or visibly superseded.
+- [x] AI assistance is disclosed.
 
 ## Rights and attribution
 
@@ -21,8 +21,8 @@ The owner has confirmed that the repository is public and authorized uploading t
 
 ## Engineering
 
-- [ ] `python -B tools/validate_repository.py` passes.
-- [ ] Every included discovery's default checks pass from a clean clone.
+- [x] `python -B tools/validate_repository.py` passes.
+- [x] Every included discovery's default checks pass from the release candidate.
 - [ ] Generated artifacts reproduce from their declared sources.
 - [ ] The candidate has been inspected at GitHub's rendered Markdown level.
 - [ ] Release files and hashes are prepared outside the mutable source tree.

@@ -1,6 +1,6 @@
 {
   "schema": "cbmd.open-research.discovery-registry.v1",
-  "repository_standing": "PUBLIC_PROVISIONAL_RESEARCH_SNAPSHOT",
+  "repository_standing": "PUBLIC_PROVISIONAL_RESEARCH_TOOLKIT_V0_1",
   "discoveries": [
     {
       "id": "CBMD-ECH-G2-LS-001",
@@ -40,11 +40,9 @@
       "slug": "parity-amplitude-spectrum",
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
       "title": "Classical Krawtchouk identification and native vanishing",
-      "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Import and replay the completed local centered-vanishing, A=0 and parity-coefficient proofs from this checkout.",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements.",
       "promotion_blockers": [
-        "complete newer proof sources and replay envelope not yet imported",
-        "local receipts do not recompile Lean here",
         "source-specific novelty and external review remain unassessed"
       ],
       "status": [
@@ -72,11 +70,9 @@
       "slug": "native-joint-realization",
       "path": "discoveries/algorithms/native-joint-realization",
       "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
-      "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Package the source-to-evaluator Lean chain and exact audits for clean-checkout replay; total-cost analysis remains separate.",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Bind one executable native consumer and charge the complete per-cell and traversal route before making any speed claim.",
       "promotion_blockers": [
-        "newer Lean sources and pinned dependency envelope not yet staged",
-        "snapshot check verifies receipts only",
         "whole-cell and whole-algorithm costs remain unproved",
         "external review and novelty assessment remain open"
       ],

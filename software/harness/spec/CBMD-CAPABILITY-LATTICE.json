@@ -1,0 +1,46 @@
+{
+  "schema": "cbmd.capability-lattice.v1",
+  "lattice_id": "CBMD.CAPABILITY.LATTICE",
+  "version": "0.1.0",
+  "standing": "LOCAL_CANDIDATE",
+  "authority_effect": "NONE",
+  "nodes": [
+    {"id":"CBMD.ORIENT","kind":"CONTROL","description":"Verify current authority, contracts, roots, state, exclusions, and next obligation.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.CLI.ORIENT"],"claim_ceiling":"INSTRUMENT_STATE_ONLY"},
+    {"id":"CBMD.FREEZE_QUESTION","kind":"RESEARCH","description":"Freeze object, statement, assumptions, counterexample interface, budgets, and success conditions.","standing":"CONTRACTED","realizations":[],"claim_ceiling":"QUESTION_BOUND"},
+    {"id":"CBMD.PIN_PROVENANCE","kind":"EVIDENCE","description":"Hash exact inputs, source boundaries, toolchains, contracts, and inherited heads.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.MANIFEST.PIN"],"claim_ceiling":"BYTE_IDENTITY_ONLY"},
+    {"id":"CBMD.EXACT_COMPUTE","kind":"VERIFICATION","description":"Run exact deterministic finite computation with captured input and output roots.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.RUNNER.PYTHON"],"claim_ceiling":"FINITE_CHECK"},
+    {"id":"CBMD.LEAN_COMPILE","kind":"VERIFICATION","description":"Compile an exact Lean module through its pinned Lake environment.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.RUNNER.LEAN_LAKE"],"claim_ceiling":"COMPILED_STATEMENT"},
+    {"id":"CBMD.LEAN_PROOF","kind":"VERIFICATION","description":"Compile a theorem with no sorry/admit/axiom escape in the declared proof boundary.","standing":"PARTIAL","realizations":["CBMD.RUNNER.LEAN_LAKE","CBMD.COURT.NO_SORRY"],"claim_ceiling":"COMPILED_PROOF"},
+    {"id":"CBMD.UCM_NATIVE_PROOF","kind":"VERIFICATION","description":"Verify a bounded deductive claim with an exact UCM native proof contract.","standing":"PLANNED_BINDING","realizations":["UCM.OPERATIONAL.VERIFY_NATIVE_PROOF"],"claim_ceiling":"BOUNDED_NATIVE_PROOF"},
+    {"id":"CBMD.ADVERSE_TEST","kind":"VERIFICATION","description":"Challenge assumptions, boundaries, omissions, degenerate fixtures, and bypasses.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.COURT.ADVERSE"],"claim_ceiling":"TESTED_BOUNDARY"},
+    {"id":"CBMD.MUTATION_TEST","kind":"VERIFICATION","description":"Demonstrate that a check detects the defect it names.","standing":"PARTIAL","realizations":["CBMD.COURT.CONTROL_MUTATIONS"],"claim_ceiling":"DETECTION_EVIDENCE"},
+    {"id":"CBMD.PACKAGE_REPLAY","kind":"CUSTODY","description":"Verify and replay an exact package without altering frozen predecessors.","standing":"PARTIAL","realizations":["CBMD.ENVELOPE.REPLAY.POWERSHELL"],"claim_ceiling":"PACKAGE_REPLAY"},
+    {"id":"CBMD.COLD_REPLAY","kind":"CUSTODY","description":"Run qualification from a clean extraction or clone with independently pinned outer identity.","standing":"PARTIAL","realizations":["CBMD.ENVELOPE.REPLAY.POWERSHELL"],"claim_ceiling":"COLD_REPLAY"},
+    {"id":"CBMD.EVIDENCE_VERIFY","kind":"EVIDENCE","description":"Verify chains, identities, read-set closure, terminal custody, correspondence, and remainder.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.EVS"],"claim_ceiling":"EVIDENCE_VALIDITY"},
+    {"id":"CBMD.CLAIM_CEILING","kind":"GOVERNANCE","description":"Prevent evidence from supporting a stronger claim than its method and scope.","standing":"IMPLEMENTED_CANDIDATE","realizations":["CBMD.COURT.CLAIM_PROMOTION"],"claim_ceiling":"PROMOTION_DECISION"},
+    {"id":"CBMD.REPO_QUALIFY","kind":"PROJECTION","description":"A caller may qualify repository content with the repository's own clean-checkout verifier; there is no generic projection adapter.","standing":"ADAPTER_PLANNED","realizations":[],"claim_ceiling":"PROVISIONAL_ONLY"},
+    {"id":"CBMD.PRIVATE_COMMIT","kind":"EFFECT","description":"Historical capability identity retained for lineage; portable harness ships no commit adapter or inherited commit authority.","standing":"NO_EFFECT_ADAPTER","realizations":[],"claim_ceiling":"NONE"},
+    {"id":"CBMD.PRIVATE_PUSH","kind":"EFFECT","description":"Historical capability identity retained for lineage; portable harness ships no remote-write adapter or inherited push authority.","standing":"NO_EFFECT_ADAPTER","realizations":[],"claim_ceiling":"NONE"}
+  ],
+  "edges": [
+    {"from":"CBMD.ORIENT","to":"CBMD.FREEZE_QUESTION","relation":"PRECEDES"},
+    {"from":"CBMD.FREEZE_QUESTION","to":"CBMD.PIN_PROVENANCE","relation":"REQUIRES"},
+    {"from":"CBMD.PIN_PROVENANCE","to":"CBMD.EXACT_COMPUTE","relation":"ENABLES"},
+    {"from":"CBMD.PIN_PROVENANCE","to":"CBMD.LEAN_COMPILE","relation":"ENABLES"},
+    {"from":"CBMD.LEAN_COMPILE","to":"CBMD.LEAN_PROOF","relation":"PRECEDES"},
+    {"from":"CBMD.EXACT_COMPUTE","to":"CBMD.ADVERSE_TEST","relation":"MUST_BE_CHALLENGED_BY"},
+    {"from":"CBMD.LEAN_PROOF","to":"CBMD.EVIDENCE_VERIFY","relation":"REQUIRES"},
+    {"from":"CBMD.ADVERSE_TEST","to":"CBMD.EVIDENCE_VERIFY","relation":"SUPPLIES"},
+    {"from":"CBMD.PACKAGE_REPLAY","to":"CBMD.COLD_REPLAY","relation":"PRECEDES"},
+    {"from":"CBMD.EVIDENCE_VERIFY","to":"CBMD.CLAIM_CEILING","relation":"PRECEDES"},
+    {"from":"CBMD.CLAIM_CEILING","to":"CBMD.REPO_QUALIFY","relation":"PRECEDES"},
+    {"from":"CBMD.REPO_QUALIFY","to":"CBMD.PRIVATE_COMMIT","relation":"PRECEDES"},
+    {"from":"CBMD.PRIVATE_COMMIT","to":"CBMD.PRIVATE_PUSH","relation":"PRECEDES"}
+  ],
+  "known_gaps": [
+    "UCM native proof adapter is not yet source-bound to a CBMD theorem contract.",
+    "Each initialized workspace starts without mathematical-adapter mutation receipts; harness adverse tests do not qualify mathematics.",
+    "Artifact-specific Lean replay is supplied separately by this research repository; a generic package-replay and repository-projection adapter is not implemented by the harness.",
+    "No harness self-check counts as independent verification."
+  ]
+}

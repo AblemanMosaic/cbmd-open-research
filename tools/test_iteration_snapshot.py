@@ -68,6 +68,7 @@ class SnapshotCustodyTests(unittest.TestCase):
             result["discovery_bindings_checked"], len(self.manifest["discovery_bindings"])
         )
         self.assertEqual(result["scope"], "RECORD_CUSTODY_AND_BINDINGS_ONLY")
+        self.assertIs(result["current_pipeline_stage_promoted_by_snapshot"], False)
         for nonclaim in ("lean_recompiled", "source_ledger_reconstructed", "independent_verification"):
             self.assertIs(result[nonclaim], False)
 
@@ -98,6 +99,16 @@ class SnapshotCustodyTests(unittest.TestCase):
         self.manifest["full_proof_replay_from_this_checkout"] = "PASS"
         self.write_manifest()
         with self.assertRaisesRegex(ValueError, "custody checker cannot certify proof replay"):
+            self.verifier.verify()
+
+    def test_historical_snapshot_refuses_incompatible_current_stage(self) -> None:
+        registry_path = self.fixture / "DISCOVERIES.json"
+        registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        bound_id = self.manifest["discovery_bindings"][0]["discovery_id"]
+        row = next(item for item in registry["discoveries"] if item["id"] == bound_id)
+        row["pipeline_stage"] = "INTAKE"
+        registry_path.write_text(json.dumps(registry, indent=2) + "\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "incompatible current pipeline stage"):
             self.verifier.verify()
 
 

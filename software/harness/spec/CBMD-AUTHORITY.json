@@ -1,0 +1,23 @@
+{
+  "schema": "cbmd.authority.v1",
+  "authority_id": "CBMD.LOCAL.OPERATOR",
+  "standing": "PORTABLE_TEMPLATE_EXECUTION_DISABLED",
+  "authority_effect": "NONE",
+  "allowed_effects": [
+    "LOCAL_RESEARCH_WRITE",
+    "LOCAL_TOOL_EXECUTION",
+    "PROVISIONAL_OUTPUT_QUALIFICATION"
+  ],
+  "allowed_execution_roots": [],
+  "excluded_effects": [
+    "PUBLICATION",
+    "PUBLIC_REPOSITORY",
+    "RELEASE",
+    "REVIEWER_CONTACT",
+    "NOVELTY_CLAIM"
+  ],
+  "source": {
+    "kind": "PORTABLE_TEMPLATE",
+    "summary": "No inherited user authority. Initialize a local workspace with explicitly bounded execution roots before running a request. Publication and remote operations have no harness adapter."
+  }
+}

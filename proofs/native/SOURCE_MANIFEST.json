@@ -1,0 +1,320 @@
+{
+  "schema": "cbmd.proof-source-manifest.v1",
+  "project_path": "proofs/native",
+  "source_library_root": "proofs/native/lean",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "mathlib_revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+  "upstream_commit": "7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targets": [
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.AZeroNativeCollapse",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.CenteredNativeVanishing",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.ParityCoefficientClosedForm",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.NativeAmplitudeScalarBridge",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.NativeAmplitudeCostBridge",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.MasterNumeratorBCM1",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.BCM1CostSemantics",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.ExecutableJointBCM1",
+    "OAI.Algorithms.SubexponentialSAT.SqrtLog.CoordinateOrbitBCM1"
+  ],
+  "files": [
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/LeanCompat.lean",
+      "sha256": "51cb1c46b186fd52e15a5435e5ee5c2585fb999195f3fa009d726156b7a8037c",
+      "bytes": 1228,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/BinomialMatrix.lean",
+      "sha256": "3efdb7308d78a4edf4b12d9c5c714969870b93c89e3ea2bf4989cb52c66cef77",
+      "bytes": 4460,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/Types.lean",
+      "sha256": "3ec5dc9aa6370212f8a0daa544d139a33ca1a0184ccac95a890220f935525807",
+      "bytes": 12099,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/LocalSpectrum.lean",
+      "sha256": "11a317eb72d77e19557ac760af5e9e2d05708d3ef930c3013cf9e3e3525ef4f1",
+      "bytes": 17807,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/MatrixSupport.lean",
+      "sha256": "f7d91c3483c2b7c3d08329f743e0f7548a563db05595c302f89f0087ec692eed",
+      "bytes": 25291,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/BinomialInterpolation.lean",
+      "sha256": "f7f08d1d5b8458037b7b0d10f041c783c4aa771f9fd7f1fe5b1698dbc3c770ae",
+      "bytes": 11394,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/Factor.lean",
+      "sha256": "fd091440873c984ca6e9b6bb85705721be34754e9e085e31d74bbe80635036a5",
+      "bytes": 6187,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/Incidence.lean",
+      "sha256": "b5f62fedb48b3d111b74b035aba2fb0f9e9debe81a0a4eee92bdfa2bd847fc64",
+      "bytes": 9192,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SlotAssignment.lean",
+      "sha256": "ff86e07c2fc681c781789f86da1544c26e8eef85fa33f6442f514ad286a04a9e",
+      "bytes": 10136,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/MulticolorTypes.lean",
+      "sha256": "191f9698132c7dda340a7ba97b0b27c6d6b92b79ac1808f6c4a572260d55580e",
+      "bytes": 18746,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/Subexp/MatrixSupport.lean",
+      "sha256": "16de3e94f565c2ce8651d9a8a142d440fbb4292e6b71902ec2fa936eacef8eac",
+      "bytes": 26744,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/LayoutNumerator.lean",
+      "sha256": "ae55281444576112eec473413fbeca313d35e6c5186c038c8f7836bed9eba97a",
+      "bytes": 5779,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormOrbit.lean",
+      "sha256": "56cc9403547b3ed7b7e7d4e12555fb2764ba9ab20dbfd9fcb7b4dc0b8bdfc071",
+      "bytes": 3962,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormDifference.lean",
+      "sha256": "31bb2f18d7f808486e0f24225a2285755c764bf47657d2fb61812c3a0e9f87e2",
+      "bytes": 3562,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormUnique.lean",
+      "sha256": "de610b1ac8cec2cf7dd82368f9487daed99474cbf7a6b8820dd3c6cd74deebd4",
+      "bytes": 3316,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormSigned.lean",
+      "sha256": "86782837181c397a39de8859b5a07d8345f8a18e99c8c97d7d672264cb5626fd",
+      "bytes": 4243,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormCounting.lean",
+      "sha256": "b144d234f0ccc243f52d92b73deca39888c561f7abb40ea3951c65c0aa6e1a55",
+      "bytes": 2100,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EntryClosedFormAssemble.lean",
+      "sha256": "9f36ef5033b84c4588de538bd2dca2e6b39573c8f5a9a85b4cd506bc0d02c1df",
+      "bytes": 5228,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ParityReflection.lean",
+      "sha256": "d9c496292c0b1850258335c3e89d79a413f1127bf735a54686b95760f4b48e72",
+      "bytes": 6385,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/CenteredKernelReflection.lean",
+      "sha256": "84b0b0781e9126e9b12a57287d8a8575850e260c9a15b6c08bd43aec55bddb79",
+      "bytes": 2579,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/CenteredCancellation.lean",
+      "sha256": "30c5489ad477cd5a4b6b7b3782bb2831032243ce792a639c1959dad08a85c2a2",
+      "bytes": 2401,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/CenteredUmbralBridge.lean",
+      "sha256": "089ea0951ab02cf2f92b70b4d5ae1716dad542dbc161524339ccedf1b2aff97f",
+      "bytes": 5367,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/CenteredNativeVanishing.lean",
+      "sha256": "a860a956e38f2d83fb918e02d9adefb35ca4e208fabf08ff2531d26d3fce874f",
+      "bytes": 3733,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/AZeroNativeCollapse.lean",
+      "sha256": "19359553298ed4af0e7e8df1b595eb90f905a1cf5ba1e7aa075c18f7ede90f3c",
+      "bytes": 5944,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/NativeAmplitudeCostBridge.lean",
+      "sha256": "877ad095d60a595f9384d0d7dd98440dd085dfdb200d1128db4362e75b6588fa",
+      "bytes": 3236,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/MasterAmplitudeBinomialBridge.lean",
+      "sha256": "1180fa281b0519ef7499db2e6522016a43d92396d0e1857be9bbbd494baf3bd1",
+      "bytes": 757,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ParityNewtonValue.lean",
+      "sha256": "aa52a854734206ae33251330fbacb6a48b01b1d7b4312e628631a0f578628514",
+      "bytes": 2153,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ParityNewtonPolynomial.lean",
+      "sha256": "5a7332ac3828803557f49dcff82a3ec48eedb9c8db1dd05dbc91fabb95c29134",
+      "bytes": 4275,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ParityClosedForm.lean",
+      "sha256": "d351cae0e532be7216b46e838b2f90d4f1b56a2cd95fa20cdc40eb373cc727b3",
+      "bytes": 1297,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/IntegerTranslationMatrix.lean",
+      "sha256": "e21e4575e8ceee64ea91393e781ea29a0bb3b3e492ae30e6f2859d7b6740d1a8",
+      "bytes": 4021,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/LayoutCoefficientBounds.lean",
+      "sha256": "6c78a88f31977cd857cceb1b23092a32f175e06be468fc3a6755d1702449176f",
+      "bytes": 8661,
+      "origin": "openai/math@7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a exact file"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ParityCoefficientClosedForm.lean",
+      "sha256": "e0d1b3818636f1bf4a3e30d60ec7fb41275fdda46f9dc08feeb7d130a9795209",
+      "bytes": 2530,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/EulerBinomialTransform.lean",
+      "sha256": "f1f22e42017942006ad4c673a58ba7c6ff2175d541c675ecf191d589caf5c062",
+      "bytes": 9113,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/NativeAmplitudeScalarBridge.lean",
+      "sha256": "83739ee20cc2e284805ccc7ccfe5358306afa1d6c2d5d9556c5c527375d2b3bc",
+      "bytes": 15293,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/GeneralizedChooseLinear.lean",
+      "sha256": "646c8a980990b4a4387a102141ee3d2da6b8d117c02a51adb566f63e1ab6f689",
+      "bytes": 2494,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/MasterNumeratorLinear.lean",
+      "sha256": "259a4920ef90113058ad549dde201ec0a416b7198fdb21bd0904c07c5fb41c72",
+      "bytes": 2276,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/MasterNumeratorShared.lean",
+      "sha256": "9a1c35dfae51a1358147cb79a4b8f494413862b089b3e317e8022acdb9b58db0",
+      "bytes": 5408,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/MasterNumeratorBCM1.lean",
+      "sha256": "716f987f5c5b72d0e61ff320d2e9c043415a0498c6d1a9128b3b417bfca0071a",
+      "bytes": 5671,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/BCM1CostSemantics.lean",
+      "sha256": "17135d246bd9563e514e09c4e1e09a804c843db969eebb8945c30b6b7ee40509",
+      "bytes": 5886,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/ExecutableJointBCM1.lean",
+      "sha256": "71e0d9419a025d6d29b6b9e9951213bfb35581b85d62dee04abeea1c1d9aa3c6",
+      "bytes": 6728,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/CoordinateOrbitBCM1.lean",
+      "sha256": "7c8b72b94d77e9bcae793a7a4d6b84aa142072a706c2b12917463a43b5b5b3f7",
+      "bytes": 5992,
+      "origin": "CBMD formal development, 2026-10-27 workbench"
+    },
+    {
+      "path": "proofs/native/lean/OAI/CBMDReplay.lean",
+      "sha256": "f7b9a22637480bd24719c44fccaa45fe2110236b173a6c6e2927c8e5c1f483a3",
+      "bytes": 2945,
+      "origin": "CBMD v0.1 logical-dependency audit module"
+    },
+    {
+      "path": "proofs/native/lean-toolchain",
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "bytes": 25,
+      "origin": "CBMD v0.1 replay envelope"
+    },
+    {
+      "path": "proofs/native/lakefile.lean",
+      "sha256": "011ac49323f55e1b8345957d3139ad5a8b47da23e60061f8a3877693ecf1bcee",
+      "bytes": 443,
+      "origin": "CBMD v0.1 replay envelope"
+    },
+    {
+      "path": "proofs/native/lake-manifest.json",
+      "sha256": "803ab78b3c31c41b8c07c558ac07fd99b7d7954eb4e4856f8026e027db9000a8",
+      "bytes": 3171,
+      "origin": "CBMD v0.1 replay envelope"
+    },
+    {
+      "path": "tools/replay_lean.py",
+      "sha256": "9d4745e6d40d5259aa1cdefbafaacd0a813956c506353471acba6e1ae4015520",
+      "bytes": 8740,
+      "origin": "CBMD v0.1 replay envelope"
+    },
+    {
+      "path": "tools/verify_proof_sources.py",
+      "sha256": "f90fc6b11185f79e377c8b9eeed7b3a8add09775f5a3cd825504d45154682926",
+      "bytes": 11118,
+      "origin": "CBMD v0.1 replay envelope"
+    },
+    {
+      "path": "proofs/native/LICENSES/OPENAI_MATH_APACHE_2.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "origin": "openai/math pinned upstream Apache-2.0 license"
+    },
+    {
+      "path": "proofs/native/THIRD_PARTY_NOTICES.md",
+      "sha256": "0a4769813859537c0eaf4754be1566045d1a609fde928f5a429a46ab6ca5e808",
+      "bytes": 722,
+      "origin": "CBMD v0.1 third-party provenance notice"
+    }
+  ]
+}

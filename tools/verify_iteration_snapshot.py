@@ -99,8 +99,9 @@ def verify() -> dict[str, object]:
                 "discovery points to another snapshot")
         require(claim["ledger_binding"]["claim_ids"] == binding["claim_ids"],
                 "discovery and snapshot claims differ")
-        require(discoveries[discovery_id]["pipeline_stage"] == "QUALIFYING",
-                "unpackaged proof chain cannot be promoted by this custody check")
+        require(discoveries[discovery_id]["pipeline_stage"] in
+                {"QUALIFYING", "REVIEW_READY", "RELEASED"},
+                "historical binding has an incompatible current pipeline stage")
 
     return {
         "status": "PASS", "schema": "cbmd.open-research.snapshot-custody-check.v1",
@@ -109,6 +110,7 @@ def verify() -> dict[str, object]:
         "ancillary_summary_claims_promoted": False,
         "lean_recompiled": False, "source_ledger_reconstructed": False,
         "independent_verification": False, "authority_effect": "NONE",
+        "current_pipeline_stage_promoted_by_snapshot": False,
     }
 
 

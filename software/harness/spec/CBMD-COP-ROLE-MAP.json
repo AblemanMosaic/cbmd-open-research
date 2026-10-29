@@ -1,0 +1,20 @@
+{
+  "schema": "cbmd.cop-role-map.v1",
+  "standing": "DESIGN_PATTERN_CORRESPONDENCE",
+  "authority_effect": "NONE",
+  "roles": [
+    {"role":"UGK","cbmd_component":"CBMD_GOVERNANCE_SUBSTRATE","status":"LOCAL_ANALOG_ONLY","claim_boundary":"No installed UGK conformance or AOK authority is claimed."},
+    {"role":"EHM","cbmd_component":"CBMD_EVIDENCE_HEALTH","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Measures evidence substrate under the named profile, not mathematical truth."},
+    {"role":"HEADLESS_RUNNER","cbmd_component":"CBMD_EXACT_RUNNER","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Captures declared process evidence; cannot prove undeclared external effects."},
+    {"role":"CTR","cbmd_component":"CBMD_COURTS","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Test mapping is challenged by negative controls and does not imply completeness."},
+    {"role":"CRP","cbmd_component":"CBMD_PROJECTION","status":"PLANNED","claim_boundary":"Projection cannot broaden claim standing or publication authority."},
+    {"role":"AIS","cbmd_component":"CBMD_CLI","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Interface exposes refusals and uncertainty; it grants no authority."},
+    {"role":"EVS","cbmd_component":"CBMD_EVIDENCE_VERIFIER","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Scoped verification surface, not a truth oracle."},
+    {"role":"SAS","cbmd_component":"CBMD_SITUATED_STATE","status":"IMPLEMENTED_CANDIDATE","claim_boundary":"Reports supported, contradicted, unknown, stale, contested, and unobserved states without collapsing them."}
+  ],
+  "source_bindings": [
+    {"title":"The Constitutional Observability Platform","sha256":"15cbe49a23a34f881a06eab32aafd95e9468ec0b7c19f47a795a34c854df9e84","use":"design pattern only"},
+    {"concept_id":"ATLAS.STRUCTURE.A29DFFEEF8B86108","title":"Epistemic Situational Awareness (ESA)","use":"bounded control-property model"},
+    {"concept_id":"ATLAS.CORPUS.B402A90E86A41CF7","title":"GOORRT thesis","use":"reviewed-provisional correspondence model"}
+  ]
+}

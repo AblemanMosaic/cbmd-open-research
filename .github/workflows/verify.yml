@@ -23,3 +23,23 @@ jobs:
         with:
           node-version: "20"
       - run: python -B tools/qualify_repository.py
+
+  formal-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          lake-package-directory: proofs/native
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: true
+          use-github-cache: false
+      - name: Recompile pinned proof targets and audit logical dependencies
+        run: python -B tools/replay_lean.py --prepare --fresh

@@ -22,6 +22,7 @@ VALID_STATES = {
 }
 REQUIRED_DIRS = ("argument", "explorer", "verification", "evidence", "review", "revisions")
 PIPELINE_STAGES = {"INTAKE", "CLAIM_BOUND", "QUALIFYING", "REVIEW_READY", "RELEASED", "CLOSED"}
+UNTRACKED_RUNTIME_DIRS = {".git", ".lake", ".cbmd-work", "node_modules", "dist", "tmp"}
 
 
 def fail(message: str) -> None:
@@ -144,7 +145,7 @@ def main() -> int:
 
     folded: dict[str, Path] = {}
     for path in ROOT.rglob("*"):
-        if ".git" in path.parts or not path.is_file():
+        if any(part in UNTRACKED_RUNTIME_DIRS for part in path.relative_to(ROOT).parts) or not path.is_file():
             continue
         rel = path.relative_to(ROOT)
         key = rel.as_posix().casefold()

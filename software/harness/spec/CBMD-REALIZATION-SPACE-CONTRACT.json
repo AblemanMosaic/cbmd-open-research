@@ -1,0 +1,56 @@
+{
+  "schema": "cbmd.realization-space-contract.v1",
+  "contract_id": "CBMD.DISCOVERY.VERIFICATION.SPACE",
+  "contract_version": "0.2.0",
+  "description": "Admissible realization space for proof, computation, challenge, replay, and projection in CBMD.",
+  "subject": {
+    "subject_id": "CBMD.DISCOVERY.OPERATION",
+    "subject_schema": "cbmd.discovery-operation.v1",
+    "authority_owner": "CBMD.USER",
+    "source_roots": ["DYNAMIC_INPUT_MANIFEST_REQUIRED"],
+    "preserved_identity": ["QUESTION_ID","CLAIM_ID","SOURCE_ROOTS","TOOLCHAIN_ROOTS","AUTHORITY_ID","PREDECESSOR_HEAD"],
+    "forbidden_overrides": ["PUBLICATION_STANDING","NOVELTY_STANDING","SOURCE_BYTES","FROZEN_EVIDENCE","EXCLUDED_EFFECTS"]
+  },
+  "possibility": {
+    "intended_variation": ["verification method","lifecycle stage","execution lane","isolation","adverse testing","diagnostic depth","correspondence depth","recovery policy","independence level","claim ceiling"],
+    "excluded_claims": ["novelty","publication","reviewer approval","AOK admission","universal correctness","production readiness"]
+  },
+  "axes": [
+    {"id":"LIFECYCLE.STAGE","label":"Lifecycle stage","description":"Keeps possibility, specification, selection, lowering, realization, evidence, and revision distinct.","value_type":"ENUM","domain":{"values":["POSSIBILITY","SPECIFICATION","SELECTION","LOWERING","REALIZATION","EVIDENCE","REVISION"]},"default":"SPECIFICATION","ownership":"DERIVED","mutability":"DERIVED","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"VERIFICATION.METHOD","label":"Verification method","description":"Primary checking realization.","value_type":"ENUM","domain":{"values":["LEAN_LAKE","PYTHON_EXACT","UCM_NATIVE_PROOF","PACKAGE_REPLAY","REPO_QUALIFICATION","CROSS_CHECK"]},"default":"CROSS_CHECK","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"EXECUTION.LANE","label":"Execution lane","description":"Depth and expense of the run.","value_type":"ENUM","domain":{"values":["SMOKE","TARGETED","QUALIFICATION","COLD_REPLAY"]},"default":"TARGETED","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"EXECUTION.ISOLATION","label":"Isolation","description":"Custody boundary used for execution.","value_type":"ENUM","domain":{"values":["CURRENT_WORKTREE","CLEAN_COPY","COLD_EXTRACTION"]},"default":"CURRENT_WORKTREE","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"EVIDENCE.PROFILE","label":"Evidence profile","description":"Diagnostic evidence depth.","value_type":"ENUM","domain":{"values":["MINIMAL","DIAGNOSTIC","MAX_DIAGNOSTIC"]},"default":"MAX_DIAGNOSTIC","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"ADVERSE.LEVEL","label":"Adverse testing","description":"Counterexample, boundary, and mutation pressure.","value_type":"ENUM","domain":{"values":["NONE","BOUNDARY","MUTATION"]},"default":"BOUNDARY","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"CORRESPONDENCE.LEVEL","label":"Correspondence depth","description":"Separates theorem meaning, operational semantics, and executable realization.","value_type":"ENUM","domain":{"values":["UNBOUND","OBJECT_ONLY","OBJECT_OPERATION","OBJECT_OPERATION_REALIZATION"]},"default":"UNBOUND","ownership":"DERIVED","mutability":"DERIVED","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"RECOVERY.POLICY","label":"Recovery policy","description":"Declared response to uncertain or failed execution.","value_type":"ENUM","domain":{"values":["REFUSE_ON_UNCERTAIN","REPLAY_TERMINAL_ONLY","FRESH_OPERATION_REQUIRED"]},"default":"REFUSE_ON_UNCERTAIN","ownership":"AUTHORIAL","mutability":"INSTANCE","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"INDEPENDENCE.LEVEL","label":"Independence level","description":"Discloses common-mode verifier dependence.","value_type":"ENUM","domain":{"values":["SELF_CHECK","SEPARATE_IMPLEMENTATION","EXTERNAL_REVIEW"]},"default":"SELF_CHECK","ownership":"EVIDENCE_ONLY","mutability":"DERIVED","continuity":"DISCRETE","authority_effect":"NONE"},
+    {"id":"CLAIM.CEILING","label":"Claim ceiling","description":"Strongest standing the realization may support.","value_type":"ENUM","domain":{"values":["OBSERVED","FINITE_CHECK","COMPILED_STATEMENT","COMPILED_PROOF","SOURCE_BOUND_PROOF","REVIEW_READY"]},"default":"OBSERVED","ownership":"DERIVED","mutability":"DERIVED","continuity":"DISCRETE","authority_effect":"NONE"}
+  ],
+  "constraints": [
+    {"id":"CBMD.CONSTRAINT.NO_PUBLIC_EFFECT","kind":"CLAIM_BOUNDARY","severity":"HARD","expression":"authority.public_effect == false","explanation":"Harness operations cannot publish, release, contact reviewers, or make a repository public.","refusal_code":"CBMD_PUBLIC_EFFECT_REFUSED"},
+    {"id":"CBMD.CONSTRAINT.COMPILED_PROOF_NO_SORRY","kind":"INVARIANT","severity":"HARD","expression":"claim_ceiling >= COMPILED_PROOF implies lean_escape_scan == PASS","explanation":"A compiled module containing sorry, admit, or added axioms is not a compiled proof.","refusal_code":"CBMD_LEAN_ESCAPE_REFUSED"},
+    {"id":"CBMD.CONSTRAINT.SOURCE_BOUND_NEEDS_CORRESPONDENCE","kind":"DEPENDENCY","severity":"HARD","expression":"claim_ceiling >= SOURCE_BOUND_PROOF implies source_correspondence == PASS","explanation":"Theorem proof and source transport are separate obligations.","refusal_code":"CBMD_SOURCE_CORRESPONDENCE_REFUSED"},
+    {"id":"CBMD.CONSTRAINT.REVIEW_READY_NEEDS_COLD","kind":"DEPENDENCY","severity":"HARD","expression":"claim_ceiling == REVIEW_READY implies isolation == COLD_EXTRACTION","explanation":"Review-ready projection requires clean/cold replay.","refusal_code":"CBMD_COLD_REPLAY_REQUIRED"},
+    {"id":"CBMD.CONSTRAINT.FINITE_IS_NOT_GENERAL","kind":"CLAIM_BOUNDARY","severity":"HARD","expression":"method == PYTHON_EXACT implies claim_ceiling <= FINITE_CHECK unless independent_proof == PASS","explanation":"Finite computation does not establish a general theorem.","refusal_code":"CBMD_FINITE_GENERALIZATION_REFUSED"}
+    ,{"id":"CBMD.CONSTRAINT.EVIDENCE_DOES_NOT_REVISE","kind":"INVARIANT","severity":"HARD","expression":"evidence cannot mutate governing_contract_root","explanation":"Evidence may trigger a successor contract but cannot rewrite its own rules.","refusal_code":"CBMD_SELF_REVISION_REFUSED"}
+    ,{"id":"CBMD.CONSTRAINT.UNCERTAIN_FAILS_CLOSED","kind":"INVARIANT","severity":"HARD","expression":"intent_exists and terminal_missing implies status == UNCERTAIN and execution_refused","explanation":"An uncertain operation is not silently retried under the same identity.","refusal_code":"CBMD_OPERATION_UNCERTAIN"}
+    ,{"id":"CBMD.CONSTRAINT.REALIZATION_LOSS_VISIBLE","kind":"CLAIM_BOUNDARY","severity":"HARD","expression":"lowering_loss must be recorded before promotion","explanation":"A target cannot hide approximation, fallback, or loss to avoid refusal.","refusal_code":"CBMD_LOWERING_LOSS_REFUSED"}
+  ],
+  "capabilities": ["ENUMERATE","VALIDATE","NORMALIZE","SAMPLE","SELECT","LOWER","REALIZE","COMPARE","EXPLAIN","RECEIPT"],
+  "selection": {"default_policy":"HIGHEST_IMPACT_ADMISSIBLE","seed_required_for_non_unique":true,"fallback_policy":"DECLARED_ONLY"},
+  "lowering": {
+    "targets": [
+      {"target_id":"CBMD.RUNNER.LEAN_LAKE","adapter_version":"0.2.0","required_capabilities":["PINNED_LEAN","PINNED_LAKE","SOURCE_MANIFEST"],"preservation_criteria":["question identity","claim identity","module identity","toolchain identity","source roots","stdout","stderr","exit code"],"known_losses":["compiler success alone does not prove source correspondence"],"fallbacks":[]},
+      {"target_id":"CBMD.RUNNER.PYTHON","adapter_version":"0.1.0","required_capabilities":["PINNED_SCRIPT","PINNED_INPUTS"],"preservation_criteria":["script identity","input roots","exact output roots","exit code"],"known_losses":["finite coverage only"],"fallbacks":[]},
+      {"target_id":"UCM.OPERATIONAL.VERIFY_NATIVE_PROOF","adapter_version":"UNBOUND","required_capabilities":["EXACT_NATIVE_PROOF_CONTRACT"],"preservation_criteria":["claim subject","axioms","rules","proof object","verifier root"],"known_losses":["bounded deductive scope only"],"fallbacks":[]}
+    ],
+    "allowed_results": ["EXACT","BOUNDED","FALLBACK","LOSSY","REFUSED"]
+  },
+  "evidence": {
+    "required_roots": ["AUTHORITY","LATTICE","REALIZATION_SPACE","REQUEST","INPUT_MANIFEST","RUNNER","OUTPUT","TERMINAL_RECEIPT"],
+    "required_fields": ["question_id","claim_ids","lifecycle_stage","argv","cwd_identity","environment_delta","exit_code","timeout","stdout_root","stderr_root","lowering_result","known_losses","claim_boundary","known_remainder"],
+    "non_claims": ["novelty","publication","review approval","AOK admission","independent verification from self-check"]
+  },
+  "authority": {"standing":"LOCAL_CANDIDATE","authority_effect":"NONE","self_admission":false}
+}

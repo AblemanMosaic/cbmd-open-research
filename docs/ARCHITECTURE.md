@@ -27,6 +27,20 @@ revisions/
 
 Files may be added freely inside the appropriate root. A new top-level category requires an architecture revision because tools and readers rely on this separation.
 
+## Toolkit roots
+
+The v0.1 toolkit adds three governed top-level roots beside the discovery dossiers:
+
+```text
+software/harness/      Portable operation custody and claim-ceiling control plane
+software/reference/    Standalone exact finite evaluator and adverse oracles
+proofs/native/         Minimal pinned Lean source and replay envelope
+```
+
+`software/` contains instruments, not new discovery identities. `proofs/` contains exact formal source envelopes that may support several discovery lines. A discovery binds these shared artifacts through its `CLAIM.json`; copying the same proof or verifier into multiple dossiers is discouraged because the copies can drift.
+
+Generated local workspaces, Lean build outputs and release archives remain ignored. A release archive is produced from the clean Git index by `tools/build_release.py` and carries an embedded content manifest plus a detached receipt.
+
 ## Pipeline and standing
 
 Operational pipeline stage and mathematical claim standing are separate axes. `DISCOVERIES.json` records both and is the source for the generated README index. See `docs/PIPELINE.md` for stage admission rules.

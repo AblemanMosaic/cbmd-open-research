@@ -37,9 +37,19 @@ def main() -> int:
     gates = [
         ("repository-validator", [sys.executable, "-B", "tools/validate_repository.py"]),
         ("readme-index", [sys.executable, "-B", "tools/render_discovery_index.py", "--check"]),
+        ("portable-harness", [sys.executable, "-B", "tools/verify_harness.py"]),
+        ("standalone-reference", [sys.executable, "-B", "tools/verify_standalone.py"]),
+        ("standalone-unit-tests", [
+            sys.executable, "-B", "-m", "unittest", "discover",
+            "-s", "software/reference", "-p", "test_*.py",
+        ]),
+        ("proof-source-custody", [sys.executable, "-B", "tools/verify_proof_sources.py"]),
+        ("proof-packaging-adverse-controls", [
+            sys.executable, "-B", "tools/test_proof_packaging.py",
+        ]),
     ]
     report: dict[str, object] = {
-        "schema": "cbmd.open-research.qualification.v1",
+        "schema": "cbmd.open-research.qualification.v2",
         "repository_gates": [],
         "discoveries": [],
     }

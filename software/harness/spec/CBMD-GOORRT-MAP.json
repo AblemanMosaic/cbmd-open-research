@@ -1,0 +1,14 @@
+{
+  "schema": "cbmd.goorrt-map.v1",
+  "standing": "LOCAL_CORRESPONDENCE_CANDIDATE",
+  "authority_effect": "NONE",
+  "objects": ["QUESTION","CLAIM","SOURCE_ARTIFACT","TOOLCHAIN","RUN_REQUEST","EVIDENCE","COUNTEREXAMPLE","CORRECTION","PROJECTION"],
+  "operations": ["SELECT","FREEZE","PIN","EXECUTE","CHALLENGE","VERIFY","QUALIFY","PROJECT","COMMIT","PUSH_PRIVATE"],
+  "realizations": ["LEAN_LAKE_RUNNER","PYTHON_EXACT_RUNNER","UCM_NATIVE_PROOF_RUNNER","PACKAGE_REPLAY_RUNNER","REPOSITORY_QUALIFIER"],
+  "correspondence_requirements": [
+    {"object":"CLAIM","operation":"VERIFY","realization":"LEAN_LAKE_RUNNER","required_edges":["STATEMENT_TO_LEAN_TYPE","PROSE_ASSUMPTION_TO_HYPOTHESIS","SOURCE_DEFINITION_TO_IMPORTED_IDENTITY","PROOF_TO_NO_ESCAPE_SCAN"]},
+    {"object":"CLAIM","operation":"VERIFY","realization":"PYTHON_EXACT_RUNNER","required_edges":["CLAIM_TO_FINITE_DOMAIN","REFERENCE_MODEL_TO_SCRIPT","INPUT_TO_MANIFEST","OUTPUT_TO_RESULT_ROOT"]},
+    {"object":"EVIDENCE","operation":"QUALIFY","realization":"REPOSITORY_QUALIFIER","required_edges":["EVIDENCE_TO_CLAIM_CEILING","LEDGER_TO_PUBLIC_PROJECTION","CORRECTION_TO_REVISION_SURFACE","PRIVATE_COMMIT_TO_CLEAN_REPLAY"]}
+  ],
+  "nonclaims": ["representation correspondence is not identity","successful realization is not admission","projection is not proof"]
+}
