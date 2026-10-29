@@ -13,6 +13,8 @@
 
 *.png binary
 
-# The portable harness binds exact source bytes, including its nested ignore file.
+# The portable harness and proof envelope bind exact source bytes.  Do not let
+# platform checkout settings rewrite those bytes before their manifests run.
 software/harness/** -text
-proofs/native/SOURCE_MANIFEST.json -text -diff
+proofs/native/** -text
+proofs/native/SOURCE_MANIFEST.json -diff
