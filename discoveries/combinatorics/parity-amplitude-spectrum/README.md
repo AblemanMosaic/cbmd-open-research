@@ -1,7 +1,8 @@
-# Parity-amplitude spectrum
+# Classical Krawtchouk identification and native vanishing
 
-> **Pipeline stage:** `CLAIM_BOUND`  
-> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`
+> **Pipeline stage:** `QUALIFYING`
+>
+> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `REVISED`
 
 Permanent discovery ID: `CBMD-COMB-PARITY-AMPLITUDE-001`
 
@@ -11,12 +12,14 @@ The reference integer amplitude has a coefficient-extraction formula depending o
 
 ## Current standing
 
-The retained r6 source package contains a written derivation and finite checks. A separated integer cancellation core compiles under pinned Lean 4.34.1 with no proof escapes. The first proposed native closed form was then disproved directly against the pinned `entry` definition: at `Q=2,A=0,R=1`, its two sides are `0` and `-1`. The defect is truncated natural subtraction in the lower binomial index. The corrected guarded theorem now compiles against that same pinned native `entry`: the proof identifies the unique active subword, evaluates its sign, cancels inactive selected coordinates, applies the exact guarded powerset count, and assembles the outer coefficient sum. The parity-interpolant reflection law also now compiles in a separate no-escape module, using rational-polynomial interpolation uniqueness rather than an admission. The earlier 134,370-case finite audit and two mutant families remain adverse evidence, not a substitute for the proofs. The Krawtchouk ingredients are classical; novelty of the source-specific identification remains unassessed.
+The identification reduces to classical Krawtchouk symmetry and orthogonality; source-specific novelty remains unassessed. The original native closed-form candidate was refuted at `Q=2,A=0,R=1`, where its two sides are `0` and `-1`. A guarded correction resolves the truncated-natural-subtraction defect, and the retained 134,370-case finite audit includes deliberate sign and active-cardinality mutants.
+
+Local work subsequently completed the no-escape native centered-vanishing and A=0 collapse proofs and replayed that chain in a fresh exact envelope. It also derived an explicit parity-coefficient formula. The [dated evidence snapshot](../../../evidence/iterations/bootstrap-2026-10/README.md) retains the local decisions, source hashes and replay observations. The complete newer source chain and replay launcher are not yet staged here: existing receipt and finite checks do not rebuild the successor proofs.
 
 ## Next obligation
 
-Compose the compiled guarded `entry_closed_form` and compiled parity-reflection theorem into the native centered-vanishing corollary, recording the first exact obstruction if the source-level coefficient transport does not close.
+Import the completed local proof dependency closure, pin the exact source and dependencies, and replay native centered vanishing, A=0 collapse and the coefficient formula from this checkout. See the [integration roadmap](../../../docs/INTEGRATION_ROADMAP.md).
 
 ## Nonclaims
 
-No native algorithmic speedup, compiled centered-vanishing source theorem, clean-checkout independent replay, literature-wide novelty, or coefficient transport across rings is claimed.
+No complete successor Lean replay from this checkout, native algorithmic speedup, external independent verification, literature-wide novelty, or coefficient transport across rings is claimed.

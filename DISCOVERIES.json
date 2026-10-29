@@ -30,33 +30,59 @@
         "native source correspondence remains unproved",
         "targeted novelty review remains unperformed"
       ],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT"
+      ]
     },
     {
       "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
       "field": "combinatorics",
       "slug": "parity-amplitude-spectrum",
       "path": "discoveries/combinatorics/parity-amplitude-spectrum",
-      "title": "Parity-amplitude spectrum",
-      "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Compose the compiled guarded entry_closed_form and compiled parity-reflection theorem into the native centered-vanishing corollary, or record the first exact source-level obstruction.",
+      "title": "Classical Krawtchouk identification and native vanishing",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Import and replay the completed local centered-vanishing, A=0 and parity-coefficient proofs from this checkout.",
       "promotion_blockers": [
-        "the centered native source-vanishing corollary is not yet formally proved",
-        "clean-checkout Lean replay of the copied proof modules is not yet packaged",
-        "source-specific novelty remains unassessed"
+        "complete newer proof sources and replay envelope not yet imported",
+        "local receipts do not recompile Lean here",
+        "source-specific novelty and external review remain unassessed"
       ],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"]
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "REVISED"
+      ]
     },
     {
       "id": "CBMD-ALG-AMPLITUDE-COST-001",
       "field": "algorithms",
       "slug": "reference-amplitude-cost-model",
       "path": "discoveries/algorithms/reference-amplitude-cost-model",
-      "title": "Reference amplitude evaluation and cost model",
+      "title": "Reference amplitude cost model (no native speedup claim)",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Bind the closed amplitude route to an executable native entry under an explicit cost model, or record the first exact source-level obstruction.",
+      "next_obligation": "Review the reference-only cost model and parameter regimes; the successor native evaluator is tracked separately.",
       "promotion_blockers": [],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "EXACT_MODEL_VERIFIED"]
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
+    },
+    {
+      "id": "CBMD-ALG-NATIVE-JOINT-001",
+      "field": "algorithms",
+      "slug": "native-joint-realization",
+      "path": "discoveries/algorithms/native-joint-realization",
+      "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Package the source-to-evaluator Lean chain and exact audits for clean-checkout replay; total-cost analysis remains separate.",
+      "promotion_blockers": [
+        "newer Lean sources and pinned dependency envelope not yet staged",
+        "snapshot check verifies receipts only",
+        "whole-cell and whole-algorithm costs remain unproved",
+        "external review and novelty assessment remain open"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT"
+      ]
     },
     {
       "id": "CBMD-ALG-RESIDUE-LIFT-001",
@@ -71,7 +97,9 @@
         "ring, precision, node, and source-identity hypotheses need one bounded statement",
         "novelty remains unassessed"
       ],
-      "status": ["PROVISIONAL_WRITTEN_ARGUMENT"]
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT"
+      ]
     }
   ]
 }

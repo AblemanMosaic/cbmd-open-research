@@ -12,3 +12,16 @@ When a public objection is accepted:
 6. Re-run all applicable checks and issue a new release only after the updated envelope passes.
 
 Negative results, source mismatches, and prior-art identifications receive the same durable treatment as positive results.
+
+## Bootstrap iteration correction register
+
+| Correction | Current disposition | Evidence or integration obligation |
+|---|---|---|
+| Original B5-E1 fixtures exercised no off-diagonal contributors | Narrow the historical evidence claim; require nondegenerate off-diagonal fixtures | Owner-fiber source custody retains the original obstruction report and corrected fixture sources; neutral standalone reproduction remains open. |
+| Unguarded native binomial formula | Refuted as stated; guarded successor compiles locally | [Recorded counterexample and repair](../discoveries/combinatorics/parity-amplitude-spectrum/revisions/0.2.0-entry-closed-form-correction.md). |
+| Duplicated mismatch sign and wrong cardinality in the proposed master bridge | Corrected before the local general source identity was proved | [Source bridge record](../evidence/iterations/bootstrap-2026-10/B5-K1-native-source-bridge-summary.json); import the sign audit and minimal counterexample in the replay gate. |
+| Exhaustive orbit decision in the first total realization | Replaced by a proved coordinatewise criterion | [Cycle 17 record](../evidence/iterations/bootstrap-2026-10/B5-K1-coordinate-orbit-bcm1-summary.json); full costs remain open. |
+| Uniform exponential-in-Q language in the frozen cost argument | Narrow to a stated joint growth regime; fixed-R enumeration is polynomial | [Parameter-regime correction](../discoveries/algorithms/reference-amplitude-cost-model/revisions/0.3.0-scope-and-parameter-regime.md). |
+| Earlier native vanishing and scalar bridge obligations shown as still mathematically unfinished | Completed locally; checkout integration remains unfinished | [Dated local receipts](../evidence/iterations/bootstrap-2026-10/README.md) and [integration gates](INTEGRATION_ROADMAP.md). |
+
+The negative crossover, neutral ring-operation result and rejected low-digit criterion from the source ledger still need individual neutral exports with exact claim and revision bindings. Recording them as integration work does not turn them into new qualified repository results.

@@ -1,0 +1,62 @@
+{
+  "schema": "cbmd.open-research.claim.v1",
+  "id": "CBMD-ALG-NATIVE-JOINT-001",
+  "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
+  "field": "algorithms",
+  "slug": "native-joint-realization",
+  "public_version": "0.1.0-candidate",
+  "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT"
+  ],
+  "statement": "The local formal development supplies a total computable joint matrix equal to the pinned source joint, using an exact recurrence evaluator and coordinatewise swap-orbit decision. Under BCM-1 its scalar recurrence core has exact arithmetic count (3d+2 multiplications, 2d exact divisions, d+1 additions), with d=R-1-f and f<R for the stated R bounds.",
+  "verified": [
+    "The imported historical local source-bridge decision records SOURCE_BOUND_PROOF for the native entry/master numerator identity under exact orbit and mismatch hypotheses.",
+    "The imported local kernel, cost, total-joint and coordinate-orbit decisions record compiled value equivalences and arithmetic counts.",
+    "The repository snapshot check verifies the digests and claim bindings of those records only."
+  ],
+  "unresolved": [
+    "complete newer Lean sources, dependency closure, audit sources and cold replay are not yet staged in this repository",
+    "exact coordinate-comparison, mismatch, active-set, traversal, allocation and whole-consumer costs",
+    "a deployed executable consumer and an appropriate end-to-end comparison",
+    "external independent review and source-specific novelty assessment"
+  ],
+  "nonclaims": [
+    "not a claim of full Lean replay from this checkout",
+    "not a total per-cell, whole-algorithm, bit-cost or machine-time theorem",
+    "not a SAT speedup or deployed native replacement",
+    "not novelty, external review or independent verification"
+  ],
+  "smallest_decisive_test": "Import the exact source dependency closure, verify its manifest, and compile the complete no-escape native-to-coordinate-joint chain under pinned Lean/Lake dependencies from a clean checkout; re-run exact adverse audits separately.",
+  "ledger_binding": {
+    "snapshot": "evidence/iterations/bootstrap-2026-10/SNAPSHOT.json",
+    "claim_ids": [
+      "urn:cbmd:complexity:batch5:B5-K1:native-source-bridge",
+      "urn:cbmd:complexity:batch5:B5-K1:master-numerator-bcm1",
+      "urn:cbmd:complexity:batch5:B5-K1:bcm1-cost-semantics",
+      "urn:cbmd:complexity:batch5:B5-K1:executable-joint-bcm1",
+      "urn:cbmd:complexity:batch5:B5-K1:coordinate-orbit-bcm1"
+    ],
+    "scope": "Historical local source-bound results; no full proof replay from this checkout yet."
+  },
+  "checks": [
+    {
+      "id": "iteration-snapshot-custody",
+      "command": [
+        "{python}",
+        "-B",
+        "tools/verify_iteration_snapshot.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "iteration-snapshot-adverse-controls",
+      "command": [
+        "{python}",
+        "-B",
+        "tools/test_iteration_snapshot.py"
+      ],
+      "required": true
+    }
+  ],
+  "authority_effect": "NONE"
+}

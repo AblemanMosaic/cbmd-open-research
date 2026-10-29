@@ -1,11 +1,14 @@
 {
   "schema": "cbmd.open-research.claim.v1",
   "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
-  "title": "Parity-amplitude spectrum",
+  "title": "Classical Krawtchouk identification and native vanishing",
   "field": "combinatorics",
   "slug": "parity-amplitude-spectrum",
-  "public_version": "0.6.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "REVISED"],
+  "public_version": "0.7.0-candidate",
+  "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "REVISED"
+  ],
   "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
   "verified": [
     "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom.",
@@ -15,26 +18,73 @@
     "Inactive selected coordinates make the native ordered difference vanish at every point in the source swap orbit.",
     "The guarded binomial term is the exact cardinality of the fixed-size active subsets containing mismatches.erase t.",
     "The corrected guarded entry_closed_form compiles against the pinned native LayoutNumerator.entry under the declared orbit and pivot-mismatch hypotheses, with no proof escapes in the copied source boundary.",
-    "The parity interpolant reflection law compiles in a separate no-escape Lean module by rational-polynomial interpolation uniqueness; the earlier admitted reflection step is no longer a mathematical blocker."
+    "The parity interpolant reflection law compiles in a separate no-escape Lean module by rational-polynomial interpolation uniqueness; the earlier admitted reflection step is no longer a mathematical blocker.",
+    "Hash-bound local Cycle 9 receipts report a fresh exact replay of the no-escape native centered-vanishing and A=0 collapse chain; the replay archive and complete newer source chain are not yet imported into this checkout.",
+    "Hash-bound local Cycle 11 receipts report compiled parity-coefficient closed-form and translation-matrix proofs; copied historical receipt checks do not rebuild these proofs."
   ],
   "unresolved": [
-    "proof of the remaining native centered-vanishing and A=0 source-transport statements",
-    "clean-checkout Lean replay of the copied proof modules under the pinned toolchain",
-    "source-specific novelty assessment"
+    "import of the complete newer proof sources, exact definitions, dependency manifest and replay launcher",
+    "clean-checkout replay of the newer native centered-vanishing, A=0 and coefficient proofs",
+    "source-specific novelty assessment and external review"
   ],
   "nonclaims": [
-    "not a compiled proof of the centered native source-vanishing theorem",
+    "not a claim that the complete newer Lean proof chain replays from this checkout",
     "not a native algorithmic improvement",
     "not a ring-transport certificate",
-    "not a novelty determination"
+    "not a novelty determination or external independent verification"
   ],
-  "smallest_decisive_test": "Compile a no-escape native centered-vanishing corollary from entry_closed_form_guarded and parityInterpolantCore_reflect, or identify the first exact obstruction in their composition.",
+  "smallest_decisive_test": "From a clean checkout, verify the staged source manifest and compile the complete no-escape native vanishing and coefficient proof chain under pinned dependencies.",
   "checks": [
-    {"id":"LEAN_CORE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"],"required":true},
-    {"id":"ENTRY_CLOSED_FORM_CORRECTION_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"],"required":true},
-    {"id":"ENTRY_CLOSED_FORM_BRIDGE_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_bridge.py"],"required":true},
-    {"id":"PARITY_REFLECTION_RECEIPT","command":["python","discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_parity_reflection.py"],"required":true},
-    {"id":"ENTRY_CLOSED_FORM_FINITE_AUDIT","command":["python","-B","discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"],"required":true}
+    {
+      "id": "LEAN_CORE_RECEIPT",
+      "command": [
+        "python",
+        "discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "ENTRY_CLOSED_FORM_CORRECTION_RECEIPT",
+      "command": [
+        "python",
+        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "ENTRY_CLOSED_FORM_BRIDGE_RECEIPT",
+      "command": [
+        "python",
+        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_bridge.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "PARITY_REFLECTION_RECEIPT",
+      "command": [
+        "python",
+        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_parity_reflection.py"
+      ],
+      "required": true
+    },
+    {
+      "id": "ENTRY_CLOSED_FORM_FINITE_AUDIT",
+      "command": [
+        "python",
+        "-B",
+        "discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"
+      ],
+      "required": true
+    }
   ],
-  "authority_effect": "NONE"
+  "authority_effect": "NONE",
+  "ledger_binding": {
+    "snapshot": "evidence/iterations/bootstrap-2026-10/SNAPSHOT.json",
+    "claim_ids": [
+      "urn:cbmd:complexity:batch5:B5-M3:centered-vanishing-no-escape",
+      "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse",
+      "urn:cbmd:complexity:batch5:B5-M7:parity-coefficient-closed-form"
+    ],
+    "scope": "Historical local evidence; complete proof replay from this checkout is pending."
+  }
 }

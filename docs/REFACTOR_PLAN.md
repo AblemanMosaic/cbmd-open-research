@@ -1,5 +1,7 @@
 # CBMD public-repository refactor plan
 
+Historical bootstrap plan. The repository has since been created and privately staged. The current work order and acceptance gates are in [INTEGRATION_ROADMAP.md](INTEGRATION_ROADMAP.md); unchecked bootstrap bullets below are not a current status report.
+
 ## Objective
 
 Create a readable GitHub repository that accepts new discovery files without turning the internal CBMD archive into a public dumping ground or blurring model verification with mathematical proof.

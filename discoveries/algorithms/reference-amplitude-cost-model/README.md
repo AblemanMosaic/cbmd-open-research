@@ -1,4 +1,4 @@
-# Reference amplitude evaluation and cost model
+# Reference amplitude cost model (no native speedup claim)
 
 > **Pipeline stage:** `REVIEW_READY`
 >
@@ -14,9 +14,11 @@ Under the declared reference cost model, one integer amplitude can be evaluated 
 
 The corrected r7 source package is sealed, cold-replayed, and represented here by exact source copies. The checkout replay confirms 163,912 closed/enumerated amplitude equalities, 10,476 row equalities, and two adverse unit controls. The 24,685,131 enumeration count at `(Q,R)=(80,5)` is explicitly per amplitude call; a row may invoke the producer once per active pivot.
 
+The archived cost write-up's phrase "exponentially cheaper in Q" needs a parameter qualification: at fixed R, the enumeration count is polynomial in Q. The [scope correction](revisions/0.3.0-scope-and-parameter-regime.md) controls the current interpretation while preserving the exact archived source bytes.
+
 ## Next obligation
 
-Bind the closed route to an executable native entry under an explicit native cost model, or identify the first exact source-level obstruction. Novelty and external mathematical review remain separate obligations.
+Review the reference cost model and explicit parameter regimes. Later local work established source correspondence and a candidate executable joint realization; that [successor line](../native-joint-realization/README.md) is tracked separately with full checkout replay still pending. This reference-only checker does not evaluate that transport.
 
 ## Nonclaims
 

@@ -1,0 +1,110 @@
+{
+  "schema": "cbmd.open-research.iteration-snapshot.v1",
+  "snapshot_id": "CBMD-BOOTSTRAP-2026-10-CYCLE-17",
+  "as_of": "2026-10-28",
+  "source_harness_commit": "1bffd8da123a509e08dd4c293bb18f3665e5963b",
+  "source_state_root": "e12c7114704964b03354fd0a2e8c6ba5786128ca3579977a745dd9efc6fc1245",
+  "research_status": "PAUSED",
+  "integration_status": "PARTIAL_DOCUMENTATION_AND_RECEIPTS",
+  "full_proof_replay_from_this_checkout": "NOT_YET_PACKAGED",
+  "independence": "PROJECT_SELF_VERIFICATION",
+  "evidence_scope": "Historical local results and promotion records; digest verification establishes custody, not theorem correctness or current proof replay.",
+  "artifacts": [
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-M3-exact-replay-r5-summary.json",
+      "sha256": "2f2d8892cf26e72ec483b235d96b9df780b4e5faf88ecd66ce961c973330e566",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-M3-exact-replay-r5-decision.json",
+      "sha256": "206c92668ab156a3d3bd521bc7a49ec2a231edd6967293ad0ff2555e9beb90d7",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-M7-parity-coefficient-closed-form-summary.json",
+      "sha256": "61b2154ca9549f105942856113146f0df12902edc9b3a39012368c8e51fa9c1b",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-M7-parity-coefficient-closed-form-decision.json",
+      "sha256": "2dd61582b69e2797a6690b61424fe20c0f2fc1e9152c3f812d4913d2a3b08ac3",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-native-source-bridge-summary.json",
+      "sha256": "a51eeedab2629d96221850ca83c0a68bf898082995adc4f157608cdb668ebfcb",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-native-source-bridge-decision.json",
+      "sha256": "41918644a73b131939ec4779a251577134d7d4b756407fd9a3df1d62125fa5c3",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-master-numerator-bcm1-summary.json",
+      "sha256": "0072dd0feec5b727c927870da019c4c7be45be7680be65c0977c79ec27ef0b8f",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-master-numerator-bcm1-decision.json",
+      "sha256": "a1abee6df39ca49b0d70d343c9e51e4599650f01fc8ffd5fb778a51fdcbdb552",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-bcm1-cost-semantics-summary.json",
+      "sha256": "1441d45e33562b3b8ad1897534018da0b45ff223db86eeeed398330d311892e0",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-bcm1-cost-semantics-decision.json",
+      "sha256": "60c8bc1bee63725befbeb98cd865a0a505cbb1c7eea9375862b87e712b6508b6",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-executable-joint-bcm1-summary.json",
+      "sha256": "f3f888d2730fea06b60d6902ef18ae394b80eddca2662386f8c69a41e454e33f",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-executable-joint-bcm1-decision.json",
+      "sha256": "54f12b49fdc1db6d0a551a50342ecd7fb48493ec5e85b10928f1ea1a8eb74ce0",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-coordinate-orbit-bcm1-summary.json",
+      "sha256": "b4ba988a3c0197cb8b5758cc87637b9668946beda8a8a67fc86dc598e7173b1d",
+      "role": "historical_summary"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/B5-K1-coordinate-orbit-bcm1-decision.json",
+      "sha256": "d70b371accf38272a04c9b32a94340845c79aaeb85ae6d1da960c49afbf4d322",
+      "role": "promotion_decision"
+    },
+    {
+      "path": "evidence/iterations/bootstrap-2026-10/CYCLE-0017-state.json",
+      "sha256": "96dc832623c18525ff4174f158692923ee786c28eb42856f2daa146435bdfeb0",
+      "role": "cycle_state"
+    }
+  ],
+  "discovery_bindings": [
+    {
+      "discovery_id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+      "claim_ids": [
+        "urn:cbmd:complexity:batch5:B5-M3:centered-vanishing-no-escape",
+        "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse",
+        "urn:cbmd:complexity:batch5:B5-M7:parity-coefficient-closed-form"
+      ]
+    },
+    {
+      "discovery_id": "CBMD-ALG-NATIVE-JOINT-001",
+      "claim_ids": [
+        "urn:cbmd:complexity:batch5:B5-K1:native-source-bridge",
+        "urn:cbmd:complexity:batch5:B5-K1:master-numerator-bcm1",
+        "urn:cbmd:complexity:batch5:B5-K1:bcm1-cost-semantics",
+        "urn:cbmd:complexity:batch5:B5-K1:executable-joint-bcm1",
+        "urn:cbmd:complexity:batch5:B5-K1:coordinate-orbit-bcm1"
+      ]
+    }
+  ],
+  "authority_effect": "NONE"
+}

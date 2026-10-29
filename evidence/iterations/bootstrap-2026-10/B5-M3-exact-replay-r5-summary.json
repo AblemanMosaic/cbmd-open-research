@@ -1,0 +1,45 @@
+{
+  "schema": "cbmd.exact-replay-evidence.v1",
+  "status": "PASS",
+  "question_id": "CBMD.B5.M3.CENTERED.VANISHING.EXACT.REPLAY.R5",
+  "claim_ids": [
+    "urn:cbmd:complexity:batch5:B5-M3:centered-vanishing-no-escape",
+    "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse"
+  ],
+  "archive": {
+    "path": "artifacts/CBMD_B5_M3_NO_ESCAPE_REPLAY_r5.zip",
+    "sha256": "de9622a21986e0a6f213e84ae4cc30dae2d402cbc3dbabb1924348c669c1f9f7",
+    "bytes": 235918
+  },
+  "source_manifest_sha256": "0208fee49305a20e3244800dc35fdd1f906aaabad0c5ed779a61d0cdeccbce06",
+  "target_source_sha256": "57118877644dec58a0b2a4b5930fac6f86b5737dd921005dca3244758b38c9c4",
+  "replay_receipt_sha256": "d15ebf350d71651da899fcf6237d841d9f7a3b85247860f6c508a2095d9ae0dd",
+  "files_verified_before_compile": 80,
+  "files_verified_after_archive_extraction": 80,
+  "archive_extraction_status": "PASS",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "dependency_realization": "PINNED_MATHLIB_CONTENT_ADDRESSED_CACHE",
+  "target_compiled_from_source": true,
+  "warning_as_error_target_check": "PASS",
+  "fresh_custody": true,
+  "elapsed_window_utc": {
+    "started_at": "2026-10-28T18:03:20.3236896Z",
+    "finished_at": "2026-10-28T18:35:37.3165845Z"
+  },
+  "diagnostic_attempts": [
+    {"candidate":"r1","status":"FAIL","reason":"lake executable not discoverable on PATH"},
+    {"candidate":"r2","status":"INTERRUPTED","reason":"unbounded full dependency source rebuild replaced by pinned content-addressed cache design"},
+    {"candidate":"r3","status":"FAIL","reason":"Mathlib cache hook could not discover bundled leantar executable"},
+    {"candidate":"r4","status":"PROOF_PASS_RECEIPT_FAIL","reason":"Windows PowerShell 5 rejected utf8NoBOM receipt encoding label"},
+    {"candidate":"r5","status":"PASS","reason":"fresh exact replay, strict target check, receipt, archive extraction, and manifest verification passed"}
+  ],
+  "known_remainder": [
+    "dependency artifacts are realized through Mathlib's pinned content-addressed cache rather than rebuilt entirely from source",
+    "intermediate proof modules emit reproducible deprecation and style-linter warnings",
+    "the replay is self-verification, not independent verification",
+    "novelty remains unassessed",
+    "remote GitHub updates remain prohibited until the user intervenes"
+  ],
+  "authority_effect": "NONE",
+  "nonclaims": ["NOVELTY", "PUBLICATION", "REVIEWER_APPROVAL", "INDEPENDENT_VERIFICATION"]
+}

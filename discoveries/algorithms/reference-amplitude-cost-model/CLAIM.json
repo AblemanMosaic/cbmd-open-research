@@ -1,11 +1,14 @@
 {
   "schema": "cbmd.open-research.claim.v1",
   "id": "CBMD-ALG-AMPLITUDE-COST-001",
-  "title": "Reference amplitude evaluation and cost model",
+  "title": "Reference amplitude cost model (no native speedup claim)",
   "field": "algorithms",
   "slug": "reference-amplitude-cost-model",
-  "public_version": "0.2.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT", "EXACT_MODEL_VERIFIED"],
+  "public_version": "0.3.0-candidate",
+  "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED"
+  ],
   "statement": "Under BCM-1, the closed coefficient formula evaluates one reference amplitude in O(R) big-integer operations, the frozen enumeration producer performs exactly sum_{j<R} C(Q-1,j)2^j indicator tests per amplitude call, and all amplitude classes fit in a table of at most QR entries; row assembly is conditional on explicit ring-unit hypotheses.",
   "verified": [
     "closed coefficient route equals the frozen enumeration producer on 163,912 bounded calls",
@@ -14,10 +17,10 @@
     "the corrected evidence replays from a clean extraction of the sealed r7 source package and from this repository checkout"
   ],
   "unresolved": [
-    "native executable realization and cost model",
-    "reference-to-native source correspondence",
+    "the historical cost argument needs explicit joint parameter regimes; at fixed R its enumeration count is polynomial in Q",
+    "standalone separately implemented verifier and external mathematical review",
     "targeted novelty review",
-    "external mathematical review"
+    "the later source correspondence and candidate evaluator are a separate discovery line, not a result of this reference-only checker"
   ],
   "nonclaims": [
     "not a native SAT speedup",
@@ -25,11 +28,15 @@
     "not a total owner-sum cost theorem",
     "not a claim about an executable native entry"
   ],
-  "smallest_decisive_test": "Bind the closed amplitude route to an executable native entry under an explicit cost model, or exhibit the first exact source-level obstruction to that transport.",
+  "smallest_decisive_test": "Reproduce the declared reference checks and audit each asymptotic comparison with its parameter regime; review the separately tracked native evaluator independently.",
   "checks": [
     {
       "id": "reference-amplitude-cost-replay",
-      "command": ["{python}", "-B", "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"],
+      "command": [
+        "{python}",
+        "-B",
+        "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"
+      ],
       "required": true
     }
   ],
