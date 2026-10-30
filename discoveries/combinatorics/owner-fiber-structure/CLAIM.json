@@ -1,26 +1,48 @@
 {
-  "schema": "cbmd.open-research.claim.v1",
-  "id": "CBMD-COMB-OWNER-FIBER-001",
-  "title": "Owner-fiber structure and support",
-  "field": "combinatorics",
-  "slug": "owner-fiber-structure",
-  "public_version": "0.1.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
-  "statement": "Under full-head coherence and orbit-head injectivity, a fixed covered target and requested owner have at most one nonzero contributing source row, determined by the orbit candidate; target sums are bounded by distinct block/orbit-class pairs, and coherence is required only on active coordinates.",
-  "verified": [],
-  "unresolved": [
-    "standalone public reproduction",
-    "formal correspondence to the exact packed source definitions",
-    "source-bound formal proof",
-    "targeted novelty comparison"
-  ],
-  "nonclaims": [
-    "not a native SAT complexity theorem",
-    "not a Python-to-source refinement proof",
-    "not a novelty determination",
-    "not specialist review"
-  ],
-  "smallest_decisive_test": "Against the exact packed definitions, either prove the unique-contributor statement while preserving missing-address, first-occurrence, repeated-incidence, uncovered-target, and exact-owner branches, or give the smallest counterexample.",
-  "checks": [],
-  "authority_effect": "NONE"
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-OWNER-FIBER-001",
+ "title": "Owner-fiber structure and support",
+ "field": "combinatorics",
+ "slug": "owner-fiber-structure",
+ "public_version": "0.2.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED",
+  "REVISED"
+ ],
+ "statement": "Under full-head coherence and orbit-head injectivity, a fixed covered target and requested owner have at most one nonzero contributing source row, determined by the orbit candidate; target sums are bounded by distinct block/orbit-class pairs, and coherence is required only on active coordinates.",
+ "verified": [
+  "A standalone verifier importing nothing from the archive reproduces the finite model; it rebuilds the source row from the integer amplitude and the Lagrange assembly.",
+  "Unique contributor: 0 violations over 480 fibers with 48 off-diagonal contributors at Q=2, and 0 over 1,728 fibers with 288 off-diagonal contributors at Q=3.",
+  "The candidate lookup predicts the contributing column exactly: 144 of 144 agreements at Q=2 and 480 of 480 at Q=3, with no mismatches.",
+  "Class-count bound for sums of target rows: 0 violations over 1,230 sums, with the bound attained 54 times.",
+  "Active-coordinate coherence is necessary: breaking it at one active coordinate yields two contributors at target (0,0|1,1).",
+  "Degeneracy controls: the known A=0, R>=|D| regime reproduces as diagonal-only, and the run refuses to report success from a degenerate box or from layouts containing no off-diagonal contributor."
+ ],
+ "unresolved": [
+  "formal correspondence to the exact packed source definitions",
+  "source-bound formal proof",
+  "multi-block packing is not modelled",
+  "targeted novelty comparison"
+ ],
+ "nonclaims": [
+  "not a native SAT complexity theorem",
+  "not a Python-to-source refinement proof",
+  "not a novelty determination",
+  "not specialist review",
+  "a finite model check; the packed source definitions are not bound and multiple blocks are not modelled"
+ ],
+ "smallest_decisive_test": "Against the exact packed definitions, either prove the unique-contributor statement while preserving missing-address, first-occurrence, repeated-incidence, uncovered-target, and exact-owner branches, or give the smallest counterexample.",
+ "checks": [
+  {
+   "id": "OWNER_FIBER_STANDALONE",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/owner-fiber-structure/verification/owner_fiber.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
 }

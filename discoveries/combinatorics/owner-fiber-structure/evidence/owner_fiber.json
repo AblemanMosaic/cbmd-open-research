@@ -1,0 +1,90 @@
+{
+ "schema": "cbmd.owner-fiber-standalone.v1",
+ "box": {
+  "Q": 2,
+  "r": 2,
+  "owners": 5,
+  "layout_seeds": 6,
+  "A": 1,
+  "R": 2
+ },
+ "degeneracy_live": {
+  "offdiagonal_candidates": 8,
+  "offdiagonal_nonzero": 8,
+  "status": "NONDEGENERATE"
+ },
+ "degeneracy_defect_regime": {
+  "offdiagonal_candidates": 8,
+  "offdiagonal_nonzero": 0,
+  "status": "DEGENERATE_DIAGONAL_ONLY"
+ },
+ "U1_unique_contributor": {
+  "fibers": 480,
+  "offdiagonal_contributors": 48,
+  "violations": 0,
+  "fibers_with_one": 144,
+  "candidate_agreements": 144,
+  "candidate_mismatches": 0,
+  "first_violation": null
+ },
+ "U2_class_count_bound": {
+  "sums": 1230,
+  "violations": 0,
+  "tight": 54,
+  "first_violation": null
+ },
+ "U3_active_coherence_necessary": {
+  "found": true,
+  "target": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "broken_active_coordinate": 0,
+  "contributors": [
+   [
+    0,
+    0,
+    1,
+    1
+   ],
+   [
+    1,
+    0,
+    0,
+    1
+   ]
+  ],
+  "count": 2
+ },
+ "U1_breadth_Q3": {
+  "box": {
+   "Q": 3,
+   "r": 2,
+   "A": 1,
+   "R": 2,
+   "seeds": 3
+  },
+  "degeneracy": {
+   "offdiagonal_candidates": 96,
+   "offdiagonal_nonzero": 96,
+   "status": "NONDEGENERATE"
+  },
+  "fibers": 1728,
+  "offdiagonal_contributors": 288,
+  "violations": 0,
+  "fibers_with_one": 480,
+  "candidate_agreements": 480,
+  "candidate_mismatches": 0,
+  "first_violation": null
+ },
+ "nonclaims": [
+  "a finite model of the owner-fiber statement; no binding to the packed source definitions",
+  "no native SAT consequence, no refinement proof, no novelty determination",
+  "block structure is modelled as a single covered target block"
+ ],
+ "authority_effect": "NONE",
+ "content_gate_failures": [],
+ "status": "PASS"
+}

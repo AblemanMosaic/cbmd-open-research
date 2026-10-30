@@ -23,15 +23,17 @@
       "slug": "owner-fiber-structure",
       "path": "discoveries/combinatorics/owner-fiber-structure",
       "title": "Owner-fiber structure and support",
-      "pipeline_stage": "CLAIM_BOUND",
-      "next_obligation": "Import a standalone non-degenerate reference verifier and reproduce the fixed-target owner-fiber identity from a clean checkout.",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "State and compile the correspondence to the exact packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches.",
       "promotion_blockers": [
-        "public standalone verifier not yet imported",
-        "native source correspondence remains unproved",
-        "targeted novelty review remains unperformed"
+        "source-bound formal correspondence not stated",
+        "multi-block packing not modelled",
+        "novelty unassessed"
       ],
       "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT"
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED",
+        "REVISED"
       ]
     },
     {

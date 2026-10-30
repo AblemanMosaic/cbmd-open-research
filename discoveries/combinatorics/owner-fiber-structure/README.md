@@ -1,7 +1,7 @@
 # Owner-fiber structure and support
 
-> **Pipeline stage:** `CLAIM_BOUND`  
-> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`
+> **Pipeline stage:** `QUALIFYING`  
+> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`, `REVISED`
 
 Permanent discovery ID: `CBMD-COMB-OWNER-FIBER-001`
 
@@ -11,11 +11,26 @@ For a fixed covered target and requested owner, under the stated full-head coher
 
 ## Current standing
 
-The retained r6 source package contains a written proof, non-degenerate finite checks, and negative controls. Those materials are hash-bound in [SOURCE_CUSTODY.json](evidence/SOURCE_CUSTODY.json), but the public repository does not yet contain a standalone reproduction. The result therefore remains a claim-bound candidate.
+A standalone verifier is now present ([`verification/owner_fiber.py`](verification/owner_fiber.py)),
+importing nothing from the archive. It finds no violation of the unique-contributor
+statement over 480 fibers at `Q=2` and 1,728 at `Q=3`, with 48 and 288
+off-diagonal contributors respectively, and the candidate lookup predicts the
+contributing column in every single-contributor fiber. The class-count bound for
+target sums holds over 1,230 sums and is attained 54 times. Breaking coherence at
+one active coordinate produces two contributors, as the claim requires.
+
+Two degeneracy traps are recorded, one of them new: a non-degenerate *object*
+does not imply a non-degenerate *test population*. See
+[`revisions/0.2.0-standalone-verifier.md`](revisions/0.2.0-standalone-verifier.md).
+
+What is still missing is the binding to the exact packed source definitions, and
+multi-block packing is not modelled.
 
 ## Next obligation
 
-Import a neutral standalone verifier, exercise non-degenerate off-diagonal contributors, and state the correspondence to the exact packed source definitions. A source-bound formal proof or a precise counterexample would settle promotion.
+State and compile the correspondence to the packed source definitions,
+preserving the missing-address, first-occurrence, repeated-incidence,
+uncovered-target and exact-owner branches; or give the smallest counterexample.
 
 ## Nonclaims
 
