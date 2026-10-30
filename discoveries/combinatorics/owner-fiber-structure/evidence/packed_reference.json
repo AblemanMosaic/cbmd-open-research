@@ -1,0 +1,38 @@
+{
+ "schema": "cbmd.owner-fiber-packed-reference.v1",
+ "trials": 300,
+ "queries": 21144,
+ "u1_violations": 0,
+ "candidate_disagreements": 0,
+ "off_diagonal_contributors": 1396,
+ "u2_sums": 8226,
+ "u2_violations": 0,
+ "u2_attained": 1051,
+ "branch_missing_pair": 1371,
+ "branch_repeated_pair": 2376,
+ "branch_uncovered_target": 1083,
+ "branch_exact_owner_rejection": 4013,
+ "branch_block_ge_1": 6019,
+ "control_block_blind_u1_violations": 4123,
+ "control_incoherent_u1_violations": 22,
+ "gates": {
+  "U1_no_violation": true,
+  "U1_candidate_route_agrees": true,
+  "U1_nondegenerate": true,
+  "U2_no_violation": true,
+  "U2_bound_attained": true,
+  "branch_missing_pair_exercised": true,
+  "branch_repeated_pair_exercised": true,
+  "branch_uncovered_target_exercised": true,
+  "branch_exact_owner_rejection_exercised": true,
+  "branch_block_ge_1_exercised": true,
+  "control_block_blind_fails": true,
+  "control_incoherent_fails": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "a census against the repository's frozen Python packed reference, not a compiled correspondence to the archive's packed Lean definitions",
+  "does not restore SOURCE_BOUND_COMPILED"
+ ],
+ "authority_effect": "NONE"
+}

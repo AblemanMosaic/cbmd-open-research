@@ -23,3 +23,11 @@ only orbit element with that head is the target itself. Head words are now
 required to cover the head-word space, with a surplus owner duplicating a head
 so that distinct owners with equal heads — the case the owner check exists to
 handle — are exercised.
+
+## Against the packed reference (revision 0.6.0)
+
+`packed_reference.py` is the one script here that imports from outside the
+dossier: it evaluates the claims against the frozen packed reference pinned by
+the cost dossier (`owner_sum.py`), on layouts with several blocks, and gates on
+every packed branch being exercised and on two controls failing. It is a census,
+not a compiled correspondence.

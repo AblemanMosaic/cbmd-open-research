@@ -4,7 +4,7 @@
  "title": "Owner-fiber structure and support",
  "field": "combinatorics",
  "slug": "owner-fiber-structure",
- "public_version": "0.5.0",
+ "public_version": "0.6.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
@@ -24,13 +24,14 @@
   "The compiled theorem's own hypotheses are measured against the model: over 1,536 source rows, all 144 nonzero rows lie in the target's orbit, no column's head differs from its owner's, and among 192 distinct pairs inside a single orbit none share a head word.",
   "contributor_class_injective compiles: two targets in one orbit class and two columns of one owner supported at them force the columns to coincide, which is the step the class-count bound rests on; the remaining pigeonhole needs no checking.",
   "InOrbit is proved an equivalence relation (inOrbit_symm and inOrbit_trans depend on no axioms), which the class argument needs.",
-  "Measured as occupancy of the owner-by-class table: 96 occupied cells, none holding more than one column, and 30 owners spanning two or more classes so the bound is not being checked only in the trivial one-class case."
+  "Measured as occupancy of the owner-by-class table: 96 occupied cells, none holding more than one column, and 30 owners spanning two or more classes so the bound is not being checked only in the trivial one-class case.",
+  "Against the frozen packed reference with two or three blocks (revision 0.6.0): no unique-contributor violation over 21,144 queries, the literal and candidate routes agree on every query, no class-count violation over 8,226 target sums (attained 1,051 times), every packed branch exercised, and both controls fail: cross-block comparison gives 4,123 violations and an incoherent incidence gives 22."
  ],
  "unresolved": [
   "formal correspondence to the exact packed source definitions",
   "source-bound formal proof",
-  "multi-block packing is not modelled",
-  "targeted novelty comparison"
+  "targeted novelty comparison",
+  "multi-block packing is censused against the Python packed reference (revision 0.6.0) but not compiled"
  ],
  "nonclaims": [
   "not a native SAT complexity theorem",
@@ -39,7 +40,7 @@
   "not specialist review",
   "a finite model check; the packed source definitions are not bound and multiple blocks are not modelled",
   "the compiled theorem proves U1 from the two measured hypotheses; it does not formalize the amplitude, the class-count bound, or the packed source definitions",
-  "the class-count bound is compiled as injectivity per owner and class; the pigeonhole from that to a count is left explicit and uncompiled, and multi-block packing is not modelled so (block, orbit-class) is read as orbit class",
+  "the class-count bound is compiled as injectivity per owner and class; the pigeonhole from that to a count is left explicit and uncompiled, and the compiled form reads (block, orbit-class) as orbit class; multi-block packing is censused, not compiled",
   "not SOURCE_BOUND_COMPILED: the Lean development compiles U1 and the class-count injectivity against an abstract model in which support-in-orbit is a hypothesis, not against the declared packed source definitions; an earlier revision granted the status and it was withdrawn"
  ],
  "smallest_decisive_test": "Against the exact packed definitions, either prove the unique-contributor statement while preserving missing-address, first-occurrence, repeated-incidence, uncovered-target, and exact-owner branches, or give the smallest counterexample.",
@@ -62,6 +63,16 @@
     "--audit-only"
    ],
    "required": true
+  },
+  {
+   "id": "OWNER_FIBER_PACKED_REFERENCE",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/combinatorics/owner-fiber-structure/verification/packed_reference.py"
+   ],
+   "required": false
   }
  ],
  "authority_effect": "NONE"

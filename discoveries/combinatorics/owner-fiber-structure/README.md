@@ -40,8 +40,16 @@ Revision 0.4.0 compiles the class-count bound the same way, by isolating what
 it rests on: for a fixed owner, each orbit class holds at most one column. The
 step from that to a count is pigeonhole and is left explicit.
 
-What is still missing is the binding to the exact packed source definitions, and
-multi-block packing is not modelled.
+Revision 0.6.0 checks both claims against the repository's frozen **packed
+reference** on layouts with several blocks. The census has zero violations over
+21,144 queries and 8,226 target sums. Every packed branch is exercised:
+missing pair, repeated pair, uncovered target, exact-owner rejection, and a
+block other than 0. Comparing rows across blocks breaks it (4,123 violations),
+so the block structure is load-bearing. See
+[`revisions/0.6.0-packed-reference-census.md`](revisions/0.6.0-packed-reference-census.md).
+
+What is still missing is a *compiled* binding to the exact packed source
+definitions.
 
 ## Next obligation
 
