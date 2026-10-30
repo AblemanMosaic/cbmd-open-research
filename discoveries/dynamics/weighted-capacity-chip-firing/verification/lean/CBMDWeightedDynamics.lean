@@ -2,3 +2,4 @@ import CBMDWeightedDynamics.Core
 import CBMDWeightedDynamics.Transfer
 import CBMDWeightedDynamics.CycleObstruction
 import CBMDWeightedDynamics.Characterization
+import CBMDWeightedDynamics.Necessity

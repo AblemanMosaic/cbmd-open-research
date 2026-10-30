@@ -94,7 +94,14 @@ forever once the dead receiver fills, while ordinary firing proceeds regardless.
 Over **798,025 systems** the three conditions agree with the exact transfer
 property in every case — zero unsound, zero incomplete — and each is separately
 necessary (dropping them makes the predicate wrong on 63,847 / 4,998 / 393,192
-systems respectively). Sufficiency is proved; exactness is a census result.
+systems respectively).
+
+Sufficiency is proved, and so is the necessity of the bound and of live-closure,
+each by an explicit compiled witness. Ordering plus live-closure also provably
+exclude every obstruction of this shape. The **one** step not proved is turning
+"no rank function exists" into a concrete cycle — the classical finite-digraph
+topological-order fact, not specific to this model. See
+[`revisions/0.4.0-necessity.md`](revisions/0.4.0-necessity.md).
 
 Both failures are also now **one** theorem. `filled_set_obstruction`: fill any
 set whose live members point back into it, empty the rest, and the state is

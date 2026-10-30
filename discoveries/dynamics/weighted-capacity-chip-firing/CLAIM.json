@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.3.0",
+ "public_version": "0.4.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -27,13 +27,16 @@
   "Sufficiency over arbitrary digraphs compiles: under the three live-set conditions an admissible capacity-terminal state is ordinarily stable; vertices outside the live set are permanently ordinarily stable and need no argument.",
   "A single filled-set obstruction compiles and yields both the cycle failure and the live-to-dead failure as instances; liveToDeadFilledSet constructs the two-member case and depends on no axioms.",
   "Exactness census: over 798,025 systems (n<=3, multiplicity<=2, unit sink arcs, every capacity in 0..d(v)+2) the three conditions agree with the exact transfer property in every case, with zero unsound and zero incomplete.",
-  "Minimality: dropping ordered-on-live makes the predicate wrong on 63,847 systems, dropping the bound on 4,998, and dropping live-closed on 393,192; no drop produces an incomplete predicate, so the conditions are independent."
+  "Minimality: dropping ordered-on-live makes the predicate wrong on 63,847 systems, dropping the bound on 4,998, and dropping live-closed on 393,192; no drop produces an incomplete predicate, so the conditions are independent.",
+  "Necessity of the bound is proved: violating it on a live arc yields an explicit capacity-terminal state that is not ordinarily stable, with the truncated-subtraction branch handled rather than assumed away.",
+  "Necessity of live-closure is proved via the two-member filled set, which depends on no axioms.",
+  "Ordering together with live-closure provably admit no filled-set obstruction at all (depends on propext alone), so the sufficient conditions are exactly strong enough to exclude the obstruction."
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
   "necessity of the bound at receivers of incoming multiplicity one",
   "non-absorbing sinks",
-  "a proof that the three live-set conditions are exhaustive over all digraphs; exactness is established by census over the stated box only"
+  "the step from 'no rank function on the live subgraph' to a concrete directed cycle: the classical finite-digraph topological-order fact, not proved here and the sole gap between the compiled theorems and the census"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",
