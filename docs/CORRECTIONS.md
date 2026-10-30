@@ -37,9 +37,10 @@ externally reviewed or novelty-assessed; both remain open for all three.
 
 ## Second iteration correction register
 
-Every entry below was caught before the affected claim was registered, and all
-but two are defects in the **evidence apparatus** rather than in the
-mathematics. That distribution is the finding: a wrong theorem announces
+Every entry below but one was caught before the affected claim was registered,
+and all but two are defects in the **evidence apparatus** rather than in the
+mathematics. The exception is a prior-art note that was committed and then
+reverted, recorded last. That distribution is the finding: a wrong theorem announces
 itself, while a control that tests nothing passes quietly.
 
 | Correction | Current disposition | Evidence or obligation |
@@ -55,6 +56,7 @@ itself, while a control that tests nothing passes quietly.
 | A valuation control was labelled by its roots in `C` when only roots in `Z_3` matter | Relabelled; `x^2 + 3x - 3` has no root in `Z_3`, so it is in the periodic branch and its rank was right to stabilize | [Valuation regularity](../discoveries/algebra/residue-lift-transport-boundaries/revisions/0.4.0-valuation-regularity.md). |
 | Testing for a root in `Z_3` by Hensel survivors, before removing rational roots | Corrected; `(x+2)(x-1)` has two rational roots three apart, so the product is divisible by `9` at every lift and survivors persist with nothing behind them | [Valuation regularity](../discoveries/algebra/residue-lift-transport-boundaries/revisions/0.4.0-valuation-regularity.md); stripping first makes the test correct, and correct by compactness. |
 | An anti-vacuity gate required a witness of exactly what its theorem forbids | Replaced; counting *distinct pairs inside one orbit* is what makes orbit-head injectivity non-vacuous, not counting pairs that share a head | [Unique contributor](../discoveries/combinatorics/owner-fiber-structure/revisions/0.3.0-compiled-unique-contributor.md); the first version could only ever fail. |
+| A prior-art note for the ECH dossier withdrew the count of sixteen `U`-towers as already published and marked open question 6 answered | Both reverted. The note was written without first reading the argument's own literature section, which already cites Chen and Nelson–Weiler and frames the dossier as the extension to exactly the classes Chen excludes; sixteen at `Γ ∈ {1,2}` is that unpublished extension, and question 6 concerns the Heegaard–Floer route, which the search never examined | Committed as `d249975`, corrected in the following commit. [Corrected note](../discoveries/ech/genus-two-low-sector/review/PRIOR_ART.md). The same pass reformatted two JSON files from two-space to one-space indentation, burying real changes in whitespace; both restored. |
 
 Two prior-art corrections from the same iteration are recorded with their
 dossiers rather than here, because they narrow claims rather than repair
@@ -85,4 +87,7 @@ The practices that did the catching, stated so they can be reused:
   its own certificate and check it against the proof's hypotheses, rather than
   asserting the two describe the same object;
 - report a search that could not have found a counterexample as vacuous, under
-  a name distinct from a search that looked and found none.
+  a name distinct from a search that looked and found none;
+- read a dossier's existing literature section before writing a prior-art note
+  for it. The one entry above that reached a commit did so because an external
+  search was trusted over the record it was meant to supplement.
