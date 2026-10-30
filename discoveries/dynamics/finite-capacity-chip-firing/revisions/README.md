@@ -7,3 +7,5 @@ verified by Q9 and Q10.
 `0.1.0-publication-qualification-repairs.md` records the public packaging
 failures found and repaired before publication. None changed the theorem,
 finite-search outputs, or source-bound proof envelope.
+
+`0.2.0-checked-decoding.md`: external graph instances in a declared JSON format are decoded into the Lean parameters, with the theorem's hypotheses discharged by `decide` and a Lean-side round trip; three controls, two caught by the kernel and one by the round trip.

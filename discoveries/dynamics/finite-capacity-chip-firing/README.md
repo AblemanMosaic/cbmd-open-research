@@ -32,10 +32,16 @@ The finite enumeration corroborates the theorem but is not its proof.
 
 - Novelty is not certified. The capacity rule is classical finite-capacity
   Petri-net semantics, and an equivalent theorem may exist under another name.
-- External graph files are not decoded or certified by the Lean theorem;
-  callers must supply the true edge relation and outdegree function.
-- The weighted/parallel-edge successor is unproved. The leading candidate is
-  `C(v) >= d(v) + max_u m(u,v) - 1`.
+- ~~External graph files are not decoded or certified by the Lean theorem;
+  callers must supply the true edge relation and outdegree function.~~ Settled
+  for a declared JSON format in revision 0.2.0. `verification/decoder/` emits
+  a Lean instance whose hypotheses are proved by `decide`, and accepts it only
+  if Lean's own evaluation reconstructs the input. Other formats need their
+  own front end.
+- ~~The weighted/parallel-edge successor is unproved. The leading candidate is
+  `C(v) >= d(v) + max_u m(u,v) - 1`.~~ Proved in
+  [`CBMD-DYN-WEIGHTED-CAPACITY-001`](../weighted-capacity-chip-firing/README.md);
+  this line had gone stale.
 
 ## Smallest decisive tests
 
@@ -50,6 +56,7 @@ The finite enumeration corroborates the theorem but is not its proof.
 - `verification/reference/`: producer and deterministic finite searches.
 - `verification/independent/`: separately implemented finite verifier.
 - `verification/lean/`: exact Lean 4.35.0 source envelope and replay driver.
+- `verification/decoder/`: checked decoding of external graph instances (revision 0.2.0).
 - `evidence/`: source custody and the sanitized Q10 binding receipt.
 - `review/`: bounded prior-art and formal-source comparison.
 - `revisions/`: preserved qualification-path failure and repair.

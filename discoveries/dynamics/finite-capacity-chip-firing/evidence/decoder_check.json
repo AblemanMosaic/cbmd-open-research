@@ -1,0 +1,41 @@
+{
+ "schema": "cbmd.finite-dynamics-decoder-check.v1",
+ "instances": 61,
+ "certified": 61,
+ "max_vertices": 8,
+ "lean_exit": 0,
+ "refusals": {
+  "CYCLE": "CYCLE",
+  "CAPACITY_BELOW_OUTDEGREE": "CAPACITY_BELOW_OUTDEGREE",
+  "REPEATED_EDGE": "REPEATED_EDGE",
+  "EDGE_OUT_OF_SINK": "EDGE_OUT_OF_SINK",
+  "LOOP": "LOOP",
+  "NO_OUT_EDGE": "NO_OUT_EDGE",
+  "MISSING_CAPACITY": "MISSING_CAPACITY"
+ },
+ "kernel_controls": {
+  "capacity": "REJECTED_BY_LEAN",
+  "backward_edge": "REJECTED_BY_LEAN",
+  "drop_edge": "LEAN_ACCEPTED_ROUND_TRIP_REJECTED"
+ },
+ "axioms_observed": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "gates": {
+  "round_trip_rejects_dropped_edge": true,
+  "every_instance_certified": true,
+  "refusals_match": true,
+  "lean_rejects_corrupt_capacity": true,
+  "lean_rejects_backward_edge": true,
+  "axioms_within_allowlist": true
+ },
+ "status": "PASS",
+ "lean_stderr_tail": "",
+ "nonclaims": [
+  "certifies the declared JSON format only; other graph formats need their own decoder",
+  "the decoder is trusted to emit; the kernel's decide proofs and Lean's own evaluation are the certificate"
+ ],
+ "authority_effect": "NONE"
+}

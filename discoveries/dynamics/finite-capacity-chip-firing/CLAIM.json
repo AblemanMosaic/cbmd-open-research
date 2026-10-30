@@ -1,72 +1,83 @@
 {
-  "schema": "cbmd.open-research.claim.v1",
-  "id": "CBMD-DYN-CAPACITY-FIRING-001",
-  "title": "Finite-capacity chip-firing preservation on ordered DAGs",
-  "field": "dynamics",
-  "slug": "finite-capacity-chip-firing",
-  "public_version": "0.1.0",
-  "status": [
-    "PROVISIONAL_WRITTEN_ARGUMENT",
-    "SOURCE_BOUND_COMPILED",
-    "EXACT_MODEL_VERIFIED",
-    "INDEPENDENTLY_REPRODUCED"
-  ],
-  "statement": "For a finite loopless directed acyclic graph with unit nonsink edges, an absorbing sink reachable from every nonsink vertex, and capacities C(v) at least the total outdegree d(v), capacity-blocked chip-firing terminates and has the same unique normal form as ordinary chip-firing from every admissible initial state.",
-  "verified": [
-    "The concrete unit-edge theorem compiles under Lean 4.35.0 and Lake 5.0.0 without sorry, admit, or a new axiom.",
-    "The compiled chain proves lexicographic termination, legal-firing commutation, ordinary unique stabilization, and transfer to capacity-blocked firing.",
-    "The primary finite box covers 340 ordered simple DAGs, 5222 capacity systems, and 420840 admissible initial states with no counterexample.",
-    "A separately written verifier reproduces the finite counts and the positive result without importing the producer.",
-    "Independent adverse checks preserve a three-vertex cyclic nonconfluence witness, a two-vertex cyclic false normal form, and a parallel-edge DAG false normal form."
-  ],
-  "unresolved": [
-    "specialist-quality novelty and prior-art assessment",
-    "checked decoding of an external graph instance into the Lean edge and outdegree parameters"
-  ],
-  "nonclaims": [
-    "not a novelty or priority determination",
-    "not a theorem for cyclic graphs, parallel transfers, capacities below outdegree, stochastic rules, or infinite graphs",
-    "not certification that an external graph file was correctly encoded",
-    "not evidence that finite-capacity Petri-net semantics are new",
-    "the weighted and parallel-transfer criterion once listed as open here is resolved by the successor CBMD-DYN-WEIGHTED-CAPACITY-001, not by this dossier"
-  ],
-  "smallest_decisive_test": "Provide a counterexample satisfying the exact ordered unit-edge hypotheses, or identify the first invalid correspondence between the Lean concreteFire relation and the stated chip-firing update.",
-  "checks": [
-    {
-      "id": "FINITE_DYNAMICS_SOURCE_CUSTODY",
-      "command": [
-        "python",
-        "-B",
-        "discoveries/dynamics/finite-capacity-chip-firing/verification/verify_custody.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "FINITE_DYNAMICS_EXACT_REPLAY",
-      "command": [
-        "python",
-        "-B",
-        "discoveries/dynamics/finite-capacity-chip-firing/verification/run_checks.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "FINITE_DYNAMICS_LEAN_SOURCE_AUDIT",
-      "command": [
-        "python",
-        "-B",
-        "discoveries/dynamics/finite-capacity-chip-firing/verification/lean/replay.py",
-        "--audit-only"
-      ],
-      "required": true
-    }
-  ],
-  "authority_effect": "NONE",
-  "source_binding": {
-    "internal_commit": "6162015e529a66cb549a8510c1f132f4bcb02f73",
-    "qualification_run": "Q10",
-    "source_root": "a537655caa6f2c845ee2aecf430f4514a5ab77970f6bcaf5f1c4fb9d2c21de88",
-    "generated_root": "6e0e24a384bc442f97920f112b788d94f274756097f1b62686c55546da7a6b71",
-    "scope": "Exact public copies of the proof and finite verifiers; the path-bearing internal receipt is represented by a sanitized binding record rather than redistributed."
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-DYN-CAPACITY-FIRING-001",
+ "title": "Finite-capacity chip-firing preservation on ordered DAGs",
+ "field": "dynamics",
+ "slug": "finite-capacity-chip-firing",
+ "public_version": "0.2.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "SOURCE_BOUND_COMPILED",
+  "EXACT_MODEL_VERIFIED",
+  "INDEPENDENTLY_REPRODUCED"
+ ],
+ "statement": "For a finite loopless directed acyclic graph with unit nonsink edges, an absorbing sink reachable from every nonsink vertex, and capacities C(v) at least the total outdegree d(v), capacity-blocked chip-firing terminates and has the same unique normal form as ordinary chip-firing from every admissible initial state.",
+ "verified": [
+  "The concrete unit-edge theorem compiles under Lean 4.35.0 and Lake 5.0.0 without sorry, admit, or a new axiom.",
+  "The compiled chain proves lexicographic termination, legal-firing commutation, ordinary unique stabilization, and transfer to capacity-blocked firing.",
+  "The primary finite box covers 340 ordered simple DAGs, 5222 capacity systems, and 420840 admissible initial states with no counterexample.",
+  "A separately written verifier reproduces the finite counts and the positive result without importing the producer.",
+  "Independent adverse checks preserve a three-vertex cyclic nonconfluence witness, a two-vertex cyclic false normal form, and a parallel-edge DAG false normal form.",
+  "Checked decoding (revision 0.2.0): external graph instances in a declared JSON format are decoded into the Lean edge and outdegree parameters, the three hypotheses of fd_c1_concrete are discharged by decide, and Lean's own evaluation must reconstruct the input exactly; 61 of 61 random instances certified, seven malformed inputs refused, and three controls caught (capacity and edge-order corruption by the kernel, a dropped edge by the round trip)."
+ ],
+ "unresolved": [
+  "specialist-quality novelty and prior-art assessment",
+  "checked decoding for graph formats other than the declared JSON format"
+ ],
+ "nonclaims": [
+  "not a novelty or priority determination",
+  "not a theorem for cyclic graphs, parallel transfers, capacities below outdegree, stochastic rules, or infinite graphs",
+  "not certification that an external graph file was correctly encoded",
+  "not evidence that finite-capacity Petri-net semantics are new",
+  "the weighted and parallel-transfer criterion once listed as open here is resolved by the successor CBMD-DYN-WEIGHTED-CAPACITY-001, not by this dossier"
+ ],
+ "smallest_decisive_test": "Provide a counterexample satisfying the exact ordered unit-edge hypotheses, or identify the first invalid correspondence between the Lean concreteFire relation and the stated chip-firing update.",
+ "checks": [
+  {
+   "id": "FINITE_DYNAMICS_SOURCE_CUSTODY",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/finite-capacity-chip-firing/verification/verify_custody.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "FINITE_DYNAMICS_EXACT_REPLAY",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/finite-capacity-chip-firing/verification/run_checks.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "FINITE_DYNAMICS_LEAN_SOURCE_AUDIT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/finite-capacity-chip-firing/verification/lean/replay.py",
+    "--audit-only"
+   ],
+   "required": true
+  },
+  {
+   "id": "FINITE_DYNAMICS_CHECKED_DECODING",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/dynamics/finite-capacity-chip-firing/verification/decoder/check_decoder.py"
+   ],
+   "required": false
   }
+ ],
+ "authority_effect": "NONE",
+ "source_binding": {
+  "internal_commit": "6162015e529a66cb549a8510c1f132f4bcb02f73",
+  "qualification_run": "Q10",
+  "source_root": "a537655caa6f2c845ee2aecf430f4514a5ab77970f6bcaf5f1c4fb9d2c21de88",
+  "generated_root": "6e0e24a384bc442f97920f112b788d94f274756097f1b62686c55546da7a6b71",
+  "scope": "Exact public copies of the proof and finite verifiers; the path-bearing internal receipt is represented by a sanitized binding record rather than redistributed."
+ }
 }

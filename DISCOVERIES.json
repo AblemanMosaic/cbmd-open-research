@@ -111,7 +111,7 @@
       "next_obligation": "Determine whether the weighted successor's prior art is settled; the sharp weighted candidate C(v) >= d(v) + max_u m(u,v) - 1 is now compiled as CBMD-DYN-WEIGHTED-CAPACITY-001.",
       "promotion_blockers": [
         "specialist novelty and prior-art assessment remains open",
-        "external graph-instance decoding is not certified by the Lean theorem"
+        "checked decoding covers only the declared JSON graph format (revision 0.2.0)"
       ],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",
