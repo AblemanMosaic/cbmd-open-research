@@ -37,6 +37,10 @@ is open.
 - **Method.** By a threshold argument, the property becomes red-count
   dominance in a two-colour chip-firing. That is a finite-state process: it can
   be searched exhaustively, and its runs lift back to labeled runs.
+- **A census at 31 chips.** Violating stable coloured states occur exactly for
+  thresholds 8–23 (1340 in all). The complete set of forced pairwise order
+  relations between vertices is 196 relations, with 48 cover relations; at 15
+  chips it is 65 relations with 20 cover relations.
 - **Independent review:** an independent replay with fresh code confirms every
   certificate. It also re-derived the 36,220 stable configurations at 15
   chips, none violating.

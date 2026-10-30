@@ -103,6 +103,25 @@ the counterexamples:
 Uniformly random labeled firing missed them: no violation appeared in 200,000
 runs at `(2, 5)` (`labeled_random_sampler.cpp`, seed 3). The violations need deliberately extreme choices of chips.
 
+## Census at 31 chips
+
+The same two-colour search, run over all thresholds `t = 1, …, 30` at
+`(k, ℓ) = (2, 5)`, gives two exact descriptions (`evidence/colour_census_l5.json`).
+
+- **Violations by threshold.** Stable coloured states that violate the
+  property occur exactly for `8 ≤ t ≤ 23`: 1340 of them in all, and 177 at
+  `t = 15, 16`. The census is symmetric under `t ↔ 31 − t`.
+- **Forced order relations.** By the projection–lifting argument, the chip on
+  vertex `u` is smaller than the chip on vertex `w` in every stable
+  configuration exactly when no threshold admits a stable coloured state with
+  `u` blue and `w` red.
+  - At 31 chips this gives 196 forced relations (heap indexing, root 1), with a
+    Hasse diagram of 48 cover relations.
+  - At 15 chips the same method gives 65 relations and 20 cover relations.
+
+The visited sets use 128-bit hashes. The counts for `t ≤ 12` agree exactly with
+the unhashed search.
+
 ## Not claimed
 
 - Failure for every `ℓ ≥ 5` (or `ℓ ≥ 4` for `k ≥ 3`). Only the listed cases
