@@ -50,6 +50,8 @@ so the block structure is load-bearing. See
 
 Revision 0.8.0 compiles both claims **with blocks**, proving the packing invariant from the definition of a block (rank among equal earlier labels), and bridges that definition to the packed reference ([`revisions/0.8.0-blocks-compiled.md`](revisions/0.8.0-blocks-compiled.md)).
 
+Revision 0.9.0 compiles the row-level step (`row_support_in_orbit`), so support-in-orbit now reduces to the natively compiled amplitude fact plus a model binding ([`revisions/0.9.0-row-step-compiled.md`](revisions/0.9.0-row-step-compiled.md)).
+
 What is still missing is a *compiled* binding to the exact packed source
 definitions. One piece of it already exists in this repository's native
 proof package: `entry_eq_zero_of_not_inOrbit` compiles the amplitude half of

@@ -253,13 +253,22 @@ def check_lean_hypotheses(Q, r, A, R, owners_count, trials):
     """
     stats = {"rows_examined": 0, "nonzero_rows": 0,
              "nonzero_off_orbit": 0, "coherence_failures": 0,
-             "distinct_orbit_pairs": 0, "orbit_head_collisions": 0}
+             "distinct_orbit_pairs": 0, "orbit_head_collisions": 0,
+             "row_form_failures": 0, "nonzero_amplitude_pairs": 0}
     for seed in range(trials):
         heads, columns = layouts(Q, r, owners_count, seed)
         types = [y for (y, _) in columns]
         for (u, _) in columns:
             for y in types:
                 stats["rows_examined"] += 1
+                # the row step (Rows.lean, `row_support_in_orbit`): off the
+                # diagonal, a zero amplitude term must give a zero row
+                E = mismatches(u, y, Q)
+                amp = (amplitude(A, R, len(active(u, Q)), len(E) - 1)
+                       if in_orbit(u, y, Q) and 1 <= len(E) <= R else 0)
+                stats["nonzero_amplitude_pairs"] += amp != 0
+                if y != u and amp == 0 and nonzero(source_row(u, y, A, R, Q)):
+                    stats["row_form_failures"] += 1
                 if nonzero(source_row(u, y, A, R, Q)):
                     stats["nonzero_rows"] += 1
                     if not in_orbit(u, y, Q):
@@ -365,6 +374,10 @@ def main() -> int:
     if lh["nonzero_off_orbit"]:
         gates.append("a nonzero source row sits outside the orbit; the compiled "
                      "theorem's support hypothesis does not hold of this model")
+    if lh["row_form_failures"]:
+        gates.append("row step: an off-diagonal row is nonzero although its amplitude term is zero")
+    if lh["nonzero_amplitude_pairs"] == 0:
+        gates.append("row step checked on no pair with a nonzero amplitude (vacuous)")
     if lh["coherence_failures"]:
         gates.append("a column's head is not its owner's head; the compiled "
                      "theorem's coherence hypothesis does not hold of this model")

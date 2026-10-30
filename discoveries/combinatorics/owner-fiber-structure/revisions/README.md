@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.9.0 | The row-level step compiled: row support follows from amplitude support and the row's shape; the shape is checked on the standalone model. Only the cross-toolchain model binding and coherence remain. |
 | 0.8.0 | Multi-block packing compiled: the block is the rank among equal earlier labels, rank_injective proves the packing invariant from that definition, and both claims hold per block. Bridged to the packed reference. |
 | 0.7.0 | The amplitude half of the support-in-orbit hypothesis located as already compiled in the native package (entry_eq_zero_of_not_inOrbit); the row-level step, the model binding and coherence remain uncompiled. No status change. |
 | 0.6.0 | Both claims checked against the frozen packed reference on multi-block layouts, with every packed branch exercised and two controls that must fail; census, not compiled. |

@@ -4,7 +4,7 @@
  "title": "Owner-fiber structure and support",
  "field": "combinatorics",
  "slug": "owner-fiber-structure",
- "public_version": "0.8.0",
+ "public_version": "0.9.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
@@ -26,10 +26,11 @@
   "InOrbit is proved an equivalence relation (inOrbit_symm and inOrbit_trans depend on no axioms), which the class argument needs.",
   "Measured as occupancy of the owner-by-class table: 96 occupied cells, none holding more than one column, and 30 owners spanning two or more classes so the bound is not being checked only in the trivial one-class case.",
   "Against the frozen packed reference with two or three blocks (revision 0.6.0): no unique-contributor violation over 21,144 queries, the literal and candidate routes agree on every query, no class-count violation over 8,226 target sums (attained 1,051 times), every packed branch exercised, and both controls fail: cross-block comparison gives 4,123 violations and an incoherent incidence gives 22.",
-  "Multi-block packing is compiled (revision 0.8.0): rank_injective proves from the rank-among-equal-earlier-labels definition that each label occurs at most once per block, and unique_contributor_blocks and contributor_class_injective_blocks give both claims per block; the packed reference's blocks match the compiled rank on every generated incidence."
+  "Multi-block packing is compiled (revision 0.8.0): rank_injective proves from the rank-among-equal-earlier-labels definition that each label occurs at most once per block, and unique_contributor_blocks and contributor_class_injective_blocks give both claims per block; the packed reference's blocks match the compiled rank on every generated incidence.",
+  "The row-level step is compiled (revision 0.9.0): row_support_in_orbit derives support-in-orbit for any row that vanishes off the diagonal wherever the amplitude does, from amplitude support; the row shape holds on all 1,536 rows of the standalone model, 120 of them with a nonzero amplitude."
  ],
  "unresolved": [
-  "formal correspondence to the exact packed source definitions; the amplitude half of support-in-orbit is compiled natively (entry_eq_zero_of_not_inOrbit in proofs/native), while the row-level step, the model binding and coherence are not",
+  "formal correspondence to the exact packed source definitions; the amplitude half of support-in-orbit is compiled natively (entry_eq_zero_of_not_inOrbit in proofs/native) and the row-level step here (row_support_in_orbit), while the binding of this model to the native one across toolchains, and coherence, are not",
   "source-bound formal proof",
   "targeted novelty comparison"
  ],

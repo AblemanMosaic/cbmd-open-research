@@ -64,7 +64,9 @@
   "nonzero_off_orbit": 0,
   "coherence_failures": 0,
   "distinct_orbit_pairs": 192,
-  "orbit_head_collisions": 0
+  "orbit_head_collisions": 0,
+  "row_form_failures": 0,
+  "nonzero_amplitude_pairs": 120
  },
  "U2_injective_form": {
   "cells_occupied": 96,

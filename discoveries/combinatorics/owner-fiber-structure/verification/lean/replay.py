@@ -30,6 +30,7 @@ TARGETS = [
     "CBMDOwnerFiber.rank_injective",
     "CBMDOwnerFiber.unique_contributor_blocks",
     "CBMDOwnerFiber.contributor_class_injective_blocks",
+    "CBMDOwnerFiber.row_support_in_orbit",
     "CBMDOwnerFiber.candidate_head",
     "CBMDOwnerFiber.candidate_inOrbit",
     "CBMDOwnerFiber.contributor_eq_candidate",

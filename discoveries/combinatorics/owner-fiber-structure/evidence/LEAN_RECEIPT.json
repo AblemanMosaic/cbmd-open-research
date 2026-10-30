@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDOwnerFiber.Typ.ext' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.inOrbit_refl' does not depend on any axioms\n'CBMDOwnerFiber.inOrbit_symm' does not depend on any axioms\n'CBMDOwnerFiber.inOrbit_trans' does not depend on any axioms\n'CBMDOwnerFiber.contributor_class_injective' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.orbit_head_injective' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.unique_contributor' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.rank_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.unique_contributor_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.contributor_class_injective_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.candidate_head' does not depend on any axioms\n'CBMDOwnerFiber.candidate_inOrbit' depends on axioms: [propext]\n'CBMDOwnerFiber.contributor_eq_candidate' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.orbit_head_mem' does not depend on any axioms\n'CBMDOwnerFiber.active_head_determines_swap' does not depend on any axioms",
+ "axiom_report": "'CBMDOwnerFiber.Typ.ext' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.inOrbit_refl' does not depend on any axioms\n'CBMDOwnerFiber.inOrbit_symm' does not depend on any axioms\n'CBMDOwnerFiber.inOrbit_trans' does not depend on any axioms\n'CBMDOwnerFiber.contributor_class_injective' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.orbit_head_injective' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.unique_contributor' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.rank_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.unique_contributor_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.contributor_class_injective_blocks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.row_support_in_orbit' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDOwnerFiber.candidate_head' does not depend on any axioms\n'CBMDOwnerFiber.candidate_inOrbit' depends on axioms: [propext]\n'CBMDOwnerFiber.contributor_eq_candidate' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.orbit_head_mem' does not depend on any axioms\n'CBMDOwnerFiber.active_head_determines_swap' does not depend on any axioms",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -30,9 +30,14 @@
    "sha256": "481dfd5f680cd5b1ebb65881eb42edde965b005b8cb822731b4d7e4e1aaf4429"
   },
   {
-   "bytes": 56,
+   "bytes": 1265,
+   "path": "CBMDOwnerFiber/Rows.lean",
+   "sha256": "fa5014699d5f483cfc15ca4a9bf5f19d3b1b207561a12867fc5188836ff6b50f"
+  },
+  {
+   "bytes": 83,
    "path": "CBMDOwnerFiber.lean",
-   "sha256": "8d773ac80009e49db17a58762d200d44d9d5419a10cac5de816088c66d2fa779"
+   "sha256": "2bc885b3bd1c4e54bfd8011372010abd4d692322cf455a7713d9c05b76b8e155"
   }
  ],
  "no_escape": true,
@@ -51,6 +56,7 @@
   "CBMDOwnerFiber.rank_injective",
   "CBMDOwnerFiber.unique_contributor_blocks",
   "CBMDOwnerFiber.contributor_class_injective_blocks",
+  "CBMDOwnerFiber.row_support_in_orbit",
   "CBMDOwnerFiber.candidate_head",
   "CBMDOwnerFiber.candidate_inOrbit",
   "CBMDOwnerFiber.contributor_eq_candidate",
