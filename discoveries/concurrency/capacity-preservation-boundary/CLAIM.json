@@ -4,13 +4,13 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.4.0",
+ "public_version": "0.5.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED"
  ],
- "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all. One region of that boundary is now proved rather than censused: if every transition strictly increases the count at some place, then the net preserves the uncapacitated deadlock behaviour exactly when no transition can ever fire inside the capacity box. The witness is the all-full marking itself, so no enlargement of the capacities escapes it; the hypothesis fails precisely for transitions that drain, which is what an absorbing sink supplies and why chip-firing is not covered by it. The draining case that obstruction leaves open is itself characterized for unit-weight flow nets, where each transition takes one token from a place and either moves it to another place or discards it: preservation holds exactly when there is no set S of places such that every member has positive capacity, no drain takes from a member, every mover out of a member lands in S or in a zero-capacity place, and some mover takes from a member. The gap between those two cases is a complexity dichotomy. With at most one input place per transition the problem is decidable in polynomial time by the greatest fixpoint above; with two input places it is coNP-complete, already for unit arc weights and capacities in {0,1}, by a reduction from CNF satisfiability in which a transition is blocked exactly when its clause is satisfied. So no polynomial-time local condition is exact for multi-input transitions unless P equals NP.",
+ "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all. One region of that boundary is now proved rather than censused: if every transition strictly increases the count at some place, then the net preserves the uncapacitated deadlock behaviour exactly when no transition can ever fire inside the capacity box. The witness is the all-full marking itself, so no enlargement of the capacities escapes it; the hypothesis fails precisely for transitions that drain, which is what an absorbing sink supplies and why chip-firing is not covered by it. The draining case that obstruction leaves open is itself characterized for unit-weight flow nets, where each transition takes one token from a place and either moves it to another place or discards it: preservation holds exactly when there is no set S of places such that every member has positive capacity, no drain takes from a member, every mover out of a member lands in S or in a zero-capacity place, and some mover takes from a member. The gap between those two cases is a complexity dichotomy. With at most one input place per transition the problem is decidable in polynomial time by the greatest fixpoint above; with two input places it is coNP-complete, already for unit arc weights and capacities in {0,1}, by a reduction from CNF satisfiability in which a transition is blocked exactly when its clause is satisfied. So no polynomial-time local condition is exact for multi-input transitions unless P equals NP. The polynomial side extends from unit weights to arbitrary weights, with the obstruction carrying levels rather than membership: a level function bounded by the capacities, with every drain's source below its own weight, every mover whose source reaches its weight having its destination within its production weight of capacity, and some transition's source reaching its weight. The least closure seeded at each transition in turn decides it, and is complete because it lies below every failing marking.",
  "verified": [
   "Exact transfer to chip-firing-shaped nets: zero unsound and zero incomplete over 1,152 systems (2 places, 2 transitions, weights <=2, capacities <=3) and 10,368 systems (3 places, 3 transitions, weights <=1, capacities <=2), in a model coded independently of the chip-firing dossier.",
   "Self-feedback relaxation yields 1,636 incomplete cases and zero unsound ones over the newly admitted nets, so sufficiency survives it.",
@@ -26,14 +26,21 @@
   "Each of the four conditions is load-bearing: dropping them produces 25,224, 24,147, 11,161 and 39,726 incomplete cases respectively, and no ablation produces unsoundness, which is the expected direction.",
   "Membership: the complement of preservation is in NP, since an admissible marking has polynomial size even with binary capacities and both halves of 'capacity-dead and ordinarily enabled' are checked in O(PT); so preservation is in coNP.",
   "Hardness: a reduction from CNF satisfiability in which each clause becomes one transition, taking input from its negative literals and producing into its positive ones, so that the transition is blocked exactly when the clause is satisfied; a guard construction keeps every transition fed, bounding input places between one and two.",
-  "The reduction is machine checked against this dossier's own semantics and a brute-force satisfiability oracle: 240 instances, 240 agreements, zero disagreements, with 171 satisfiable and 69 unsatisfiable, and every transition carrying between one and two input places."
+  "The reduction is machine checked against this dossier's own semantics and a brute-force satisfiability oracle: 240 instances, 240 agreements, zero disagreements, with 171 satisfiable and 69 unsatisfiable, and every transition carrying between one and two input places.",
+  "The weighted obstruction compiles in both directions: WFlow.preserves_iff_no_obstruction, with observed axioms [propext, Quot.sound]; obstructionOfFailure and least_closure_is_complete depend on propext alone.",
+  "The algorithm is exact against this dossier's own semantics over 102,268 weighted systems in six boxes, with zero unsound and zero incomplete and both outcomes well populated (53,493 preserving, 48,775 not).",
+  "Both remaining steps of the algorithm are load-bearing: dropping the drain test produces 18,813 incomplete cases and dropping the capacity test 33,801.",
+  "Completeness of the decision procedure is compiled, not assumed: Forced is an inductive predicate recording the lower bounds any failing marking must satisfy, forced_le_of_bad proves a forced level really is such a lower bound, and justified_closure_is_complete needs only that each level of the closure is zero or forced.",
+  "That hypothesis is machine-checked against the procedure rather than asserted to match it: over the same boxes, all 48,775 accepted closures carry a derivation satisfying the inductive rules and none fails to."
  ],
  "unresolved": [
-  "targeted novelty comparison against bounded-Petri-net structural conditions",
   "external review",
   "weighted flow and multi-input transitions: the obstruction condition is proved only for unit-weight single-input single-output transitions",
   "a formal proof of the complexity statement; coNP-completeness is a written argument here, with only the reduction machine checked",
-  "whether the one-input polynomial case extends to weighted arcs"
+  "the termination of the closure iteration is a prose argument from the decreasing measure sum of (capacity minus level), not compiled",
+  "whether the reachability-free exact iff is folklore; a bounded search found only reachability-quantified formulations (Murata Thm 15, Commoner, Chu and Xie, Desel and Esparza), so this is unresolved rather than novel",
+  "a targeted prior-art search on capacities over state machines, the one-input-one-output subclass that revision 0.3.0 characterizes; none was located and it may close that question in the negative",
+  "direct comparison of the revision 0.4.0 reduction against the 3-SAT reduction of Yamauchi and Watanabe 1999, whose full text was not obtained"
  ],
  "nonclaims": [
   "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
@@ -44,7 +51,12 @@
   "the flow characterization covers unit arc weights only; nothing here covers weighted flow or multi-input transitions",
   "the greatest fixpoint is how the condition is decided on a finite net; the proved statement is the existential one, and their agreement is checked rather than assumed",
   "the coNP-completeness statement is a written argument, not a compiled theorem; formalizing it needs a model of computation that is out of scope for this dossier",
-  "the impossibility of a polynomial-time local condition for multi-input transitions is conditional on P not equal to NP"
+  "the impossibility of a polynomial-time local condition for multi-input transitions is conditional on P not equal to NP",
+  "in the weighted case the Lean carries the characterization and the completeness of a justified closure; the termination of the iteration that produces one is a prose argument",
+  "the obstruction is a trap in the original net and a siphon in the complemented one; both are standard objects, and no novelty is claimed for the condition itself",
+  "the coNP-completeness here is not comparable to the PSPACE-completeness of deadlock for 1-safe nets (Cheng, Esparza and Palsberg 1995): that problem quantifies over reachable markings and this one does not",
+  "the clause-to-transition reduction is a standard template; encoding SAT into siphon-shaped conditions is established practice",
+  "the monotone closure is the classical maximal-trap fixpoint, known to be polynomial; only its level-valued generalization was not located"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a polynomial-time algorithm deciding preservation for nets with two input places per transition, which would collapse coNP to P; or an error in the reduction, exhibited as a CNF whose constructed net's preservation verdict differs from its unsatisfiability.",
  "checks": [
@@ -75,6 +87,16 @@
     "-B",
     "discoveries/concurrency/capacity-preservation-boundary/verification/hardness.py",
     "240"
+   ],
+   "required": false
+  },
+  {
+   "id": "CAPACITY_WEIGHTED_FLOW",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/concurrency/capacity-preservation-boundary/verification/weighted_flow.py"
    ],
    "required": false
   }

@@ -9,7 +9,7 @@ import json, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import petri2, boundary, general, allfull, flow, hardness
+import petri2, boundary, general, allfull, flow, hardness, weighted_flow
 
 def main() -> int:
     translation = petri2.run(2, 2, 2, 3)
@@ -18,7 +18,11 @@ def main() -> int:
     af = allfull.run()
     fl = flow.run()
     hd = hardness.run(trials=80)
+    wf = weighted_flow.report()
     gates = []
+    for gate, ok in wf["gates"].items():
+        if not ok:
+            gates.append(f"weighted flow gate failed: {gate}")
     for gate, ok in hd["gates"].items():
         if not ok:
             gates.append(f"hardness reduction gate failed: {gate}")
@@ -56,6 +60,7 @@ def main() -> int:
            "allfull_obstruction": af,
            "flow_characterization": fl,
            "hardness_reduction": hd,
+           "weighted_flow": wf,
            "content_gate_failures": gates,
            "status": "PASS" if not gates else "FAIL",
            "nonclaims": [

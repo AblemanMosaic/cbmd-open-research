@@ -9,6 +9,7 @@
 | `LEAN_RECEIPT.json` | Toolchain, source hashes, declaration list and observed axiom dependencies for the all-full obstruction. |
 | `flow_characterization.json` | Revision 0.3.0: the obstruction condition against the exact semantics, with the fixpoint-versus-existential cross-check and all four ablations. |
 | `hardness_reduction.json` | Revision 0.4.0: the CNF reduction checked against the exact semantics and a brute-force oracle, with the input-place bounds. |
+| `weighted_flow.json` | Revision 0.5.0: the level-based algorithm against the exact semantics over six weighted boxes, with both step ablations. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with

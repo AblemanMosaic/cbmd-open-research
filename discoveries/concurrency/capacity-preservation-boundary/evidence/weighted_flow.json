@@ -1,0 +1,198 @@
+{
+ "schema": "cbmd.petri-weighted-flow.v1",
+ "censuses": [
+  {
+   "box": {
+    "P": 2,
+    "T": 2,
+    "maxw": 2,
+    "capmax": 2
+   },
+   "agree": 702,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 420,
+   "not_preserving": 282,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 177
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 174
+    }
+   },
+   "justified_closures": 282,
+   "UNJUSTIFIED_closures": 0
+  },
+  {
+   "box": {
+    "P": 3,
+    "T": 2,
+    "maxw": 2,
+    "capmax": 2
+   },
+   "agree": 12555,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 5697,
+   "not_preserving": 6858,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 1782
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 3726
+    }
+   },
+   "justified_closures": 6858,
+   "UNJUSTIFIED_closures": 0
+  },
+  {
+   "box": {
+    "P": 2,
+    "T": 3,
+    "maxw": 2,
+    "capmax": 2
+   },
+   "agree": 3276,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 1916,
+   "not_preserving": 1360,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 1034
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 690
+    }
+   },
+   "justified_closures": 1360,
+   "UNJUSTIFIED_closures": 0
+  },
+  {
+   "box": {
+    "P": 3,
+    "T": 3,
+    "maxw": 1,
+    "capmax": 2
+   },
+   "agree": 4455,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 2351,
+   "not_preserving": 2104,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 1730
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 578
+    }
+   },
+   "justified_closures": 2104,
+   "UNJUSTIFIED_closures": 0
+  },
+  {
+   "box": {
+    "P": 2,
+    "T": 3,
+    "maxw": 3,
+    "capmax": 3
+   },
+   "agree": 41600,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 19600,
+   "not_preserving": 22000,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 9616
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 9268
+    }
+   },
+   "justified_closures": 22000,
+   "UNJUSTIFIED_closures": 0
+  },
+  {
+   "box": {
+    "P": 3,
+    "T": 3,
+    "maxw": 2,
+    "capmax": 1
+   },
+   "agree": 39680,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "preserving": 23509,
+   "not_preserving": 16171,
+   "nonvacuous": true,
+   "samples": [],
+   "ablation": {
+    "no_drain_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 4474
+    },
+    "no_capacity_check": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 19365
+    }
+   },
+   "justified_closures": 16171,
+   "UNJUSTIFIED_closures": 0
+  }
+ ],
+ "totals": {
+  "systems": 102268,
+  "preserving": 53493,
+  "not_preserving": 48775,
+  "unsound": 0,
+  "incomplete": 0,
+  "justified_closures": 48775,
+  "unjustified_closures": 0,
+  "ablation": {
+   "no_drain_check": {
+    "UNSOUND": 0,
+    "INCOMPLETE": 18813
+   },
+   "no_capacity_check": {
+    "UNSOUND": 0,
+    "INCOMPLETE": 33801
+   }
+  }
+ },
+ "gates": {
+  "every_accepted_closure_is_justified": true,
+  "algorithm_is_exact": true,
+  "both_outcomes_occur": true,
+  "each_step_is_load_bearing": true
+ },
+ "pass": true,
+ "nonclaims": [
+  "soundness, the characterization, and the completeness of a justified closure are proved in verification/lean/; the termination of the closure iteration is a prose argument, not compiled",
+  "finite censuses over the stated boxes"
+ ],
+ "authority_effect": "NONE"
+}

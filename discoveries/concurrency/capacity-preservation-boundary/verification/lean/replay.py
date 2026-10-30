@@ -30,6 +30,12 @@ TARGETS = [
     "CBMDPetriCapacity.Flow.obstruction_breaks",
     "CBMDPetriCapacity.Flow.obstructionOfFailure",
     "CBMDPetriCapacity.Flow.preserves_iff_no_obstruction",
+    "CBMDPetriCapacity.WFlow.obstruction_breaks",
+    "CBMDPetriCapacity.WFlow.obstructionOfFailure",
+    "CBMDPetriCapacity.WFlow.preserves_iff_no_obstruction",
+    "CBMDPetriCapacity.WFlow.least_closure_is_complete",
+    "CBMDPetriCapacity.WFlow.forced_le_of_bad",
+    "CBMDPetriCapacity.WFlow.justified_closure_is_complete",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDPetriCapacity.fire_admissible' does not depend on any axioms\n'CBMDPetriCapacity.reach_admissible' does not depend on any axioms\n'CBMDPetriCapacity.preserves_iff_reachable_form' does not depend on any axioms\n'CBMDPetriCapacity.inert_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.increasing_allFull_capDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_preserves_iff_inert' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_firing_breaks_preservation' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.Flow.obstruction_breaks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.obstructionOfFailure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.preserves_iff_no_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDPetriCapacity.fire_admissible' does not depend on any axioms\n'CBMDPetriCapacity.reach_admissible' does not depend on any axioms\n'CBMDPetriCapacity.preserves_iff_reachable_form' does not depend on any axioms\n'CBMDPetriCapacity.inert_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.increasing_allFull_capDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_preserves_iff_inert' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_firing_breaks_preservation' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.Flow.obstruction_breaks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.obstructionOfFailure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.preserves_iff_no_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstruction_breaks' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstructionOfFailure' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.preserves_iff_no_obstruction' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.least_closure_is_complete' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.forced_le_of_bad' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.justified_closure_is_complete' depends on axioms: [propext, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -30,9 +30,14 @@
    "sha256": "c4e8afeb1ec5fc3367d567d3f0dd7dd52b681fd7eacbbaad9d264153170d9d46"
   },
   {
-   "bytes": 60,
+   "bytes": 9569,
+   "path": "CBMDPetriCapacity/WeightedFlow.lean",
+   "sha256": "001684245542f4b23c81662d019904e8476bd18fd8e47eeca3c4a9df22029db7"
+  },
+  {
+   "bytes": 98,
    "path": "CBMDPetriCapacity.lean",
-   "sha256": "ee53983bc62d4edba38e7fe51d2f73bbeef2831af2050e929213852cbdbefa9a"
+   "sha256": "dcc159f3a9c7d64cc34eff4a52b61212bc33a0d2cf22f34d5a8e83dee68800c5"
   }
  ],
  "no_escape": true,
@@ -50,7 +55,13 @@
   "CBMDPetriCapacity.increasing_firing_breaks_preservation",
   "CBMDPetriCapacity.Flow.obstruction_breaks",
   "CBMDPetriCapacity.Flow.obstructionOfFailure",
-  "CBMDPetriCapacity.Flow.preserves_iff_no_obstruction"
+  "CBMDPetriCapacity.Flow.preserves_iff_no_obstruction",
+  "CBMDPetriCapacity.WFlow.obstruction_breaks",
+  "CBMDPetriCapacity.WFlow.obstructionOfFailure",
+  "CBMDPetriCapacity.WFlow.preserves_iff_no_obstruction",
+  "CBMDPetriCapacity.WFlow.least_closure_is_complete",
+  "CBMDPetriCapacity.WFlow.forced_le_of_bad",
+  "CBMDPetriCapacity.WFlow.justified_closure_is_complete"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }

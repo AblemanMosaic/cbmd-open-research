@@ -19,6 +19,16 @@ consume from several places, and the question needs no confluence at all.
 also dead in the uncapacitated net. A capacity-dead but ordinarily enabled
 marking is a deadlock the capacity invented.
 
+In Murata's vocabulary, *capacity enabled* and *ordinarily enabled* are the
+**strict** and **weak** transition rules for finite-capacity nets, so the
+question reads: does the strict rule admit a dead marking that the weak rule
+does not? The obstruction below is a **trap** in the original net — dually a
+siphon in the complemented net — with one extra branch for zero-capacity
+places. Both are standard objects; see [`review/PRIOR_ART.md`](review/PRIOR_ART.md)
+for what is and is not known, including why the coNP-completeness here is
+**not** a sharpening of the PSPACE-completeness of deadlock for 1-safe nets:
+that problem quantifies over *reachable* markings, and this one does not.
+
 ## What is established
 
 - **It transfers exactly to chip-firing-shaped nets** — one input place per
@@ -92,6 +102,29 @@ four conditions is load-bearing, and the greatest-fixpoint decision procedure
 is checked against the proved existential form rather than assumed to match it.
 See [`revisions/0.3.0-flow-characterization.md`](revisions/0.3.0-flow-characterization.md).
 
+## Weights: the obstruction carries levels (revision 0.5.0)
+
+The unit-weight proof above does not survive weights, and not for a technical
+reason. Its converse rests on raising every occupied place to its capacity;
+with weights, raising `m(a)` from 1 to 5 can make a transition that takes 3
+from `a` ordinarily enabled when it was not, and nothing need block it. So the
+obstruction has to carry **levels** rather than membership.
+
+A level function `ℓ` is an obstruction when `ℓ ≤ C`, every drain has
+`ℓ(src) < w`, every mover with `w ≤ ℓ(src)` has `C(dst) < ℓ(dst) + v`, and
+some transition has `w ≤ ℓ(src)`. Preservation holds exactly when none exists,
+and the unit-weight condition is the case `ℓ ∈ {0,1}`.
+
+Clause 3 read as an implication — `w ≤ ℓ(src) ⟹ ℓ(dst) ≥ C(dst) − v + 1` — is
+monotone, which gives the decision procedure: seed at each transition in turn,
+close, test. Completeness is the compiled part, and it is derived rather than
+assumed: an inductive `Forced` predicate records the lower bounds any failing
+marking must satisfy, so a closure whose every level is forced is below every
+failing marking and testing it misses nothing. Exact over 102,268 weighted
+systems, zero unsound and zero incomplete, with all 48,775 accepted closures
+carrying a derivation that a separate checker validates. See
+[`revisions/0.5.0-weighted-flow.md`](revisions/0.5.0-weighted-flow.md).
+
 ## The dichotomy (revision 0.4.0)
 
 Version 0.1.0 left this open: *whether some other local capacity condition
@@ -143,7 +176,9 @@ not enabled because its other input is short.
 
 - A formal proof of the complexity statement. coNP-completeness is argued in
   prose with a machine-checked reduction; it is not compiled.
-- Whether the polynomial one-input case extends to weighted arcs.
+- The construction behind the decision procedure is prose: the induction
+  placing the least closure below every failing marking, and the termination of
+  the closure iteration, are not compiled.
 - Novelty. The nearest named notions are implicit places and non-blockingness of
   bounded nets; neither is this statement. See [`review/README.md`](review/README.md).
 - Weighted flow and multi-input transitions. The obstruction condition of
