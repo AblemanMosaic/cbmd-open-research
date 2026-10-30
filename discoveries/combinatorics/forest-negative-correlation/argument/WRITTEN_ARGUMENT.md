@@ -82,10 +82,12 @@ multigraph runs use `multig` on the same lists.
 Let `M` be a matroid on a finite ground set `E`. Every multigraph gives one,
 its cycle matroid, whose independent sets are the forests. Give each element
 `g` a weight `w_g`, and let `Z(w) = Σ_{I independent} Π_{g∈I} w_g`. For
-distinct non-loop elements `e, f`, let `R_{ef} = Z_e Z_f − Z Z_{ef}`, the
+distinct elements `e, f`, let `R_{ef} = Z_e Z_f − Z Z_{ef}`, the
 multivariate Rayleigh difference. Here `Z_e` is the sum over independent sets
 containing `e`, and so on. Let `c(e, f)` be the least size of a circuit
-containing both `e` and `f`, with `c = ∞` if there is none. Let `N(e, f)` be
+containing both `e` and `f`, with `c = ∞` if there is none. A loop is its
+own component and lies in no circuit with another element, so for a loop the
+theorem gives `R ≡ 0`. Let `N(e, f)` be
 the number of circuits of size `c(e, f)` that contain both.
 
 **Theorem.**
@@ -105,13 +107,14 @@ the length of a shortest cycle through `e` and `f`, and `N` is the number of
 such shortest cycles.
 
 **Corollary.** For every finite multigraph, and every pair of edges in a
-common block, the `λ`-weighted forest measure makes `e` and `f` strictly
+common block (a loop is its own block; two distinct edges in one block lie on a common cycle), the `λ`-weighted forest measure makes `e` and `f` strictly
 negatively correlated for all sufficiently small `λ > 0`. The same holds for
 every matroid and every pair of elements in a common connected component.
 Edges in different blocks are independent.
 
-This complements the large-`λ` result of Çiçeksiz–Ravichandran (arXiv:2610.00549,
-Corollary 1.7). It says nothing about intermediate `λ`, and nothing about
+This complements the large-`λ` analysis of Çiçeksiz–Ravichandran
+(arXiv:2610.00549, Corollary 1.7). There, negative correlation holds for all
+large enough `λ` unless an equipotential condition holds. It says nothing about intermediate `λ`, and nothing about
 `λ = 1` in particular.
 
 *Proof.*
@@ -132,8 +135,8 @@ Expanding gives
 where `Q` does not involve `w_e` or `w_f`.
 
 (i) Suppose `e` and `f` lie in different connected components `A ∋ e` and
-`B ∋ f`. In matroid terms, they lie in a common circuit iff they lie in the
-same component. Independent sets split along the components, so `a(Y)`
+`B ∋ f`. Distinct elements lie in a common circuit iff they lie in the same
+component (Oxley, *Matroid Theory*, Prop. 4.1.2). Independent sets split along the components, so `a(Y)`
 depends only on `Y ∩ A`, `b(Y)` only on `Y ∩ B`, and `c = ab`. The weighted
 sums factor over the components, so `Z'_a Z'_b = Z' Z'_c`, and `Q ≡ 0`.
 
@@ -149,11 +152,18 @@ If `|μ| = c − 2`, then `|S| = |μ|`, so `μ` is square-free. Moreover,
 `S ∪ {e, f}` is a circuit `C` of size `c` containing `e` and `f`. On `M | C`,
 every proper subset of `C` is independent, so
 `Z'_a = Z'_b = Z' = Π_{g ∈ S}(1 + w_g)` and `Z'_c = Z' − w^S`. Hence
-`Q = Z' w^S`, whose lowest term is `w^S`, with coefficient 1. Different
-circuits `C` give different supports `S = C ∖ {e, f}`. ∎
+`Q = Z' w^S`, whose lowest term is `w^S`, with coefficient 1.
+
+Conversely, take any circuit `C` of size `c` through `e` and `f`, and set
+`w_g = 0` off `S = C ∖ {e, f}`. Then the coefficient of `w^S` in `Q` equals
+its coefficient in the restriction's `Q`, which is 1. Different circuits give
+different supports. All degree-`c` coefficients are `+1`, so nothing cancels
+when every weight is set to `λ`, and the univariate lowest term is
+`N λ^c`. ∎
 
 **Corollary 2 (large-`λ` law for connected subgraphs).** Let `G` be connected,
-with `m` edges, and let `e ≠ f`. Let `c*` be the least size of a bond (a
+with `m` edges, and let `e ≠ f`. For a loop `e`, set `G/e := G − e`. Then
+`C_e = λ C_{G/e}` still holds, and `P_C ≡ 0`. Let `c*` be the least size of a bond (a
 minimal edge cut) containing both, and `N*` the number of such bonds. Then
 
     P_C(λ) = N* λ^{2m − c* − 2} + (lower powers of λ).
@@ -168,9 +178,12 @@ onto the independent sets of the bond matroid `M*(G)`. So
 `C_G(λ) = λ^m I*(1/λ)`, where `I*` is the independence polynomial of `M*`.
 The covariance of `1_{e∈A}` and `1_{f∈A}` equals that of the complementary
 indicators. Since `Cov = −R/(normaliser)²` in both models, this gives
-`R_C(λ) = λ^{2m} R*(1/λ)`. The theorem, applied to `M*` (whose circuits are
-the bonds), gives `R*(μ) = N* μ^{c*} + O(μ^{c*+1})`. Finally,
-`P_C = R_C / λ²`. ∎
+`R_C(λ) = λ^{2m} R*(1/λ)`. The theorem applied to `M*` gives
+`R*(μ) = N* μ^{c*} + O(μ^{c*+1})`. It applies to every element, including
+the loops of `M*`, which are the bridges of `G`. The circuits of `M*` are
+the bonds. Finally, `P_C = R_C / λ²`. The strict-correlation statement uses
+the fact that `M` and `M*` have the same components, so a common block means
+a common bond. ∎
 
 Corollary 2 matches all 37,531 edge pairs of the 2-connected graphs with at
 most 7 vertices (`cnc -v` output against an enumeration of bonds). The gate
@@ -180,9 +193,10 @@ re-checks it for at most 6 vertices.
 
     P_Z = Z'² (E'[a] E'[b] − E'[c]) = Z'² (E'[d] − Cov'(a, b)),
 
-where `d = ab − c` and the expectations are under the arboreal gas on
-`G − e − f`. This is the "crossing term minus covariance" form of
-Çiçeksiz–Ravichandran, Proposition 3.2.
+where `d = ab − c ≥ 0` and the expectations are under the arboreal gas on
+`G − e − f`. This is the "crossing term minus covariance" form in the
+abstract of Çiçeksiz–Ravichandran. We have not matched it to a numbered
+result there.
 
 **Checks.**
 
