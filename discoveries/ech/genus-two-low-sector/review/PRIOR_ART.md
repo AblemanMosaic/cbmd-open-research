@@ -68,6 +68,28 @@ in `verification/`, and this search did not obtain the body of Chen's
 Lemma 5.11 — only his introduction's description of it — so it could not
 supply one.
 
+## Leads for question 6, located but not examined
+
+A short search on the Floer side found two candidate sources. They are
+recorded so a successor starts here. **Neither has been read, and neither is
+claimed to settle anything.**
+
+- Tomasz Mrowka, Peter Ozsváth, Baozhen Yu, *Seiberg–Witten Monopoles on
+  Seifert Fibered Spaces*, <https://arxiv.org/abs/math/9612221>. The abstract
+  describes all monopoles on Seifert fibered spaces for a particular metric and
+  perturbation, and identifies flow lines with holomorphic data on an
+  associated ruled surface. Prequantization bundles over `Σ_2` are Seifert
+  fibered. Monopole Floer homology is isomorphic to ECH (Taubes) and to
+  Heegaard–Floer homology. This is therefore the most direct candidate for the
+  "other route" §2 mentions. Whether it determines the `U`-module structure at
+  the torsion classes `Γ ∈ {1, 2}`, with matching orientations and
+  coefficients, is exactly what §2 asks and was not checked.
+- Stanislav Jabuka and Thomas Mark, *On the Heegaard Floer homology of a
+  surface times a circle*, <https://arxiv.org/abs/math/0502328>. This is Euler
+  number `0`, not a prequantization bundle (`e < 0`). It is relevant at most for
+  technique, including its 2-torsion phenomenon for `g > 2`, which does not
+  arise at `g = 2`.
+
 ## Caveats
 
 Chen's submission date and venue could not be retrieved. Theorem 1 and
