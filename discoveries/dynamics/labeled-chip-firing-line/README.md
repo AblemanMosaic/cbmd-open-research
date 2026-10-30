@@ -33,7 +33,7 @@ of their conjectures remain open:
   | 11 | `0.3314` | `0.3305` |
 
   The values for `n ≤ 9` are exact rationals in `evidence/check_line.json`.
-- **Monte Carlo up to `m = 40`.** At 20,000 runs per point, the estimates stay
+- **Monte Carlo up to `m = 80`.** At 20,000 runs per point, the estimates stay
   within 0.006 of `1/3`.
 
 ## What is not established
