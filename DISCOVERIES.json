@@ -211,6 +211,23 @@
         "PROVISIONAL_WRITTEN_ARGUMENT",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-COMB-FQ-GAME-001",
+      "field": "combinatorics",
+      "slug": "fibonacci-quilt-game",
+      "path": "discoveries/combinatorics/fibonacci-quilt-game",
+      "title": "The Fibonacci Quilt game: a linear bound on game length",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Independent review; find a strategy approaching the potential limit (about 2.29 n) or a better upper bound.",
+      "promotion_blockers": [
+        "not yet independently reviewed",
+        "external review open"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

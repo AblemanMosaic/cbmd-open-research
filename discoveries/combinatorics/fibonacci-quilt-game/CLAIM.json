@@ -1,0 +1,41 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-FQ-GAME-001",
+ "title": "The Fibonacci Quilt game: a linear bound on game length",
+ "field": "combinatorics",
+ "slug": "fibonacci-quilt-game",
+ "public_version": "0.1.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "Every game of the Fibonacci Quilt game of Miller and Newlon on n lasts at most (23/10) n + 2.95 moves (exact rational potential: explicit weights for indices < 31 and u_i = 2.3 q_i - i/3 - beta beyond; every rule except the once-only rule 2(a) lowers the potential by at least 1). The longest games, computed exhaustively for n <= 90, first reach 2n at n = 78 and reach 2.022n at n = 89; potentials of this shape cannot go below about 2.29.",
+ "resolves": "Miller and Newlon (2020) open question 'Is there a reasonable upper bound on the length of a game?', by a linear bound with an exact certificate",
+ "verified": [
+  "fq_bound.py: every rule instance with indices <= 200 lowers the potential by >= 1 in exact rational arithmetic; the closed-form tail reduces to four inequalities that hold; u_i <= 2.3 q_i; exhaustive longest games for n <= 40 within the bound; lowering alpha to 2.2 breaks the certificate.",
+  "fq_longest_exhaustive.cpp: exhaustive longest games for n <= 90 (about 11 million states), all within the bound; first length >= 2n at n = 78; maximum ratio 2.022 at n = 89."
+ ],
+ "unresolved": [
+  "the exact asymptotic constant of the longest game and a strategy attaining it",
+  "who wins",
+  "independent review"
+ ],
+ "nonclaims": [
+  "2.3 is not claimed optimal; the potential-method limit of about 2.29 is a numerical LP observation",
+  "rule 3(f) is read as q5,q7 because the printed q3,q7 does not preserve value",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "A rule instance lowering the potential by less than 1, or a game on n longer than 2.3 n + 2.95.",
+ "checks": [
+  {
+   "id": "FQ_BOUND_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/fibonacci-quilt-game/verification/reference/fq_bound.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

@@ -1,0 +1,16 @@
+{
+ "authority_effect": "NONE",
+ "bound": "L <= 23/10 n + 2940251/1000000",
+ "gates": {
+  "CONTROL_alpha_2_2_fails": true,
+  "EXHAUSTIVE_n_le_40": true,
+  "POTENTIAL_EXACT_indices_le_200": true,
+  "RULES_PRESERVE_VALUE": true,
+  "TAIL_ANALYTIC": true,
+  "U_BELOW_ALPHA_Q": true
+ },
+ "max_ratio_n_le_40": 1.825,
+ "rule_2a_potential_increase": "1940251/1000000",
+ "schema": "cbmd.fq-game.bound.v1",
+ "status": "PASS"
+}
