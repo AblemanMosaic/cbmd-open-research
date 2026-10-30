@@ -1,0 +1,35 @@
+{
+ "schema": "cbmd.weighted-sink-collapse.v1",
+ "box": {
+  "n_max": 3,
+  "max_mult": 2,
+  "max_sink_mult": 1,
+  "capacity_slack": 1,
+  "sink_capacities": [
+   0,
+   1,
+   2,
+   4
+  ]
+ },
+ "agree": 1789740,
+ "disagree": 0,
+ "systems_with_live_vertex": 362798,
+ "systems_all_dead": 84637,
+ "bridge_failures": 0,
+ "witness_failures": 0,
+ "transfer_absorbing_but_fails_every_cap": 17594,
+ "disagreement_samples": [],
+ "gates": {
+  "zero_disagreements": true,
+  "live_population_nonempty": true,
+  "dead_population_nonempty": true,
+  "bridge_sends_holds": true,
+  "allfull_witness_checked": true,
+  "cap_not_idle": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "finite census over the stated box; corroborates the Lean theorems, does not prove them"
+ ]
+}

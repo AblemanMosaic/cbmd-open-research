@@ -154,10 +154,12 @@ is capacity-terminal, and with a live vertex it is not ordinarily stable. No
 choice of vertex or sink capacity escapes, because the witness is built from the
 capacities themselves (`capped_sink_breaks_transfer`, `no_live_all_stable`).
 
-Census at sink capacities 0, 1, 2 and 4: exact agreement with "no vertex live",
+Census at sink capacities 0, 1, 2 and 4, `n <= 3`: exact agreement with "no
+vertex live" in all 1,789,740 cases,
 both populations populated, the all-full witness checked directly on every live
 system, and systems that transfer with the absorbing sink but fail at every
-finite cap — so the cap, not some prior failure, is what breaks them. See
+finite cap (17,594 of them) — so the cap, not some prior failure, is what
+breaks them. See
 [`revisions/0.7.0-capacitated-sink.md`](revisions/0.7.0-capacitated-sink.md).
 
 ## What remains unresolved
