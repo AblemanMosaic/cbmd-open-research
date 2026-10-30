@@ -1,0 +1,97 @@
+{
+ "authority_effect": "NONE",
+ "cases": [
+  {
+   "chips": 31,
+   "firings": 72,
+   "k": 2,
+   "levels": 5,
+   "ok": true,
+   "violations": [
+    [
+     1,
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "chips": 31,
+   "firings": 72,
+   "k": 2,
+   "levels": 5,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "chips": 63,
+   "firings": 201,
+   "k": 2,
+   "levels": 6,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "chips": 127,
+   "firings": 522,
+   "k": 2,
+   "levels": 7,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "chips": 40,
+   "firings": 42,
+   "k": 3,
+   "levels": 4,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     2,
+     3
+    ]
+   ]
+  },
+  {
+   "chips": 85,
+   "firings": 67,
+   "k": 4,
+   "levels": 4,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     3,
+     4
+    ]
+   ]
+  }
+ ],
+ "gates": {
+  "CERTIFICATES_REPLAY": true,
+  "CONTROL_altered_firing_fails": true,
+  "POSITIVE_CASES": true,
+  "THRESHOLD_EQUIVALENCE": true
+ },
+ "schema": "cbmd.labeled-chip-firing.ballot.v1",
+ "status": "PASS"
+}

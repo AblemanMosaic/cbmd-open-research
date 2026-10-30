@@ -1,0 +1,69 @@
+{
+ "tool": "colour_exhaustive_binary.cpp",
+ "k": 2,
+ "levels": 5,
+ "by_threshold": {
+  "1": {
+   "states": 19567,
+   "stable_colour_states": 1,
+   "violating": 0
+  },
+  "2": {
+   "states": 36942,
+   "stable_colour_states": 1,
+   "violating": 0
+  },
+  "3": {
+   "states": 170583,
+   "stable_colour_states": 5,
+   "violating": 0
+  },
+  "4": {
+   "states": 367186,
+   "stable_colour_states": 11,
+   "violating": 0
+  },
+  "5": {
+   "states": 874561,
+   "stable_colour_states": 23,
+   "violating": 0
+  },
+  "6": {
+   "states": 1841102,
+   "stable_colour_states": 55,
+   "violating": 0
+  },
+  "7": {
+   "states": 3643889,
+   "stable_colour_states": 100,
+   "violating": 0
+  },
+  "8": {
+   "states": 6390303,
+   "stable_colour_states": 186,
+   "violating": 1
+  },
+  "9": {
+   "states": 10082119,
+   "stable_colour_states": 306,
+   "violating": 26
+  },
+  "10": {
+   "states": 15184612,
+   "stable_colour_states": 462,
+   "violating": 15
+  },
+  "11": {
+   "states": 21470474,
+   "stable_colour_states": 692,
+   "violating": 69
+  },
+  "12": {
+   "states": 27926274,
+   "stable_colour_states": 944,
+   "violating": 86
+  }
+ },
+ "note": "Two-colour projection, exhaustive over all firing choices; thresholds 13..30 not run (memory). Violations first appear at t = 8.",
+ "authority_effect": "NONE"
+}

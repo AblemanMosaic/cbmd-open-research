@@ -1,0 +1,40 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-DYN-LABELED-BALLOT-001",
+ "title": "Labeled chip-firing on trees: the ballot conjecture is false",
+ "field": "dynamics",
+ "slug": "labeled-chip-firing-ballot",
+ "public_version": "0.1.0",
+ "status": [
+  "EXACT_MODEL_VERIFIED",
+  "PROVISIONAL_WRITTEN_ARGUMENT"
+ ],
+ "statement": "In labeled chip-firing on the undirected k-ary tree with a root self-loop, starting from (k^l - 1)/(k - 1) labeled chips at the root, the ballot property (for every vertex and children a < b, the i-th smallest chip in the subtree of a is smaller than the i-th smallest in the subtree of b) fails for some stable configuration when (k, l) = (2,5) [31 chips, including at the root], (2,6), (2,7), (3,4), (4,4); explicit legal firing sequences are certified. This refutes Conjecture 3.16 (arXiv 3.7) of Inagaki, Khovanova and Luo (Ann. Comb. 2026), on which their ballot bound rests, and Conjecture 5.1 of Inagaki and Lin (2025). The property holds for (2, l <= 4), (3, l <= 3), (4, l <= 3), proved by exhaustive search of a two-colour threshold projection.",
+ "resolves": "Inagaki-Khovanova-Luo Conjecture 3.16 and Inagaki-Lin Conjecture 5.1 (both refuted by explicit certificates)",
+ "verified": [
+  "check_ballot.py replays six certificates (31, 31, 63, 127 chips on the binary tree; 40 on the ternary; 85 on the 4-ary): every firing legal, stable end with the expected shape, ballot violation; threshold equivalence checked exhaustively on small sets; exhaustive two-colour search proves the property for (2, l <= 4), (3, l <= 3), (4, l <= 3); a corrupted certificate fails the replay."
+ ],
+ "unresolved": [
+  "failure for every larger l (only listed sizes certified)",
+  "whether the ballot bound values remain valid",
+  "the number of stable configurations for l >= 5",
+  "independent review"
+ ],
+ "nonclaims": [
+  "no claim beyond the certified sizes",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "Replay a certificate under the stated rules; an illegal firing or absence of a violation would void it.",
+ "checks": [
+  {
+   "id": "BALLOT_COUNTEREXAMPLES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/labeled-chip-firing-ballot/verification/reference/check_ballot.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

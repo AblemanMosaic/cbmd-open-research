@@ -66,6 +66,7 @@ The harness ships with execution disabled. Its local-workspace example, the refe
 | `CBMD-COMB-DET-ZECK-001` | [Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant](discoveries/combinatorics/deterministic-zeckendorf-games/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED`<br>`CONJECTURE` | Proof-assistant formalization of the SS counting/end-phase lemmas and the CS counter lemma; prove the Theta(log n) CS deviation. |
 | `CBMD-COMB-ORDERED-ZECK-001` | [The ordered Zeckendorf game: the Long Game Strategy's constant](discoveries/combinatorics/ordered-zeckendorf-game/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED` | Attack LGS optimality (Conjecture 1.7) or the upper-bound constant; proof-assistant formalization. |
 | `CBMD-COMB-FQ-GAME-001` | [The Fibonacci Quilt game: a linear bound on game length](discoveries/combinatorics/fibonacci-quilt-game/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED` | Narrow the constant of the longest game (about 2.02 observed, 2.3 proved): a long-game strategy or a better certificate. |
+| `CBMD-DYN-LABELED-BALLOT-001` | [Labeled chip-firing on trees: the ballot conjecture is false](discoveries/dynamics/labeled-chip-firing-ballot/README.md) | `EXACT_MODEL_VERIFIED`<br>`PROVISIONAL_WRITTEN_ARGUMENT` | Independent replay of the certificates; then determine whether the property fails for every l >= 5 (k = 2) and l >= 4 (k >= 3), and whether the ballot bound survives. |
 
 ### Candidate pipeline
 

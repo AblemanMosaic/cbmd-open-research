@@ -228,6 +228,23 @@
         "PROVISIONAL_WRITTEN_ARGUMENT",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-DYN-LABELED-BALLOT-001",
+      "field": "dynamics",
+      "slug": "labeled-chip-firing-ballot",
+      "path": "discoveries/dynamics/labeled-chip-firing-ballot",
+      "title": "Labeled chip-firing on trees: the ballot conjecture is false",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Independent replay of the certificates; then determine whether the property fails for every l >= 5 (k = 2) and l >= 4 (k >= 3), and whether the ballot bound survives.",
+      "promotion_blockers": [
+        "not yet independently reviewed",
+        "external review open"
+      ],
+      "status": [
+        "EXACT_MODEL_VERIFIED",
+        "PROVISIONAL_WRITTEN_ARGUMENT"
+      ]
     }
   ]
 }
