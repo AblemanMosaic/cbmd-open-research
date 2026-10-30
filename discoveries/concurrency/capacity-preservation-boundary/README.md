@@ -220,6 +220,18 @@ the census confirmed it. This is parallel to, not a corollary of, Cheng,
 Esparza and Palsberg's NP-completeness of *reachable* deadlock in free-choice
 nets. See [`revisions/0.10.0-free-choice.md`](revisions/0.10.0-free-choice.md).
 
+## Marked graphs are polynomial (revision 0.11.0)
+
+On the other side of the free-choice line: in a **marked graph** — at most one
+consumer and one producer per place — preservation is polynomial at any
+weights and capacities, multi-input transitions included. Each place then
+occurs in at most two blocking constraints, and the question becomes an
+orientation problem on a graph whose edges are places, decided by counting
+edges and vertices per component. This is a written argument with a census of
+20,000 nets (zero disagreements, two load-bearing ablations), not a compiled
+theorem. *Conflict-free* nets — one consumer, many producers — sit between and
+are open. See [`revisions/0.11.0-marked-graphs.md`](revisions/0.11.0-marked-graphs.md).
+
 ## Between the regimes (revision 0.8.0)
 
 The coNP-hardness needs **unboundedly many** multi-input transitions. With a
@@ -243,6 +255,12 @@ indeed above its consumer's threshold on that place, and the consumer is still
 not enabled because its other input is short.
 
 ## What remains unresolved
+
+- Conflict-free nets (each place has at most one consumer, any number of
+  producers): neither the free-choice reduction nor the marked-graph argument
+  applies. See revision 0.11.0.
+- The marked-graph procedure of revision 0.11.0 is a written argument with a
+  census; it is not compiled.
 
 - A formal proof of the complexity-class statement. The reduction's
   correctness and input-place bounds are compiled (revision 0.9.0); membership

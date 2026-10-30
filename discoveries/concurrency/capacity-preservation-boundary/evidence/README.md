@@ -14,6 +14,7 @@
 | `backdoor.json` | Revision 0.8.0: the fixed-parameter procedure over general nets, with both literal-family ablations. |
 | `reduction_bridge.json` | Revision 0.9.0: the Lean reduction's net compared with `hardness.py`'s, formula by formula, with a mutated-encoding negative control. |
 | `free_choice.json` | Revision 0.10.0: the strict free-choice construction against the SAT oracle, with the free-choice, bridge and ablation gates and the checker control. |
+| `marked_graph.json` | Revision 0.11.0: the marked-graph procedure against brute force over 20,000 nets, with both ablations and the checker control. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with
