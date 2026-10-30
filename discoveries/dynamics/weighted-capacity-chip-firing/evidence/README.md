@@ -12,6 +12,7 @@
 | `sink_collapse_n3.json` | Revision 0.7.0: capped-sink transfer against "no vertex live" at sink capacities 0, 1, 2, 4, with the bridge, witness and cap-not-idle gates. |
 | `lean_decider_bridge.json` | Revision 0.11.0: the compiled decider `decideTerminalStable`, evaluated by Lean on 500 census systems, against simulated transfer. |
 | `decoder_check.json` | Revision 0.12.0: 80 random instances decoded with kernel-checked verdicts, 42 compared with simulated transfer, plus the wrong-verdict and dropped-arc controls. |
+| `fixed_state_census.json` | Exploratory: reachable terminal states from every fixed initial state at `n <= 3`, classified; evidence for the open fixed-initial-state question. |
 | `run_checks.json` | Output of the bundled checks, including their content gates. |
 | `LEAN_RECEIPT.json` | Toolchain, source hashes, declaration list and axiom dependencies of the compiled targets. |
 

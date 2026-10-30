@@ -1,0 +1,71 @@
+{
+ "schema": "cbmd.weighted-fixed-state-census.v1",
+ "box": {
+  "n": [
+   2,
+   3
+  ],
+  "max_mult": 2,
+  "max_sink_mult": 1,
+  "capacity_slack": 1
+ },
+ "only_ordinary_normal_form": 8317003,
+ "only_other_terminals": 3566933,
+ "both": 18276,
+ "skipped": 0,
+ "first_example_of_both": {
+  "arcs": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    0
+   ]
+  ],
+  "sink": [
+   0,
+   0,
+   1
+  ],
+  "capacity": [
+   1,
+   1,
+   2
+  ],
+  "initial": [
+   1,
+   1,
+   1
+  ],
+  "ordinary_normal_form": [
+   0,
+   0,
+   1
+  ],
+  "reachable_terminals": [
+   [
+    0,
+    0,
+    1
+   ],
+   [
+    0,
+    1,
+    2
+   ]
+  ]
+ },
+ "nonclaims": [
+  "exploratory census for an open question; no characterization is claimed"
+ ],
+ "authority_effect": "NONE"
+}

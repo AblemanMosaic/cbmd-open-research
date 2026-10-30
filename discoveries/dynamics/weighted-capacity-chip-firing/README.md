@@ -234,7 +234,7 @@ breaks them. See
   state, 8,317,003 pairs reach only the ordinary normal form and 3,566,933 reach
   only terminal states that are not ordinarily stable. **18,276 reach both.** So
   firing order genuinely matters from a fixed state, though rarely, and "can"
-  and "must" are different questions.
+  and "must" are different questions (`verification/reference/fixed_state_census.py`).
 
 ## Smallest decisive tests
 
