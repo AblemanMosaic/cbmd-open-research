@@ -27,6 +27,9 @@ TARGETS = [
     "CBMDPetriCapacity.increasing_allFull_capDead",
     "CBMDPetriCapacity.increasing_preserves_iff_inert",
     "CBMDPetriCapacity.increasing_firing_breaks_preservation",
+    "CBMDPetriCapacity.Flow.obstruction_breaks",
+    "CBMDPetriCapacity.Flow.obstructionOfFailure",
+    "CBMDPetriCapacity.Flow.preserves_iff_no_obstruction",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

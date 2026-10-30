@@ -7,6 +7,7 @@
 | `generalized_conditions.json` | The usable-transition generalization, still unsound, over three boxes. |
 | `allfull_obstruction.json` | Revision 0.2.0: the proved equivalence corroborated inside the increasing class, with the control on the hypothesis outside it. |
 | `LEAN_RECEIPT.json` | Toolchain, source hashes, declaration list and observed axiom dependencies for the all-full obstruction. |
+| `flow_characterization.json` | Revision 0.3.0: the obstruction condition against the exact semantics, with the fixpoint-versus-existential cross-check and all four ablations. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with

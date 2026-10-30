@@ -162,3 +162,47 @@ capacity-reachable from an admissible initial marking; the theorem quantifies
 over admissible markings. `preserves_iff_reachable_form` shows these agree,
 because capacity firing cannot leave the box and every admissible marking is
 reachable from itself.
+
+## The draining regime: the flow characterization
+
+The all-full obstruction stops at draining transitions. For unit-weight flow
+nets — each transition takes one token from `src` and either delivers it to
+`dst` or discards it — the full answer is a filled-set condition.
+
+A set `S` of places is an **obstruction** at capacity `C` when
+
+1. `C(q) ≥ 1` for every `q ∈ S`;
+2. no drain has its source in `S`;
+3. every mover `u → w` with `u ∈ S` has `w ∈ S` or `C(w) = 0`;
+4. some mover has its source in `S`.
+
+> **Theorem.** `PRESERVES(N, C)` if and only if no obstruction exists.
+
+*Obstruction ⇒ failure.* Put `m(q) = C(q)` for `q ∈ S` and `m(q) = 0`
+otherwise; `m` is admissible. A transition with source outside `S` is not
+ordinarily enabled. A transition with source in `S` is a mover, by 2, with some
+destination `w`; by 3 either `w ∈ S`, so `m(w) = C(w)` and one more token
+overflows, or `C(w) = 0`, so `m(w) = 0` and one more token still overflows.
+Hence `m` is capacity-dead. By 4 and 1 some mover's source holds a token, so
+`m` is ordinarily enabled. Preservation fails.
+
+*Failure ⇒ obstruction.* Let `m` be admissible, capacity-dead and ordinarily
+enabling some `t₀`. Put `S = {q : m(q) ≥ 1}`. Then 1 is admissibility; 2 holds
+because a drain from `S` would be capacity-enabled; for 3, capacity-deadness of
+a mover from `S` to `w` forces `C(w) < m(w) + 1`, so `m(w) = C(w)`, and then
+either `C(w) = 0` or `w ∈ S`; and `t₀` cannot be a drain, so 4 holds. ∎
+
+Two remarks.
+
+**Zero capacity blocks as well as fullness does.** Clause 3's second branch is
+the only place the two differ, and it is what makes the statement an
+equivalence rather than merely sufficient.
+
+**Clause 4 is not bookkeeping.** Without it the condition is sound but
+incomplete: a set of full places that no transition draws from blocks nothing.
+The smallest witness is three movers `0 → 1` with capacities `(0, 0, 1)`, where
+`{2}` satisfies 1–3 and the net nonetheless preserves.
+
+Specializing: with no drains and all capacities positive, this is the live-set
+obstruction of `CBMD-DYN-WEIGHTED-CAPACITY-001`; taking `S` to be every place
+recovers the all-full obstruction of the previous section.

@@ -9,14 +9,18 @@ import json, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import petri2, boundary, general, allfull
+import petri2, boundary, general, allfull, flow
 
 def main() -> int:
     translation = petri2.run(2, 2, 2, 3)
     relax = [boundary.run(r) for r in ("none", "selffeed", "shared", "multi_input")]
     gen = general.run(2, 2, 2, 2)
     af = allfull.run()
+    fl = flow.run()
     gates = []
+    for gate, ok in fl["gates"].items():
+        if not ok:
+            gates.append(f"flow characterization gate failed: {gate}")
     for gate, ok in af["gates"].items():
         if not ok:
             gates.append(f"all-full obstruction gate failed: {gate}")
@@ -46,6 +50,7 @@ def main() -> int:
            "relaxation_boundary": relax,
            "generalized_conditions": gen,
            "allfull_obstruction": af,
+           "flow_characterization": fl,
            "content_gate_failures": gates,
            "status": "PASS" if not gates else "FAIL",
            "nonclaims": [

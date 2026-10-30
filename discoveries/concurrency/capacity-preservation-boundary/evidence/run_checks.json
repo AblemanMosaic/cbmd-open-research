@@ -858,6 +858,178 @@
   ],
   "authority_effect": "NONE"
  },
+ "flow_characterization": {
+  "schema": "cbmd.petri-flow-characterization.v1",
+  "censuses": [
+   {
+    "box": {
+     "places": 3,
+     "transitions": 3,
+     "max_capacity": 1
+    },
+    "systems": 1320,
+    "preserving": 781,
+    "not_preserving": 539,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "fixpoint_disagrees_with_existential": 0,
+    "without_condition_4": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 390
+    },
+    "ablation": {
+     "1": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 317
+     },
+     "2": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 249
+     },
+     "3": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 93
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 3,
+     "transitions": 3,
+     "max_capacity": 2
+    },
+    "systems": 4455,
+    "preserving": 2351,
+    "not_preserving": 2104,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "fixpoint_disagrees_with_existential": 0,
+    "without_condition_4": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 1488
+    },
+    "ablation": {
+     "1": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 578
+     },
+     "2": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 1182
+     },
+     "3": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 552
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 4,
+     "transitions": 4,
+     "max_capacity": 1
+    },
+    "systems": 62016,
+    "preserving": 27589,
+    "not_preserving": 34427,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "fixpoint_disagrees_with_existential": 0,
+    "without_condition_4": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 17176
+    },
+    "ablation": {
+     "1": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 14933
+     },
+     "2": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 11268
+     },
+     "3": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 4900
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 4,
+     "transitions": 3,
+     "max_capacity": 2
+    },
+    "systems": 66096,
+    "preserving": 24192,
+    "not_preserving": 41904,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "fixpoint_disagrees_with_existential": 0,
+    "without_condition_4": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 20672
+    },
+    "ablation": {
+     "1": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 9396
+     },
+     "2": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 11448
+     },
+     "3": {
+      "UNSOUND": 0,
+      "INCOMPLETE": 5616
+     }
+    }
+   }
+  ],
+  "totals": {
+   "systems": 133887,
+   "preserving": 54913,
+   "not_preserving": 78974,
+   "unsound": 0,
+   "incomplete": 0,
+   "fixpoint_disagrees_with_existential": 0,
+   "conditions_1_to_3_ablated": {
+    "1": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 25224
+    },
+    "2": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 24147
+    },
+    "3": {
+     "UNSOUND": 0,
+     "INCOMPLETE": 11161
+    }
+   },
+   "condition_4_ablated_incomplete": 39726,
+   "condition_4_ablated_unsound": 0
+  },
+  "gates": {
+   "characterization_is_exact": true,
+   "both_outcomes_occur": true,
+   "fixpoint_matches_the_proved_existential": true,
+   "condition_4_is_load_bearing": true,
+   "conditions_1_to_3_are_load_bearing": true,
+   "condition_4_ablation_stays_sound": true
+  },
+  "pass": true,
+  "nonclaims": [
+   "the characterization is proved in verification/lean/; this census corroborates it and is not the proof",
+   "unit arc weights only; nothing here covers weighted flow",
+   "the greatest fixpoint is how the condition is decided on a finite net; the proved statement is the existential one"
+  ],
+  "authority_effect": "NONE"
+ },
  "content_gate_failures": [],
  "status": "PASS",
  "nonclaims": [

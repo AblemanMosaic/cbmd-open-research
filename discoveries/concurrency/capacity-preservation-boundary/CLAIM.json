@@ -4,13 +4,13 @@
  "title": "Where the capacity-preservation characterization transfers, and where it stops",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.2.0",
+ "public_version": "0.3.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED"
  ],
- "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all. One region of that boundary is now proved rather than censused: if every transition strictly increases the count at some place, then the net preserves the uncapacitated deadlock behaviour exactly when no transition can ever fire inside the capacity box. The witness is the all-full marking itself, so no enlargement of the capacities escapes it; the hypothesis fails precisely for transitions that drain, which is what an absorbing sink supplies and why chip-firing is not covered by it.",
+ "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all. One region of that boundary is now proved rather than censused: if every transition strictly increases the count at some place, then the net preserves the uncapacitated deadlock behaviour exactly when no transition can ever fire inside the capacity box. The witness is the all-full marking itself, so no enlargement of the capacities escapes it; the hypothesis fails precisely for transitions that drain, which is what an absorbing sink supplies and why chip-firing is not covered by it. The draining case that obstruction leaves open is itself characterized for unit-weight flow nets, where each transition takes one token from a place and either moves it to another place or discards it: preservation holds exactly when there is no set S of places such that every member has positive capacity, no drain takes from a member, every mover out of a member lands in S or in a zero-capacity place, and some mover takes from a member.",
  "verified": [
   "Exact transfer to chip-firing-shaped nets: zero unsound and zero incomplete over 1,152 systems (2 places, 2 transitions, weights <=2, capacities <=3) and 10,368 systems (3 places, 3 transitions, weights <=1, capacities <=2), in a model coded independently of the chip-firing dossier.",
   "Self-feedback relaxation yields 1,636 incomplete cases and zero unsound ones over the newly admitted nets, so sufficiency survives it.",
@@ -19,13 +19,17 @@
   "The all-full obstruction compiles under Lean 4.35.0 with no sorry, admit or axiom declaration: increasing_preserves_iff_inert, with observed axioms [propext, Quot.sound] and no use of Classical.choice.",
   "The modelling step is proved rather than asserted: preserves_iff_reachable_form shows that quantifying over admissible markings and over markings capacity-reachable from admissible ones give the same property, since capacity firing stays inside the box (fire_admissible, no axioms) and every admissible marking is reachable from itself.",
   "Census corroboration over 37,197 nets inside the class across three boxes: zero disagreements with the proved equivalence, of which 25,586 are non-inert, so the claim that all of those fail is doing work.",
-  "The increasing hypothesis is load-bearing, not decoration: outside the class the conclusion would be wrong on 39,464 nets, all of them with a draining transition."
+  "The increasing hypothesis is load-bearing, not decoration: outside the class the conclusion would be wrong on 39,464 nets, all of them with a draining transition.",
+  "The flow characterization compiles under Lean 4.35.0 in both directions with no proof escape: Flow.preserves_iff_no_obstruction, with observed axioms [propext, Classical.choice, Quot.sound] and no finiteness used.",
+  "Exact against the dossier's own semantics over 133,887 systems in four boxes: zero unsound and zero incomplete, with 54,913 preserving and 78,974 not, so neither outcome is rare.",
+  "The decision procedure is checked against the proved statement rather than assumed to match it: the greatest-fixpoint peeling and a brute-force search over all subsets of places agree in every case.",
+  "Each of the four conditions is load-bearing: dropping them produces 25,224, 24,147, 11,161 and 39,726 incomplete cases respectively, and no ablation produces unsoundness, which is the expected direction."
  ],
  "unresolved": [
   "whether some other local capacity condition repairs the multi-input case; only the natural refinement is refuted",
   "targeted novelty comparison against bounded-Petri-net structural conditions",
   "external review",
-  "whether the non-increasing (draining) case admits any comparable characterization; the all-full witness does not apply there"
+  "weighted flow and multi-input transitions: the obstruction condition is proved only for unit-weight single-input single-output transitions"
  ],
  "nonclaims": [
   "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
@@ -33,7 +37,9 @@
   "the chip-firing characterization itself is proved elsewhere; this dossier only maps its reach",
   "not a novelty determination",
   "the all-full obstruction is proved only for nets in which every transition strictly increases some place; chip-firing with an absorbing sink is outside it, which is the point",
-  "the census in verification/allfull.py corroborates the Lean theorem and is not the proof"
+  "the census in verification/allfull.py corroborates the Lean theorem and is not the proof",
+  "the flow characterization covers unit arc weights only; nothing here covers weighted flow or multi-input transitions",
+  "the greatest fixpoint is how the condition is decided on a finite net; the proved statement is the existential one, and their agreement is checked rather than assumed"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a per-place capacity condition that is sound over the multi-input boxes where the usable-transition refinement fails.",
  "checks": [

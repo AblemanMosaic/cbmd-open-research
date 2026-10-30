@@ -65,6 +65,33 @@ disagreements, of which 25,586 are non-inert; the hypothesis is load-bearing,
 since outside the class the conclusion is wrong on 39,464 nets. See
 [`revisions/0.2.0-allfull-obstruction.md`](revisions/0.2.0-allfull-obstruction.md).
 
+## The draining regime, characterized (revision 0.3.0)
+
+Revision 0.2.0 stops at transitions that **drain** — consume without producing —
+because they keep the all-full marking alive. For unit-weight flow nets, where
+each transition takes one token from a place and either moves it elsewhere or
+discards it, the answer is a filled-set condition. Call a set `S` of places an
+**obstruction** when
+
+1. every member has positive capacity,
+2. no drain takes from a member,
+3. every mover out of a member lands in `S` or in a zero-capacity place,
+4. some mover takes from a member.
+
+> `PRESERVES(N, C)` holds **exactly when** no obstruction exists.
+
+Fill `S` to capacity and empty everything else: every transition from `S` is a
+mover, and it is blocked either by a full member or by a zero-capacity
+receiver. Conversely the places a failing marking occupies form an obstruction.
+
+This is the live-set obstruction of the predecessor widened twice — a
+transition may discard its token, and a zero-capacity receiver may do the
+blocking in place of a full one. Both directions compile, with no finiteness.
+Exact over 133,887 systems with zero unsound and zero incomplete; each of the
+four conditions is load-bearing, and the greatest-fixpoint decision procedure
+is checked against the proved existential form rather than assumed to match it.
+See [`revisions/0.3.0-flow-characterization.md`](revisions/0.3.0-flow-characterization.md).
+
 ## The mechanism
 
 The descent argument certifies one place at a time: this receiver is full, so it
@@ -81,8 +108,9 @@ not enabled because its other input is short.
   the natural one is refuted here, with witnesses; no impossibility is claimed.
 - Novelty. The nearest named notions are implicit places and non-blockingness of
   bounded nets; neither is this statement. See [`review/README.md`](review/README.md).
-- Whether the **draining** case — some transition that increases nothing —
-  admits any comparable characterization. The all-full witness does not reach it.
+- Weighted flow and multi-input transitions. The obstruction condition of
+  revision 0.3.0 is proved for unit-weight, single-input, single-output
+  transitions only.
 - Apart from the all-full obstruction, everything here is a finite census over
   stated boxes.
 
