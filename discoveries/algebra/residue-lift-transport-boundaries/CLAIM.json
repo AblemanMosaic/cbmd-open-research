@@ -4,13 +4,13 @@
  "title": "Residue and lift transport boundaries",
  "field": "algebra",
  "slug": "residue-lift-transport-boundaries",
- "public_version": "0.3.0",
+ "public_version": "0.4.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
   "REVISED"
  ],
- "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity. Off the central line the residue of the amplitude modulo three is computed from the three-adic digit expansions of N and -A against the base-three digits of d by a two-state carry automaton; the earlier negative ruled out fixed windows of integer digits read without carries, not digit criteria as such.",
+ "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity. Off the central line the residue of the amplitude modulo three is computed from the three-adic digit expansions of N and -A against the base-three digits of d by a two-state carry automaton; the earlier negative ruled out fixed windows of integer digits read without carries, not digit criteria as such. For fixed A, R and f the amplitude is an integer-valued polynomial in N of degree R-1-f, so the valuation question is the 3-adic valuation of a fixed polynomial's values; by Shu and Yao 2011 and Sobolewski 2023 that sequence is periodic when the polynomial has no root in Z_3, 3-regular when its roots there are all rational, and not regular otherwise, and the amplitude families realize all three cases.",
  "verified": [
   "The closed-form amplitude agrees with the defining Newton/parity construction on 2,597 instances, checked by a standard-library file importing nothing from the archive.",
   "Smallest off-diagonal class vanishing modulo three while nonzero over the integers: A=0, R=2, delta=5, f=0, amplitude -6, v_3 = 1.",
@@ -20,14 +20,16 @@
   "A two-state carry automaton on three-adic digits reproduces the amplitude modulo three on 84,630 classes with zero disagreements, with 29,927 zero and 54,703 nonzero so neither residue is rare.",
   "The carry is load-bearing: the same automaton with the carry deleted is wrong on 28,195 of those classes.",
   "The exponent reduction is controlled rather than assumed: running the automaton at 3^m and at 3^(m+2) agrees in every case.",
-  "The closed form the automaton is derived from is re-checked against the defining Newton construction on 240 instances with no disagreements."
+  "The closed form the automaton is derived from is re-checked against the defining Newton construction on 240 instances with no disagreements.",
+  "The amplitude is an integer-valued polynomial in N of degree exactly R-1-f, since N occurs only inside C(N,k); checked by interpolation through d+1 points and tested far outside the interpolation range on ten families.",
+  "Each family's branch of the Shu-Yao and Sobolewski trichotomy is decided exactly, by removing every rational root and then Hensel-lifting, which is sound by compactness once no rational root remains.",
+  "The measured 3-kernel rank agrees with the trichotomy on all ten families and on all seven controls, with every branch exercised by a control and both rank behaviours present among the families."
  ],
  "unresolved": [
   "extraction and independent replay of the inherited selected-degree-six source fixture",
   "independent source-correspondence check",
   "scope inside a produced native leaf",
-  "targeted novelty comparison",
-  "whether v_3 off the central line is 3-regular in the transducer sense; it is unbounded, reaching 10 in the measured box, so it is not an automatic function with a finite output alphabet"
+  "targeted novelty comparison"
  ],
  "nonclaims": [
   "not a fault in the upstream solver",
@@ -36,9 +38,11 @@
   "not a novelty determination",
   "the amplitude-spectrum separation is extracted here; the inherited degree-six source fixture is not reproduced",
   "the digit criterion is for the residue modulo three, not for the valuation",
-  "the reduction over F_3 is argued in prose and checked by census; it is not compiled"
+  "the reduction over F_3 is argued in prose and checked by census; it is not compiled",
+  "the regularity trichotomy is a published theorem of Shu and Yao and of Sobolewski; it is cited, not reproved, and no credit for it is claimed",
+  "the kernel-rank measurement is evidence rather than proof: a truncated window can only lower an observed rank, so a climbing rank is informative while a stabilizing one is not conclusive on its own"
  ],
- "smallest_decisive_test": "Exhibit a class on which the two-state carry automaton disagrees with the amplitude modulo three; or exhibit a finite-state transducer computing v_3 off the central line, or prove none exists; or reproduce the inherited degree-six fixture at residue and two lifted precisions with every ring, node, centre and amplitude parameter bound.",
+ "smallest_decisive_test": "Exhibit a class on which the two-state carry automaton disagrees with the amplitude modulo three; or an amplitude family whose kernel-rank behaviour contradicts its Z_3 root set; or reproduce the inherited degree-six fixture at residue and two lifted precisions with every ring, node, centre and amplitude parameter bound.",
  "checks": [
   {
    "id": "RESIDUE_LIFT_SEPARATION",
@@ -56,6 +60,16 @@
     "-I",
     "-B",
     "discoveries/algebra/residue-lift-transport-boundaries/verification/digit_criterion.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "RESIDUE_VALUATION_REGULARITY",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/algebra/residue-lift-transport-boundaries/verification/valuation_regularity.py"
    ],
    "required": true
   }

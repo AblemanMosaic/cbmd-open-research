@@ -115,3 +115,41 @@ The valuation is a different matter. `v_3` is unbounded — it reaches 10 inside
 the measured box — so it is not an automatic function with a finite output
 alphabet. Whether it is 3-regular in the transducer sense, as the carry count
 is on the central line, is open.
+
+## The valuation: a polynomial, and a published trichotomy (revision 0.4.0)
+
+The digit criterion above is for the residue. The valuation itself reduces to
+a standard object.
+
+For fixed `(A, R, f)`, `N = A + R - delta` occurs in
+
+```
+alpha = (-1)^A Σ_{k=0}^{d} C(N,k) · C(A+d-k-1, d-k),   d = R - 1 - f,
+```
+
+only inside `C(N,k)`, which is a polynomial in `N` of degree `k`. So `alpha` is
+an integer-valued polynomial in `N` of degree exactly `d`, the leading term
+coming from `k = d` with coefficient `1/d!`. The question is therefore the
+3-adic valuation of the values of a fixed polynomial.
+
+That question is answered in the literature. For analytic `f` on `Z_p` with
+root set `R_f` inside `Z_p`, `v_p(f(n))` is periodic when `R_f` is empty,
+`p`-regular when `R_f` is non-empty and rational, and not regular when `R_f`
+contains an irrational:
+
+> Zhang Shu and Jia-Yan Yao, *Analytic functions over `Z_p` and `p`-regular
+> sequences*, C. R. Acad. Sci. Paris 349 (2011) 947–952.
+> Bartosz Sobolewski, *On `k`-regularity of sequences of valuations and last
+> nonzero digits*, Ramanujan J. 61 (2023) 1151–1195, Theorem 2.3.
+
+The amplitude families realize all three branches: degree-one families have a
+rational root and are regular, `(A,R,f) = (2,4,1)` has no root in `Z_3` and is
+periodic, and the higher-degree families acquire an irrational 3-adic root and
+are not regular. Deciding which branch a family is in is exact: strip every
+rational root, then lift; a residue surviving all depths in a polynomial with
+no rational root is a genuine irrational root of `Z_3`, by compactness.
+
+Stripping first is not optional. Two rational roots three apart make the
+product divisible by `9` at every lift, so survivors persist with nothing
+behind them; `(x+2)(x-1)` was misclassified exactly that way before the
+rational roots were removed.

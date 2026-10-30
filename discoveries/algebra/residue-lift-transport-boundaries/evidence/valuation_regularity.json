@@ -1,0 +1,400 @@
+{
+ "schema": "cbmd.valuation-regularity.v1",
+ "theorem": "Shu and Yao 2011; Sobolewski 2023 Theorem 2.3: for analytic f on Z_p, v_p(f(n)) is periodic if f has no root in Z_p, p-regular if its roots in Z_p are all rational, and not regular if some root in Z_p is irrational",
+ "controls": [
+  {
+   "poly": "x+1",
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "3x+1",
+   "branch": "empty_root_set",
+   "ranks": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "x^2-7",
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    3,
+    6,
+    8,
+    10,
+    12,
+    14
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "x^2+3x-3",
+   "branch": "empty_root_set",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "x^3-x-3",
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    8,
+    11,
+    13,
+    16,
+    19
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "x^2+x-2",
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "offset": 2,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "poly": "x^2-3x+2",
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "offset": 5,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  }
+ ],
+ "families": [
+  {
+   "A": 1,
+   "R": 2,
+   "f": 0,
+   "degree": 1,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -2,
+    -2
+   ],
+   "scaled_by": 1,
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 3,
+   "f": 1,
+   "degree": 1,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -4,
+    -4
+   ],
+   "scaled_by": 1,
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 4,
+   "f": 2,
+   "degree": 1,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -8,
+    -8
+   ],
+   "scaled_by": 1,
+   "branch": "rational_roots",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 4,
+   "f": 0,
+   "degree": 3,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -24,
+    -20,
+    0,
+    -4
+   ],
+   "scaled_by": 3,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 5,
+   "f": 0,
+   "degree": 4,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -48,
+    -28,
+    -22,
+    4,
+    -2
+   ],
+   "scaled_by": 3,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 5,
+   "f": 1,
+   "degree": 3,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -48,
+    -40,
+    0,
+    -8
+   ],
+   "scaled_by": 3,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 1,
+   "R": 6,
+   "f": 0,
+   "degree": 5,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -480,
+    -376,
+    -20,
+    -100,
+    20,
+    -4
+   ],
+   "scaled_by": 15,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 2,
+   "R": 4,
+   "f": 1,
+   "degree": 2,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    24,
+    12,
+    4
+   ],
+   "scaled_by": 1,
+   "branch": "empty_root_set",
+   "ranks": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "offset": 0,
+   "stabilized": true,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 2,
+   "R": 5,
+   "f": 0,
+   "degree": 4,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    240,
+    140,
+    46,
+    4,
+    2
+   ],
+   "scaled_by": 3,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    4,
+    7,
+    9,
+    11,
+    13,
+    15
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  },
+  {
+   "A": 3,
+   "R": 5,
+   "f": 2,
+   "degree": 2,
+   "is_polynomial_in_N": true,
+   "integer_poly": [
+    -96,
+    -40,
+    -8
+   ],
+   "scaled_by": 1,
+   "branch": "irrational_root",
+   "ranks": [
+    1,
+    3,
+    6,
+    8,
+    10,
+    12,
+    14
+   ],
+   "offset": 0,
+   "stabilized": false,
+   "as_the_theorem_says": true
+  }
+ ],
+ "gates": {
+  "amplitude_is_polynomial_in_N": true,
+  "controls_match_the_theorem": true,
+  "families_match_the_theorem": true,
+  "every_branch_exercised_by_a_control": true,
+  "both_rank_behaviours_seen_in_families": true
+ },
+ "pass": true,
+ "nonclaims": [
+  "the trichotomy is a published theorem and is cited, not reproved here",
+  "the rank measurement is evidence, not proof: a truncated window can only lower an observed rank, so climbing is informative and stabilizing is not conclusive on its own",
+  "the reduction of the amplitude to a polynomial in N is elementary and is checked by interpolation, not compiled"
+ ],
+ "authority_effect": "NONE"
+}

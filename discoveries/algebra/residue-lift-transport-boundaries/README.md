@@ -30,9 +30,15 @@ A window on the low digits of `A` and `N` as integers was reading the wrong
 object — those expansions are eventually all twos when the integer is negative
 — and it had no way to propagate a carry. Deleting the carry from the
 automaton makes it wrong on 28,195 of 84,630 classes, which is what makes
-"carries, not more digits" the content rather than a detail. The valuation
-itself is unbounded and so is not an automatic function with a finite output
-alphabet; whether it is 3-regular is the sharper remaining question.
+"carries, not more digits" the content rather than a detail. The valuation question is settled in revision 0.4.0, and not by us. For fixed
+`A`, `R`, `f` the amplitude is an **integer-valued polynomial in `N`** of
+degree `R-1-f`, because `N` occurs only inside `C(N,k)`. The 3-adic valuation
+of a polynomial's values obeys a published trichotomy (Shu and Yao 2011;
+Sobolewski 2023): periodic when the polynomial has no root in `Z_3`, 3-regular
+when its roots there are all rational, and **not regular** otherwise. The
+amplitude families realize all three cases, so `v_3` off the central line is
+not 3-regular in general. See
+[`revisions/0.4.0-valuation-regularity.md`](revisions/0.4.0-valuation-regularity.md).
 
 The inherited selected-degree-six source fixture is still not reproduced.
 
@@ -40,8 +46,7 @@ The inherited selected-degree-six source fixture is still not reproduced.
 
 Extract and independently replay the inherited degree-six fixture at residue and
 two lifted precisions, binding every ring, node, centre, amplitude and
-source-row parameter; and settle whether `v_3` off the central line is
-3-regular in the transducer sense.
+source-row parameter.
 
 ## Nonclaims
 
