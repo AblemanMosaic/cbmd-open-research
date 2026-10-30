@@ -8,3 +8,4 @@ import CBMDWeightedDynamics.SinkCollapse
 import CBMDWeightedDynamics.FiniteAcyclic
 import CBMDWeightedDynamics.Iff
 import CBMDWeightedDynamics.Concrete
+import CBMDWeightedDynamics.Decide

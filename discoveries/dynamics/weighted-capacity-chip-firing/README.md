@@ -147,6 +147,15 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 260,172 systems. See
 [`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
+## A verified decider (revision 0.11.0)
+
+`decideTerminalStable` is an executable Boolean, and `terminalStable_iff_decide`
+proves it decides the characterization. Well-foundedness is decided by peeling
+vertices with no live out-neighbour, and the theorem proves `n` rounds suffice.
+Lean evaluated it on 500 census systems, 451 of them cyclic. Every verdict
+matches simulated transfer. See
+[`revisions/0.11.0-verified-decider.md`](revisions/0.11.0-verified-decider.md).
+
 ## No ordinary hypothesis left (revision 0.10.0)
 
 `weighted_transfer` took the firing function and the ordinary theory as
