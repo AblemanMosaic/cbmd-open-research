@@ -1,6 +1,6 @@
 # Prior art
 
-- **Barbieri et al., *The Ordered Zeckendorf Game* (arXiv 2508.20222, 2025).**
+- **Bortnovskyi, Lucas, Miller, Vraneško, Watson and White, *The Ordered Zeckendorf Game* (arXiv 2508.20222, 2025).**
   - They define the game and the Long Game Strategy.
   - They prove `M(n) ≤ n(n − 1)/2` and
     `M(n) ≤ n²/2 − (1/32) n log_φ n + o(n log n)`.

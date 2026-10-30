@@ -3,15 +3,18 @@
 Indexing: `F_1 = 1, F_2 = 2, F_{k+1} = F_k + F_{k−1}`. Let `φ` be the golden
 ratio and `κ = φ/√5 = (5 + √5)/10 = 0.7236…`.
 
-**Theorem.** The Long Game Strategy (LGS) of Barbieri et al. has length
+**Theorem.** The Long Game Strategy (LGS) of Bortnovskyi et al. has length
 
 `L_LGS(n) = n²/2 − κ n log_φ n + O(n)`.
 
 So the maximal game length satisfies `M(n) ≥ n²/2 − κ n log_φ n − O(n)`. This
 improves the constant 1 of their Theorem 1.10 to `κ`. If their Conjecture 1.7
-holds (LGS is longest), the constant they estimate in Remark 3.1 ("bigger than
-0.4 and much lower than 1") is exactly `κ`. It is the density of `1`s in lazy
-Fibonacci representations.
+holds (LGS is longest), the limit of the ratio they plot in Remark 3.1 and
+Figure 5, `(n²/2 − M(n))/(n log_φ n)`, is exactly `κ`. They read it as "bigger
+than 0.4 and much lower than 1". The ratio converges only like
+`κ − 4.17/log_φ n`: it is 0.44 at `n = 10³` and 0.63 at `n = 2·10⁹`, which
+explains their reading. `κ` is the density of `1`s in lazy Fibonacci
+representations.
 
 ## 1. The count model
 
@@ -50,17 +53,20 @@ direct list simulation for `n ≤ 40`.
 
 Write `m = ⌊n/2⌋` and `r = n − 2m`.
 
-**Phase 1.** The first `m` moves are ones. They cost
-`(n − 2) + (n − 4) + … = m(n − m − 1)` and leave `c_1 = r`, `c_2 = m`.
+**Phase 1.** The first `m` moves are ones. They create
+`(n − 2) + (n − 4) + … = m(n − m − 1)` inversions, so phase 1 has length
+`m(n − m)`. It leaves `c_1 = r`, `c_2 = m`.
 
-**Pile phase.** This phase runs while `c_2 ≥ 2`. In it there is always a
+**Pile phase.** This phase runs from the end of phase 1 until the first moment
+at which `c_2 ≤ 1`. In it there is always a
 duplicate, so there is no merge. Call a *rest moment* one at which the next
 move is a split at index 2: then `c_1 ≤ 1` and there is no duplicate above
 index 2. Read the pieces at indices `≥ 3` as a binary word `w`, with index 3
 rightmost. Let `𝓛` be the counter language: binary words with no `00`, except
 one final `00` followed only by `1`s.
 
-*Step lemma.* Suppose that at a rest moment `w ∈ 𝓛` and the pile is large.
+*Step lemma.* Suppose that at a rest moment `w ∈ 𝓛` and `c_2 ≥ 2`, and the
+pile phase does not end during the step.
 Then by the next rest moment the word is the successor of `w` in `𝓛`
 (increasing binary order). In between:
 
@@ -122,16 +128,22 @@ Number the expensive splits of the pile phase `k = 1, …, E`.
   `c_2^{(k)} = (n − c_1^{(k)} − (k − 1) − 2P^{(k)})/2`.
 
 By the step lemma the pile phase costs `moves + Σ_k c_2^{(k)} − 2s_2`, where
-`s_2` counts splits at 2. Substituting, and using `phase 1 = m(n − m − 1)` and
-`E = n − e`:
+`s_2` counts splits at 2 and `moves` counts the non-switch moves of the pile
+phase. Substitute this, the phase-1 length `m(n − m)`, `E = n − e`,
+`n²/2 − m(n − m) = n²/4 + r²/4` and `Σ_k (n − k + 1)/2 = (n² + n − e − e²)/4`.
+This gives
 
 `n²/2 − L = Σ_k P^{(k)} + R`, where
-`R = m − n/4 + r²/4 + (e + e²)/4 + Σ_k c_1^{(k)}/2 + 2s_2 − moves − tail`.
+`R = −n/4 + r²/4 + (e + e²)/4 + Σ_k c_1^{(k)}/2 + 2s_2 − moves − tail`.
 
-This is an exact identity (gate `EXACT_IDENTITY`, every `n ≤ 600`). Every term
-of `R` is `O(n)`:
+This is an exact identity. The gate `EXACT_IDENTITY` checks this closed form of
+`R` for every `n ≤ 600`, both parities. Every term of `R` is `O(n)`:
 
-- `c_1 ≤ 1`, and `s_2`, `moves ≤ 3n`;
+- `c_1 ≤ 1`;
+- `s_2 ≤ E ≤ n`;
+- `moves` is at most the number of non-switch moves of the whole game. That is
+  a Zeckendorf-game play, so it is at most `Σ_{Zeck(n)} c_i ≤ φ² n` by the
+  identity of deterministic-zeckendorf-games §2 (about `2.1 n` is observed);
 - the tail is `O(log³ n)`;
 - `e = O(log n)`. At the end of the pile phase `U ≥ n − 3`, so
   `E = U − 2P + O(1) = n − O(log n)`.
@@ -168,11 +180,20 @@ gives it for all `ℓ`. ∎
 
 **The partial last length.** The rest words of the last length `ℓ*` form a
 prefix of that length class in increasing order. Such a prefix is a disjoint
-union of cylinders `u0·(free)`, one for each `1` of the boundary word. A
-cylinder fixed at depth `i` has a free suffix of length `ℓ* − i − 1`, on which
-the density lemma applies. The fixed digits err by `O(i)` on a set whose weight
-falls like `φ^{−i}`. So the prefix also has weighted digit sum
-`κ ℓ*·weight + O(weight)`.
+union of cylinders: the words `u0s`, one for each `1` of the boundary word,
+with `u` its prefix before that `1`.
+
+- The suffix `s` ranges over the completions allowed by `𝓛` after `u0`. That
+  is a free `𝓛`-type suffix, or, if `u0` already ends in `00` or contains the
+  `00`, the forced forms `01^j` or `1^j`.
+- A cylinder fixed at depth `i` has weight `O(φ^{ℓ*−i})`.
+- On its free part the density lemma applies; the fixed digits and the forced
+  forms err by `O(i)` per word.
+
+Summed over `i`, the weighted digit sum of the prefix is `κ ℓ*` times its
+weight, plus `O(Σ_i i φ^{ℓ*−i}) = O(φ^{ℓ*}) = O(n)`. The error is `O(n)`, not
+`O(weight)`: relative to a small prefix's weight it can grow with `ℓ*`. `O(n)`
+is all that is needed.
 
 **Summing over lengths.** The weight on length `ℓ` decays like `φ^{ℓ−ℓ*}`
 below `ℓ*`, and `ℓ* = log_φ n + O(1)` (`𝓛`-words of length `ℓ` have values
@@ -190,7 +211,27 @@ below `ℓ*`, and `ℓ* = log_φ n + O(1)` (`𝓛`-words of length `ℓ` have va
 - **Observed:** `(n²/2 − L)/n − κ log_φ n` lies in `[−4.21, −4.06]` for
   `n = 10³, …, 10⁹` (`evidence/lgs_large.json`). The `O(n)` term is about
   `−4.17 n`.
+- **Exhaustive check:** the maximal game length `M(n)` equals the LGS length
+  for every `n ≤ 16` (exhaustive search over ordered states). This is consistent
+  with Conjecture 1.7, not a proof of it.
 - **Not claimed:**
   - that LGS is longest (Conjecture 1.7);
   - any improvement of the upper bound `M(n) ≤ n²/2 − (1/32) n log_φ n`;
   - who wins.
+
+## 6. Review
+
+An independent review (fresh agent, own list simulator and count model, `n` up
+to `2·10⁹`) found the theorem proved, with fixable gaps. All are fixed here:
+
+- the closed form of `R` was off by `m`, because the phase-1 length `m(n − m)`
+  had been taken for its switch count;
+- the partial-last-length error is `O(n)`, not `O(weight)`;
+- the forced suffixes are now named;
+- the pile phase is defined precisely;
+- the bound on `moves` is justified;
+- the Remark 3.1 claim is stated as a limit;
+- the paper's authors are Bortnovskyi, Lucas, Miller, Vraneško, Watson and
+  White.
+
+The identity gate now tests the closed form.

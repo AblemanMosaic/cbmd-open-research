@@ -6,7 +6,7 @@ Permanent claim ID: `CBMD-COMB-ORDERED-ZECK-001`
 
 ## The question
 
-The ordered Zeckendorf game (Barbieri et al., arXiv 2508.20222, 2025) plays
+The ordered Zeckendorf game (Bortnovskyi, Lucas, Miller, Vraneško, Watson and White, arXiv 2508.20222, 2025) plays
 the Zeckendorf game on an ordered list that starts as `n` copies of `F_1 = 1`.
 Merges and splits act on adjacent terms, and a *switch* swaps an adjacent
 out-of-order pair. The longest game `M(n)` is quadratic. The authors prove
@@ -26,7 +26,12 @@ than 0.4 and much lower than 1".
   `φ/√5 = (5 + √5)/10 = 0.7236…` is the density of `1`s in lazy Fibonacci
   representations.
   - This improves the lower bound to `M(n) ≥ n²/2 − 0.7236… n log_φ n − O(n)`.
-  - If Conjecture 1.7 holds, it is the exact constant of Remark 3.1.
+  - If Conjecture 1.7 holds, it is the limit of the ratio of Remark 3.1. That
+    ratio converges slowly, like `κ − 4.17/log_φ n` (0.44 at `10³`, 0.63 at
+    `2·10⁹`), which explains the authors' reading.
+  - An exhaustive search confirms that LGS is longest for every `n ≤ 16`.
+  - An independent review found the proof correct up to fixable gaps; the
+    fixes are applied.
 - **Why.**
   - Under LGS the list is always sorted before a non-switch move, so a move
     costs the inversions it creates.

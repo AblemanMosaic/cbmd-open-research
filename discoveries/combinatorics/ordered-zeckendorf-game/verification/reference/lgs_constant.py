@@ -1,6 +1,6 @@
 """The Long Game Strategy of the ordered Zeckendorf game: L = n^2/2 - (phi/sqrt5) n log_phi n + O(n).
 
-Game (Barbieri et al., arXiv 2508.20222): an ordered list of n copies of F_1 = 1
+Game (Bortnovskyi, Lucas, Miller, Vraneško, Watson, White, arXiv 2508.20222): an ordered list of n copies of F_1 = 1
 (F_2 = 2, F_{k+1} = F_k + F_{k-1}). Moves: merge an adjacent (F_i, F_{i+1}) into
 F_{i+2}; merge (F_1, F_1) into F_2; split an adjacent (F_i, F_i), i > 2, into
 (F_{i-2}, F_{i+1}); split (F_2, F_2) into (F_1, F_3); switch an adjacent
@@ -21,8 +21,9 @@ Gates (each required):
     splits (at index 2 or 3);
   * INVARIANT_Q: during the pile phase U - 2P = number of expensive splits so
     far (U = value at indices >= 3, P = number of pieces there);
-  * EXACT_IDENTITY: n^2/2 - L equals sum_k P_k + sum_k c1_k/2 + 2 s2 - (moves
-    after phase 1) - (tail length) + correction(n, E), for every n in range;
+  * EXACT_IDENTITY: n^2/2 - L = sum_k P_k + R with the closed form
+    R = -n/4 + r^2/4 + (e + e^2)/4 + sum_k c1_k/2 + 2 s2 - moves - tail
+    (r = n mod 2, e = n - E), for every n in range;
   * DENSITY: over lazy words of length l (leading 1, no 00), and over all
     counter-language words of length l, the number of 1's T and its
     (1 + [ends in 1])-weighted version satisfy |T - (phi/sqrt5) l N| <= 2N
@@ -150,13 +151,13 @@ def count_lgs(n, checks=False, words=None):
 
 
 def exact_identity(n, d):
-    """n^2/2 - L as the sum of its parts (derivation in the written argument)."""
-    E, m, r = d["E"], d["m"], d["r"]
-    lhs = Fraction_(n * n, 2) - d["L"]
-    sum_c2 = sum(Fraction_(n - (k - 1), 2) for k in range(1, E + 1)) - Fraction_(d["sumc1"], 2) - d["sumP"]
-    # L = phase1 + sum_c2 - 2 s2 + moves + tail   (moves: non-switch moves after phase 1)
-    rhs_L = d["phase1"] + sum_c2 - 2 * d["s2"] + d["moves"] + d["tail"]
-    return lhs == Fraction_(n * n, 2) - rhs_L
+    """n^2/2 - L = sum_k P_k + R with R in closed form (written argument §3)."""
+    from fractions import Fraction
+    E, r = d["E"], d["r"]
+    e = n - E
+    R = (Fraction(-n, 4) + Fraction(r * r, 4) + Fraction(e + e * e, 4)
+         + Fraction(d["sumc1"], 2) + 2 * d["s2"] - d["moves"] - d["tail"])
+    return Fraction(n * n, 2) - d["L"] == d["sumP"] + R
 
 
 def Fraction_(a, b=1):

@@ -202,9 +202,9 @@
       "path": "discoveries/combinatorics/ordered-zeckendorf-game",
       "title": "The ordered Zeckendorf game: the Long Game Strategy's constant",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Independent review of the written argument; then attack LGS optimality or the upper-bound constant.",
+      "next_obligation": "Attack LGS optimality (Conjecture 1.7) or the upper-bound constant; proof-assistant formalization.",
       "promotion_blockers": [
-        "written proof, not yet independently reviewed",
+        "written proof, independently reviewed once, not proof-assistant checked",
         "external review open"
       ],
       "status": [
