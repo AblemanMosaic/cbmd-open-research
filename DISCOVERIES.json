@@ -44,7 +44,7 @@
    "path": "discoveries/combinatorics/parity-amplitude-spectrum",
    "title": "Classical Krawtchouk identification and native vanishing",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements.",
+   "next_obligation": "Obtain an independent source-specific derivation and convention audit; the targeted prior-art assessment is done and recorded, naming the object as the binary Krawtchouk polynomial at a negative argument, placing the centered vanishing as a published root fact, and withdrawing the availability of orthogonality.",
    "promotion_blockers": [
     "source-specific novelty and external review remain unassessed"
    ],

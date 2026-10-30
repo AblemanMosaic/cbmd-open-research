@@ -1,107 +1,122 @@
 {
-  "schema": "cbmd.open-research.claim.v1",
-  "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
-  "title": "Classical Krawtchouk identification and native vanishing",
-  "field": "combinatorics",
-  "slug": "parity-amplitude-spectrum",
-  "public_version": "0.8.0",
-  "status": [
-    "PROVISIONAL_WRITTEN_ARGUMENT",
-    "REVISED"
-  ],
-  "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d.",
-  "verified": [
-    "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom.",
-    "A no-escape Lean counterexample proves the first entry_closed_form candidate false as stated; the native entry is 0 while its proposed right side is -1.",
-    "The guarded revision passed 134370 licensed binary comparisons and two deliberate mutant families.",
-    "Five source-bridge facts compile without proof escapes: orbit mismatch characterization and support, active-coordinate swap-state equality, exact integer signed-subword expansion, and native delta characterization.",
-    "Inactive selected coordinates make the native ordered difference vanish at every point in the source swap orbit.",
-    "The guarded binomial term is the exact cardinality of the fixed-size active subsets containing mismatches.erase t.",
-    "The corrected guarded entry_closed_form compiles against the pinned native LayoutNumerator.entry under the declared orbit and pivot-mismatch hypotheses, with no proof escapes in the copied source boundary.",
-    "The parity interpolant reflection law compiles in a separate no-escape Lean module by rational-polynomial interpolation uniqueness; the earlier admitted reflection step is no longer a mathematical blocker.",
-    "Hash-bound local Cycle 9 receipts report a fresh exact replay of the no-escape native centered-vanishing and A=0 collapse chain; the replay archive and complete newer source chain are not yet imported into this checkout.",
-    "Hash-bound local Cycle 11 receipts report compiled parity-coefficient closed-form and translation-matrix proofs; copied historical receipt checks do not rebuild these proofs.",
-    "The v0.1 public envelope binds the complete 41-module transitive OAI closure for the nine shared native targets, exact Lean and mathlib pins, and an executable logical-dependency ceiling.",
-    "The public replay driver recompiles the centered-vanishing, A=0 and parity-coefficient targets from a project with no pre-existing CBMD proof objects; its dedicated CI job performs the same pinned replay."
-  ],
-  "unresolved": [
-    "source-specific novelty assessment and external review"
-  ],
-  "nonclaims": [
-    "not a native algorithmic improvement",
-    "not a ring-transport certificate",
-    "not a novelty determination or external independent verification"
-  ],
-  "smallest_decisive_test": "Independently rederive the source-specific coefficient identity or identify the first hypothesis or coordinate convention at which the bundled native correspondence fails.",
-  "checks": [
-    {
-      "id": "LEAN_CORE_RECEIPT",
-      "command": [
-        "python",
-        "discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "ENTRY_CLOSED_FORM_CORRECTION_RECEIPT",
-      "command": [
-        "python",
-        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "ENTRY_CLOSED_FORM_BRIDGE_RECEIPT",
-      "command": [
-        "python",
-        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_bridge.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "PARITY_REFLECTION_RECEIPT",
-      "command": [
-        "python",
-        "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_parity_reflection.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "ENTRY_CLOSED_FORM_FINITE_AUDIT",
-      "command": [
-        "python",
-        "-B",
-        "discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "PUBLIC_PROOF_SOURCE_CUSTODY",
-      "command": [
-        "python",
-        "-B",
-        "tools/verify_proof_sources.py"
-      ],
-      "required": true
-    },
-    {
-      "id": "PUBLIC_PROOF_PACKAGING_ADVERSE_CONTROLS",
-      "command": [
-        "python",
-        "-B",
-        "tools/test_proof_packaging.py"
-      ],
-      "required": true
-    }
-  ],
-  "authority_effect": "NONE",
-  "ledger_binding": {
-    "snapshot": "evidence/iterations/bootstrap-2026-10/SNAPSHOT.json",
-    "claim_ids": [
-      "urn:cbmd:complexity:batch5:B5-M3:centered-vanishing-no-escape",
-      "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse",
-      "urn:cbmd:complexity:batch5:B5-M7:parity-coefficient-closed-form"
-    ],
-    "scope": "Historical claim roots plus the public v0.1 proof-source and replay envelope; external independence remains unassessed."
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+ "title": "Classical Krawtchouk identification and native vanishing",
+ "field": "combinatorics",
+ "slug": "parity-amplitude-spectrum",
+ "public_version": "0.8.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "REVISED"
+ ],
+ "statement": "For the declared reference amplitude, n(A,R,delta,f) equals 2^(R-1)(-1)^A times the coefficient of y^(R-1-f) in (1+y)^(A+R-delta)(1-y)^(-A); at delta=2A+R it vanishes for odd d=R-1-f and has the stated binomial closed form for even d. The object is the MacWilliams-Sloane binary Krawtchouk polynomial at a negative argument and a possibly-negative length, n = 2^(R-1)(-1)^A K_d(-A; R-delta); orthogonality is not available at these parameters and is not relied on, while the generating function and the q=2 reflection law are.",
+ "verified": [
+  "The isolated integer centralCoefficient cancellation theorem compiles under the pinned Lean 4.34.1 workbench and its proof boundary contains no sorry, admit, or added axiom.",
+  "A no-escape Lean counterexample proves the first entry_closed_form candidate false as stated; the native entry is 0 while its proposed right side is -1.",
+  "The guarded revision passed 134370 licensed binary comparisons and two deliberate mutant families.",
+  "Five source-bridge facts compile without proof escapes: orbit mismatch characterization and support, active-coordinate swap-state equality, exact integer signed-subword expansion, and native delta characterization.",
+  "Inactive selected coordinates make the native ordered difference vanish at every point in the source swap orbit.",
+  "The guarded binomial term is the exact cardinality of the fixed-size active subsets containing mismatches.erase t.",
+  "The corrected guarded entry_closed_form compiles against the pinned native LayoutNumerator.entry under the declared orbit and pivot-mismatch hypotheses, with no proof escapes in the copied source boundary.",
+  "The parity interpolant reflection law compiles in a separate no-escape Lean module by rational-polynomial interpolation uniqueness; the earlier admitted reflection step is no longer a mathematical blocker.",
+  "Hash-bound local Cycle 9 receipts report a fresh exact replay of the no-escape native centered-vanishing and A=0 collapse chain; the replay archive and complete newer source chain are not yet imported into this checkout.",
+  "Hash-bound local Cycle 11 receipts report compiled parity-coefficient closed-form and translation-matrix proofs; copied historical receipt checks do not rebuild these proofs.",
+  "The v0.1 public envelope binds the complete 41-module transitive OAI closure for the nine shared native targets, exact Lean and mathlib pins, and an executable logical-dependency ceiling.",
+  "The public replay driver recompiles the centered-vanishing, A=0 and parity-coefficient targets from a project with no pre-existing CBMD proof objects; its dedicated CI job performs the same pinned replay.",
+  "The identification is exact and reproducible in-repo: the amplitude equals 2^(R-1)(-1)^A K_d(-A; R-delta) on 6,048 classes with no mismatch, and the closed form equals the defining Newton construction on 2,352.",
+  "The binary reflection law K_m(n-x) = (-1)^m K_m(x) holds on 6,048 classes, and on the centred line the length is -2A and the argument is exactly n/2, so the odd-degree vanishing is that law's root fact; 128 vanishing odd degrees and 148 non-zero even degrees occur, so neither case is empty."
+ ],
+ "unresolved": [
+  "an independent source-specific derivation and convention audit; the prior-art search settled the mathematics' provenance, not whether the reference amplitude is correctly read off the source conventions"
+ ],
+ "nonclaims": [
+  "not a native algorithmic improvement",
+  "not a ring-transport certificate",
+  "not a novelty determination or external independent verification",
+  "orthogonality is not available at these parameters: the argument lies outside 0..n and the length may be negative, so the measure does not exist and the earlier phrasing claiming it is withdrawn",
+  "the Krawtchouk identification is a naming observation, not a theorem; writing C(-A, j) with the generalized binomial turns the Krawtchouk sum into this dossier's own convolution",
+  "the centered vanishing is a published root fact about binary Krawtchouk polynomials (Coleman 2011), and the coefficient-extraction form is Newton interpolation with Vandermonde convolution; neither is claimed as new"
+ ],
+ "smallest_decisive_test": "Independently rederive the source-specific coefficient identity or identify the first hypothesis or coordinate convention at which the bundled native correspondence fails.",
+ "checks": [
+  {
+   "id": "LEAN_CORE_RECEIPT",
+   "command": [
+    "python",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/lean/verify_receipt.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "ENTRY_CLOSED_FORM_CORRECTION_RECEIPT",
+   "command": [
+    "python",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_correction.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "ENTRY_CLOSED_FORM_BRIDGE_RECEIPT",
+   "command": [
+    "python",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_entry_closed_form_bridge.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "PARITY_REFLECTION_RECEIPT",
+   "command": [
+    "python",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/verify_parity_reflection.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "ENTRY_CLOSED_FORM_FINITE_AUDIT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/reference-model/check_entry_closed_form.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "PUBLIC_PROOF_SOURCE_CUSTODY",
+   "command": [
+    "python",
+    "-B",
+    "tools/verify_proof_sources.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "PUBLIC_PROOF_PACKAGING_ADVERSE_CONTROLS",
+   "command": [
+    "python",
+    "-B",
+    "tools/test_proof_packaging.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "KRAWTCHOUK_IDENTIFICATION",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/combinatorics/parity-amplitude-spectrum/verification/krawtchouk_identification.py"
+   ],
+   "required": true
   }
+ ],
+ "authority_effect": "NONE",
+ "ledger_binding": {
+  "snapshot": "evidence/iterations/bootstrap-2026-10/SNAPSHOT.json",
+  "claim_ids": [
+   "urn:cbmd:complexity:batch5:B5-M3:centered-vanishing-no-escape",
+   "urn:cbmd:complexity:batch5:B5-M3:A-zero-native-collapse",
+   "urn:cbmd:complexity:batch5:B5-M7:parity-coefficient-closed-form"
+  ],
+  "scope": "Historical claim roots plus the public v0.1 proof-source and replay envelope; external independence remains unassessed."
+ }
 }

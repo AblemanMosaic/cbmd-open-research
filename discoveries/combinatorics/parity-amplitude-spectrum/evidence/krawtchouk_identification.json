@@ -1,0 +1,45 @@
+{
+ "schema": "cbmd.krawtchouk-identification.v1",
+ "box": {
+  "A_max": 7,
+  "R_max": 8,
+  "delta": [
+   -6,
+   14
+  ]
+ },
+ "identification": {
+  "checked": 6048,
+  "mismatches": 0
+ },
+ "defining_vs_closed": {
+  "checked": 2352,
+  "mismatches": 0
+ },
+ "reflection_law": {
+  "checked": 6048,
+  "mismatches": 0
+ },
+ "centred_line": {
+  "checked": 288,
+  "mismatches": 0,
+  "odd_degrees_vanishing": 128,
+  "even_degrees_nonzero": 148
+ },
+ "samples": [],
+ "gates": {
+  "identification_exact": true,
+  "closed_form_matches_defining": true,
+  "reflection_law_holds": true,
+  "centred_line_as_stated": true,
+  "odd_degrees_actually_occur": true,
+  "even_degrees_actually_nonzero": true
+ },
+ "pass": true,
+ "nonclaims": [
+  "the identification is a naming observation: writing C(-A, j) with the generalized binomial turns the Krawtchouk sum into the dossier's own convolution, so nothing is proved by it",
+  "orthogonality is NOT available at these parameters and is not checked; the argument lies outside 0..n and the length may be negative, so the measure does not exist",
+  "the centred vanishing is a published root fact about binary Krawtchouk polynomials, not a result of this dossier"
+ ],
+ "authority_effect": "NONE"
+}
