@@ -196,6 +196,18 @@ agreements, zero disagreements, 171 satisfiable against 69 unsatisfiable, every
 transition carrying one or two input places. See
 [`revisions/0.4.0-hardness-dichotomy.md`](revisions/0.4.0-hardness-dichotomy.md).
 
+## Between the regimes (revision 0.8.0)
+
+The coNP-hardness needs **unboundedly many** multi-input transitions. With a
+fixed number `k` of them, preservation is polynomial: each is blocked by one of
+finitely many unit literals — a short input or an overflowing place — and
+choosing one per such transition leaves every branch max-closed, so the
+greatest admissible solution decides it. That is branching on a strong backdoor
+to Horn (Nishimura, Ragde and Szeider) and is claimed only as an application.
+It completes the picture: polynomial with none, FPT in `k`, coNP-complete when
+unbounded. Exact over 145,953 nets with zero unsound and zero incomplete. See
+[`revisions/0.8.0-few-multi-input.md`](revisions/0.8.0-few-multi-input.md).
+
 ## The mechanism
 
 The descent argument certifies one place at a time: this receiver is full, so it

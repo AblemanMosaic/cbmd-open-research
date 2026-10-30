@@ -11,6 +11,7 @@
 | `hardness_reduction.json` | Revision 0.4.0: the CNF reduction checked against the exact semantics and a brute-force oracle, with the input-place bounds. |
 | `weighted_flow.json` | Revision 0.5.0: the level-based algorithm against the exact semantics over six weighted boxes, with both step ablations. |
 | `single_input.json` | Revision 0.6.0: the downward fixpoint over single-input nets with arbitrary outputs and weights, with certificate replay and both ablations. |
+| `backdoor.json` | Revision 0.8.0: the fixed-parameter procedure over general nets, with both literal-family ablations. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with

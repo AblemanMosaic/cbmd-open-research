@@ -1,0 +1,109 @@
+{
+ "schema": "cbmd.petri-backdoor.v1",
+ "censuses": [
+  {
+   "box": {
+    "places": 2,
+    "transitions": 2,
+    "max_arc_weight": 1,
+    "max_capacity": 2
+   },
+   "systems": 1215,
+   "with_multi_input": 675,
+   "preserving": 1007,
+   "not_preserving": 208,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "max_branches": 4,
+   "ablation": {
+    "no_upper_bound_literals": 64,
+    "no_lower_bound_literals": 0
+   },
+   "samples": []
+  },
+  {
+   "box": {
+    "places": 2,
+    "transitions": 2,
+    "max_arc_weight": 2,
+    "max_capacity": 2
+   },
+   "systems": 46080,
+   "with_multi_input": 34560,
+   "preserving": 30826,
+   "not_preserving": 15254,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "max_branches": 16,
+   "ablation": {
+    "no_upper_bound_literals": 6096,
+    "no_lower_bound_literals": 2506
+   },
+   "samples": []
+  },
+  {
+   "box": {
+    "places": 3,
+    "transitions": 2,
+    "max_arc_weight": 1,
+    "max_capacity": 2
+   },
+   "systems": 83349,
+   "with_multi_input": 68040,
+   "preserving": 50205,
+   "not_preserving": 33144,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "max_branches": 9,
+   "ablation": {
+    "no_upper_bound_literals": 13344,
+    "no_lower_bound_literals": 5568
+   },
+   "samples": []
+  },
+  {
+   "box": {
+    "places": 2,
+    "transitions": 3,
+    "max_arc_weight": 1,
+    "max_capacity": 2
+   },
+   "systems": 15309,
+   "with_multi_input": 10773,
+   "preserving": 13101,
+   "not_preserving": 2208,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "max_branches": 8,
+   "ablation": {
+    "no_upper_bound_literals": 1344,
+    "no_lower_bound_literals": 0
+   },
+   "samples": []
+  }
+ ],
+ "totals": {
+  "systems": 145953,
+  "with_multi_input": 114048,
+  "preserving": 95139,
+  "not_preserving": 50814,
+  "unsound": 0,
+  "incomplete": 0,
+  "ablation_wrong": {
+   "no_upper_bound_literals": 20848,
+   "no_lower_bound_literals": 8074
+  }
+ },
+ "gates": {
+  "procedure_is_exact": true,
+  "both_outcomes_occur": true,
+  "multi_input_population_nonempty": true,
+  "both_literal_families_load_bearing": true
+ },
+ "pass": true,
+ "nonclaims": [
+  "the technique is the classical branching on a strong backdoor to Horn (Nishimura, Ragde and Szeider); only its application here is recorded",
+  "the max-closure under chosen literals and the exhaustiveness of the branching are compiled; termination of each branch's lowering is the compiled argument of revision 0.7.0 with the capacities replaced by the chosen upper bounds, which is not separately compiled"
+ ],
+ "authority_effect": "NONE"
+}

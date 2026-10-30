@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDPetriCapacity.fire_admissible' does not depend on any axioms\n'CBMDPetriCapacity.reach_admissible' does not depend on any axioms\n'CBMDPetriCapacity.preserves_iff_reachable_form' does not depend on any axioms\n'CBMDPetriCapacity.inert_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.increasing_allFull_capDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_preserves_iff_inert' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_firing_breaks_preservation' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.Flow.obstruction_breaks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.obstructionOfFailure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.preserves_iff_no_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstruction_breaks' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstructionOfFailure' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.preserves_iff_no_obstruction' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.least_closure_is_complete' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.forced_le_of_bad' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.justified_closure_is_complete' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.ordEnabled_mono' does not depend on any axioms\n'CBMDPetriCapacity.SNet.capDead_max' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_iff_greatest_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.SNet.capped_ge_of_bad' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_iff_capped_ordDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.total_lt' depends on axioms: [propext]\n'CBMDPetriCapacity.SNet.lower_le' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.lower_lt' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.exists_capped_capDead' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_decided_by_lowering' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDPetriCapacity.fire_admissible' does not depend on any axioms\n'CBMDPetriCapacity.reach_admissible' does not depend on any axioms\n'CBMDPetriCapacity.preserves_iff_reachable_form' does not depend on any axioms\n'CBMDPetriCapacity.inert_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.increasing_allFull_capDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_preserves_iff_inert' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_firing_breaks_preservation' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.Flow.obstruction_breaks' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.obstructionOfFailure' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.Flow.preserves_iff_no_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstruction_breaks' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.obstructionOfFailure' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.preserves_iff_no_obstruction' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.least_closure_is_complete' depends on axioms: [propext]\n'CBMDPetriCapacity.WFlow.forced_le_of_bad' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.WFlow.justified_closure_is_complete' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.ordEnabled_mono' does not depend on any axioms\n'CBMDPetriCapacity.SNet.capDead_max' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_iff_greatest_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.SNet.capped_ge_of_bad' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_iff_capped_ordDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.total_lt' depends on axioms: [propext]\n'CBMDPetriCapacity.SNet.lower_le' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.lower_lt' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.SNet.exists_capped_capDead' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.SNet.preserves_decided_by_lowering' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDPetriCapacity.notCapEnabled_max_of_single' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.ub_max' depends on axioms: [propext]\n'CBMDPetriCapacity.lb_max' depends on axioms: [propext]\n'CBMDPetriCapacity.lower_bound_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.upper_bound_blocks' does not depend on any axioms\n'CBMDPetriCapacity.blocked_by_some_literal' depends on axioms: [propext, Classical.choice, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -19,6 +19,11 @@
  "independent_verification": false,
  "lean_recompiled": true,
  "members": [
+  {
+   "bytes": 4704,
+   "path": "CBMDPetriCapacity/Backdoor.lean",
+   "sha256": "fac614afcc0e988ae11c0ca3f7e84badba72f33b241be13354b6a3d05141cf2e"
+  },
   {
    "bytes": 7071,
    "path": "CBMDPetriCapacity/Core.lean",
@@ -45,9 +50,9 @@
    "sha256": "001684245542f4b23c81662d019904e8476bd18fd8e47eeca3c4a9df22029db7"
   },
   {
-   "bytes": 172,
+   "bytes": 206,
    "path": "CBMDPetriCapacity.lean",
-   "sha256": "99474270f49b4a810a2d58070da6d567237b0f34e053e893dfce734b6bb3e149"
+   "sha256": "822de57b5b478ac80e17d44eff332e5bac5ad156de4cf60803b1d168d58f6a64"
   }
  ],
  "no_escape": true,
@@ -81,7 +86,13 @@
   "CBMDPetriCapacity.SNet.lower_le",
   "CBMDPetriCapacity.SNet.lower_lt",
   "CBMDPetriCapacity.SNet.exists_capped_capDead",
-  "CBMDPetriCapacity.SNet.preserves_decided_by_lowering"
+  "CBMDPetriCapacity.SNet.preserves_decided_by_lowering",
+  "CBMDPetriCapacity.notCapEnabled_max_of_single",
+  "CBMDPetriCapacity.ub_max",
+  "CBMDPetriCapacity.lb_max",
+  "CBMDPetriCapacity.lower_bound_blocks",
+  "CBMDPetriCapacity.upper_bound_blocks",
+  "CBMDPetriCapacity.blocked_by_some_literal"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }
