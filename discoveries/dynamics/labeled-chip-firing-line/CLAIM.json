@@ -4,7 +4,7 @@
  "title": "Labeled chip-firing on the line: evidence for open Hopkins-McConville-Propp conjectures (odd n; loops and parallel edges)",
  "field": "dynamics",
  "slug": "labeled-chip-firing-line",
- "public_version": "0.2.0",
+ "public_version": "0.2.1",
  "status": [
   "CONJECTURE",
   "EXACT_MODEL_VERIFIED"
@@ -16,7 +16,8 @@
   "zline.cpp / exactp.cpp: n = 11 (6,520,201 states, 819 outcomes, maximal inversion 5; P(sorted) 0.3305156511 and 0.3314399523).",
   "mc.cpp: 20,000-run Monte Carlo per point for m = 2..80.",
   "check_loops.py: the two-colour test agrees with direct labeled search on 120 small cases; reproduces HMP (Z sorts exactly for even n <= 10), Klivans-Liscio Theorem 3.13 (all loops: qualifying n = 3, 7, 11 all sort) and Theorem 3.2 (2Z, 3Z); Conjecture 21 on 124 and Conjecture 25 (r = 2) on 25 small qualifying instances; the converse on 372 and the scaling on 80 small instances (pure Python, about 1 s).",
-  "loops_scan/ (zs.cpp, zsr.cpp and drivers): Conjecture 21 on 614 instances, Conjecture 25 on 287 + 242 instances, the converse on 2,384 instances and the scaling on 640 cases; per-instance JSONL with SHA-256 in evidence/loops_scans.json."
+  "loops_scan/ (zs.cpp, zsr.cpp and drivers): Conjecture 21 on 614 instances, Conjecture 25 on 287 + 242 instances, the converse on 2,384 instances and the scaling on 640 cases; per-instance JSONL with SHA-256 in evidence/loops_scans.json.",
+  "argument/WRITTEN_ARGUMENT.md section 3: written proof that non-sorting scales (if G does not sort Delta^n then r(G) does not sort Delta^{rn}), so Conjecture 25 implies Conjecture 21; the reverse direction is only observed."
  ],
  "unresolved": [
   "proofs of Conjectures 26 and 27",

@@ -1,6 +1,6 @@
 # Labeled chip-firing on the line: evidence for open HMP conjectures
 
-> **Standing:** `CONJECTURE`, `EXACT_MODEL_VERIFIED` (version 0.2.0)
+> **Standing:** `CONJECTURE`, `EXACT_MODEL_VERIFIED` (version 0.2.1)
 
 Permanent claim ID: `CBMD-DYN-LABELED-LINE-001`
 
@@ -73,7 +73,13 @@ In these ranges, the condition of Conjecture 21 is therefore both sufficient
 and necessary for sorting, once the origin can fire. (When `0 ∈ S` and
 `n = 2`, nothing fires, so the chips are trivially sorted.) HMP do not discuss
 a converse; their Remark 22 only relates the two end conditions to a
-balance condition on `S`.
+balance condition on `S`. The converse is not explained by the extreme chips
+alone. For example, for `S = {−1}`, `n = 4`, only the threshold `t = 2`
+yields an unsorted outcome.
+
+One direction of the scaling is proved (`argument/WRITTEN_ARGUMENT.md`, §3).
+If `ℤ⟨S⟩` does not sort `Δⁿ`, then `r(ℤ⟨S⟩)` does not sort `Δ^{rn}`. Hence
+Conjecture 25 implies Conjecture 21.
 
 ## What is not established
 

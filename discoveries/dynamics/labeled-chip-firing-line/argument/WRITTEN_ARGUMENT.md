@@ -59,3 +59,29 @@ at the first unsorted stable colour state. By the corollary, that state already
 certifies that `G` does not sort `Δⁿ`. As cross-checks, the Python tester agrees
 with a direct labeled search on 120 small cases, and `zsr.cpp` at `r = 1`
 reproduces `zs.cpp`'s full output on 290 cases.
+
+## 3. Scaling: the easy direction
+
+**Lemma.** If `G` (any graph of §2) does not sort `Δⁿ`, then `r(G)` does not
+sort `Δ^{rn}`. In particular, Conjecture 25 for `(S, n, r)` implies Conjecture
+21 for `(S, n)`.
+
+*Proof.* By the corollary of §2, there is a threshold `t` and a colour run of
+`G` from `(t, n − t)` at 0 that ends in a stable state `s` with a blue chip
+strictly left of a red one. Replace each colour firing at `v` with `k` red
+chips by an `r(G)`-firing at `v` with `rk` red chips, starting from
+`(rt, r(n − t))` at 0. Here `r(G)` fires `r(ℓ_v + m_v + r_v)` chips: `rℓ_v`
+go left, `rm_v` stay, `rr_v` go right. We check by induction that the state
+of `r(G)` is always `r` times the state of `G`. The site `v` holds `r` times
+as many red and as many blue chips as in `G`, so the replacement firing is
+available. Its effect is `r` times the effect of the `G`-firing, because
+`min(rk, rℓ) = r·min(k, ℓ)`,
+`min(max(rk − rℓ, 0), rm) = r·min(max(k − ℓ, 0), m)` and
+`max(rk − rℓ − rm, 0) = r·max(k − ℓ − m, 0)`. The final state `r·s` is stable
+in `r(G)`, since each `r·s(v) < r·d_v`, and it still has a blue chip strictly
+left of a red one. By §2, `r(G)` does not sort `Δ^{rn}`. ∎
+
+The reverse implication would make Conjectures 21 and 25 equivalent; it is
+the scaling observation, checked on 640 cases, and is not proved here. Both
+directions are probably known to specialists. The easy one is recorded only
+because the evidence tables rely on it.
