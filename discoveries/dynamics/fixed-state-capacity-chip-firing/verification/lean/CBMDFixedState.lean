@@ -4,3 +4,4 @@ import CBMDFixedState.Bins
 import CBMDFixedState.Stuck
 import CBMDFixedState.Realise
 import CBMDFixedState.ResidueDecide
+import CBMDFixedState.Split

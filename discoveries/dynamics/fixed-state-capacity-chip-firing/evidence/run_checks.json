@@ -46,13 +46,17 @@
    "result": {
     "authority_effect": "NONE",
     "counts": {
+     "classifyT_bad": 19751,
+     "classifyT_safe": 1027,
+     "classifyT_unknown": 19,
+     "classifyT_unsound": 0,
      "classify_bad": 19377,
      "classify_safe": 1027,
      "classify_unknown": 393,
      "classify_unsound": 0,
      "conj_fail": 0,
      "covered_but_not_stuck": 0,
-     "covered_by_compiled": 19303,
+     "covered_by_compiled": 19770,
      "dp_fail": 0,
      "dp_pairs_fail": 0,
      "instances": 20797,
@@ -67,7 +71,7 @@
      "sound_fail": 0,
      "stuck": 19770,
      "witness": 19770,
-     "witness_not_covered": 467
+     "witness_not_covered": 0
     },
     "examples": {
      "nonstrict_false_accept": [
@@ -82,16 +86,12 @@
        2
       ],
       1
-     ],
-     "witness_not_covered": [
-      [
-       2
-      ],
-      1
      ]
     },
     "gates": {
+     "CLASSIFIER_T_mirror_sound": true,
      "CLASSIFIER_mirror_sound": true,
+     "COMPILED_coverage_complete_in_range": true,
      "COMPILED_partial_converse_consistent": true,
      "CONJECTURE_witness_implies_stuck_no_counterexample": true,
      "CONTROL_largest_fit_greedy_bites": true,
@@ -278,6 +278,11 @@
       "sha256": "3fbbd005016c91122cc4856776916f64a452126a60108f39e1fc60a9b5df3890"
      },
      {
+      "bytes": 21228,
+      "path": "CBMDFixedState/Split.lean",
+      "sha256": "057f62a67ad9484dde52e90679179d460231a4b03edba0bc7a6ee164eee8c005"
+     },
+     {
       "bytes": 8643,
       "path": "CBMDFixedState/Star.lean",
       "sha256": "2b8f70794ba7505cad45c576ad7b0c70105cb037a56bf9531d3339e540aa30ba"
@@ -288,9 +293,9 @@
       "sha256": "8994003a14b2dbf43b8b1db5f62f2bdc9ba317f8e962a5748ee45a97eb52021d"
      },
      {
-      "bytes": 180,
+      "bytes": 208,
       "path": "CBMDFixedState.lean",
-      "sha256": "13be2009c887187810ada1a63caff2f7e5119a78566f417b9ae7401daa1c4ba5"
+      "sha256": "e9ff7a80e10b09130f891d073a6a98d4a2094ab8796a7c9d862c2eb9f1094daf"
      }
     ],
     "no_escape": true,
@@ -320,7 +325,14 @@
      "CBMDFixedState.Star.bad_of_dpBad",
      "CBMDFixedState.Star.classify_safe",
      "CBMDFixedState.Star.classify_bad",
-     "CBMDFixedState.Star.bad_2_2_3_3_3"
+     "CBMDFixedState.Star.bad_2_2_3_3_3",
+     "CBMDFixedState.Star.realise_split",
+     "CBMDFixedState.Star.bad_of_split",
+     "CBMDFixedState.Star.bad_of_triple",
+     "CBMDFixedState.Star.bad_of_onebin",
+     "CBMDFixedState.Star.bad_of_dpBadT",
+     "CBMDFixedState.Star.classifyT_safe",
+     "CBMDFixedState.Star.classifyT_bad"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

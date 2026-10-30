@@ -51,7 +51,9 @@ states are bounded by the capacities.
   `realise_pair`, `bad_of_small_or_pair_witness`, and (0.4.0) `spec_iff`,
   `dpWitness_iff`, `dpFast_eq`, `safe_of_dpFast`, `safe_2_3_3`, and (0.5.0)
   `stuck_of_oversize`, `bad_of_dpBad`, `classify_safe`, `classify_bad`,
-  `bad_2_2_3_3_3`. They are proved against the
+  `bad_2_2_3_3_3`, and (0.6.0) `realise_split`, `bad_of_split`,
+  `bad_of_triple`, `bad_of_onebin`, `bad_of_dpBadT`, `classifyT_safe`,
+  `classifyT_bad`. They are proved against the
   capacity-blocked chip-firing semantics of the weighted dossier, copied
   verbatim. `verification/semantics_custody.py` checks the copy declaration by
   declaration, with a mutation control.
@@ -96,12 +98,23 @@ not ordinarily stable. On the star:
   exhaustive range it answers `safe` 3,991 times, `bad` 490,329 times and
   `unknown` 6,141 times (1.2%); every `unknown` instance has a witness, so it
   is bad if the conjecture holds. The kernel certifies `bad_2_2_3_3_3` this
-  way.
-- **Compiled partial converse (0.3.0):** if some residue witness leaves
-  unfired senders of total at most `B`, or exactly two senders, then some run
-  gets stuck (`realise_small`, `realise_pair`, `bad_of_small_or_pair_witness`).
-  In the exhaustive range this settles 492,524 of the
-  496,470 instances that have a witness.
+  way. The extended `classifyT` (0.6.0) also checks witnesses with three
+  unfired senders. It leaves 531 unknowns in the range, all of which are in
+  fact bad.
+- **Compiled partial converse (0.3.0, extended 0.6.0):** a residue witness is
+  realised by a stuck run in each of these cases:
+  - its unfired senders total at most `B` (`realise_small`);
+  - its fired part fits in one bin (`bad_of_onebin`);
+  - its unfired senders split as `T ⊔ W`, where `T` totals at most `B`, each
+    member of `W` overflows on top of `T`, and the members of `W` overflow
+    pairwise (`realise_split`).
+
+  The split case covers every witness with at most three unfired senders
+  (`bad_of_triple`) and every witness in which no two unfired senders fit
+  together. In the exhaustive range (`B ≤ 13`, `k ≤ 8`), every one of the
+  496,470 instances with a witness has a witness of one of these shapes. So
+  in that range the conjecture follows from the compiled theorems plus a
+  finite check of shapes.
 - **Conjectured, not proved:** every residue witness is realised by a stuck
   run. Sharper: for a witness of least fired total, firing its set
   largest-fit-first realises it. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
@@ -112,8 +125,12 @@ not ordinarily stable. On the star:
 
 ## What remains unresolved
 
-- **The residue-witness conjecture** above, which would settle FIXED-BAD and
-  its complement FIXED-MUST-GOOD on stars in pseudo-polynomial time. Natural
+- **The residue-witness conjecture** above, in the case not covered: every
+  witness leaves unfired senders of total above `B`, with no split, and fires
+  a part that needs more than one bin. The smallest such instances found are
+  `B = 10` with bundles `2, 4×9` and `B = 15` with `3, 6×8`. Both do get stuck,
+  but only by a two-bin run. Proving this case would settle FIXED-BAD and its
+  complement FIXED-MUST-GOOD on stars in pseudo-polynomial time. Natural
   extremal proof routes fail in range; see `argument/WRITTEN_ARGUMENT.md` §6.
   FIXED-BAD on general graphs is open.
 - The exact complexity of FIXED-GOOD in general: NP-hard, in PSPACE. Whether it
@@ -140,7 +157,7 @@ python -B discoveries/dynamics/fixed-state-capacity-chip-firing/verification/lea
 ## Repository map
 
 - `argument/`: the written argument, including the complexity wrapper.
-- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`, `Realise`, `ResidueDecide`) and replay driver.
+- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`, `Realise`, `ResidueDecide`, `Split`) and replay driver.
 - `verification/reference/`: the star census against exact simulation, the residue-witness check, and two optional C searches (`bin_runs_exhaustive.c`, `one_step_lemma_search.c`).
 - `verification/semantics_custody.py`: checks the copied semantics against the weighted dossier.
 - `evidence/`: census output, bundled checks and the Lean receipt.

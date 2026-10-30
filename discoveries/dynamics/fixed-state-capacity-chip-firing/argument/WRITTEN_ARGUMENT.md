@@ -189,8 +189,51 @@ remains (that would make `Σ_F a < B`). What remains then lies in `F`. By (1),
 (4) and (5) it totals at most `B − a_z` for some `z ∈ U`, so
 `Σ_F a ≤ 3B − (a_u + a_v) − a_z < 2B − a_z`, the same contradiction.
 
-**Coverage.** In the exhaustive range (`B ≤ 13, k ≤ 8`), 492,524 of the 496,470 instances with a witness have a witness of one of these two shapes. For those instances the converse is now proved, not conjectured, and `residue_witness.py` checks the theorem against the model on every one of them. The other 3,946 instances, including those with a bundle too big ever to fire, rest on the conjecture. What is left open is instances in which every
-witness leaves at least three senders unfired, with total above `B`.
+**Split witnesses (Lean: `realise_split`, `bad_of_triple`, `bad_of_onebin`;
+revision 0.6.0).** Suppose the witness's unfired set splits as `U = T ⊔ W`
+with three properties:
+
+- `Σ_T a ≤ B`;
+- every `w ∈ W` has `Σ_T a + a_w > B`;
+- any two distinct members of `W` total more than `B`.
+
+Then some run gets stuck. Write `F` for the fired part and suppose no run gets
+stuck. If `W = ∅`, then `Σ_U a ≤ B` and `realise_small` applies. Otherwise
+facts (1)–(5) above hold, and the proof follows one explicit run in three
+stages.
+
+1. *Stage 1.* Extend `T` to a maximal one-bin packing `C₁`. By (3) it is
+   exact. It holds no `W` bundle, because each overflows on top of `T`. So its
+   other members `Q` lie in `F`, and `Σ_Q a = B − Σ_T a`.
+2. *Stage 2.* After closing `C₁`, take a maximal packing `P` of the remaining
+   fired part.
+   - Some `w₁ ∈ W` fits on `P`; otherwise `P` is a stuck packing.
+   - `P ∪ {w₁}` is maximal: other `W` bundles overflow against `w₁`, and the
+     fired part overflows by the maximality of `P`.
+   - So by (3) it is exact. That needs the remaining total to be at least `B`,
+     which follows from `Σ_T a + a_{w₁} > B`.
+   - So `Σ_P a = B − a_{w₁}`.
+3. *Stage 3.* After closing it, let `F₃` be the fired part that is left.
+   - If `F₃` is empty, `Σ_F a = 2B − (Σ_T a + a_{w₁}) < B`, contradicting (2).
+   - Otherwise every bundle of `F₃` exceeds `a_{w₁}`, since it did not fit on
+     `P`. So a maximal packing `P₃` of `F₃` has total above `a_{w₁}`, and every
+     remaining `W` bundle overflows on it.
+   - `P₃` is therefore maximal among everything left, so it must be everything
+     left: `Σ_{F₃} a ≤ Σ_{P₃} a`.
+   - By (4), `Σ_{P₃} a ≤ B − a_u` for some `u ∈ U`.
+   - Then `Σ_F a = 2B − (Σ_T a + a_{w₁}) + Σ_{F₃} a < 2B − a_u`, which
+     contradicts the residue as before.
+
+*Three unfired senders.* Take `T = U` if the three fit together. Otherwise, if
+some pair fits, take `T` = that pair. Otherwise take `T` = one sender and `W` =
+the other two. *No pair fits:* take `T` = one sender. *One bin:* if the fired
+part totals less than `B`, firing it is already a stuck run.
+
+**Coverage.** In the exhaustive range (`B ≤ 13, k ≤ 8`), every one of the 496,470 instances with a witness has a witness of a shape covered by `realise_small`, `bad_of_onebin` or `realise_split`. So in that range the conjecture holds as a consequence of the compiled theorems; `residue_witness.py` checks the shapes and checks each theorem against the model. What is left open is instances in which no witness
+has any of these shapes. The smallest found are `B = 10` with `2, 4×9` and
+`B = 15` with `3, 6×8`: the only witness leaves five `4`s, or four `6`s,
+unfired. They do get stuck, but only through a run that closes one exact bin
+first.
 
 **Further search.** `verification/reference/bin_runs_exhaustive.c` is optional
 and needs a C compiler. It uses `fill_eq_mod` to take the fired mask alone as

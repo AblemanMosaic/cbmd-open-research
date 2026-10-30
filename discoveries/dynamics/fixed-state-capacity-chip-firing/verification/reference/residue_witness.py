@@ -29,12 +29,17 @@ Gates (each required):
       - largest-fit and smallest-fit greedy runs each fail to find a stuck run
         on some instance that has one, so the question is not settled by a
         fixed greedy order;
-  * COMPILED PARTIAL CONVERSE (`Realise.lean`): every instance with a witness
-    whose unfired senders total at most B, or number exactly two, has a stuck
-    run -- checked here against the model, with the count of witness instances
+  * COMPILED PARTIAL CONVERSE (`Realise.lean`, `Split.lean`): every instance
+    with a witness whose unfired senders total at most B, or whose fired part
+    fits in one bin, or whose unfired senders split as T + W (T of total at
+    most B, each member of W overflowing on T, members of W pairwise
+    overflowing), has a stuck run; COVERAGE gate: in range, every instance with
+    a witness has one of these shapes, so the conjecture holds in range as a
+    consequence of the compiled theorems -- checked here against the model, with the count of witness instances
     the theorem does not cover;
-  * CLASSIFIER: a mirror of the Lean `classify` (safe / bad / unknown) is
-    never wrong on a safe or bad verdict, with the count of unknowns;
+  * CLASSIFIER: mirrors of the Lean `classify` and `classifyT` (safe / bad /
+    unknown) are never wrong on a safe or bad verdict, with the counts of
+    unknowns;
   * SCOPE: with two receivers the residue condition is necessary but NOT
     sufficient -- an explicit two-receiver system has a residue witness and,
     by exact simulation, no reachable bad terminal state -- so the conjecture
@@ -159,6 +164,40 @@ def classify(a, B):
     return "unknown"
 
 
+def has_split(U, B):
+    """`realise_split` hypothesis: U = T + W with sum(T) <= B, every w in W
+    overflowing on top of T, and any two members of W overflowing together."""
+    n = len(U)
+    for m in range(1 << n):
+        T = [U[i] for i in range(n) if m >> i & 1]
+        W = [U[i] for i in range(n) if not m >> i & 1]
+        if sum(T) > B:
+            continue
+        if any(sum(T) + w <= B for w in W):
+            continue
+        if any(W[i] + W[j] <= B for i in range(len(W)) for j in range(i + 1, len(W))):
+            continue
+        return True
+    return False
+
+
+def classify_t(a, B):
+    """Mirror of `Split.classifyT` (Lean): `classify`, plus three-sender witnesses."""
+    v = classify(a, B)
+    if v != "unknown":
+        return v
+    T = sum(a)
+    k = len(a)
+    for u in range(k):
+        for x in range(k):
+            for y in range(k):
+                if len({u, x, y}) == 3:
+                    r = (T - a[u] - a[x] - a[y]) % B
+                    if all(r + a[z] > B for z in (u, x, y)):
+                        return "bad"
+    return "unknown"
+
+
 def greedy_stuck(a, B, pick):
     rem = sorted(a)
     f = 0
@@ -255,7 +294,8 @@ def main():
                   min_total_witness_not_every_order=0, min_total_witness_not_packable=0,
                   min_total_witness_not_largest_fit=0,
                   dp_pairs_fail=0, classify_safe=0, classify_bad=0, classify_unknown=0,
-                  classify_unsound=0, covered_by_compiled=0, covered_but_not_stuck=0, witness_not_covered=0,
+                  classify_unsound=0, classifyT_safe=0, classifyT_bad=0, classifyT_unknown=0,
+                  classifyT_unsound=0, covered_by_compiled=0, covered_but_not_stuck=0, witness_not_covered=0,
                   oversize_instances=0)
     examples = {}
     for B in range(1, B_MAX + 1):
@@ -281,7 +321,8 @@ def main():
                     cov = False
                     for m in W:
                         Uc = [a[i] for i in range(k_) if not m >> i & 1]
-                        if sum(Uc) <= B or len(Uc) == 2:
+                        Fc = [a[i] for i in range(k_) if m >> i & 1]
+                        if sum(Uc) <= B or sum(Fc) < B or has_split(Uc, B):
                             cov = True
                             break
                     if cov:
@@ -297,6 +338,11 @@ def main():
                 if (verdict == "safe" and st) or (verdict == "bad" and not st):
                     counts["classify_unsound"] += 1
                     examples.setdefault("classify_unsound", [a, B])
+                verdict_t = classify_t(a, B)
+                counts["classifyT_" + verdict_t] += 1
+                if (verdict_t == "safe" and st) or (verdict_t == "bad" and not st):
+                    counts["classifyT_unsound"] += 1
+                    examples.setdefault("classifyT_unsound", [a, B])
                 if dp_pairs(a, B) != w:
                     counts["dp_pairs_fail"] += 1
                     examples.setdefault("dp_pairs_fail", [a, B])
@@ -359,8 +405,11 @@ def main():
         "oversize_bundles_covered": counts["oversize_instances"] > 0,
         "CLASSIFIER_mirror_sound": counts["classify_unsound"] == 0
             and counts["classify_safe"] > 0 and counts["classify_bad"] > 0,
+        "CLASSIFIER_T_mirror_sound": counts["classifyT_unsound"] == 0
+            and counts["classifyT_unknown"] <= counts["classify_unknown"],
         "COMPILED_partial_converse_consistent": counts["covered_but_not_stuck"] == 0
             and counts["covered_by_compiled"] > 0,
+        "COMPILED_coverage_complete_in_range": counts["witness_not_covered"] == 0,
         "SCOPE_two_receivers_witness_not_sufficient":
             bool(two["residue_witnesses"]) and two["bad_terminal_reachable"] is False,
     }

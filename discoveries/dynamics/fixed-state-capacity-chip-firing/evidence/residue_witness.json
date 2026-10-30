@@ -1,13 +1,17 @@
 {
  "authority_effect": "NONE",
  "counts": {
+  "classifyT_bad": 495939,
+  "classifyT_safe": 3991,
+  "classifyT_unknown": 531,
+  "classifyT_unsound": 0,
   "classify_bad": 490329,
   "classify_safe": 3991,
   "classify_unknown": 6141,
   "classify_unsound": 0,
   "conj_fail": 0,
   "covered_but_not_stuck": 0,
-  "covered_by_compiled": 492524,
+  "covered_by_compiled": 496470,
   "dp_fail": 0,
   "dp_pairs_fail": 0,
   "instances": 500461,
@@ -22,7 +26,7 @@
   "sound_fail": 0,
   "stuck": 496470,
   "witness": 496470,
-  "witness_not_covered": 3946
+  "witness_not_covered": 0
  },
  "examples": {
   "min_total_witness_not_every_order": [
@@ -49,16 +53,12 @@
     2
    ],
    1
-  ],
-  "witness_not_covered": [
-   [
-    2
-   ],
-   1
   ]
  },
  "gates": {
+  "CLASSIFIER_T_mirror_sound": true,
   "CLASSIFIER_mirror_sound": true,
+  "COMPILED_coverage_complete_in_range": true,
   "COMPILED_partial_converse_consistent": true,
   "CONJECTURE_witness_implies_stuck_no_counterexample": true,
   "CONTROL_largest_fit_greedy_bites": true,
