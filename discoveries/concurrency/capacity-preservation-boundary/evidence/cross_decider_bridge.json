@@ -1,0 +1,17 @@
+{
+ "schema": "cbmd.cross-dossier-decider-bridge.v1",
+ "systems": 300,
+ "deciders_agree": 300,
+ "agree_with_simulation": 300,
+ "transfer": 50,
+ "gates": {
+  "deciders_agree": true,
+  "deciders_agree_with_simulation": true,
+  "both_verdicts_occur": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "the translation between the two formal models is checked on instances, not compiled"
+ ],
+ "authority_effect": "NONE"
+}

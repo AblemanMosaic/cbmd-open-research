@@ -19,6 +19,7 @@
 | `inputless.json` | Revision 0.14.0: conflict-free nets with input-less transitions against the SAT oracle, with the bridge, ablation, the 0.12.0 procedure's failures, and the empty-CNF exception. |
 | `lean_decider_bridge.json` | Revision 0.15.0: the compiled decider `decidePreserves`, evaluated by Lean on 400 random conflict-free nets, against brute force. |
 | `degree_two.json` | Revision 0.16.0: the two-consumers-per-place construction against the SAT oracle, with bridge and both copier ablations. |
+| `cross_decider_bridge.json` | Revision 0.17.0: this dossier's conflict-free decider and the weighted dossier's decider, run by Lean on the same 300 chip-firing systems. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with

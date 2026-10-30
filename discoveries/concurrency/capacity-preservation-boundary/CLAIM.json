@@ -4,7 +4,7 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.16.0",
+ "public_version": "0.17.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -50,7 +50,8 @@
   "The conflict-free characterization is compiled (revision 0.13.0): not_preserves_iff_certificate proves, for conflict-free nets in which every transition has an input place, that a bad marking exists exactly when a chain certificate exists; end_unique shows the followed chain has at most one ending step. A literal brute-force transcription of the certificate agrees with the fixpoint procedure on all 20,000 censused nets.",
   "Input-less transitions make conflict-free nets coNP-hard (revision 0.14.0): inputless_preserves_iff_unsatisfiable proves that a conflict-free net with capacity 1, one input-less transition per clause and a two-input transition per variable preserves exactly when the CNF (with at least one clause) is unsatisfiable. The census agrees on 314 formulas, bridges to the Lean definitions, and shows the 0.12.0 procedure wrong on exactly the 70 unsatisfiable instances.",
   "A verified polynomial decision procedure (revision 0.15.0): preserves_iff_decideFast proves that the executable Boolean decidePreservesFast, which tries one threshold value per place, decides preservation for conflict-free nets in which every transition has an input place; the fixpoint is closed by count_drop and fix_or_count and the threshold reduction by stepP_iff_stepT. Lean evaluates both it and the value-enumerating decider on 400 random nets, and every verdict matches brute force.",
-  "Two consumers per place suffice for hardness (revision 0.16.0): degreeTwo_preserves_iff_unsatisfiable proves that a strict free-choice net with capacity 1, at most two consumers per place and one or two input places per transition (copies of the guard joined by a cyclic copier chain) preserves exactly when the CNF is unsatisfiable. The census agrees on 225 formulas, bridges to the Lean definitions, and both copier ablations (none; an open chain) give 28 wrong verdicts."
+  "Two consumers per place suffice for hardness (revision 0.16.0): degreeTwo_preserves_iff_unsatisfiable proves that a strict free-choice net with capacity 1, at most two consumers per place and one or two input places per transition (copies of the guard joined by a cyclic copier chain) preserves exactly when the CNF is unsatisfiable. The census agrees on 225 formulas, bridges to the Lean definitions, and both copier ablations (none; an open chain) give 28 wrong verdicts.",
+  "Cross-dossier agreement (revision 0.17.0): on 300 chip-firing systems translated into conflict-free nets, Lean's evaluation of decidePreservesFast agrees with the weighted dossier's independently formalized decideTerminalStable in every case, and both agree with simulated transfer."
  ],
  "unresolved": [
   "external review",
@@ -144,6 +145,16 @@
     "-I",
     "-B",
     "discoveries/concurrency/capacity-preservation-boundary/verification/lean_decider_bridge.py"
+   ],
+   "required": false
+  },
+  {
+   "id": "CAPACITY_PRESERVATION_CROSS_DECIDER",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/concurrency/capacity-preservation-boundary/verification/cross_decider_bridge.py"
    ],
    "required": false
   }
