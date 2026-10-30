@@ -9,7 +9,8 @@
   for `n ≤ 12`. Their data are in OEIS A389565, A390129 and A390355 and in
   their GitHub repository.
 - Their minimal rows `R(j)` are thin in the sense of §2. The thin-row lemma is
-  close in spirit to their Lemma 7.1 and may be implicit there.
+  a mild extension of their Lemma 7.1 (`R(j) → R(j−1)`): it allows the
+  central entry of an odd row to exceed the minimal value by one.
 
 This dossier extends the check of Conjecture 7.3 from `n ≤ 12` to `n ≤ 34`,
 and to every chip count `N ≤ 300,000`. It is not a novelty determination.

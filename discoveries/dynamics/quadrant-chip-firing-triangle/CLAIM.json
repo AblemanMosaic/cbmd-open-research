@@ -4,7 +4,7 @@
  "title": "Chip-firing on the quadrant: the bottom-triangle conjecture checked to 2^34 chips",
  "field": "dynamics",
  "slug": "quadrant-chip-firing-triangle",
- "public_version": "0.1.0",
+ "public_version": "0.1.1",
  "status": [
   "CONJECTURE",
   "EXACT_MODEL_VERIFIED"

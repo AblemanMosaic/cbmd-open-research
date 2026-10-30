@@ -52,6 +52,13 @@ no interior zeros (IKL Prop 6.1). Both facts are re-checked on every scanned
 `N`. Hence, once a row of `F` is thin, every later row is thin and one
 shorter.
 
+**Relation to IKL.** IKL's Prop 6.1 says rows increase strictly toward the
+middle, with gaps of at least 2 except possibly at the center. Under it, a
+thin row agrees with the minimal pattern `1, 3, 5, …` on each half, except
+that for odd length the central entry may exceed the minimal value by one.
+So thin rows contain IKL's minimal rows `R(j)`, and the lemma is a mild
+extension of their Lemma 7.1 with a self-contained proof.
+
 ## 3. What would complete a proof
 
 For every `N` with `4 ≤ N ≤ 3000` (gate `THIN_STRUCTURE`), and on all the
@@ -59,6 +66,12 @@ larger scans, the following holds:
 
 **(S)** The first thin row has the maximal length `w`. It is entered by a
 length increase, every later row is thin, and the last row has length 2.
+
+Part of (S) is automatic. If the first thin row `R` (length `j+1`) were
+preceded by a longer row, IKL's Prop 7.2 would apply, at least when `R` is
+minimal. A thin predecessor would contradict "first", so the entry-by-increase
+clause is essentially forced. The real content of (S) is that no row before
+the first thin row is longer than it.
 
 Together with §2 and Prop 6.2, (S) implies the conjecture. The rows after the
 first thin row have lengths `w, w−1, …, 2`, which is `w − 1` rows. The row
