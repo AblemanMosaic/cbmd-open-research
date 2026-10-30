@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing from a fixed state: strongly NP-hard on a star",
  "field": "dynamics",
  "slug": "fixed-state-capacity-chip-firing",
- "public_version": "0.3.0",
+ "public_version": "0.4.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -19,7 +19,8 @@
   "fill_eq_mod, stuck_imp_witness and safe_of_no_witness compile under the same conditions: a stuck bin run leaves the residue (sum of fired bundles) mod B at the receiver, so it yields a residue witness, and the absence of any residue witness certifies that no reachable terminal state is bad.",
   "Exhaustively over every star with B <= 13, k <= 8 (500,461 instances, bundles 1..B, and 1..B+1 for k <= 4), stuck runs exist exactly when residue witnesses do (496,470 instances), the O(kB) residue decider agrees with the witness definition, the bin-run search agrees with exact simulation on 400 random stars, and controls bite: a single-bin rule misses 10,332 stuck instances, a non-strict rule falsely accepts 3,139, largest-fit and smallest-fit greedy runs miss 98,872 and 3,459.",
   "realise_small, realise_pair and bad_of_small_or_pair_witness compile under the same conditions: a residue witness whose unfired senders total at most B, or number exactly two, is realised by a stuck bin run, so a bad terminal state is reachable; in the exhaustive range this covers 492,524 of the 496,470 witness instances, each checked against the model.",
-  "An optional C search (bin_runs_exhaustive.c, fired mask as state by fill_eq_mod) finds no counterexample to the residue-witness conjecture over all multisets with B <= 30, k <= 7; B <= 23, k <= 9; B <= 18, k <= 10; B <= 14, k <= 12; and 400,000 random instances with 10 <= B <= 100, 9 <= k <= 16."
+  "An optional C search (bin_runs_exhaustive.c, fired mask as state by fill_eq_mod) finds no counterexample to the residue-witness conjecture over all multisets with B <= 30, k <= 7; B <= 23, k <= 9; B <= 18, k <= 10; B <= 14, k <= 12; and 400,000 random instances with 10 <= B <= 100, 9 <= k <= 16.",
+  "spec_iff, dpWitness_iff, dpFast_eq and safe_of_dpFast compile under the same conditions: a table of occurring (residue, smallest unfired bundle) pairs, built one sender at a time in O(kB^2) entries, decides the residue-witness condition exactly, its array-memoised implementation computes the same answer, and a false answer certifies that no reachable terminal state is bad; safe_2_3_3 is such a certificate checked in the kernel. A Python mirror of the table agrees with the witness definition on all 500,461 instances of the exhaustive range."
  ],
  "unresolved": [
   "the residue-witness conjecture in the remaining case, where every witness leaves at least three senders unfired with total above B; if true, FIXED-BAD and FIXED-MUST-GOOD on stars are pseudo-polynomial while FIXED-GOOD is strongly NP-hard; FIXED-BAD on general graphs and in binary encoding on stars is open",
@@ -31,7 +32,7 @@
   "the strong NP-hardness of 3-PARTITION is classical and cited, not proved here; what is compiled is the correspondence between the star and exact-bin partitions",
   "NP membership on stars and PSPACE membership in general are written arguments",
   "not a novelty determination; chip-firing reachability hardness (without capacities) and deadlock-avoidance hardness in resource allocation systems are known and are different problems",
-  "the residue-witness converse is conjectured from exhaustive evidence in range, not proved; the O(kB) decider's equivalence with the witness definition is a written argument checked by enumeration, not compiled"
+  "the residue-witness converse is compiled only for witnesses whose unfired part totals at most B or has two members, otherwise conjectured from exhaustive evidence; the sorted O(kB) decider's equivalence with the witness definition is a written argument checked by enumeration (the O(kB^2) pair-table decider is compiled)"
  ],
  "smallest_decisive_test": "A star whose normal form is capacity-reachable although its bundles admit no exact-bin partition, or the reverse; or a polynomial algorithm for the star case, which would decide 3-PARTITION.",
  "checks": [

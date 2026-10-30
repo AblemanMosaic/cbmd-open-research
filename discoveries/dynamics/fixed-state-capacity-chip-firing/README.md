@@ -48,7 +48,8 @@ states are bounded by the capacities.
   `all_fired_reachable_iff`, `bad_terminal_reachable_iff`, `run_iff_blocks`,
   `normal_form_reachable_iff_partition`, and (0.2.0) `fill_eq_mod`,
   `stuck_imp_witness`, `safe_of_no_witness`, and (0.3.0) `realise_small`,
-  `realise_pair`, `bad_of_small_or_pair_witness`. They are proved against the
+  `realise_pair`, `bad_of_small_or_pair_witness`, and (0.4.0) `spec_iff`,
+  `dpWitness_iff`, `dpFast_eq`, `safe_of_dpFast`, `safe_2_3_3`. They are proved against the
   capacity-blocked chip-firing semantics of the weighted dossier, copied
   verbatim. `verification/semantics_custody.py` checks the copy declaration by
   declaration, with a mutation control.
@@ -78,8 +79,14 @@ not ordinarily stable. On the star:
   every sender outside `F` overflows on top of `(Σ_F a) mod B`
   (`stuck_imp_witness`). Its contrapositive is a **safety certificate**: no
   residue witness means no reachable bad ending (`safe_of_no_witness`).
-- **Written, checked against the definition:** the witness condition is
-  decided in `O(kB)` time after sorting, i.e. pseudo-polynomially.
+- **Compiled decider (0.4.0):** the witness condition depends only on the pair
+  (residue of the fired total, smallest unfired bundle). A table of the pairs
+  that occur, built one sender at a time in `O(kB²)` entries, is proved exact
+  (`spec_iff`, `dpWitness_iff`). Its array-memoised implementation is proved
+  equal to it (`dpFast_eq`). So `dpFast = false` is a **verified safety
+  certificate** (`safe_of_dpFast`); for example, the star with bundles
+  `2, 3, 3` and `B = 5` is certified in the kernel (`safe_2_3_3`). A sorted
+  `O(kB)` variant is a written argument checked by enumeration.
 - **Compiled partial converse (0.3.0):** if some residue witness leaves
   unfired senders of total at most `B`, or exactly two senders, then some run
   gets stuck (`realise_small`, `realise_pair`, `bad_of_small_or_pair_witness`).
@@ -123,7 +130,7 @@ python -B discoveries/dynamics/fixed-state-capacity-chip-firing/verification/lea
 ## Repository map
 
 - `argument/`: the written argument, including the complexity wrapper.
-- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`, `Realise`) and replay driver.
+- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`, `Realise`, `ResidueDecide`) and replay driver.
 - `verification/reference/`: the star census against exact simulation, the residue-witness check, and two optional C searches (`bin_runs_exhaustive.c`, `one_step_lemma_search.c`).
 - `verification/semantics_custody.py`: checks the copied semantics against the weighted dossier.
 - `evidence/`: census output, bundled checks and the Lean receipt.

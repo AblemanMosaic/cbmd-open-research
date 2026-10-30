@@ -108,6 +108,23 @@ tabulated right to left in `O(kB)` time. So the witness condition is decided in
 `O(kB)` time after sorting. That is polynomial when the numbers are written in
 unary, and pseudo-polynomial in general.
 
+**A verified decider (Lean: `spec_iff`, `dpWitness_iff`, `dpFast_eq`,
+`safe_of_dpFast`; revision 0.4.0).** Whether a set `P` is a witness depends only
+on two numbers: `ρ = (Σ_P a) mod B`, and `μ`, the smallest bundle outside `P`
+(capped at `B + 1`, with `B + 2` for "none"). The pairs that occur can be
+tabulated one sender at a time, since each sender is either fired, which shifts
+`ρ`, or not, which lowers `μ`. That gives at most `B(B + 3)` entries per step.
+Lean proves:
+
+- the table holds exactly the occurring pairs;
+- the decider answers `true` exactly when some pair has `μ ≤ B + 1` and
+  `ρ + μ > B`, that is, exactly when a witness exists;
+- the array-memoised implementation computes the same answer.
+
+With `stuck_imp_witness`, a `false` answer certifies that no reachable terminal
+state is bad. The kernel checks such a certificate for bundles `2, 3, 3`,
+`B = 5` (`safe_2_3_3`).
+
 **The converse is a conjecture.** *Every residue witness is realised by a
 stuck run.* If it holds, FIXED-BAD on stars is decided in pseudo-polynomial
 time, while FIXED-GOOD on stars is strongly NP-hard (§3). The asymmetry would

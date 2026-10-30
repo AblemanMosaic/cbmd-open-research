@@ -16,7 +16,9 @@ Gates (each required):
     a residue witness;
   * CONJECTURE: every instance with a residue witness has a reachable stuck run
     (no counterexample in range; this is evidence, not proof);
-  * DP: the O(k^2 B) residue decider agrees with the witness definition;
+  * DP: the O(k^2 B) residue decider agrees with the witness definition, and
+    so does a mirror of the (residue, smallest-unfired) table that
+    `ResidueDecide.lean` proves exact;
   * SIMULATION: on random stars the bin-run "stuck" predicate agrees with the
     weighted dossier's exact simulator of capacity firing;
   * CONTROLS, each of which must bite:
@@ -121,6 +123,17 @@ def dp_witness(a, B):
     return False
 
 
+def dp_pairs(a, B):
+    """Mirror of `ResidueDecide.spec`/`dpWitness` (Lean): tabulate occurring
+    (residue of fired total, smallest unfired bundle capped at B+1; B+2 = none)
+    pairs one sender at a time, then ask for a blocking pair with a sender outside."""
+    S = {(0, B + 2)}
+    for x in a:
+        cx = min(x, B + 1)
+        S = {((r + x) % B, m) for r, m in S} | {(r, min(cx, m)) for r, m in S}
+    return any(m <= B + 1 and B < r + m for r, m in S)
+
+
 def greedy_stuck(a, B, pick):
     rem = sorted(a)
     f = 0
@@ -216,7 +229,7 @@ def main():
                   largest_fit_misses=0, smallest_fit_misses=0,
                   min_total_witness_not_every_order=0, min_total_witness_not_packable=0,
                   min_total_witness_not_largest_fit=0,
-                  covered_by_compiled=0, covered_but_not_stuck=0, witness_not_covered=0,
+                  dp_pairs_fail=0, covered_by_compiled=0, covered_but_not_stuck=0, witness_not_covered=0,
                   oversize_instances=0)
     examples = {}
     for B in range(1, B_MAX + 1):
@@ -253,6 +266,9 @@ def main():
                     else:
                         counts["witness_not_covered"] += 1
                         examples.setdefault("witness_not_covered", [a, B])
+                if dp_pairs(a, B) != w:
+                    counts["dp_pairs_fail"] += 1
+                    examples.setdefault("dp_pairs_fail", [a, B])
                 if dp_witness(a, B) != w:
                     counts["dp_fail"] += 1
                     examples.setdefault("dp_fail", [a, B])
@@ -303,6 +319,7 @@ def main():
         "SOUND_stuck_implies_witness": counts["sound_fail"] == 0 and counts["stuck"] > 0,
         "CONJECTURE_witness_implies_stuck_no_counterexample": counts["conj_fail"] == 0,
         "DP_decider_matches_definition": counts["dp_fail"] == 0,
+        "DP_pairs_mirror_of_Lean_decider_matches_definition": counts["dp_pairs_fail"] == 0,
         "SIMULATION_agrees": sim["disagreements"] == 0 and sim["samples"] > 0,
         "CONTROL_single_bin_rule_bites": counts["single_bin_misses"] > 0,
         "CONTROL_nonstrict_rule_bites": counts["nonstrict_false_accepts"] > 0,
