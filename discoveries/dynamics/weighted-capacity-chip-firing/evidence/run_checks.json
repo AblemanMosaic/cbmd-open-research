@@ -725,6 +725,11 @@
       "sha256": "4e1351d01b1fde9fc5a77529fe050234ef5a1a7f86928013bf999a8ae827b0c0"
      },
      {
+      "bytes": 10687,
+      "path": "CBMDWeightedDynamics/Concrete.lean",
+      "sha256": "4c88fd1845ead39880dc614c972f67ee198e51d6725c1633582a75b7f86017ad"
+     },
+     {
       "bytes": 5248,
       "path": "CBMDWeightedDynamics/Core.lean",
       "sha256": "00f45407fec0c9c5aa09d4dab887580743448c5d401d52c3bfbdb94d84b705b9"
@@ -765,9 +770,9 @@
       "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
      },
      {
-      "bytes": 353,
+      "bytes": 390,
       "path": "CBMDWeightedDynamics.lean",
-      "sha256": "cdf8746214fefaefff7aaae9a39f266cc97ac5a8c274bcc20cf265cbe219c154"
+      "sha256": "08056f34f72e4ad1086c482059221c53f641a42614a83da4fce9984804c23291"
      }
     ],
     "no_escape": true,
@@ -802,7 +807,10 @@
      "CBMDWeightedDynamics.liveArc_wellFounded_iff_acyclic",
      "CBMDWeightedDynamics.not_terminalStable_of_filled",
      "CBMDWeightedDynamics.terminalStable_iff",
-     "CBMDWeightedDynamics.terminalStable_iff_acyclic"
+     "CBMDWeightedDynamics.terminalStable_iff_acyclic",
+     "CBMDWeightedDynamics.wFire_wellFounded",
+     "CBMDWeightedDynamics.wFire_unique_stabilization",
+     "CBMDWeightedDynamics.weighted_transfer_concrete"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

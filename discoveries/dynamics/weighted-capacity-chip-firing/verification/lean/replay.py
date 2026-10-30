@@ -48,6 +48,9 @@ TARGETS = [
     "CBMDWeightedDynamics.not_terminalStable_of_filled",
     "CBMDWeightedDynamics.terminalStable_iff",
     "CBMDWeightedDynamics.terminalStable_iff_acyclic",
+    "CBMDWeightedDynamics.wFire_wellFounded",
+    "CBMDWeightedDynamics.wFire_unique_stabilization",
+    "CBMDWeightedDynamics.weighted_transfer_concrete",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

@@ -147,6 +147,15 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 260,172 systems. See
 [`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
+## No ordinary hypothesis left (revision 0.10.0)
+
+`weighted_transfer` took the firing function and the ordinary theory as
+parameters. `weighted_transfer_concrete` binds firing to the multigraph
+update. It proves termination by lexicographic descent, and uniqueness by local
+commutation and Newman's lemma. So the weighted theorem now stands on its
+structural hypotheses alone. See
+[`revisions/0.10.0-concrete-transfer.md`](revisions/0.10.0-concrete-transfer.md).
+
 ## One compiled equivalence (revision 0.9.0)
 
 The pieces of the characterization are now assembled:
