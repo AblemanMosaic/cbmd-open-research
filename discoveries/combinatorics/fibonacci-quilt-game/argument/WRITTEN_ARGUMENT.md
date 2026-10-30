@@ -94,9 +94,20 @@ decrease. The paper's proof is a sketch, so it was rechecked computationally
   fixed at `1/3`; the reviewer found the same value with it free, for windows
   31, 41 and 61. This is not an infeasibility certificate. The LP is
   infeasible with slack at `α = 2.29` and feasible at `α = 2.3`.
-- **The true constant.** The exhaustive maxima give ratio `2.02` at `n ≤ 90`,
-  about 25 moves below `2.29·n`. Where the true constant lies between `2.02`
-  and `2.3` is open.
+- **A long strategy.** A fixed priority strategy, found by local search over
+  priority orders of move classes (`fq_strategy.cpp`,
+  `evidence/fq_long_strategy.json`), reaches:
+  - `2.2318n` at `n = 10³`;
+  - `2.2774n` at `n = 10⁵`;
+  - `2.278223n` at `n = 10⁶`.
+
+  Each value is an exact simulation of a legal game, so the longest game at
+  that `n` is at least that long. Exhaustive maxima for small `n` are lower
+  (`2.02n` at `n ≤ 90`) only because small-index effects dominate there.
+- **The true constant.** So the longest game at `n = 10⁶` has between
+  `2.2782n` and `2.3n + 2.95` moves. Whether the asymptotic constant is the
+  potential limit `≈ 2.2899` is open; the strategy's ratio appears to level
+  off near `2.2785`.
 
 ## Not claimed
 

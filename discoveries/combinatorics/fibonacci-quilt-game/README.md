@@ -27,9 +27,12 @@ that simulations never gave a game near `2n`.
 - **The maximum exceeds `2n` (exhaustive).** The longest games for all
   `n ≤ 90` cover about 11 million states. They first equal `2n` at `n = 78`,
   first exceed it at `n = 86`, and reach `2.022n` at `n = 89`.
+- **A long strategy (exact simulation).** A priority strategy found by local
+  search plays a legal game of `2,278,223` moves on `n = 10⁶`, which is
+  `2.2782n`. So the longest game's constant, if it exists, lies in
+  `[≈2.278, 2.3]`.
 - **The method's limit (numerical).** A floating-point LP finds no potential
-  of this shape below about `2.29`; this is not a certificate. The true
-  constant lies somewhere between about `2.02` (observed) and `2.3` (proved).
+  of this shape below about `2.29`; this is not a certificate.
 - **Independent review:** the theorem is sound; its fixes are applied.
 - **A printed rule is inconsistent.** Rule 3(f)'s second option, `q_3, q_7`,
   does not preserve value; this dossier reads it as `q_5, q_7`.
