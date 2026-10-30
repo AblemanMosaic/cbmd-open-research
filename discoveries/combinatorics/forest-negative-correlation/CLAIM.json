@@ -1,0 +1,43 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-FOREST-NC-001",
+ "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices",
+ "field": "combinatorics",
+ "slug": "forest-negative-correlation",
+ "public_version": "0.1.0",
+ "status": [
+  "CONJECTURE",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "For every simple graph on at most 9 vertices and every pair of distinct edges e, f, the Rayleigh difference of the forest generating polynomial and of the connected-spanning-subgraph generating polynomial (with all edge weights equal to lambda) has only nonnegative coefficients in lambda and is positive at lambda = 1. Hence the uniform forest and the uniform connected spanning subgraph, and their lambda-weighted versions for every lambda > 0, are edge-negatively correlated on all graphs with at most 9 vertices (Kahn; Grimmett-Winkler Conjecture 1.1 and questions (1.6)). The same holds on all multigraphs of multiplicity <= 3 over 2-connected 6-vertex graphs and of multiplicity <= 2 over 2-connected 7-vertex graphs.",
+ "resolves": "nothing; extends the exhaustive evidence for the forest conjecture from Grimmett-Winkler's range (<= 8 vertices, or 9 vertices with <= 18 edges) to all 9-vertex graphs and to all lambda > 0, and gives the first exhaustive evidence we found for the connected-subgraph conjecture",
+ "verified": [
+  "check_forest_nc.py: the contraction + subset-recursion polynomials equal direct enumeration on all edge pairs of 2-connected graphs on <= 5 vertices and on random multigraphs; block factorisation; the shipped list of 538 2-connected graphs on 3..7 vertices has the OEIS A002218 counts and is pairwise non-isomorphic (n <= 6 checked by brute force); both conjectures coefficientwise on all graphs with <= 6 vertices; the recorded C run summaries are consistent (pure Python).",
+  "fnc.c / cnc.c over geng -C (nauty 2.8.8): 1, 3, 10, 56, 468, 7123, 194066 graphs on 3..9 vertices, 35,208,345 edge pairs per model, zero violations (evidence/forest_nc_runs.json).",
+  "fnc.c / cnc.c in multigraph mode over multig: 1,450,016 multigraphs (n = 6, multiplicity <= 3; 100,776,619 pairs) and 2,016,427 multigraphs (n = 7, multiplicity <= 2; 213,200,562 pairs), zero violations.",
+  "brute_force_crosscheck.py / brute_force_multigraph.py: the C tools agree with subset enumeration on 4,208 simple-graph pairs (connected graphs, n <= 6) per model and on 88,990 multigraph pair checks."
+ ],
+ "unresolved": [
+  "proofs of the conjectures",
+  "graphs on 10 or more vertices (a resumable forest run over all 9,743,542 2-connected 10-vertex graphs is in progress and not claimed)",
+  "general real edge weights (Grimmett-Winkler (1.7)) and negative association"
+ ],
+ "nonclaims": [
+  "no proof is claimed; this dossier is evidence only",
+  "coefficientwise nonnegativity in lambda is checked, which is stronger than the conjectures require; nothing is claimed about graphs with more than 9 vertices",
+  "not a novelty determination: arXiv:2610.00549 reports unspecified exact coefficientwise computations that may overlap"
+ ],
+ "smallest_decisive_test": "A graph and two edges with P_X(1) < 0 (a counterexample), or a negative coefficient (which would still leave the conjecture open at that graph unless P_X takes a negative value on (0, infinity)).",
+ "checks": [
+  {
+   "id": "FOREST_NC_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/forest-negative-correlation/verification/reference/check_forest_nc.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

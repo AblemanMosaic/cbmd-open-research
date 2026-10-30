@@ -260,6 +260,22 @@
         "CONJECTURE",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-COMB-FOREST-NC-001",
+      "field": "combinatorics",
+      "slug": "forest-negative-correlation",
+      "path": "discoveries/combinatorics/forest-negative-correlation",
+      "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Complete the resumable 10-vertex forest run (9,743,542 graphs), and seek a structural explanation of coefficientwise nonnegativity in lambda.",
+      "promotion_blockers": [
+        "evidence only, no proof"
+      ],
+      "status": [
+        "CONJECTURE",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

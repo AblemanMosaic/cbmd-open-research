@@ -1,0 +1,189 @@
+{
+ "schema": "cbmd.forest-nc.runs.v1",
+ "definition": "P(lambda) = X_{G/e} X_{G/f} - X_G X_{G/e/f}, X = forest (Z) or connected spanning subgraph (C) generating polynomial; checked: P(1) >= 0 and every coefficient >= 0, for every unordered pair of distinct edges of every 2-connected graph from geng -C (nauty 2.8.8).",
+ "margin": "min_normalised_margin = min over pairs of P(1) / (X_{G/e}(1) X_{G/f}(1)) = P(e)P(f)/... i.e. (P(e)P(f) - P(ef)) / (P(e)P(f)) at lambda = 1; reported only as a diagnostic.",
+ "forests": {
+  "3": {
+   "graphs": 1,
+   "pairs": 3,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.222222222222,
+   "min_margin_at": "Bw e=0-1 f=0-2",
+   "parallel_pairs": 0
+  },
+  "4": {
+   "graphs": 3,
+   "pairs": 31,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.030612244898,
+   "min_margin_at": "C~ e=0-1 f=2-3",
+   "parallel_pairs": 0
+  },
+  "5": {
+   "graphs": 10,
+   "pairs": 240,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.00490998363339,
+   "min_margin_at": "DV{ e=0-2 f=1-3",
+   "parallel_pairs": 0
+  },
+  "6": {
+   "graphs": 56,
+   "pairs": 2496,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.00059488399762,
+   "min_margin_at": "EQ~w e=0-2 f=1-3",
+   "parallel_pairs": 0
+  },
+  "7": {
+   "graphs": 468,
+   "pairs": 34761,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 9.47238798901e-05,
+   "min_margin_at": "FQjvg e=1-3 f=0-4",
+   "parallel_pairs": 0
+  },
+  "8": {
+   "graphs": 7123,
+   "pairs": 827928,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 1.1446537041e-05,
+   "min_margin_at": "GQjUl[ e=1-3 f=2-4",
+   "parallel_pairs": 0
+  },
+  "9": {
+   "graphs": 194066,
+   "pairs": 34342886,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 1.82238600748e-06,
+   "min_margin_at": "HQhTVbp e=1-5 f=4-6"
+  }
+ },
+ "connected": {
+  "3": {
+   "graphs": 1,
+   "pairs": 3,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.111111111111,
+   "min_margin_at": "Bw e=0-1 f=0-2"
+  },
+  "4": {
+   "graphs": 3,
+   "pairs": 31,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.0104166666667,
+   "min_margin_at": "C~ e=0-1 f=2-3"
+  },
+  "5": {
+   "graphs": 10,
+   "pairs": 240,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.00178890876565,
+   "min_margin_at": "DV{ e=0-2 f=1-3"
+  },
+  "6": {
+   "graphs": 56,
+   "pairs": 2496,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 0.000165289256198,
+   "min_margin_at": "EQ~w e=0-2 f=1-3"
+  },
+  "7": {
+   "graphs": 468,
+   "pairs": 34761,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 2.74115292892e-05,
+   "min_margin_at": "FQjVw e=1-3 f=2-4"
+  },
+  "8": {
+   "graphs": 7123,
+   "pairs": 827928,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 2.61067522504e-06,
+   "min_margin_at": "GQjUl[ e=1-3 f=2-4"
+  },
+  "9": {
+   "graphs": 194066,
+   "pairs": 34342886,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 4.32732772367e-07,
+   "min_margin_at": "HCQrThn e=0-3 f=1-4"
+  }
+ },
+ "multigraphs": {
+  "forests_n6_mult_le3": {
+   "graphs": 1450016,
+   "pairs": 100776619,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 2.01089907298e-05,
+   "min_margin_at": "6 9  0 3 1 0 4 1 0 5 3 1 3 1 1 5 3 2 4 1 2 5 3 3 5 3 4 5 3 e=1-5 f=2-5",
+   "parallel_pairs": 11144818,
+   "family": "multig -m3 on all 2-connected 6-vertex graphs",
+   "wall_time": "1m40.579s"
+  },
+  "connected_n6_mult_le3": {
+   "graphs": 1450016,
+   "pairs": 100776619,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 1.65527615965e-07,
+   "min_margin_at": "6 9  0 3 1 0 4 1 0 5 3 1 3 1 1 5 3 2 4 1 2 5 3 3 5 3 4 5 3 e=1-5 f=2-5",
+   "family": "multig -m3 on all 2-connected 6-vertex graphs",
+   "wall_time": "5m39.613s"
+  },
+  "forests_n7_mult_le2": {
+   "graphs": 2016427,
+   "pairs": 213200562,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 1.09949162256e-05,
+   "min_margin_at": "7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6",
+   "parallel_pairs": 14527883,
+   "family": "multig -m2 on all 2-connected 7-vertex graphs",
+   "wall_time": "9m28.165s"
+  },
+  "connected_n7_mult_le2": {
+   "graphs": 2016427,
+   "pairs": 213200562,
+   "zero": 0,
+   "p1neg": 0,
+   "coefneg": 0,
+   "min_normalised_margin": 5.47884863092e-07,
+   "min_margin_at": "7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6",
+   "family": "multig -m2 on all 2-connected 7-vertex graphs",
+   "wall_time": "24m11.001s"
+  }
+ }
+}

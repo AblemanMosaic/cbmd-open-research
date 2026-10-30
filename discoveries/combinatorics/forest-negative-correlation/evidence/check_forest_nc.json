@@ -1,0 +1,33 @@
+{
+ "schema": "cbmd.forest-nc.check.v1",
+ "gates": {
+  "DP_EQUALS_BRUTE_FORCE": {
+   "pass": true,
+   "cases": 1268,
+   "mismatches": []
+  },
+  "BLOCK_FACTORISATION": {
+   "pass": true
+  },
+  "GRAPH_LIST": {
+   "pass": true,
+   "counts": {
+    "3": 1,
+    "4": 3,
+    "5": 10,
+    "6": 56,
+    "7": 468
+   },
+   "non_isomorphism_checked_for_n_le": 6
+  },
+  "NC_SMALL": {
+   "pass": true,
+   "pair_model_checks": 5540,
+   "violations": []
+  },
+  "EVIDENCE_SUMMARY": {
+   "pass": true
+  }
+ },
+ "pass": true
+}
