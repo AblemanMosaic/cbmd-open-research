@@ -9,7 +9,7 @@ import json, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import petri2, boundary, general, allfull, flow, hardness, weighted_flow, single_input, backdoor, reduction_bridge, free_choice, marked_graph, conflict_free, inputless
+import petri2, boundary, general, allfull, flow, hardness, weighted_flow, single_input, backdoor, reduction_bridge, free_choice, marked_graph, conflict_free, inputless, degree_two
 
 def main() -> int:
     translation = petri2.run(2, 2, 2, 3)
@@ -28,7 +28,11 @@ def main() -> int:
     mg = marked_graph.run(3000)
     cf = conflict_free.run(3000)
     il = inputless.run(40)
+    d2 = degree_two.run(20)
     gates = []
+    for gate, ok in d2["gates"].items():
+        if not ok:
+            gates.append(f"degree-two gate failed: {gate}")
     for gate, ok in il["gates"].items():
         if not ok:
             gates.append(f"input-less gate failed: {gate}")
@@ -98,6 +102,7 @@ def main() -> int:
            "marked_graph": mg,
            "conflict_free": cf,
            "inputless": il,
+           "degree_two": d2,
            "content_gate_failures": gates,
            "status": "PASS" if not gates else "FAIL",
            "nonclaims": [

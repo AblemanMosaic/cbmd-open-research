@@ -146,7 +146,7 @@
       "path": "discoveries/concurrency/capacity-preservation-boundary",
       "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Obtain external review, read Devillers 1990 on capacity semantics before any novelty claim, and settle whether the queueing-with-blocking line covers non-conservative networks. The structural map is complete: zero conflict places and no input-less transitions is polynomial (characterization compiled); one conflict place, or input-less transitions, is coNP-complete (reductions compiled).",
+      "next_obligation": "Obtain external review, read Devillers 1990 on capacity semantics before any novelty claim, and settle whether the queueing-with-blocking line covers non-conservative networks. The structural map is complete: zero conflict places and no input-less transitions is polynomial (characterization compiled); one conflict place, two consumers per place, or input-less transitions is each coNP-complete (reductions compiled).",
       "promotion_blockers": [
         "novelty and prior-art assessment open",
         "external review open",

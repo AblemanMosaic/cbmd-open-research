@@ -1664,6 +1664,33 @@
   ],
   "authority_effect": "NONE"
  },
+ "degree_two": {
+  "schema": "cbmd.petri-degree-two-hardness.v1",
+  "formulas": 185,
+  "agree": 185,
+  "disagree": 0,
+  "satisfiable": 159,
+  "unsatisfiable": 26,
+  "max_consumers_per_place": [
+   2
+  ],
+  "bridge_mismatches": 0,
+  "ablation_no_copiers_wrong": 26,
+  "ablation_open_chain_wrong": 26,
+  "gates": {
+   "reduction_is_exact": true,
+   "both_outcomes_occur": true,
+   "strict_free_choice_at_most_two_consumers": true,
+   "bridge_matches_lean": true,
+   "ablation_no_copiers_breaks": true,
+   "ablation_open_chain_breaks": true
+  },
+  "status": "PASS",
+  "nonclaims": [
+   "the reduction's correctness is compiled; coNP membership and polynomial running time are written arguments"
+  ],
+  "authority_effect": "NONE"
+ },
  "content_gate_failures": [],
  "status": "PASS",
  "nonclaims": [

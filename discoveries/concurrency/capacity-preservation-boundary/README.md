@@ -244,6 +244,18 @@ correctness theorem (`preserves_iff_decideFast`). Lean evaluates it on 400
 random nets and every verdict matches brute force. See
 [`revisions/0.15.0-verified-decider.md`](revisions/0.15.0-verified-decider.md).
 
+## Two consumers per place already suffice (revision 0.16.0)
+
+The one-conflict-place hardness puts unboundedly many consumers on that place.
+Bounding consumers does not help either. Split the place into copies joined by
+a **cyclic** chain of copier transitions, and every place has at most two
+consumers, with the net still strict free-choice at capacity 1. The problem
+stays coNP-complete (`degreeTwo_preserves_iff_unsatisfiable`, compiled). So the
+maximum number of consumers per place is a sharp parameter: 1 is polynomial,
+2 is coNP-complete. The census caught a first draft whose open chain let a bad
+marking switch on only a suffix. See
+[`revisions/0.16.0-degree-two.md`](revisions/0.16.0-degree-two.md).
+
 ## Input-less transitions are the other route to hardness (revision 0.14.0)
 
 The conflict-free result needs every transition to have an input place, and

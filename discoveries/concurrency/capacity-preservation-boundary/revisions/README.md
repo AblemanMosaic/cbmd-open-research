@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.16.0 | Two consumers per place suffice for hardness, via a cyclic copier chain; compiled. Maximum conflict degree 1 is polynomial, 2 is coNP-complete. The census caught an open-chain draft. |
 | 0.15.0 | The fixpoint step and the threshold optimisation compiled: an executable polynomial decider proved correct for conflict-free nets, run by Lean on 400 random nets with every verdict matching brute force. |
 | 0.14.0 | Input-less transitions make conflict-free nets coNP-hard: the input-place hypothesis is exactly what makes them tractable. Reduction compiled, census exact, and it explains where the 0.12.0 procedure fails. |
 | 0.13.0 | The conflict-free characterization compiled: a bad marking exists exactly when a chain certificate does; conflict-freeness makes the chain deterministic and the input-place hypothesis is used once. Fixpoint-decides-certificate bridged by census. |
