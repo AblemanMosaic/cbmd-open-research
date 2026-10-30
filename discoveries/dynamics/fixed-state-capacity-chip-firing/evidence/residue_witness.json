@@ -1,0 +1,78 @@
+{
+ "authority_effect": "NONE",
+ "counts": {
+  "conj_fail": 0,
+  "dp_fail": 0,
+  "instances": 500461,
+  "largest_fit_misses": 98872,
+  "min_total_witness_not_every_order": 11,
+  "min_total_witness_not_packable": 0,
+  "nonstrict_false_accepts": 3139,
+  "oversize_instances": 3055,
+  "single_bin_misses": 10332,
+  "smallest_fit_misses": 3459,
+  "sound_fail": 0,
+  "stuck": 496470,
+  "witness": 496470
+ },
+ "examples": {
+  "min_total_witness_not_every_order": [
+   [
+    1,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3
+   ],
+   5
+  ],
+  "nonstrict_false_accept": [
+   [
+    1
+   ],
+   1
+  ],
+  "single_bin_miss": [
+   [
+    1,
+    2
+   ],
+   1
+  ]
+ },
+ "gates": {
+  "CONJECTURE_witness_implies_stuck_no_counterexample": true,
+  "CONTROL_largest_fit_greedy_bites": true,
+  "CONTROL_nonstrict_rule_bites": true,
+  "CONTROL_single_bin_rule_bites": true,
+  "CONTROL_smallest_fit_greedy_bites": true,
+  "DP_decider_matches_definition": true,
+  "SIMULATION_agrees": true,
+  "SOUND_stuck_implies_witness": true,
+  "oversize_bundles_covered": true
+ },
+ "nonclaims": [
+  "the CONJECTURE gate is exhaustive evidence in range, not a proof",
+  "the DP decider is checked against the definition, not proved in Lean"
+ ],
+ "range": {
+  "B": [
+   1,
+   13
+  ],
+  "bundles": "all multisets with entries 1..B (1..B+1 when k <= 4)",
+  "k": [
+   1,
+   8
+  ]
+ },
+ "schema": "cbmd.fixed-state-residue-witness.v1",
+ "seed": 20261030,
+ "simulation": {
+  "disagreements": 0,
+  "samples": 400
+ },
+ "status": "PASS"
+}

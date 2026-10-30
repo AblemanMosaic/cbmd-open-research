@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDFixedState.Star.reach_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.reach_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.all_fired_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_terminal_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_iff_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.normal_form_reachable_iff_partition' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDFixedState.Star.reach_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.reach_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.all_fired_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_terminal_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_iff_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.normal_form_reachable_iff_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.fill_eq_mod' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.stuck_imp_witness' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.safe_of_no_witness' depends on axioms: [propext, Classical.choice, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -35,9 +35,14 @@
    "sha256": "2b8f70794ba7505cad45c576ad7b0c70105cb037a56bf9531d3339e540aa30ba"
   },
   {
-   "bytes": 86,
+   "bytes": 2975,
+   "path": "CBMDFixedState/Stuck.lean",
+   "sha256": "8994003a14b2dbf43b8b1db5f62f2bdc9ba317f8e962a5748ee45a97eb52021d"
+  },
+  {
+   "bytes": 114,
    "path": "CBMDFixedState.lean",
-   "sha256": "ae500ce6d7fb4268cd68bd67d7a66d0d2989db9b2f46271594481b2c7fd8de76"
+   "sha256": "9b8869e6f2a2052566bc9d490578c9bcd013dd0678b60a04fa343a50d54f7d53"
   }
  ],
  "no_escape": true,
@@ -51,7 +56,10 @@
   "CBMDFixedState.Star.all_fired_reachable_iff",
   "CBMDFixedState.Star.bad_terminal_reachable_iff",
   "CBMDFixedState.Star.run_iff_blocks",
-  "CBMDFixedState.Star.normal_form_reachable_iff_partition"
+  "CBMDFixedState.Star.normal_form_reachable_iff_partition",
+  "CBMDFixedState.Star.fill_eq_mod",
+  "CBMDFixedState.Star.stuck_imp_witness",
+  "CBMDFixedState.Star.safe_of_no_witness"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }

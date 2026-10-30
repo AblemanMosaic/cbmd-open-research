@@ -46,7 +46,8 @@ states are bounded by the capacities.
 - **Compiled** (Lean 4.35.0, Mathlib-free, no `sorry`, axioms within
   `propext, Classical.choice, Quot.sound`): `reach_iff`,
   `all_fired_reachable_iff`, `bad_terminal_reachable_iff`, `run_iff_blocks`,
-  `normal_form_reachable_iff_partition`. They are proved against the
+  `normal_form_reachable_iff_partition`, and (0.2.0) `fill_eq_mod`,
+  `stuck_imp_witness`, `safe_of_no_witness`. They are proved against the
   capacity-blocked chip-firing semantics of the weighted dossier, copied
   verbatim. `verification/semantics_custody.py` checks the copy declaration by
   declaration, with a mutation control.
@@ -65,12 +66,30 @@ states are bounded by the capacities.
   NP-hardness of 3-PARTITION (cited), polynomiality of the transformation, NP
   membership on stars, and PSPACE membership in general.
 
+## Getting stuck on the star (0.2.0)
+
+*FIXED-BAD* asks whether firing from `x` can end in a terminal state that is
+not ordinarily stable. On the star:
+
+- **Compiled:** when a run stops short of full, the receiver's fill is the
+  residue `(Σ_fired a) mod B` (`fill_eq_mod`). So a stuck run hands over a
+  **residue witness**: a set `F` of senders, missing at least one, such that
+  every sender outside `F` overflows on top of `(Σ_F a) mod B`
+  (`stuck_imp_witness`). Its contrapositive is a **safety certificate**: no
+  residue witness means no reachable bad ending (`safe_of_no_witness`).
+- **Written, checked against the definition:** the witness condition is
+  decided in `O(kB)` time after sorting, i.e. pseudo-polynomially.
+- **Conjectured, not proved:** every residue witness is realised by a stuck
+  run. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
+  "can it end badly?" is pseudo-polynomial on stars while "can it end well?" is
+  strongly NP-hard there.
+
 ## What remains unresolved
 
-- **FIXED-BAD** (can firing from `x` get stuck in a terminal state that is not
-  ordinarily stable?) and its complement **FIXED-MUST-GOOD**. On stars, FIXED-BAD
-  is characterized exactly (`bad_terminal_reachable_iff`), but its complexity is
-  not determined.
+- **The residue-witness conjecture** above, which would settle FIXED-BAD and
+  its complement FIXED-MUST-GOOD on stars in pseudo-polynomial time. Natural
+  extremal proof routes fail in range; see `argument/WRITTEN_ARGUMENT.md` §6.
+  FIXED-BAD on general graphs is open.
 - The exact complexity of FIXED-GOOD in general: NP-hard, in PSPACE. Whether it
   is in NP on all graphs is open, since firing vectors can be exponential on
   digraphs even with unary multiplicities.
@@ -95,8 +114,8 @@ python -B discoveries/dynamics/fixed-state-capacity-chip-firing/verification/lea
 ## Repository map
 
 - `argument/`: the written argument, including the complexity wrapper.
-- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`) and replay driver.
-- `verification/reference/`: the star census against exact simulation.
+- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`) and replay driver.
+- `verification/reference/`: the star census against exact simulation, and the residue-witness check.
 - `verification/semantics_custody.py`: checks the copied semantics against the weighted dossier.
 - `evidence/`: census output, bundled checks and the Lean receipt.
 - `review/`: prior-art note.

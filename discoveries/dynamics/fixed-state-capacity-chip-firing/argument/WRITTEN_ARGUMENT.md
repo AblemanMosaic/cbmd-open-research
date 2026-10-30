@@ -76,3 +76,71 @@ terminal stability. That is decided in polynomial time, by a decider proved
 correct in Lean (`decideTerminalStable`, weighted dossier revision 0.11.0).
 Fixing the initial state is what costs: the adversary no longer chooses the
 worst state, and the scheduler has to find a good order from the given one.
+
+## 6. Getting stuck on the star (revision 0.2.0)
+
+FIXED-BAD asks whether some capacity-legal run from `x` ends in a terminal
+state that is not ordinarily stable. On the star this means: some bin run
+stops with fill `f < B`, at least one sender unfired, and no unfired bundle
+fitting (`bad_terminal_reachable_iff`).
+
+**The fill is a residue (Lean: `fill_eq_mod`).** By `run_iff_blocks`, the
+fired list is a sequence of closed blocks, each of total `B`, followed by an
+open block of total `f`. So if `f < B`, then `f = (Σ_{i∈L} a_i) mod B`.
+
+**A stuck run gives a residue witness (Lean: `stuck_imp_witness`).** Call a
+set `F` of senders a *residue witness* when `F` leaves out at least one sender
+and every sender `i ∉ F` satisfies `(Σ_F a) mod B + a_i > B`. A stuck run's
+fired set is one. The condition involves no order and no packing, only a
+residue. Its contrapositive is a **certificate of safety** (Lean:
+`safe_of_no_witness`): if no residue witness exists, no reachable terminal
+state is bad.
+
+**Deciding the witness condition in pseudo-polynomial time (written; checked
+against the definition).** Sort the bundles `v_1 ≤ … ≤ v_k`. Suppose `F` is a
+witness, and let `j` be the first unfired position. Every earlier position is
+fired. Every unfired bundle is at least `v_j`, so the condition for all of them
+follows from the condition for `j`. Conversely, take any `j` and any subset `X`
+of the positions after `j`, with `(v_1 + … + v_{j−1} + Σ_X v) mod B + v_j > B`.
+Then `F = {1, …, j−1} ∪ X` is a witness: `j` is unfired and every unfired
+bundle is at least `v_j`. The residues reachable by subsets of a suffix can be
+tabulated right to left in `O(kB)` time. So the witness condition is decided in
+`O(kB)` time after sorting. That is polynomial when the numbers are written in
+unary, and pseudo-polynomial in general.
+
+**The converse is a conjecture.** *Every residue witness is realised by a
+stuck run.* If it holds, FIXED-BAD on stars is decided in pseudo-polynomial
+time, while FIXED-GOOD on stars is strongly NP-hard (§3). The asymmetry would
+be complete: "can it end badly?" would be easy where "can it end well?" is hard.
+
+Evidence (`verification/reference/residue_witness.py`,
+`evidence/residue_witness.json`): every multiset of bundles with `B ≤ 13`,
+`k ≤ 8` and entries `1..B` (`1..B+1` for `k ≤ 4`, which covers bundles too big
+ever to fire) — 500,461 instances, of which 496,470 (99.2%) have a reachable stuck run and exactly those 496,470 have a residue witness; no counterexample in either direction. The pseudo-polynomial decider agrees with the definition on all of them. The bin-run search agrees with the weighted
+dossier's exact simulator on 400 random stars. The controls each bite:
+
+- requiring the stuck run to stay inside one bin misses stuck runs, so closed
+  blocks matter;
+- weakening `>` to `≥` accepts instances with no stuck run;
+- largest-fit and smallest-fit greedy runs each miss stuck runs that exist.
+
+**Why the converse is not proved here.** The natural route fails. One would
+take a witness, fire its set, and hope the order works out, but a witness's
+fired set need not pack into exact blocks, and the realising run often uses a
+different witness. The obvious extremal choices also fail in range:
+
+- the witness with the most unfired senders;
+- the witness with the fewest;
+- choosing the witness of least fired total and hoping *every* order of its
+  fired set packs. This held up to `B ≤ 10, k ≤ 6` and fails in the larger
+  range (11 instances).
+
+The weaker form held everywhere in range: some least-total witness has a fired
+set that *some* order packs into closed blocks plus the open block (0
+failures). So a sharper conjecture is that a witness of least fired total is
+always realisable. That would prove the conjecture, but it needs an argument
+this revision does not have.
+
+**Binary encoding.** With the numbers in binary, the witness condition is a
+subset-residue problem with a window. Whether FIXED-BAD on stars is NP-hard in
+that encoding is not determined here.

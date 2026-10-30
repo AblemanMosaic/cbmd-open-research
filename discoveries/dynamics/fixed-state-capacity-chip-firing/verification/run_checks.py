@@ -23,6 +23,8 @@ def run(name, cmd):
 def main():
     checks = [
         run("STAR_REDUCTION", [sys.executable, "-I", "-B", str(HERE / "reference" / "star_reduction.py"), "1200"]),
+        run("RESIDUE_WITNESS", [sys.executable, "-I", "-B", str(HERE / "reference" / "residue_witness.py"),
+                                "20261030", "10", "6"]),
         run("SEMANTICS_CUSTODY", [sys.executable, "-I", "-B", str(HERE / "semantics_custody.py")]),
         run("LEAN_AUDIT", [sys.executable, "-B", str(HERE / "lean" / "replay.py"), "--audit-only"]),
     ]
@@ -41,7 +43,8 @@ def main():
            "status": "PASS" if not gates else "FAIL", "content_gate_failures": gates,
            "checks": checks,
            "nonclaims": ["Lean recompilation is not performed here; use lean/replay.py --build",
-                         "the NP-hardness of 3-PARTITION is classical and cited, not proved"],
+                         "the NP-hardness of 3-PARTITION is classical and cited, not proved",
+                         "the residue-witness converse is a conjecture checked exhaustively in range, not proved; the bundled run uses B <= 10, k <= 6 and evidence/residue_witness.json records B <= 13, k <= 8"],
            "authority_effect": "NONE"}
     print(json.dumps(out, indent=1))
     return 0 if out["status"] == "PASS" else 1

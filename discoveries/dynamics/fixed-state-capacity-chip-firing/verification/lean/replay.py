@@ -27,6 +27,9 @@ TARGETS = [
     "CBMDFixedState.Star.bad_terminal_reachable_iff",
     "CBMDFixedState.Star.run_iff_blocks",
     "CBMDFixedState.Star.normal_form_reachable_iff_partition",
+    "CBMDFixedState.Star.fill_eq_mod",
+    "CBMDFixedState.Star.stuck_imp_witness",
+    "CBMDFixedState.Star.safe_of_no_witness",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.
