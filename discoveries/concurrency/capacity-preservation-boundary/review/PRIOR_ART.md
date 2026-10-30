@@ -120,6 +120,11 @@ where it always sits once enabledness becomes a conjunction.
 
 coNP **membership** is immediate and is claimed as nothing more.
 
+*Added with revision 0.10.0.* The hardness also holds for strict free-choice
+nets with all capacities 1. Cheng–Esparza–Palsberg Thm 14 (reachable deadlock,
+NP-complete for free-choice nets) is the parallel result for the reachability
+question; neither implies the other, for the reason given above.
+
 ## The state-machine query, run — and it lands
 
 The bounded search named capacities over **state machines** (one input, one

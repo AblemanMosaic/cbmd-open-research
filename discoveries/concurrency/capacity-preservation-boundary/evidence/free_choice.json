@@ -1,0 +1,35 @@
+{
+ "schema": "cbmd.petri-free-choice-hardness.v1",
+ "formulas": 315,
+ "agree": 315,
+ "disagree": 0,
+ "satisfiable": 250,
+ "unsatisfiable": 65,
+ "input_places_per_transition": {
+  "min": 1,
+  "max": 2
+ },
+ "not_free_choice": 0,
+ "revision_0_4_0_nets_rejected": 315,
+ "bridge_mismatches": 0,
+ "ablation_E_wrong": 65,
+ "ablation_H_wrong": 1,
+ "ablation_H_wrong_on_nonempty_cnf": 0,
+ "samples": [],
+ "gates": {
+  "free_choice_check_rejects_0_4_0_nets": true,
+  "reduction_is_exact": true,
+  "both_outcomes_occur": true,
+  "every_net_strict_free_choice": true,
+  "one_or_two_input_places": true,
+  "bridge_matches_lean": true,
+  "ablation_E_breaks": true,
+  "ablation_H_breaks_only_empty_cnf": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "the reduction's correctness is compiled; coNP membership and the reduction's polynomial running time are written arguments, as in revision 0.4.0",
+  "related but distinct: deadlock (a reachable dead marking) is NP-complete for free-choice nets (Cheng, Esparza, Palsberg); this problem quantifies over admissible markings, not reachable ones"
+ ],
+ "authority_effect": "NONE"
+}

@@ -4,7 +4,7 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.9.0",
+ "public_version": "0.10.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -43,7 +43,8 @@
   "The reduction is also checked exhaustively rather than only by sampling: over every CNF on two variables with at most three clauses of width at most two, 164 formulas, 138 satisfiable and 26 not, with zero disagreements and every transition carrying one or two input places.",
   "The fixed-parameter procedure is exact over 145,953 general nets, 114,048 of them with a multi-input transition, with zero unsound and zero incomplete; dropping upper-bound literals gives 20,848 wrong verdicts and dropping lower-bound literals 8,074.",
   "Its core is compiled: notCapEnabled_max_of_single gives max-closure per single-input transition, ub_max and lb_max give it for unit bounds, the two blocking lemmas give soundness of each literal, and blocked_by_some_literal gives exhaustiveness of the branching.",
-  "The hardness reduction is compiled (revision 0.9.0): preserves_iff_unsatisfiable proves that the net built from the guarded form of any CNF preserves exactly when the CNF is unsatisfiable, and guard_neg_count with probe_input_places and clause_input_places gives one or two input places per transition. A bridge check over 404 formulas confirms the compiled net equals the census's net, and detects a deliberately wrong transcription in 375 of them."
+  "The hardness reduction is compiled (revision 0.9.0): preserves_iff_unsatisfiable proves that the net built from the guarded form of any CNF preserves exactly when the CNF is unsatisfiable, and guard_neg_count with probe_input_places and clause_input_places gives one or two input places per transition. A bridge check over 404 formulas confirms the compiled net equals the census's net, and detects a deliberately wrong transcription in 375 of them.",
+  "Free choice does not help (revision 0.10.0): fc_preserves_iff_unsatisfiable proves that a strict free-choice net with unit weights, every capacity 1 and one or two input places per transition preserves exactly when a given CNF (on at least one variable) is unsatisfiable. A census of 315 formulas agrees exactly, every net is checked to be strict free-choice, the net matches a transcription of the Lean definitions, and the proof's prediction that the H gadget matters only for the empty CNF is confirmed."
  ],
  "unresolved": [
   "external review",
@@ -73,7 +74,8 @@
   "on the proved side nothing is left in prose for the single-input case; what remains prose in this dossier is the complexity statement of revision 0.4.0",
   "the exhaustive pass covers a small box and the random pass larger instances; neither proves the reduction, which is the written argument",
   "the fixed-parameter procedure is the classical branching on a strong backdoor to Horn (Nishimura, Ragde and Szeider) applied with threshold literals; no new technique is claimed",
-  "the clause-level reduction preserves_iff_no_nonzero_model needs NoTautology (no atom with both signs in one clause) and is false without it; the end-to-end theorem discharges it for the guarded encoding"
+  "the clause-level reduction preserves_iff_no_nonzero_model needs NoTautology (no atom with both signs in one clause) and is false without it; the end-to-end theorem discharges it for the guarded encoding",
+  "the free-choice hardness is parallel to, not a strengthening of, Cheng-Esparza-Palsberg's NP-completeness of reachable deadlock for free-choice nets; this problem has no reachability in it"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a polynomial-time algorithm deciding preservation for nets with two input places per transition, which would collapse coNP to P; or an error in the reduction, exhibited as a CNF whose constructed net's preservation verdict differs from its unsatisfiability.",
  "checks": [

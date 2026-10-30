@@ -205,6 +205,21 @@ prose is only the complexity-class wrapper: membership in coNP and the
 polynomial running time of the reduction. See
 [`revisions/0.9.0-reduction-compiled.md`](revisions/0.9.0-reduction-compiled.md).
 
+## Free choice does not help (revision 0.10.0)
+
+Free-choice nets are where Petri-net problems usually become tractable. Not
+this one: the hardness survives in **strict free-choice** nets with unit
+weights and **every capacity equal to 1**. Places `x_i`, `x̄_i`, `g`; a
+transition `x_i, x̄_i → ∅` per variable, and transitions `g → (literal places)`
+per clause. Only `g` is shared, and it is the sole input of everything that
+reads it. The compiled theorem is `fc_preserves_iff_unsatisfiable`; a census of
+315 formulas agrees exactly, with every net checked to be free choice.
+
+The proof also predicted that one gadget is idle except on the empty CNF, and
+the census confirmed it. This is parallel to, not a corollary of, Cheng,
+Esparza and Palsberg's NP-completeness of *reachable* deadlock in free-choice
+nets. See [`revisions/0.10.0-free-choice.md`](revisions/0.10.0-free-choice.md).
+
 ## Between the regimes (revision 0.8.0)
 
 The coNP-hardness needs **unboundedly many** multi-input transitions. With a

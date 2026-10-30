@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.10.0 | Free choice does not help: the hardness survives in strict free-choice nets with every capacity 1, compiled, with a census that confirms a prediction the proof made about which gadget is idle. |
 | 0.9.0 | The hardness reduction compiled end to end: the net built from the guarded form of any CNF preserves exactly when the CNF is unsatisfiable. Only the resource bounds remain prose. |
 | 0.8.0 | Fixed-parameter tractable in the number of multi-input transitions, by branching on the unit literal that blocks each one; a classical backdoor argument, applied. |
 | 0.7.0 | The last prose step compiled: each lowering strictly drops the total token count, so the procedure halts and a certified greatest marking always exists. |

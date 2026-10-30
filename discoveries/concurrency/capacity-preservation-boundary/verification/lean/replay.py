@@ -60,6 +60,9 @@ TARGETS = [
     "CBMDPetriCapacity.Reduction.satisfiable_iff_guard_nonzero",
     "CBMDPetriCapacity.Reduction.preserves_iff_unsatisfiable",
     "CBMDPetriCapacity.Reduction.guard_neg_count",
+    "CBMDPetriCapacity.FreeChoice.free_choice",
+    "CBMDPetriCapacity.FreeChoice.input_places",
+    "CBMDPetriCapacity.FreeChoice.fc_preserves_iff_unsatisfiable",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

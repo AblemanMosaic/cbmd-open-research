@@ -6,3 +6,4 @@ import CBMDPetriCapacity.Termination
 import CBMDPetriCapacity.Backdoor
 import CBMDPetriCapacity.Reduction
 import CBMDPetriCapacity.Guard
+import CBMDPetriCapacity.FreeChoice
