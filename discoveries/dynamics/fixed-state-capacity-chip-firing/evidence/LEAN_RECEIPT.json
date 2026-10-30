@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDFixedState.Star.reach_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.reach_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.all_fired_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_terminal_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_iff_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.normal_form_reachable_iff_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.fill_eq_mod' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.stuck_imp_witness' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.safe_of_no_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.realise_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.realise_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_of_small_or_pair_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.spec_iff' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.dpWitness_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.dpFast_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.safe_of_dpFast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.safe_2_3_3' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDFixedState.Star.reach_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.reach_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.all_fired_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_terminal_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_iff_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.normal_form_reachable_iff_partition' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.fill_eq_mod' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.stuck_imp_witness' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.safe_of_no_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.realise_small' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.realise_pair' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_of_small_or_pair_witness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.spec_iff' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.dpWitness_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.dpFast_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.safe_of_dpFast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.safe_2_3_3' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.stuck_of_oversize' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_of_dpBad' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.classify_safe' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.classify_bad' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_2_2_3_3_3' depends on axioms: [propext, Classical.choice, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -30,9 +30,9 @@
    "sha256": "64aa20eda6b1bbac16ca8f9a4ba2368ad00973bd574e8ba78fd98f3a80dd80e4"
   },
   {
-   "bytes": 13287,
+   "bytes": 18943,
    "path": "CBMDFixedState/ResidueDecide.lean",
-   "sha256": "6b33ca6b48f532c07f79be435fff814980d9e37772db7e50d984f0b6c80311ca"
+   "sha256": "31b0fac6ee9e4b90311fb51ebbcaff048eb543b2069cb92d21c8f47d5b992a8a"
   },
   {
    "bytes": 2066,
@@ -77,7 +77,12 @@
   "CBMDFixedState.Star.dpWitness_iff",
   "CBMDFixedState.Star.dpFast_eq",
   "CBMDFixedState.Star.safe_of_dpFast",
-  "CBMDFixedState.Star.safe_2_3_3"
+  "CBMDFixedState.Star.safe_2_3_3",
+  "CBMDFixedState.Star.stuck_of_oversize",
+  "CBMDFixedState.Star.bad_of_dpBad",
+  "CBMDFixedState.Star.classify_safe",
+  "CBMDFixedState.Star.classify_bad",
+  "CBMDFixedState.Star.bad_2_2_3_3_3"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }

@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing from a fixed state: strongly NP-hard on a star",
  "field": "dynamics",
  "slug": "fixed-state-capacity-chip-firing",
- "public_version": "0.4.0",
+ "public_version": "0.5.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -20,7 +20,8 @@
   "Exhaustively over every star with B <= 13, k <= 8 (500,461 instances, bundles 1..B, and 1..B+1 for k <= 4), stuck runs exist exactly when residue witnesses do (496,470 instances), the O(kB) residue decider agrees with the witness definition, the bin-run search agrees with exact simulation on 400 random stars, and controls bite: a single-bin rule misses 10,332 stuck instances, a non-strict rule falsely accepts 3,139, largest-fit and smallest-fit greedy runs miss 98,872 and 3,459.",
   "realise_small, realise_pair and bad_of_small_or_pair_witness compile under the same conditions: a residue witness whose unfired senders total at most B, or number exactly two, is realised by a stuck bin run, so a bad terminal state is reachable; in the exhaustive range this covers 492,524 of the 496,470 witness instances, each checked against the model.",
   "An optional C search (bin_runs_exhaustive.c, fired mask as state by fill_eq_mod) finds no counterexample to the residue-witness conjecture over all multisets with B <= 30, k <= 7; B <= 23, k <= 9; B <= 18, k <= 10; B <= 14, k <= 12; and 400,000 random instances with 10 <= B <= 100, 9 <= k <= 16.",
-  "spec_iff, dpWitness_iff, dpFast_eq and safe_of_dpFast compile under the same conditions: a table of occurring (residue, smallest unfired bundle) pairs, built one sender at a time in O(kB^2) entries, decides the residue-witness condition exactly, its array-memoised implementation computes the same answer, and a false answer certifies that no reachable terminal state is bad; safe_2_3_3 is such a certificate checked in the kernel. A Python mirror of the table agrees with the witness definition on all 500,461 instances of the exhaustive range."
+  "spec_iff, dpWitness_iff, dpFast_eq and safe_of_dpFast compile under the same conditions: a table of occurring (residue, smallest unfired bundle) pairs, built one sender at a time in O(kB^2) entries, decides the residue-witness condition exactly, its array-memoised implementation computes the same answer, and a false answer certifies that no reachable terminal state is bad; safe_2_3_3 is such a certificate checked in the kernel. A Python mirror of the table agrees with the witness definition on all 500,461 instances of the exhaustive range.",
+  "stuck_of_oversize, bad_of_dpBad, classify_safe and classify_bad compile under the same conditions: a three-way classifier whose safe verdict (no residue witness) and bad verdict (an oversize bundle, or a witness with one or two unfired senders) are both proved correct; on the 500,461 instances of the exhaustive range a mirror answers safe 3,991, bad 490,329 and unknown 6,141 times and is never wrong; bad_2_2_3_3_3 and safe_2_3_3 are kernel-checked verdicts."
  ],
  "unresolved": [
   "the residue-witness conjecture in the remaining case, where every witness leaves at least three senders unfired with total above B; if true, FIXED-BAD and FIXED-MUST-GOOD on stars are pseudo-polynomial while FIXED-GOOD is strongly NP-hard; FIXED-BAD on general graphs and in binary encoding on stars is open",

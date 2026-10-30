@@ -1,6 +1,10 @@
 {
  "authority_effect": "NONE",
  "counts": {
+  "classify_bad": 490329,
+  "classify_safe": 3991,
+  "classify_unknown": 6141,
+  "classify_unsound": 0,
   "conj_fail": 0,
   "covered_but_not_stuck": 0,
   "covered_by_compiled": 492524,
@@ -54,6 +58,7 @@
   ]
  },
  "gates": {
+  "CLASSIFIER_mirror_sound": true,
   "COMPILED_partial_converse_consistent": true,
   "CONJECTURE_witness_implies_stuck_no_counterexample": true,
   "CONTROL_largest_fit_greedy_bites": true,

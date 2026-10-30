@@ -38,6 +38,11 @@ TARGETS = [
     "CBMDFixedState.Star.dpFast_eq",
     "CBMDFixedState.Star.safe_of_dpFast",
     "CBMDFixedState.Star.safe_2_3_3",
+    "CBMDFixedState.Star.stuck_of_oversize",
+    "CBMDFixedState.Star.bad_of_dpBad",
+    "CBMDFixedState.Star.classify_safe",
+    "CBMDFixedState.Star.classify_bad",
+    "CBMDFixedState.Star.bad_2_2_3_3_3",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

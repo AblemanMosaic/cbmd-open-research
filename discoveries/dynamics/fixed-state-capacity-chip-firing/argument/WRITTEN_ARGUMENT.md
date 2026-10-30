@@ -125,6 +125,15 @@ With `stuck_imp_witness`, a `false` answer certifies that no reachable terminal
 state is bad. The kernel checks such a certificate for bundles `2, 3, 3`,
 `B = 5` (`safe_2_3_3`).
 
+**A certified classifier (Lean: `classify_safe`, `classify_bad`; revision
+0.5.0).** A bundle larger than `B` forces a stuck run (`stuck_of_oversize`):
+pack maximally; a non-exact packing is stuck because the big sender is still
+unfired, and an exact one can be closed. Witnesses with one unfired sender
+(bundle at most `B`) or two can be found by direct check in `O(k²)`, and
+`realise_small` and `realise_pair` turn them into stuck runs. `classify`
+returns `safe` when the decider finds no witness, `bad` when the direct check
+succeeds, and `unknown` otherwise. Both definite verdicts are proved correct.
+
 **The converse is a conjecture.** *Every residue witness is realised by a
 stuck run.* If it holds, FIXED-BAD on stars is decided in pseudo-polynomial
 time, while FIXED-GOOD on stars is strongly NP-hard (§3). The asymmetry would

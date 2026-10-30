@@ -49,7 +49,9 @@ states are bounded by the capacities.
   `normal_form_reachable_iff_partition`, and (0.2.0) `fill_eq_mod`,
   `stuck_imp_witness`, `safe_of_no_witness`, and (0.3.0) `realise_small`,
   `realise_pair`, `bad_of_small_or_pair_witness`, and (0.4.0) `spec_iff`,
-  `dpWitness_iff`, `dpFast_eq`, `safe_of_dpFast`, `safe_2_3_3`. They are proved against the
+  `dpWitness_iff`, `dpFast_eq`, `safe_of_dpFast`, `safe_2_3_3`, and (0.5.0)
+  `stuck_of_oversize`, `bad_of_dpBad`, `classify_safe`, `classify_bad`,
+  `bad_2_2_3_3_3`. They are proved against the
   capacity-blocked chip-firing semantics of the weighted dossier, copied
   verbatim. `verification/semantics_custody.py` checks the copy declaration by
   declaration, with a mutation control.
@@ -87,6 +89,14 @@ not ordinarily stable. On the star:
   certificate** (`safe_of_dpFast`); for example, the star with bundles
   `2, 3, 3` and `B = 5` is certified in the kernel (`safe_2_3_3`). A sorted
   `O(kB)` variant is a written argument checked by enumeration.
+- **Compiled three-way classifier (0.5.0):** `classify` answers `safe`, `bad`
+  or `unknown`. `safe` (no witness) and `bad` are both proved correct
+  (`classify_safe`, `classify_bad`). `bad` means: a bundle too big ever to fit,
+  or a witness with one or two unfired senders, checked in `O(k²)`. In the
+  exhaustive range it answers `safe` 3,991 times, `bad` 490,329 times and
+  `unknown` 6,141 times (1.2%); every `unknown` instance has a witness, so it
+  is bad if the conjecture holds. The kernel certifies `bad_2_2_3_3_3` this
+  way.
 - **Compiled partial converse (0.3.0):** if some residue witness leaves
   unfired senders of total at most `B`, or exactly two senders, then some run
   gets stuck (`realise_small`, `realise_pair`, `bad_of_small_or_pair_witness`).

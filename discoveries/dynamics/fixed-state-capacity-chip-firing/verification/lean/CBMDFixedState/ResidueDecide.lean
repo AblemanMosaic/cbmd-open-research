@@ -287,6 +287,119 @@ theorem safe_of_dpFast (apos : ∀ i, 0 < a i) (Bpos : 0 < B) (h : dpFast a B = 
   rw [h] at this
   cases this
 
+/-! ## Certified bad endings from one- and two-sender witnesses -/
+
+/-- Total of all bundles. -/
+def tot : Nat := ps a (fun _ => true)
+
+theorem ps_compl_single (u : Fin k) : ps a (fun i => !decide (i = u)) = tot a - a u := by
+  have h := ps_split a (fun _ => true) (fun i => decide (i = u))
+  have e1 : ps a (fun i => true && decide (i = u)) = a u := by
+    rw [← ps_single a u]; apply ps_congr; intro i; simp
+  have e2 : ps a (fun i => true && !decide (i = u)) = ps a (fun i => !decide (i = u)) := by
+    apply ps_congr; intro i; simp
+  simp only [tot]; omega
+
+theorem ps_compl_pair {u v : Fin k} (huv : u ≠ v) :
+    ps a (fun i => !pairP u v i) = tot a - a u - a v := by
+  have h := ps_split a (fun _ => true) (pairP u v)
+  have e1 : ps a (fun i => true && pairP u v i) = a u + a v := by
+    rw [← ps_pair a huv]; apply ps_congr; intro i; simp
+  have e2 : ps a (fun i => true && !pairP u v i) = ps a (fun i => !pairP u v i) := by
+    apply ps_congr; intro i; simp
+  simp only [tot]; omega
+
+/-- **A bundle too big ever to fit forces a stuck run.**  From any reachable
+state with an empty receiver, pack maximally; a non-exact packing is stuck
+(the big sender is still unfired), and an exact one can be closed. -/
+theorem stuck_of_oversize (apos : ∀ i, 0 < a i) (Bpos : 0 < B) (u : Fin k) (hu : B < a u) :
+    ∀ (n : Nat) (L : List (Fin k)), ps a (avail L) ≤ n → Run a B L 0 → u ∉ L → Stuck a B := by
+  intro n
+  induction n using Nat.strongRecOn with
+  | ind n ih =>
+  intro L hn run huL
+  obtain ⟨C, -, hCL, hCB, hCmax⟩ :=
+    exists_maximal a B apos (avail L) _ (fun _ => false) (Nat.le_refl _) (fun i h => by simp at h)
+      (by rw [ps_zero a _ (fun _ => rfl)]; exact Nat.zero_le _)
+  have hCu : C u = false := by
+    cases hc : C u
+    · rfl
+    · have := ps_ge a C u hc; omega
+  have hav : avail L u = true := by simp [avail, huL]
+  by_cases hlt : ps a C < B
+  · exact stuck_of_maximal a B run C hCL hlt hCmax ⟨u, hav, hCu⟩
+  · have heq : ps a C = B := by omega
+    have run' := run_exact a B run C hCL heq
+    have cl := ps_avail_close a L C hCL
+    have hpos : 0 < ps a C := by omega
+    refine ih (ps a (avail (L ++ lst C))) (by omega) _ (Nat.le_refl _) run' ?_
+    intro m
+    rcases List.mem_append.mp m with m | m
+    · exact huL m
+    · rw [mem_lst] at m; rw [hCu] at m; cases m
+
+/-- Search for a bundle too big ever to fit, or a witness leaving one sender (of
+bundle at most `B`) or two senders unfired. -/
+def dpBad : Bool :=
+  (List.finRange k).any (fun u => decide (B < a u)) ||
+  (List.finRange k).any (fun u => decide (a u ≤ B ∧ B < (tot a - a u) % B + a u)) ||
+  (List.finRange k).any (fun u => (List.finRange k).any (fun v =>
+    decide (u ≠ v ∧ B < (tot a - a u - a v) % B + a u ∧ B < (tot a - a u - a v) % B + a v)))
+
+/-- **Certified bad ending.**  If `dpBad` answers `true`, a bad capacity-terminal
+state is reachable from the start. -/
+theorem bad_of_dpBad (apos : ∀ i, 0 < a i) (Bpos : 0 < B) (h : dpBad a B = true) :
+    ∃ y, Reaches (Step a B) (stateOf a [] 0) y ∧
+        CapacityTerminal (mult a) (out a B) (cap a B) y ∧ ¬ OrdinaryStable (out a B) y := by
+  simp only [dpBad, Bool.or_eq_true, List.any_eq_true, List.mem_finRange, true_and,
+    decide_eq_true_eq] at h
+  rcases h with (⟨u, hbig⟩ | ⟨u, hle, hw⟩) | ⟨u, v, huv, hwu, hwv⟩
+  · exact (bad_terminal_reachable_iff a B apos).mpr
+      (stuck_of_oversize a B apos Bpos u hbig _ [] (Nat.le_refl _) Run.nil (by simp))
+  · apply bad_of_small_or_pair_witness a B apos Bpos (fun i => decide (i = u)) ⟨u, by simp⟩
+      (Or.inl (by rw [ps_single]; exact hle))
+    intro x hx
+    simp only [decide_eq_true_eq] at hx
+    subst hx
+    rw [ps_compl_single]; exact hw
+  · apply bad_of_small_or_pair_witness a B apos Bpos (pairP u v) ⟨u, (pairP_iff u v u).mpr (Or.inl rfl)⟩
+      (Or.inr ⟨u, v, huv, fun _ => rfl⟩)
+    intro x hx
+    rw [ps_compl_pair a huv]
+    rcases (pairP_iff u v x).mp hx with e | e
+    · subst e; exact hwu
+    · subst e; exact hwv
+
+/-- Three verdicts: `safe` and `bad` are certified; `unknown` means a witness
+exists but none with one or two unfired senders (bad if the residue-witness
+conjecture holds). -/
+inductive Verdict
+  | safe
+  | bad
+  | unknown
+  deriving DecidableEq, Repr
+
+def classify : Verdict :=
+  if dpFast a B = false then .safe else if dpBad a B = true then .bad else .unknown
+
+theorem classify_safe (apos : ∀ i, 0 < a i) (Bpos : 0 < B) (h : classify a B = .safe) :
+    ¬ ∃ y, Reaches (Step a B) (stateOf a [] 0) y ∧
+        CapacityTerminal (mult a) (out a B) (cap a B) y ∧ ¬ OrdinaryStable (out a B) y := by
+  unfold classify at h
+  split at h
+  · exact safe_of_dpFast a B apos Bpos (by assumption)
+  · split at h <;> cases h
+
+theorem classify_bad (apos : ∀ i, 0 < a i) (Bpos : 0 < B) (h : classify a B = .bad) :
+    ∃ y, Reaches (Step a B) (stateOf a [] 0) y ∧
+        CapacityTerminal (mult a) (out a B) (cap a B) y ∧ ¬ OrdinaryStable (out a B) y := by
+  unfold classify at h
+  split at h
+  · cases h
+  · split at h
+    · exact bad_of_dpBad a B apos Bpos (by assumption)
+    · cases h
+
 /-! ## A kernel-checked instance -/
 
 /-- Bundles given as a list. -/
@@ -300,6 +413,15 @@ theorem safe_2_3_3 :
           (cap (bundles [2, 3, 3]) 5) y ∧
         ¬ OrdinaryStable (out (bundles [2, 3, 3]) 5) y :=
   safe_of_dpFast (bundles [2, 3, 3]) 5 (by decide) (by decide) (by decide)
+
+/-- **The star with bundles `2, 2, 3, 3, 3` and `B = 5` can end badly**, certified
+by the classifier evaluated in the kernel. -/
+theorem bad_2_2_3_3_3 :
+    ∃ y, Reaches (Step (bundles [2, 2, 3, 3, 3]) 5) (stateOf (bundles [2, 2, 3, 3, 3]) [] 0) y ∧
+        CapacityTerminal (mult (bundles [2, 2, 3, 3, 3])) (out (bundles [2, 2, 3, 3, 3]) 5)
+          (cap (bundles [2, 2, 3, 3, 3]) 5) y ∧
+        ¬ OrdinaryStable (out (bundles [2, 2, 3, 3, 3]) 5) y :=
+  classify_bad (bundles [2, 2, 3, 3, 3]) 5 (by decide) (by decide) (by decide)
 
 end Star
 

@@ -46,6 +46,10 @@
    "result": {
     "authority_effect": "NONE",
     "counts": {
+     "classify_bad": 19377,
+     "classify_safe": 1027,
+     "classify_unknown": 393,
+     "classify_unsound": 0,
      "conj_fail": 0,
      "covered_but_not_stuck": 0,
      "covered_by_compiled": 19303,
@@ -87,6 +91,7 @@
      ]
     },
     "gates": {
+     "CLASSIFIER_mirror_sound": true,
      "COMPILED_partial_converse_consistent": true,
      "CONJECTURE_witness_implies_stuck_no_counterexample": true,
      "CONTROL_largest_fit_greedy_bites": true,
@@ -263,9 +268,9 @@
       "sha256": "64aa20eda6b1bbac16ca8f9a4ba2368ad00973bd574e8ba78fd98f3a80dd80e4"
      },
      {
-      "bytes": 13287,
+      "bytes": 18943,
       "path": "CBMDFixedState/ResidueDecide.lean",
-      "sha256": "6b33ca6b48f532c07f79be435fff814980d9e37772db7e50d984f0b6c80311ca"
+      "sha256": "31b0fac6ee9e4b90311fb51ebbcaff048eb543b2069cb92d21c8f47d5b992a8a"
      },
      {
       "bytes": 2066,
@@ -310,7 +315,12 @@
      "CBMDFixedState.Star.dpWitness_iff",
      "CBMDFixedState.Star.dpFast_eq",
      "CBMDFixedState.Star.safe_of_dpFast",
-     "CBMDFixedState.Star.safe_2_3_3"
+     "CBMDFixedState.Star.safe_2_3_3",
+     "CBMDFixedState.Star.stuck_of_oversize",
+     "CBMDFixedState.Star.bad_of_dpBad",
+     "CBMDFixedState.Star.classify_safe",
+     "CBMDFixedState.Star.classify_bad",
+     "CBMDFixedState.Star.bad_2_2_3_3_3"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }
