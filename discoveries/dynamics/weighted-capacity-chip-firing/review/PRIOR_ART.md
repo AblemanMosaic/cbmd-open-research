@@ -30,6 +30,18 @@ successor starts here rather than repeating them.
 | Query | Outcome |
 |---|---|
 | bounded Petri net capacity constraint preserves dead markings deadlock-free acyclic live places characterization | general bounded-net theory, non-blockingness verification and deadlock analysis; no live-set characterization of capacity-preserving nets located |
+| blocking tandem queueing network deadlock if and only if cycle finite buffer manufacturing blocking-after-service | large literature on blocking in tandem and cyclic queues, concerned with throughput and mean cycle time rather than with preservation of terminal configurations |
+
+**A partial prior-art acknowledgement.** The cycle obstruction has a direct
+reading in queueing and manufacturing: a finite-buffer network with
+blocking-after-service deadlocks when a cycle of stations is simultaneously
+full, and feed-forward lines do not deadlock. That a cycle is what makes
+blocking deadlock is **folklore in that field** and is not claimed as new here.
+What the located literature studies is performance — throughput, mean cycle
+time, approximations — not the structural question of whether the blocked system
+reaches the same terminal configuration as the unblocked one, and not a
+condition on capacities indexed by transfer multiplicity. Those are the parts
+still unmatched.
 
 The live-set condition has a natural Petri-net reading: a place whose capacity is
 below the firing threshold of its own output transition can never enable that
