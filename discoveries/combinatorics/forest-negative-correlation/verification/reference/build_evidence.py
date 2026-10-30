@@ -24,11 +24,24 @@ ev={'schema':'cbmd.forest-nc.runs.v1',
  'forests':{}, 'connected':{}, 'multigraphs':{}}
 for n in range(3,9):
     ev['forests'][str(n)]=merge(parse(f'f{n}.txt')); ev['connected'][str(n)]=merge(parse(f'c{n}.txt'))
-ev['forests']['9']=merge(parse('f9_halves.txt')); ev['connected']['9']=merge(parse('c9_halves.txt'))
+ev['forests']['9']=merge(parse('f9r_0.txt')+parse('f9r_1.txt')); ev['connected']['9']=merge(parse('c9r_0.txt')+parse('c9r_1.txt'))
 for key,fn,desc in (('forests_n6_mult_le3','mf6.txt','multig -m3 on all 2-connected 6-vertex graphs'),('connected_n6_mult_le3','mc6.txt','multig -m3 on all 2-connected 6-vertex graphs'),
                     ('forests_n7_mult_le2','mf7.txt','multig -m2 on all 2-connected 7-vertex graphs'),('connected_n7_mult_le2','mc7.txt','multig -m2 on all 2-connected 7-vertex graphs')):
     d=merge(parse(fn)); d['family']=desc
     t=[l for l in open(fn) if l.startswith('real')]; d['wall_time']=t[0].split()[1] if t else None
     ev['multigraphs'][key]=d
+import subprocess
+for key,n,mm in (('n6_mult_le3',6,3),('n7_mult_le2',7,2)):
+    g=subprocess.run(['./geng','-Cq',str(n)],capture_output=True,text=True).stdout
+    T=subprocess.run(['./multig','-q','-T','-m%d'%mm],input=g,capture_output=True,text=True).stdout.split('\n')
+    tot=par=0
+    for l in T:
+        if not l.strip(): continue
+        t=l.split(); ne=int(t[1]); ms=[int(x) for x in t[4::3]][:ne]; c=sum(ms)
+        tot+=c*(c-1)//2; par+=sum(m*(m-1)//2 for m in ms)
+    for model in ('forests','connected'):
+        ev['multigraphs'][model+'_'+key]['edge_copy_pairs_covered']=tot
+        ev['multigraphs'][model+'_'+key]['parallel_edge_copy_pairs_covered']=par
+ev['multigraphs']['note']='pairs counts pairs of edge classes (bundles of parallel copies); copies in a class are interchangeable, so these cover edge_copy_pairs_covered pairs of individual edges. parallel_pairs counts classes of multiplicity >= 2.'
 json.dump(ev,open(sys.argv[1],'w'),indent=1); open(sys.argv[1],'a').write('\n')
-print(json.dumps({k:{n:(v['graphs'],v['pairs']) for n,v in ev[k].items()} for k in ('forests','connected','multigraphs')}))
+print(json.dumps({k:{n:(v['graphs'],v['pairs']) for n,v in ev[k].items() if isinstance(v,dict)} for k in ('forests','connected','multigraphs')}))

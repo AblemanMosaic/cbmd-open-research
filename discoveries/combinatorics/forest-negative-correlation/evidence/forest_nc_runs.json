@@ -70,7 +70,8 @@
    "p1neg": 0,
    "coefneg": 0,
    "min_normalised_margin": 1.82238600748e-06,
-   "min_margin_at": "HQhTVbp e=1-5 f=4-6"
+   "min_margin_at": "HQhTVbp e=1-5 f=4-6",
+   "parallel_pairs": 0
   }
  },
  "connected": {
@@ -149,7 +150,9 @@
    "min_margin_at": "6 9  0 3 1 0 4 1 0 5 3 1 3 1 1 5 3 2 4 1 2 5 3 3 5 3 4 5 3 e=1-5 f=2-5",
    "parallel_pairs": 11144818,
    "family": "multig -m3 on all 2-connected 6-vertex graphs",
-   "wall_time": "1m40.579s"
+   "wall_time": "1m40.579s",
+   "edge_copy_pairs_covered": 381037850,
+   "parallel_edge_copy_pairs_covered": 22289636
   },
   "connected_n6_mult_le3": {
    "graphs": 1450016,
@@ -160,7 +163,9 @@
    "min_normalised_margin": 1.65527615965e-07,
    "min_margin_at": "6 9  0 3 1 0 4 1 0 5 3 1 3 1 1 5 3 2 4 1 2 5 3 3 5 3 4 5 3 e=1-5 f=2-5",
    "family": "multig -m3 on all 2-connected 6-vertex graphs",
-   "wall_time": "5m39.613s"
+   "wall_time": "5m39.613s",
+   "edge_copy_pairs_covered": 381037850,
+   "parallel_edge_copy_pairs_covered": 22289636
   },
   "forests_n7_mult_le2": {
    "graphs": 2016427,
@@ -172,7 +177,9 @@
    "min_margin_at": "7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6",
    "parallel_pairs": 14527883,
    "family": "multig -m2 on all 2-connected 7-vertex graphs",
-   "wall_time": "9m28.165s"
+   "wall_time": "9m28.165s",
+   "edge_copy_pairs_covered": 461730002,
+   "parallel_edge_copy_pairs_covered": 14527883
   },
   "connected_n7_mult_le2": {
    "graphs": 2016427,
@@ -183,7 +190,10 @@
    "min_normalised_margin": 5.47884863092e-07,
    "min_margin_at": "7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6",
    "family": "multig -m2 on all 2-connected 7-vertex graphs",
-   "wall_time": "24m11.001s"
-  }
+   "wall_time": "24m11.001s",
+   "edge_copy_pairs_covered": 461730002,
+   "parallel_edge_copy_pairs_covered": 14527883
+  },
+  "note": "pairs counts pairs of edge classes (bundles of parallel copies); copies in a class are interchangeable, so these cover edge_copy_pairs_covered pairs of individual edges. parallel_pairs counts classes of multiplicity >= 2."
  }
 }

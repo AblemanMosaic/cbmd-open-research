@@ -274,7 +274,8 @@
       ],
       "status": [
         "CONJECTURE",
-        "EXACT_MODEL_VERIFIED"
+        "EXACT_MODEL_VERIFIED",
+        "PROVISIONAL_WRITTEN_ARGUMENT"
       ]
     }
   ]

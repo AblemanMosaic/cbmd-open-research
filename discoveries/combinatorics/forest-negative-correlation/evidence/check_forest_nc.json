@@ -25,6 +25,30 @@
    "pair_model_checks": 5540,
    "violations": []
   },
+  "SMALL_LAMBDA_LAW": {
+   "pass": true,
+   "graph_pairs": 2770,
+   "matroid_pairs": 652,
+   "failures": [],
+   "bond_law_pairs": 2770,
+   "bond_law_failures": [],
+   "s8_pairs_with_negative_coefficient": 1,
+   "s8_example": [
+    3,
+    7,
+    [
+     0,
+     0,
+     0,
+     0,
+     0,
+     4,
+     12,
+     0,
+     -16
+    ]
+   ]
+  },
   "EVIDENCE_SUMMARY": {
    "pass": true
   }

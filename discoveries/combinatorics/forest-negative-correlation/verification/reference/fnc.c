@@ -13,8 +13,9 @@
  * Input: graph6 lines on stdin (n <= 11).  For every graph and every unordered pair of distinct
  * edges, computes P as an exact integer polynomial and classifies:
  *   P1NEG   : P(1) < 0                      (counterexample to Grimmett-Winkler)
- *   COEFNEG : some coefficient of P negative (then positivity on (0,inf) is tested by Sturm)
- *   POSNEG  : P(lambda) < 0 for some lambda > 0 (counterexample to Kahn)
+ *   COEFNEG : some coefficient of P negative (then P is sampled numerically on (0,inf); this
+ *             heuristic path never ran: no negative coefficient occurred)
+ *   POSNEG  : P negative at some grid point (numeric heuristic; would indicate a counterexample to Kahn)
  *   ZERO    : P identically 0
  * Output: per-run summary line plus any exceptional instance lines.
  */
@@ -111,11 +112,9 @@ static void pmul(const int64_t *a, int la, const int64_t *b, int lb, i128 *out) 
     for (int i = 0; i < la; i++) for (int j = 0; j < lb; j++) out[i + j] += (i128)a[i] * b[j];
 }
 
-/* number of sign changes of the Sturm sequence at +inf minus at 0+ (roots in (0,inf));
-   uses long double; only called when some coefficient is negative (expected rare). */
+/* numeric heuristic (NOT exact): does P take a negative value on a geometric grid of 801 points in
+   [1e-10, 1e10]?  Only called when some coefficient is negative, which never happened. */
 static int has_negative_value(const i128 *p, int deg) {
-    /* sample-based + fine scan: evaluate on a geometric grid; exactness is restored by also
-       evaluating exactly at rational grid points with i128 when magnitudes allow. */
     for (int s = -400; s <= 400; s++) {
         long double x = powl(10.0L, s / 40.0L);
         long double v = 0;

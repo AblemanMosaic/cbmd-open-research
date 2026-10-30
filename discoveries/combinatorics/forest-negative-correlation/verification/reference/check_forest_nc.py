@@ -23,6 +23,13 @@ Gates (each required):
     pairwise non-isomorphic 2-connected graphs on 3..7 vertices (OEIS A002218);
   * NC_SMALL: for every 2-connected graph on at most 6 vertices and every pair of edges, both
     P_Z and P_C have all coefficients >= 0 and P(1) > 0;
+  * SMALL_LAMBDA_LAW: Theorem 4 of argument/WRITTEN_ARGUMENT.md -- for every pair of edges of
+    every 2-connected graph on <= 6 vertices, the lowest nonzero coefficient of P_Z sits at
+    degree L - 2 and equals the number of cycles of length L through e and f (L = shortest such
+    length); the matroid form holds on 60 random binary/ternary vector matroids; Corollary 2
+    (top term of P_C = number of smallest bonds through e and f) on the same graphs; and a binary
+    rank-4 matroid ([I_4 | X], recalled as S_8) obeys the law yet has a negative Rayleigh
+    coefficient (control);
   * EVIDENCE_SUMMARY: the recorded C runs (evidence/forest_nc_runs.json) cover 1, 3, 10, 56,
     468, 7123, 194066 graphs on 3..9 vertices for both models with zero violations, and the
     pair totals equal sum_G binom(|E(G)|, 2) recomputed here for n <= 7.
@@ -294,6 +301,126 @@ def canon(n, E):
     return best
 
 
+def shortest_cycles_through(n, E, e, f):
+    """(L, N): length of a shortest cycle containing edges e and f of a simple graph, and their
+    number; each such cycle is a simple path from e[1] to e[0] avoiding e that uses f."""
+    adj = {v: set() for v in range(n)}
+    for (x, y) in E:
+        adj[x].add(y)
+        adj[y].add(x)
+    a, b = e
+    fs = frozenset(f)
+    cnt = {}
+    stack = [(b, (b,), False)]
+    while stack:
+        v, path, used = stack.pop()
+        if v == a:
+            if used:
+                cnt[len(path)] = cnt.get(len(path), 0) + 1
+            continue
+        for w in adj[v]:
+            if (v == b and w == a) or w in path:
+                continue
+            stack.append((w, path + (w,), used or frozenset((v, w)) == fs))
+    L = min(cnt)
+    return L, cnt[L]
+
+
+def matroid_small_lambda_ok(cols, q):
+    """Theorem 4 on the vector matroid of cols over GF(q) (q prime): R_ef lowest term."""
+    m = len(cols)
+
+    def rank(vs):
+        rows = [list(v) for v in vs]
+        r = 0
+        for c in range(len(rows[0]) if rows else 0):
+            piv = next((i for i in range(r, len(rows)) if rows[i][c] % q), None)
+            if piv is None:
+                continue
+            rows[r], rows[piv] = rows[piv], rows[r]
+            inv = pow(rows[r][c], q - 2, q)
+            rows[r] = [x * inv % q for x in rows[r]]
+            for i in range(len(rows)):
+                if i != r and rows[i][c] % q:
+                    fac = rows[i][c]
+                    rows[i] = [(x - fac * y) % q for x, y in zip(rows[i], rows[r])]
+            r += 1
+        return r
+    indep = {}
+    for mask in range(1 << m):
+        vs = [cols[i] for i in range(m) if mask >> i & 1]
+        indep[mask] = (rank(vs) == len(vs)) if vs else True
+    circuits = [S for S in range(1, 1 << m) if not indep[S]
+                and all(indep[S & ~(1 << i)] for i in range(m) if S >> i & 1)]
+    ok = True
+    count = 0
+    for e, f in itertools.combinations(range(m), 2):
+        if not indep[1 << e] or not indep[1 << f]:
+            continue
+        Z, Ze, Zf, Zef = ([0] * (m + 1) for _ in range(4))
+        for S, good in indep.items():
+            if good:
+                k = bin(S).count('1')
+                Z[k] += 1
+                Ze[k] += S >> e & 1
+                Zf[k] += S >> f & 1
+                Zef[k] += (S >> e & 1) and (S >> f & 1)
+        R = trim(padd(pmul(Ze, Zf), [-x for x in pmul(Z, Zef)]))
+        sizes = [bin(C).count('1') for C in circuits if C >> e & 1 and C >> f & 1]
+        count += 1
+        if not sizes:
+            ok = ok and R == []
+        else:
+            c = min(sizes)
+            low = next((i for i, x in enumerate(R) if x), None)
+            ok = ok and low == c and R[c] == sizes.count(c)
+    return ok, count
+
+
+def is_connected_on(vs, E):
+    vs = set(vs)
+    if not vs:
+        return False
+    start = next(iter(vs))
+    seen, stack = {start}, [start]
+    while stack:
+        v = stack.pop()
+        for (a, b) in E:
+            for x, y in ((a, b), (b, a)):
+                if x == v and y in vs and y not in seen:
+                    seen.add(y)
+                    stack.append(y)
+    return seen == vs
+
+
+def s8_rayleigh(cols, e, f):
+    """R_ef(lambda) for the binary vector matroid of cols (subset enumeration)."""
+    m = len(cols)
+
+    def indep(mask):
+        rows = [list(cols[i]) for i in range(m) if mask >> i & 1]
+        r = 0
+        for c in range(4):
+            piv = next((i for i in range(r, len(rows)) if rows[i][c]), None)
+            if piv is None:
+                continue
+            rows[r], rows[piv] = rows[piv], rows[r]
+            for i in range(len(rows)):
+                if i != r and rows[i][c]:
+                    rows[i] = [x ^ y for x, y in zip(rows[i], rows[r])]
+            r += 1
+        return r == len(rows)
+    Z, Ze, Zf, Zef = ([0] * (m + 1) for _ in range(4))
+    for S in range(1 << m):
+        if indep(S):
+            k = bin(S).count('1')
+            Z[k] += 1
+            Ze[k] += S >> e & 1
+            Zf[k] += S >> f & 1
+            Zef[k] += (S >> e & 1) and (S >> f & 1)
+    return trim(padd(pmul(Ze, Zf), [-x for x in pmul(Z, Zef)]))
+
+
 def main():
     results = {}
     graphs = [g6_decode(l.strip()) for l in open(os.path.join(HERE, 'two_connected_le7.g6')) if l.strip()]
@@ -372,6 +499,73 @@ def main():
                     if not P or min(P) < 0 or sum(P) <= 0:
                         viol.append((n, keys[i], keys[j], model, P))
     results['NC_SMALL'] = {'pass': not viol, 'pair_model_checks': pairs, 'violations': viol[:5]}
+
+    # SMALL_LAMBDA_LAW (Theorem 4): lowest term of P_Z is N lambda^(L-2)
+    bad, count = [], 0
+    for n, E in graphs:
+        if n > 6:
+            continue
+        keys = sorted(E)
+        for i in range(len(keys)):
+            for j in range(i + 1, len(keys)):
+                P = P_pair(n, E, keys[i], keys[j], 'Z')
+                L, N = shortest_cycles_through(n, list(E), keys[i], keys[j])
+                low = next((k for k, x in enumerate(P) if x), None)
+                count += 1
+                if low != L - 2 or P[low] != N:
+                    bad.append((n, keys[i], keys[j]))
+    rng2 = random.Random(4)
+    mcount, mok = 0, True
+    for _ in range(60):
+        q = rng2.choice([2, 3])
+        r = rng2.randint(2, 4)
+        m = rng2.randint(r + 1, min(8, r + 4))
+        cols = [tuple(rng2.randrange(q) for _ in range(r)) for _ in range(m)]
+        ok, c = matroid_small_lambda_ok(cols, q)
+        mok = mok and ok
+        mcount += c
+    # Corollary 2: top term of P_C is N* lambda^(2m - c* - 2) (bonds through e and f)
+    bond_bad, bond_count = [], 0
+    for n, E in graphs:
+        if n > 6:
+            continue
+        keys = sorted(E)
+        bonds = []
+        for S in range(1, 1 << n):
+            if not S & 1 or S == (1 << n) - 1:
+                continue
+            side = [v for v in range(n) if S >> v & 1]
+            other = [v for v in range(n) if not S >> v & 1]
+            if is_connected_on(side, E) and is_connected_on(other, E):
+                bonds.append(frozenset(k for k in keys if (S >> k[0] & 1) != (S >> k[1] & 1)))
+        for i in range(len(keys)):
+            for j in range(i + 1, len(keys)):
+                P = P_pair(n, E, keys[i], keys[j], 'C')
+                sizes = [len(B) for B in bonds if keys[i] in B and keys[j] in B]
+                cs = min(sizes)
+                top = max(k for k, x in enumerate(P) if x)
+                bond_count += 1
+                if top != 2 * len(keys) - cs - 2 or P[top] != sizes.count(cs):
+                    bond_bad.append((n, keys[i], keys[j]))
+
+    # control: the binary matroid [I_4 | X] (circuit profile 3/7/4 of sizes 3/4/5, 48 bases; recalled as
+    # Oxley's representation of S_8, identification not verified) obeys the small-lambda law but has negative Rayleigh
+    # coefficients, so the coefficientwise test is not vacuous and the graph observation is
+    # graph-specific
+    X = [[0, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [1, 1, 1, 1]]
+    s8 = [tuple(1 if i == k else 0 for i in range(4)) for k in range(4)] + [tuple(X[i][j] for i in range(4)) for j in range(4)]
+    s8_law, _ = matroid_small_lambda_ok(s8, 2)
+    s8_neg = []
+    for e0, f0 in itertools.combinations(range(8), 2):
+        Rs = s8_rayleigh(s8, e0, f0)
+        if min(Rs) < 0:
+            s8_neg.append((e0, f0, Rs))
+    results['SMALL_LAMBDA_LAW'] = {'pass': not bad and count > 0 and mok and mcount > 0 and s8_law and len(s8_neg) > 0
+                                   and not bond_bad and bond_count > 0,
+                                   'graph_pairs': count, 'matroid_pairs': mcount, 'failures': bad[:5],
+                                   'bond_law_pairs': bond_count, 'bond_law_failures': bond_bad[:5],
+                                   's8_pairs_with_negative_coefficient': len(s8_neg),
+                                   's8_example': s8_neg[0] if s8_neg else None}
 
     # EVIDENCE_SUMMARY
     ev = json.load(open(os.path.join(EVIDENCE, 'forest_nc_runs.json')))

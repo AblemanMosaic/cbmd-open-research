@@ -4,18 +4,21 @@
  "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices",
  "field": "combinatorics",
  "slug": "forest-negative-correlation",
- "public_version": "0.1.0",
+ "public_version": "0.2.0",
  "status": [
   "CONJECTURE",
-  "EXACT_MODEL_VERIFIED"
+  "EXACT_MODEL_VERIFIED",
+  "PROVISIONAL_WRITTEN_ARGUMENT"
  ],
- "statement": "For every simple graph on at most 9 vertices and every pair of distinct edges e, f, the Rayleigh difference of the forest generating polynomial and of the connected-spanning-subgraph generating polynomial (with all edge weights equal to lambda) has only nonnegative coefficients in lambda and is positive at lambda = 1. Hence the uniform forest and the uniform connected spanning subgraph, and their lambda-weighted versions for every lambda > 0, are edge-negatively correlated on all graphs with at most 9 vertices (Kahn; Grimmett-Winkler Conjecture 1.1 and questions (1.6)). The same holds on all multigraphs of multiplicity <= 3 over 2-connected 6-vertex graphs and of multiplicity <= 2 over 2-connected 7-vertex graphs.",
+ "statement": "For every simple graph on at most 9 vertices (connected, for the connected-subgraph model) and every pair of distinct edges e, f, the Rayleigh difference of the forest generating polynomial and of the connected-spanning-subgraph generating polynomial (with all edge weights equal to lambda) has only nonnegative coefficients in lambda; it is identically 0 when e and f lie in different blocks and positive at lambda = 1 when they lie in the same block. Hence the uniform forest and the uniform connected spanning subgraph, and their lambda-weighted versions for every lambda > 0, are edge-negatively correlated on all graphs with at most 9 vertices (the pairwise-correlation part of Kahn's conjecture and Grimmett-Winkler Conjecture 1.1, which asks for negative association; their question (1.6) for all lambda). The same holds on all multigraphs of multiplicity <= 3 over 2-connected 6-vertex graphs and of multiplicity <= 2 over 2-connected 7-vertex graphs (every pair of edge copies, checked once per pair of edge classes by symmetry). Proved (written argument): for every matroid and distinct non-loop elements e, f, the independence-polynomial Rayleigh difference is N lambda^c + O(lambda^{c+1}), where c is the least size of a circuit containing e and f and N the number of such circuits (identically 0 if none); for graphs, P_Z = N lambda^{L-2} + O(lambda^{L-1}) with L the shortest cycle length through e and f, so the weighted forest measure is strictly negatively correlated at all sufficiently small lambda for edges in a common block. Dually (bond matroid), the connected-subgraph Rayleigh polynomial has top term N* lambda^{2m - c* - 2}, with c* the least size of a bond containing e and f and N* the number of such bonds, so that measure is strictly negatively correlated for all sufficiently large lambda.",
  "resolves": "nothing; extends the exhaustive evidence for the forest conjecture from Grimmett-Winkler's range (<= 8 vertices, or 9 vertices with <= 18 edges) to all 9-vertex graphs and to all lambda > 0, and gives the first exhaustive evidence we found for the connected-subgraph conjecture",
  "verified": [
   "check_forest_nc.py: the contraction + subset-recursion polynomials equal direct enumeration on all edge pairs of 2-connected graphs on <= 5 vertices and on random multigraphs; block factorisation; the shipped list of 538 2-connected graphs on 3..7 vertices has the OEIS A002218 counts and is pairwise non-isomorphic (n <= 6 checked by brute force); both conjectures coefficientwise on all graphs with <= 6 vertices; the recorded C run summaries are consistent (pure Python).",
   "fnc.c / cnc.c over geng -C (nauty 2.8.8): 1, 3, 10, 56, 468, 7123, 194066 graphs on 3..9 vertices, 35,208,345 edge pairs per model, zero violations (evidence/forest_nc_runs.json).",
-  "fnc.c / cnc.c in multigraph mode over multig: 1,450,016 multigraphs (n = 6, multiplicity <= 3; 100,776,619 pairs) and 2,016,427 multigraphs (n = 7, multiplicity <= 2; 213,200,562 pairs), zero violations.",
-  "brute_force_crosscheck.py / brute_force_multigraph.py: the C tools agree with subset enumeration on 4,208 simple-graph pairs (connected graphs, n <= 6) per model and on 88,990 multigraph pair checks."
+  "fnc.c / cnc.c in multigraph mode over multig: 1,450,016 multigraphs (n = 6, multiplicity <= 3; 100,776,619 edge-class pairs, i.e. 381,037,850 edge-copy pairs) and 2,016,427 multigraphs (n = 7, multiplicity <= 2; 213,200,562 edge-class pairs, 461,730,002 edge-copy pairs), zero violations.",
+  "brute_force_crosscheck.py / brute_force_multigraph.py: the C tools agree with subset enumeration on 4,208 simple-graph pairs (connected graphs, n <= 6) per model and on 88,990 multigraph pair checks.",
+  "argument section 4 + check_forest_nc.py SMALL_LAMBDA_LAW: the small-lambda law on all edge pairs of 2-connected graphs with <= 6 vertices and on random binary/ternary matroids; offline checks on all 37,531 pairs with <= 7 vertices (C output vs independent cycle enumeration) and 5,040 random-matroid pairs.",
+  "Independent review (fresh agent, own big-integer DP over an edge ordering without contraction, validated against subset enumeration): exact polynomial agreement with fnc/cnc on all 538 2-connected graphs with 3..7 vertices (37,531 pairs per model), 301 sampled 8-vertex and 103 sampled 9-vertex graphs (including K9), and sampled multigraph families; all evidence counts recomputed from geng. Its provenance remark led to rerunning the 9-vertex runs with the shipped sources (0.2.0)."
  ],
  "unresolved": [
   "proofs of the conjectures",
@@ -25,7 +28,8 @@
  "nonclaims": [
   "no proof is claimed; this dossier is evidence only",
   "coefficientwise nonnegativity in lambda is checked, which is stronger than the conjectures require; nothing is claimed about graphs with more than 9 vertices",
-  "not a novelty determination: arXiv:2610.00549 reports unspecified exact coefficientwise computations that may overlap"
+  "not a novelty determination: arXiv:2610.00549 reports unspecified exact coefficientwise computations that may overlap",
+  "the small-lambda law is likely known to specialists; it is recorded with proof, not as a novelty claim, and it says nothing about lambda = 1"
  ],
  "smallest_decisive_test": "A graph and two edges with P_X(1) < 0 (a counterexample), or a negative coefficient (which would still leave the conjecture open at that graph unless P_X takes a negative value on (0, infinity)).",
  "checks": [

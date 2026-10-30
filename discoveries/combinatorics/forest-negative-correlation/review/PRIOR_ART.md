@@ -4,7 +4,8 @@
   uniform forests and connected graphs*, Random Struct. Algorithms 24 (2004),
   arXiv math/0302185.**
   - Their Conjecture 1.1 says that the uniform forest and the uniform
-    connected subgraph are edge-negatively-associated. Questions (1.6) and
+    connected subgraph are edge-negatively-associated. Negative association
+    is stronger than the pairwise correlation checked here. Questions (1.6) and
     (1.7) ask for the weighted forms.
   - For forests, they verified negative correlation by computer for all
     simple graphs on at most 8 vertices, and on 9 vertices with at most 18
@@ -28,6 +29,11 @@
   case on `K_n`. They also report "exact coefficientwise computations"
   supporting the graphical conjectures, but the arXiv text we read does not
   say which graphs or what range.
+
+- **arXiv:2609.11578 (2026)** proves negative correlation for the `q < 1`
+  random-cluster model on high-degree regular graphs. It reports no
+  small-graph computations, but it bears on the connected-subgraph
+  (`q → 0`) model.
 
 This dossier extends the published exhaustive range to all simple graphs on 9
 vertices for forests and on at most 9 vertices for connected subgraphs, in the
