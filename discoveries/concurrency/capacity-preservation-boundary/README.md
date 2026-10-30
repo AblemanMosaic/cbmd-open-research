@@ -189,12 +189,21 @@ tractability are the same boundary — which the mechanism already suggested:
 a multi-input transition is enabled by a conjunction, and conjunctions are what
 turn a reachability question into a satisfiability one.
 
-This is a **written argument**, not a compiled theorem; formalizing it needs a
-model of computation, which is a different artifact from the Lean in this
-dossier. What is machine-checked is the reduction: 240 instances, 240
-agreements, zero disagreements, 171 satisfiable against 69 unsatisfiable, every
-transition carrying one or two input places. See
+This was first a **written argument**, with the reduction machine-checked by
+census: 240 instances, 240 agreements, zero disagreements, 171 satisfiable
+against 69 unsatisfiable, every transition carrying one or two input places. See
 [`revisions/0.4.0-hardness-dichotomy.md`](revisions/0.4.0-hardness-dichotomy.md).
+
+Since revision 0.9.0 the reduction itself is **compiled**:
+`preserves_iff_unsatisfiable` states that the net built from the guarded form
+of any CNF preserves exactly when the CNF is unsatisfiable, and
+`guard_neg_count` with the input-place lemmas gives one or two input places per
+transition. A bridge check confirms the compiled net is the census's net. The
+formalization surfaced an unstated hypothesis — no clause may contain an atom
+with both signs — which the guarded encoding provably satisfies. What remains
+prose is only the complexity-class wrapper: membership in coNP and the
+polynomial running time of the reduction. See
+[`revisions/0.9.0-reduction-compiled.md`](revisions/0.9.0-reduction-compiled.md).
 
 ## Between the regimes (revision 0.8.0)
 
@@ -220,18 +229,23 @@ not enabled because its other input is short.
 
 ## What remains unresolved
 
-- A formal proof of the complexity statement. coNP-completeness is argued in
-  prose with a machine-checked reduction; it is not compiled.
-- The construction behind the decision procedure is prose: the induction
+- A formal proof of the complexity-class statement. The reduction's
+  correctness and input-place bounds are compiled (revision 0.9.0); membership
+  in coNP and the reduction's polynomial running time are argued in prose.
+- ~~The construction behind the decision procedure is prose: the induction
   placing the least closure below every failing marking, and the termination of
-  the closure iteration, are not compiled.
+  the closure iteration, are not compiled.~~ Stale: both were compiled, in
+  revisions 0.5.0 (`WFlow.forced_le_of_bad`) and 0.7.0 (termination).
 - Novelty. The nearest named notions are implicit places and non-blockingness of
   bounded nets; neither is this statement. See [`review/README.md`](review/README.md).
-- Weighted flow and multi-input transitions. The obstruction condition of
+- ~~Weighted flow and multi-input transitions. The obstruction condition of
   revision 0.3.0 is proved for unit-weight, single-input, single-output
-  transitions only.
-- Apart from the all-full obstruction, everything here is a finite census over
-  stated boxes.
+  transitions only.~~ Stale: weights are handled by revision 0.5.0, arbitrary
+  outputs by 0.6.0, and multi-input transitions are coNP-complete (0.4.0) and
+  fixed-parameter tractable in their number (0.8.0).
+- ~~Apart from the all-full obstruction, everything here is a finite census over
+  stated boxes.~~ Stale since revision 0.3.0; see the standing table in each
+  revision for what is compiled and what is censused.
 
 ## Smallest decisive tests
 

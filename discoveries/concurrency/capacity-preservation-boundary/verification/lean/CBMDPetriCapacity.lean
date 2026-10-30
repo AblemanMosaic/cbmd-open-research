@@ -4,3 +4,5 @@ import CBMDPetriCapacity.WeightedFlow
 import CBMDPetriCapacity.SingleInput
 import CBMDPetriCapacity.Termination
 import CBMDPetriCapacity.Backdoor
+import CBMDPetriCapacity.Reduction
+import CBMDPetriCapacity.Guard

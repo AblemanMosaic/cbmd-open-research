@@ -4,7 +4,7 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.8.0",
+ "public_version": "0.9.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -42,11 +42,12 @@
   "Compiling the termination exposed a hypothesis that had been implicit: each transition must actually consume from the place named as its input. The SNet structure only required pre to vanish off that place.",
   "The reduction is also checked exhaustively rather than only by sampling: over every CNF on two variables with at most three clauses of width at most two, 164 formulas, 138 satisfiable and 26 not, with zero disagreements and every transition carrying one or two input places.",
   "The fixed-parameter procedure is exact over 145,953 general nets, 114,048 of them with a multi-input transition, with zero unsound and zero incomplete; dropping upper-bound literals gives 20,848 wrong verdicts and dropping lower-bound literals 8,074.",
-  "Its core is compiled: notCapEnabled_max_of_single gives max-closure per single-input transition, ub_max and lb_max give it for unit bounds, the two blocking lemmas give soundness of each literal, and blocked_by_some_literal gives exhaustiveness of the branching."
+  "Its core is compiled: notCapEnabled_max_of_single gives max-closure per single-input transition, ub_max and lb_max give it for unit bounds, the two blocking lemmas give soundness of each literal, and blocked_by_some_literal gives exhaustiveness of the branching.",
+  "The hardness reduction is compiled (revision 0.9.0): preserves_iff_unsatisfiable proves that the net built from the guarded form of any CNF preserves exactly when the CNF is unsatisfiable, and guard_neg_count with probe_input_places and clause_input_places gives one or two input places per transition. A bridge check over 404 formulas confirms the compiled net equals the census's net, and detects a deliberately wrong transcription in 375 of them."
  ],
  "unresolved": [
   "external review",
-  "a formal proof of the complexity statement; coNP-completeness is a written argument here, with only the reduction machine checked",
+  "a formal proof of the complexity-class statement: the reduction's correctness and input-place bounds are compiled (revision 0.9.0), while membership in coNP and the reduction's polynomial running time remain written arguments",
   "direct comparison of the revision 0.4.0 reduction against the 3-SAT reduction of Yamauchi and Watanabe 1999, whose full text was not obtained",
   "whether the queueing-with-blocking line (Liebeherr and Akyildiz; Kundu and Akyildiz) also covers the non-conservative case; the papers located are framed around closed networks",
   "a closed-form structural characterization for multi-input nets; none can be polynomial unless P = NP (revision 0.4.0), and the fixed-parameter procedure of revision 0.8.0 decides them without characterizing them"
@@ -71,7 +72,8 @@
   "the absence of reachability in this dossier's question is the degenerate case of that literature's job-count condition, not an independent vantage point",
   "on the proved side nothing is left in prose for the single-input case; what remains prose in this dossier is the complexity statement of revision 0.4.0",
   "the exhaustive pass covers a small box and the random pass larger instances; neither proves the reduction, which is the written argument",
-  "the fixed-parameter procedure is the classical branching on a strong backdoor to Horn (Nishimura, Ragde and Szeider) applied with threshold literals; no new technique is claimed"
+  "the fixed-parameter procedure is the classical branching on a strong backdoor to Horn (Nishimura, Ragde and Szeider) applied with threshold literals; no new technique is claimed",
+  "the clause-level reduction preserves_iff_no_nonzero_model needs NoTautology (no atom with both signs in one clause) and is false without it; the end-to-end theorem discharges it for the guarded encoding"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a polynomial-time algorithm deciding preservation for nets with two input places per transition, which would collapse coNP to P; or an error in the reduction, exhibited as a CNF whose constructed net's preservation verdict differs from its unsatisfiability.",
  "checks": [

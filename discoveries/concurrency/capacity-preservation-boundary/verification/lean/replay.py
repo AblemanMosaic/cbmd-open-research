@@ -52,6 +52,14 @@ TARGETS = [
     "CBMDPetriCapacity.lower_bound_blocks",
     "CBMDPetriCapacity.upper_bound_blocks",
     "CBMDPetriCapacity.blocked_by_some_literal",
+    "CBMDPetriCapacity.Reduction.clause_capEnabled_iff",
+    "CBMDPetriCapacity.Reduction.preserves_iff_no_nonzero_model",
+    "CBMDPetriCapacity.Reduction.probe_input_places",
+    "CBMDPetriCapacity.Reduction.clause_input_places",
+    "CBMDPetriCapacity.Reduction.guard_noTautology",
+    "CBMDPetriCapacity.Reduction.satisfiable_iff_guard_nonzero",
+    "CBMDPetriCapacity.Reduction.preserves_iff_unsatisfiable",
+    "CBMDPetriCapacity.Reduction.guard_neg_count",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.
