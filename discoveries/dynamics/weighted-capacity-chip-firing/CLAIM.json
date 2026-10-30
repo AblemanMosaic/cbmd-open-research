@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.11.0",
+ "public_version": "0.12.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -42,7 +42,8 @@
   "The last imported fact is compiled (revision 0.8.0): a finite acyclic relation is well founded (wellFounded_of_acyclic, by counting ancestors over Fin n), and with the converse acyclic_of_wellFounded this gives liveArc_wellFounded_iff_acyclic, so the census's cycle detection provably decides the ordering hypothesis.",
   "The characterization is one compiled equivalence (revision 0.9.0): terminalStable_iff and terminalStable_iff_acyclic prove that every admissible capacity-terminal state is ordinarily stable exactly when the live subgraph is well founded (equivalently acyclic), live-closed and bounded, assuming only positive outdegree; a live self-loop is excluded by well-foundedness with no witness needed.",
   "The weighted transfer theorem is fully concrete (revision 0.10.0): weighted_transfer_concrete binds firing to the multigraph update and proves ordinary termination (lexicographic descent in topological order) and uniqueness (local commutation and Newman's lemma), leaving only the order, positive outdegree and the weighted capacity bound as hypotheses.",
-  "A verified decider (revision 0.11.0): terminalStable_iff_decide proves that the executable Boolean decideTerminalStable, which decides well-foundedness by peeling, decides the characterization; Lean evaluates it on 500 census systems (451 cyclic) and every verdict matches simulated transfer."
+  "A verified decider (revision 0.11.0): terminalStable_iff_decide proves that the executable Boolean decideTerminalStable, which decides well-foundedness by peeling, decides the characterization; Lean evaluates it on 500 census systems (451 cyclic) and every verdict matches simulated transfer.",
+  "Kernel-certified instances (revision 0.12.0): weighted digraphs given in a declared JSON format are decoded into Lean theorems stating their verdict, checked by decide through the verified decider, with Lean's own evaluation reconstructing the input; 80 of 80 random instances certified, 42 agreeing with simulated transfer, and both the wrong-verdict and dropped-arc controls caught."
  ],
  "unresolved": [
   "novelty assessment and external specialist review"
@@ -118,6 +119,16 @@
     "-I",
     "-B",
     "discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/lean_decider_bridge.py"
+   ],
+   "required": false
+  },
+  {
+   "id": "WEIGHTED_KERNEL_CERTIFIED_INSTANCES",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/dynamics/weighted-capacity-chip-firing/verification/decoder/check_decoder.py"
    ],
    "required": false
   }

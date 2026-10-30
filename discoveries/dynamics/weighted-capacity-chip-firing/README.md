@@ -147,6 +147,15 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 260,172 systems. See
 [`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
+## Kernel-certified instances (revision 0.12.0)
+
+`verification/decoder/` turns a weighted digraph given as a JSON file into a
+Lean theorem stating its verdict, positive or negative. The kernel checks it by
+`decide` through the verified decider, and the decoding must round-trip
+through Lean's own evaluation. 80 of 80 random instances were certified, and
+the 42 small ones agree with simulated transfer. See
+[`revisions/0.12.0-kernel-certified-instances.md`](revisions/0.12.0-kernel-certified-instances.md).
+
 ## A verified decider (revision 0.11.0)
 
 `decideTerminalStable` is an executable Boolean, and `terminalStable_iff_decide`
@@ -243,6 +252,7 @@ python -B discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/r
   confluence controls, the exactness census, the well-foundedness check
   with its hypothesis ablation, and the capacitated-sink census.
 - `verification/independent/`: a separately written check of the theorem's conclusion.
+- `verification/decoder/`: kernel-certified verdicts for instances given as files (revision 0.12.0).
 - `evidence/`: search output, independent-check output, and the Lean receipt.
 - `review/`: the bounded prior-art note and its recorded queries.
 - `revisions/`: a search defect caught by the controls before any claim was registered.

@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.12.0 | Instances given as JSON files get kernel-checked verdicts, positive or negative, on arbitrary digraphs, with round-trip and wrong-verdict controls. |
 | 0.11.0 | A verified decider for the characterization: peeling decides well-foundedness, and decideTerminalStable is proved correct and agrees with simulated transfer on 500 systems, run by Lean. |
 | 0.10.0 | The weighted transfer theorem made fully concrete: firing bound to the multigraph update, ordinary termination and uniqueness proved, no ordinary hypothesis left. |
 | 0.9.0 | The characterization assembled into one compiled equivalence: terminal stability holds iff the live subgraph is acyclic (well founded), live-closed and bounded. The live self-loop case surfaced and is handled by well-foundedness. |

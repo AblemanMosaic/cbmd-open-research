@@ -1,0 +1,26 @@
+{
+ "schema": "cbmd.weighted-decoder-check.v1",
+ "instances": 80,
+ "certified": 80,
+ "terminal_stable": 27,
+ "simulated_checked": 42,
+ "simulated_agree": 42,
+ "axioms_observed": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "gates": {
+  "every_verdict_kernel_checked_and_round_trip_exact": true,
+  "kernel_verdict_equals_simulated_transfer": true,
+  "both_verdicts_occur": true,
+  "kernel_rejects_wrong_verdict": true,
+  "round_trip_rejects_dropped_arc": true,
+  "axioms_within_allowlist": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "certifies the declared JSON format only"
+ ],
+ "authority_effect": "NONE"
+}
