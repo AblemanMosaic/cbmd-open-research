@@ -48,6 +48,8 @@ block other than 0. Comparing rows across blocks breaks it (4,123 violations),
 so the block structure is load-bearing. See
 [`revisions/0.6.0-packed-reference-census.md`](revisions/0.6.0-packed-reference-census.md).
 
+Revision 0.8.0 compiles both claims **with blocks**, proving the packing invariant from the definition of a block (rank among equal earlier labels), and bridges that definition to the packed reference ([`revisions/0.8.0-blocks-compiled.md`](revisions/0.8.0-blocks-compiled.md)).
+
 What is still missing is a *compiled* binding to the exact packed source
 definitions. One piece of it already exists in this repository's native
 proof package: `entry_eq_zero_of_not_inOrbit` compiles the amplitude half of

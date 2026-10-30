@@ -27,7 +27,6 @@
       "next_obligation": "State and compile the correspondence to the packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches; the source is not in this repository, so this needs the archive. The unique-contributor statement itself is now compiled.",
       "promotion_blockers": [
         "source-bound formal correspondence not stated",
-        "multi-block packing censused against the repository Python packed reference (0.6.0), not compiled",
         "novelty unassessed"
       ],
       "status": [

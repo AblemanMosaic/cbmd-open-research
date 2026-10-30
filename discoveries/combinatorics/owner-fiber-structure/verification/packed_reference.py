@@ -105,7 +105,8 @@ def run(trials=300, seed=2026):
              "off_diagonal_contributors": 0, "u2_sums": 0, "u2_violations": 0, "u2_attained": 0,
              "branch_missing_pair": 0, "branch_repeated_pair": 0, "branch_uncovered_target": 0,
              "branch_exact_owner_rejection": 0, "branch_block_ge_1": 0,
-             "control_block_blind_u1_violations": 0, "control_incoherent_u1_violations": 0}
+             "control_block_blind_u1_violations": 0, "control_incoherent_u1_violations": 0,
+             "rank_definition_mismatches": 0}
     for _ in range(trials):
         Q = rng.choice([1, 2])
         copies = rng.choice([2, 3])
@@ -116,6 +117,12 @@ def run(trials=300, seed=2026):
         ring = Ring(None, m)
         pack = Scan(L, m)
         idx = Indexed(L, m)
+        # bridge to the compiled rank definition (Blocks.lean, `rankAt`): an
+        # incidence's block is the number of earlier incidences with its label
+        for i, lab in enumerate(L.labels):
+            raw = pack.bucket(lab).index(i)
+            if raw != sum(1 for j in range(i) if L.labels[j] == lab):
+                stats["rank_definition_mismatches"] += 1
         pairs = sorted(set(L.pairs)) + [(0, 999)]
         for pair in pairs:
             if L.pairs.count(pair) > 1:
@@ -176,6 +183,7 @@ def run(trials=300, seed=2026):
                     stats["control_incoherent_u1_violations"] += 1
     gates = {
         "U1_no_violation": stats["u1_violations"] == 0,
+        "block_is_compiled_rank": stats["rank_definition_mismatches"] == 0,
         "U1_candidate_route_agrees": stats["candidate_disagreements"] == 0,
         "U1_nondegenerate": stats["off_diagonal_contributors"] > 0,
         "U2_no_violation": stats["u2_violations"] == 0 and stats["u2_sums"] > 0,

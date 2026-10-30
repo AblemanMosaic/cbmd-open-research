@@ -15,8 +15,10 @@
  "branch_block_ge_1": 6019,
  "control_block_blind_u1_violations": 4123,
  "control_incoherent_u1_violations": 22,
+ "rank_definition_mismatches": 0,
  "gates": {
   "U1_no_violation": true,
+  "block_is_compiled_rank": true,
   "U1_candidate_route_agrees": true,
   "U1_nondegenerate": true,
   "U2_no_violation": true,
