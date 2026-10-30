@@ -1,0 +1,54 @@
+{
+ "schema": "cbmd.amplitude-m7-derivation.v1",
+ "S1_indicator": {
+  "cases": 689730,
+  "mismatches": 0,
+  "indicator_true": 222098
+ },
+ "S1_indicator_alphabet3": {
+  "cases": 23766,
+  "mismatches": 0,
+  "indicator_true": 10662
+ },
+ "S1_mutated": {
+  "cases": 34370,
+  "mismatches": 14738,
+  "indicator_true": 14738
+ },
+ "S2_inner_sum": {
+  "cases": 380464,
+  "mismatches": 0,
+  "nonzero": 339128
+ },
+ "S3_parity": {
+  "cases": 49,
+  "mismatches": 0
+ },
+ "S4_identity": {
+  "cases": 3132,
+  "mismatches": 0,
+  "mutated_master_mismatches": 2432
+ },
+ "cross_check_source": {
+  "cases": 380464,
+  "mismatches": 0
+ },
+ "gates": {
+  "S1_indicator_collapse_exact": true,
+  "S1_both_indicator_values_occur": true,
+  "S1_mutation_detected": true,
+  "S2_inner_sum_exact": true,
+  "S2_nonzero_amplitudes_occur": true,
+  "S3_parity_closed_form_exact": true,
+  "S4_identity_exact": true,
+  "S4_mutation_detected": true,
+  "cross_check_against_frozen_source": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "written proof checked step by step on finite boxes; not compiled",
+  "separately written in this repository, not externally authored; external mathematical review remains open",
+  "the derivation assumes y lies in the swap orbit of u and t is in E(y), the conditions under which the cost theorem invokes the producer"
+ ],
+ "authority_effect": "NONE"
+}

@@ -4,7 +4,7 @@
  "title": "Reference amplitude cost model (no native speedup claim)",
  "field": "algorithms",
  "slug": "reference-amplitude-cost-model",
- "public_version": "0.3.0-candidate",
+ "public_version": "0.4.0-candidate",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED"
@@ -16,10 +16,11 @@
   "the required unit hypotheses refuse node 5 modulo 25 and denominator 2 modulo 8",
   "the corrected evidence replays from a clean extraction of the sealed r7 source package and from this repository checkout",
   "Neutral result N1: the closed row-assembly identity is exact on 10,476 orbit rows with zero mismatches but arithmetically neutral, 120,876 ring operations against the reference route's 123,588; the hypothesised quadratic-against-cubic gain was wrong and both routes are quadratic in |E|.",
-  "Negative result N3: exact live-column counts place the row-centric crossover above 5.8e5 owners at the centred mismatch count for (A,R,Q)=(17,5,80) and above 5.2e7 for (15,8,80), so the owner-centric route is correct by orders of magnitude at realistic sizes."
+  "Negative result N3: exact live-column counts place the row-centric crossover above 5.8e5 owners at the centred mismatch count for (A,R,Q)=(17,5,80) and above 5.2e7 for (15,8,80), so the owner-centric route is correct by orders of magnitude at realistic sizes.",
+  "B5-M7 is derived from the producer's definition in the repository (revision 0.4.0-candidate): an indicator collapse (689,730 binary and 23,766 ternary cases), the inner-sum collapse (380,464 amplitudes), the parity coefficients in closed form (49 systems) and a binomial identity by the substitution x = z/(1+z) (3,132 cases), each checked by code written from the definitions, with two mutated statements failing as required."
  ],
  "unresolved": [
-  "standalone separately implemented verifier and external mathematical review",
+  "external mathematical review; a standalone, separately written step-by-step checker of the B5-M7 derivation now exists (revision 0.4.0-candidate), but it is not externally authored",
   "targeted novelty review",
   "the later source correspondence and candidate evaluator are a separate discovery line, not a result of this reference-only checker",
   "the historical cost argument's parameter regimes are corrected in revision 0.3.0; at fixed R the enumeration count is polynomial in Q"
@@ -40,6 +41,16 @@
     "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"
    ],
    "required": true
+  },
+  {
+   "id": "reference-amplitude-m7-derivation",
+   "command": [
+    "{python}",
+    "-I",
+    "-B",
+    "discoveries/algorithms/reference-amplitude-cost-model/verification/independent/derive_m7.py"
+   ],
+   "required": false
   }
  ],
  "authority_effect": "NONE"

@@ -16,6 +16,20 @@ The corrected r7 source package is sealed, cold-replayed, and represented here b
 
 The archived cost write-up's phrase "exponentially cheaper in Q" needs a parameter qualification: at fixed R, the enumeration count is polynomial in Q. The [scope correction](revisions/0.3.0-scope-and-parameter-regime.md) controls the current interpretation while preserving the exact archived source bytes.
 
+## The master formula, derived here (revision 0.4.0-candidate)
+
+The closed route rests on B5-M7, whose proof was held only in the sealed
+archive. [`argument/M7_DERIVATION.md`](argument/M7_DERIVATION.md) now proves it
+from the producer's definition:
+- an indicator collapse shows the amplitude depends only on `(|D|, |E|−1)`;
+- an inner sum collapses;
+- the parity coefficients have a closed form;
+- a change of variables `x = z/(1+z)` finishes it.
+
+A standalone checker verifies each step with code written from the definitions,
+and two mutated statements fail as required. It is separately written, not
+externally authored.
+
 ## Next obligation
 
 Review the reference cost model and explicit parameter regimes. Later local work established source correspondence and a candidate executable joint realization; that [successor line](../native-joint-realization/README.md) is tracked separately with full checkout replay still pending. This reference-only checker does not evaluate that transport.
