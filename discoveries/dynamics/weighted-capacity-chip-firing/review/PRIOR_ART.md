@@ -32,16 +32,37 @@ successor starts here rather than repeating them.
 | bounded Petri net capacity constraint preserves dead markings deadlock-free acyclic live places characterization | general bounded-net theory, non-blockingness verification and deadlock analysis; no live-set characterization of capacity-preserving nets located |
 | blocking tandem queueing network deadlock if and only if cycle finite buffer manufacturing blocking-after-service | large literature on blocking in tandem and cyclic queues, concerned with throughput and mean cycle time rather than with preservation of terminal configurations |
 
-**A partial prior-art acknowledgement.** The cycle obstruction has a direct
+**A prior-art acknowledgement, sharpened.** The cycle obstruction has a direct
 reading in queueing and manufacturing: a finite-buffer network with
 blocking-after-service deadlocks when a cycle of stations is simultaneously
 full, and feed-forward lines do not deadlock. That a cycle is what makes
 blocking deadlock is **folklore in that field** and is not claimed as new here.
-What the located literature studies is performance — throughput, mean cycle
-time, approximations — not the structural question of whether the blocked system
-reaches the same terminal configuration as the unblocked one, and not a
-condition on capacities indexed by transfer multiplicity. Those are the parts
-still unmatched.
+
+A later search, run for the companion dossier
+[`CBMD-CON-CAPACITY-PRESERVATION-001`](../../../concurrency/capacity-preservation-boundary/review/PRIOR_ART.md),
+found that the folklore is in fact a theorem:
+
+> Jörg Liebeherr and Ian F. Akyildiz, *Deadlock Properties of Queueing Networks
+> with Finite Capacities and Multiple Routing Chains*,
+> <https://www.comm.utoronto.ca/~jorg/archive/papers/CS-93-65.pdf>
+
+Their Theorem 1 is a **necessary and sufficient** deadlock-freedom condition
+for a closed network under blocking-after-service, stated over buffer cycles
+and carrying the chain's job count `K_r`. So the cycle obstruction of revision
+0.2.0 should be read as the Petri-net-side form of a known result, not as new.
+
+What the located literature still does not address: the structural question of
+whether the blocked system reaches the same terminal configuration as the
+unblocked one; a condition on capacities indexed by transfer multiplicity; and
+the weighted bound itself. Those are the parts still unmatched. Note also that
+their condition carries a conserved job count, which has no analogue here
+because the absorbing sink destroys chips.
+
+**Vocabulary.** Two standard names apply and are now used in the companion
+dossier: *capacity-enabled* and *ordinarily enabled* are Murata's **strict**
+and **weak** transition rules, and the live-set obstruction is a **trap** in
+the net (dually a siphon in the complemented net). Both are classical objects;
+no novelty is claimed for the shape of the condition.
 
 The live-set condition has a natural Petri-net reading: a place whose capacity is
 below the firing threshold of its own output transition can never enable that

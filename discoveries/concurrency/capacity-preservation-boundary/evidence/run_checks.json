@@ -1253,6 +1253,132 @@
   ],
   "authority_effect": "NONE"
  },
+ "single_input": {
+  "schema": "cbmd.petri-single-input.v1",
+  "censuses": [
+   {
+    "box": {
+     "places": 2,
+     "transitions": 2,
+     "max_arc_weight": 1,
+     "max_capacity": 2
+    },
+    "systems": 540,
+    "preserving": 396,
+    "not_preserving": 144,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "certificates_replayed": 540,
+    "CERTIFICATES_FAILED": 0,
+    "ablation": {
+     "no_fits_test": {
+      "wrong": 144
+     },
+     "single_pass": {
+      "wrong": 32
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 2,
+     "transitions": 2,
+     "max_arc_weight": 2,
+     "max_capacity": 2
+    },
+    "systems": 11520,
+    "preserving": 5972,
+    "not_preserving": 5548,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "certificates_replayed": 11520,
+    "CERTIFICATES_FAILED": 0,
+    "ablation": {
+     "no_fits_test": {
+      "wrong": 5548
+     },
+     "single_pass": {
+      "wrong": 144
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 3,
+     "transitions": 2,
+     "max_arc_weight": 1,
+     "max_capacity": 2
+    },
+    "systems": 15309,
+    "preserving": 6165,
+    "not_preserving": 9144,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "certificates_replayed": 15309,
+    "CERTIFICATES_FAILED": 0,
+    "ablation": {
+     "no_fits_test": {
+      "wrong": 9144
+     },
+     "single_pass": {
+      "wrong": 288
+     }
+    }
+   },
+   {
+    "box": {
+     "places": 2,
+     "transitions": 3,
+     "max_arc_weight": 1,
+     "max_capacity": 2
+    },
+    "systems": 4536,
+    "preserving": 3672,
+    "not_preserving": 864,
+    "UNSOUND": 0,
+    "INCOMPLETE": 0,
+    "samples": [],
+    "certificates_replayed": 4536,
+    "CERTIFICATES_FAILED": 0,
+    "ablation": {
+     "no_fits_test": {
+      "wrong": 864
+     },
+     "single_pass": {
+      "wrong": 320
+     }
+    }
+   }
+  ],
+  "totals": {
+   "systems": 31905,
+   "preserving": 16205,
+   "not_preserving": 15700,
+   "unsound": 0,
+   "incomplete": 0,
+   "certificates_replayed": 31905,
+   "certificates_failed": 0,
+   "ablation_wrong": {
+    "no_fits_test": 15700,
+    "single_pass": 784
+   }
+  },
+  "gates": {
+   "algorithm_is_exact": true,
+   "both_outcomes_occur": true,
+   "every_certificate_replays": true,
+   "each_step_is_load_bearing": true
+  },
+  "pass": true,
+  "nonclaims": [
+   "the closure lemma and the reduction of preservation to the greatest capacity-dead marking are proved in verification/lean/; the termination of the lowering iteration is a prose argument",
+   "single input place per transition; outputs and weights unconstrained"
+  ],
+  "authority_effect": "NONE"
+ },
  "content_gate_failures": [],
  "status": "PASS",
  "nonclaims": [

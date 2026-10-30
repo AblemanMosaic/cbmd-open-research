@@ -102,6 +102,32 @@ four conditions is load-bearing, and the greatest-fixpoint decision procedure
 is checked against the proved existential form rather than assumed to match it.
 See [`revisions/0.3.0-flow-characterization.md`](revisions/0.3.0-flow-characterization.md).
 
+## One input place is the whole story (revision 0.6.0)
+
+The dichotomy is stated in **input** places, and the hardness construction uses
+only that ordinary enabledness is a conjunction over inputs. Outputs never
+enter it — so the polynomial side should not be confined to nets that feed one
+place, and it is not.
+
+With one input place, "capacity-dead" is one clause per transition with a
+single negative literal, so the capacity-dead admissible markings are **closed
+under pointwise maximum**. There is therefore a greatest one, `M`, and since
+ordinary enabledness is monotone,
+
+> `PRESERVES(N, C)` holds **exactly when** `M` is ordinarily dead.
+
+`M` is computed by lowering from the capacities: whenever a transition is
+capacity-enabled, drop its input place to one below its own weight. Each
+lowering is justified, and the procedure emits that justification as a
+certificate which a checker re-derives — so "greatest" is discharged rather
+than assumed. Exact over 31,905 systems with arbitrary outputs and weights,
+zero unsound and zero incomplete, all certificates replaying. See
+[`revisions/0.6.0-single-input.md`](revisions/0.6.0-single-input.md).
+
+This supersedes the *procedure* of revision 0.5.0 — one downward fixpoint in
+place of one upward fixpoint per transition, over a wider class — while its
+characterization below stands as the statement of what a failure looks like.
+
 ## Weights: the obstruction carries levels (revision 0.5.0)
 
 The unit-weight proof above does not survive weights, and not for a technical

@@ -147,7 +147,7 @@
    "path": "discoveries/concurrency/capacity-preservation-boundary",
    "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Compile the construction behind the weighted decision procedure -- the least closure and the induction placing it below every failing marking -- and obtain a targeted prior-art comparison against structural and complexity results for bounded Petri nets; the coNP-completeness statement remains a written argument with only its reduction machine checked.",
+   "next_obligation": "Run the targeted prior-art query the bounded search named as highest value: capacities over state machines, the one-input-one-output subclass; and compile the termination of the lowering iteration. The coNP-completeness statement remains a written argument with only its reduction machine checked.",
    "promotion_blockers": [
     "novelty and prior-art assessment open",
     "external review open",

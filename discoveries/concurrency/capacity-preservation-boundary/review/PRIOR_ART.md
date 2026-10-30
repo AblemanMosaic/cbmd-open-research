@@ -120,22 +120,85 @@ where it always sits once enabledness becomes a conjunction.
 
 coNP **membership** is immediate and is claimed as nothing more.
 
+## The state-machine query, run — and it lands
+
+The bounded search named capacities over **state machines** (one input, one
+output per transition) as its highest-value open query, because that is exactly
+the subclass revision 0.3.0 characterizes. Running it moves that result from
+"unresolved" towards "known", in a literature the Petri-net search did not
+reach: closed queueing networks with finite buffers and blocking.
+
+> Jörg Liebeherr and Ian F. Akyildiz, *Deadlock Properties of Queueing Networks
+> with Finite Capacities and Multiple Routing Chains*.
+> <https://www.comm.utoronto.ca/~jorg/archive/papers/CS-93-65.pdf>
+
+Their Theorem 1 is a **necessary and sufficient** deadlock-freedom condition
+for a closed network under blocking-after-service: for every *buffer cycle* `C`
+some chain `r` satisfies `Σ_{i ∈ S(C)_r} φ(B_ir) + |S(C)_r| > K_r`. A station
+with a full destination buffer is blocked, a cycle of such stations is a
+deadlock, and Lemma 2 identifies buffer cycles with cycles in a directed graph
+on buffers. That is the same obstruction as revision 0.3.0 in its single-output
+case: a cycle of full places, each blocked by the next.
+
+Three differences, and only the third is in this dossier's favour.
+
+1. **Their condition carries a job count.** `K_r` is the number of jobs in
+   chain `r`, which is conserved. The condition is about whether a cycle *can*
+   be filled given how many jobs exist — reachability information, in the only
+   form a closed network admits. A capacitated Petri net with drains has no
+   conservation law, so no such term appears here, and the condition degenerates
+   to pure structure.
+2. **Theirs is a cycle, mine is a closed set.** With one output per transition
+   a set closed under successors contains a cycle, so the two agree in that
+   case. With several outputs they do not: closure is strictly stronger than a
+   cycle, which is why revision 0.6.0 is not simply a restatement of this.
+3. **Theirs is for a fixed closed network; drains and zero capacities do not
+   occur.** Clause 2 (no drain takes from a member) and the zero-capacity
+   branch of clause 3 have no counterpart there.
+
+So the honest reading: **for unit-weight, single-output, conservative nets, the
+obstruction of revision 0.3.0 is known**, as a cycle of full buffers, with an
+exact iff that has been in the queueing literature since the early 1990s. The
+"exact iff without reachability" that the Petri-net search could not locate is
+not a gap in the literature; it is what that condition becomes when
+conservation is dropped. Revision 0.3.0 should be read as a Petri-net-side
+restatement in a setting with drains, not as a new characterization.
+
+What this does not cover, and what revisions 0.5.0 and 0.6.0 therefore retain:
+weighted arcs, several outputs per transition, zero-capacity places, and the
+complexity dichotomy.
+
 ## What this search did not settle
 
 - The full text of Yamauchi and Watanabe 1999 was not obtained, so their 3-SAT
   reduction has not been compared against revision 0.4.0's directly.
-- No source was located treating capacities on **state machines** — nets whose
-  transitions have one input and one output — specifically. Revision 0.3.0 is
-  exactly that subclass, so a targeted search there is the highest-value next
-  step and may well close revision 0.3.0's novelty question in the negative.
+- Whether Liebeherr and Akyildiz's Theorem 1, or an earlier result in the same
+  line, also covers the non-conservative case. The paper itself is framed
+  entirely around closed networks. Kundu and Akyildiz, *Deadlock free buffer
+  allocation in closed queueing networks*, <https://link.springer.com/article/10.1007/BF01150855>,
+  is the nearest predecessor and was not fetched.
 - Whether the reachability-free iff is folklore. A specialist would likely
   answer this in one sentence.
 
 ## Standing
 
-No claim in this dossier is a novelty claim. Three of the four results are
-restatements of recognized objects — traps, siphons, and the maximal-trap
-fixpoint — in a setting that removes reachability; what is specific here is
-that removing it makes the condition exact, and that the exactness has a
-compiled proof. The fourth is a complexity dichotomy whose hardness side uses
-a standard reduction template and whose statement was not found elsewhere.
+No claim in this dossier is a novelty claim, and the second search weakened
+the position rather than strengthening it.
+
+- The obstruction is a **trap** (dually a siphon), and the monotone closure is
+  the classical maximal-trap fixpoint. Standard.
+- For unit-weight single-output conservative nets the characterization is
+  **known**, as a cycle of full buffers with an exact iff, in the
+  queueing-with-blocking literature. The absence of reachability here is the
+  degenerate case of their job-count condition, not a new vantage point.
+- The all-full obstruction is a one-line argument, claimed only as
+  explanatory.
+- What is not accounted for by either literature: weighted arcs, several
+  outputs per transition, zero-capacity places, and the one-versus-two input
+  complexity dichotomy — whose hardness side nonetheless uses a standard
+  reduction template.
+
+What this dossier can claim without qualification is the **form** of the
+evidence: compiled proofs with recorded axiom dependencies, procedures that
+emit certificates a separate checker validates, and ablations showing each
+condition is load-bearing.

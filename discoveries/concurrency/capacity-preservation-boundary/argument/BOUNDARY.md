@@ -332,3 +332,50 @@ into `1` and claim a token that need not be there.
 
 What stays prose is only the termination of the iteration, from `Σ (C(q) − ℓ(q))`
 strictly decreasing.
+
+## The polynomial side, in its right generality
+
+The two preceding sections both restrict transitions to a single output. That
+restriction is an artifact. The dichotomy is about **input** places: the
+hardness construction uses only that ordinary enabledness is a conjunction over
+inputs, and outputs never appear in it.
+
+Let every transition consume from one place `input(t)`, with weight
+`w(t) = pre(t, input(t))`, and produce however it likes. Then *"m is
+capacity-dead"* is one clause per transition,
+
+```
+¬( w(t) ≤ m(input t) )   ∨   ⋁_q  ( m(q) − pre(t,q) + post(t,q) > C(q) )
+```
+
+with exactly one negative literal.
+
+> **Lemma.** The admissible capacity-dead markings are closed under pointwise
+> maximum.
+
+*Proof.* Suppose `t` is capacity-enabled at `M = max(m₁, m₂)`. Its input place
+attains the maximum at one of them, say `m₁`. Then `t` is ordinarily enabled at
+`m₁`: at the input place because `M` agrees with `m₁` there, elsewhere because
+consumption is zero. And the overflow test passes at `m₁`: at the input place
+the two agree, and elsewhere `m₁(q) ≤ M(q)` with nothing subtracted. So `t` is
+capacity-enabled at `m₁`, contradicting its deadness. ∎
+
+The single-input hypothesis is used exactly once, in *"elsewhere consumption is
+zero"*; no finiteness is used anywhere.
+
+> **Theorem.** Let `M` be the greatest admissible capacity-dead marking. Then
+> `PRESERVES(N, C)` if and only if `M` is ordinarily dead.
+
+Every admissible capacity-dead marking lies below `M`, and ordinary enabledness
+is monotone, so if any of them enables a transition then `M` does.
+
+**Computing `M`.** Start at the capacities and lower: whenever a transition is
+capacity-enabled, drop its input place to one below its own weight. The step is
+forced — for any capacity-dead `m` below the current vector `u`, reaching that
+transition's weight would make it capacity-enabled at `m` as well, because the
+overflow test is monotone — and that is the content of the inductive predicate
+`Capped`, whose soundness is compiled. So the procedure produces not just a
+marking but a certificate that the marking is greatest.
+
+The measure `Σ m(q)` strictly decreases at each lowering, which bounds the
+iteration; that bound is the one prose step remaining on this side.

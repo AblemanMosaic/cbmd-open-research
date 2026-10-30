@@ -36,6 +36,11 @@ TARGETS = [
     "CBMDPetriCapacity.WFlow.least_closure_is_complete",
     "CBMDPetriCapacity.WFlow.forced_le_of_bad",
     "CBMDPetriCapacity.WFlow.justified_closure_is_complete",
+    "CBMDPetriCapacity.SNet.ordEnabled_mono",
+    "CBMDPetriCapacity.SNet.capDead_max",
+    "CBMDPetriCapacity.SNet.preserves_iff_greatest_ordDead",
+    "CBMDPetriCapacity.SNet.capped_ge_of_bad",
+    "CBMDPetriCapacity.SNet.preserves_iff_capped_ordDead",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

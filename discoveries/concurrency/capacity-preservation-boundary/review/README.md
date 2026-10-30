@@ -12,18 +12,20 @@ the queries used. It changed the framing of this dossier in three ways:
   complemented net — standard objects, for which no novelty is claimed;
 - the coNP-completeness of revision 0.4.0 is **not** comparable to the
   PSPACE-completeness of deadlock for 1-safe nets, because that problem
-  quantifies over reachable markings and this one does not.
+  quantifies over reachable markings and this one does not;
+- for unit-weight single-output conservative nets, the characterization of
+  revision 0.3.0 is **known** in the queueing-with-blocking literature as a
+  cycle of full buffers. That search was run on the second pass and it landed.
 
 What the search did not settle, and what is still owed:
 
-- whether the reachability-free exact **iff** is folklore. Every formulation
-  located quantifies over reachable markings and gives an implication plus a
-  sufficient condition, never an equivalence. A specialist would likely settle
-  this in a sentence.
-- a targeted search on capacities over **state machines** — one input and one
-  output per transition — which is exactly the subclass revision 0.3.0
-  characterizes. None was located. This is the highest-value next query and
-  may close that question in the negative.
+- whether the queueing-with-blocking line also covers non-conservative
+  networks. The state-machine query was run and landed: for unit-weight,
+  single-output, **conservative** nets the obstruction is known as a cycle of
+  full buffers, with an exact deadlock-freedom iff (Liebeherr and Akyildiz).
+  That closes revision 0.3.0's novelty question largely in the negative, and
+  is recorded in [`PRIOR_ART.md`](PRIOR_ART.md). The papers found are framed
+  around closed networks; whether the line extends to drains is open.
 - direct comparison against the 3-SAT reduction of Yamauchi and Watanabe 1999,
   whose full text was not obtained.
 
