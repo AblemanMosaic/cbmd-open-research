@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.7.0 | The last prose step compiled: each lowering strictly drops the total token count, so the procedure halts and a certified greatest marking always exists. |
 | 0.6.0 | The polynomial side is about input places alone. With one input place the capacity-dead markings are closed under pointwise maximum, so one marking decides preservation; outputs and weights are free. |
 | 0.5.0 | The polynomial side extended from unit weights to arbitrary weights. The obstruction carries levels, not membership, because the unit-weight normalization genuinely breaks. |
 | 0.4.0 | The open question answered: a dichotomy at two input places. One input place is polynomial and characterized; two is coNP-complete, already at unit weights and 0/1 capacities. |

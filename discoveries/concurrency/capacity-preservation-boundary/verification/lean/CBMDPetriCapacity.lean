@@ -2,3 +2,4 @@ import CBMDPetriCapacity.Core
 import CBMDPetriCapacity.Flow
 import CBMDPetriCapacity.WeightedFlow
 import CBMDPetriCapacity.SingleInput
+import CBMDPetriCapacity.Termination

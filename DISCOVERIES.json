@@ -147,7 +147,7 @@
    "path": "discoveries/concurrency/capacity-preservation-boundary",
    "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Compile the termination of the lowering iteration, the one prose step left on the proved side; and settle whether the queueing-with-blocking line covers non-conservative networks. The state-machine prior-art query has been run and is recorded. The coNP-completeness statement remains a written argument with only its reduction machine checked.",
+   "next_obligation": "Settle whether the queueing-with-blocking line covers non-conservative networks, and obtain external review. The proved side is now compiled end to end for the single-input case; the coNP-completeness statement remains a written argument with only its reduction machine checked.",
    "promotion_blockers": [
     "novelty and prior-art assessment open",
     "external review open",

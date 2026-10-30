@@ -128,6 +128,14 @@ This supersedes the *procedure* of revision 0.5.0 — one downward fixpoint in
 place of one upward fixpoint per transition, over a wider class — while its
 characterization below stands as the statement of what a failure looks like.
 
+Revision 0.7.0 compiles the last prose step. Each lowering strictly drops the
+total token count, so the iteration halts and a certified greatest marking
+always exists; `preserves_decided_by_lowering` states the whole single-input
+case in one theorem. Compiling it exposed a hypothesis that had been implicit
+— that each transition really does consume from the place named as its input
+— which the structure had never required. See
+[`revisions/0.7.0-termination.md`](revisions/0.7.0-termination.md).
+
 ## Weights: the obstruction carries levels (revision 0.5.0)
 
 The unit-weight proof above does not survive weights, and not for a technical

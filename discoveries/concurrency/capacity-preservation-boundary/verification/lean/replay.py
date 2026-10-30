@@ -41,6 +41,11 @@ TARGETS = [
     "CBMDPetriCapacity.SNet.preserves_iff_greatest_ordDead",
     "CBMDPetriCapacity.SNet.capped_ge_of_bad",
     "CBMDPetriCapacity.SNet.preserves_iff_capped_ordDead",
+    "CBMDPetriCapacity.SNet.total_lt",
+    "CBMDPetriCapacity.SNet.lower_le",
+    "CBMDPetriCapacity.SNet.lower_lt",
+    "CBMDPetriCapacity.SNet.exists_capped_capDead",
+    "CBMDPetriCapacity.SNet.preserves_decided_by_lowering",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.
