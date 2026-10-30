@@ -9,7 +9,7 @@ import json, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import petri2, boundary, general, allfull, flow
+import petri2, boundary, general, allfull, flow, hardness
 
 def main() -> int:
     translation = petri2.run(2, 2, 2, 3)
@@ -17,7 +17,11 @@ def main() -> int:
     gen = general.run(2, 2, 2, 2)
     af = allfull.run()
     fl = flow.run()
+    hd = hardness.run(trials=80)
     gates = []
+    for gate, ok in hd["gates"].items():
+        if not ok:
+            gates.append(f"hardness reduction gate failed: {gate}")
     for gate, ok in fl["gates"].items():
         if not ok:
             gates.append(f"flow characterization gate failed: {gate}")
@@ -51,6 +55,7 @@ def main() -> int:
            "generalized_conditions": gen,
            "allfull_obstruction": af,
            "flow_characterization": fl,
+           "hardness_reduction": hd,
            "content_gate_failures": gates,
            "status": "PASS" if not gates else "FAIL",
            "nonclaims": [
@@ -58,6 +63,7 @@ def main() -> int:
                "the chip-firing characterization itself is proved in CBMD-DYN-WEIGHTED-CAPACITY-001; this dossier only maps where it transfers",
                "no claim that NO local capacity condition can repair the multi-input case",
                "the all-full obstruction is proved in verification/lean/; the census here corroborates it and is not the proof",
+               "the coNP-completeness statement is a written argument; only the correctness of the reduction is machine checked",
            ],
            "authority_effect": "NONE"}
     print(json.dumps(out, indent=1))

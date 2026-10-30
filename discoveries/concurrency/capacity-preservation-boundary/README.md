@@ -1,4 +1,4 @@
-# Where the capacity-preservation characterization transfers, and where it stops
+# Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two
 
 > **Pipeline stage:** `REVIEW_READY`
 >
@@ -92,6 +92,43 @@ four conditions is load-bearing, and the greatest-fixpoint decision procedure
 is checked against the proved existential form rather than assumed to match it.
 See [`revisions/0.3.0-flow-characterization.md`](revisions/0.3.0-flow-characterization.md).
 
+## The dichotomy (revision 0.4.0)
+
+Version 0.1.0 left this open: *whether some other local capacity condition
+repairs the multi-input case*, with the explicit non-claim that no
+impossibility was being asserted. It is now answered, and more sharply than
+"some other condition might work".
+
+| transitions have | status |
+|---|---|
+| at most one input place | characterized above; decidable by a greatest fixpoint in polynomial time |
+| two input places | **coNP-complete**, at unit weights and capacities in `{0,1}` |
+
+Membership is easy: the complement — *does a bad marking exist* — is in NP,
+since an admissible marking is polynomial-sized even with binary capacities
+and both halves of "bad" are checked in `O(PT)`.
+
+Hardness uses the two ways a transition can fail to be capacity enabled. With
+unit weights and capacities in `{0,1}`, *"some place holds less than the
+transition consumes"* reads as a negative literal and costs an input place,
+while *"firing would overflow some place"* reads as a positive literal and
+costs none. One transition per clause, inputs on its negative literals and
+outputs on its positive ones, is blocked exactly when the clause is satisfied.
+A guard construction keeps every transition fed while holding the negative
+literals per clause to two, so every transition has one or two input places.
+
+So the structural boundary this dossier found by census and the boundary of
+tractability are the same boundary — which the mechanism already suggested:
+a multi-input transition is enabled by a conjunction, and conjunctions are what
+turn a reachability question into a satisfiability one.
+
+This is a **written argument**, not a compiled theorem; formalizing it needs a
+model of computation, which is a different artifact from the Lean in this
+dossier. What is machine-checked is the reduction: 240 instances, 240
+agreements, zero disagreements, 171 satisfiable against 69 unsatisfiable, every
+transition carrying one or two input places. See
+[`revisions/0.4.0-hardness-dichotomy.md`](revisions/0.4.0-hardness-dichotomy.md).
+
 ## The mechanism
 
 The descent argument certifies one place at a time: this receiver is full, so it
@@ -104,8 +141,9 @@ not enabled because its other input is short.
 
 ## What remains unresolved
 
-- Whether **some** local capacity condition repairs the multi-input case. Only
-  the natural one is refuted here, with witnesses; no impossibility is claimed.
+- A formal proof of the complexity statement. coNP-completeness is argued in
+  prose with a machine-checked reduction; it is not compiled.
+- Whether the polynomial one-input case extends to weighted arcs.
 - Novelty. The nearest named notions are implicit places and non-blockingness of
   bounded nets; neither is this statement. See [`review/README.md`](review/README.md).
 - Weighted flow and multi-input transitions. The obstruction condition of

@@ -145,12 +145,13 @@
    "field": "concurrency",
    "slug": "capacity-preservation-boundary",
    "path": "discoveries/concurrency/capacity-preservation-boundary",
-   "title": "Where the capacity-preservation characterization transfers, and where it stops",
+   "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Settle the draining regime left open by the all-full obstruction, and decide whether any local per-place capacity condition is sound for multi-input transitions, or record an impossibility; and run a targeted prior-art comparison against structural conditions in the bounded-Petri-net literature.",
+   "next_obligation": "Settle whether the polynomial one-input characterization extends to weighted arcs, and obtain a targeted prior-art comparison against structural and complexity results for bounded Petri nets; the coNP-completeness statement remains a written argument with only its reduction machine checked.",
    "promotion_blockers": [
     "novelty and prior-art assessment open",
-    "external review open"
+    "external review open",
+    "the complexity statement is a written argument, not a compiled theorem"
    ],
    "status": [
     "PROVISIONAL_WRITTEN_ARGUMENT",

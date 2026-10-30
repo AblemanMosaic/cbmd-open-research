@@ -206,3 +206,66 @@ The smallest witness is three movers `0 → 1` with capacities `(0, 0, 1)`, wher
 Specializing: with no drains and all capacities positive, this is the live-set
 obstruction of `CBMD-DYN-WEIGHTED-CAPACITY-001`; taking `S` to be every place
 recovers the all-full obstruction of the previous section.
+
+## Where the boundary becomes a complexity boundary
+
+The previous two sections are theorems about nets whose transitions have one
+input place. The census of version 0.1.0 found that the characterization breaks
+at two. The two facts are the same fact.
+
+**Membership.** `PRESERVES(N, C)` asserts that no admissible marking is both
+capacity-dead and ordinarily enabled. The complement is in NP: an admissible
+marking is bounded by `C`, so it has polynomial size even with capacities
+written in binary, and both halves of "bad" are checked in `O(PT)` arithmetic
+operations. Hence preservation is in coNP.
+
+**Hardness.** A transition fails to be capacity enabled in exactly two ways:
+
+```
+(A)  some q has  m(q) < pre(t,q)
+(B)  some q has  m(q) - pre(t,q) + post(t,q) > C(q)
+```
+
+Take unit weights and capacities in `{0,1}`. Then (A) with `pre(t,q) = 1` says
+`q` is false — a negative literal, and an input place — while (B) with
+`pre(t,q) = 0`, `post(t,q) = 1`, `C(q) = 1` says `q` is true — a positive
+literal, and no input place. One transition per clause, consuming from the
+places of its negative literals and producing into the places of its positive
+ones, is therefore blocked precisely when its clause is satisfied, and it has
+as many input places as the clause has negative literals.
+
+The other half of a bad marking, that something is ordinarily enabled, is
+supplied by one transition per atom place: it consumes from that place and
+produces into a place of capacity zero, so it is blocked always and ordinarily
+enabled exactly when the atom holds a token.
+
+Requiring every transition to have an input place — this dossier's census
+generator excludes input-free transitions, so the reduction should not need
+them — forces every clause to carry a negative literal, and such a CNF is
+always satisfied by the all-false assignment. The reduction therefore targets
+
+> given a CNF in which every clause has at least one negative literal, is there
+> a model that is not all-false?
+
+which is what the construction asks. Given an arbitrary CNF over `x₁..xₙ`,
+introduce complements `x̄ᵢ` and a guard `g`:
+
+```
+(¬xᵢ ∨ ¬x̄ᵢ)                      (¬xᵢ ∨ g)        (¬x̄ᵢ ∨ g)
+(xᵢ ∨ x̄ᵢ ∨ ¬g)                   each original clause with ¬xᵢ as x̄ᵢ, then ∨ ¬g
+```
+
+A model that is not all-false must make `g` true, since otherwise the guard
+clauses force every atom false. With `g` true the first two families make each
+pair one-hot, giving a total assignment, and the rewritten clauses say it
+satisfies the original formula; the converse is immediate. No clause has more
+than two negative literals and none has fewer than one, so every transition has
+one or two input places.
+
+So deciding preservation is coNP-complete already at two input places, unit
+weights and `{0,1}` capacities — and polynomial at one, by the fixpoint of the
+preceding section. No polynomial-time condition, local or otherwise, is exact
+for multi-input transitions unless `P = NP`.
+
+This is a written argument. Unlike the two preceding sections it is not
+compiled; what is machine-checked is the correctness of the reduction.
