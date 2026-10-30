@@ -207,3 +207,22 @@ What this dossier can claim without qualification is the **form** of the
 evidence: compiled proofs with recorded axiom dependencies, procedures that
 emit certificates a separate checker validates, and ablations showing each
 condition is load-bearing.
+
+## Added 2026-10-30: the nearest unchecked work
+
+A further search found a paper devoted exactly to the semantics of capacities:
+
+> Raymond Devillers, *The Semantics of Capacities in P/T Nets*, Advances in
+> Petri Nets 1989, LNCS 424, Springer 1990, pp. 128–150.
+> <https://www2.informatik.uni-hamburg.de/TGI/pnbib/d/devillers_r15.html>
+
+The catalogue abstract describes a comparison of candidate firing rules for
+nets with capacities, from several viewpoints (external, internal,
+place-complementation, concurrency, process semantics, expressive power). It
+concludes that the behaviours can differ considerably while the main rules have
+essentially the same expressive power. It does not mention terminal states,
+dead markings or a condition under which two rules agree. **The full text was not
+obtained.** It is the most likely place for a statement close to this dossier's,
+and should be read before any novelty claim. Queries that found nothing new:
+abelian networks with finite capacity (Bond–Levine halting theory, which has no
+capacity blocking); sandpile models with maximum site capacity.
