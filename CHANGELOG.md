@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+- Added the weighted-transfer capacity-blocked chip-firing dossier
+  (`CBMD-DYN-WEIGHTED-CAPACITY-001`), resolving the named open successor of the
+  finite-capacity result with a compiled Lean 4.35.0 transfer theorem, exact
+  enumeration at the bound, a separately implemented conclusion check, and a
+  sharpness sweep.
+- Recorded that confluence and transfer are not equivalent for capacity-blocked
+  systems: the smallest failure at `C(v) = d(v)` is confluent with a single
+  wrong normal form, so confluence-only searches understate failure by roughly
+  fifty times in the sampled boxes.
+- Added a Lean receipt that records actual `#print axioms` output rather than a
+  manifest-level allowlist.
+
 - Added the review-ready finite-capacity chip-firing dossier with a concrete
   Lean 4.35.0 theorem, independently reproduced 420,840-state finite box, and
   sharp cyclic and parallel-transfer adverse witnesses.

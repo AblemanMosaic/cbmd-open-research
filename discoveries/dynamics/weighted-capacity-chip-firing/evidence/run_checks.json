@@ -1,0 +1,494 @@
+{
+ "schema": "cbmd.weighted-capacity-chipfiring-checks.v1",
+ "status": "PASS",
+ "content_gate_failures": [],
+ "checks": [
+  {
+   "id": "WEIGHTED_FINITE_SEARCH",
+   "command": [
+    "/usr/local/bin/python3",
+    "-I",
+    "-B",
+    "/home/claude/ablemanmosaic/cbmd-open-research/discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/search_bound.py",
+    "--n",
+    "3",
+    "--mult",
+    "2",
+    "--sink",
+    "1",
+    "--extra",
+    "0"
+   ],
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.weighted-chipfiring-search.v3",
+    "transfer_control_C_eq_d": {
+     "note": "systems at C=d whose capacity-terminal set is not the ordinary normal form; strictly more sensitive than nonconfluence",
+     "failing_systems": 66,
+     "smallest": [
+      {
+       "n": 2,
+       "arcs": [
+        [
+         0,
+         2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        0,
+        1
+       ],
+       "outdeg": [
+        2,
+        1
+       ],
+       "maxin": [
+        0,
+        2
+       ],
+       "capacity": [
+        2,
+        1
+       ],
+       "initial": [
+        2,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         2,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1
+      },
+      {
+       "n": 2,
+       "arcs": [
+        [
+         0,
+         2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        1
+       ],
+       "outdeg": [
+        3,
+        1
+       ],
+       "maxin": [
+        0,
+        2
+       ],
+       "capacity": [
+        3,
+        1
+       ],
+       "initial": [
+        3,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         3,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1
+      },
+      {
+       "n": 3,
+       "arcs": [
+        [
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         2
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0,
+        1
+       ],
+       "outdeg": [
+        1,
+        2,
+        1
+       ],
+       "maxin": [
+        0,
+        0,
+        2
+       ],
+       "capacity": [
+        1,
+        2,
+        1
+       ],
+       "initial": [
+        0,
+        2,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         0,
+         2,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1
+      }
+     ]
+    },
+    "positive_control_C_eq_d": {
+     "stats": {
+      "graphs": 91,
+      "systems": 91
+     },
+     "nonconfluent_systems": 0,
+     "smallest": []
+    },
+    "candidate_bound": {
+     "formula": "C(v) >= d(v) + max(0, max_u m(u,v) - 1)",
+     "stats": {
+      "graphs": 91,
+      "systems": 91,
+      "initials_skipped": 0
+     },
+     "nonconfluent_systems": 0,
+     "witnesses": []
+    },
+    "transfer_sharpness_one_receiver_lowered": {
+     "failing_systems": 84,
+     "smallest": [
+      {
+       "n": 2,
+       "arcs": [
+        [
+         0,
+         2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        0,
+        1
+       ],
+       "outdeg": [
+        2,
+        1
+       ],
+       "maxin": [
+        0,
+        2
+       ],
+       "capacity": [
+        2,
+        1
+       ],
+       "initial": [
+        2,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         2,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1,
+       "lowered_at": 1
+      },
+      {
+       "n": 2,
+       "arcs": [
+        [
+         0,
+         2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        1
+       ],
+       "outdeg": [
+        3,
+        1
+       ],
+       "maxin": [
+        0,
+        2
+       ],
+       "capacity": [
+        3,
+        1
+       ],
+       "initial": [
+        3,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         3,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1,
+       "lowered_at": 1
+      },
+      {
+       "n": 3,
+       "arcs": [
+        [
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         2
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0,
+        1
+       ],
+       "outdeg": [
+        1,
+        2,
+        1
+       ],
+       "maxin": [
+        0,
+        0,
+        2
+       ],
+       "capacity": [
+        1,
+        2,
+        1
+       ],
+       "initial": [
+        0,
+        2,
+        0
+       ],
+       "ordinary_normal": [
+        0,
+        0,
+        0
+       ],
+       "capacity_terminals": [
+        [
+         0,
+         2,
+         0
+        ]
+       ],
+       "distinct_normal_forms": 1,
+       "lowered_at": 2
+      }
+     ]
+    },
+    "sharpness_one_receiver_lowered": {
+     "stats": {
+      "systems": 84
+     },
+     "nonconfluent_systems": 0,
+     "smallest": []
+    },
+    "box": {
+     "max_n": 3,
+     "max_multiplicity": 2,
+     "max_sink_multiplicity": 1,
+     "capacity_extra": 0
+    }
+   }
+  },
+  {
+   "id": "WEIGHTED_INDEPENDENT_CHECK",
+   "command": [
+    "/usr/local/bin/python3",
+    "-I",
+    "-B",
+    "/home/claude/ablemanmosaic/cbmd-open-research/discoveries/dynamics/weighted-capacity-chip-firing/verification/independent/independent_check.py",
+    "3",
+    "2",
+    "1"
+   ],
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.weighted-transfer-independent-check.v1",
+    "box": {
+     "max_n": 3,
+     "max_multiplicity": 2,
+     "max_sink_multiplicity": 1
+    },
+    "at_bound": {
+     "systems": 91,
+     "initial_states": 2753,
+     "terminal_agreements": 2753,
+     "terminal_disagreements": 0,
+     "first_disagreement": null
+    },
+    "adverse_control_one_below_at_one_receiver": {
+     "systems": 84,
+     "initial_states": 2456,
+     "terminal_agreements": 1786,
+     "terminal_disagreements": 670,
+     "first_disagreement": {
+      "arcs": [
+       [
+        0,
+        2
+       ],
+       [
+        0,
+        0
+       ]
+      ],
+      "sink": [
+       0,
+       1
+      ],
+      "capacity": [
+       2,
+       1
+      ],
+      "initial": [
+       2,
+       0
+      ],
+      "capacity_terminal": [
+       2,
+       0
+      ],
+      "ordinary_normal": [
+       0,
+       0
+      ],
+      "lowered_at": 1
+     }
+    },
+    "status": "PASS"
+   }
+  },
+  {
+   "id": "WEIGHTED_LEAN_AUDIT",
+   "command": [
+    "/usr/local/bin/python3",
+    "-B",
+    "/home/claude/ablemanmosaic/cbmd-open-research/discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/replay.py",
+    "--audit-only"
+   ],
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "actual_axiom_dependencies_checked": false,
+    "allowed_axioms": [
+     "Classical.choice",
+     "Quot.sound",
+     "propext"
+    ],
+    "authority_effect": "NONE",
+    "dependencies": [],
+    "independent_verification": false,
+    "lean_recompiled": false,
+    "members": [
+     {
+      "bytes": 5248,
+      "path": "CBMDWeightedDynamics/Core.lean",
+      "sha256": "00f45407fec0c9c5aa09d4dab887580743448c5d401d52c3bfbdb94d84b705b9"
+     },
+     {
+      "bytes": 7726,
+      "path": "CBMDWeightedDynamics/Transfer.lean",
+      "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
+     },
+     {
+      "bytes": 70,
+      "path": "CBMDWeightedDynamics.lean",
+      "sha256": "40ce3a7501a1ad6cabfe54586ff971d65b76ba94c896c4f06197f1964fe81042"
+     }
+    ],
+    "no_escape": true,
+    "proof_escapes": [],
+    "schema": "cbmd.weighted-lean-audit.v1",
+    "status": "PASS",
+    "target_declarations": [
+     "CBMDWeightedDynamics.weighted_overflow_forces_unstable",
+     "CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable",
+     "CBMDWeightedDynamics.unit_case_capacity_admits",
+     "CBMDWeightedDynamics.capacity_step_is_ordinary_step",
+     "CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal",
+     "CBMDWeightedDynamics.weighted_transfer"
+    ],
+    "toolchain": "leanprover/lean4:v4.35.0"
+   }
+  }
+ ],
+ "nonclaims": [
+  "Lean recompilation is not performed by this script",
+  "finite enumeration corroborates the theorem and does not prove it",
+  "no external independent verification and no novelty determination"
+ ],
+ "authority_effect": "NONE"
+}

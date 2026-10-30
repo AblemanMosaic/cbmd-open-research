@@ -1,0 +1,789 @@
+{
+ "schema": "cbmd.weighted-chipfiring-search.v3",
+ "transfer_control_C_eq_d": {
+  "note": "systems at C=d whose capacity-terminal set is not the ordinary normal form; strictly more sensitive than nonconfluence",
+  "failing_systems": 4256,
+  "smallest": [
+   {
+    "n": 2,
+    "arcs": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1
+    ],
+    "outdeg": [
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     2
+    ],
+    "capacity": [
+     2,
+     1
+    ],
+    "initial": [
+     2,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      2,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1
+   },
+   {
+    "n": 2,
+    "arcs": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     1
+    ],
+    "outdeg": [
+     3,
+     1
+    ],
+    "maxin": [
+     0,
+     2
+    ],
+    "capacity": [
+     3,
+     1
+    ],
+    "initial": [
+     3,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      3,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1
+   },
+   {
+    "n": 3,
+    "arcs": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     2
+    ],
+    "capacity": [
+     1,
+     2,
+     1
+    ],
+    "initial": [
+     0,
+     2,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      0,
+      2,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1
+   }
+  ]
+ },
+ "positive_control_C_eq_d": {
+  "stats": {
+   "graphs": 4596,
+   "systems": 4596
+  },
+  "nonconfluent_systems": 160,
+  "smallest": [
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     1,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     1,
+     2,
+     1
+    ],
+    "initial": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "reachable": 3
+   },
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "outdeg": [
+     1,
+     1,
+     3,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     1,
+     3,
+     1
+    ],
+    "initial": [
+     1,
+     1,
+     2,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      1,
+      3,
+      0
+     ],
+     [
+      1,
+      0,
+      3,
+      0
+     ]
+    ],
+    "reachable": 3
+   },
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     2,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     2,
+     2,
+     1
+    ],
+    "initial": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      2,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "reachable": 3
+   }
+  ]
+ },
+ "candidate_bound": {
+  "formula": "C(v) >= d(v) + max(0, max_u m(u,v) - 1)",
+  "stats": {
+   "graphs": 4596,
+   "systems": 4596,
+   "initials_skipped": 0
+  },
+  "nonconfluent_systems": 0,
+  "witnesses": []
+ },
+ "transfer_sharpness_one_receiver_lowered": {
+  "failing_systems": 7544,
+  "smallest": [
+   {
+    "n": 2,
+    "arcs": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1
+    ],
+    "outdeg": [
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     2
+    ],
+    "capacity": [
+     2,
+     1
+    ],
+    "initial": [
+     2,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      2,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1,
+    "lowered_at": 1
+   },
+   {
+    "n": 2,
+    "arcs": [
+     [
+      0,
+      2
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     1
+    ],
+    "outdeg": [
+     3,
+     1
+    ],
+    "maxin": [
+     0,
+     2
+    ],
+    "capacity": [
+     3,
+     1
+    ],
+    "initial": [
+     3,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      3,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1,
+    "lowered_at": 1
+   },
+   {
+    "n": 3,
+    "arcs": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     2
+    ],
+    "capacity": [
+     1,
+     2,
+     1
+    ],
+    "initial": [
+     0,
+     2,
+     0
+    ],
+    "ordinary_normal": [
+     0,
+     0,
+     0
+    ],
+    "capacity_terminals": [
+     [
+      0,
+      2,
+      0
+     ]
+    ],
+    "distinct_normal_forms": 1,
+    "lowered_at": 2
+   }
+  ]
+ },
+ "sharpness_one_receiver_lowered": {
+  "stats": {
+   "systems": 7544
+  },
+  "nonconfluent_systems": 380,
+  "smallest": [
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     1,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     1,
+     2,
+     1
+    ],
+    "initial": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      1,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "reachable": 3,
+    "lowered_at": 3
+   },
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "outdeg": [
+     1,
+     1,
+     3,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     1,
+     3,
+     1
+    ],
+    "initial": [
+     1,
+     1,
+     2,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      1,
+      3,
+      0
+     ],
+     [
+      1,
+      0,
+      3,
+      0
+     ]
+    ],
+    "reachable": 3,
+    "lowered_at": 3
+   },
+   {
+    "n": 4,
+    "arcs": [
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      1,
+      0
+     ],
+     [
+      0,
+      0,
+      0,
+      2
+     ],
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     2,
+     2,
+     1
+    ],
+    "maxin": [
+     0,
+     0,
+     1,
+     2
+    ],
+    "capacity": [
+     1,
+     2,
+     2,
+     1
+    ],
+    "initial": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "normal_forms": [
+     [
+      0,
+      2,
+      2,
+      0
+     ],
+     [
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "reachable": 3,
+    "lowered_at": 3
+   }
+  ]
+ },
+ "box": {
+  "max_n": 4,
+  "max_multiplicity": 2,
+  "max_sink_multiplicity": 1,
+  "capacity_extra": 0
+ }
+}

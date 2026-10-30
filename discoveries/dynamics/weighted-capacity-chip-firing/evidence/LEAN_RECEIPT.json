@@ -1,0 +1,52 @@
+{
+ "actual_axiom_dependencies_checked": true,
+ "allowed_axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "authority_effect": "NONE",
+ "axiom_report": "'CBMDWeightedDynamics.weighted_overflow_forces_unstable' depends on axioms: [propext]\n'CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.unit_case_capacity_admits' does not depend on any axioms\n'CBMDWeightedDynamics.capacity_step_is_ordinary_step' does not depend on any axioms\n'CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.weighted_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axioms_observed": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "axioms_within_allowlist": true,
+ "build_status": "PASS",
+ "build_stderr_tail": "info: CBMDWeightedDynamics: no previous manifest, creating one from scratch\ninfo: toolchain not updated; already up-to-date\n",
+ "dependencies": [],
+ "independent_verification": false,
+ "lean_recompiled": true,
+ "members": [
+  {
+   "bytes": 5248,
+   "path": "CBMDWeightedDynamics/Core.lean",
+   "sha256": "00f45407fec0c9c5aa09d4dab887580743448c5d401d52c3bfbdb94d84b705b9"
+  },
+  {
+   "bytes": 7726,
+   "path": "CBMDWeightedDynamics/Transfer.lean",
+   "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
+  },
+  {
+   "bytes": 70,
+   "path": "CBMDWeightedDynamics.lean",
+   "sha256": "40ce3a7501a1ad6cabfe54586ff971d65b76ba94c896c4f06197f1964fe81042"
+  }
+ ],
+ "no_escape": true,
+ "proof_escapes": [],
+ "schema": "cbmd.weighted-lean-audit.v1",
+ "some_target_axiom_free": true,
+ "status": "PASS",
+ "target_declarations": [
+  "CBMDWeightedDynamics.weighted_overflow_forces_unstable",
+  "CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable",
+  "CBMDWeightedDynamics.unit_case_capacity_admits",
+  "CBMDWeightedDynamics.capacity_step_is_ordinary_step",
+  "CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal",
+  "CBMDWeightedDynamics.weighted_transfer"
+ ],
+ "toolchain": "leanprover/lean4:v4.35.0"
+}

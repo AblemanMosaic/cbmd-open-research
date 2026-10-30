@@ -1,0 +1,55 @@
+{
+ "schema": "cbmd.weighted-transfer-independent-check.v1",
+ "box": {
+  "max_n": 3,
+  "max_multiplicity": 3,
+  "max_sink_multiplicity": 2
+ },
+ "at_bound": {
+  "systems": 1058,
+  "initial_states": 96053,
+  "terminal_agreements": 96053,
+  "terminal_disagreements": 0,
+  "first_disagreement": null
+ },
+ "adverse_control_one_below_at_one_receiver": {
+  "systems": 1344,
+  "initial_states": 118893,
+  "terminal_agreements": 101301,
+  "terminal_disagreements": 17682,
+  "first_disagreement": {
+   "arcs": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "sink": [
+    0,
+    1
+   ],
+   "capacity": [
+    2,
+    1
+   ],
+   "initial": [
+    2,
+    0
+   ],
+   "capacity_terminal": [
+    2,
+    0
+   ],
+   "ordinary_normal": [
+    0,
+    0
+   ],
+   "lowered_at": 1
+  }
+ },
+ "status": "PASS"
+}

@@ -1,0 +1,6 @@
+name = "CBMDWeightedDynamics"
+version = "0.1.0"
+defaultTargets = ["CBMDWeightedDynamics"]
+
+[[lean_lib]]
+name = "CBMDWeightedDynamics"
