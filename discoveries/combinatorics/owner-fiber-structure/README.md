@@ -49,7 +49,12 @@ so the block structure is load-bearing. See
 [`revisions/0.6.0-packed-reference-census.md`](revisions/0.6.0-packed-reference-census.md).
 
 What is still missing is a *compiled* binding to the exact packed source
-definitions.
+definitions. One piece of it already exists in this repository's native
+proof package: `entry_eq_zero_of_not_inOrbit` compiles the amplitude half of
+the support-in-orbit hypothesis for the native source entry. The row-level
+step, the binding of this dossier's model to the native one, and coherence do
+not. See
+[`revisions/0.7.0-native-counterpart-located.md`](revisions/0.7.0-native-counterpart-located.md).
 
 ## Next obligation
 

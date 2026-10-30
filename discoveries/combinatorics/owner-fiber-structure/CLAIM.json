@@ -4,7 +4,7 @@
  "title": "Owner-fiber structure and support",
  "field": "combinatorics",
  "slug": "owner-fiber-structure",
- "public_version": "0.6.0",
+ "public_version": "0.7.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
@@ -28,7 +28,7 @@
   "Against the frozen packed reference with two or three blocks (revision 0.6.0): no unique-contributor violation over 21,144 queries, the literal and candidate routes agree on every query, no class-count violation over 8,226 target sums (attained 1,051 times), every packed branch exercised, and both controls fail: cross-block comparison gives 4,123 violations and an incoherent incidence gives 22."
  ],
  "unresolved": [
-  "formal correspondence to the exact packed source definitions",
+  "formal correspondence to the exact packed source definitions; the amplitude half of support-in-orbit is compiled natively (entry_eq_zero_of_not_inOrbit in proofs/native), while the row-level step, the model binding and coherence are not",
   "source-bound formal proof",
   "targeted novelty comparison",
   "multi-block packing is censused against the Python packed reference (revision 0.6.0) but not compiled"

@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.7.0 | The amplitude half of the support-in-orbit hypothesis located as already compiled in the native package (entry_eq_zero_of_not_inOrbit); the row-level step, the model binding and coherence remain uncompiled. No status change. |
 | 0.6.0 | Both claims checked against the frozen packed reference on multi-block layouts, with every packed branch exercised and two controls that must fail; census, not compiled. |
 | 0.5.0 | SOURCE_BOUND_COMPILED withdrawn: the compiled theorems are against an abstract model with support-in-orbit as a hypothesis, not against the declared source definitions. |
 | 0.4.0 | The class-count bound compiled as the injectivity it rests on: for a fixed owner each orbit class holds at most one column. |
