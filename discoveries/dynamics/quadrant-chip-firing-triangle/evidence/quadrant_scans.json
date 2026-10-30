@@ -1,0 +1,266 @@
+{
+ "schema": "cbmd.quadrant.scans.v1",
+ "tool": "quadscan.c (exact uint64 row recursion; window re-anchored each row)",
+ "reading": "bottom triangle = maximal final run of rows whose lengths drop by exactly 1 per row; length = number of nonzero F entries",
+ "powers_of_two": {
+  "n_max": 34,
+  "rows": [
+   {
+    "n": 0,
+    "rows": 1,
+    "longest": 1,
+    "bottom_triangle_rows": 1,
+    "holds": null
+   },
+   {
+    "n": 1,
+    "rows": 2,
+    "longest": 2,
+    "bottom_triangle_rows": 1,
+    "holds": true
+   },
+   {
+    "n": 2,
+    "rows": 4,
+    "longest": 3,
+    "bottom_triangle_rows": 2,
+    "holds": true
+   },
+   {
+    "n": 3,
+    "rows": 6,
+    "longest": 4,
+    "bottom_triangle_rows": 3,
+    "holds": true
+   },
+   {
+    "n": 4,
+    "rows": 10,
+    "longest": 5,
+    "bottom_triangle_rows": 4,
+    "holds": true
+   },
+   {
+    "n": 5,
+    "rows": 16,
+    "longest": 6,
+    "bottom_triangle_rows": 5,
+    "holds": true
+   },
+   {
+    "n": 6,
+    "rows": 24,
+    "longest": 7,
+    "bottom_triangle_rows": 6,
+    "holds": true
+   },
+   {
+    "n": 7,
+    "rows": 38,
+    "longest": 8,
+    "bottom_triangle_rows": 7,
+    "holds": true
+   },
+   {
+    "n": 8,
+    "rows": 60,
+    "longest": 10,
+    "bottom_triangle_rows": 9,
+    "holds": true
+   },
+   {
+    "n": 9,
+    "rows": 92,
+    "longest": 13,
+    "bottom_triangle_rows": 12,
+    "holds": true
+   },
+   {
+    "n": 10,
+    "rows": 144,
+    "longest": 15,
+    "bottom_triangle_rows": 14,
+    "holds": true
+   },
+   {
+    "n": 11,
+    "rows": 226,
+    "longest": 19,
+    "bottom_triangle_rows": 18,
+    "holds": true
+   },
+   {
+    "n": 12,
+    "rows": 362,
+    "longest": 24,
+    "bottom_triangle_rows": 23,
+    "holds": true
+   },
+   {
+    "n": 13,
+    "rows": 570,
+    "longest": 30,
+    "bottom_triangle_rows": 29,
+    "holds": true
+   },
+   {
+    "n": 14,
+    "rows": 906,
+    "longest": 37,
+    "bottom_triangle_rows": 36,
+    "holds": true
+   },
+   {
+    "n": 15,
+    "rows": 1430,
+    "longest": 46,
+    "bottom_triangle_rows": 45,
+    "holds": true
+   },
+   {
+    "n": 16,
+    "rows": 2272,
+    "longest": 58,
+    "bottom_triangle_rows": 57,
+    "holds": true
+   },
+   {
+    "n": 17,
+    "rows": 3600,
+    "longest": 73,
+    "bottom_triangle_rows": 72,
+    "holds": true
+   },
+   {
+    "n": 18,
+    "rows": 5710,
+    "longest": 92,
+    "bottom_triangle_rows": 91,
+    "holds": true
+   },
+   {
+    "n": 19,
+    "rows": 9072,
+    "longest": 115,
+    "bottom_triangle_rows": 114,
+    "holds": true
+   },
+   {
+    "n": 20,
+    "rows": 14390,
+    "longest": 145,
+    "bottom_triangle_rows": 144,
+    "holds": true
+   },
+   {
+    "n": 21,
+    "rows": 22838,
+    "longest": 182,
+    "bottom_triangle_rows": 181,
+    "holds": true
+   },
+   {
+    "n": 22,
+    "rows": 36254,
+    "longest": 229,
+    "bottom_triangle_rows": 228,
+    "holds": true
+   },
+   {
+    "n": 23,
+    "rows": 57562,
+    "longest": 288,
+    "bottom_triangle_rows": 287,
+    "holds": true
+   },
+   {
+    "n": 24,
+    "rows": 91354,
+    "longest": 363,
+    "bottom_triangle_rows": 362,
+    "holds": true
+   },
+   {
+    "n": 25,
+    "rows": 145028,
+    "longest": 457,
+    "bottom_triangle_rows": 456,
+    "holds": true
+   },
+   {
+    "n": 26,
+    "rows": 230102,
+    "longest": 575,
+    "bottom_triangle_rows": 574,
+    "holds": true
+   },
+   {
+    "n": 27,
+    "rows": 365296,
+    "longest": 725,
+    "bottom_triangle_rows": 724,
+    "holds": true
+   },
+   {
+    "n": 28,
+    "rows": 579822,
+    "longest": 913,
+    "bottom_triangle_rows": 912,
+    "holds": true
+   },
+   {
+    "n": 29,
+    "rows": 920430,
+    "longest": 1150,
+    "bottom_triangle_rows": 1149,
+    "holds": true
+   },
+   {
+    "n": 30,
+    "rows": 1460994,
+    "longest": 1448,
+    "bottom_triangle_rows": 1447,
+    "holds": true
+   },
+   {
+    "n": 31,
+    "rows": 2319002,
+    "longest": 1824,
+    "bottom_triangle_rows": 1823,
+    "holds": true
+   },
+   {
+    "n": 32,
+    "rows": 3681214,
+    "longest": 2298,
+    "bottom_triangle_rows": 2297,
+    "holds": true
+   },
+   {
+    "n": 33,
+    "rows": 5843546,
+    "longest": 2896,
+    "bottom_triangle_rows": 2895,
+    "holds": true
+   },
+   {
+    "n": 34,
+    "rows": 9276188,
+    "longest": 3648,
+    "bottom_triangle_rows": 3647,
+    "holds": true
+   }
+  ],
+  "failures": 0,
+  "checks": "Conjecture 7.3, Prop 6.2 (|len step| = 1), no interior zeros, thin structure (S)"
+ },
+ "all_N": {
+  "N_min": 2,
+  "N_max": 300000,
+  "failures": 0,
+  "conjecture_fails": 0,
+  "step_violations": 0,
+  "interior_zeros": 0,
+  "thin_structure_fails": 0
+ }
+}

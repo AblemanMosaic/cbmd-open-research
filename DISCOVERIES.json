@@ -277,6 +277,22 @@
         "EXACT_MODEL_VERIFIED",
         "PROVISIONAL_WRITTEN_ARGUMENT"
       ]
+    },
+    {
+      "id": "CBMD-DYN-QUADRANT-TRIANGLE-001",
+      "field": "dynamics",
+      "slug": "quadrant-chip-firing-triangle",
+      "path": "discoveries/dynamics/quadrant-chip-firing-triangle",
+      "title": "Chip-firing on the quadrant: the bottom-triangle conjecture checked to 2^34 chips",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Prove the structure statement (S): the first thin row of F is a longest row entered by a length increase.",
+      "promotion_blockers": [
+        "evidence only for the conjecture; only the thin-row lemma is proved"
+      ],
+      "status": [
+        "CONJECTURE",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

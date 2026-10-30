@@ -1,0 +1,45 @@
+{
+ "schema": "cbmd.quadrant.check.v1",
+ "gates": {
+  "CALIBRATION": {
+   "pass": true,
+   "rows_n9": 92,
+   "alternating_stretch_n9": 59,
+   "T10": 38570
+  },
+  "CONJ_7_3_POWERS": {
+   "pass": true,
+   "n_range": [
+    1,
+    18
+   ],
+   "failures": []
+  },
+  "CONJ_7_3_ALL_N": {
+   "pass": true,
+   "N_range": [
+    2,
+    3000
+   ],
+   "failures": []
+  },
+  "THIN_LEMMA": {
+   "pass": true,
+   "random_rows": 20000,
+   "thin_rows_of_F_checked": 43163,
+   "no_zero_hypothesis_needed_control": true
+  },
+  "THIN_STRUCTURE": {
+   "pass": true,
+   "N_range": [
+    4,
+    3000
+   ],
+   "failures": []
+  },
+  "EVIDENCE_SUMMARY": {
+   "pass": true
+  }
+ },
+ "pass": true
+}

@@ -1,0 +1,40 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-DYN-QUADRANT-TRIANGLE-001",
+ "title": "Chip-firing on the quadrant: the bottom-triangle conjecture checked to 2^34 chips",
+ "field": "dynamics",
+ "slug": "quadrant-chip-firing-triangle",
+ "public_version": "0.1.0",
+ "status": [
+  "CONJECTURE",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "For chip-firing on the directed quadrant Z_{>=0}^2 from N chips at the origin (Inagaki-Khovanova-Luo, arXiv:2601.09125), the bottom triangle of the passing-chip array F (maximal final run of antidiagonal rows whose numbers of nonzero entries drop by exactly 1 per row) has exactly (longest row length) - 1 rows for N = 2^n, n <= 34 (their Conjecture 7.3, previously checked for n <= 12), and for every N with 2 <= N <= 300000. Proved: once a row of F is thin (k-th entry from the nearer end at most 2k + 1), every later row is thin and one entry shorter; the conjecture would follow from the observed statement that the first thin row is a longest row entered by a length increase and the last row has length 2.",
+ "resolves": "nothing; extends the evidence for IKL Conjecture 7.3 from n <= 12 to n <= 34 and to all chip counts N <= 300000",
+ "verified": [
+  "check_quadrant.py: calibration with IKL (92 rows at n = 9, T(10) = 38570, longest row 13 at n = 9); Conjecture 7.3 for n <= 18 and for all N <= 3000; the thin-row lemma on 20000 random thin rows and on every thin row of F for N <= 3000, with a control showing its no-zero hypothesis is needed; the structure (S) for N <= 3000 (pure Python).",
+  "quadscan.c: exact uint64 row recursion for N = 2^n, n <= 34, and every N <= 300000, checking the conjecture, IKL Prop 6.2 (lengths change by exactly 1), the absence of interior zeros and (S); zero failures (evidence/quadrant_scans.json)."
+ ],
+ "unresolved": [
+  "a proof of Conjecture 7.3 or of (S)",
+  "IKL's informal 'rectangle' count (57 rows at n = 9) versus our maximal alternating stretch (59 rows)"
+ ],
+ "nonclaims": [
+  "no proof of the conjecture is claimed",
+  "the reading of 'number of rows in the bottom triangle' as the maximal final run of length drops by 1 is ours; it reproduces the paper's n = 9 description",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "An N = 2^n whose final run of rows with unit length drops has a size different from (longest row length) - 1.",
+ "checks": [
+  {
+   "id": "QUADRANT_TRIANGLE_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/quadrant-chip-firing-triangle/verification/reference/check_quadrant.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}
