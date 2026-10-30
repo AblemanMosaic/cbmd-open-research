@@ -1,0 +1,32 @@
+{
+ "schema": "cbmd.residue-digit-criterion.v1",
+ "box": {
+  "A_max": 25,
+  "R_max": 14,
+  "delta_max": 30
+ },
+ "checked": 84630,
+ "agreements": 84630,
+ "DISAGREEMENTS": 0,
+ "zero_mod_3": 29927,
+ "nonzero_mod_3": 54703,
+ "carryless_automaton_wrong_on": 28195,
+ "modulus_mismatches": 0,
+ "defining_construction_checked": 240,
+ "defining_construction_disagreements": 0,
+ "largest_v3_observed": 10,
+ "samples": [],
+ "gates": {
+  "automaton_is_exact": true,
+  "both_residues_occur": true,
+  "carry_is_load_bearing": true,
+  "independent_of_the_modulus": true,
+  "closed_form_matches_the_defining_construction": true
+ },
+ "pass": true,
+ "nonclaims": [
+  "the criterion is for the residue mod 3, not for the valuation; v_3 is unbounded and so is not an automatic function with a finite output alphabet, and its 3-regularity is left open",
+  "a finite census over the stated box; the reduction is argued in prose and is not compiled"
+ ],
+ "authority_effect": "NONE"
+}

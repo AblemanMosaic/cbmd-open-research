@@ -70,3 +70,48 @@ opening one, and it is the reason no general valuation criterion is claimed.
 The inherited degree-six source fixture is not reproduced here; no native SAT
 consequence; no novelty determination. A residue-zero class is not a lifted-zero
 class, which is the entire point.
+
+## A digit criterion for the residue (revision 0.3.0)
+
+The recorded negative above rules out a fixed window of low base-three digits
+for `v_3`. It does not rule out a digit criterion with state, and for the
+residue one exists.
+
+Drop the 3-adic unit `2^(R-1)` and write the amplitude as
+
+```
+alpha(A, R, delta, f) = (-1)^A [y^d] (1+y)^N (1-y)^(-A),
+d = R - 1 - f,   N = A + R - delta.
+```
+
+Over `F_3`, `(1 ± y)^(3^m) = 1 ± y^(3^m)`, so for any `3^m > d` the series
+agrees up to degree `d` with the one whose exponent is reduced modulo `3^m`:
+
+```
+alpha ≡ (-1)^A [y^d] (1+y)^M (1-y)^B   (mod 3),
+M = N mod 3^m,   B = (-A) mod 3^m.
+```
+
+`M` and `B` are the **three-adic** expansions of `N` and `-A`, eventually all
+twos when the integer is negative. That is the first reason a window on the
+low digits of `A` and `N` as integers could not work: it was reading the wrong
+digit string.
+
+Lucas factors both exponents, so position `i` contributes `a_i` copies of
+`3^i` from the first product and `b_i` from the second, with `0 ≤ a_i ≤ M_i`
+and `0 ≤ b_i ≤ B_i`. Since `a_i + b_i ≤ 4`, matching the digits of `d` requires
+a carry in `{0, 1}`. Reading the digit triples `(M_i, B_i, d_i)` least
+significant first, with the carry as the whole state and the sign `(-1)^(b_i)`
+folded into the weight, computes `alpha mod 3` in two states. That is the
+second reason: a window reads digits in isolation, and this criterion needs
+information to propagate upward.
+
+Checked on 84,630 classes with no disagreement, with the carry shown to be
+load-bearing (28,195 wrong without it), with the exponent reduction controlled
+across two moduli, and with the closed form re-checked against the defining
+construction.
+
+The valuation is a different matter. `v_3` is unbounded — it reaches 10 inside
+the measured box — so it is not an automatic function with a finite output
+alphabet. Whether it is 3-regular in the transducer sense, as the carry count
+is on the central line, is open.

@@ -4,35 +4,41 @@
  "title": "Residue and lift transport boundaries",
  "field": "algebra",
  "slug": "residue-lift-transport-boundaries",
- "public_version": "0.2.0",
+ "public_version": "0.3.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
   "REVISED"
  ],
- "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity.",
+ "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity. Off the central line the residue of the amplitude modulo three is computed from the three-adic digit expansions of N and -A against the base-three digits of d by a two-state carry automaton; the earlier negative ruled out fixed windows of integer digits read without carries, not digit criteria as such.",
  "verified": [
   "The closed-form amplitude agrees with the defining Newton/parity construction on 2,597 instances, checked by a standard-library file importing nothing from the archive.",
   "Smallest off-diagonal class vanishing modulo three while nonzero over the integers: A=0, R=2, delta=5, f=0, amplitude -6, v_3 = 1.",
   "Census at native-like parameters: 120 of 385 classes at (A,R,Q)=(17,5,80), 269 of 604 at (15,8,80) and 24 of 150 at (7,4,40) are zero modulo three and nonzero over the integers, against 2, 4 and 2 genuinely zero.",
   "Positive control: on the central line delta = 2A+R with even d, v_3 of the amplitude equals the base-three carry count of d/2 and A-1 (Kummer), on 1,200 instances with no exceptions.",
-  "Recorded negative: off the central line v_3 is not a function of (A mod 3^t, N mod 3^t, d) for t = 2 or 3, with 3,967 and 1,144 conflicting points over 79,680; no bounded-depth low-digit criterion exists at these depths."
+  "Recorded negative: off the central line v_3 is not a function of (A mod 3^t, N mod 3^t, d) for t = 2 or 3, with 3,967 and 1,144 conflicting points over 79,680; no bounded-depth low-digit criterion exists at these depths.",
+  "A two-state carry automaton on three-adic digits reproduces the amplitude modulo three on 84,630 classes with zero disagreements, with 29,927 zero and 54,703 nonzero so neither residue is rare.",
+  "The carry is load-bearing: the same automaton with the carry deleted is wrong on 28,195 of those classes.",
+  "The exponent reduction is controlled rather than assumed: running the automaton at 3^m and at 3^(m+2) agrees in every case.",
+  "The closed form the automaton is derived from is re-checked against the defining Newton construction on 240 instances with no disagreements."
  ],
  "unresolved": [
   "extraction and independent replay of the inherited selected-degree-six source fixture",
-  "whether a full-digit base-three criterion exists off the central line",
   "independent source-correspondence check",
   "scope inside a produced native leaf",
-  "targeted novelty comparison"
+  "targeted novelty comparison",
+  "whether v_3 off the central line is 3-regular in the transducer sense; it is unbounded, reaching 10 in the measured box, so it is not an automatic function with a finite output alphabet"
  ],
  "nonclaims": [
   "not a fault in the upstream solver",
   "not a full produced-leaf realization",
   "not a native SAT correctness conclusion",
   "not a novelty determination",
-  "the amplitude-spectrum separation is extracted here; the inherited degree-six source fixture is not reproduced"
+  "the amplitude-spectrum separation is extracted here; the inherited degree-six source fixture is not reproduced",
+  "the digit criterion is for the residue modulo three, not for the valuation",
+  "the reduction over F_3 is argued in prose and checked by census; it is not compiled"
  ],
- "smallest_decisive_test": "Exhibit a bounded-depth base-three digit criterion for v_3 off the central line that survives the recorded conflict set, or reproduce the inherited degree-six fixture at residue and two lifted precisions with every ring, node, centre and amplitude parameter bound.",
+ "smallest_decisive_test": "Exhibit a class on which the two-state carry automaton disagrees with the amplitude modulo three; or exhibit a finite-state transducer computing v_3 off the central line, or prove none exists; or reproduce the inherited degree-six fixture at residue and two lifted precisions with every ring, node, centre and amplitude parameter bound.",
  "checks": [
   {
    "id": "RESIDUE_LIFT_SEPARATION",
@@ -40,6 +46,16 @@
     "python",
     "-B",
     "discoveries/algebra/residue-lift-transport-boundaries/verification/separation.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "RESIDUE_DIGIT_CRITERION",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/algebra/residue-lift-transport-boundaries/verification/digit_criterion.py"
    ],
    "required": true
   }

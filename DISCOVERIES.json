@@ -89,7 +89,7 @@
    "path": "discoveries/algebra/residue-lift-transport-boundaries",
    "title": "Residue and lift transport boundaries",
    "pipeline_stage": "QUALIFYING",
-   "next_obligation": "Extract and independently replay the inherited selected-degree-six source fixture at residue and two lifted precisions, and settle whether a full-digit base-three criterion exists off the central line.",
+   "next_obligation": "Extract and independently replay the inherited selected-degree-six source fixture at residue and two lifted precisions, binding every ring, node, centre, amplitude and source-row parameter; and settle whether v_3 off the central line is 3-regular in the transducer sense. The digit question for the residue is answered by a two-state carry automaton.",
    "promotion_blockers": [
     "inherited degree-six source fixture not yet extracted",
     "independent source-correspondence check open",

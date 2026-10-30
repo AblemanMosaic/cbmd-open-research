@@ -22,14 +22,26 @@ A positive control fixes the valuation on the central line by Kummer's theorem,
 and a **recorded negative** closes the obvious route: off that line `v_3` is not
 a function of the low base-three digits at depth 2 or 3.
 
+Revision 0.3.0 settles what that negative was about. Off the central line the
+**residue** is computed from digits after all, by a two-state carry automaton
+reading the *three-adic* expansions of `N` and `-A` against the base-three
+digits of `d` ([`revisions/0.3.0-digit-criterion.md`](revisions/0.3.0-digit-criterion.md)).
+A window on the low digits of `A` and `N` as integers was reading the wrong
+object — those expansions are eventually all twos when the integer is negative
+— and it had no way to propagate a carry. Deleting the carry from the
+automaton makes it wrong on 28,195 of 84,630 classes, which is what makes
+"carries, not more digits" the content rather than a detail. The valuation
+itself is unbounded and so is not an automatic function with a finite output
+alphabet; whether it is 3-regular is the sharper remaining question.
+
 The inherited selected-degree-six source fixture is still not reproduced.
 
 ## Next obligation
 
 Extract and independently replay the inherited degree-six fixture at residue and
 two lifted precisions, binding every ring, node, centre, amplitude and
-source-row parameter; and settle whether a full-digit criterion exists off the
-central line.
+source-row parameter; and settle whether `v_3` off the central line is
+3-regular in the transducer sense.
 
 ## Nonclaims
 
