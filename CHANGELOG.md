@@ -13,6 +13,10 @@
   fifty times in the sampled boxes.
 - Added a Lean receipt that records actual `#print axioms` output rather than a
   manifest-level allowlist.
+- Resolved cyclic graphs in the negative: a compiled cycle obstruction shows
+  preservation fails at every capacity with `C(v) >= d(v)` once a directed cycle
+  is present, and a forward ordering provably excludes that structure. The two
+  results partition the model.
 
 - Added the review-ready finite-capacity chip-firing dossier with a concrete
   Lean 4.35.0 theorem, independently reproduced 420,840-state finite box, and

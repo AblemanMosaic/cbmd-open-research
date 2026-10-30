@@ -1,2 +1,3 @@
 import CBMDWeightedDynamics.Core
 import CBMDWeightedDynamics.Transfer
+import CBMDWeightedDynamics.CycleObstruction

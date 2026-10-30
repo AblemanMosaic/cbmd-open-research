@@ -1,0 +1,9 @@
+{
+ "schema": "cbmd.cycle-obstruction-probe.v1",
+ "predicted_witness": {
+  "confirmed": 27440,
+  "refuted": 0,
+  "refutation_samples": []
+ },
+ "cyclic_systems_with_no_false_terminal": []
+}

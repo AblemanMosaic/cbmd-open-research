@@ -58,6 +58,25 @@ A search that looks only for two distinct normal forms cannot see this. The
 checks in this dossier therefore gate on the transfer property and report
 nonconfluence only as a secondary statistic.
 
+## The ordered hypothesis is necessary (revision 0.2.0)
+
+Cyclic graphs are not merely out of scope; they are impossible. If the arc
+relation contains a directed cycle and `C(v) >= d(v)` on it, then filling every
+cycle vertex to capacity and emptying the rest gives a capacity-terminal state
+that is not ordinarily stable. Each cycle vertex is blocked by its successor,
+which is full. Because the witness is built from the capacities themselves, **no
+enlargement of capacity restores preservation**. A forward ordering provably
+excludes the structure this uses, so the two results partition the model:
+
+| arc relation | status |
+|---|---|
+| forward-ordered | preservation holds at `d(v) + b(v) <= C(v) + 1`; sharp |
+| contains a directed cycle | preservation fails at every capacity with `C(v) >= d(v)` |
+
+Confirmed in all 27,440 tested cyclic graph and capacity pairs, with an
+exhaustive state sweep finding no cyclic system that preserves transfer at any
+slack from 0 to 4. See [`revisions/0.2.0-cycle-obstruction.md`](revisions/0.2.0-cycle-obstruction.md).
+
 ## What remains unresolved
 
 - **Novelty is not assessed.** The capacity rule is classical finite-capacity
@@ -66,8 +85,7 @@ nonconfluence only as a secondary statistic.
   search located no match and is recorded in [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 - No external independent verification. The second implementation here is
   separately written but not externally authored.
-- Cyclic graphs are out of scope; the predecessor's cycle witness applies
-  unchanged. Non-absorbing sinks are out of scope.
+- Non-absorbing sinks are out of scope.
 - Whether `b(v) = max_u m(u,v)` is *necessary* at receivers of multiplicity one
   beyond `C(v) >= d(v)` is not addressed.
 

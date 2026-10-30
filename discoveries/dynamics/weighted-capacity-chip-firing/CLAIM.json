@@ -4,14 +4,14 @@
  "title": "Weighted-transfer capacity-blocked chip-firing preservation",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.1.0",
+ "public_version": "0.2.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED",
   "INDEPENDENTLY_REPRODUCED"
  ],
- "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1.",
+ "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1. Conversely, if the arc relation contains a directed cycle then preservation fails at every capacity with C(v) >= d(v); the two cases partition the model.",
  "resolves": "CBMD-DYN-CAPACITY-FIRING-001 open successor: the named candidate C(v) >= d(v) + max_u m(u,v) - 1",
  "verified": [
   "The weighted overflow lemma, preservation of terminal states, and the full weighted transfer theorem compile under Lean 4.35.0 with no sorry, admit, or axiom declaration in the source.",
@@ -20,19 +20,22 @@
   "A separately implemented checker verified the theorem's own conclusion, that every capacity-terminal state equals the ordinary normal form, over 96053 initial states with zero disagreements.",
   "Sharpness: lowering the bound by one at a single receiver of incoming multiplicity at least two produced 1344 transfer failures at n<=3 and 7544 at n<=4, and 17682 terminal disagreements in the independent adverse control.",
   "A positive control reproduces failure at C(v) = d(v): 936 systems at n<=3 and 4256 at n<=4.",
-  "The checks gate on the transfer property rather than on nonconfluence, after enumeration showed the smallest C=d failure is confluent with a single wrong normal form."
+  "The checks gate on the transfer property rather than on nonconfluence, after enumeration showed the smallest C=d failure is confluent with a single wrong normal form.",
+  "The cycle obstruction compiles: a directed cycle plus C(v) >= d(v) yields a capacity-terminal state that is not ordinarily stable, built from the capacities themselves and therefore surviving every enlargement.",
+  "A forward ordering provably excludes the cycle structure used by that obstruction (ordered_has_no_closed_set, axiom dependency propext alone).",
+  "The cycle obstruction witness is confirmed in all 27,440 tested cyclic graph and capacity pairs, and an exhaustive state sweep found no cyclic system preserving transfer at any slack from 0 to 4."
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
   "necessity of the bound at receivers of incoming multiplicity one",
-  "cyclic graphs and non-absorbing sinks"
+  "non-absorbing sinks"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",
   "not an external independent verification; the second implementation is separately written but not externally authored",
   "finite enumeration corroborates the theorem and does not prove it",
   "ordinary well-foundedness and uniqueness enter as explicit hypotheses and are not proved here",
-  "no claim about cyclic graphs, non-absorbing sinks, or decoding of external graph files"
+  "the cycle obstruction assumes every vertex has positive outdegree and says nothing about capacities below d(v)"
  ],
  "smallest_decisive_test": "Exhibit an ordered multigraph satisfying d(v) + max_u m(u,v) <= C(v) + 1 with a reachable capacity-terminal state that is not the ordinary normal form of its initial state; or a reference proving the same preservation statement with an explicit semantic translation.",
  "checks": [
