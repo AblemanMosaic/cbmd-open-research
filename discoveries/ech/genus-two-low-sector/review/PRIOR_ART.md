@@ -94,3 +94,116 @@ claimed to settle anything.**
 
 Chen's submission date and venue could not be retrieved. Theorem 1 and
 Remark 1.5 are quoted from fetched text; Lemmas 5.5 and 5.11 were not.
+
+## Question 6: the Heegaard–Floer route (0.3.0-candidate)
+
+This section answers question 6 with a **written derivation from published
+theorems**. It is not a citation of a published statement. No source found
+states the sixteen-tower result at `Γ ∈ {1, 2}`. The claim is narrower: the
+result follows from published Floer theory in five steps, each sourced
+below. The derivation has not been checked by a specialist. The point of
+recording it is so that one can check it step by step.
+
+**Claim.** For `g = 2`, `e = −b` with `b ≥ 3`, and every torsion class `Γ`
+(in particular `Γ ∈ {1, 2}`),
+`ECH(Y_b, λ, Γ) ≅ ⊕_{i=1}^{16} T^+` as ungraded `U`-modules, over `F_2` or `Q`.
+More generally the same holds for genus `g` with `2^{2g}` towers whenever
+`b ≥ 2g − 1`. That bound is exactly Chen's hypothesis `e < χ(Σ)`.
+
+**Step 1: ECH is Heegaard–Floer homology, `U` included.** Chen, *Computing the
+`U` maps on ECH of prequantization bundles*, §1: "The (hat) Seiberg-Witten
+Floer homology, embedded contact homology, (positive) Heegaard Floer homology
+are equivalent … as U-modules", proved by Taubes, Kutluhan–Lee–Taubes and
+Colin–Ghiggini–Honda. Chen also says that his Theorem 1 "can be obtained
+alternatively" from Heegaard–Floer computations (Ozsváth–Szabó [42, Thm 5.6],
+Park [43, Thm 4.1.1]). <https://arxiv.org/pdf/2608.16625>. Under this
+equivalence, the class `Γ` corresponds to the spin-c structure
+`s_ξ + PD(Γ)`. Because `c_1(ξ)` is torsion, torsion `Γ` corresponds to torsion
+spin-c structures.
+
+**Step 2: `Y_b` is surgery on the Borromean knot.** The Borromean knot
+`B_g ⊂ #^{2g}(S^1 × S^2)` is fibred with fibre `Σ_{g,1}` and trivial monodromy.
+So its complement is `Σ_{g,1} × S^1`, the meridian is the `S^1` factor, and the
+fibre framing is `∂Σ_{g,1} × pt`. Filling along `n·μ + λ` glues in a solid
+torus whose meridian disk caps `∂Σ_{g,1}` with an `n`-fold twist. The result
+is the circle bundle over `Σ_g` with Euler number `∓n`; `n = 0` gives
+`Σ_g × S^1`. So both orientations of `Y_b` are surgeries on `B_g` (or its
+mirror) with coefficient of absolute value `b`. Published form: Gorsky–Liu–Moore,
+*Surgery on links of linking number zero and the Heegaard Floer
+d-invariant*: the circle bundle with Euler number `n ≠ 0` "can be obtained
+from n-framed surgery in #^{2g}S²×S¹ along the 'Borromean knot'".
+<https://arxiv.org/abs/1810.10178>. They also label its torsion spin-c
+structures by `−|n|/2 ≤ i ≤ |n|/2`.
+
+**Step 3: the knot complex has zero differential.** By Ozsváth–Szabó, as
+quoted in *Knot Floer homology of boundary Dehn twists* §2,
+`CFK^∞(B_g) = F[U, U^{-1}] ⊗ Λ^* H^1(Σ_g)`, with
+`C{i, j} = U^{-i} ⊗ Λ^{g−i+j} H^1(Σ_g)`. <https://arxiv.org/html/2609.13097>.
+This is a free complex of rank `2^{2g}` over the principal ideal domain
+`F[U, U^{-1}]`. Its homology, `HF^∞` of `#^{2g}(S^1 × S^2)` in the torsion
+spin-c structure, is also free of rank `2^{2g}`: `HF^−(#^m(S^2 × S^1)) ≅
+Λ^* H^1 ⊗ F[U]` (Ozsváth–Szabó, *Lectures on Heegaard Floer homology*, §2.5,
+<https://web.math.princeton.edu/~petero/Lectures.pdf>). Over the fraction
+field, the rank of the homology is `2^{2g} − 2·rank ∂`, so `∂ = 0`.
+
+**Step 4: large surgery applies from `2g − 1`.** Ozsváth–Szabó, *Holomorphic
+disks and knot invariants*, Theorem 4.1: for an oriented knot `(Y, K)` in an
+arbitrary oriented three-manifold with a compatible Seifert surface,
+`CF^+(Y_{−p}(K), s)` is computed by a quotient complex `C{max(i, j−s) ≥ 0}` of
+`CFK^∞` for `|s| ≤ p/2` and `p ≥ N`. Remark 4.3: "we can take N = 2g − 1,
+where g denotes the genus of the knot". <https://arxiv.org/pdf/math/0209056>.
+`B_g` has genus `g`, so for `g = 2` this needs `b ≥ 3`, the dossier's own
+range. The labels `s` with `|s| ≤ p/2` cover every residue mod `p`, hence
+every torsion spin-c structure, including those of `Γ = 1, 2`.
+
+**Step 5: towers only.** With `∂ = 0`, the quotient complex splits over
+generators. A generator `x` of Alexander grading `A` contributes `U^{−i}x`
+exactly for `i ≥ min(0, s − A)`. That is an up-set of indices, so it
+contributes one copy of `T^+`. (The other convention, `min(i, j − s) ≥ 0`,
+gives `i ≥ max(0, s − A)`, again one `T^+`.) So
+`HF^+(Y_{−b}(B_2), s) ≅ ⊕^{16} T^+` and `HF_red = 0` for every torsion `s`.
+`HF_red` and the rank of `HF^∞` are unchanged by reversing orientation, so the
+same holds for `−Y_b`. Step 1 then gives the claim.
+
+**What this changes.** The algebraic direct limit of the dossier's recurrence,
+sixteen ungraded `U`-towers at `Γ ∈ {1, 2}`, agrees with this derivation, which
+is consistent. But the tower count is then not a new invariant: published Floer
+theory already determines it. What the derivation does **not** give is the
+dossier's actual content:
+
+- the raw cap classes as filtered bases at the specified cutoffs;
+- the explicit low-sector `U`-recurrence with its off-diagonal junction;
+- the filtered (action-level) information.
+
+Those remain the proposed contribution, and questions 1–5 about them are
+untouched.
+
+**Gaps, stated so they can be checked.**
+- Step 1 rests on Chen's summary of the ECH = SWF = HF isomorphisms as
+  `U`-module isomorphisms. The isomorphism that matches `Γ` to a spin-c
+  structure is used, not re-derived.
+- Step 3 takes the quoted description of `CFK^∞(B_g)` as a reduced model of
+  rank `2^{2g}`. Over `Z`, that requires the integral description cited there
+  (Jabuka–Mark, §3.2). Over `F_2` or `Q`, the rank argument suffices once
+  `\widehat{HFK}(B_g)` is free of rank `2^{2g}`.
+- Step 4 is quoted from the theorem and remark. The `max`/`min` convention
+  difference between sources does not affect step 5.
+- The surgery description in step 2 is argued here and matches the published
+  description quoted above.
+- **Not read:** the text of Ozsváth–Szabó, *Knot Floer homology and integer
+  surgeries*, AGT 8 (2008), §5 / Theorem 5.6. That is the published
+  computation of the reduced Heegaard–Floer homology of non-trivial circle
+  bundles over `Z/2`. Every accessible text extraction stops before §5. Read
+  it directly: if its formula gives a nonzero `HF_red` for some torsion spin-c
+  structure with `|n| ≥ 2g − 1`, step 5 is wrong.
+
+**Independent check.** A second reader, working from this text without the
+dossier, tried to break each step. Steps 1, 2 and 4 were confirmed from
+sources (step 4 with the caveat that Remark 4.3 is only sketched). Steps 3
+and 5 were re-derived. No error was found. Park's correction terms, as quoted
+by Gorsky–Liu–Moore (`d_bot = φ − g`), agree with the zero-differential model;
+one parity shift in `d_top` was attributed to how `d_top` is defined and was
+not verified. A rank count from the Nelson–Weiler groups, with a grading
+formula the reader fitted rather than quoted, gave 8 per degree in the stable
+range at `g = 2`, `b = 3`, consistent with 16 towers. Neither check substitutes
+for reading Theorem 5.6.

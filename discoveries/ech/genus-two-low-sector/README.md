@@ -31,9 +31,14 @@ These are model statements and tests, not geometric certification.
 4. Whether the continuation gluing identity holds through the required deformation, chamber, insertion, orientation, and cutoff comparisons.
 5. Whether the rational direct limit identifies the algebraic union with ECH in the asserted way.
 6. Whether an existing Floer calculation already contains the result in other coordinates.
-   A bounded ECH-side prior-art check confirmed §2 of the argument and left this
-   question open; it did not examine the Heegaard–Floer route. See
-   [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
+   **Partly answered (0.3.0-candidate, written derivation, not specialist-checked):**
+   the sixteen-tower `U`-module statement at `Γ ∈ {1, 2}` follows from published
+   Heegaard–Floer theory. The steps are: ECH = HF as `U`-modules; `Y_b` is
+   surgery on the Borromean knot `B_2`, whose knot complex has zero
+   differential; and large surgery applies from `b ≥ 2g − 1 = 3`. So the tower
+   count is not new. The explicit filtered bases and the low-sector recurrence
+   are not implied by this route and remain the proposed contribution. See
+   [`review/PRIOR_ART.md`](review/PRIOR_ART.md#question-6-the-heegaardfloer-route-030-candidate).
 
 ## Smallest decisive test
 
@@ -83,5 +88,6 @@ No claim is made here of specialist approval, proof-assistant verification, nove
 
 ## Revision history
 
+- [`0.3.0-candidate`](revisions/0.3.0-candidate.md) — records a written Heegaard–Floer derivation of the sixteen-tower count at `Γ ∈ {1, 2}` (question 6); the explicit filtered formula is unaffected; no status promotion.
 - [`0.2.0-candidate`](revisions/0.2.0-candidate.md) — adds the neutral second-reader grid audit and sharpens what the adverse control can detect; no status promotion.
 - `0.1.0-candidate` — first neutral public-repository projection; not yet published.
