@@ -219,9 +219,9 @@
       "path": "discoveries/combinatorics/fibonacci-quilt-game",
       "title": "The Fibonacci Quilt game: a linear bound on game length",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Independent review; find a strategy approaching the potential limit (about 2.29 n) or a better upper bound.",
+      "next_obligation": "Narrow the constant of the longest game (about 2.02 observed, 2.3 proved): a long-game strategy or a better certificate.",
       "promotion_blockers": [
-        "not yet independently reviewed",
+        "written proof with exact certificate, independently reviewed once; Lemma 2.2 relied on (computationally rechecked)",
         "external review open"
       ],
       "status": [

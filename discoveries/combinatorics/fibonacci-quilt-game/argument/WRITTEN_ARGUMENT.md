@@ -43,6 +43,12 @@ Let `Φ = −Σ_{pieces} u(index)`, with weights `u` as follows
   - `2q_i = q_{i−5} + q_{i+2}`;
   - `q_i + q_{i+3} = q_{i−5} + q_{i+4}`.
 
+  These identities hold for all `i ≥ 7`. The first is the defining recurrence.
+  The second is `q_{m+1} = q_m + q_{m−4}` (`m ≥ 6`, Miller–Newlon Theorem 1.6)
+  with `m = i + 4`. The third and fourth follow from the first two: write
+  `q_{i+2} = q_i + q_{i−1}`, `q_{i−1} = q_{i−2} + q_{i−6}`, and so on. They are
+  also checked for `i ≤ 200`.
+
   What remains is:
   - rule 1: `(i − 2)/3 + β`;
   - rule 2(b): `(i − 1)/3 + β`;
@@ -55,6 +61,15 @@ Let `Φ = −Σ_{pieces} u(index)`, with weights `u` as follows
 used at most once in a game (Miller–Newlon, Lemma 2.2). It raises `Φ` by
 `Δ = u_1 + u_5 − u_2 − u_4 ≈ 1.94`.
 
+The bound depends on that lemma: no potential of this shape makes 2(a)
+decrease. The paper's proof is a sketch, so it was rechecked computationally
+(`fq_lemma22_check.cpp`, by the independent reviewer):
+
+- every position in which 2(a) is the only move, with other indices up to 40
+  (78,464 positions), was explored exhaustively;
+- this was done under three readings of rule 3(f);
+- 2(a) is used at most once every time, and from `1^n` for `n ≤ 90`.
+
 *Start and end.* At the start, `Φ = −n·u_1 = 0`. Every weight satisfies
 `u_i ≤ α q_i`: this is checked for `i < J`, and holds for `i ≥ J` since
 `β ≥ 0`. So at the end `Φ ≥ −α Σ q = −α n`.
@@ -66,21 +81,44 @@ used at most once in a game (Miller–Newlon, Lemma 2.2). It raises `Φ` by
 
 - **Exhaustive maxima.** The longest games for every `n ≤ 90` were computed
   exhaustively (`fq_longest_exhaustive.cpp`, about 11 million states).
-  - The longest game first reaches `2n` at `n = 78`.
+  - The longest game first equals `2n` at `n = 78`, and first exceeds `2n` at
+    `n = 86`.
   - The largest ratio found is `2.022`, at `n = 89`
     (`evidence/fq_longest_n_le_90.json`).
-  - So the maximum does exceed `2n`, even though random games stay below it.
-- **The potential method.** The best constant this method can give, a
-  potential with a linear tail `α q_i − c·i − β`, is about `2.2899`. That is
-  the limit of a linear program over the rule constraints, solved
-  numerically (`fq_potential_lp.py`, which needs scipy). It is infeasible with
-  slack at `α = 2.29` but feasible at `α = 2.3`.
-- **Comparison with the maxima.** The per-`n` linear-program bound stays
-  within 12 moves of the exhaustive maximum for `50 ≤ n ≤ 90`. That suggests,
-  without proving it, that the true constant is close to `2.29`.
+  - So the maximum does exceed `2n`. Miller and Newlon's remark that
+    simulations never came near `2n` concerned random games, which this
+    dossier does not test.
+- **The potential method (numerical, not proved).** A floating-point linear
+  program over a finite index window (`fq_potential_lp.py`, which needs scipy)
+  finds no potential of this shape below `α ≈ 2.2899`. The tail slope was
+  fixed at `1/3`; the reviewer found the same value with it free, for windows
+  31, 41 and 61. This is not an infeasibility certificate. The LP is
+  infeasible with slack at `α = 2.29` and feasible at `α = 2.3`.
+- **The true constant.** The exhaustive maxima give ratio `2.02` at `n ≤ 90`,
+  about 25 moves below `2.29·n`. Where the true constant lies between `2.02`
+  and `2.3` is open.
 
 ## Not claimed
 
 - That `2.3` is optimal, or the exact asymptotic constant of the longest game.
 - Who wins.
 - Anything about random games.
+
+## Review
+
+An independent review (fresh agent) re-typed the rules from the paper and
+re-derived the certificate in exact arithmetic for indices up to 400. It
+re-ran the exhaustive search with its own code and rule table (11,408,896
+states, all values matching), and checked Lemma 2.2 as described above. It
+found the theorem sound.
+
+Its fixes are applied:
+
+- the q-identities are now derived for all `i`;
+- the potential-method limit is stated as a numerical observation;
+- an unsupported "within 12 moves" comparison is removed;
+- the `2n` statements are made precise;
+- the control gate is strengthened.
+
+Under the narrower reading of rule 3(f), `q_2, q_8` only, only `n = 67`
+changes (131 instead of 132).

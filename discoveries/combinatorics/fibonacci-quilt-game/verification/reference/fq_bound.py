@@ -25,8 +25,8 @@ Gates (each required):
   * U_BELOW_ALPHA_Q: u_i <= alpha q_i for i <= 200 (and beta >= 0 beyond);
   * EXHAUSTIVE_n_le_40: the exhaustive longest game for n <= 40 is within the
     bound;
-  * CONTROL: lowering alpha to 2.2 with the same u-shape violates a
-    constraint.
+  * CONTROL: dropping the -i/3 term from the tail violates a constraint
+    (rule 3(g) then changes the potential by 0).
 """
 from __future__ import annotations
 import json
@@ -121,7 +121,8 @@ def main():
         if L > alpha * n + slack:
             ex = False
         worst = max(worst, Fr(L, n))
-    U2 = make_U(Fr(22, 10), J, u, beta)
+    def U2(i):          # control: drop the -i/3 term of the tail
+        return u[i - 1] if i < J else alpha * q[i] - beta
     control = not all(sum(U2(i) for i in a) - sum(U2(i) for i in r) >= 1 for _, r, a in inst)
     gates = {
         "RULES_PRESERVE_VALUE": value_ok,
@@ -129,7 +130,7 @@ def main():
         "TAIL_ANALYTIC": tail_ok,
         "U_BELOW_ALPHA_Q": below_ok,
         "EXHAUSTIVE_n_le_40": ex,
-        "CONTROL_alpha_2_2_fails": control,
+        "CONTROL_tail_without_index_term_fails": control,
     }
     out = {
         "schema": "cbmd.fq-game.bound.v1",

@@ -20,15 +20,17 @@ that simulations never gave a game near `2n`.
   - The proof is a potential function: explicit rational weights on indices
     below 31, and `u_i = 2.3 q_i − i/3 − β` above.
   - Every rule lowers the potential by at least 1, except rule 2(a), which is
-    used at most once.
+    used at most once (Miller–Newlon Lemma 2.2, rechecked by exhaustive
+    search).
   - The finitely many small-index cases are checked in exact arithmetic; the
     rest reduce to four one-line inequalities.
 - **The maximum exceeds `2n` (exhaustive).** The longest games for all
-  `n ≤ 90`, about 11 million states, reach `2n` first at `n = 78`, and reach
-  `2.022n` at `n = 89`.
-- **The method's limit.** Potentials of this shape cannot beat about `2.29`.
-  The per-`n` potential bound stays within 12 moves of the true maximum for
-  `50 ≤ n ≤ 90`, which suggests the true constant is near `2.29`.
+  `n ≤ 90` cover about 11 million states. They first equal `2n` at `n = 78`,
+  first exceed it at `n = 86`, and reach `2.022n` at `n = 89`.
+- **The method's limit (numerical).** A floating-point LP finds no potential
+  of this shape below about `2.29`; this is not a certificate. The true
+  constant lies somewhere between about `2.02` (observed) and `2.3` (proved).
+- **Independent review:** the theorem is sound; its fixes are applied.
 - **A printed rule is inconsistent.** Rule 3(f)'s second option, `q_3, q_7`,
   does not preserve value; this dossier reads it as `q_5, q_7`.
 
