@@ -33,6 +33,10 @@ could only observe. The verifier now also measures those two hypotheses against
 the layouts it generates, so the proof is checked to be about this model. See
 [`revisions/0.3.0-compiled-unique-contributor.md`](revisions/0.3.0-compiled-unique-contributor.md).
 
+Revision 0.4.0 compiles the class-count bound the same way, by isolating what
+it rests on: for a fixed owner, each orbit class holds at most one column. The
+step from that to a count is pigeonhole and is left explicit.
+
 What is still missing is the binding to the exact packed source definitions, and
 multi-block packing is not modelled.
 

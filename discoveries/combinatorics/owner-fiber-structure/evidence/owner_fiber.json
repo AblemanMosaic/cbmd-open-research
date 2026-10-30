@@ -66,6 +66,12 @@
   "distinct_orbit_pairs": 192,
   "orbit_head_collisions": 0
  },
+ "U2_injective_form": {
+  "cells_occupied": 96,
+  "cells_over_one": 0,
+  "owners_spanning_two_classes": 30,
+  "max_per_cell": 1
+ },
  "U1_breadth_Q3": {
   "box": {
    "Q": 3,

@@ -279,6 +279,36 @@ def check_lean_hypotheses(Q, r, A, R, owners_count, trials):
     return stats
 
 
+def check_U2_injective(Q, r, A, R, owners_count, trials):
+    """The compiled form of the class-count bound.
+
+    The bound "contributors per owner are at most the number of distinct orbit
+    classes among the targets" is pigeonhole on top of one fact: for a fixed
+    owner, each orbit class holds at most one column.  That fact is what the
+    Lean contributor_class_injective proves, and it is what is measured here,
+    since the pigeonhole step needs no checking.
+    """
+    stats = {"cells_occupied": 0, "cells_over_one": 0,
+             "owners_spanning_two_classes": 0, "max_per_cell": 0}
+    for seed in range(trials):
+        heads, columns = layouts(Q, r, owners_count, seed)
+        cells: dict[tuple, int] = {}
+        for (y, own) in columns:
+            cls = tuple(frozenset((y[t], y[Q + t])) for t in range(Q))
+            cells[(own, cls)] = cells.get((own, cls), 0) + 1
+        per_owner: dict[int, set] = {}
+        for (own, cls), count in cells.items():
+            stats["cells_occupied"] += 1
+            stats["max_per_cell"] = max(stats["max_per_cell"], count)
+            if count > 1:
+                stats["cells_over_one"] += 1
+            per_owner.setdefault(own, set()).add(cls)
+        for own, classes in per_owner.items():
+            if len(classes) > 1:
+                stats["owners_spanning_two_classes"] += 1
+    return stats
+
+
 def main() -> int:
     Q, r, owners_count, trials = 2, 2, 5, 6   # 4 head words + 1 duplicate (head collision)
     live = {"A": 1, "R": 2}            # non-degenerate: A >= 1
@@ -293,6 +323,8 @@ def main() -> int:
         "U3_active_coherence_necessary": check_U3(Q, r, live["A"], live["R"]),
         "lean_hypotheses": check_lean_hypotheses(Q, r, live["A"], live["R"],
                                                  owners_count, trials),
+        "U2_injective_form": check_U2_injective(Q, r, live["A"], live["R"],
+                                                owners_count, trials),
         "U1_breadth_Q3": {"box": {"Q": 3, "r": 2, "A": 1, "R": 2, "seeds": 3},
                           "degeneracy": degeneracy(3, 2, 1, 2),
                           **check_U1(3, 2, 1, 2, 9, 3)},
@@ -344,6 +376,15 @@ def main() -> int:
                      "was never put to work")
     if lh["nonzero_rows"] == 0:
         gates.append("no nonzero source row was examined")
+    u2i = report["U2_injective_form"]
+    if u2i["cells_over_one"]:
+        gates.append("an owner holds two columns of one orbit class, contradicting "
+                     "the compiled contributor_class_injective")
+    if u2i["cells_occupied"] == 0:
+        gates.append("no owner-class cell was occupied")
+    if u2i["owners_spanning_two_classes"] == 0:
+        gates.append("no owner spanned two orbit classes, so the class-count bound "
+                     "was never more than the trivial bound of one")
     report["content_gate_failures"] = gates
     report["status"] = "PASS" if not gates else "FAIL"
     print(json.dumps(report, indent=1))

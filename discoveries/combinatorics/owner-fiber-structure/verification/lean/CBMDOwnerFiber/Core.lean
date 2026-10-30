@@ -54,6 +54,21 @@ def InOrbit (u y : Typ Q r) : Prop :=
 theorem inOrbit_refl (u : Typ Q r) : InOrbit u u :=
   fun _ => Or.inl ⟨rfl, rfl⟩
 
+theorem inOrbit_symm {u y : Typ Q r} (h : InOrbit u y) : InOrbit y u := by
+  intro t
+  rcases h t with ⟨h1, h2⟩ | ⟨h1, h2⟩
+  · exact Or.inl ⟨h1.symm, h2.symm⟩
+  · exact Or.inr ⟨h2.symm, h1.symm⟩
+
+theorem inOrbit_trans {u y z : Typ Q r} (h1 : InOrbit u y) (h2 : InOrbit y z) :
+    InOrbit u z := by
+  intro t
+  rcases h1 t with ⟨a1, a2⟩ | ⟨a1, a2⟩ <;> rcases h2 t with ⟨b1, b2⟩ | ⟨b1, b2⟩
+  · exact Or.inl ⟨b1.trans a1, b2.trans a2⟩
+  · exact Or.inr ⟨b1.trans a2, b2.trans a1⟩
+  · exact Or.inr ⟨b1.trans a1, b2.trans a2⟩
+  · exact Or.inl ⟨b1.trans a2, b2.trans a1⟩
+
 /-- **Orbit elements are determined by their head.**  Derived, not assumed. -/
 theorem orbit_head_injective {u y z : Typ Q r}
     (oy : InOrbit u y) (oz : InOrbit u z)
@@ -81,6 +96,32 @@ theorem unique_contributor {Owner : Type}
     (sy : Support u y) (sz : Support u z) : y = z := by
   refine orbit_head_injective (support_in_orbit u y sy) (support_in_orbit u z sz)
     (fun t => ?_)
+  have ey : headOf v t = y.head t := by rw [← hy, coherent y]
+  have ez : headOf v t = z.head t := by rw [← hz, coherent z]
+  rw [← ey, ez]
+
+/-- **One contributor per owner and orbit class.**  This is the content of the
+class-count bound for sums of target rows: a column contributing to a sum lies
+in the orbit of one of the targets, so its class is one of the classes present;
+and for a fixed owner each class admits at most one column.  The bound by the
+number of distinct classes is the pigeonhole on top of this injectivity, which
+is the part that needs an argument.
+
+Stated for two targets in the same class rather than for a list, so that no
+finiteness or cardinality is involved. -/
+theorem contributor_class_injective {Owner : Type}
+    (Support : Typ Q r → Typ Q r → Prop)
+    (own : Typ Q r → Owner) (headOf : Owner → (Fin Q → Fin r))
+    (support_in_orbit : ∀ u y, Support u y → InOrbit u y)
+    (coherent : ∀ y, headOf (own y) = y.head)
+    (v : Owner) {u u' y z : Typ Q r}
+    (hy : own y = v) (hz : own z = v)
+    (sy : Support u y) (sz : Support u' z)
+    (same_class : InOrbit u u') : y = z := by
+  have oy : InOrbit u y := support_in_orbit u y sy
+  have oz : InOrbit u z :=
+    inOrbit_trans same_class (support_in_orbit u' z sz)
+  refine orbit_head_injective oy oz (fun t => ?_)
   have ey : headOf v t = y.head t := by rw [← hy, coherent y]
   have ez : headOf v t = z.head t := by rw [← hz, coherent z]
   rw [← ey, ez]

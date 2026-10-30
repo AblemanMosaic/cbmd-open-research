@@ -22,6 +22,9 @@ HERE = Path(__file__).resolve().parent
 TARGETS = [
     "CBMDOwnerFiber.Typ.ext",
     "CBMDOwnerFiber.inOrbit_refl",
+    "CBMDOwnerFiber.inOrbit_symm",
+    "CBMDOwnerFiber.inOrbit_trans",
+    "CBMDOwnerFiber.contributor_class_injective",
     "CBMDOwnerFiber.orbit_head_injective",
     "CBMDOwnerFiber.unique_contributor",
     "CBMDOwnerFiber.candidate_head",
