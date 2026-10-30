@@ -116,6 +116,19 @@ lazy Fibonacci counter, passing through a transient `00 1^j` tail after each
 long carry. The gate `COUNTER_lazy_language_radix_order` checks the lemma for
 20,000 steps.
 
+**Where the counting phase stops.** A step with `r ≥ 2` inserts two `1`s and
+returns two. So the number of `1`s cannot drop below two at such a step, and
+the phase can only stop after a step with `r ≤ 1`. Every such step ends in a
+lazy word (no `00`):
+
+- from a lazy word, `x0 → x1` and `x01 → x10`;
+- from a tail word, `x100 → x101` and `x1001 → x1010`.
+
+So the end phase always starts from a lazy representation with at most one
+`1` left over. Two further observations are checked for `n ≤ 6000` but not
+proved: the end phase never adds two `1`s together, and its moves are adds and
+splits only.
+
 **What a proof still needs.** By the lemma, the split count of the counting
 phase is the sum of trailing-one counts over a radix-order prefix of `𝓛`. It
 stops once fewer than two `1`s remain. Two pieces are missing:
