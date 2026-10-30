@@ -15,10 +15,11 @@
  "verified": [
   "For every n <= 3000 and all four deterministic games: n - Z(n) merging moves and the length identity hold, CL and SL have length n - Z(n), and SS equals the maximum game length computed over the full game graph for n <= 40.",
   "The SS linear representation reproduces the SS split count for every n <= 120,000 (C simulator output, SHA-256 recorded), the Fibonacci closed form holds for every F_k <= 120,000, and the block law has no violation; perturbing one representation entry breaks agreement.",
-  "Hankel ranks over Zeckendorf words: SS 6, 6, 6 and CS 13, 21, 34 at word lengths 6, 7, 8; the CS length ratio is 1.206480 at n = 9,227,465."
+  "Hankel ranks over Zeckendorf words: SS 6, 6, 6 and CS 13, 21, 34 at word lengths 6, 7, 8; the CS length ratio is 1.206480 at n = 9,227,465.",
+  "Counter lemma (written proof, gated for 20,000 steps): while two 1's remain, each SS step moves the upper word to the radix-order successor in the language of binary words with no 00 except one final 00 followed only by 1's (the lazy Fibonacci representations plus a transient tail), making as many splits as the previous word has trailing 1's."
  ],
  "unresolved": [
-  "a proof that the SS split count is Fibonacci-regular, or of the block law and the closed form at F_k",
+  "a proof that the SS split count is Fibonacci-regular: the counting phase is proved (lazy Fibonacci counter); the end phase and the assembly into Zeckendorf digits remain",
   "an exact description of Combine Smallest lengths, and a proof that they are not Fibonacci-regular",
   "novelty and external review"
  ],

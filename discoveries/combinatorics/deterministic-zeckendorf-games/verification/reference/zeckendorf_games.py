@@ -34,6 +34,12 @@ Gates (each required):
   * CS_NOT_LOW_RANK: the Hankel matrices of the CS split count over Zeckendorf
     words have full rank 13, 21, 34 at prefix/suffix length 6, 7, 8 (evidence
     that CS is not Fibonacci-regular of small rank; not a proof);
+  * COUNTER: while at least two 1's remain, SS inserts a 2 and normalises by
+    splits; the normalised upper part (indices >= 2, index 2 rightmost) runs
+    through exactly the binary words with no "00" except one final "00" followed
+    only by 1's, in increasing order, and each step makes as many splits as the
+    previous word has trailing 1's (checked for 20,000 steps; proved in the
+    written argument);
   * CONTROL: perturbing one entry of the SS representation breaks agreement.
 """
 from __future__ import annotations
@@ -238,6 +244,51 @@ def hankel_rank(S, length):
     return rank(M)
 
 
+def counter_check(steps=20000):
+    c = [10 ** 9]
+    words, split_counts = [], []
+    splits = 0
+
+    def ensure(k):
+        while len(c) <= k:
+            c.append(0)
+    while len(words) < steps:
+        moved = False
+        for i in range(1, len(c)):
+            if c[i] >= 2:
+                ensure(i + 1)
+                c[i] -= 2
+                c[i + 1] += 1
+                c[0 if i == 1 else i - 2] += 1
+                splits += 1
+                moved = True
+                break
+        if moved:
+            continue
+        if any(x > 1 for x in c[1:]):
+            return False
+        words.append("".join(str(x) for x in reversed(c[1:])).lstrip("0"))
+        split_counts.append(splits)
+        splits = 0
+        c[0] -= 2
+        ensure(1)
+        c[1] += 1
+
+    def in_language(w):
+        i = w.find("00")
+        return i < 0 or set(w[i + 2:]) <= {"1"}
+    top = int(words[-1], 2)
+    expected = [""] + [format(x, "b") for x in range(1, top + 1) if in_language(format(x, "b"))]
+    if expected != words:
+        return False
+    for t in range(1, len(words)):
+        prev = words[t - 1]
+        trailing = len(prev) - len(prev.rstrip("1"))
+        if split_counts[t] != trailing:
+            return False
+    return True
+
+
 def main():
     counts = {}
     S = {g: {0: 0} for g in ("CL", "SL", "CS", "SS")}
@@ -297,6 +348,7 @@ def main():
         "CS_NOT_LOW_RANK_evidence": hank["CS"] == [13, 21, 34],
         "SS_LOW_RANK": max(hank["SS"]) <= 9,
         "CONTROL_perturbed_representation_fails": control_bites,
+        "COUNTER_lazy_language_radix_order": counter_check(),
     }
     out = {"schema": "cbmd.deterministic-zeckendorf.v1", "counts": counts, "gates": gates,
            "status": "PASS" if all(gates.values()) else "FAIL",

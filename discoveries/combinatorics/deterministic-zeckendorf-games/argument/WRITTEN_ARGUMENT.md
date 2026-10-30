@@ -77,11 +77,55 @@ read. A naive search found at least 89 states, so this is not a simple rule.
 **The block law.** `S(F_k + m) = S(F_k) + S(m) + D_{k mod 2}(m)` for `k ≥ 4`
 and `m < F_{k−1}`. This is the shape a structural proof would take.
 
-**What a proof needs.** The state of the SS process always has at most one
-duplicate among the pieces at indices ≥ 2, and no count above 2 (observed for
-`n < 400`). So the process acts as a Fibonacci counter: it absorbs a `2` and
-normalises by splits. The open part is to show that its carry counts compose
-along Zeckendorf blocks as the block law states.
+**The counting phase (proved).** Write the pieces at indices ≥ 2 as a binary
+word `w`, with index 2 on the right. Let `𝓛` be the set of binary words that
+contain no `00`, except possibly one `00` followed only by `1`s.
+
+*Lemma.* While at least two `1`s remain, SS repeats one step: add the two
+`1`s into a `2`, then split until no duplicate remains. If `w ∈ 𝓛` before the
+step, then afterwards the word is the next word of `𝓛` in increasing binary
+order, and the step made exactly `r` splits, where `r` is the number of
+trailing `1`s of `w`.
+
+*Proof.*
+- **No other move intervenes.** SS prefers splits, then adding `1`s, then
+  adding consecutive terms. After normalisation there is no duplicate, so
+  while two `1`s remain the next move is the insertion.
+- **Case `r = 0`.** The insertion turns the last bit from `0` to `1`. There is
+  no split. The result is `w + 1`. It lies in `𝓛`: a final `00` becomes `00`
+  followed by `1`, and nothing else changes.
+- **Case `r ≥ 1`.** Write `w = x 0 1^r`. The duplicate at position 0 (index 2)
+  splits into position 1 and returns an `F_1`. A duplicate at position 1
+  (index 3) splits into position 2 and returns an `F_1`. A duplicate at a
+  position `p ≥ 2` (index `≥ 4`) splits into `p + 1` and `p − 2`.
+- **The carry.** The carry runs up through the `r` ones. Each deposit at
+  `p − 2` lands on a position the carry has already cleared, and no later
+  split touches it. So no new duplicate arises.
+- **Case `r ≥ 2`.** The result is `x 1 0 0 1^{r−2}`, after exactly `r` splits.
+  The words strictly between `x 1 0^r = w + 1` and `x 1 0 0 1^{r−2}` all
+  contain `00` followed by a `0`. So are `x 1 0^r` itself when `r ≥ 3`, and
+  `x 1 0 0` is the result itself when `r = 2`. So none of them is in `𝓛`.
+- **Case `r = 1`.** The result is `x 1 0 = w + 1`.
+- **Membership.** In every case the result is in `𝓛`. Its only possible
+  `00` is the new one, because the `00` of `w`, if any, was the one consumed by
+  the carry. ∎
+
+Words of `𝓛` without `00` are exactly the *lazy* Fibonacci representations
+(no two consecutive zeros). So the counting phase of Split Smallest runs the
+lazy Fibonacci counter, passing through a transient `00 1^j` tail after each
+long carry. The gate `COUNTER_lazy_language_radix_order` checks the lemma for
+20,000 steps.
+
+**What a proof still needs.** By the lemma, the split count of the counting
+phase is the sum of trailing-one counts over a radix-order prefix of `𝓛`. It
+stops once fewer than two `1`s remain. Two pieces are missing:
+
+- an analysis of the end phase, in which adds and splits turn the final word
+  (with at most one `1` left over) into the Zeckendorf decomposition;
+- an assembly of both counts into a function of the Zeckendorf digits of `n`.
+
+Each piece is a finite-state question about Fibonacci numeration, which is
+why the representation is expected to be exact.
 
 ## 5. Combine Smallest
 

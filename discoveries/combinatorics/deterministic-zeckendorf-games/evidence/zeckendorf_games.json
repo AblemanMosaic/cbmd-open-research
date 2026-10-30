@@ -20,6 +20,7 @@
  },
  "gates": {
   "CONTROL_perturbed_representation_fails": true,
+  "COUNTER_lazy_language_radix_order": true,
   "CS_NOT_LOW_RANK_evidence": true,
   "KNOWN_CL_SL_length_n_minus_Z": true,
   "LENGTH_IDENTITY": true,

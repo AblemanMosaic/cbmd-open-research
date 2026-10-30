@@ -44,6 +44,12 @@ exact length was known for SS or CS.
   `S_SS(F_k) = S_SS(F_k − 1) = F_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`. At
   `F_k − 1` this follows from Cusenza et al.'s theorems plus the identity
   above (written argument). At `F_k` it is checked up to `k = 24`.
+- **The counting phase is the lazy Fibonacci counter (proved, written).**
+  While two `1`s remain, each SS step adds them into a `2` and normalises by
+  splits. The step moves the upper word to the next word, in increasing order,
+  of the binary words with no `00` except one final `00 1…1`: the lazy
+  Fibonacci representations plus a transient tail. It makes as many splits as
+  the previous word has trailing `1`s.
 - **A block law.** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends only on `m`
   and the parity of `k`, for `k ≥ 4` and `m < F_{k−1}`. Checked to 120,000.
 - **Combine Smallest is different.** Its Hankel matrices over Zeckendorf words
@@ -56,7 +62,8 @@ exact length was known for SS or CS.
 ## What is not established
 
 - A proof that SS is Fibonacci-regular, or of the block law and the
-  closed form at `F_k`.
+  closed form at `F_k`. The counting phase is proved; the end phase and the
+  assembly are not.
 - Anything exact about CS beyond the evidence above.
 - Novelty beyond the cited papers. See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
