@@ -101,6 +101,21 @@ most 7 vertices, and 5,040 element pairs of random matroids. Specialists may
 well know it. It is recorded because it is the exact low-order counterpart of
 the large-`λ` analysis of arXiv:2610.00549.
 
+## Beyond pairs: negative association on small graphs
+
+Grimmett–Winkler also propose full negative association (NA). This asks that
+any two increasing events depending on disjoint edge sets be negatively
+correlated. Pemantle and coauthors showed that the uniform forest measure
+need not be strongly Rayleigh, so NA cannot follow from that theory. We tested
+NA directly, in exact integer arithmetic at `λ = 1`. The test covers every
+2-connected graph on 4 to 6 vertices, every pair of disjoint edge sets of
+sizes (3, 3) or (4, 2), and every pair of nontrivial up-sets on them:
+318,120,000 up-set pairs per model. We found no positive covariance for
+forests or for connected subgraphs. NA is preserved under products, so
+2-connected graphs suffice. A positive control (the uniform measure on edge
+sets that contain a cycle) does show positive covariances.
+`evidence/na_scan.json` has the details.
+
 ## What is not established
 
 - A proof of either conjecture for any infinite class beyond those already in
@@ -111,7 +126,8 @@ the large-`λ` analysis of arXiv:2610.00549.
   of `k` parallel copies acts like one edge of weight `kλ`, so the multigraph
   runs cover some integer weight ratios. For connected subgraphs there is no
   such exact correspondence.
-- Negative association (beyond pairwise correlation).
+- Negative association beyond the small scan above (larger graphs, larger
+  event supports, `λ ≠ 1`).
 
 ## Reproduction
 

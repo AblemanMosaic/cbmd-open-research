@@ -1,0 +1,41 @@
+{
+ "schema": "cbmd.forest-nc.na-scan.v1",
+ "graphs": "all 2-connected graphs on 4..6 vertices (geng -C); NA is closed under products, so 2-connected graphs suffice",
+ "measure": "uniform (lambda = 1); exact integer arithmetic, Cov * Z^2 = Z N(U1 U2) - N(U1) N(U2)",
+ "events": "all pairs of nontrivial up-sets U1 on S1 and U2 on S2 for disjoint edge sets with (|S1|,|S2|) = (3,3) or (4,2); an up-set may ignore coordinates, so smaller supports are covered",
+ "runs": [
+  {
+   "model": "forests",
+   "k1": 3,
+   "k2": 3,
+   "upset_pairs_checked": 78084000,
+   "max_Z2_cov": 0,
+   "violations": 0
+  },
+  {
+   "model": "forests",
+   "k1": 4,
+   "k2": 2,
+   "upset_pairs_checked": 240036000,
+   "max_Z2_cov": 0,
+   "violations": 0
+  },
+  {
+   "model": "connected",
+   "k1": 3,
+   "k2": 3,
+   "upset_pairs_checked": 78084000,
+   "max_Z2_cov": 0,
+   "violations": 0
+  },
+  {
+   "model": "connected",
+   "k1": 4,
+   "k2": 2,
+   "upset_pairs_checked": 240036000,
+   "max_Z2_cov": 0,
+   "violations": 0
+  }
+ ],
+ "control": "model K (uniform on edge sets containing a cycle, an up-set) on 4..5 vertices gives max Z^2 Cov = 2730 and 2186 (S1,S2) pairs admitting a positive covariance, so the scan detects positive association"
+}

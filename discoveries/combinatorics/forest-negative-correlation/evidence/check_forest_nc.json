@@ -49,6 +49,14 @@
     ]
    ]
   },
+  "NA_SMALL": {
+   "pass": true,
+   "max_Z2_cov": {
+    "Z": 0,
+    "C": 0,
+    "K": 2730
+   }
+  },
   "EVIDENCE_SUMMARY": {
    "pass": true
   }

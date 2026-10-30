@@ -4,7 +4,7 @@
  "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices",
  "field": "combinatorics",
  "slug": "forest-negative-correlation",
- "public_version": "0.2.1",
+ "public_version": "0.3.0",
  "status": [
   "CONJECTURE",
   "EXACT_MODEL_VERIFIED",
@@ -19,12 +19,13 @@
   "brute_force_crosscheck.py / brute_force_multigraph.py: the C tools agree with subset enumeration on 4,208 simple-graph pairs (connected graphs, n <= 6) per model and on 88,990 multigraph pair checks.",
   "argument section 4 + check_forest_nc.py SMALL_LAMBDA_LAW: the small-lambda law on all edge pairs of 2-connected graphs with <= 6 vertices and on random binary/ternary matroids; offline checks on all 37,531 pairs with <= 7 vertices (C output vs independent cycle enumeration) and 5,040 random-matroid pairs.",
   "Independent review (fresh agent, own big-integer DP over an edge ordering without contraction, validated against subset enumeration): exact polynomial agreement with fnc/cnc on all 538 2-connected graphs with 3..7 vertices (37,531 pairs per model), 301 sampled 8-vertex and 103 sampled 9-vertex graphs (including K9), and sampled multigraph families; all evidence counts recomputed from geng. Its provenance remark led to rerunning the 9-vertex runs with the shipped sources (0.2.0).",
-  "Independent review of section 4 and Corollary 2 (fresh agent): proofs judged sound; own code tested the full multivariate statement on 8,898 element pairs of random vector matroids over GF(2), GF(3), GF(5) (with loops and parallels), 7,308 multigraph pairs and 42 uniform matroids, and Corollary 2 on 25,486 pairs of random connected multigraphs with bonds found directly; 0 failures. Its minor fixes (converse direction, non-cancellation, citation of the component fact, loops) are applied in 0.2.1."
+  "Independent review of section 4 and Corollary 2 (fresh agent): proofs judged sound; own code tested the full multivariate statement on 8,898 element pairs of random vector matroids over GF(2), GF(3), GF(5) (with loops and parallels), 7,308 multigraph pairs and 42 uniform matroids, and Corollary 2 on 25,486 pairs of random connected multigraphs with bonds found directly; 0 failures. Its minor fixes (converse direction, non-cancellation, citation of the component fact, loops) are applied in 0.2.1.",
+  "na_scan.py + check_forest_nc.py NA_SMALL: negative association beyond pairs at lambda = 1, in exact integer arithmetic, on all 2-connected graphs with 4..6 vertices for every pair of nontrivial up-sets on disjoint edge sets of sizes (3,3) and (4,2) (318,120,000 up-set pairs per model), no positive covariance for forests or connected subgraphs; positive control detects association."
  ],
  "unresolved": [
   "proofs of the conjectures",
   "graphs on 10 or more vertices (a resumable forest run over all 9,743,542 2-connected 10-vertex graphs is in progress and not claimed)",
-  "general real edge weights (Grimmett-Winkler (1.7)) and negative association"
+  "general real edge weights (Grimmett-Winkler (1.7)) and negative association beyond the small exact scan (n <= 6, event supports (3,3) and (4,2), lambda = 1)"
  ],
  "nonclaims": [
   "no proof is claimed; this dossier is evidence only",

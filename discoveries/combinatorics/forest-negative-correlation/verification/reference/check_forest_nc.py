@@ -30,6 +30,10 @@ Gates (each required):
     (top term of P_C = number of smallest bonds through e and f) on the same graphs; and a binary
     rank-4 matroid ([I_4 | X], recalled as S_8) obeys the law yet has a negative Rayleigh
     coefficient (control);
+  * NA_SMALL: negative association beyond pairs at lambda = 1, exactly: for every 2-connected
+    graph on 4..5 vertices, every pair of disjoint 3-edge sets and every pair of nontrivial
+    up-sets, Cov <= 0 for both models; the positive control (uniform on cycle-containing edge sets)
+    shows a positive covariance;
   * EVIDENCE_SUMMARY: the recorded C runs (evidence/forest_nc_runs.json) cover 1, 3, 10, 56,
     468, 7123, 194066 graphs on 3..9 vertices for both models with zero violations, and the
     pair totals equal sum_G binom(|E(G)|, 2) recomputed here for n <= 7.
@@ -566,6 +570,37 @@ def main():
                                    'bond_law_pairs': bond_count, 'bond_law_failures': bond_bad[:5],
                                    's8_pairs_with_negative_coefficient': len(s8_neg),
                                    's8_example': s8_neg[0] if s8_neg else None}
+
+    # NA_SMALL
+    import numpy as np
+    sys.path.insert(0, HERE)
+    import na_scan
+    U, _ = na_scan.upsets(3)
+    U = U.astype(np.int64)
+    na_max = {}
+    for model in ('Z', 'C', 'K'):
+        best = None
+        for n, Ed in graphs:
+            if n > 5:
+                continue
+            E = sorted(Ed)
+            if len(E) < 6:
+                continue
+            obj = na_scan.objects(n, E, model)
+            Zc = len(obj)
+            cols = [((obj >> i) & 1) for i in range(len(E))]
+            for S1 in itertools.combinations(range(len(E)), 3):
+                rest = [i for i in range(len(E)) if i not in S1]
+                p1 = sum(cols[S1[t]] << t for t in range(3))
+                for S2 in itertools.combinations(rest, 3):
+                    p2 = sum(cols[S2[t]] << t for t in range(3))
+                    J = np.zeros((8, 8), dtype=np.int64)
+                    np.add.at(J, (p1, p2), 1)
+                    Cm = Zc * (U @ J @ U.T) - np.outer(U @ J.sum(1), U @ J.sum(0))
+                    mx = int(Cm.max())
+                    best = mx if best is None else max(best, mx)
+        na_max[model] = best
+    results['NA_SMALL'] = {'pass': na_max['Z'] <= 0 and na_max['C'] <= 0 and na_max['K'] > 0, 'max_Z2_cov': na_max}
 
     # EVIDENCE_SUMMARY
     ev = json.load(open(os.path.join(EVIDENCE, 'forest_nc_runs.json')))

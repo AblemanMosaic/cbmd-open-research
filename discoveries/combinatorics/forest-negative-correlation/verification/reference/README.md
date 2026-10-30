@@ -13,3 +13,4 @@
 
 Build nauty's `geng` and `multig` from the source in the PyPI sdist
 `pynauty-2.8.8.1.tar.gz` (`src/nauty2_8_8`: `./configure && make geng multig`).
+| `na_scan.py` | Exact NA scan: `python3 na_scan.py MODEL K1 K2 n...` with `MODEL` = `Z`, `C`, or the positive control `K`; needs `geng`. |
