@@ -1,0 +1,31 @@
+{
+ "schema": "cbmd.fixed-state-star-reduction.v1",
+ "instances": 1208,
+ "good_agree": 1208,
+ "bad_agree": 1208,
+ "normal_form_bridge": 1208,
+ "below_weighted_bound": 1188,
+ "at_or_above_bound": 20,
+ "at_or_above_bound_good": 20,
+ "combinations_good_bad": {
+  "False/False": 0,
+  "False/True": 516,
+  "True/False": 272,
+  "True/True": 420
+ },
+ "crossing_control_disagreements": 516,
+ "gates": {
+  "good_predicate_exact": true,
+  "bad_predicate_exact": true,
+  "normal_form_is_all_fired_state": true,
+  "consistent_with_weighted_theorem": true,
+  "three_possible_combinations_occur": true,
+  "impossible_combination_absent": true,
+  "control_crossing_rule_disagrees": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "checks the compiled correspondence on random stars; the NP-hardness of 3-PARTITION is classical and cited, not proved"
+ ],
+ "authority_effect": "NONE"
+}

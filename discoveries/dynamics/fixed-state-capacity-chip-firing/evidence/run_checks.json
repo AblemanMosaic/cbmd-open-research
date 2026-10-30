@@ -1,0 +1,174 @@
+{
+ "schema": "cbmd.fixed-state-checks.v1",
+ "status": "PASS",
+ "content_gate_failures": [],
+ "checks": [
+  {
+   "id": "STAR_REDUCTION",
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.fixed-state-star-reduction.v1",
+    "instances": 661,
+    "good_agree": 661,
+    "bad_agree": 661,
+    "normal_form_bridge": 661,
+    "below_weighted_bound": 648,
+    "at_or_above_bound": 13,
+    "at_or_above_bound_good": 13,
+    "combinations_good_bad": {
+     "False/False": 0,
+     "False/True": 259,
+     "True/False": 178,
+     "True/True": 224
+    },
+    "crossing_control_disagreements": 259,
+    "gates": {
+     "good_predicate_exact": true,
+     "bad_predicate_exact": true,
+     "normal_form_is_all_fired_state": true,
+     "consistent_with_weighted_theorem": true,
+     "three_possible_combinations_occur": true,
+     "impossible_combination_absent": true,
+     "control_crossing_rule_disagrees": true
+    },
+    "status": "PASS",
+    "nonclaims": [
+     "checks the compiled correspondence on random stars; the NP-hardness of 3-PARTITION is classical and cited, not proved"
+    ],
+    "authority_effect": "NONE"
+   }
+  },
+  {
+   "id": "SEMANTICS_CUSTODY",
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.fixed-state-semantics-custody.v1",
+    "declarations": [
+     {
+      "name": "Vertex",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "Chips",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "OrdinaryUnstable",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "OrdinaryStable",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "ReceiverBlocked",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "CapacityLegal",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "CapacityTerminal",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "CapacityStep",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "Reaches",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     },
+     {
+      "name": "wFire",
+      "found_in_copy": true,
+      "found_in_weighted": true,
+      "identical": true
+     }
+    ],
+    "mutation_control_detected": true,
+    "status": "PASS",
+    "authority_effect": "NONE"
+   }
+  },
+  {
+   "id": "LEAN_AUDIT",
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "actual_axiom_dependencies_checked": false,
+    "allowed_axioms": [
+     "Classical.choice",
+     "Quot.sound",
+     "propext"
+    ],
+    "authority_effect": "NONE",
+    "dependencies": [],
+    "independent_verification": false,
+    "lean_recompiled": false,
+    "members": [
+     {
+      "bytes": 5016,
+      "path": "CBMDFixedState/Bins.lean",
+      "sha256": "f19df709bca5a4432b4c9ebad95b7d1ce714bcd1f6deae17d77bf36ede63e95c"
+     },
+     {
+      "bytes": 2066,
+      "path": "CBMDFixedState/Semantics.lean",
+      "sha256": "3fbbd005016c91122cc4856776916f64a452126a60108f39e1fc60a9b5df3890"
+     },
+     {
+      "bytes": 8643,
+      "path": "CBMDFixedState/Star.lean",
+      "sha256": "2b8f70794ba7505cad45c576ad7b0c70105cb037a56bf9531d3339e540aa30ba"
+     },
+     {
+      "bytes": 86,
+      "path": "CBMDFixedState.lean",
+      "sha256": "ae500ce6d7fb4268cd68bd67d7a66d0d2989db9b2f46271594481b2c7fd8de76"
+     }
+    ],
+    "no_escape": true,
+    "proof_escapes": [],
+    "schema": "cbmd.fixed-state-lean-audit.v1",
+    "status": "PASS",
+    "target_declarations": [
+     "CBMDFixedState.Star.reach_of_run",
+     "CBMDFixedState.Star.run_of_reach",
+     "CBMDFixedState.Star.reach_iff",
+     "CBMDFixedState.Star.all_fired_reachable_iff",
+     "CBMDFixedState.Star.bad_terminal_reachable_iff",
+     "CBMDFixedState.Star.run_iff_blocks",
+     "CBMDFixedState.Star.normal_form_reachable_iff_partition"
+    ],
+    "toolchain": "leanprover/lean4:v4.35.0"
+   }
+  }
+ ],
+ "nonclaims": [
+  "Lean recompilation is not performed here; use lean/replay.py --build",
+  "the NP-hardness of 3-PARTITION is classical and cited, not proved"
+ ],
+ "authority_effect": "NONE"
+}

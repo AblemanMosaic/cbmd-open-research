@@ -223,7 +223,7 @@ breaks them. See
   theorem and necessary by `bound_necessary_at_unit_arc`. See
   [`revisions/0.6.0-unit-receivers.md`](revisions/0.6.0-unit-receivers.md).
 
-- **Open, and named:** transfer from a *fixed* initial state. The
+- **Split off as [`CBMD-DYN-FIXED-STATE-001`](../fixed-state-capacity-chip-firing/README.md):** reaching the normal form from a fixed state is strongly NP-hard, already on a star. The original note follows. Transfer from a *fixed* initial state. The
   characterization quantifies over all admissible states. Whether
   capacity-blocked firing from a given `x` can reach a capacity-terminal state
   that is not ordinarily stable is a deadlock-reachability question in a

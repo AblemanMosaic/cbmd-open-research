@@ -1,0 +1,6 @@
+name = "CBMDFixedState"
+version = "0.1.0"
+defaultTargets = ["CBMDFixedState"]
+
+[[lean_lib]]
+name = "CBMDFixedState"

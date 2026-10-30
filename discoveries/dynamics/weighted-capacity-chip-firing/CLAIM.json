@@ -47,7 +47,7 @@
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
-  "the complexity of transfer from a FIXED initial state: whether capacity-blocked firing from a given x can reach a capacity-terminal state that is not ordinarily stable; the characterization quantifies over all admissible states, the per-instance question is a deadlock-reachability problem in a bounded net whose complementary capacity places are not conflict-free, and no reduction or algorithm is recorded; a census over n <= 3 finds 18,276 of 11.9 million (system, initial state) pairs that can reach both the ordinary normal form and a bad terminal state, so firing order matters from a fixed state"
+  "the fixed-initial-state question is now a separate line, CBMD-DYN-FIXED-STATE-001: reaching the normal form from a fixed state is strongly NP-hard already on a star (compiled correspondence with exact-bin partition); whether firing can get stuck from a fixed state remains open there"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",

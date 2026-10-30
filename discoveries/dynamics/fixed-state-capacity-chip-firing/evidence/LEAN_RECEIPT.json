@@ -1,0 +1,57 @@
+{
+ "actual_axiom_dependencies_checked": true,
+ "allowed_axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "authority_effect": "NONE",
+ "axiom_report": "'CBMDFixedState.Star.reach_of_run' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_of_reach' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.reach_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.all_fired_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.bad_terminal_reachable_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDFixedState.Star.run_iff_blocks' depends on axioms: [propext, Quot.sound]\n'CBMDFixedState.Star.normal_form_reachable_iff_partition' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axioms_observed": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "axioms_within_allowlist": true,
+ "build_status": "PASS",
+ "build_stderr_tail": "",
+ "dependencies": [],
+ "independent_verification": false,
+ "lean_recompiled": true,
+ "members": [
+  {
+   "bytes": 5016,
+   "path": "CBMDFixedState/Bins.lean",
+   "sha256": "f19df709bca5a4432b4c9ebad95b7d1ce714bcd1f6deae17d77bf36ede63e95c"
+  },
+  {
+   "bytes": 2066,
+   "path": "CBMDFixedState/Semantics.lean",
+   "sha256": "3fbbd005016c91122cc4856776916f64a452126a60108f39e1fc60a9b5df3890"
+  },
+  {
+   "bytes": 8643,
+   "path": "CBMDFixedState/Star.lean",
+   "sha256": "2b8f70794ba7505cad45c576ad7b0c70105cb037a56bf9531d3339e540aa30ba"
+  },
+  {
+   "bytes": 86,
+   "path": "CBMDFixedState.lean",
+   "sha256": "ae500ce6d7fb4268cd68bd67d7a66d0d2989db9b2f46271594481b2c7fd8de76"
+  }
+ ],
+ "no_escape": true,
+ "proof_escapes": [],
+ "schema": "cbmd.fixed-state-lean-audit.v1",
+ "status": "PASS",
+ "target_declarations": [
+  "CBMDFixedState.Star.reach_of_run",
+  "CBMDFixedState.Star.run_of_reach",
+  "CBMDFixedState.Star.reach_iff",
+  "CBMDFixedState.Star.all_fired_reachable_iff",
+  "CBMDFixedState.Star.bad_terminal_reachable_iff",
+  "CBMDFixedState.Star.run_iff_blocks",
+  "CBMDFixedState.Star.normal_form_reachable_iff_partition"
+ ],
+ "toolchain": "leanprover/lean4:v4.35.0"
+}

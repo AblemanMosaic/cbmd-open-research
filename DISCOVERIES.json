@@ -156,6 +156,25 @@
         "SOURCE_BOUND_COMPILED",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-DYN-FIXED-STATE-001",
+      "field": "dynamics",
+      "slug": "fixed-state-capacity-chip-firing",
+      "path": "discoveries/dynamics/fixed-state-capacity-chip-firing",
+      "title": "Capacity-blocked chip-firing from a fixed state: strongly NP-hard on a star",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Determine the complexity of FIXED-BAD (reaching a stuck terminal state) and whether FIXED-GOOD is in NP in general or hard with unit multiplicities; obtain external review.",
+      "promotion_blockers": [
+        "novelty and prior-art assessment open",
+        "external review open",
+        "the complexity-class wrapper (3-PARTITION hardness cited, NP and PSPACE membership) is a written argument; the correspondence is compiled"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "SOURCE_BOUND_COMPILED",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

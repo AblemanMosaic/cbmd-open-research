@@ -1,0 +1,54 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-DYN-FIXED-STATE-001",
+ "title": "Capacity-blocked chip-firing from a fixed state: strongly NP-hard on a star",
+ "field": "dynamics",
+ "slug": "fixed-state-capacity-chip-firing",
+ "public_version": "0.1.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "SOURCE_BOUND_COMPILED",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "For capacity-blocked chip-firing with an absorbing sink, deciding whether the ordinary normal form of a given admissible initial state is reachable by capacity-legal firings is strongly NP-hard, already on a star: k senders holding bundles a_i (outdegree and capacity a_i) feeding one receiver of outdegree and capacity B. On such a star the reachable states are exactly the bin runs (orders in which every bundle fits into the receiver's current fill, the fill resetting at B), bin runs are exactly decompositions into disjoint blocks of total exactly B followed by an open block of total at most B, and so, when B divides the total, the normal form is reachable iff the bundles partition into groups of total exactly B, which contains 3-PARTITION. On stars the problem is in NP; in general it is in PSPACE. By contrast the all-initial-states version is decided in polynomial time by the weighted dossier's verified decider.",
+ "resolves": "CBMD-DYN-WEIGHTED-CAPACITY-001 open item: the complexity of transfer from a fixed initial state (the reach-the-normal-form half)",
+ "verified": [
+  "reach_iff, all_fired_reachable_iff, bad_terminal_reachable_iff, run_iff_blocks and normal_form_reachable_iff_partition compile under Lean 4.35.0, Mathlib-free, with no proof escapes and axioms within propext, Classical.choice and Quot.sound, against the capacity-blocked chip-firing semantics copied verbatim from the weighted dossier.",
+  "A semantics custody check confirms every copied declaration is textually identical to the weighted dossier's, and detects a one-symbol mutation.",
+  "On 1,208 random stars both compiled decision predicates (exact-bin order exists; some bin run gets stuck) agree with exhaustive simulation, the ordinary normal form is the all-fired state with the total mod B at the receiver, every instance meeting the weighted bound is good, and a run rule that lets bundles cross a multiple of B disagrees with simulation 516 times."
+ ],
+ "unresolved": [
+  "the complexity of FIXED-BAD (can firing from x get stuck in a terminal state that is not ordinarily stable) and of its complement; on stars FIXED-BAD is characterized exactly but its complexity is not determined",
+  "the exact complexity of FIXED-GOOD in general: NP-hard and in PSPACE, NP membership open because firing vectors can be exponential on digraphs",
+  "whether hardness survives with unit multiplicities",
+  "novelty assessment and external review"
+ ],
+ "nonclaims": [
+  "the strong NP-hardness of 3-PARTITION is classical and cited, not proved here; what is compiled is the correspondence between the star and exact-bin partitions",
+  "NP membership on stars and PSPACE membership in general are written arguments",
+  "not a novelty determination; chip-firing reachability hardness (without capacities) and deadlock-avoidance hardness in resource allocation systems are known and are different problems"
+ ],
+ "smallest_decisive_test": "A star whose normal form is capacity-reachable although its bundles admit no exact-bin partition, or the reverse; or a polynomial algorithm for the star case, which would decide 3-PARTITION.",
+ "checks": [
+  {
+   "id": "FIXED_STATE_BUNDLED_CHECKS",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/fixed-state-capacity-chip-firing/verification/run_checks.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "FIXED_STATE_LEAN_AUDIT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/fixed-state-capacity-chip-firing/verification/lean/replay.py",
+    "--audit-only"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}
