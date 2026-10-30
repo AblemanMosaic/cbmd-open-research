@@ -29,7 +29,7 @@ than 0.4 and much lower than 1".
   - If Conjecture 1.7 holds, it is the limit of the ratio of Remark 3.1. That
     ratio converges slowly, like `κ − 4.17/log_φ n` (0.44 at `10³`, 0.63 at
     `2·10⁹`), which explains the authors' reading.
-  - An exhaustive search confirms that LGS is longest for every `n ≤ 16`.
+  - An exhaustive search confirms that LGS is longest for every `n ≤ 24`.
   - An independent review found the proof correct up to fixable gaps; the
     fixes are applied.
 - **Why.**

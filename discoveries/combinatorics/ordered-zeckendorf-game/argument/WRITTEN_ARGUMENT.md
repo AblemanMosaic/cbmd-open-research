@@ -212,7 +212,7 @@ below `ℓ*`, and `ℓ* = log_φ n + O(1)` (`𝓛`-words of length `ℓ` have va
   `n = 10³, …, 10⁹` (`evidence/lgs_large.json`). The `O(n)` term is about
   `−4.17 n`.
 - **Exhaustive check:** the maximal game length `M(n)` equals the LGS length
-  for every `n ≤ 16` (exhaustive search over ordered states). This is consistent
+  for every `n ≤ 24` (exhaustive search over ordered states). This is consistent
   with Conjecture 1.7, not a proof of it.
 - **Not claimed:**
   - that LGS is longest (Conjecture 1.7);
