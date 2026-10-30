@@ -2,6 +2,8 @@
  "authority_effect": "NONE",
  "counts": {
   "conj_fail": 0,
+  "covered_but_not_stuck": 0,
+  "covered_by_compiled": 492524,
   "dp_fail": 0,
   "instances": 500461,
   "largest_fit_misses": 98872,
@@ -14,7 +16,8 @@
   "smallest_fit_misses": 3459,
   "sound_fail": 0,
   "stuck": 496470,
-  "witness": 496470
+  "witness": 496470,
+  "witness_not_covered": 3946
  },
  "examples": {
   "min_total_witness_not_every_order": [
@@ -41,9 +44,16 @@
     2
    ],
    1
+  ],
+  "witness_not_covered": [
+   [
+    2
+   ],
+   1
   ]
  },
  "gates": {
+  "COMPILED_partial_converse_consistent": true,
   "CONJECTURE_witness_implies_stuck_no_counterexample": true,
   "CONTROL_largest_fit_greedy_bites": true,
   "CONTROL_nonstrict_rule_bites": true,

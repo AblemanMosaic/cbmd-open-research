@@ -47,6 +47,8 @@
     "authority_effect": "NONE",
     "counts": {
      "conj_fail": 0,
+     "covered_but_not_stuck": 0,
+     "covered_by_compiled": 19303,
      "dp_fail": 0,
      "instances": 20797,
      "largest_fit_misses": 5817,
@@ -59,7 +61,8 @@
      "smallest_fit_misses": 335,
      "sound_fail": 0,
      "stuck": 19770,
-     "witness": 19770
+     "witness": 19770,
+     "witness_not_covered": 467
     },
     "examples": {
      "nonstrict_false_accept": [
@@ -74,9 +77,16 @@
        2
       ],
       1
+     ],
+     "witness_not_covered": [
+      [
+       2
+      ],
+      1
      ]
     },
     "gates": {
+     "COMPILED_partial_converse_consistent": true,
      "CONJECTURE_witness_implies_stuck_no_counterexample": true,
      "CONTROL_largest_fit_greedy_bites": true,
      "CONTROL_nonstrict_rule_bites": true,
@@ -246,6 +256,11 @@
       "sha256": "f19df709bca5a4432b4c9ebad95b7d1ce714bcd1f6deae17d77bf36ede63e95c"
      },
      {
+      "bytes": 28140,
+      "path": "CBMDFixedState/Realise.lean",
+      "sha256": "64aa20eda6b1bbac16ca8f9a4ba2368ad00973bd574e8ba78fd98f3a80dd80e4"
+     },
+     {
       "bytes": 2066,
       "path": "CBMDFixedState/Semantics.lean",
       "sha256": "3fbbd005016c91122cc4856776916f64a452126a60108f39e1fc60a9b5df3890"
@@ -261,9 +276,9 @@
       "sha256": "8994003a14b2dbf43b8b1db5f62f2bdc9ba317f8e962a5748ee45a97eb52021d"
      },
      {
-      "bytes": 114,
+      "bytes": 144,
       "path": "CBMDFixedState.lean",
-      "sha256": "9b8869e6f2a2052566bc9d490578c9bcd013dd0678b60a04fa343a50d54f7d53"
+      "sha256": "907b9cddbcf69fc912651c26f6e26bb5b2c02adb9c88faded36365b326821f76"
      }
     ],
     "no_escape": true,
@@ -280,7 +295,10 @@
      "CBMDFixedState.Star.normal_form_reachable_iff_partition",
      "CBMDFixedState.Star.fill_eq_mod",
      "CBMDFixedState.Star.stuck_imp_witness",
-     "CBMDFixedState.Star.safe_of_no_witness"
+     "CBMDFixedState.Star.safe_of_no_witness",
+     "CBMDFixedState.Star.realise_small",
+     "CBMDFixedState.Star.realise_pair",
+     "CBMDFixedState.Star.bad_of_small_or_pair_witness"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

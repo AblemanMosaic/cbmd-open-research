@@ -164,12 +164,12 @@
       "path": "discoveries/dynamics/fixed-state-capacity-chip-firing",
       "title": "Capacity-blocked chip-firing from a fixed state: strongly NP-hard on a star",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Prove or refute the residue-witness conjecture (every residue witness on a star is realised by a stuck run, which would make FIXED-BAD pseudo-polynomial on stars); determine FIXED-BAD on general graphs, whether FIXED-GOOD is in NP in general or hard with unit multiplicities; obtain external review.",
+      "next_obligation": "Prove or refute the residue-witness conjecture in the remaining case (every witness leaves at least three unfired senders of total above B), e.g. via the one-step block lemma; determine FIXED-BAD on general graphs, whether FIXED-GOOD is in NP in general or hard with unit multiplicities; obtain external review.",
       "promotion_blockers": [
         "novelty and prior-art assessment open",
         "external review open",
         "the complexity-class wrapper (3-PARTITION hardness cited, NP and PSPACE membership) is a written argument; the correspondence is compiled",
-        "the converse of the compiled stuck-implies-witness theorem is a conjecture with exhaustive evidence, not a proof"
+        "the converse of the compiled stuck-implies-witness theorem is compiled only for witnesses whose unfired part totals at most B or has two members; the rest is a conjecture with exhaustive evidence"
       ],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",

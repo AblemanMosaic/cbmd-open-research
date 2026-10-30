@@ -1,0 +1,17 @@
+# bin_runs_exhaustive.c (cc -O2), counts cumulative over B = 1..Bmax and k = 1..kmax, entries 1..B
+## exh 30 7
+B=30 done inst=48903461 wit=48789492 cex=0
+seconds 8
+## exh 23 9
+B=23 done inst=92561016 wit=92508614 cex=0
+seconds 43
+## exh 18 10
+B=18 done inst=34597271 wit=34576085 cex=0
+seconds 28
+## exh 14 12
+B=14 done inst=20058285 wit=20047237 cex=0
+seconds 52
+## rand 10 100 9 16 400000 7
+rand done inst=400000 wit=395584 cex=0
+## one_step_lemma_search.c 16 10 (B = 2..16, k = 1..10)
+level1 instances found: 0

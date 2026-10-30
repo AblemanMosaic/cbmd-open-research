@@ -124,7 +124,62 @@ dossier's exact simulator on 400 random stars. The controls each bite:
 - weakening `>` to `≥` accepts instances with no stuck run;
 - largest-fit and smallest-fit greedy runs each miss stuck runs that exist.
 
-**Why the converse is not proved here.** The natural route fails. One would
+**Partial converse (Lean: `realise_small`, `realise_pair`,
+`bad_of_small_or_pair_witness`; revision 0.3.0).** Suppose a residue witness
+leaves unfired a set `U` that totals at most `B`, or has exactly two members.
+Then some run gets stuck.
+
+The proof is by strong induction on the total of the unfired bundles. It runs
+from any reachable state with an empty receiver, so closing an exact block
+gives a smaller instance of the same statement. Write `F` for the witness's
+fired part, `r = (Σ_F a) mod B`, and suppose no run gets stuck. Five general
+facts follow.
+
+1. *No exact block inside `F`.* Otherwise close it first. The residue and `U`
+   are unchanged, and the induction hypothesis applies.
+2. *`Σ_F a ≥ B`.* Otherwise firing all of `F` in one bin already gets stuck.
+3. *Every maximal one-bin packing is exact.* A non-exact maximal packing that
+   leaves something unfired is a stuck run.
+4. *Room.* Every subset of `F` of total at most `B` leaves room for some bundle
+   of `U`. Extend it to a maximal subset `G` of `F`. Then extend `G` to a
+   maximal packing of everything; that packing is exact by (3), so it must add
+   bundles, and those come from `U`.
+5. *Small rest.* If the remaining senders contain no exact block, they total
+   less than `B`. Otherwise a maximal packing of them is a stuck run.
+
+*Case `Σ_U a ≤ B`.* Pack `U` first and extend to a maximal packing `E`. By (3),
+`E` is exact, so `F` contributes `B − Σ_U a` to it. What remains after closing
+`E` lies inside `F`. By (1) it is exact-free, so by (5) it totals less than
+`B`, and by (4) at most `B − a_u` for some `u ∈ U`. Then
+`Σ_F a ≤ 2B − Σ_U a − a_u < 2B − a_u`. But `B ≤ Σ_F a < 2B` forces
+`Σ_F a = B + r > 2B − a_u`, because `r + a_u > B`.
+
+*Case `U = {u, v}` with `a_u + a_v > B`.* Take a maximal subset `G` of `F`.
+By (4) some `x ∈ U` fits on it. Then `G ∪ {x}` is maximal, because the other
+bundle `y` overflows (`a_x + a_y > B`), so it is exact. In the remaining
+instance, a maximal subset `G'` of `F \ G` must take `y` on top; otherwise it
+is a stuck packing. `G' ∪ {y}` is again exact, since it cannot exhaust what
+remains (that would make `Σ_F a < B`). What remains then lies in `F`. By (1),
+(4) and (5) it totals at most `B − a_z` for some `z ∈ U`, so
+`Σ_F a ≤ 3B − (a_u + a_v) − a_z < 2B − a_z`, the same contradiction.
+
+**Coverage.** In the exhaustive range (`B ≤ 13, k ≤ 8`), 492,524 of the 496,470 instances with a witness have a witness of one of these two shapes. For those instances the converse is now proved, not conjectured, and `residue_witness.py` checks the theorem against the model on every one of them. The other 3,946 instances, including those with a bundle too big ever to fire, rest on the conjecture. What is left open is instances in which every
+witness leaves at least three senders unfired, with total above `B`.
+
+**Further search.** `verification/reference/bin_runs_exhaustive.c` is optional
+and needs a C compiler. It uses `fill_eq_mod` to take the fired mask alone as
+the state. It found no counterexample on these ranges: all multisets with
+`B ≤ 30, k ≤ 7`; `B ≤ 23, k ≤ 9`; `B ≤ 18, k ≤ 10`; `B ≤ 14, k ≤ 12`; and
+400,000 random instances with `10 ≤ B ≤ 100`, `9 ≤ k ≤ 16`. The output is in
+`evidence/bin_runs_exhaustive.txt`.
+
+**A one-step reduction (unproved).** The conjecture would follow by induction
+from this lemma: *if every maximal one-bin packing is exact and a witness
+exists, then some exact block can be closed so that a witness survives.* A
+search found no violation for `B ≤ 20, k ≤ 10`, but the lemma is not proved
+here.
+
+**Why the full converse is not proved here.** The natural route fails. One would
 take a witness, fire its set, and hope the order works out, but a witness's
 fired set need not pack into exact blocks, and the realising run often uses a
 different witness. The obvious extremal choices also fail in range:

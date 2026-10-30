@@ -47,7 +47,8 @@ states are bounded by the capacities.
   `propext, Classical.choice, Quot.sound`): `reach_iff`,
   `all_fired_reachable_iff`, `bad_terminal_reachable_iff`, `run_iff_blocks`,
   `normal_form_reachable_iff_partition`, and (0.2.0) `fill_eq_mod`,
-  `stuck_imp_witness`, `safe_of_no_witness`. They are proved against the
+  `stuck_imp_witness`, `safe_of_no_witness`, and (0.3.0) `realise_small`,
+  `realise_pair`, `bad_of_small_or_pair_witness`. They are proved against the
   capacity-blocked chip-firing semantics of the weighted dossier, copied
   verbatim. `verification/semantics_custody.py` checks the copy declaration by
   declaration, with a mutation control.
@@ -79,6 +80,11 @@ not ordinarily stable. On the star:
   residue witness means no reachable bad ending (`safe_of_no_witness`).
 - **Written, checked against the definition:** the witness condition is
   decided in `O(kB)` time after sorting, i.e. pseudo-polynomially.
+- **Compiled partial converse (0.3.0):** if some residue witness leaves
+  unfired senders of total at most `B`, or exactly two senders, then some run
+  gets stuck (`realise_small`, `realise_pair`, `bad_of_small_or_pair_witness`).
+  In the exhaustive range this settles 492,524 of the
+  496,470 instances that have a witness.
 - **Conjectured, not proved:** every residue witness is realised by a stuck
   run. Sharper: for a witness of least fired total, firing its set
   largest-fit-first realises it. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
@@ -117,8 +123,8 @@ python -B discoveries/dynamics/fixed-state-capacity-chip-firing/verification/lea
 ## Repository map
 
 - `argument/`: the written argument, including the complexity wrapper.
-- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`) and replay driver.
-- `verification/reference/`: the star census against exact simulation, and the residue-witness check.
+- `verification/lean/`: Lean sources (`Semantics`, `Star`, `Bins`, `Stuck`, `Realise`) and replay driver.
+- `verification/reference/`: the star census against exact simulation, the residue-witness check, and two optional C searches (`bin_runs_exhaustive.c`, `one_step_lemma_search.c`).
 - `verification/semantics_custody.py`: checks the copied semantics against the weighted dossier.
 - `evidence/`: census output, bundled checks and the Lean receipt.
 - `review/`: prior-art note.

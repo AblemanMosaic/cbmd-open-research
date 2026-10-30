@@ -27,6 +27,10 @@ Gates (each required):
       - largest-fit and smallest-fit greedy runs each fail to find a stuck run
         on some instance that has one, so the question is not settled by a
         fixed greedy order;
+  * COMPILED PARTIAL CONVERSE (`Realise.lean`): every instance with a witness
+    whose unfired senders total at most B, or number exactly two, has a stuck
+    run -- checked here against the model, with the count of witness instances
+    the theorem does not cover;
   * SCOPE: with two receivers the residue condition is necessary but NOT
     sufficient -- an explicit two-receiver system has a residue witness and,
     by exact simulation, no reachable bad terminal state -- so the conjecture
@@ -212,6 +216,7 @@ def main():
                   largest_fit_misses=0, smallest_fit_misses=0,
                   min_total_witness_not_every_order=0, min_total_witness_not_packable=0,
                   min_total_witness_not_largest_fit=0,
+                  covered_by_compiled=0, covered_but_not_stuck=0, witness_not_covered=0,
                   oversize_instances=0)
     examples = {}
     for B in range(1, B_MAX + 1):
@@ -231,6 +236,23 @@ def main():
                 if w and not st:
                     counts["conj_fail"] += 1
                     examples.setdefault("conj_fail", [a, B])
+                if w:
+                    k_ = len(a)
+                    full_ = (1 << k_) - 1
+                    cov = False
+                    for m in W:
+                        Uc = [a[i] for i in range(k_) if not m >> i & 1]
+                        if sum(Uc) <= B or len(Uc) == 2:
+                            cov = True
+                            break
+                    if cov:
+                        counts["covered_by_compiled"] += 1
+                        if not st:
+                            counts["covered_but_not_stuck"] += 1
+                            examples.setdefault("covered_but_not_stuck", [a, B])
+                    else:
+                        counts["witness_not_covered"] += 1
+                        examples.setdefault("witness_not_covered", [a, B])
                 if dp_witness(a, B) != w:
                     counts["dp_fail"] += 1
                     examples.setdefault("dp_fail", [a, B])
@@ -287,6 +309,8 @@ def main():
         "CONTROL_largest_fit_greedy_bites": counts["largest_fit_misses"] > 0,
         "CONTROL_smallest_fit_greedy_bites": counts["smallest_fit_misses"] > 0,
         "oversize_bundles_covered": counts["oversize_instances"] > 0,
+        "COMPILED_partial_converse_consistent": counts["covered_but_not_stuck"] == 0
+            and counts["covered_by_compiled"] > 0,
         "SCOPE_two_receivers_witness_not_sufficient":
             bool(two["residue_witnesses"]) and two["bad_terminal_reachable"] is False,
     }
