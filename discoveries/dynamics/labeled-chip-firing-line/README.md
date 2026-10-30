@@ -1,6 +1,6 @@
-# Labeled chip-firing on the line, odd number of chips: evidence
+# Labeled chip-firing on the line: evidence for open HMP conjectures
 
-> **Standing:** `CONJECTURE`, `EXACT_MODEL_VERIFIED`
+> **Standing:** `CONJECTURE`, `EXACT_MODEL_VERIFIED` (version 0.2.0)
 
 Permanent claim ID: `CBMD-DYN-LABELED-LINE-001`
 
@@ -36,10 +36,51 @@ of their conjectures remain open:
 - **Monte Carlo up to `m = 80`.** At 20,000 runs per point, the estimates stay
   within 0.006 of `1/3`.
 
+## Loops and parallel edges (Conjectures 21 and 25)
+
+`ℤ⟨S⟩` is `ℤ` with one loop at each `i ∈ S`. A site with `ℓ` left edges, `m`
+loops and `r` right edges fires `ℓ + m + r` chips: the `ℓ` smallest labels go
+left, the `r` largest go right, and the `m` middle chips stay. `r(G)` replaces
+every edge and loop by `r` parallel copies.
+
+- **Conjecture 21 (HMP):** if the stabilization of `n` chips at 0 on `ℤ⟨S⟩`
+  strictly extends that of `n − 1` chips at both ends, then `ℤ⟨S⟩` sorts
+  `Δⁿ`.
+- **Conjecture 25 (HMP):** under the same condition, `r(ℤ⟨S⟩)` sorts `Δ^{rn}`.
+
+Some cases are theorems. `S = ∅` is HMP's even-`n` theorem, and a single loop
+site at the origin is their Theorem 20. `S = ℤ` with `n ≡ 3 (mod 4)` is
+Klivans–Liscio Theorem 3.13, and these are exactly the qualifying `n` for
+`S = ℤ`. Klivans–Liscio also prove Conjecture 24 (`rℤ`). We found no
+treatment of general `S`.
+
+**Method.** Colour chips `1..t` red and the rest blue. Labeled runs project to
+colour runs, and colour runs lift to labeled runs. So `G` sorts `Δⁿ` if and
+only if, for every `t`, no reachable stable colour state has a blue chip
+strictly left of a red one (`argument/WRITTEN_ARGUMENT.md`, §2).
+
+**Results (no counterexample).**
+
+| Scan | Range | Instances | Outcome |
+|---|---|---|---|
+| Conjecture 21 | `S ⊆ [−5,5]`, `\|S\| ≤ 3`, `n ≤ 16` | 614 qualifying | all sort |
+| Conjecture 25, `r = 2` | `S ⊆ [−4,4]`, `\|S\| ≤ 3`, `n ≤ 12` (≤ 24 chips) | 287 qualifying | all sort |
+| Conjecture 25, `r = 3` | `S ⊆ [−4,4]`, `\|S\| ≤ 3`, `n ≤ 8` (≤ 24 chips) | 242 qualifying | all sort |
+| Converse (observation) | `S ⊆ [−5,5]`, `\|S\| ≤ 3`, `deg(0) ≤ n ≤ 14`, `n ≥ 3` | 2,384 non-qualifying | all fail to sort |
+| Scaling (observation) | `S ⊆ [−3,3]`, `\|S\| ≤ 3`, `n ≤ 11`, `r ∈ {1,2,3}`, `rn ≤ 24` | 640 cases | `r(ℤ⟨S⟩)` sorts `Δ^{rn}` iff `ℤ⟨S⟩` sorts `Δⁿ` |
+
+In these ranges, the condition of Conjecture 21 is therefore both sufficient
+and necessary for sorting, once the origin can fire. (When `0 ∈ S` and
+`n = 2`, nothing fires, so the chips are trivially sorted.) HMP do not discuss
+a converse; their Remark 22 only relates the two end conditions to a
+balance condition on `S`.
+
 ## What is not established
 
-- Proofs of either conjecture.
+- Proofs of Conjectures 26 and 27.
 - Protocol 3 (a uniformly random stabilization sequence).
+- Proofs of Conjectures 21 and 25 for general `S`, and of the converse and
+  scaling observations. These are checked only in the stated ranges.
 
 ## Reproduction
 
@@ -47,4 +88,12 @@ of their conjectures remain open:
 python -B discoveries/dynamics/labeled-chip-firing-line/verification/reference/check_line.py
 c++ -O2 -o zline discoveries/dynamics/labeled-chip-firing-line/verification/reference/zline.cpp && ./zline 11
 c++ -O2 -o exactp discoveries/dynamics/labeled-chip-firing-line/verification/reference/exactp.cpp && ./exactp 11 2
+python -B discoveries/dynamics/labeled-chip-firing-line/verification/reference/check_loops.py
+cd discoveries/dynamics/labeled-chip-firing-line/verification/reference/loops_scan
+c++ -O2 -o zs_bin zs.cpp && c++ -O2 -o zsr_bin zsr.cpp
+python3 run21c.py -5 5 3 16 out21.jsonl        # Conjecture 21 (about 5 minutes on 2 cores)
+R=2 python3 run25.py -4 4 3 12 out25_r2.jsonl  # Conjecture 25, r = 2
+R=3 python3 run25.py -4 4 3 8 out25_r3.jsonl   # Conjecture 25, r = 3
+python3 conv21.py -5 5 3 14 conv.jsonl         # converse scan
+python3 scaling.py scaling.jsonl               # scaling scan
 ```

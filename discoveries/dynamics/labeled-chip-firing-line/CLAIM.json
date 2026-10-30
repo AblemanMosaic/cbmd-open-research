@@ -1,30 +1,35 @@
 {
  "schema": "cbmd.open-research.claim.v1",
  "id": "CBMD-DYN-LABELED-LINE-001",
- "title": "Labeled chip-firing on the line with an odd number of chips: evidence for two open conjectures",
+ "title": "Labeled chip-firing on the line: evidence for open Hopkins-McConville-Propp conjectures (odd n; loops and parallel edges)",
  "field": "dynamics",
  "slug": "labeled-chip-firing-line",
- "public_version": "0.1.0",
+ "public_version": "0.2.0",
  "status": [
   "CONJECTURE",
   "EXACT_MODEL_VERIFIED"
  ],
- "statement": "For labeled chip-firing on Z from n = 2m + 1 chips at the origin (Hopkins-McConville-Propp 2017): the maximal number of inversions of a stable outcome is m for n <= 11 (their Conjecture 26 was verified for n <= 9); the exact probabilities of the sorted outcome under random protocols 1 and 2 are 1/3, 1/5, 0.2501/0.2512, 0.3118/0.3147, 0.3305/0.3314 for n = 3, 5, 7, 9, 11, and Monte Carlo estimates up to m = 80 are within 0.006 of 1/3, consistent with their Conjecture 27 (limit 1/3).",
- "resolves": "nothing; extends the evidence for Hopkins-McConville-Propp Conjectures 26 and 27",
+ "statement": "For labeled chip-firing on Z from n = 2m + 1 chips at the origin (Hopkins-McConville-Propp 2017): the maximal number of inversions of a stable outcome is m for n <= 11 (their Conjecture 26 was verified for n <= 9); the exact probabilities of the sorted outcome under random protocols 1 and 2 are 1/3, 1/5, 0.2501/0.2512, 0.3118/0.3147, 0.3305/0.3314 for n = 3, 5, 7, 9, 11, and Monte Carlo estimates up to m = 80 are within 0.006 of 1/3, consistent with their Conjecture 27 (limit 1/3). Separately, for the graphs Z<S> (a loop at each i in S) and r(Z<S>) (every edge and loop replaced by r parallel copies), an exact two-colour reachability test finds no counterexample to HMP Conjecture 21 (614 instances: S in [-5,5], |S| <= 3, n <= 16) or Conjecture 25 (287 instances at r = 2 and 242 at r = 3, up to 24 chips). In the same ranges two further regularities hold without exception (observations, not theorems): when the origin can fire, Z<S> sorts Delta^n only if the Conjecture 21 condition holds (2,384 non-qualifying instances all fail to sort); and r(Z<S>) sorts Delta^{rn} iff Z<S> sorts Delta^n (640 cases, 1,728 tests).",
+ "resolves": "nothing; extends the evidence for Hopkins-McConville-Propp Conjectures 21, 25, 26 and 27",
  "verified": [
   "check_line.py: exact outcome sets and maximal inversions for n <= 9 and exact rational sorting probabilities for n <= 9 under protocols 1 and 2 (pure Python).",
   "zline.cpp / exactp.cpp: n = 11 (6,520,201 states, 819 outcomes, maximal inversion 5; P(sorted) 0.3305156511 and 0.3314399523).",
-  "mc.cpp: 20,000-run Monte Carlo per point for m = 2..80."
+  "mc.cpp: 20,000-run Monte Carlo per point for m = 2..80.",
+  "check_loops.py: the two-colour test agrees with direct labeled search on 120 small cases; reproduces HMP (Z sorts exactly for even n <= 10), Klivans-Liscio Theorem 3.13 (all loops: qualifying n = 3, 7, 11 all sort) and Theorem 3.2 (2Z, 3Z); Conjecture 21 on 124 and Conjecture 25 (r = 2) on 25 small qualifying instances; the converse on 372 and the scaling on 80 small instances (pure Python, about 1 s).",
+  "loops_scan/ (zs.cpp, zsr.cpp and drivers): Conjecture 21 on 614 instances, Conjecture 25 on 287 + 242 instances, the converse on 2,384 instances and the scaling on 640 cases; per-instance JSONL with SHA-256 in evidence/loops_scans.json."
  ],
  "unresolved": [
   "proofs of Conjectures 26 and 27",
-  "protocol 3 (uniform stabilization sequence) was not computed"
+  "protocol 3 (uniform stabilization sequence) was not computed",
+  "proofs of Conjectures 21 and 25 for general S (the cases S empty, a single loop site at the origin, and S = Z are theorems of HMP and Klivans-Liscio)",
+  "proofs of the converse and scaling observations, which are checked only in the ranges stated"
  ],
  "nonclaims": [
   "no proof is claimed; this dossier is evidence only",
-  "not a novelty determination"
+  "not a novelty determination",
+  "the converse and scaling regularities are finite-range observations, not theorems"
  ],
- "smallest_decisive_test": "An odd n with a stable outcome of more than (n - 1)/2 inversions, or sorting probabilities converging away from 1/3.",
+ "smallest_decisive_test": "An odd n with a stable outcome of more than (n - 1)/2 inversions, or sorting probabilities converging away from 1/3. For loops: a set S and n meeting the Conjecture 21 condition with a reachable unsorted stable state, or a non-qualifying n >= deg(0) where Z<S> sorts Delta^n.",
  "checks": [
   {
    "id": "LINE_ODD_EXACT",
@@ -32,6 +37,15 @@
     "python",
     "-B",
     "discoveries/dynamics/labeled-chip-firing-line/verification/reference/check_line.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "LOOPS_TWO_COLOUR",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/labeled-chip-firing-line/verification/reference/check_loops.py"
    ],
    "required": true
   }

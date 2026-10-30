@@ -1,0 +1,70 @@
+{
+ "schema": "cbmd.labeled-line.loops-check.v1",
+ "gates": {
+  "TWO_COLOUR_EQUALS_LABELED": {
+   "pass": true,
+   "cases": 120,
+   "mismatches": []
+  },
+  "CONTROL_HMP_EVEN_ODD": {
+   "pass": true,
+   "sorts": {
+    "2": true,
+    "3": false,
+    "4": true,
+    "5": false,
+    "6": true,
+    "7": false,
+    "8": true,
+    "9": false,
+    "10": true
+   }
+  },
+  "KL_ALL_LOOPS": {
+   "pass": true,
+   "qual_n": [
+    3,
+    7,
+    11
+   ],
+   "sorts": {
+    "3": true,
+    "7": true,
+    "11": true
+   }
+  },
+  "KL_PARALLEL": {
+   "pass": true,
+   "values": {
+    "2Z_4": true,
+    "2Z_8": true,
+    "3Z_6": true,
+    "2Z_6_control": false
+   }
+  },
+  "CONJ21_SMALL": {
+   "pass": true,
+   "qual_instances": 124,
+   "failures": []
+  },
+  "CONJ25_SMALL": {
+   "pass": true,
+   "qual_instances": 25,
+   "failures": []
+  },
+  "SCALING_SMALL": {
+   "pass": true,
+   "cases": 80,
+   "mismatches": []
+  },
+  "CONVERSE_SMALL": {
+   "pass": true,
+   "nonqual_instances": 372,
+   "exceptions": []
+  },
+  "EVIDENCE_SUMMARY": {
+   "pass": true
+  }
+ },
+ "pass": true
+}

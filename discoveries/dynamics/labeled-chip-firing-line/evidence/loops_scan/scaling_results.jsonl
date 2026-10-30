@@ -1,0 +1,640 @@
+{"S": [], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0], "n": 7, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [3], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-3, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0], "n": 7, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 3], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 3], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [-3, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, -1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 2], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [-1, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 3], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 3], "n": 7, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 3], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, -1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, -1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, -1], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [-3, -2, -1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, -1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 0], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 0], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 2], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 2], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 0], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 0], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 0], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 1], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 1], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, -1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, -1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, -1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 1], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 2], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 2], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 3], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 3], "n": 7, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 0, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 0, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 0, 3], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-3, 1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1, 2], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-3, 1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-3, 2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-3, 2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-3, 2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 0], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 0], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 0], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 0], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 0], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 0], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 0], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 0], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 0], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, -1, 0], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 1], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 1], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, -1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, -1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, -1, 3], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, 0, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 1], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 1], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 1], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 1], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 2], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 2], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 2], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, 0, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 2], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-2, 0, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 3], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 0, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 0, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 0, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2, 3], "n": 4, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-2, 2, 3], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-2, 2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-2, 2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 1], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 1], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 1], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 1], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 1], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 1], "n": 7, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 1], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 1], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [-1, 0, 1], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 1], "n": 11, "results": {"1": "ok", "2": "ok"}}
+{"S": [-1, 0, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 2], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 0, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 0, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 0, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1, 2], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 2], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 2], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 3], "n": 6, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 1, 3], "n": 8, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [-1, 2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [-1, 2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [-1, 2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1, 2], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1, 2], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1, 2], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 2], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 2], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 2], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 2], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 2], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1, 2], "n": 10, "results": {"1": "ok", "2": "ok"}}
+{"S": [0, 1, 2], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 1, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 1, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 1, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2, 3], "n": 3, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2, 3], "n": 5, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [0, 2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [0, 2, 3], "n": 9, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [0, 2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 2, 3], "n": 2, "results": {"1": "ok", "2": "ok", "3": "ok"}}
+{"S": [1, 2, 3], "n": 3, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 4, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 5, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 6, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 7, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 8, "results": {"1": "FAIL", "2": "FAIL", "3": "FAIL"}}
+{"S": [1, 2, 3], "n": 9, "results": {"1": "ok", "2": "ok"}}
+{"S": [1, 2, 3], "n": 10, "results": {"1": "FAIL", "2": "FAIL"}}
+{"S": [1, 2, 3], "n": 11, "results": {"1": "FAIL", "2": "FAIL"}}

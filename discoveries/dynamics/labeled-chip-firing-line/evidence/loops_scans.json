@@ -1,0 +1,104 @@
+{
+ "schema": "cbmd.labeled-line.loops-scans.v1",
+ "method": "two-colour exhaustive reachability (sound and complete for sorting; see argument/WRITTEN_ARGUMENT.md section 2). C++ testers in verification/reference/loops_scan/.",
+ "conjecture_21": {
+  "instances": 614,
+  "results": {
+   "ok": 614
+  },
+  "non_ok": 0,
+  "max_two_colour_states": 47636938,
+  "by_n": {
+   "2": 176,
+   "3": 56,
+   "4": 93,
+   "5": 37,
+   "6": 51,
+   "7": 23,
+   "8": 29,
+   "9": 25,
+   "10": 21,
+   "11": 17,
+   "12": 17,
+   "13": 17,
+   "14": 14,
+   "15": 18,
+   "16": 20
+  },
+  "distinct_S": 232,
+  "range": "S subset of [-5,5], |S| <= 3, 2 <= n <= 16, Conjecture 21 condition holds",
+  "tool": "zs.cpp via run21c.py",
+  "file": "loops_scan/run21c_results.jsonl",
+  "sha256": "5c5d92d7b03c3cbe133cb6766b330671fda67cb8d99e203a5e983dd8f240c35a",
+  "note": "n = 2 instances (176) are trivial: the origin fires at most once."
+ },
+ "conjecture_25_r2": {
+  "instances": 287,
+  "results": {
+   "ok": 287
+  },
+  "non_ok": 0,
+  "max_two_colour_states": 3052216,
+  "by_n": {
+   "2": 93,
+   "3": 37,
+   "4": 42,
+   "5": 22,
+   "6": 22,
+   "7": 12,
+   "8": 14,
+   "9": 14,
+   "10": 12,
+   "11": 10,
+   "12": 9
+  },
+  "distinct_S": 130,
+  "range": "r = 2, S subset of [-4,4], |S| <= 3, 2 <= n <= 12 (up to 24 chips), condition holds for n",
+  "tool": "zsr.cpp via run25.py (R=2)",
+  "file": "loops_scan/run25_r2.jsonl",
+  "sha256": "4c55af70c04b2944d6721f67ffae4a940c725a687da9242438338921604dafcc"
+ },
+ "conjecture_25_r3": {
+  "instances": 242,
+  "results": {
+   "ok": 242
+  },
+  "non_ok": 0,
+  "max_two_colour_states": 36572,
+  "by_n": {
+   "2": 93,
+   "3": 37,
+   "4": 42,
+   "5": 22,
+   "6": 22,
+   "7": 12,
+   "8": 14
+  },
+  "distinct_S": 130,
+  "range": "r = 3, S subset of [-4,4], |S| <= 3, 2 <= n <= 8 (up to 24 chips), condition holds for n",
+  "tool": "zsr.cpp via run25.py (R=3)",
+  "file": "loops_scan/run25_r3.jsonl",
+  "sha256": "d754fc0e1182d05076b418df7658da65b10c0494044d3cb0ac72e98b76e184df"
+ },
+ "converse": {
+  "range": "S subset of [-5,5], |S| <= 3, max(3, deg 0) <= n <= 14, Conjecture 21 condition FAILS",
+  "tool": "zsr.cpp (r = 1, early exit at first unsorted stable colour state) via conv21.py",
+  "instances": 2384,
+  "results": {
+   "FAIL": 2384
+  },
+  "sorting_without_condition": 0,
+  "file": "loops_scan/conv21_results.jsonl",
+  "sha256": "4b8b414fd4b6b4623cbb1e5d9e2e33d6078e4ec1aa99c423a28bcd1f6a664e57"
+ },
+ "scaling": {
+  "range": "S subset of [-3,3], |S| <= 3, 2 <= n <= 11, r in {1,2,3} with rn <= 24",
+  "tool": "zsr.cpp via scaling.py",
+  "cases": 640,
+  "tests": 1728,
+  "mismatches": 0,
+  "file": "loops_scan/scaling_results.jsonl",
+  "sha256": "32ba982aa86a7943790aa7f5377b2baeb740cb58d274756797bf4c15c4579d56"
+ },
+ "trivial_extra_sorting": "With 0 in S and n = 2 the origin never fires, so Delta^2 is trivially sorted although the condition fails; these are excluded from the converse scan by n >= deg(0)."
+}

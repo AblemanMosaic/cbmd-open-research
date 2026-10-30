@@ -1,0 +1,287 @@
+{"S": [], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, -2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -1, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, -1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-4, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2, -1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -1, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, -1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-3, 2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, -1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, -1, 1], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, -1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, -1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-2, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 1, 2], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 1, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 1, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 2, 3], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [-1, 2, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [1, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [2, 3, 4], "r": 2, "n": 2, "chips": 4, "result": "ok", "states": 6}
+{"S": [0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-1, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 1], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, -3, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, -2, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, -1, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, 0, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, 0, 1], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, 0, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-4, 0, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, -2, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, 0, 1], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, 0, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, -1, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, 0, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-3, 0, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, -1, 0], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, 0, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, 0, 1], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, 0, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-2, 0, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-1, 0, 1], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-1, 0, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-1, 0, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 1, 2], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 1, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [-1, 0, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 1, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 2, 3], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 2, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [0, 3, 4], "r": 2, "n": 3, "chips": 6, "result": "ok", "states": 10}
+{"S": [], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, -2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -3, -2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -3, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -3, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -2, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, -2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-4, 3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, -2, 2], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, -2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, -2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-3, 3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 2, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 2, 3], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [-2, 3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [2, 3, 4], "r": 2, "n": 4, "chips": 8, "result": "ok", "states": 77}
+{"S": [0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-3, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 2], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-2, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 3], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, -3, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, -2, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, 0, 2], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, 0, 3], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-4, 0, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-3, -2, 0], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-3, 0, 2], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-3, 0, 3], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-2, 0, 2], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-3, 0, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-2, 0, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 2, 3], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [-2, 0, 3], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 2, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [0, 3, 4], "r": 2, "n": 5, "chips": 10, "result": "ok", "states": 95}
+{"S": [], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, -3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, 3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-3, 3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-1, 1], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-3, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, -3, 3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [3, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, -3, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-4, -1, 1], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-3, -1, 1], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-4, 3, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-3, 3, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 937}
+{"S": [-1, 1, 2], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-2, -1, 1], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-1, 1, 3], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [-1, 1, 4], "r": 2, "n": 6, "chips": 12, "result": "ok", "states": 216}
+{"S": [0], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-4, 0], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-3, 0], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [0, 3], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [0, 4], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-4, -3, 0], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-4, 0, 3], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-4, 0, 4], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-3, 0, 3], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-3, 0, 4], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [-1, 0, 1], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 260}
+{"S": [0, 3, 4], "r": 2, "n": 7, "chips": 14, "result": "ok", "states": 965}
+{"S": [], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 12841}
+{"S": [4], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 12841}
+{"S": [-4], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 12841}
+{"S": [-2, 2], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 4623}
+{"S": [-4, 4], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 12841}
+{"S": [-1, 1], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 1548}
+{"S": [-4, -2, 2], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 4623}
+{"S": [-4, -1, 1], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 1548}
+{"S": [-3, -1, 1], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 1548}
+{"S": [-3, -2, 2], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 4623}
+{"S": [-2, 2, 4], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 4623}
+{"S": [-2, 2, 3], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 4623}
+{"S": [-1, 1, 3], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 1548}
+{"S": [-1, 1, 4], "r": 2, "n": 8, "chips": 16, "result": "ok", "states": 1548}
+{"S": [0], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 12186}
+{"S": [-4, 0], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 12186}
+{"S": [-2, -1], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [0, 4], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 12186}
+{"S": [1, 2], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-4, -2, -1], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-4, 0, 4], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 12186}
+{"S": [-4, 1, 2], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-2, -1, 4], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-3, -2, -1], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-1, 0, 1], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 1694}
+{"S": [-2, 0, 2], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 4534}
+{"S": [1, 2, 3], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [1, 2, 4], "r": 2, "n": 9, "chips": 18, "result": "ok", "states": 9970}
+{"S": [-3, 3], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 99619}
+{"S": [], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 192048}
+{"S": [-1, 1], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 15973}
+{"S": [-2, 2], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 35773}
+{"S": [-4, -2, 2], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 35773}
+{"S": [-4, -1, 1], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 15973}
+{"S": [-4, -3, 3], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 99619}
+{"S": [-2, -1, 0], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 9854}
+{"S": [-2, 2, 4], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 35773}
+{"S": [-3, 3, 4], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 99619}
+{"S": [-1, 1, 4], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 15973}
+{"S": [0, 1, 2], "r": 2, "n": 10, "chips": 20, "result": "ok", "states": 9854}
+{"S": [-3, -1], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 162243}
+{"S": [0], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 173894}
+{"S": [1, 3], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 162243}
+{"S": [-4, -3, -1], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 162243}
+{"S": [-3, 1, 2], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 71240}
+{"S": [-3, 0, 3], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 91728}
+{"S": [-2, 0, 2], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 35712}
+{"S": [-2, -1, 3], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 71240}
+{"S": [-1, 0, 1], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 16581}
+{"S": [1, 3, 4], "r": 2, "n": 11, "chips": 22, "result": "ok", "states": 162243}
+{"S": [-4, 4], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 2052082}
+{"S": [-3, 3], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 878063}
+{"S": [-2, 2], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 340436}
+{"S": [-1, 1], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 203878}
+{"S": [-3, -2, 1], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 223555}
+{"S": [-3, -1, 0], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 150895}
+{"S": [], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 3052216}
+{"S": [-1, 2, 3], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 223555}
+{"S": [0, 1, 3], "r": 2, "n": 12, "chips": 24, "result": "ok", "states": 150895}

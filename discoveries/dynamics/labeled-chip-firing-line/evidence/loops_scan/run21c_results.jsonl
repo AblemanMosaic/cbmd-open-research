@@ -1,0 +1,614 @@
+{"S": [-5], "n": 2, "result": "ok", "states": 2}
+{"S": [], "n": 2, "result": "ok", "states": 2}
+{"S": [-4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3], "n": 2, "result": "ok", "states": 2}
+{"S": [-2], "n": 2, "result": "ok", "states": 2}
+{"S": [-1], "n": 2, "result": "ok", "states": 2}
+{"S": [1], "n": 2, "result": "ok", "states": 2}
+{"S": [2], "n": 2, "result": "ok", "states": 2}
+{"S": [3], "n": 2, "result": "ok", "states": 2}
+{"S": [4], "n": 2, "result": "ok", "states": 2}
+{"S": [5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, -3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -4, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, -1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-5, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, -2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, -1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-4, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, -1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, -1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-3, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1, 1], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, -1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 1, 2], "n": 2, "result": "ok", "states": 2}
+{"S": [-2, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 1, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 1, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 1, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [-1, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 2, 3], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 2, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 2, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [1, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 3, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 3, 4], "n": 2, "result": "ok", "states": 2}
+{"S": [2, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [3, 4, 5], "n": 2, "result": "ok", "states": 2}
+{"S": [0], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, -4, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, -2, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, -3, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, -1, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [-5, 0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, -3, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, -2, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, -1, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [-4, 0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, -1, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, -2, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [-3, 0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, -1, 0], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [-2, 0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0, 1], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [-1, 0, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 1, 2], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 1, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 1, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 2, 3], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 1, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 2, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 2, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 3, 4], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 3, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [0, 4, 5], "n": 3, "result": "ok", "states": 4}
+{"S": [], "n": 4, "result": "ok", "states": 28}
+{"S": [-5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3], "n": 4, "result": "ok", "states": 28}
+{"S": [-2], "n": 4, "result": "ok", "states": 28}
+{"S": [2], "n": 4, "result": "ok", "states": 28}
+{"S": [4], "n": 4, "result": "ok", "states": 28}
+{"S": [3], "n": 4, "result": "ok", "states": 28}
+{"S": [5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, -3], "n": 4, "result": "ok", "states": 28}
+{"S": [3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -2, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, -2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-5, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3, -2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -2, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, -2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-4, 3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, -2, 2], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, -2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, -2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, -2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-3, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 2, 3], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 2, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 2, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [-2, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 3, 4], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [2, 3, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [3, 4, 5], "n": 4, "result": "ok", "states": 28}
+{"S": [0], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-2, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 2], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, -4, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, -3, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, -2, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, 0, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, 0, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, 0, 2], "n": 5, "result": "ok", "states": 36}
+{"S": [-5, 0, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, -3, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, -2, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, 0, 2], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, 0, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, 0, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [-4, 0, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, -2, 0], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, 0, 2], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, 0, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, 0, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [-3, 0, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [-2, 0, 2], "n": 5, "result": "ok", "states": 36}
+{"S": [-2, 0, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [-2, 0, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [-2, 0, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 2, 3], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 2, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 2, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 3, 4], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 3, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [0, 4, 5], "n": 5, "result": "ok", "states": 36}
+{"S": [], "n": 6, "result": "ok", "states": 275}
+{"S": [-5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4], "n": 6, "result": "ok", "states": 275}
+{"S": [-3], "n": 6, "result": "ok", "states": 275}
+{"S": [3], "n": 6, "result": "ok", "states": 275}
+{"S": [4], "n": 6, "result": "ok", "states": 275}
+{"S": [5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -4], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -3], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, -3], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-1, 1], "n": 6, "result": "ok", "states": 70}
+{"S": [3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -4, -3], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -4, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -4, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -3, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, -1, 1], "n": 6, "result": "ok", "states": 70}
+{"S": [-5, 3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, 3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-5, 4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, -3, 3], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, -3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, -1, 1], "n": 6, "result": "ok", "states": 70}
+{"S": [-4, -3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, -1, 1], "n": 6, "result": "ok", "states": 70}
+{"S": [-3, 3, 4], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, 3, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-3, 4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-2, -1, 1], "n": 6, "result": "ok", "states": 70}
+{"S": [-1, 1, 2], "n": 6, "result": "ok", "states": 70}
+{"S": [-1, 1, 3], "n": 6, "result": "ok", "states": 70}
+{"S": [-1, 1, 4], "n": 6, "result": "ok", "states": 70}
+{"S": [-1, 1, 5], "n": 6, "result": "ok", "states": 70}
+{"S": [0], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [3, 4, 5], "n": 6, "result": "ok", "states": 275}
+{"S": [-4, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [-3, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 3], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 4], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, -4, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, -3, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, 0, 3], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, 0, 4], "n": 7, "result": "ok", "states": 304}
+{"S": [-5, 0, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [-4, -3, 0], "n": 7, "result": "ok", "states": 304}
+{"S": [-4, 0, 3], "n": 7, "result": "ok", "states": 304}
+{"S": [-4, 0, 4], "n": 7, "result": "ok", "states": 304}
+{"S": [-4, 0, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [-3, 0, 3], "n": 7, "result": "ok", "states": 304}
+{"S": [-3, 0, 4], "n": 7, "result": "ok", "states": 304}
+{"S": [-1, 0, 1], "n": 7, "result": "ok", "states": 84}
+{"S": [-3, 0, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 3, 4], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 3, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [0, 4, 5], "n": 7, "result": "ok", "states": 304}
+{"S": [], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-4], "n": 8, "result": "ok", "states": 2855}
+{"S": [4], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, -4], "n": 8, "result": "ok", "states": 2855}
+{"S": [5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, 4], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-4, 4], "n": 8, "result": "ok", "states": 2855}
+{"S": [-4, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-1, 1], "n": 8, "result": "ok", "states": 440}
+{"S": [-2, 2], "n": 8, "result": "ok", "states": 985}
+{"S": [4, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, -4, 4], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, -4, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-5, -2, 2], "n": 8, "result": "ok", "states": 985}
+{"S": [-5, -1, 1], "n": 8, "result": "ok", "states": 440}
+{"S": [-5, 4, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-4, -2, 2], "n": 8, "result": "ok", "states": 985}
+{"S": [-4, -1, 1], "n": 8, "result": "ok", "states": 440}
+{"S": [-4, 4, 5], "n": 8, "result": "ok", "states": 2855}
+{"S": [-3, -1, 1], "n": 8, "result": "ok", "states": 440}
+{"S": [-2, 2, 3], "n": 8, "result": "ok", "states": 985}
+{"S": [-3, -2, 2], "n": 8, "result": "ok", "states": 985}
+{"S": [-2, 2, 4], "n": 8, "result": "ok", "states": 985}
+{"S": [-2, 2, 5], "n": 8, "result": "ok", "states": 985}
+{"S": [-1, 1, 3], "n": 8, "result": "ok", "states": 440}
+{"S": [-1, 1, 4], "n": 8, "result": "ok", "states": 440}
+{"S": [-1, 1, 5], "n": 8, "result": "ok", "states": 440}
+{"S": [0], "n": 9, "result": "ok", "states": 2952}
+{"S": [-5, 0], "n": 9, "result": "ok", "states": 2952}
+{"S": [-2, -1], "n": 9, "result": "ok", "states": 2095}
+{"S": [-4, 0], "n": 9, "result": "ok", "states": 2952}
+{"S": [0, 4], "n": 9, "result": "ok", "states": 2952}
+{"S": [0, 5], "n": 9, "result": "ok", "states": 2952}
+{"S": [1, 2], "n": 9, "result": "ok", "states": 2095}
+{"S": [-5, -4, 0], "n": 9, "result": "ok", "states": 2952}
+{"S": [-5, -2, -1], "n": 9, "result": "ok", "states": 2095}
+{"S": [-5, 0, 4], "n": 9, "result": "ok", "states": 2952}
+{"S": [-5, 0, 5], "n": 9, "result": "ok", "states": 2952}
+{"S": [-5, 1, 2], "n": 9, "result": "ok", "states": 2095}
+{"S": [-4, -2, -1], "n": 9, "result": "ok", "states": 2095}
+{"S": [-4, 0, 4], "n": 9, "result": "ok", "states": 2952}
+{"S": [-4, 0, 5], "n": 9, "result": "ok", "states": 2952}
+{"S": [-4, 1, 2], "n": 9, "result": "ok", "states": 2095}
+{"S": [-3, -2, -1], "n": 9, "result": "ok", "states": 2095}
+{"S": [-2, -1, 4], "n": 9, "result": "ok", "states": 2095}
+{"S": [-2, -1, 5], "n": 9, "result": "ok", "states": 2095}
+{"S": [-2, 0, 2], "n": 9, "result": "ok", "states": 1036}
+{"S": [-1, 0, 1], "n": 9, "result": "ok", "states": 490}
+{"S": [0, 4, 5], "n": 9, "result": "ok", "states": 2952}
+{"S": [1, 2, 3], "n": 9, "result": "ok", "states": 2095}
+{"S": [1, 2, 5], "n": 9, "result": "ok", "states": 2095}
+{"S": [1, 2, 4], "n": 9, "result": "ok", "states": 2095}
+{"S": [], "n": 10, "result": "ok", "states": 30756}
+{"S": [-5], "n": 10, "result": "ok", "states": 30756}
+{"S": [5], "n": 10, "result": "ok", "states": 30756}
+{"S": [-5, 5], "n": 10, "result": "ok", "states": 30756}
+{"S": [-2, 2], "n": 10, "result": "ok", "states": 6327}
+{"S": [-3, 3], "n": 10, "result": "ok", "states": 14619}
+{"S": [-1, 1], "n": 10, "result": "ok", "states": 3668}
+{"S": [-5, -2, 2], "n": 10, "result": "ok", "states": 6327}
+{"S": [-5, -3, 3], "n": 10, "result": "ok", "states": 14619}
+{"S": [-5, -1, 1], "n": 10, "result": "ok", "states": 3668}
+{"S": [-4, -2, 2], "n": 10, "result": "ok", "states": 6327}
+{"S": [-4, -3, 3], "n": 10, "result": "ok", "states": 14619}
+{"S": [-4, -1, 1], "n": 10, "result": "ok", "states": 3668}
+{"S": [-3, 3, 5], "n": 10, "result": "ok", "states": 14619}
+{"S": [-3, 3, 4], "n": 10, "result": "ok", "states": 14619}
+{"S": [-2, -1, 0], "n": 10, "result": "ok", "states": 2181}
+{"S": [-2, 2, 4], "n": 10, "result": "ok", "states": 6327}
+{"S": [-2, 2, 5], "n": 10, "result": "ok", "states": 6327}
+{"S": [-1, 1, 4], "n": 10, "result": "ok", "states": 3668}
+{"S": [-1, 1, 5], "n": 10, "result": "ok", "states": 3668}
+{"S": [0, 1, 2], "n": 10, "result": "ok", "states": 2181}
+{"S": [-5, 0], "n": 11, "result": "ok", "states": 30718}
+{"S": [0], "n": 11, "result": "ok", "states": 30718}
+{"S": [-3, -1], "n": 11, "result": "ok", "states": 24816}
+{"S": [0, 5], "n": 11, "result": "ok", "states": 30718}
+{"S": [1, 3], "n": 11, "result": "ok", "states": 24816}
+{"S": [-5, -3, -1], "n": 11, "result": "ok", "states": 24816}
+{"S": [-5, 1, 3], "n": 11, "result": "ok", "states": 24816}
+{"S": [-5, 0, 5], "n": 11, "result": "ok", "states": 30718}
+{"S": [-4, -3, -1], "n": 11, "result": "ok", "states": 24816}
+{"S": [-3, -1, 5], "n": 11, "result": "ok", "states": 24816}
+{"S": [-3, 1, 2], "n": 11, "result": "ok", "states": 11283}
+{"S": [-3, 0, 3], "n": 11, "result": "ok", "states": 14746}
+{"S": [-2, -1, 3], "n": 11, "result": "ok", "states": 11283}
+{"S": [-2, 0, 2], "n": 11, "result": "ok", "states": 6612}
+{"S": [-1, 0, 1], "n": 11, "result": "ok", "states": 3926}
+{"S": [1, 3, 4], "n": 11, "result": "ok", "states": 24816}
+{"S": [1, 3, 5], "n": 11, "result": "ok", "states": 24816}
+{"S": [-4, 4], "n": 12, "result": "ok", "states": 212033}
+{"S": [-3, 3], "n": 12, "result": "ok", "states": 97116}
+{"S": [-2, 2], "n": 12, "result": "ok", "states": 49258}
+{"S": [], "n": 12, "result": "ok", "states": 346783}
+{"S": [-1, 1], "n": 12, "result": "ok", "states": 35503}
+{"S": [-5, -3, 3], "n": 12, "result": "ok", "states": 97116}
+{"S": [-5, -4, 4], "n": 12, "result": "ok", "states": 212033}
+{"S": [-5, -2, 2], "n": 12, "result": "ok", "states": 49258}
+{"S": [-5, -1, 1], "n": 12, "result": "ok", "states": 35503}
+{"S": [-3, -2, 1], "n": 12, "result": "ok", "states": 32274}
+{"S": [-3, -1, 0], "n": 12, "result": "ok", "states": 24820}
+{"S": [-3, 3, 5], "n": 12, "result": "ok", "states": 97116}
+{"S": [-2, 2, 5], "n": 12, "result": "ok", "states": 49258}
+{"S": [-1, 1, 5], "n": 12, "result": "ok", "states": 35503}
+{"S": [-1, 2, 3], "n": 12, "result": "ok", "states": 32274}
+{"S": [0, 1, 3], "n": 12, "result": "ok", "states": 24820}
+{"S": [-4, 4, 5], "n": 12, "result": "ok", "states": 212033}
+{"S": [0], "n": 13, "result": "ok", "states": 337702}
+{"S": [-4, -1], "n": 13, "result": "ok", "states": 304865}
+{"S": [-3, -2], "n": 13, "result": "ok", "states": 239051}
+{"S": [2, 3], "n": 13, "result": "ok", "states": 239051}
+{"S": [1, 4], "n": 13, "result": "ok", "states": 304865}
+{"S": [-5, -4, -1], "n": 13, "result": "ok", "states": 304865}
+{"S": [-5, -3, -2], "n": 13, "result": "ok", "states": 239051}
+{"S": [-4, 0, 4], "n": 13, "result": "ok", "states": 208428}
+{"S": [-4, 1, 3], "n": 13, "result": "ok", "states": 162568}
+{"S": [-3, 0, 3], "n": 13, "result": "ok", "states": 97432}
+{"S": [-3, -1, 4], "n": 13, "result": "ok", "states": 162568}
+{"S": [-3, 1, 2], "n": 13, "result": "ok", "states": 77476}
+{"S": [-2, -1, 3], "n": 13, "result": "ok", "states": 77476}
+{"S": [-2, 0, 2], "n": 13, "result": "ok", "states": 50646}
+{"S": [-1, 0, 1], "n": 13, "result": "ok", "states": 36308}
+{"S": [2, 3, 5], "n": 13, "result": "ok", "states": 239051}
+{"S": [1, 4, 5], "n": 13, "result": "ok", "states": 304865}
+{"S": [-5, 5], "n": 14, "result": "ok", "states": 2946501}
+{"S": [-4, 4], "n": 14, "result": "ok", "states": 1526873}
+{"S": [-3, 3], "n": 14, "result": "ok", "states": 732816}
+{"S": [], "n": 14, "result": "ok", "states": 4021941}
+{"S": [-2, 2], "n": 14, "result": "ok", "states": 464389}
+{"S": [-1, 1], "n": 14, "result": "ok", "states": 370588}
+{"S": [-4, -2, 1], "n": 14, "result": "ok", "states": 356288}
+{"S": [-4, -3, 2], "n": 14, "result": "ok", "states": 501970}
+{"S": [-3, -2, 0], "n": 14, "result": "ok", "states": 238850}
+{"S": [-4, -1, 0], "n": 14, "result": "ok", "states": 296841}
+{"S": [-1, 2, 4], "n": 14, "result": "ok", "states": 356288}
+{"S": [-2, 3, 4], "n": 14, "result": "ok", "states": 501970}
+{"S": [0, 2, 3], "n": 14, "result": "ok", "states": 238850}
+{"S": [0, 1, 4], "n": 14, "result": "ok", "states": 296841}
+{"S": [0], "n": 15, "result": "ok", "states": 3852550}
+{"S": [-5, -1], "n": 15, "result": "ok", "states": 3767246}
+{"S": [-4, -2], "n": 15, "result": "ok", "states": 3010044}
+{"S": [1, 5], "n": 15, "result": "ok", "states": 3767246}
+{"S": [2, 4], "n": 15, "result": "ok", "states": 3010044}
+{"S": [-5, 0, 5], "n": 15, "result": "ok", "states": 2842984}
+{"S": [-5, 1, 4], "n": 15, "result": "ok", "states": 2337585}
+{"S": [-5, 2, 3], "n": 15, "result": "ok", "states": 1799296}
+{"S": [-4, 0, 4], "n": 15, "result": "ok", "states": 1496616}
+{"S": [-4, -1, 5], "n": 15, "result": "ok", "states": 2337585}
+{"S": [-4, 1, 3], "n": 15, "result": "ok", "states": 1165779}
+{"S": [-3, -1, 4], "n": 15, "result": "ok", "states": 1165779}
+{"S": [-3, -2, 5], "n": 15, "result": "ok", "states": 1799296}
+{"S": [-3, 0, 3], "n": 15, "result": "ok", "states": 733622}
+{"S": [-3, 1, 2], "n": 15, "result": "ok", "states": 625028}
+{"S": [-2, -1, 3], "n": 15, "result": "ok", "states": 625028}
+{"S": [-2, 0, 2], "n": 15, "result": "ok", "states": 467628}
+{"S": [-1, 0, 1], "n": 15, "result": "ok", "states": 365284}
+{"S": [-5, 5], "n": 16, "result": "ok", "states": 23587359}
+{"S": [-4, 4], "n": 16, "result": "ok", "states": 11558765}
+{"S": [-3, 3], "n": 16, "result": "ok", "states": 6487076}
+{"S": [-2, 2], "n": 16, "result": "ok", "states": 4835530}
+{"S": [-1, 1], "n": 16, "result": "ok", "states": 4043413}
+{"S": [], "n": 16, "result": "ok", "states": 47636938}
+{"S": [-5, -4, 3], "n": 16, "result": "ok", "states": 8025256}
+{"S": [-5, -2, 1], "n": 16, "result": "ok", "states": 4151331}
+{"S": [-5, -3, 2], "n": 16, "result": "ok", "states": 5216562}
+{"S": [-5, -1, 0], "n": 16, "result": "ok", "states": 3588771}
+{"S": [-4, -3, 1], "n": 16, "result": "ok", "states": 3755710}
+{"S": [-4, -2, 0], "n": 16, "result": "ok", "states": 2944142}
+{"S": [-3, -2, -1], "n": 16, "result": "ok", "states": 2240301}
+{"S": [-2, 3, 5], "n": 16, "result": "ok", "states": 5216562}
+{"S": [-3, 4, 5], "n": 16, "result": "ok", "states": 8025256}
+{"S": [-1, 2, 5], "n": 16, "result": "ok", "states": 4151331}
+{"S": [-1, 3, 4], "n": 16, "result": "ok", "states": 3755710}
+{"S": [0, 1, 5], "n": 16, "result": "ok", "states": 3588771}
+{"S": [1, 2, 3], "n": 16, "result": "ok", "states": 2240301}
+{"S": [0, 2, 4], "n": 16, "result": "ok", "states": 2944142}
