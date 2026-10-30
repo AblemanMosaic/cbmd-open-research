@@ -1,8 +1,7 @@
 # Owner-fiber structure and support
 
 > **Pipeline stage:** `QUALIFYING`  
-> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `SOURCE_BOUND_COMPILED`,
-> `EXACT_MODEL_VERIFIED`, `REVISED`
+> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`, `REVISED`
 
 Permanent discovery ID: `CBMD-COMB-OWNER-FIBER-001`
 
@@ -24,7 +23,11 @@ Two degeneracy traps are recorded, one of them new: a non-degenerate *object*
 does not imply a non-degenerate *test population*. See
 [`revisions/0.2.0-standalone-verifier.md`](revisions/0.2.0-standalone-verifier.md).
 
-Revision 0.3.0 compiles the unique-contributor statement. It takes exactly two
+Revision 0.3.0 compiles the unique-contributor statement — against an abstract
+model in which support-in-orbit is a hypothesis, not against the packed source
+definitions, so it does **not** confer `SOURCE_BOUND_COMPILED`; that status was
+granted in 0.3.0 and withdrawn in 0.5.0
+([`revisions/0.5.0-status-withdrawn.md`](revisions/0.5.0-status-withdrawn.md)). It takes exactly two
 hypotheses — a nonzero source row forces the type into the target's orbit, and
 a column's head word is its owner's head word — and derives the rest, including
 the orbit-head injectivity that the written claim had listed as a premise. The

@@ -37,10 +37,10 @@ externally reviewed or novelty-assessed; both remain open for all three.
 
 ## Second iteration correction register
 
-Every entry below but one was caught before the affected claim was registered,
+Every entry below but three was caught before the affected claim was registered,
 and all but two are defects in the **evidence apparatus** rather than in the
-mathematics. The exception is a prior-art note that was committed and then
-reverted, recorded last. That distribution is the finding: a wrong theorem announces
+mathematics. The exceptions — a prior-art note committed and then reverted, a status
+promotion withdrawn, and two stale open lists — are recorded last. That distribution is the finding: a wrong theorem announces
 itself, while a control that tests nothing passes quietly.
 
 | Correction | Current disposition | Evidence or obligation |
@@ -57,6 +57,8 @@ itself, while a control that tests nothing passes quietly.
 | Testing for a root in `Z_3` by Hensel survivors, before removing rational roots | Corrected; `(x+2)(x-1)` has two rational roots three apart, so the product is divisible by `9` at every lift and survivors persist with nothing behind them | [Valuation regularity](../discoveries/algebra/residue-lift-transport-boundaries/revisions/0.4.0-valuation-regularity.md); stripping first makes the test correct, and correct by compactness. |
 | An anti-vacuity gate required a witness of exactly what its theorem forbids | Replaced; counting *distinct pairs inside one orbit* is what makes orbit-head injectivity non-vacuous, not counting pairs that share a head | [Unique contributor](../discoveries/combinatorics/owner-fiber-structure/revisions/0.3.0-compiled-unique-contributor.md); the first version could only ever fail. |
 | A prior-art note for the ECH dossier withdrew the count of sixteen `U`-towers as already published and marked open question 6 answered | Both reverted. The note was written without first reading the argument's own literature section, which already cites Chen and Nelson–Weiler and frames the dossier as the extension to exactly the classes Chen excludes; sixteen at `Γ ∈ {1,2}` is that unpublished extension, and question 6 concerns the Heegaard–Floer route, which the search never examined | Committed as `d249975`, corrected in the following commit. [Corrected note](../discoveries/ech/genus-two-low-sector/review/PRIOR_ART.md). The same pass reformatted two JSON files from two-space to one-space indentation, burying real changes in whitespace; both restored. |
+| The owner-fiber dossier was given `SOURCE_BOUND_COMPILED` for theorems compiled against an abstract model | Withdrawn. The status requires the stated theorem to compile against the **declared** model, which here is the packed source definitions; the Lean takes support-in-orbit as a hypothesis, and the dossier's own unresolved list kept "source-bound formal proof" open throughout | [Status withdrawn](../discoveries/combinatorics/owner-fiber-structure/revisions/0.5.0-status-withdrawn.md). The concurrency dossier's status was rechecked against the same definition and kept: its theorems compile against the dossier's declared net semantics, bridged to the census by a proved lemma. |
+| Two open-items lists had gone stale: the concurrency dossier still limited its obstruction to unit-weight single-output nets after three revisions widened it, and the finite-capacity dossier still listed the weighted criterion its successor had resolved | Both replaced with the accurate residual, after an audit of every dossier's unresolved list | A stale open list misdirects anyone choosing what to work on; the same audit found the weighted dossier's unit-receiver item settled since 0.4.0. |
 
 Two prior-art corrections from the same iteration are recorded with their
 dossiers rather than here, because they narrow claims rather than repair

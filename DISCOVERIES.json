@@ -32,7 +32,6 @@
       ],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",
-        "SOURCE_BOUND_COMPILED",
         "EXACT_MODEL_VERIFIED",
         "REVISED"
       ]

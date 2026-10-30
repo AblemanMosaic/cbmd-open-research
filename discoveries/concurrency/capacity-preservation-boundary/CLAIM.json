@@ -46,10 +46,10 @@
  ],
  "unresolved": [
   "external review",
-  "weighted flow and multi-input transitions: the obstruction condition is proved only for unit-weight single-input single-output transitions",
   "a formal proof of the complexity statement; coNP-completeness is a written argument here, with only the reduction machine checked",
   "direct comparison of the revision 0.4.0 reduction against the 3-SAT reduction of Yamauchi and Watanabe 1999, whose full text was not obtained",
-  "whether the queueing-with-blocking line (Liebeherr and Akyildiz; Kundu and Akyildiz) also covers the non-conservative case; the papers located are framed around closed networks"
+  "whether the queueing-with-blocking line (Liebeherr and Akyildiz; Kundu and Akyildiz) also covers the non-conservative case; the papers located are framed around closed networks",
+  "a closed-form structural characterization for multi-input nets; none can be polynomial unless P = NP (revision 0.4.0), and the fixed-parameter procedure of revision 0.8.0 decides them without characterizing them"
  ],
  "nonclaims": [
   "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
