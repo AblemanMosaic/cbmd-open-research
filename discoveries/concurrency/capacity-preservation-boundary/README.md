@@ -220,6 +220,22 @@ the census confirmed it. This is parallel to, not a corollary of, Cheng,
 Esparza and Palsberg's NP-completeness of *reachable* deadlock in free-choice
 nets. See [`revisions/0.10.0-free-choice.md`](revisions/0.10.0-free-choice.md).
 
+## Zero conflict places polynomial, one coNP-complete (revision 0.12.0)
+
+*Conflict-free* nets, where every place has at most one consumer, are
+polynomial at any weights and capacities, provided every transition has an
+input place, the convention used throughout. A bad marking is then a single
+chain of forced overflows starting at the enabled transition, and deciding
+whether one exists is a greatest-fixpoint computation. The free-choice nets of
+revision 0.10.0 have exactly **one** place with several consumers, so the
+boundary is sharp: **zero conflict places is polynomial, one is
+coNP-complete.**
+
+The polynomial procedure is a written argument, not compiled. It agrees with
+brute force on 20,000 nets, all three ablations break it, and so does dropping
+the input-place hypothesis. See
+[`revisions/0.12.0-conflict-free.md`](revisions/0.12.0-conflict-free.md).
+
 ## Marked graphs are polynomial (revision 0.11.0)
 
 On the other side of the free-choice line: in a **marked graph** — at most one
@@ -256,11 +272,13 @@ not enabled because its other input is short.
 
 ## What remains unresolved
 
-- Conflict-free nets (each place has at most one consumer, any number of
+- ~~Conflict-free nets (each place has at most one consumer, any number of
   producers): neither the free-choice reduction nor the marked-graph argument
-  applies. See revision 0.11.0.
-- The marked-graph procedure of revision 0.11.0 is a written argument with a
-  census; it is not compiled.
+  applies. See revision 0.11.0.~~ Settled in revision 0.12.0 when every
+  transition has an input place. Still open: conflict-free nets *with*
+  input-less transitions, where the procedure is demonstrably wrong.
+- The marked-graph (0.11.0) and conflict-free (0.12.0) procedures are written
+  arguments with censuses; neither is compiled.
 
 - A formal proof of the complexity-class statement. The reduction's
   correctness and input-place bounds are compiled (revision 0.9.0); membership

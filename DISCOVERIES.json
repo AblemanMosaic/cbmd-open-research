@@ -147,7 +147,7 @@
       "path": "discoveries/concurrency/capacity-preservation-boundary",
       "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Settle whether the queueing-with-blocking line covers non-conservative networks, and obtain external review. The proved side is compiled end to end for the single-input case, and the hardness reduction is compiled too, including for strict free-choice nets with every capacity 1; only the complexity-class wrapper (coNP membership, polynomial running time) remains a written argument.",
+      "next_obligation": "Compile the conflict-free procedure (zero conflict places polynomial, one coNP-complete; the polynomial side is written), settle whether the queueing-with-blocking line covers non-conservative networks, and obtain external review. The hardness reduction is compiled, including for strict free-choice nets with every capacity 1; only the complexity-class wrapper remains a written argument.",
       "promotion_blockers": [
         "novelty and prior-art assessment open",
         "external review open",

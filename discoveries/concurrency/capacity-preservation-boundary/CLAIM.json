@@ -4,7 +4,7 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.11.0",
+ "public_version": "0.12.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -45,7 +45,8 @@
   "Its core is compiled: notCapEnabled_max_of_single gives max-closure per single-input transition, ub_max and lb_max give it for unit bounds, the two blocking lemmas give soundness of each literal, and blocked_by_some_literal gives exhaustiveness of the branching.",
   "The hardness reduction is compiled (revision 0.9.0): preserves_iff_unsatisfiable proves that the net built from the guarded form of any CNF preserves exactly when the CNF is unsatisfiable, and guard_neg_count with probe_input_places and clause_input_places gives one or two input places per transition. A bridge check over 404 formulas confirms the compiled net equals the census's net, and detects a deliberately wrong transcription in 375 of them.",
   "Free choice does not help (revision 0.10.0): fc_preserves_iff_unsatisfiable proves that a strict free-choice net with unit weights, every capacity 1 and one or two input places per transition preserves exactly when a given CNF (on at least one variable) is unsatisfiable. A census of 315 formulas agrees exactly, every net is checked to be strict free-choice, the net matches a transcription of the Lean definitions, and the proof's prediction that the H gadget matters only for the empty CNF is confirmed.",
-  "Marked graphs are polynomial (revision 0.11.0, written argument): with at most one consumer and one producer per place, every place occurs in at most two blocking constraints and preservation reduces, per choice of enabled transition, to an edge-orientation count. The procedure agrees with brute force on 20,000 random marked graphs at weights and capacities up to 3, 6,878 of them with a multi-input transition, and both of its ablations give wrong verdicts (4,254 and 484)."
+  "Marked graphs are polynomial (revision 0.11.0, written argument): with at most one consumer and one producer per place, every place occurs in at most two blocking constraints and preservation reduces, per choice of enabled transition, to an edge-orientation count. The procedure agrees with brute force on 20,000 random marked graphs at weights and capacities up to 3, 6,878 of them with a multi-input transition, and both of its ablations give wrong verdicts (4,254 and 484).",
+  "Zero conflict places is polynomial, one is coNP-complete (revision 0.12.0, written argument for the polynomial side): in a conflict-free net where every transition has an input place, a bad marking is a single chain of forced overflows from the enabled transition, decided by a greatest fixpoint. It agrees with brute force on 20,000 nets, 7,368 with a multi-input transition; three ablations give 5,120, 148 and 610 wrong verdicts; on nets with input-less transitions it is wrong 1,061 times in 5,000, so the hypothesis is load-bearing; and every revision 0.10.0 free-choice net has exactly one conflict place."
  ],
  "unresolved": [
   "external review",
@@ -53,7 +54,8 @@
   "direct comparison of the revision 0.4.0 reduction against the 3-SAT reduction of Yamauchi and Watanabe 1999, whose full text was not obtained",
   "whether the queueing-with-blocking line (Liebeherr and Akyildiz; Kundu and Akyildiz) also covers the non-conservative case; the papers located are framed around closed networks",
   "a closed-form structural characterization for multi-input nets; none can be polynomial unless P = NP (revision 0.4.0), and the fixed-parameter procedure of revision 0.8.0 decides them without characterizing them",
-  "the complexity of preservation for conflict-free nets (each place has at most one consumer, any number of producers), which lie between the polynomial marked graphs and the coNP-complete free-choice nets"
+  "the complexity of preservation for conflict-free nets that have input-less transitions; the revision 0.12.0 procedure is demonstrably wrong on them",
+  "compiled proofs of the marked-graph (0.11.0) and conflict-free (0.12.0) procedures, which are written arguments"
  ],
  "nonclaims": [
   "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
