@@ -223,6 +223,14 @@ breaks them. See
   theorem and necessary by `bound_necessary_at_unit_arc`. See
   [`revisions/0.6.0-unit-receivers.md`](revisions/0.6.0-unit-receivers.md).
 
+- **Open, and named:** transfer from a *fixed* initial state. The
+  characterization quantifies over all admissible states. Whether
+  capacity-blocked firing from a given `x` can reach a capacity-terminal state
+  that is not ordinarily stable is a deadlock-reachability question in a
+  bounded net. Its capacity places, read as complementary places, are consumed
+  by every sender, so the net is not conflict-free. No algorithm or reduction
+  is recorded.
+
 ## Smallest decisive tests
 
 - **Against the theorem:** an ordered multigraph satisfying the bound with a

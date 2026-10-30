@@ -46,7 +46,8 @@
   "Kernel-certified instances (revision 0.12.0): weighted digraphs given in a declared JSON format are decoded into Lean theorems stating their verdict, checked by decide through the verified decider, with Lean's own evaluation reconstructing the input; 80 of 80 random instances certified, 42 agreeing with simulated transfer, and both the wrong-verdict and dropped-arc controls caught."
  ],
  "unresolved": [
-  "novelty assessment and external specialist review"
+  "novelty assessment and external specialist review",
+  "the complexity of transfer from a FIXED initial state: whether capacity-blocked firing from a given x can reach a capacity-terminal state that is not ordinarily stable; the characterization quantifies over all admissible states, the per-instance question is a deadlock-reachability problem in a bounded net whose complementary capacity places are not conflict-free, and no reduction or algorithm is recorded"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",
