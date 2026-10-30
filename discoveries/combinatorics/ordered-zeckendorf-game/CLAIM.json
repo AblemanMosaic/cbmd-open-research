@@ -1,0 +1,42 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-ORDERED-ZECK-001",
+ "title": "The ordered Zeckendorf game: the Long Game Strategy's constant",
+ "field": "combinatorics",
+ "slug": "ordered-zeckendorf-game",
+ "public_version": "0.1.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "In the ordered Zeckendorf game of Barbieri et al. (arXiv 2508.20222), the Long Game Strategy has length n^2/2 - (phi/sqrt5) n log_phi n + O(n), where phi/sqrt5 = (5 + sqrt5)/10 = 0.7236... is the density of 1's in lazy Fibonacci representations. Hence the maximal game length satisfies M(n) >= n^2/2 - (phi/sqrt5) n log_phi n - O(n), improving the constant 1 of their Theorem 1.10, and if their Conjecture 1.7 holds the constant of their Remark 3.1 is exactly phi/sqrt5. Proof: under LGS each non-switch move costs the inversions it creates; after the ones phase a pile of 2's drains while the pieces above it run the lazy Fibonacci counter of Split Smallest; the invariant U - 2P = number of draining splits reduces the deficit n^2/2 - L to the sum of the counter's digit sums plus O(n).",
+ "resolves": "Barbieri et al. (2025) Remark 3.1 numerical question on the n log_phi n constant, for the Long Game Strategy, by an exact value with written proof",
+ "verified": [
+  "lgs_constant.py: count model equals direct list simulation of LGS for n <= 40; for every n <= 600: no merges in the pile phase, upper splits create no inversions, rest words run through the counter language in increasing order with 1 + [ends in 1] draining splits per step, the invariant U - 2P, the exact identity n^2/2 - L = sum P_k + R; density of 1's (weighted and unweighted, lazy and full counter language) within the stated bound for lengths <= 60; the window and a control with wrong constants.",
+  "lgs_fast.c: (n^2/2 - L)/n - (phi/sqrt5) log_phi n in [-4.21, -4.06] for n = 10^3, ..., 10^9."
+ ],
+ "unresolved": [
+  "independent review of the written argument",
+  "whether LGS is longest (Conjecture 1.7)",
+  "the upper bound constant and the winner"
+ ],
+ "nonclaims": [
+  "LGS optimality is not claimed",
+  "no improvement of the upper bound is claimed",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "A rest moment of LGS whose upper word is not the next counter-language word, or an n where the deficit minus (phi/sqrt5) n log_phi n is not O(n).",
+ "checks": [
+  {
+   "id": "LGS_CONSTANT_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/ordered-zeckendorf-game/verification/reference/lgs_constant.py",
+    "600"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

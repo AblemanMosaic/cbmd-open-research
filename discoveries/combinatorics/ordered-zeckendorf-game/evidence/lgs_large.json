@@ -1,0 +1,51 @@
+{
+ "schema": "cbmd.ordered-zeckendorf.lgs-large.v1",
+ "source": "lgs_fast.c",
+ "output_sha256": "9dc9e2747c3389523ea56bf583d028e873d3b22e87a0ebbb3f3bea3880578370",
+ "rows": [
+  {
+   "n": 1000,
+   "L": 493677,
+   "deficit_over_n": 6.323,
+   "minus_kappa_log_phi_n": -4.064315
+  },
+  {
+   "n": 10000,
+   "L": 49903208,
+   "deficit_over_n": 9.6792,
+   "minus_kappa_log_phi_n": -4.170553
+  },
+  {
+   "n": 100000,
+   "L": 4998688802,
+   "deficit_over_n": 13.11198,
+   "minus_kappa_log_phi_n": -4.200211
+  },
+  {
+   "n": 1000000,
+   "L": 499983416424,
+   "deficit_over_n": 16.583576,
+   "minus_kappa_log_phi_n": -4.191053
+  },
+  {
+   "n": 10000000,
+   "L": 49999799421758,
+   "deficit_over_n": 20.057824,
+   "minus_kappa_log_phi_n": -4.179243
+  },
+  {
+   "n": 100000000,
+   "L": 4999997645879370,
+   "deficit_over_n": 23.541206,
+   "minus_kappa_log_phi_n": -4.1583
+  },
+  {
+   "n": 1000000000,
+   "L": 499999973035282749,
+   "deficit_over_n": 26.964717,
+   "minus_kappa_log_phi_n": -4.197227
+  }
+ ],
+ "observation": "(n^2/2 - L)/n - (phi/sqrt5) log_phi n stays in [-4.21, -4.06] for n = 10^3 .. 10^9",
+ "authority_effect": "NONE"
+}

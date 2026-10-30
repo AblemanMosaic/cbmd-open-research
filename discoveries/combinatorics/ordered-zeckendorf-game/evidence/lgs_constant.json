@@ -1,0 +1,26 @@
+{
+ "authority_effect": "NONE",
+ "deficit_minus_kappa_log": {
+  "1000": -4.0643,
+  "10000": -4.1706,
+  "100000": -4.2002
+ },
+ "gates": {
+  "CONTROL_wrong_constants_drift": true,
+  "COUNT_MODEL_n_le_40": true,
+  "DENSITY_l_le_60": true,
+  "EXACT_IDENTITY": true,
+  "INVARIANT_Q": true,
+  "NO_MERGE_IN_PILE_PHASE": true,
+  "STEP_LEMMA": true,
+  "UPPER_SPLITS_FREE": true,
+  "WINDOW": true
+ },
+ "kappa": "phi/sqrt(5) = (5 + sqrt(5))/10 = 0.723606797750",
+ "n_max": 600,
+ "nonclaims": [
+  "the asymptotic is a written proof; LGS optimality (Conjecture 1.7) is not claimed"
+ ],
+ "schema": "cbmd.ordered-zeckendorf.lgs-constant.v1",
+ "status": "PASS"
+}

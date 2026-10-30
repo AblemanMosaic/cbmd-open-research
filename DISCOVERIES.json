@@ -194,6 +194,23 @@
         "EXACT_MODEL_VERIFIED",
         "CONJECTURE"
       ]
+    },
+    {
+      "id": "CBMD-COMB-ORDERED-ZECK-001",
+      "field": "combinatorics",
+      "slug": "ordered-zeckendorf-game",
+      "path": "discoveries/combinatorics/ordered-zeckendorf-game",
+      "title": "The ordered Zeckendorf game: the Long Game Strategy's constant",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Independent review of the written argument; then attack LGS optimality or the upper-bound constant.",
+      "promotion_blockers": [
+        "written proof, not yet independently reviewed",
+        "external review open"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }
