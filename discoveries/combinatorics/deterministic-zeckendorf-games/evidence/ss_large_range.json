@@ -4,5 +4,6 @@
  "representation_mismatches": 0,
  "fibonacci_closed_form_failures": [],
  "block_law_violations": 0,
+ "exact_formula_mismatches": 0,
  "status": "PASS"
 }

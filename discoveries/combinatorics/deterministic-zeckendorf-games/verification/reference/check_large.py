@@ -9,7 +9,7 @@ import hashlib, json, sys
 from fractions import Fraction
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from zeckendorf_games import FIB, zeck_indices, load_rep, rep_eval  # noqa: E402
+from zeckendorf_games import FIB, zeck_indices, load_rep, rep_eval, exact_formula  # noqa: E402
 
 def main():
     path = Path(sys.argv[1])
@@ -23,6 +23,8 @@ def main():
     S.update({n: L[n] - (n - len(zeck_indices(n))) for n in L})
     rep = load_rep(Path(__file__).resolve().parent / "ss_linrep.json")
     bad = [n for n in L if rep_eval(rep, n) != S[n]]
+    formula = exact_formula(max(L))
+    formula_bad = [n for n in L if formula[n] != S[n]]
     fib_bad = []
     for k in range(1, len(FIB)):
         if FIB[k + 1] > max(L):
@@ -44,8 +46,8 @@ def main():
             blocks[(k % 2, m)] = d
     out = {"data_sha256": hashlib.sha256(raw).hexdigest(), "n_max": max(L),
            "representation_mismatches": len(bad), "fibonacci_closed_form_failures": fib_bad,
-           "block_law_violations": block_bad,
-           "status": "PASS" if not bad and not fib_bad and not block_bad else "FAIL"}
+           "block_law_violations": block_bad, "exact_formula_mismatches": len(formula_bad),
+           "status": "PASS" if not bad and not fib_bad and not block_bad and not formula_bad else "FAIL"}
     print(json.dumps(out, indent=1))
     return 0 if out["status"] == "PASS" else 1
 

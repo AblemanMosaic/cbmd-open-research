@@ -182,11 +182,11 @@
       "field": "combinatorics",
       "slug": "deterministic-zeckendorf-games",
       "path": "discoveries/combinatorics/deterministic-zeckendorf-games",
-      "title": "Deterministic Zeckendorf games: Split Smallest is Fibonacci-regular",
+      "title": "Deterministic Zeckendorf games: the exact length of Split Smallest",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Finish the proof of Split Smallest regularity: the counting phase (lazy Fibonacci counter) and its stopping word are proved; analyse the end phase (adds and splits from a lazy word with at most one 1 left) as a finite transducer and assemble with the lazy-to-Zeckendorf conversion. Describe Combine Smallest exactly.",
+      "next_obligation": "Independent check of the written proof of the exact Split Smallest length, then a Lean formalization; describe Combine Smallest exactly.",
       "promotion_blockers": [
-        "SS regularity is a conjecture verified to n = 120,000",
+        "the exact-length proof is written and gated, not independently reviewed or machine-checked",
         "prior-art and external review open"
       ],
       "status": [

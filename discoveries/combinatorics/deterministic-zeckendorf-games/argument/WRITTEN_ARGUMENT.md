@@ -25,8 +25,8 @@ The conditions are:
 
 Take `w(1) = 0`. Then `w(i) = −c_i` with `c_1 = 0, c_2 = 1, c_3 = 3` and
 `c_{i+1} = 2c_i − c_{i−2} + 1`. In closed form, `c_i = F_{i+2} − i − 2`. This follows from `c_{i+1} − c_i = F_{i+1} − 1` together with `Σ_{t ≤ i} F_t = F_{i+2} − 2`. For an add into index `j`,
-`w(j) − w(j−1) − w(j−2) = −(c_j − c_{j−1} − c_{j−2}) = −(j − 1)`, by induction
-on `j`.
+`w(j) − w(j−1) − w(j−2) = −(c_j − c_{j−1} − c_{j−2}) = −(j − 1)`, directly
+from the closed form and `F_{j+2} = F_{j+1} + F_j`.
 
 Summing over a play from `Φ = 0` (all pieces at index 1) to the Zeckendorf
 decomposition:
@@ -52,27 +52,39 @@ Two results of Cusenza et al. are used:
 
 A play with no adds has length `Σ c_i` by §2, and §2 shows no play is longer.
 So at `n = F_k − 1` the longest length is `Σ_{Zeck(F_k − 1)} c_i`, and SS has
-no add moves there. The Zeckendorf decomposition of `F_k − 1` is
-`F_{k−1} + F_{k−3} + …`. Substituting `c_i = F_{i+2} − i − 2` and summing the alternating indices (Fibonacci and arithmetic sums) gives the closed form
+no add moves there. By §1 its split count is that length minus the
+`n − Z(n)` merging moves:
 
-`S_SS(F_k − 1) = F_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`, with `F_0 = 1, F_1 = 2`.
+`S_SS(F_k − 1) = Σ_{Zeck(F_k − 1)} c_i − (F_k − 1 − Z(F_k − 1))`.
 
-The gate `SS_FIBONACCI_closed_form` checks this. The equality
-`S_SS(F_k) = S_SS(F_k − 1)` is checked, not proved.
+The Zeckendorf decomposition of `F_k − 1` is `F_{k−1} + F_{k−3} + …` (game
+indexing, `F_1 = 1`). Simplifying with Fibonacci and arithmetic sums gives a
+closed form. It is cleanest in the shifted sequence `G_k = F_{k+1}`
+(`G_0 = 1, G_1 = 2`):
 
-## 4. Regularity of Split Smallest (conjecture)
+`S_SS(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`.
 
-Write `S(n)` for the SS split count. Its Hankel matrix over Zeckendorf words
-has rank 6 at word lengths 6, 7 and 8. A 9-dimensional linear representation
-over the blocks `0` and `10` (a trailing `1` is read by a separate output
-vector) was fitted on prefixes of length ≤ 10 and suffixes of length ≤ 8. It
-reproduces `S(n)` for every `n ≤ 120,000`
-(`evidence/ss_large_range.json`). By §1 the SS length is `n − Z(n) + S(n)`;
-`Z(n)` is regular, so the length is too.
+The simplification is routine and not written out here; the gate
+`SS_FIBONACCI_closed_form` checks the closed form for every `G_k ≤ 3000`.
+This section rests on the cited Theorems 1.2 and 1.4; the dossier itself
+checks that SS is a longest game only for `n ≤ 40` (gate `LONGEST`). The
+equality `S_SS(G_k) = S_SS(G_k − 1)` is checked, not proved.
 
-The winner is the parity of the length. So it is computed by the same
-representation reduced mod 2, which a finite automaton on Zeckendorf words can
-read. A naive search found at least 89 states, so this is not a simple rule.
+## 4. Split Smallest: regularity (conjecture) and exact length (proved)
+
+Write `S(n)` for the SS split count. Its Hankel matrices over Zeckendorf
+words of lengths 6, 7 and 8 have rank 6. Separately, a 9-dimensional linear
+representation over the blocks `0` and `10` (a trailing `1` is read by a
+separate output vector) was fitted on prefixes of length ≤ 10 and suffixes of
+length ≤ 8. It was not minimised, so its dimension is an upper bound, not the
+rank. It reproduces `S(n)` for every `n ≤ 120,000`
+(`evidence/ss_large_range.json`). If it is exact, the SS length
+`n − Z(n) + S(n)` is Fibonacci-regular, since `Z(n)` is.
+
+The winner is the parity of the length. The representation has entries with
+denominator 2, so it cannot simply be reduced mod 2. A finite parity automaton
+would need a separate argument (an integer representation, or the exact
+formula below); none is claimed here.
 
 **The block law.** `S(F_k + m) = S(F_k) + S(m) + D_{k mod 2}(m)` for `k ≥ 4`
 and `m < F_{k−1}`. This is the shape a structural proof would take.
@@ -92,8 +104,8 @@ trailing `1`s of `w`.
   adding consecutive terms. After normalisation there is no duplicate, so
   while two `1`s remain the next move is the insertion.
 - **Case `r = 0`.** The insertion turns the last bit from `0` to `1`. There is
-  no split. The result is `w + 1`. It lies in `𝓛`: a final `00` becomes `00`
-  followed by `1`, and nothing else changes.
+  no split. The result is `w + 1`. It lies in `𝓛`: a final `y00` becomes
+  `y01`, which removes that `00`, and nothing else changes.
 - **Case `r ≥ 1`.** Write `w = x 0 1^r`. The duplicate at position 0 (index 2)
   splits into position 1 and returns an `F_1`. A duplicate at position 1
   (index 3) splits into position 2 and returns an `F_1`. A duplicate at a
@@ -116,29 +128,106 @@ lazy Fibonacci counter, passing through a transient `00 1^j` tail after each
 long carry. The gate `COUNTER_lazy_language_radix_order` checks the lemma for
 20,000 steps.
 
-**Where the counting phase stops.** A step with `r ≥ 2` inserts two `1`s and
-returns two. So the number of `1`s cannot drop below two at such a step, and
-the phase can only stop after a step with `r ≤ 1`. Every such step ends in a
-lazy word (no `00`):
+**Where the counting phase stops.** Every move conserves the total value, so
+at each visited word the number of `1`s is `n − val(w)`. A step uses two
+`1`s and returns `min(r, 2)`, so the value along `𝓛` is non-decreasing (a
+step with `r ≥ 2` leaves it unchanged) and rises by at most 2 per step. The
+visited words are exactly `𝓛` in increasing order, starting from the empty
+word. So the phase stops at the first word *in that order* with value at
+least `n − 1`, and then `a = n − val(w*) ∈ {0, 1}`.
 
-- from a lazy word, `x0 → x1` and `x01 → x10`;
+A step with `r ≥ 2` returns as many `1`s as it uses, so the phase can only
+stop after a step with `r ≤ 1`. Every such step ends in a lazy word (no `00`):
+
+- from a lazy word, `x0 → x1` and `x01 → x10` (here `x` cannot end in `0`,
+  since `x01` has no `00`);
 - from a tail word, `x100 → x101` and `x1001 → x1010`.
 
 So the end phase always starts from a lazy representation with at most one
-`1` left over. Two further observations are checked for `n ≤ 6000` but not
-proved: the end phase never adds two `1`s together, and its moves are adds and
-splits only.
+`1` left over. That it never adds two `1`s is proved in the run lemma below.
+The end-phase formula needs the stopping word to be lazy: on words that still
+contain `00` it fails (e.g. `w = 11001`, `a = 1`).
 
-**What a proof still needs.** By the lemma, the split count of the counting
-phase is the sum of trailing-one counts over a radix-order prefix of `𝓛`. It
-stops once fewer than two `1`s remain. Two pieces are missing:
+**The end phase (proved).** Let the counting phase stop at the lazy word
+`w`, with `a ∈ {0, 1}` ones left. Read `w` as blocks of `1`s separated by
+single `0`s, and process the blocks from the low end. Let `γ` be a carry,
+initially `γ = a` if `w` ends in `1` and `γ = 0` otherwise. A block of length
+`k` contributes `⌊(k − 1 + γ)²/4⌋` splits, and then `γ ← [k + γ ≥ 2]`. The end
+phase makes exactly the sum of these contributions.
 
-- an analysis of the end phase, in which adds and splits turn the final word
-  (with at most one `1` left over) into the Zeckendorf decomposition;
-- an assembly of both counts into a function of the Zeckendorf digits of `n`.
+*Lemma (a run).* Suppose single pieces occupy the consecutive indices `q, …,
+q + m − 1`, with `m ≥ 3`. Suppose indices `q − 1` and `q + m` are empty, and
+the pieces below `q − 1` contain no duplicate and no consecutive pair. Suppose
+there is at most one `F_1`. Then SS does the following:
 
-Each piece is a finite-state question about Fibonacci numeration, which is
-why the representation is expected to be exact.
+- it adds the pair `(q, q + 1)` into `q + 2`;
+- it splits at `q + 2, q + 3, …, q + m − 1` in that order;
+- it leaves a run of length `m − 2` at `q`, and one piece at `q + m`.
+
+*Proof.*
+- **The add.** There is no duplicate, at most one `F_1`, and no consecutive
+  pair below `q` (index `q − 1` is empty). So `(q, q + 1)` is the smallest
+  consecutive pair. Pieces above the run do not matter: SS takes the smallest
+  pair. (The weaker hypothesis "nothing below is consecutive with `q`" is not
+  enough: with pieces at `2, 3, 5, 6, 7`, SS adds `(2, 3)` first.)
+- **The cascade.** The add doubles index `q + 2`. A split at index `i`
+  (always `i ≥ 3` here) moves one piece to `i + 1` and one to `i − 2`. The
+  piece at `i − 2` lands on a position emptied earlier in the cascade: `q` and
+  `q + 1` were emptied by the add, and each later deposit position by the
+  split before it. So exactly one duplicate exists at each moment, at `i + 1`,
+  and it is the smallest.
+- **The end.** The cascade stops at `q + m − 1`, whose split puts a piece on
+  the empty `q + m`.
+- **What remains.** The deposits fill `q, …, q + m − 3`.
+- **No early ones-add.** The number of `F_1` pieces never reaches 2. A split
+  at index 3 deposits an `F_1` only when the run starts at `q = 1`, which
+  means the leftover one has just been consumed by the add. ∎
+
+*Proof of the end phase.*
+- **A block becomes a run.** The lowest block, together with the carry
+  piece directly below it, is a run of length `m = k + γ`. The carry piece is
+  the leftover `F_1` (when the block starts at index 2), or the piece pushed
+  out of the previous block.
+- **Peeling the run.** Applying the lemma repeatedly peels the run:
+  `m → m − 2 → …`. Each round puts one piece two above the previous one, so the
+  pushed-out pieces end up alternating.
+- **The last round.** A run of length 2 is added into one piece. A run of
+  length 1 stays.
+- **The count.** The splits number `(m − 2) + (m − 4) + … = ⌊(m − 1)²/4⌋`.
+- **The carry out.** A piece lands just above the block (on the separating
+  `0`) exactly when `m ≥ 2`. It is consecutive with the next block, so the
+  next block starts with `γ = 1`.
+- **The hypotheses hold at every round.** Inside a block, each round leaves
+  the run at `q` with `q + m − 2` empty, and the pushed-out pieces at
+  `q + m, q + m − 2, …` are pairwise two apart. After a block, the processed
+  pieces are those pushed-out pieces plus the final add result or lone piece;
+  the topmost is the carry, which is part of the next run, and the index just
+  below it is empty. So below the next run's start there is an empty cell and
+  no duplicate or consecutive pair.
+- **Order of moves.** SS always works on the smallest consecutive pair, and the
+  invariant above puts no pair below the current run, so it finishes each
+  block before touching the next one.
+- **The base.** If `w` ends in `0` and `a = 1`, the `F_1` is not consecutive
+  with anything and stays, so `γ = 0`. ∎
+
+**The exact length.** Combine the two phases. Let `w*` be the first word of
+`𝓛` (in increasing order) whose value is at least `n − 1`. By the counting
+lemma, the counting phase stops exactly there. Then
+
+`S_SS(n) = Σ_{w ∈ 𝓛, w < w*} tr₁(w) + E(w*, n − val(w*))`, and
+`L_SS(n) = n − Z(n) + S_SS(n)`,
+
+where `tr₁` counts trailing `1`s and `E` is the end-phase sum. This is an
+exact, computable formula for Split Smallest's length: a sum over the counter
+language below `w*` (about `n` terms), not a closed form, and it says nothing
+yet about asymptotics. The winner is the parity of `L_SS(n)`. The gates `END_PHASE_block_formula` and
+`EXACT_FORMULA_matches_simulation` check the two lemmas. The large-range
+evidence checks the assembled formula against simulation for every
+`n ≤ 120,000`.
+
+The 9-dimensional representation of §4 remains an observed compression of
+this formula. Its exactness for all `n` is still conjectural; the formula above
+is the proved statement.
 
 ## 5. Combine Smallest
 
@@ -151,7 +240,23 @@ consistent with Li et al.'s conjectured `≈ 1.20647`.
 
 - **CL and SL:** the length is `n − Z(n)`, so Player 1 wins exactly when
   `n − Z(n)` is odd.
-- **SS:** Player 1 wins when the representation's length is odd. For `n ≤ 60`
+- **SS:** Player 1 wins when `L_SS(n)` from the exact formula of §4 is odd. For `n ≤ 60`
   the winners are `212112221111211121121222212212121122212212111112212211122221`
   (digit = winning player).
 - **CS:** by direct simulation only.
+
+## 7. Review
+
+An independent review (fresh agent, own simulator, no dossier code) found the
+exact formula proved up to fixable gaps. This version makes those fixes:
+
+- the run lemma's hypothesis was too weak and is strengthened;
+- the `r = 0` case was misstated;
+- the conservation invariant and "first in order" point are now explicit;
+- §3's indexing clash and missing `n − Z(n)` step are corrected;
+- the claims about a mod-2 automaton and an 89-state lower bound are withdrawn;
+- the winners are tied to the proved formula.
+
+The reviewer's checks: the formula matches simulation for every `n ≤ 3000`;
+`E` matches SS on all 8,360 lazy states of length ≤ 16; no full SS play for
+`n ≤ 1500` has two duplicates at once.

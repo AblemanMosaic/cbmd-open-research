@@ -1,4 +1,4 @@
-# Deterministic Zeckendorf games: Split Smallest is Fibonacci-regular
+# Deterministic Zeckendorf games: the exact length of Split Smallest
 
 > **Standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`, `CONJECTURE`
 
@@ -36,14 +36,26 @@ exact length was known for SS or CS.
 - **Split Smallest is Fibonacci-regular (conjecture, exhaustively checked).**
   The SS split count has a 9-dimensional linear representation, read over the
   Zeckendorf blocks `0` and `10`. It was fitted on words of length ≤ 18 and
-  reproduces the split count exactly for every `n ≤ 120,000`. So the SS length,
-  and therefore the SS winner (the parity of the length), are given by an
-  explicit finite linear representation. Player 1 wins SS for about half of all
+  reproduces the split count exactly for every `n ≤ 120,000`. It was not
+  minimised. If it is exact, the SS length is Fibonacci-regular. Player 1 wins SS for about half of all
   `n` (50.02% up to 120,000).
-- **Closed form at Fibonacci numbers.** With `F_0 = 1, F_1 = 2`:
-  `S_SS(F_k) = S_SS(F_k − 1) = F_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`. At
-  `F_k − 1` this follows from Cusenza et al.'s theorems plus the identity
-  above (written argument). At `F_k` it is checked up to `k = 24`.
+- **Closed form at Fibonacci numbers.** In the shifted sequence `G_k = F_{k+1}`
+  (`G_0 = 1, G_1 = 2`):
+  `S_SS(G_k) = S_SS(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`. At
+  `G_k − 1` this follows from Cusenza et al.'s theorems plus the identity
+  above (written argument). At `G_k` it is checked up to `k = 24`.
+- **The exact length of Split Smallest (proved, written).**
+  `L_SS(n) = n − Z(n) + Σ_{w ∈ 𝓛, w < w*} tr₁(w) + E(w*, n − val(w*))`.
+  Here:
+  - `𝓛` is the counter language below, in increasing order;
+  - `w*` is its first word of value at least `n − 1`;
+  - `tr₁` counts trailing `1`s;
+  - `E` is an explicit end-phase count, a sum over the blocks of `w*` of
+    `⌊(k − 1 + γ)²/4⌋` with a carry bit `γ`.
+
+  This matches simulation for every `n ≤ 120,000`. The winner is its parity.
+  An independent review found the proof correct up to fixable gaps (a run-lemma
+  hypothesis, one misstated case); those are fixed in version 0.3.0.
 - **The counting phase is the lazy Fibonacci counter (proved, written).**
   While two `1`s remain, each SS step adds them into a `2` and normalises by
   splits. The step moves the upper word to the next word, in increasing order,
@@ -61,16 +73,17 @@ exact length was known for SS or CS.
 
 ## What is not established
 
-- A proof that SS is Fibonacci-regular, or of the block law and the
-  closed form at `F_k`. The counting phase is proved; the end phase and the
-  assembly are not.
+- That the 9-dimensional representation equals the exact formula for every
+  `n`. That would make SS Fibonacci-regular; it is observed, not proved.
+- The block law and the closed form at `G_k`, beyond the checked range.
+- A machine-checked version of the written proofs.
 - Anything exact about CS beyond the evidence above.
 - Novelty beyond the cited papers. See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
 ## Smallest decisive tests
 
+- A gap in the counting-phase or end-phase lemma; see `argument/WRITTEN_ARGUMENT.md` §4.
 - An `n` where SS's split count differs from the representation.
-- A proof of the block law, which would make the regularity a theorem.
 
 ## Reproduction
 

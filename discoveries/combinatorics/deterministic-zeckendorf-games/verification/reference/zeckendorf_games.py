@@ -26,7 +26,8 @@ Gates (each required):
   * SS_REPRESENTATION: the 9-dimensional linear representation in
     ss_linrep.json, read over the Zeckendorf blocks {0, 10} with a final 1,
     reproduces the split count of SS for every n in range (the representation
-    was fitted on words of length <= 18 and is tested far beyond);
+    was fitted on prefixes of length <= 10 and suffixes of length <= 8,
+    i.e. words of length <= 18, and is tested far beyond);
   * SS_FIBONACCI: S_SS(F_k) = F_{k+1} - (2k^2 + 8k + 15 + (-1)^k)/8, k >= 1
     (indexing F_0 = 1, F_1 = 2), and S_SS(F_k - 1) = S_SS(F_k);
   * SS_BLOCKS: S_SS(F_k + m) - S_SS(F_k) - S_SS(m) depends only on m and the
@@ -40,6 +41,14 @@ Gates (each required):
     only by 1's, in increasing order, and each step makes as many splits as the
     previous word has trailing 1's (checked for 20,000 steps; proved in the
     written argument);
+  * END_PHASE: from a lazy word w (indices >= 2, index 2 rightmost) with
+    a in {0,1} ones, SS makes sum over blocks of 1's, right to left, of
+    floor((k - 1 + g)^2 / 4) splits, with carry g = a if w ends in 1 else 0
+    initially and g <- [k + g >= 2] after each block (all lazy words of
+    length <= 14; proved in the written argument);
+  * EXACT_FORMULA: S_SS(n) = (sum of trailing-1 counts over the words of the
+    counter language before w*) + END_PHASE(w*, n - value(w*)), w* the first
+    counter word of value >= n - 1, matches simulation for every n in range;
   * CONTROL: perturbing one entry of the SS representation breaks agreement.
 """
 from __future__ import annotations
@@ -289,6 +298,98 @@ def counter_check(steps=20000):
     return True
 
 
+def end_phase_splits(w, a):
+    blocks = [len(b) for b in reversed(w.split("0")) if b]
+    g = a if w.endswith("1") else 0
+    total = 0
+    for k in blocks:
+        total += ((k - 1 + g) ** 2) // 4
+        g = 1 if k + g >= 2 else 0
+    return total
+
+
+def upper_value(w):
+    m = len(w)
+    return sum(FIB[m - i] for i, ch in enumerate(w) if ch == "1")
+
+
+def ss_from_state(a, w):
+    """Run SS from a ones and upper word w; return the number of splits."""
+    c = [a] + [int(ch) for ch in reversed(w)]
+    splits = 0
+
+    def ensure(k):
+        while len(c) <= k:
+            c.append(0)
+    while True:
+        moved = False
+        for i in range(1, len(c)):
+            if c[i] >= 2:
+                ensure(i + 1)
+                c[i] -= 2
+                c[i + 1] += 1
+                c[0 if i == 1 else i - 2] += 1
+                splits += 1
+                moved = True
+                break
+        if moved:
+            continue
+        if c[0] >= 2:
+            ensure(1)
+            c[0] -= 2
+            c[1] += 1
+            continue
+        for i in range(1, len(c)):
+            if c[i - 1] > 0 and c[i] > 0:
+                ensure(i + 1)
+                c[i - 1] -= 1
+                c[i] -= 1
+                c[i + 1] += 1
+                moved = True
+                break
+        if not moved:
+            return splits
+
+
+def end_phase_check(max_len=14):
+    for L in range(1, max_len + 1):
+        for bits in itertools.product("01", repeat=L):
+            w = "".join(bits)
+            if not w.startswith("1") or "00" in w:
+                continue
+            for a in (0, 1):
+                if ss_from_state(a, w) != end_phase_splits(w, a):
+                    return False
+    return True
+
+
+def exact_formula(n_max):
+    def in_language(w):
+        i = w.find("00")
+        return i < 0 or set(w[i + 2:]) <= {"1"}
+    seq = []
+    x = 0
+    cum = 0
+    while True:
+        w = format(x, "b") if x else ""
+        x += 1
+        if not in_language(w):
+            continue
+        v = upper_value(w) if w else 0
+        seq.append((w, v, cum))
+        cum += len(w) - len(w.rstrip("1"))
+        if v > n_max + 2:
+            break
+    out = {}
+    j = 0
+    for n in range(1, n_max + 1):
+        while seq[j][1] < n - 1:
+            j += 1
+        w, v, c = seq[j]
+        out[n] = c + end_phase_splits(w, n - v)
+    return out
+
+
 def main():
     counts = {}
     S = {g: {0: 0} for g in ("CL", "SL", "CS", "SS")}
@@ -349,6 +450,8 @@ def main():
         "SS_LOW_RANK": max(hank["SS"]) <= 9,
         "CONTROL_perturbed_representation_fails": control_bites,
         "COUNTER_lazy_language_radix_order": counter_check(),
+        "END_PHASE_block_formula": end_phase_check(),
+        "EXACT_FORMULA_matches_simulation": all(v == S["SS"][n] for n, v in exact_formula(N_MAX).items()),
     }
     out = {"schema": "cbmd.deterministic-zeckendorf.v1", "counts": counts, "gates": gates,
            "status": "PASS" if all(gates.values()) else "FAIL",
