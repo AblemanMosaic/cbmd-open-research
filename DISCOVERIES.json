@@ -127,7 +127,7 @@
    "path": "discoveries/dynamics/weighted-capacity-chip-firing",
    "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Obtain a targeted prior-art assessment of the weighted threshold and the cycle obstruction against the bounded-Petri-net deadlock and capacity-constrained abelian network literature, and an external review of the Lean-to-prose correspondence.",
+   "next_obligation": "Obtain an external review of the Lean-to-prose correspondence. Prior art is now partly settled: the cycle obstruction is the Petri-net-side form of a known queueing result (Liebeherr and Akyildiz), and the live-set obstruction is a trap; what remains unmatched is the weighted threshold itself and the multiplicity-indexed capacity condition.",
    "promotion_blockers": [
     "specialist novelty and prior-art assessment remains open",
     "external independent verification remains open",
@@ -147,7 +147,7 @@
    "path": "discoveries/concurrency/capacity-preservation-boundary",
    "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Run the targeted prior-art query the bounded search named as highest value: capacities over state machines, the one-input-one-output subclass; and compile the termination of the lowering iteration. The coNP-completeness statement remains a written argument with only its reduction machine checked.",
+   "next_obligation": "Compile the termination of the lowering iteration, the one prose step left on the proved side; and settle whether the queueing-with-blocking line covers non-conservative networks. The state-machine prior-art query has been run and is recorded. The coNP-completeness statement remains a written argument with only its reduction machine checked.",
    "promotion_blockers": [
     "novelty and prior-art assessment open",
     "external review open",
