@@ -236,10 +236,9 @@
       "path": "discoveries/dynamics/labeled-chip-firing-ballot",
       "title": "Labeled chip-firing on trees: the ballot conjecture is false",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Independent replay of the certificates; then determine whether the property fails for every l >= 5 (k = 2) and l >= 4 (k >= 3), and whether the ballot bound survives.",
+      "next_obligation": "Prove failure for every l >= 5 (binary) by a construction; decide whether the ballot bound's inequality survives.",
       "promotion_blockers": [
-        "not yet independently reviewed",
-        "external review open"
+        "certified counterexamples independently replayed; external review open"
       ],
       "status": [
         "EXACT_MODEL_VERIFIED",

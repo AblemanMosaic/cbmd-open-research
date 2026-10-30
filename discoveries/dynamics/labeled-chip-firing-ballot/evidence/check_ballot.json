@@ -84,6 +84,34 @@
      4
     ]
    ]
+  },
+  {
+   "chips": 255,
+   "firings": 1291,
+   "k": 2,
+   "levels": 8,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     1,
+     2
+    ]
+   ]
+  },
+  {
+   "chips": 121,
+   "firings": 184,
+   "k": 3,
+   "levels": 5,
+   "ok": true,
+   "violations": [
+    [
+     0,
+     2,
+     3
+    ]
+   ]
   }
  ],
  "gates": {

@@ -18,15 +18,15 @@ Gates (each required):
     present at a vertex with at least k + 1 chips), ends stable with one chip
     per vertex of the first l levels, matches its recorded final configuration,
     and violates the ballot property; cases (k, l) = (2,5) twice (one violation
-    at the root), (2,6), (2,7), (3,4), (4,4);
-  * THRESHOLD_EQUIVALENCE: for equal-size sets A, B, "i-th smallest of A < i-th
-    smallest of B for all i" iff "|A cap [1,t]| >= |B cap [1,t]| for all t"
-    (checked exhaustively on all pairs of disjoint 3-subsets of 1..8 and
-    4-subsets of 1..9);
+    at the root), (2,6), (2,7), (2,8), (3,4), (3,5), (4,4);
+  * THRESHOLD_EQUIVALENCE: a finite sanity check of the (generally proved)
+    fact that for equal-size sets A, B of distinct labels, "i-th smallest of A
+    < i-th smallest of B for all i" iff "|A cap [1,t]| >= |B cap [1,t]| for
+    all t" (all pairs of disjoint 3-subsets of 1..8 and 4-subsets of 1..9);
   * POSITIVE_CASES: in the two-colour projection (chips <= t red), every run
     reaches only stable states with red-count dominance at every vertex, for
     every threshold t, in the cases (k, l) = (2, 2), (2, 3), (2, 4), (3, 2),
-    (3, 3), (4, 3) -- hence the ballot property holds for all stable
+    (3, 3), (4, 2), (4, 3) -- hence the ballot property holds for all stable
     configurations in those cases;
   * CONTROL: altering one firing of a certificate makes the replay fail.
 """
@@ -157,7 +157,7 @@ def main():
     gates = {
         "CERTIFICATES_REPLAY": rep_ok,
         "THRESHOLD_EQUIVALENCE": threshold_equivalence(),
-        "POSITIVE_CASES": all(colour_exhaustive(k, L) for k, L in ((2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (4, 3))),
+        "POSITIVE_CASES": all(colour_exhaustive(k, L) for k, L in ((2, 2), (2, 3), (2, 4), (3, 2), (3, 3), (4, 2), (4, 3))),
         "CONTROL_altered_firing_fails": control,
     }
     out = {"schema": "cbmd.labeled-chip-firing.ballot.v1", "cases": cases, "gates": gates,
