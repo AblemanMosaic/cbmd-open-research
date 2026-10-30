@@ -147,6 +147,22 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 260,172 systems. See
 [`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
+## One compiled equivalence (revision 0.9.0)
+
+The pieces of the characterization are now assembled:
+
+```lean
+terminalStable_iff_acyclic :
+  TerminalStable ↔ (live subgraph acyclic) ∧ LiveClosed ∧ LiveBound
+```
+
+`TerminalStable` means every admissible capacity-terminal state is ordinarily
+stable. Only positive outdegree is assumed. A case the prose never mentioned
+surfaced in the assembly: a live self-loop. It needs no witness, because
+well-foundedness already excludes it. The census's three-condition exactness
+is now a compiled theorem rather than a finite result. See
+[`revisions/0.9.0-characterization-compiled.md`](revisions/0.9.0-characterization-compiled.md).
+
 ## A capacitated sink collapses everything (revision 0.7.0)
 
 The sink was assumed absorbing throughout. If it instead holds chips under any

@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.8.0",
+ "public_version": "0.9.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -39,7 +39,8 @@
   "Anti-vacuity: well-foundedness alone is insufficient in 418,602 systems, live-closure is load-bearing for the equivalence in 413,604 systems outside it, and replacing each of the three hypotheses by True in turn produces unsoundness in every case.",
   "At a receiver fed by a live sender along a unit arc, the bound is exactly capacity v >= outdegree v in both directions: sufficient by the transfer theorem and necessary by bound_necessary_at_unit_arc, an instance of bound_violation_defeats_transfer at multiplicity one that does not require the receiver to be live. The item listing this as unresolved had been settled since revision 0.4.0.",
   "Non-absorbing sinks settled negatively (revision 0.7.0): with the sink capacitated at any finite level, the all-full state is capacity-terminal and, given a live vertex, not ordinarily stable, so transfer holds exactly when no vertex is live (capped_sink_breaks_transfer, no_live_all_stable). A gated census at sink capacities 0, 1, 2, 4 and n <= 3 agrees in all 1,789,740 cases with zero disagreements, checks the all-full witness directly on every live system, and finds 17,594 systems that transfer with the absorbing sink but fail at every finite cap.",
-  "The last imported fact is compiled (revision 0.8.0): a finite acyclic relation is well founded (wellFounded_of_acyclic, by counting ancestors over Fin n), and with the converse acyclic_of_wellFounded this gives liveArc_wellFounded_iff_acyclic, so the census's cycle detection provably decides the ordering hypothesis."
+  "The last imported fact is compiled (revision 0.8.0): a finite acyclic relation is well founded (wellFounded_of_acyclic, by counting ancestors over Fin n), and with the converse acyclic_of_wellFounded this gives liveArc_wellFounded_iff_acyclic, so the census's cycle detection provably decides the ordering hypothesis.",
+  "The characterization is one compiled equivalence (revision 0.9.0): terminalStable_iff and terminalStable_iff_acyclic prove that every admissible capacity-terminal state is ordinarily stable exactly when the live subgraph is well founded (equivalently acyclic), live-closed and bounded, assuming only positive outdegree; a live self-loop is excluded by well-foundedness with no witness needed."
  ],
  "unresolved": [
   "novelty assessment and external specialist review"
@@ -50,7 +51,7 @@
   "finite enumeration corroborates the theorem and does not prove it",
   "ordinary well-foundedness and uniqueness enter as explicit hypotheses and are not proved here",
   "the cycle obstruction assumes every vertex has positive outdegree and says nothing about capacities below d(v)",
-  "the ordering half of the characterization is now a proved equivalence; the exactness of the full three-condition predicate over the enumerated box remains a finite census result",
+  "the full three-condition characterization is compiled for terminal stability (every admissible capacity-terminal state is ordinarily stable; revision 0.9.0); transfer follows from it under the ordinary hypotheses named above, and the census measured transfer itself",
   "Classical.choice is genuinely used to build the obstruction's successor map and is not eliminated",
   "the cycle obstruction is the Petri-net-side form of a known queueing result: Liebeherr and Akyildiz give a necessary and sufficient deadlock-freedom condition over buffer cycles for closed networks under blocking-after-service, and no novelty is claimed for it",
   "the live-set obstruction is a trap in the net, dually a siphon in the complemented net, and the two enabledness notions are Murata's strict and weak transition rules; both are classical objects",

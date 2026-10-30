@@ -6,3 +6,4 @@ import CBMDWeightedDynamics.Necessity
 import CBMDWeightedDynamics.Equivalence
 import CBMDWeightedDynamics.SinkCollapse
 import CBMDWeightedDynamics.FiniteAcyclic
+import CBMDWeightedDynamics.Iff

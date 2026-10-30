@@ -127,11 +127,10 @@
       "path": "discoveries/dynamics/weighted-capacity-chip-firing",
       "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Obtain an external review of the Lean-to-prose correspondence. Prior art is now partly settled: the cycle obstruction is the Petri-net-side form of a known queueing result (Liebeherr and Akyildiz), and the live-set obstruction is a trap; what remains unmatched is the weighted threshold itself and the multiplicity-indexed capacity condition.",
+      "next_obligation": "Obtain an external review of the Lean-to-prose correspondence, and read Devillers 1990 on capacity semantics before any novelty claim. The characterization is now one compiled equivalence; what remains unmatched in the literature is the weighted threshold and the multiplicity-indexed capacity condition.",
       "promotion_blockers": [
         "specialist novelty and prior-art assessment remains open",
-        "external independent verification remains open",
-        "exhaustiveness of the full three-condition predicate is a census result; the ordering condition alone is now a proved equivalence"
+        "external independent verification remains open"
       ],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",
