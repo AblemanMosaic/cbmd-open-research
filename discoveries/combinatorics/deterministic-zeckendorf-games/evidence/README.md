@@ -7,3 +7,4 @@
 | `cs_constant.json` | Combine Smallest gates: counter transitions and cycle, pile cycle, tail cases, level form, the constant in three forms, a log-squared sanity bound, a control. |
 | `cs_large_range.json` | `L_CS(n) − c·n` from the C simulators for every `n ≤ 30,000` and single `n` up to `4·10⁹`, with SHA-256 of both outputs. |
 | `cs_deviation_growth.json` | `L_CS(n) − c·n` at `n = 10^k` up to `10^60` and over random samples, from the exact algorithm. Observation only. |
+| `ss_regularity.json` | The SS regularity proof: component replays, Rel soundness and completeness, the exact equivalence test, the block law, the closed forms, and a control. |

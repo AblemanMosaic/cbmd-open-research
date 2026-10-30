@@ -1,0 +1,86 @@
+{
+ "authority_effect": "NONE",
+ "dimensions": {
+  "Rel_states": 9,
+  "SX": 252,
+  "S_lazy": 28,
+  "T": 18,
+  "W": 8
+ },
+ "gates": {
+  "BLOCK_LAW": true,
+  "CLOSED_FORM_F_k": true,
+  "CLOSED_FORM_F_k_minus_1": true,
+  "COMPONENT_E": true,
+  "COMPONENT_T": true,
+  "COMPONENT_W": true,
+  "CONTROL_perturbed_9dim_not_equivalent": true,
+  "EQUIVALENT_TO_9DIM": true,
+  "LAZY_IS_STOP": true,
+  "REL_BOUND_STABLE": true,
+  "REL_COMPLETE": true,
+  "REL_SOUND_len_le_10": true,
+  "SX_MATCHES_GAME_n_le_600": true
+ },
+ "nonclaims": [
+  "the regularity proof is computer-assisted and rests on the written exact formula (\u00a74)"
+ ],
+ "rel_states": [
+  [
+   0,
+   0,
+   "start",
+   "zeros"
+  ],
+  [
+   1,
+   0,
+   "last1",
+   "zeros"
+  ],
+  [
+   0,
+   0,
+   "last1",
+   "last1"
+  ],
+  [
+   0,
+   1,
+   "last0",
+   "last1"
+  ],
+  [
+   0,
+   0,
+   "last0",
+   "last0"
+  ],
+  [
+   1,
+   0,
+   "last0",
+   "last0"
+  ],
+  [
+   0,
+   0,
+   "last0",
+   "last1"
+  ],
+  [
+   1,
+   0,
+   "last1",
+   "last1"
+  ],
+  [
+   1,
+   0,
+   "last1",
+   "last0"
+  ]
+ ],
+ "schema": "cbmd.deterministic-zeckendorf.ss-regularity.v1",
+ "status": "PASS"
+}

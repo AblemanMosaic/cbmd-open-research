@@ -34,17 +34,27 @@ linear in `n` with constant `≈ 1.206`.
   Cusenza et al., who note an exact formula in terms of move counts.
   The number of merging moves is always `n − Z(n)`, so the length is
   `n − Z(n) + #splits`.
-- **Split Smallest is Fibonacci-regular (conjecture, exhaustively checked).**
+- **Split Smallest is Fibonacci-regular (proved, computer-assisted).**
   The SS split count has a 9-dimensional linear representation, read over the
-  Zeckendorf blocks `0` and `10`. It was fitted on words of length ≤ 18 and
-  reproduces the split count exactly for every `n ≤ 120,000`. It was not
-  minimised. If it is exact, the SS length is Fibonacci-regular. Player 1 wins SS for about half of all
-  `n` (50.02% up to 120,000).
+  Zeckendorf blocks `0` and `10`. It was fitted on words of length ≤ 18 and is
+  exact for every `n`.
+
+  How it is proved (`ss_regularity.py`):
+  - the exact formula below depends on `n` only through its lazy Fibonacci
+    representation;
+  - that dependence is a rational series, built explicitly;
+  - a 9-state automaton converts Zeckendorf words to lazy ones;
+  - the composed 252-dimensional representation is decided equal to the
+    9-dimensional one, by exact linear algebra.
+
+  So the SS length is Fibonacci-regular, and the SS winner (its parity) is
+  computed by a finite automaton. Player 1 wins SS for about half of all `n`
+  (50.02% up to 120,000).
 - **Closed form at Fibonacci numbers.** In the shifted sequence `G_k = F_{k+1}`
   (`G_0 = 1, G_1 = 2`):
-  `S_SS(G_k) = S_SS(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8`. At
-  `G_k − 1` this follows from Cusenza et al.'s theorems plus the identity
-  above (written argument). At `G_k` it is checked up to `k = 24`.
+  `S_SS(G_k) = S_SS(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8` for all
+  `k`. This is proved from the representation: both sides are linear
+  recurrences of order at most 15.
 - **The exact length of Split Smallest (proved, written).**
   `L_SS(n) = n − Z(n) + Σ_{w ∈ 𝓛, w < w*} tr₁(w) + E(w*, n − val(w*))`.
   Here:
@@ -63,8 +73,9 @@ linear in `n` with constant `≈ 1.206`.
   of the binary words with no `00` except one final `00 1…1`: the lazy
   Fibonacci representations plus a transient tail. It makes as many splits as
   the previous word has trailing `1`s.
-- **A block law.** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends only on `m`
-  and the parity of `k`, for `k ≥ 4` and `m < F_{k−1}`. Checked to 120,000.
+- **A block law (proved).** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends
+  only on `m` and the parity of `k`, for `m < F_{k−1}`. This is proved by
+  finite linear algebra on the representation.
 - **The Combine Smallest constant (proved, written).**
   `L_CS(n) = c·n + O(log² n)`, with
   `c = Σ_{k≥1} 1/f_{2k−1} − 1/φ = 1.2064811686570297…`. Here `f` is the
@@ -94,17 +105,18 @@ linear in `n` with constant `≈ 1.206`.
 
 ## What is not established
 
-- That the 9-dimensional representation equals the exact formula for every
-  `n`. That would make SS Fibonacci-regular; it is observed, not proved.
-- The block law and the closed form at `G_k`, beyond the checked range.
-- A machine-checked version of the written proofs.
+- A machine-checked (proof-assistant) version of the written proofs. The SS
+  regularity proof is computer-assisted: exact computation on top of the
+  written exact formula.
+- The size of the minimal SS parity automaton.
 - A closed form for the CS length or winner beyond the polylog algorithm; a proof that `L_CS(n) − c·n` is `Θ(log n)`.
 - Novelty beyond the cited papers. See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
 ## Smallest decisive tests
 
 - A gap in the counting-phase or end-phase lemma; see `argument/WRITTEN_ARGUMENT.md` §4.
-- An `n` where SS's split count differs from the representation.
+- An `n` where SS's split count differs from the representation. That would
+  refute the exact formula or the regularity construction.
 - A gap in the CS counter, round or tail lemma; see §5. A counter state where
   one feed does not follow the A/B/C rule would break it.
 
@@ -115,6 +127,7 @@ python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/
 cc -O2 -o deterministic_games discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/deterministic_games.c
 ./deterministic_games 120000 S > ss.txt
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/check_large.py ss.txt
+python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/ss_regularity.py
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_constant.py 3000
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_exact.py 3000
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_deviation_growth.py

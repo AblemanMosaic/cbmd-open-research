@@ -34,7 +34,7 @@
   "SS_REPRESENTATION_exact": true
  },
  "nonclaims": [
-  "SS regularity is verified in range, not proved",
+  "SS regularity is proved in ss_regularity.py; this script checks the representation in range",
   "CS non-regularity is evidenced by Hankel rank growth, not proved"
  ],
  "schema": "cbmd.deterministic-zeckendorf.v1",

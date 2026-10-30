@@ -4,13 +4,13 @@
  "title": "Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant",
  "field": "combinatorics",
  "slug": "deterministic-zeckendorf-games",
- "public_version": "0.4.1",
+ "public_version": "0.5.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
   "CONJECTURE"
  ],
- "statement": "In the deterministic Zeckendorf games of Li, Li, Miller et al., every play has n - Z(n) merging moves and length sum_{i in Zeck(n)} c_i - sum over add-consecutive moves of (j - 2). For Split Smallest the length is exactly n - Z(n) + sum_{w in L, w < w*} tr1(w) + E(w*, n - val(w*)): while two 1's remain, SS runs the lazy Fibonacci counter through the language L of binary words with no 00 except one final 00 followed only by 1's, in increasing order, making tr1 (trailing ones of the previous word) splits per step; it stops at the first word w* of value >= n - 1, which is lazy; and the end phase makes E = sum over blocks of 1's of floor((k - 1 + g)^2/4) splits with a carry g. The split count is conjectured to be Fibonacci-regular, with a 9-dimensional representation matching it for every n <= 120,000; with G_k = F_{k+1} (G_0 = 1, G_1 = 2), its value at G_k and G_k - 1 is G_{k+1} - (2k^2 + 8k + 15 + (-1)^k)/8, proved at G_k - 1 from cited theorems. Combine Smallest shows full Hankel rank in the tested window. Combine Smallest has length c n + O(log^2 n) with c = 1/2 + sum_{j>=1} (1/F_{2j})(1 - 1/F_{2j+2}) = sum_{k>=1} 1/f_{2k-1} - 1/phi = 1.2064811686570297..., f the standard Fibonacci numbers; c is transcendental. The proof: CS lifts a pile two indices at a time, and the counter below the pile, fed one piece per split, runs a self-similar cycle in which F_{s+1} feeds cost exactly F_{s+1} - 1 moves.",
+ "statement": "In the deterministic Zeckendorf games of Li, Li, Miller et al., every play has n - Z(n) merging moves and length sum_{i in Zeck(n)} c_i - sum over add-consecutive moves of (j - 2). For Split Smallest the length is exactly n - Z(n) + sum_{w in L, w < w*} tr1(w) + E(w*, n - val(w*)): while two 1's remain, SS runs the lazy Fibonacci counter through the language L of binary words with no 00 except one final 00 followed only by 1's, in increasing order, making tr1 (trailing ones of the previous word) splits per step; it stops at the first word w* of value >= n - 1, which is lazy; and the end phase makes E = sum over blocks of 1's of floor((k - 1 + g)^2/4) splits with a carry g. The split count is Fibonacci-regular: a 9-dimensional representation over the Zeckendorf blocks 0 and 10 is exact for all n (computer-assisted proof: (w*, a) is the lazy representation of n, the formula is a rational series in it, a 9-state transducer relates Zeckendorf and lazy words, and the composed representation is decided equal to the 9-dimensional one). Consequently the block law holds, and with G_k = F_{k+1} (G_0 = 1, G_1 = 2), S_SS(G_k) = S_SS(G_k - 1) = G_{k+1} - (2k^2 + 8k + 15 + (-1)^k)/8 for all k. Combine Smallest shows full Hankel rank in the tested window. Combine Smallest has length c n + O(log^2 n) with c = 1/2 + sum_{j>=1} (1/F_{2j})(1 - 1/F_{2j+2}) = sum_{k>=1} 1/f_{2k-1} - 1/phi = 1.2064811686570297..., f the standard Fibonacci numbers; c is transcendental. The proof: CS lifts a pile two indices at a time, and the counter below the pile, fed one piece per split, runs a self-similar cycle in which F_{s+1} feeds cost exactly F_{s+1} - 1 moves.",
  "resolves": "Li, Li, Miller et al. (2020) open question 'how long do the deterministic games take and who wins as a function of n' for Split Smallest, by an exact formula with written proof; and Li et al. Conjecture 1.4 for Combine Smallest (length linear in n, constant about 1.206), with the constant identified in closed form, by written proof",
  "verified": [
   "For every n <= 3000 and all four deterministic games: n - Z(n) merging moves and the length identity hold, CL and SL have length n - Z(n), and SS equals the maximum game length computed over the full game graph for n <= 40.",
@@ -20,10 +20,11 @@
   "End-phase lemma (written proof) checked on every lazy word of length <= 14 with 0 or 1 leftover ones; the assembled exact formula matches simulation for every n <= 3000 in the bundled gates and every n <= 120,000 in the recorded large-range check.",
   "Independent review (fresh agent, own simulator): exact formula matches for n <= 3000; E matches SS on all 8,360 lazy states of length <= 16; the proof is correct up to a too-weak run-lemma hypothesis and a misstated r = 0 case, both fixed in 0.3.0.",
   "Combine Smallest (cs_constant.py, n <= 3000): the counter's one-feed rule matches direct simulation for every normal state, s <= 14; the counter cycle for s <= 18; the pile cycle for i <= 10; every tail case for even P <= 14; the level form at every level start; the three forms of c agree to 45 digits; a mutated counter model fails. The C simulators give L_CS(n) - c n in [-16.41, -1.21] for n <= 30,000 and between -22 and -5 at n = 10^3, ..., 10^9 and 4 x 10^9.",
-  "Second independent review (fresh agent, own simulators): the Combine Smallest proof is correct up to wording fixes, now applied; one-feed lemma for s <= 16, round and tail lemmas in place for even P <= 18, level form to n <= 30,000 and samples to 10^9, budget lemma on 3,000 random configurations. The exact polylog algorithm cs_exact.py, built only from the lemmas, matches direct simulation for every n <= 30,000 and the C simulator at n up to 4 x 10^9."
+  "Second independent review (fresh agent, own simulators): the Combine Smallest proof is correct up to wording fixes, now applied; one-feed lemma for s <= 16, round and tail lemmas in place for even P <= 18, level form to n <= 30,000 and samples to 10^9, budget lemma on 3,000 random configurations. The exact polylog algorithm cs_exact.py, built only from the lemmas, matches direct simulation for every n <= 30,000 and the C simulator at n up to 4 x 10^9.",
+  "SS regularity (ss_regularity.py): component automata W, T, E' replayed exhaustively against their definitions; the counter's stop equals lazy(n) for n < 2000; Rel sound on all aligned pairs of length <= 10 and complete by subset construction, stable under a larger bound; the composed 252-dimensional representation matches the game for n <= 600 and is exactly equivalent to the 9-dimensional one (reachable space of dimension 36); block law and closed forms decided; perturbing the 9-dimensional representation breaks equivalence."
  ],
  "unresolved": [
-  "a machine-checked version of the written proofs, and a second independent review of the 0.3.0 fixes; the 9-dimensional representation and hence Fibonacci-regularity remain conjectural",
+  "a proof-assistant version of the written proofs (SS counting and end-phase lemmas, CS counter lemma); independent review of the SS regularity construction",
   "an exact description of Combine Smallest lengths, and a proof that they are not Fibonacci-regular",
   "novelty and external review",
   "a proof that L_CS(n) - c n is Theta(log n) (observed: about -0.42 log_phi n); a closed form for the CS winner"
@@ -32,8 +33,8 @@
   "the length identity is a rewriting of Cusenza et al.'s exact move-count formula, not a new result",
   "CS non-regularity is evidenced by Hankel rank growth, not proved",
   "not a novelty determination",
-  "the SS Fibonacci-regularity (9-dimensional representation), the block law and the closed form at G_k are verified in range, not proved; the exact two-phase formula is the proved statement",
-  "the CS error term is O(log^2 n) by written proof; the observed growth -0.42 log_phi n is not proved"
+  "the CS error term is O(log^2 n) by written proof; the observed growth -0.42 log_phi n is not proved",
+  "the SS regularity proof is computer-assisted on top of the written exact formula; the parity automaton's size is not computed"
  ],
  "smallest_decisive_test": "An n at which the Split Smallest split count differs from the 9-dimensional representation, or a proof of the block law.",
  "checks": [
@@ -64,6 +65,15 @@
     "-B",
     "discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_exact.py",
     "3000"
+   ],
+   "required": true
+  },
+  {
+   "id": "SS_REGULARITY_PROOF",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/ss_regularity.py"
    ],
    "required": true
   }

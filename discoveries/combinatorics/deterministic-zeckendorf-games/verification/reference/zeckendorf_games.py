@@ -455,7 +455,7 @@ def main():
     }
     out = {"schema": "cbmd.deterministic-zeckendorf.v1", "counts": counts, "gates": gates,
            "status": "PASS" if all(gates.values()) else "FAIL",
-           "nonclaims": ["SS regularity is verified in range, not proved",
+           "nonclaims": ["SS regularity is proved in ss_regularity.py; this script checks the representation in range",
                          "CS non-regularity is evidenced by Hankel rank growth, not proved"],
            "authority_effect": "NONE"}
     print(json.dumps(out, indent=1, sort_keys=True))

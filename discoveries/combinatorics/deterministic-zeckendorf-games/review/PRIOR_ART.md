@@ -41,5 +41,8 @@ CS constant: `L_CS(n) = c n + O(log² n)` with `c = Σ 1/f_{2k−1} − 1/φ`.
   and the ordered and reversed variants (arXiv 2508.20222, 2309.12748) do not
   address it.
 
-The remaining items (SS regularity, the block law, the `G_k` closed form beyond
-`G_k − 1`) are not proved. Not a novelty determination.
+Since 0.5.0, SS regularity, the block law and the `G_k` closed form are proved
+as well (computer-assisted, on top of the written exact formula). The rational
+series and transducer constructions are standard (Berstel–Reutenauer;
+Frougny on Fibonacci normalisation); their use here is specific to this game.
+Not a novelty determination.

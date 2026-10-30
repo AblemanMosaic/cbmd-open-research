@@ -68,9 +68,9 @@ The simplification is routine and not written out here; the gate
 `SS_FIBONACCI_closed_form` checks the closed form for every `G_k ≤ 3000`.
 This section rests on the cited Theorems 1.2 and 1.4; the dossier itself
 checks that SS is a longest game only for `n ≤ 40` (gate `LONGEST`). The
-equality `S_SS(G_k) = S_SS(G_k − 1)` is checked, not proved.
+equality `S_SS(G_k) = S_SS(G_k − 1)` is proved in §4 from the representation.
 
-## 4. Split Smallest: regularity (conjecture) and exact length (proved)
+## 4. Split Smallest: exact length and regularity (proved)
 
 Write `S(n)` for the SS split count. Its Hankel matrices over Zeckendorf
 words of lengths 6, 7 and 8 have rank 6. Separately, a 9-dimensional linear
@@ -78,16 +78,17 @@ representation over the blocks `0` and `10` (a trailing `1` is read by a
 separate output vector) was fitted on prefixes of length ≤ 10 and suffixes of
 length ≤ 8. It was not minimised, so its dimension is an upper bound, not the
 rank. It reproduces `S(n)` for every `n ≤ 120,000`
-(`evidence/ss_large_range.json`). If it is exact, the SS length
-`n − Z(n) + S(n)` is Fibonacci-regular, since `Z(n)` is.
+(`evidence/ss_large_range.json`). It is proved exact below ("Regularity"),
+so the SS length `n − Z(n) + S(n)` is Fibonacci-regular, since `Z(n)` is.
 
 The winner is the parity of the length. The representation has entries with
 denominator 2, so it cannot simply be reduced mod 2. A finite parity automaton
 would need a separate argument (an integer representation, or the exact
-formula below); none is claimed here.
+formula below). The Fatou-property argument after the regularity proof below
+supplies one; its size is not computed.
 
 **The block law.** `S(F_k + m) = S(F_k) + S(m) + D_{k mod 2}(m)` for `k ≥ 4`
-and `m < F_{k−1}`. This is the shape a structural proof would take.
+and `m < F_{k−1}`. Proved below from the representation.
 
 **The counting phase (proved).** Write the pieces at indices ≥ 2 as a binary
 word `w`, with index 2 on the right. Let `𝓛` be the set of binary words that
@@ -225,9 +226,107 @@ yet about asymptotics. The winner is the parity of `L_SS(n)`. The gates `END_PHA
 evidence checks the assembled formula against simulation for every
 `n ≤ 120,000`.
 
-The 9-dimensional representation of §4 remains an observed compression of
-this formula. Its exactness for all `n` is still conjectural; the formula above
-is the proved statement.
+**Regularity (proved, computer-assisted).** The 9-dimensional representation
+is exact for every `n`. So `S_SS`, and the SS length, are Fibonacci-regular.
+
+*Lemma (the stop is the lazy representation).* Write `y = w* a`, the
+stopping word followed by the leftover-ones digit, as a word over
+`F_1 = 1, F_2 = 2, …` with `F_1` rightmost. Then `y` is the lazy Fibonacci
+representation of `n`: the unique 0/1 word with leading 1 and no two
+consecutive `0`s whose value is `n`.
+
+*Proof.*
+- **Value.** `y` has value `val(w*) + a = n`.
+- **`w*` is lazy.** This is the stopping lemma.
+- **No `00` at the end.** It remains to see that `w*` ends in `1` whenever
+  `a = 0`. The phase stops only after a step with `r ≤ 1`.
+  - The steps ending in `0` are the `r = 1` steps, `x01 → x10` and
+    `x1001 → x1010`.
+  - Such a step uses two `1`s and gets one back, from the split at index 2.
+  - The number of `1`s was at least 2 before the step and is at most 1 after
+    it. So it is exactly 1, and `a = 1`.
+- **Empty word.** For `n = 1`, `w*` is empty and `y = 1`. ∎
+
+So `S_SS(n) = S_lazy(lazy(n))`, where `S_lazy(y) = T(y⁻) + E'(y)`:
+
+- `y⁻` is `y` without its last letter;
+- `T(u) = Σ_{w ∈ 𝓛, w < u} tr₁(w)`;
+- `E'(y)` reads the runs of `1`s of `y` from the right, with carry `γ = 0`
+  at first. A run of length `k` contributes `⌊(k + γ − 1)²/4⌋`, and then
+  `γ ← [k + γ ≥ 2]`.
+
+This is the end-phase formula with the leftover `F_1` treated as part of the
+last run. When `w*` ends in `1` and `a = 1`, a run of length `k + 1` with carry
+0 contributes what a run of length `k` with carry 1 does. When `w*` ends in `0`
+and `a = 1`, the lone `F_1` is a run of length 1 that contributes 0 and leaves
+the carry 0.
+
+The proof is a chain of exact constructions
+(`verification/reference/ss_regularity.py`):
+
+1. **Rational series on lazy words.** Each piece is a weighted automaton with
+   rational weights.
+   - `W(w) = tr₁(w)·[w ∈ 𝓛]`: a 4-state automaton for `𝓛`, with a linear
+     counter for trailing `1`s.
+   - `T`: three modes. *Follow* tracks `u`. *Branch* lets a smaller same-length
+     word put `0` where `u` has `1`. *Free* sums over all continuations.
+     Shorter words are covered by skipping a nonempty prefix and then running
+     free.
+   - `T(y⁻)`: one extra state that records `T` of the prefix before the last
+     letter.
+   - `E'`: read from the right and then transposed. It has finite control (gap
+     with carry 0 or 1, run with `m = 1`, run with `m ≥ 2`) and linear counters
+     `(1, m, m², [m even])`. The run sum `⌊(m − 1)²/4⌋ = (m² − 2m + 1 − [m even])/4`
+     is linear in them.
+   - Leading zeros are made inert.
+2. **Zeckendorf to lazy.** `Rel` is a finite automaton on aligned digit pairs
+   `(x, y)`. Here `x` is a Zeckendorf word and `y` is a lazy word padded with
+   leading zeros; `lazy(n)` is never longer than `Zeck(n)`.
+   - Its state `(a, b)` records the value difference of the prefixes read:
+     `e = a F_{j+1} + b F_j`, with `j` digits still to read.
+   - A digit pair moves it to `(a + b + x − y, a)`.
+   - It accepts when `a + b = 0` at the end.
+   - **Sound:** whatever it accepts has equal values. This holds by
+     construction and is replayed on all pairs of length ≤ 10.
+   - **Complete:** its domain contains every Zeckendorf word. This is decided
+     by subset construction.
+   - With uniqueness of lazy representations, `Rel` accepts exactly the pairs
+     `(Zeck(n), lazy(n))`.
+   - After trimming it has 9 states, all with `(a, b) ∈ {(0,0), (1,0), (0,1)}`,
+     and a larger bound gives the same automaton.
+3. **Composition.** `SX(x) = Σ_y [Rel(x, y)] S_lazy(y)` is a 252-dimensional
+   representation on Zeckendorf words with `SX(Zeck(n)) = S_SS(n)`.
+4. **Equivalence.** The difference between `SX` and the 9-dimensional
+   representation (as a letter-level automaton) is identically zero. This is
+   decided exactly by the reachable-subspace test, whose reachable space has
+   dimension 36.
+
+**Consequences.**
+
+- **The block law.** It holds for all `k` and `m < F_{k−1}`. In the
+  representation it says that
+  `x₀ C₁₀ C₀^{g−1}(C₀² − I)` annihilates `V(m) − C₀^{|m|} f_E` for all
+  `g ≥ 1` and all Zeckendorf words `m`. That is finite linear algebra
+  (gate `BLOCK_LAW`).
+- **The closed form at Fibonacci numbers.**
+  `S(G_k) = S(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8` holds for all
+  `k`. Both sides are linear recurrence sequences of order at most `9 + 6`, so
+  agreement on `k ≤ 40` is a proof.
+- **The winner.** The SS winner is the parity of `L_SS(n)`, and `S_SS` is an
+  integer-valued Fibonacci-regular sequence. By the Fatou property of `ℤ`, a
+  ℚ-rational series with integer values is ℤ-rational (Berstel–Reutenauer,
+  *Noncommutative Rational Series*, Ch. 7). So the parity is computed by a
+  finite automaton on Zeckendorf words. Its size is not computed here.
+
+What this rests on:
+
+- the written exact formula and the lazy-stop lemma;
+- the correctness of the constructions, each replayed against direct
+  definitions (gates `COMPONENT_*`, `LAZY_IS_STOP`, `REL_*`,
+  `SX_MATCHES_GAME`).
+
+The equivalence, block-law and closed-form steps are exact rational
+computations.
 
 ## 5. Combine Smallest: the length constant (proved, written)
 
