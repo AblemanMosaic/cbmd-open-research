@@ -740,6 +740,11 @@
       "sha256": "486db3febc034396abf4a264d0c220ce3c3e9b763e1ca964c036f91e6daebb04"
      },
      {
+      "bytes": 3315,
+      "path": "CBMDWeightedDynamics/FiniteAcyclic.lean",
+      "sha256": "a0cf9390d25c061d49189e85354dd72cca5c7e8abfd51d4dd4e565939227ca15"
+     },
+     {
       "bytes": 6028,
       "path": "CBMDWeightedDynamics/Necessity.lean",
       "sha256": "93077fdcc75b7c2ff3f857cab9b5653e344e3f97775afe19ec6648c8472d15ad"
@@ -755,9 +760,9 @@
       "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
      },
      {
-      "bytes": 279,
+      "bytes": 321,
       "path": "CBMDWeightedDynamics.lean",
-      "sha256": "10452d8e6cc726652486846ea7978af3bc9a88d929475db3e8c5d3f347d9c86a"
+      "sha256": "efe204183ec2e2a26fc5d75d3d9215505d0bcb3903b08467ac7e9921da21a746"
      }
     ],
     "no_escape": true,
@@ -786,7 +791,10 @@
      "CBMDWeightedDynamics.bound_necessary_at_unit_arc",
      "CBMDWeightedDynamics.CappedSink.allFull_terminal",
      "CBMDWeightedDynamics.CappedSink.capped_sink_breaks_transfer",
-     "CBMDWeightedDynamics.CappedSink.no_live_all_stable"
+     "CBMDWeightedDynamics.CappedSink.no_live_all_stable",
+     "CBMDWeightedDynamics.wellFounded_of_acyclic",
+     "CBMDWeightedDynamics.acyclic_of_wellFounded",
+     "CBMDWeightedDynamics.liveArc_wellFounded_iff_acyclic"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

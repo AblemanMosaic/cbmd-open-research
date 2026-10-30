@@ -5,3 +5,4 @@ import CBMDWeightedDynamics.Characterization
 import CBMDWeightedDynamics.Necessity
 import CBMDWeightedDynamics.Equivalence
 import CBMDWeightedDynamics.SinkCollapse
+import CBMDWeightedDynamics.FiniteAcyclic

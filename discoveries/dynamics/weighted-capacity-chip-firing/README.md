@@ -133,9 +133,11 @@ wellFounded_iff_no_filled_set :
   WellFounded (LiveArc ..) ↔ (FilledSet .. → False)      -- under live-closure
 ```
 
-What is still imported is only that a *finite acyclic* live subgraph is well
+What was still imported was only that a *finite acyclic* live subgraph is well
 founded — the statement that lets the census **decide** the hypothesis by cycle
-detection. It is no longer a step inside any theorem.
+detection. It was not a step inside any theorem, and since revision 0.8.0 it is
+compiled as well (`liveArc_wellFounded_iff_acyclic`; see
+[`revisions/0.8.0-finite-acyclic.md`](revisions/0.8.0-finite-acyclic.md)).
 
 A content check written not to share machinery with the census — Kahn peeling
 for well-foundedness, a greatest-fixpoint kernel for filled sets, direct

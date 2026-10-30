@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.8.0 | The last imported fact proved: a finite acyclic relation is well founded, so cycle detection provably decides the ordering hypothesis. |
 | 0.7.0 | Non-absorbing sinks settled in the negative: with the sink capacitated at any finite level, transfer holds only when no vertex can fire. Compiled, with a gated census. |
 | 0.6.0 | A stale open item retired: the bound at unit receivers is exactly C(v) >= d(v), necessary since 0.4.0; stated as a citable corollary. |
 | 0.5.0 | The ordering gap closed by reformulating it as well-foundedness: sufficiency without finiteness, the obstruction built from the hypothesis failing, and the two directions proved as an equivalence. |

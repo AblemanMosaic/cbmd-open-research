@@ -159,7 +159,9 @@ exists; the sufficient conditions and the obstruction are two readings of one
 statement. What remains imported is only that a *finite acyclic* live subgraph
 is well founded, which is what lets an exhaustive census decide the hypothesis
 by cycle detection. That is a property of the decision procedure, not a step in
-any proof here.
+any proof here. Revision 0.8.0 proves it: counting `R`-ancestors over the finite
+vertex type gives a measure that drops strictly along every arc of an acyclic
+relation (`wellFounded_of_acyclic`, `liveArc_wellFounded_iff_acyclic`).
 
 ## 10. Capacitated sinks (revision 0.7.0)
 
