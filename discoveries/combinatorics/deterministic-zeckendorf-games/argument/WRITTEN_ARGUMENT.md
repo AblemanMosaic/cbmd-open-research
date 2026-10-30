@@ -308,6 +308,22 @@ The proof is a chain of exact constructions
 
 **Consequences.**
 
+- **The SS length is `φ² n − O(log² n)`.** By §2,
+  `L_SS = Σ_{Zeck(n)} c_i − Σ_adds (j − 2)`, with
+  `c_i = F_{i+2} − i − 2`.
+  - Since `|F_{i+2} − φ² F_i| ≤ 1`,
+    `Σ_{Zeck(n)} c_i = φ² n + O(Z(n)) − O(log² n)`.
+  - In SS, adds of consecutive terms happen only in the end phase. Each
+    round of the run lemma makes one add, and there are at most `|w*| =
+    O(log n)` rounds. Each add lands at an index `O(log n)`, so
+    `Σ_adds (j − 2) = O(log² n)`.
+
+  Hence `φ² n − O(log² n) ≤ L_SS(n) ≤ φ² n + O(log n)`. This is the SS part
+  of Li et al.'s Conjecture 1.4 (constant `φ²`), in both directions.
+  Cusenza et al. state that their bound settles it, but they argue only the
+  upper bound. The observed deficit `φ² n − L_SS(n)` is about
+  `0.4 (log_φ n)²` (`217` at `n = 10⁵`).
+
 - **The block law.** It holds for all `k ≥ 2` and `m < F_{k−1}`. In the
   representation it says that
   `x₀ C₁₀ C₀^{g−1}(C₀² − I)` annihilates `V(m) − C₀^{|m|} f_E` for all

@@ -9,3 +9,4 @@
 | 0.4.1 | Second independent review of the CS proof applied (Q_2 coordinates, case C reason, one-feed invariant, round as multiset, tail bound 5); exact polylog CS algorithm cs_exact.py; deviation grows like -0.42 log_phi n (observed). |
 | 0.5.0 | SS Fibonacci-regularity proved (computer-assisted): stop = lazy representation; rational series for the exact formula; Zeckendorf-to-lazy automaton; exact equivalence with the 9-dimensional representation; block law and closed forms at G_k follow. |
 | 0.5.1 | Third independent review of the SS regularity proof applied (order bound 24 at G_k − 1, Rel deterministic, lazy length, Fatou series, block law for k >= 2). |
+| 0.5.2 | Corollary: L_SS(n) = phi^2 n - O(log^2 n) (both directions of the SS part of Conjecture 1.4). |

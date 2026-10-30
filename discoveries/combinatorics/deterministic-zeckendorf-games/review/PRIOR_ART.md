@@ -46,3 +46,7 @@ as well (computer-assisted, on top of the written exact formula). The rational
 series and transducer constructions are standard (Berstel–Reutenauer;
 Frougny on Fibonacci normalisation); their use here is specific to this game.
 Not a novelty determination.
+
+Cusenza et al. write that their sharp upper bound settles the `φ²` constant of
+Conjecture 1.4 for SS. Their argument gives only the upper bound. The matching
+lower bound `L_SS ≥ φ² n − O(log² n)` follows from the exact formula here (§4).

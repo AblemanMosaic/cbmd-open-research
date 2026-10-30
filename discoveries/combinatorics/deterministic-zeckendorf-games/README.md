@@ -75,6 +75,9 @@ linear in `n` with constant `≈ 1.206`.
   of the binary words with no `00` except one final `00 1…1`: the lazy
   Fibonacci representations plus a transient tail. It makes as many splits as
   the previous word has trailing `1`s.
+- **SS length is `φ² n − O(log² n)` (proved).** This follows from the exact
+  formula and the length identity. It proves both directions of the SS part
+  of Li et al.'s Conjecture 1.4; Cusenza et al. argue only the upper bound.
 - **A block law (proved).** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends
   only on `m` and the parity of `k`, for `k ≥ 2` and `m < F_{k−1}`. This is proved by
   finite linear algebra on the representation.
