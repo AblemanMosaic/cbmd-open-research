@@ -1,0 +1,35 @@
+{
+ "at_powers_of_10": {
+  "12": -19.03,
+  "15": -32.72,
+  "20": -37.757,
+  "3": -5.481,
+  "30": -60.69,
+  "40": -93.844,
+  "6": -7.169,
+  "60": -122.527,
+  "9": -21.657
+ },
+ "authority_effect": "NONE",
+ "observation": "L_CS(n) - c n is negative and grows like a constant times log n (about -0.42 log_phi n), so it appears unbounded; not proved",
+ "random_samples": {
+  "10": {
+   "max": -14.991,
+   "mean": -22.65,
+   "mean_over_log_phi_n": -0.4508,
+   "min": -30.546
+  },
+  "20": {
+   "max": -31.429,
+   "mean": -41.89,
+   "mean_over_log_phi_n": -0.4271,
+   "min": -53.102
+  },
+  "40": {
+   "max": -69.01,
+   "mean": -81.203,
+   "mean_over_log_phi_n": -0.419,
+   "min": -96.751
+  }
+ }
+}

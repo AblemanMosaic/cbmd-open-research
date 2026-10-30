@@ -1,5 +1,6 @@
 {
  "authority_effect": "NONE",
+ "cs_exact_agrees_with_C_on_all_rows": true,
  "deviation_max": -1.2064811686570298,
  "deviation_min": -16.404672905520695,
  "nonclaims": [

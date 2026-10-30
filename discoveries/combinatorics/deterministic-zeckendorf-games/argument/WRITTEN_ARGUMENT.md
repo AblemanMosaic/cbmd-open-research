@@ -268,13 +268,16 @@ adds one piece at index `s`; then CS runs, and any piece reaching index
   carry.
 
 After every feed the state is normal on `≤ s`. There is at most one carry per
-feed, and a carry always leaves `c_s = 0`.
+feed, and a carry always leaves `c_s = 0`. Moreover, every move of the feed
+after its carry stays at indices `≤ s − 1`, and index `s` stays empty until
+the next feed.
 
 *Proof.* Induction on `s`. The bases are direct:
 
 - `Q_1` is a ones-add every second feed;
-- `Q_2` goes `(0,0) → (0,1)`, then `(0,1) → (1,0)` by a split at 2 (carry at
-  3, `F_1` returned), then `(1,0) → (0,0)` by the add `(1, 2)`.
+- `Q_2`, in the coordinates `(c_2, c_1)`, goes `(0,0) → (1,0)` with no move,
+  then `(1,0) → (0,1)` by a split at 2 (carry at 3, `F_1` returned), then
+  `(0,1) → (0,0)` by the add `(1, 2)` (carry at 3).
 
 For `s ≥ 3`, take each case in turn.
 
@@ -282,11 +285,15 @@ For `s ≥ 3`, take each case in turn.
 - **B.** `c_{s−1} = 0` and the rest is normal, so there is no add. The
   smallest duplicate is at `s`, and its split sends one piece to `s + 1` and
   one to `s − 2`. By induction the sub-counter then normalises inside
-  `≤ s − 2` and emits at most one piece at `s − 1`. That piece meets nothing:
-  `c_s = 0`, and the emission left `c_{s−2} = 0` (induction hypothesis). It
-  also never moves again during this feed.
-- **C.** Normality and `c_{s−2} = 0` (the emission left it empty) make
-  `(s − 1, s)` the only consecutive pair. There is no duplicate.
+  `≤ s − 2` and emits at most one piece at `s − 1`. That piece meets nothing.
+  `c_s = 0` after the split. By the induction hypothesis (the last sentence of
+  the lemma, applied to `Q_{s−2}`), the sub-counter's moves after its carry
+  stay at indices `≤ s − 3`, and its index `s − 2` stays empty. So the piece
+  at `s − 1` has no neighbour and no twin for the rest of the feed. All moves
+  after the carry at `s + 1` are the sub-counter's, at indices `≤ s − 2`.
+- **C.** `c_{s−1} = 1` and normality give `c_{s−2} = 0` and `c_s = 0`. So
+  after the feed `(s − 1, s)` is the only consecutive pair, and there is no
+  duplicate. The add is the only move.
 
 In B and C the carry is made by a split or an add that empties index `s`. ∎
 
@@ -307,13 +314,14 @@ for `0 ≤ k < F_{s+1}`, since `gcd(F_s, F_{s+1}) = 1`. ∎
 
 - carries `= k F_s / F_{s+1} + θ`, with `|θ| < 1` (the value of a normal
   state lies in `[0, F_{s+1})`);
-- splits `= k (F_s − 1)/F_{s+1} + O(s)`;
-- moves `= k (F_{s+1} − 1)/F_{s+1} + O(s)`.
+- splits `= k (F_s − 1)/F_{s+1} + O(s)`, with a constant independent of `s`.
 
-For the last two, let `D` be the number of B-feeds among the `k`. The A-feeds
+For the second, let `D` be the number of B-feeds among the `k`. The A-feeds
 number `D + O(1)` and the C-feeds number `D F_{s−2}/F_{s−1} + O(1)`. So
 `D = k F_{s−1}/F_{s+1} + O(1)`. Then `splits_s(k) = D + splits_{s−2}(D)`, and
-induction adds `O(1)` per level of `s`. Moves are similar.
+induction adds `O(1)` per level of `s`. The `O(s)` is the true order: the
+worst split error over all start states grows linearly in `s` (about 6.7 at
+`s = 14`, per the independent review).
 
 ### 5.2 Rounds
 
@@ -326,12 +334,16 @@ Fix an even level `P ≥ 2`. A configuration is in *level form* if:
 - nothing lies above `P + 2`.
 
 *Lemma (round).* In level form with `p ≥ 5`, CS performs a *round* and returns
-to level form. A round is:
+to level form. A round consists of these moves (a multiset, not a time order):
 
 - a split at `P`, giving `F_{P+1}` and one feed of the counter `Q_{P−2}`;
 - the counter's normalisation;
 - the add `(P − 1, P) → P + 1` if the counter carried;
-- one add `(P, P + 1) → P + 2` per piece at `P + 1`.
+- one add `(P, P + 1) → P + 2` per piece that reaches `P + 1`.
+
+The order varies. In case B the first `(P, P + 1)` add comes before the
+counter's split, and `(P − 1, P)` comes after the sub-counter's adds but before
+its splits. The counts do not depend on the order.
 
 The round makes `2 + 2·[carry] +` (counter moves) moves, of which
 `1 +` (counter splits) are splits. It uses `3 + 2·[carry]` pile pieces and adds
@@ -345,8 +357,10 @@ pile. After the split, CS takes:
 
 The counter's moves are the same as in isolation: by the one-feed lemma its
 carry at `P − 1` meets only the pile. `(P + 1, P + 2)` is never chosen, because
-`(P, P + 1)` is smaller and the pile keeps at least one piece (`p ≥ 5` covers
-the worst case, a carry, which uses 5). Nothing reaches `P + 3`.
+`(P, P + 1)` is smaller and the pile keeps at least one piece until the last
+`(P, P + 1)` add. That add needs `p − 4 ≥ 1` in the worst case (a carry, 5
+pieces used), which is `p ≥ 5`; with `p = 5` and a carry the pile ends empty.
+Nothing reaches `P + 3`.
 
 For `P = 2` the split returns its `F_1` directly. The `F_1` is the carry, and
 `(1, 2) → 3` absorbs it. This is the formula with a trivial counter: every feed
@@ -355,7 +369,8 @@ carries and makes no moves. ∎
 ### 5.3 Tails
 
 *Lemma (tail).* Suppose a level-form state has `p ≤ 4` and `q ≥ 6`. Then
-within at most 7 moves outside the counter, plus at most one counter feed, CS
+within at most 5 moves outside the counter (counting the split at `P`), plus at
+most one counter feed, CS
 reaches a split at `P + 2`. At that point the configuration is in level form
 for `P + 2`, with at most 2 pieces at `P + 4`.
 
@@ -379,7 +394,12 @@ for `P + 2`, with at most 2 pieces at `P + 4`.
 
 In each row the order is CS's: smallest pair first, and adds before splits.
 The output keeps at least 2 pieces. Only indices `P − 1, …, P + 4` and one
-counter feed are involved, so the table does not depend on `P`.
+counter feed are involved, so the table does not depend on `P`. For `P = 2` the
+trivial counter acts as top C (the split's `F_1` is the carry).
+
+The bound `q ≥ 6` is sharp only for row 3C. The review found the smallest
+working `q` to be 4 for row 2, 3 for rows 4B and 4C, 2 for `p ≤ 1`, and 1 for
+rows 3A, 3B and 4A.
 
 The gate `TAIL_CASES` replays every case under CS for even `P ≤ 14`, every
 counter state, `p ≤ 6` and `6 ≤ q ≤ 9`. ∎
@@ -448,9 +468,24 @@ to 45 digits.
   - the round and tail lemmas;
   - the asymptotic `L_CS(n) = c n + O(log² n)`;
   - the closed form of `c`.
-- **Observed, not proved:** `L_CS(n) − c n` is small and negative. It lies in
-  `[−16.4, −1.2]` for `n ≤ 30,000` and is about `−22` at `n = 10⁹`. So it
-  grows slowly, if at all. Boundedness is not claimed.
+- **Exact computation.** Every step of §5.2–§5.3 is exact, not just
+  asymptotic. So the lemmas give an exact algorithm for `L_CS(n)`
+  (`verification/reference/cs_exact.py`):
+  - the rounds of a level come from a binary search on carry counts;
+  - the counter's splits come from floor sums;
+  - the last `O(log n)` pieces are simulated directly.
+
+  It takes `O(log³ n)` arithmetic operations. It matches direct simulation for
+  every `n ≤ 30,000` and at single `n` up to `4·10⁹`. It also decides the CS
+  winner (the parity) for any `n`.
+- **Observed, not proved:** `L_CS(n) − c n` is negative and grows like
+  `−κ log_φ n` with `κ ≈ 0.42`. It lies in `[−16.4, −1.2]` for `n ≤ 30,000`
+  and is `−60.7` at `n = 10³⁰` and `−122.5` at `n = 10⁶⁰`
+  (`evidence/cs_deviation_growth.json`). Roughly:
+  - `−Z(n)` contributes about `−log_φ n/(φ² + 1)`;
+  - the level errors average about `−0.28` per level.
+
+  So the deviation appears unbounded. Only `O(log² n)` is proved.
 - **Hankel ranks.** The CS split count has full Hankel rank 13, 21 and 34 at
   the tested lengths. This is evidence that CS is not Fibonacci-regular of
   small rank; it is not a proof, and nothing here decides regularity.
@@ -479,3 +514,23 @@ exact formula proved up to fixable gaps. This version makes those fixes:
 The reviewer's checks: the formula matches simulation for every `n ≤ 3000`;
 `E` matches SS on all 8,360 lazy states of length ≤ 16; no full SS play for
 `n ≤ 1500` has two duplicates at once.
+
+A second independent review (fresh agent, own simulators) checked §5. It found
+the Combine Smallest theorem proved, with no error or counterexample. It
+checked:
+
+- the one-feed lemma for `s ≤ 16`;
+- the round and tail lemmas in place for even `P ≤ 18`, `q ≤ 11`, with up to 2
+  extra output pieces;
+- the level form for `n ≤ 30,000` and samples to `10⁹`;
+- the budget lemma on 3,000 random configurations.
+
+Its fixes are applied:
+
+- the `Q_2` base case was in the wrong coordinate order;
+- case C cited the wrong reason;
+- the one-feed lemma's invariant ("moves after the carry stay below `s`") is
+  now stated;
+- the round's moves are a multiset, not a time order;
+- the tail move bound is 5, not 7, and `P = 2` is covered;
+- the unused moves-rate line is dropped.

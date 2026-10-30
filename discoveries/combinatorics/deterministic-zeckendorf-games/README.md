@@ -79,7 +79,13 @@ linear in `n` with constant `≈ 1.206`.
   - the counter is a self-similar Fibonacci counter: `F_{s+1}` feeds cost
     exactly `F_{s+1} − 1` moves and return it to empty.
 
-  Observed: `L_CS(n) − c·n` stays between `−22` and `−1` up to `n = 4·10⁹`.
+  The same lemmas give an exact algorithm (`cs_exact.py`) for `L_CS(n)`, and
+  so for the CS winner. It takes `O(log³ n)` arithmetic operations and matches
+  simulation everywhere tested. An independent review found the proof correct;
+  its small fixes are applied.
+
+  Observed, not proved: `L_CS(n) − c·n` is negative and grows like
+  `−0.42 log_φ n`. It is `−22` at `10⁹` and `−123` at `10⁶⁰`.
 - **Combine Smallest is not low-rank.** Its Hankel matrices over Zeckendorf
   words have full rank (13, 21, 34 at word lengths 6, 7, 8). That is evidence,
   not proof, that CS is not Fibonacci-regular of small rank.
@@ -92,7 +98,7 @@ linear in `n` with constant `≈ 1.206`.
   `n`. That would make SS Fibonacci-regular; it is observed, not proved.
 - The block law and the closed form at `G_k`, beyond the checked range.
 - A machine-checked version of the written proofs.
-- An exact CS length, or a bound on `L_CS(n) − c·n` better than `O(log² n)`; the CS winner.
+- A closed form for the CS length or winner beyond the polylog algorithm; a proof that `L_CS(n) − c·n` is `Θ(log n)`.
 - Novelty beyond the cited papers. See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
 ## Smallest decisive tests
@@ -110,6 +116,8 @@ cc -O2 -o deterministic_games discoveries/combinatorics/deterministic-zeckendorf
 ./deterministic_games 120000 S > ss.txt
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/check_large.py ss.txt
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_constant.py 3000
+python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_exact.py 3000
+python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_deviation_growth.py
 ./deterministic_games 30000 C > cs.txt
 cc -O2 -o cs_single discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_single.c
 ./cs_single 1000 10000 100000 1000000 10000000 100000000 1000000000 4000000000 > cs_single.txt

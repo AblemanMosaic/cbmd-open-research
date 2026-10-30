@@ -4,7 +4,7 @@
  "title": "Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant",
  "field": "combinatorics",
  "slug": "deterministic-zeckendorf-games",
- "public_version": "0.4.0",
+ "public_version": "0.4.1",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
@@ -19,20 +19,21 @@
   "Counter lemma (written proof, gated for 20,000 steps): while two 1's remain, each SS step moves the upper word to the radix-order successor in the language of binary words with no 00 except one final 00 followed only by 1's (the lazy Fibonacci representations plus a transient tail), making as many splits as the previous word has trailing 1's.",
   "End-phase lemma (written proof) checked on every lazy word of length <= 14 with 0 or 1 leftover ones; the assembled exact formula matches simulation for every n <= 3000 in the bundled gates and every n <= 120,000 in the recorded large-range check.",
   "Independent review (fresh agent, own simulator): exact formula matches for n <= 3000; E matches SS on all 8,360 lazy states of length <= 16; the proof is correct up to a too-weak run-lemma hypothesis and a misstated r = 0 case, both fixed in 0.3.0.",
-  "Combine Smallest (cs_constant.py, n <= 3000): the counter's one-feed rule matches direct simulation for every normal state, s <= 14; the counter cycle for s <= 18; the pile cycle for i <= 10; every tail case for even P <= 14; the level form at every level start; the three forms of c agree to 45 digits; a mutated counter model fails. The C simulators give L_CS(n) - c n in [-16.41, -1.21] for n <= 30,000 and between -22 and -5 at n = 10^3, ..., 10^9 and 4 x 10^9."
+  "Combine Smallest (cs_constant.py, n <= 3000): the counter's one-feed rule matches direct simulation for every normal state, s <= 14; the counter cycle for s <= 18; the pile cycle for i <= 10; every tail case for even P <= 14; the level form at every level start; the three forms of c agree to 45 digits; a mutated counter model fails. The C simulators give L_CS(n) - c n in [-16.41, -1.21] for n <= 30,000 and between -22 and -5 at n = 10^3, ..., 10^9 and 4 x 10^9.",
+  "Second independent review (fresh agent, own simulators): the Combine Smallest proof is correct up to wording fixes, now applied; one-feed lemma for s <= 16, round and tail lemmas in place for even P <= 18, level form to n <= 30,000 and samples to 10^9, budget lemma on 3,000 random configurations. The exact polylog algorithm cs_exact.py, built only from the lemmas, matches direct simulation for every n <= 30,000 and the C simulator at n up to 4 x 10^9."
  ],
  "unresolved": [
   "a machine-checked version of the written proofs, and a second independent review of the 0.3.0 fixes; the 9-dimensional representation and hence Fibonacci-regularity remain conjectural",
   "an exact description of Combine Smallest lengths, and a proof that they are not Fibonacci-regular",
   "novelty and external review",
-  "independent review of the Combine Smallest proof (§5); an exact CS length; whether L_CS(n) - c n is bounded; the CS winner"
+  "a proof that L_CS(n) - c n is Theta(log n) (observed: about -0.42 log_phi n); a closed form for the CS winner"
  ],
  "nonclaims": [
   "the length identity is a rewriting of Cusenza et al.'s exact move-count formula, not a new result",
   "CS non-regularity is evidenced by Hankel rank growth, not proved",
   "not a novelty determination",
   "the SS Fibonacci-regularity (9-dimensional representation), the block law and the closed form at G_k are verified in range, not proved; the exact two-phase formula is the proved statement",
-  "the CS error term is O(log^2 n) by written proof; boundedness is observed, not claimed"
+  "the CS error term is O(log^2 n) by written proof; the observed growth -0.42 log_phi n is not proved"
  ],
  "smallest_decisive_test": "An n at which the Split Smallest split count differs from the 9-dimensional representation, or a proof of the block law.",
  "checks": [
@@ -52,6 +53,16 @@
     "python",
     "-B",
     "discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_constant.py",
+    "3000"
+   ],
+   "required": true
+  },
+  {
+   "id": "COMBINE_SMALLEST_EXACT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_exact.py",
     "3000"
    ],
    "required": true
