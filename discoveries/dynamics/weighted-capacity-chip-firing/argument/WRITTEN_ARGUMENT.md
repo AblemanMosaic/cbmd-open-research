@@ -112,7 +112,7 @@ Established: §4, §5, §6 compile against Lean 4.35.0 with no `sorry` and axiom
 `[propext, Classical.choice, Quot.sound]` only. Exact finite enumeration
 corroborates the theorem and confirms sharpness; it does not prove it.
 
-Not established: that the bound is *necessary* at receivers of multiplicity one
+Not established when first written, and since settled (revision 0.6.0): that the bound is *necessary* at receivers of multiplicity one
 beyond `C(v) >= d(v)`; cyclic graphs (the predecessor's cycle witness applies
 unchanged); non-absorbing sinks; novelty. The capacity rule remains classical
 finite-capacity Petri-net semantics and the ordinary theory is classical; only

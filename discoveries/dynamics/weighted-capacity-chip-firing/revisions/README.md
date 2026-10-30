@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.6.0 | A stale open item retired: the bound at unit receivers is exactly C(v) >= d(v), necessary since 0.4.0; stated as a citable corollary. |
 | 0.5.0 | The ordering gap closed by reformulating it as well-foundedness: sufficiency without finiteness, the obstruction built from the hypothesis failing, and the two directions proved as an equivalence. |
 | 0.4.0 | Necessity of the bound and of live-closure proved; the conditions shown to exclude every filled-set obstruction. One classical finite-graph gap named. |
 | 0.3.0 | Characterization over arbitrary digraphs and capacities via the live set; the two obstructions unified; third condition (live-closed) discovered. |

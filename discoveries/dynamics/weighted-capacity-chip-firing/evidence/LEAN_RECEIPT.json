@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDWeightedDynamics.weighted_overflow_forces_unstable' depends on axioms: [propext]\n'CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.unit_case_capacity_admits' does not depend on any axioms\n'CBMDWeightedDynamics.capacity_step_is_ordinary_step' does not depend on any axioms\n'CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.weighted_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.ordered_has_no_closed_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.cycle_defeats_every_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.dead_is_ordinarily_stable' does not depend on any axioms\n'CBMDWeightedDynamics.live_terminal_implies_ordinary_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.filled_set_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.bound_violation_defeats_transfer' depends on axioms: [propext, Quot.sound]\n'CBMDWeightedDynamics.ordered_live_closed_excludes_filled_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.wf_terminal_implies_ordinary_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.filledSetOfNotWellFounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.wellFounded_iff_no_filled_set' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.wellFounded_of_rank' depends on axioms: [propext]\n'CBMDWeightedDynamics.not_wellFounded_of_live_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDWeightedDynamics.weighted_overflow_forces_unstable' depends on axioms: [propext]\n'CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.unit_case_capacity_admits' does not depend on any axioms\n'CBMDWeightedDynamics.capacity_step_is_ordinary_step' does not depend on any axioms\n'CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.weighted_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.ordered_has_no_closed_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.cycle_defeats_every_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.dead_is_ordinarily_stable' does not depend on any axioms\n'CBMDWeightedDynamics.live_terminal_implies_ordinary_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.filled_set_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.bound_violation_defeats_transfer' depends on axioms: [propext, Quot.sound]\n'CBMDWeightedDynamics.ordered_live_closed_excludes_filled_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.wf_terminal_implies_ordinary_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.filledSetOfNotWellFounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.wellFounded_iff_no_filled_set' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.wellFounded_of_rank' depends on axioms: [propext]\n'CBMDWeightedDynamics.not_wellFounded_of_live_cycle' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.bound_necessary_at_unit_arc' depends on axioms: [propext, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -40,9 +40,9 @@
    "sha256": "486db3febc034396abf4a264d0c220ce3c3e9b763e1ca964c036f91e6daebb04"
   },
   {
-   "bytes": 4577,
+   "bytes": 6028,
    "path": "CBMDWeightedDynamics/Necessity.lean",
-   "sha256": "00f4713ceac1e8be4b2fd6e88ade159cbb5cc316b73d2a10a97a45b88a7bd8ae"
+   "sha256": "93077fdcc75b7c2ff3f857cab9b5653e344e3f97775afe19ec6648c8472d15ad"
   },
   {
    "bytes": 7726,
@@ -78,7 +78,8 @@
   "CBMDWeightedDynamics.filledSetOfNotWellFounded",
   "CBMDWeightedDynamics.wellFounded_iff_no_filled_set",
   "CBMDWeightedDynamics.wellFounded_of_rank",
-  "CBMDWeightedDynamics.not_wellFounded_of_live_cycle"
+  "CBMDWeightedDynamics.not_wellFounded_of_live_cycle",
+  "CBMDWeightedDynamics.bound_necessary_at_unit_arc"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }

@@ -38,6 +38,7 @@ TARGETS = [
     "CBMDWeightedDynamics.wellFounded_iff_no_filled_set",
     "CBMDWeightedDynamics.wellFounded_of_rank",
     "CBMDWeightedDynamics.not_wellFounded_of_live_cycle",
+    "CBMDWeightedDynamics.bound_necessary_at_unit_arc",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

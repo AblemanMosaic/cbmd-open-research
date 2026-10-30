@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.5.0",
+ "public_version": "0.6.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -36,11 +36,11 @@
   "wellFounded_iff_no_filled_set compiles both directions: under live-closure, LiveArc is well founded exactly when no FilledSet exists. not_wellFounded_of_live_cycle gives the direction necessity needs, from a closed cycle of live vertices.",
   "An independent content check (verification/reference/equivalence.py) tests the two statements over the same 798,025-system box by methods not shared with characterize.py: Kahn peeling for well-foundedness, a greatest-fixpoint kernel for FilledSet existence, and direct simulation of the theorem's own conclusion rather than of TRANSFER. Result: 119,251 systems satisfy the hypotheses, with 0 unsound and 0 incomplete.",
   "The same check confirms a prediction of the revision rather than a statistic: well-foundedness failing forces the conclusion to fail, in all 260,172 such systems, with zero exceptions; an exception would refute the revision.",
-  "Anti-vacuity: well-foundedness alone is insufficient in 418,602 systems, live-closure is load-bearing for the equivalence in 413,604 systems outside it, and replacing each of the three hypotheses by True in turn produces unsoundness in every case."
+  "Anti-vacuity: well-foundedness alone is insufficient in 418,602 systems, live-closure is load-bearing for the equivalence in 413,604 systems outside it, and replacing each of the three hypotheses by True in turn produces unsoundness in every case.",
+  "At a receiver fed by a live sender along a unit arc, the bound is exactly capacity v >= outdegree v in both directions: sufficient by the transfer theorem and necessary by bound_necessary_at_unit_arc, an instance of bound_violation_defeats_transfer at multiplicity one that does not require the receiver to be live. The item listing this as unresolved had been settled since revision 0.4.0."
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
-  "necessity of the bound at receivers of incoming multiplicity one",
   "non-absorbing sinks",
   "that a finite acyclic live subgraph is well founded: the classical finite-digraph fact, no longer used inside any theorem and now only the justification for deciding the hypothesis by cycle detection in the census"
  ],

@@ -154,8 +154,11 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 - No external independent verification. The second implementation here is
   separately written but not externally authored.
 - Non-absorbing sinks are out of scope.
-- Whether `b(v) = max_u m(u,v)` is *necessary* at receivers of multiplicity one
-  beyond `C(v) >= d(v)` is not addressed.
+- ~~Whether `b(v) = max_u m(u,v)` is *necessary* at receivers of multiplicity
+  one beyond `C(v) >= d(v)`.~~ Settled, and had been since revision 0.4.0: at a
+  unit receiver the bound is exactly `C(v) >= d(v)`, sufficient by the transfer
+  theorem and necessary by `bound_necessary_at_unit_arc`. See
+  [`revisions/0.6.0-unit-receivers.md`](revisions/0.6.0-unit-receivers.md).
 
 ## Smallest decisive tests
 

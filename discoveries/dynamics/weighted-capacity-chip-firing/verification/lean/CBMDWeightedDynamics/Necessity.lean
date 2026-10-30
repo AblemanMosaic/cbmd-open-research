@@ -100,4 +100,33 @@ theorem ordered_live_closed_excludes_filled_set {n : Nat}
     exact later (filled.successor z) decreases memNext liveNext
   exact key filled.witness filled.witness_mem filled.witness_live
 
+/-- **The bound at a unit receiver is exactly `C(v) ≥ d(v)`.**  At a receiver
+fed by a live sender along an arc of multiplicity one, the bound reads
+`capacity v ≥ outdegree v`.  It is sufficient by the transfer theorem, and this
+is its necessity: an instance of `bound_violation_defeats_transfer` at
+`mult u v = 1`.  The receiver need not be live, so this also covers a live
+sender pointing at a receiver that can never fire.
+
+This settles the item, listed as unresolved from revision 0.1.0, of whether the
+bound is necessary at receivers of incoming multiplicity one; it has in fact
+been settled since revision 0.4.0, and is stated here so it can be cited. -/
+theorem bound_necessary_at_unit_arc {n : Nat}
+    (mult : Vertex n → Vertex n → Nat)
+    (outdegree capacity : Vertex n → Nat)
+    (positive_outdegree : ∀ w, 0 < outdegree w)
+    {u v : Vertex n}
+    (hu : Live outdegree capacity u)
+    (unit : mult u v = 1)
+    (short : capacity v < outdegree v)
+    (chips : Chips n)
+    (at_u : chips u = capacity u)
+    (at_v : chips v = capacity v)
+    (elsewhere : ∀ w, w ≠ u → w ≠ v → chips w = 0)
+    (distinct : u ≠ v) :
+    CapacityTerminal mult outdegree capacity chips ∧
+      ¬ OrdinaryStable outdegree chips :=
+  bound_violation_defeats_transfer mult outdegree capacity positive_outdegree hu
+    (by rw [unit]; exact Nat.one_pos) (by rw [unit]; omega) chips at_u
+    (by rw [at_v, unit]; omega) elsewhere distinct
+
 end CBMDWeightedDynamics
