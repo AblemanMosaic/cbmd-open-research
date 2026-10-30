@@ -176,6 +176,24 @@
         "SOURCE_BOUND_COMPILED",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-COMB-DET-ZECK-001",
+      "field": "combinatorics",
+      "slug": "deterministic-zeckendorf-games",
+      "path": "discoveries/combinatorics/deterministic-zeckendorf-games",
+      "title": "Deterministic Zeckendorf games: Split Smallest is Fibonacci-regular",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Prove the Split Smallest block law (hence Fibonacci-regularity) from the process's Fibonacci-counter structure; describe Combine Smallest exactly.",
+      "promotion_blockers": [
+        "SS regularity is a conjecture verified to n = 120,000",
+        "prior-art and external review open"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED",
+        "CONJECTURE"
+      ]
     }
   ]
 }

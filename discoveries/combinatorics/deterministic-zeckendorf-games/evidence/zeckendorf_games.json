@@ -1,0 +1,39 @@
+{
+ "authority_effect": "NONE",
+ "counts": {
+  "cs_length_ratio_at_n_max": 1.2036666666666667,
+  "hankel_ranks": {
+   "CS": [
+    13,
+    21,
+    34
+   ],
+   "SS": [
+    6,
+    6,
+    6
+   ]
+  },
+  "n_max": 3000,
+  "ss_length_ratio_at_n_max": 2.583,
+  "ss_rep_mismatches": 0
+ },
+ "gates": {
+  "CONTROL_perturbed_representation_fails": true,
+  "CS_NOT_LOW_RANK_evidence": true,
+  "KNOWN_CL_SL_length_n_minus_Z": true,
+  "LENGTH_IDENTITY": true,
+  "LONGEST_SS_is_maximum_n_le_40": true,
+  "MERGES_n_minus_Z": true,
+  "SS_BLOCKS_parity_law": true,
+  "SS_FIBONACCI_closed_form": true,
+  "SS_LOW_RANK": true,
+  "SS_REPRESENTATION_exact": true
+ },
+ "nonclaims": [
+  "SS regularity is verified in range, not proved",
+  "CS non-regularity is evidenced by Hankel rank growth, not proved"
+ ],
+ "schema": "cbmd.deterministic-zeckendorf.v1",
+ "status": "PASS"
+}

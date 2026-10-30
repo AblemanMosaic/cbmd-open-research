@@ -1,0 +1,45 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-DET-ZECK-001",
+ "title": "Deterministic Zeckendorf games: Split Smallest is Fibonacci-regular",
+ "field": "combinatorics",
+ "slug": "deterministic-zeckendorf-games",
+ "public_version": "0.1.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED",
+  "CONJECTURE"
+ ],
+ "statement": "In the deterministic Zeckendorf games of Li, Li, Miller et al., every play has n - Z(n) merging moves and length sum_{i in Zeck(n)} c_i - sum over add-consecutive moves of (j - 2) (c_1 = 0, c_2 = 1, c_3 = 3, c_{i+1} = 2 c_i - c_{i-2} + 1). The Split Smallest split count is conjectured to be Fibonacci-regular, with an explicit 9-dimensional linear representation over Zeckendorf blocks that reproduces it for every n <= 120,000; its value at F_k and F_k - 1 is F_{k+1} - (2k^2 + 8k + 15 + (-1)^k)/8 (F_0 = 1, F_1 = 2), proved at F_k - 1 from Cusenza et al.; and S(F_k + m) - S(F_k) - S(m) depends only on m and the parity of k. Combine Smallest shows full Hankel rank in the tested window.",
+ "resolves": "Li, Li, Miller et al. (2020) open question 'how long do the deterministic games take and who wins as a function of n' for Split Smallest, conjecturally, with an explicit finite representation",
+ "verified": [
+  "For every n <= 3000 and all four deterministic games: n - Z(n) merging moves and the length identity hold, CL and SL have length n - Z(n), and SS equals the maximum game length computed over the full game graph for n <= 40.",
+  "The SS linear representation reproduces the SS split count for every n <= 120,000 (C simulator output, SHA-256 recorded), the Fibonacci closed form holds for every F_k <= 120,000, and the block law has no violation; perturbing one representation entry breaks agreement.",
+  "Hankel ranks over Zeckendorf words: SS 6, 6, 6 and CS 13, 21, 34 at word lengths 6, 7, 8; the CS length ratio is 1.206480 at n = 9,227,465."
+ ],
+ "unresolved": [
+  "a proof that the SS split count is Fibonacci-regular, or of the block law and the closed form at F_k",
+  "an exact description of Combine Smallest lengths, and a proof that they are not Fibonacci-regular",
+  "novelty and external review"
+ ],
+ "nonclaims": [
+  "the length identity is a rewriting of Cusenza et al.'s exact move-count formula, not a new result",
+  "the SS regularity, block law and the closed form at F_k are verified in range, not proved",
+  "CS non-regularity is evidenced by Hankel rank growth, not proved",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "An n at which the Split Smallest split count differs from the 9-dimensional representation, or a proof of the block law.",
+ "checks": [
+  {
+   "id": "DETERMINISTIC_ZECKENDORF_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/zeckendorf_games.py",
+    "3000"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

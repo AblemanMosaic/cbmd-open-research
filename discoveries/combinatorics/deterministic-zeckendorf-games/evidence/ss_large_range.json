@@ -1,0 +1,8 @@
+{
+ "data_sha256": "80805d72d1c3acfef90ffb162e41c03bfd9f7d74e690674d26a673e0d0a084f7",
+ "n_max": 120000,
+ "representation_mismatches": 0,
+ "fibonacci_closed_form_failures": [],
+ "block_law_violations": 0,
+ "status": "PASS"
+}
