@@ -36,6 +36,9 @@ one consumer, and a chain ends at the first multi-input consumer it meets.
 ## Gates
 
   * exact against brute force over all admissible markings;
+  * BRIDGE: the compiled statement `not_preserves_iff_certificate` is about
+    `Certificate`; a literal transcription of it, decided by brute force over
+    every candidate set R and value v, must agree with the fixpoint procedure;
   * both outcomes, and multi-input non-preserving nets, occur;
   * every generated net is conflict-free with an input place on every
     transition, checked;
@@ -102,6 +105,33 @@ def bad_with(pre, post, cap, P, T, t0, ablate=None):
     return t0 in alive
 
 
+def lean_certificate(pre, post, cap, P, T):
+    """Literal transcription of ConflictFree.Certificate (Lean), decided by
+    brute force over every candidate R and every value v -- no fixpoint, no
+    threshold arithmetic.  Used to bridge the compiled statement to `decide`."""
+    def opt(t0, t, q, v):
+        return v <= cap[q] and pre[t0][q] <= v and cap[q] < max(v - pre[t][q], 0) + post[t][q]
+
+    def ends(t0, t, q, v):
+        return (all(pre[c][q] == 0 for c in range(T)) or pre[t][q] > 0 or pre[t0][q] > 0
+                or any(pre[c][q] > 0 and pre[c][r] > 0 and r != q
+                       for c in range(T) for r in range(P))
+                or any(pre[c][q] > 0 and v < pre[c][q] for c in range(T)))
+    for t0 in range(T):
+        if any(pre[t0][q] > cap[q] for q in range(P)):
+            continue
+        for mask in range(1 << T):
+            if not mask >> t0 & 1:
+                continue
+            R = {t for t in range(T) if mask >> t & 1}
+            if all(any(opt(t0, t, q, v) and (ends(t0, t, q, v) or
+                                             all(c in R for c in range(T) if pre[c][q] > 0))
+                       for q in range(P) for v in range(cap[q] + 1))
+                   for t in R):
+                return True
+    return False
+
+
 def decide(pre, post, cap, P, T, ablate=None):
     """True iff the net preserves."""
     return not any(bad_with(pre, post, cap, P, T, t0, ablate) for t0 in range(T))
@@ -125,7 +155,7 @@ def random_conflict_free(rng, P, T, w, capmax, density, need_inputs=True):
 
 def run(trials=20000, seed=5):
     rng = random.Random(seed)
-    agree = disagree = pres = nonpres = multi = multi_np = shape_bad = 0
+    agree = disagree = pres = nonpres = multi = multi_np = shape_bad = bridge_bad = 0
     abl = {"no_t0_floor": 0, "multi_input_continues": 0, "ignore_consumer_literal": 0}
     samples = []
     for _ in range(trials):
@@ -141,7 +171,9 @@ def run(trials=20000, seed=5):
         if any(sum(1 for q in range(P) if pre[t][q]) >= 2 for t in range(T)):
             multi += 1
             multi_np += not truth
-        if decide(pre, post, cap, P, T) == truth:
+        verdict = decide(pre, post, cap, P, T)
+        bridge_bad += lean_certificate(pre, post, cap, P, T) != (not verdict)
+        if verdict == truth:
             agree += 1
         else:
             disagree += 1
@@ -162,6 +194,7 @@ def run(trials=20000, seed=5):
                               for r in (fc_net(n, cnf) for n, cnf in population(20))})
     gates = {
         "procedure_is_exact": disagree == 0 and agree > 0,
+        "bridge_lean_certificate_matches_procedure": bridge_bad == 0,
         "both_outcomes_occur": pres > 0 and nonpres > 0,
         "multi_input_population_nonempty": multi > 0 and multi_np > 0,
         "every_net_conflict_free_with_inputs": shape_bad == 0,
@@ -172,7 +205,7 @@ def run(trials=20000, seed=5):
         "free_choice_nets_have_exactly_one_conflict_place": conflict_counts == [1],
     }
     return {"schema": "cbmd.petri-conflict-free.v1", "nets": trials,
-            "agree": agree, "disagree": disagree,
+            "agree": agree, "disagree": disagree, "bridge_mismatches": bridge_bad,
             "preserving": pres, "not_preserving": nonpres,
             "with_multi_input_transition": multi,
             "with_multi_input_not_preserving": multi_np,
@@ -182,7 +215,7 @@ def run(trials=20000, seed=5):
             "samples": samples, "gates": gates,
             "status": "PASS" if all(gates.values()) else "FAIL",
             "nonclaims": [
-                "the polynomial procedure is a written argument corroborated by census; it is not compiled",
+                "the characterization is compiled (ConflictFree.lean); that the greatest-fixpoint procedure decides the certificate is the standard Knaster-Tarski step, bridged here by census rather than compiled",
                 "nets with input-less transitions are excluded, and the procedure is demonstrably wrong on them; their complexity is open",
             ],
             "authority_effect": "NONE"}

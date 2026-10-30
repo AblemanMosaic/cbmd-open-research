@@ -231,10 +231,14 @@ revision 0.10.0 have exactly **one** place with several consumers, so the
 boundary is sharp: **zero conflict places is polynomial, one is
 coNP-complete.**
 
-The polynomial procedure is a written argument, not compiled. It agrees with
-brute force on 20,000 nets, all three ablations break it, and so does dropping
-the input-place hypothesis. See
+It agrees with brute force on 20,000 nets, all three ablations break it, and
+so does dropping the input-place hypothesis. See
 [`revisions/0.12.0-conflict-free.md`](revisions/0.12.0-conflict-free.md).
+Since revision 0.13.0 the characterization behind it is **compiled**
+(`not_preserves_iff_certificate`): a bad marking exists exactly when a chain
+certificate does. Only the classical step that the greatest fixpoint decides
+the certificate is left to a census bridge. See
+[`revisions/0.13.0-conflict-free-compiled.md`](revisions/0.13.0-conflict-free-compiled.md).
 
 ## Marked graphs are polynomial (revision 0.11.0)
 
@@ -277,8 +281,9 @@ not enabled because its other input is short.
   applies. See revision 0.11.0.~~ Settled in revision 0.12.0 when every
   transition has an input place. Still open: conflict-free nets *with*
   input-less transitions, where the procedure is demonstrably wrong.
-- The marked-graph (0.11.0) and conflict-free (0.12.0) procedures are written
-  arguments with censuses; neither is compiled.
+- The marked-graph procedure (0.11.0) is a written argument with a census. The
+  conflict-free characterization is compiled (0.13.0); that its greatest
+  fixpoint decides the certificate is bridged by census, not compiled.
 
 - A formal proof of the complexity-class statement. The reduction's
   correctness and input-place bounds are compiled (revision 0.9.0); membership

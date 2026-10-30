@@ -63,6 +63,10 @@ TARGETS = [
     "CBMDPetriCapacity.FreeChoice.free_choice",
     "CBMDPetriCapacity.FreeChoice.input_places",
     "CBMDPetriCapacity.FreeChoice.fc_preserves_iff_unsatisfiable",
+    "CBMDPetriCapacity.ConflictFree.certificate_of_bad",
+    "CBMDPetriCapacity.ConflictFree.end_unique",
+    "CBMDPetriCapacity.ConflictFree.bad_of_certificate",
+    "CBMDPetriCapacity.ConflictFree.not_preserves_iff_certificate",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.
