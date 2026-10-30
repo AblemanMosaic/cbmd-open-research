@@ -6,7 +6,7 @@
   "propext"
  ],
  "authority_effect": "NONE",
- "axiom_report": "'CBMDWeightedDynamics.weighted_overflow_forces_unstable' depends on axioms: [propext]\n'CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.unit_case_capacity_admits' does not depend on any axioms\n'CBMDWeightedDynamics.capacity_step_is_ordinary_step' does not depend on any axioms\n'CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.weighted_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.ordered_has_no_closed_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.cycle_defeats_every_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]",
+ "axiom_report": "'CBMDWeightedDynamics.weighted_overflow_forces_unstable' depends on axioms: [propext]\n'CBMDWeightedDynamics.capacity_terminal_implies_ordinary_stable' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.unit_case_capacity_admits' does not depend on any axioms\n'CBMDWeightedDynamics.capacity_step_is_ordinary_step' does not depend on any axioms\n'CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'CBMDWeightedDynamics.weighted_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.ordered_has_no_closed_set' depends on axioms: [propext]\n'CBMDWeightedDynamics.cycle_defeats_every_capacity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.dead_is_ordinarily_stable' does not depend on any axioms\n'CBMDWeightedDynamics.live_terminal_implies_ordinary_stable' depends on axioms: [propext, Classical.choice, Quot.sound]\n'CBMDWeightedDynamics.filled_set_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]",
  "axioms_observed": [
   "Classical.choice",
   "Quot.sound",
@@ -19,6 +19,11 @@
  "independent_verification": false,
  "lean_recompiled": true,
  "members": [
+  {
+   "bytes": 7835,
+   "path": "CBMDWeightedDynamics/Characterization.lean",
+   "sha256": "4e1351d01b1fde9fc5a77529fe050234ef5a1a7f86928013bf999a8ae827b0c0"
+  },
   {
    "bytes": 5248,
    "path": "CBMDWeightedDynamics/Core.lean",
@@ -35,9 +40,9 @@
    "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
   },
   {
-   "bytes": 115,
+   "bytes": 160,
    "path": "CBMDWeightedDynamics.lean",
-   "sha256": "2f5d74097ada3cbe49f741aa4022feb618dbc8d01a4e43c180e231a32131874a"
+   "sha256": "c0d5c2355297d24f2c6c9e365fe8d01c07be60a1af92d2157815954800fa9c8f"
   }
  ],
  "no_escape": true,
@@ -53,7 +58,10 @@
   "CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal",
   "CBMDWeightedDynamics.weighted_transfer",
   "CBMDWeightedDynamics.ordered_has_no_closed_set",
-  "CBMDWeightedDynamics.cycle_defeats_every_capacity"
+  "CBMDWeightedDynamics.cycle_defeats_every_capacity",
+  "CBMDWeightedDynamics.dead_is_ordinarily_stable",
+  "CBMDWeightedDynamics.live_terminal_implies_ordinary_stable",
+  "CBMDWeightedDynamics.filled_set_obstruction"
  ],
  "toolchain": "leanprover/lean4:v4.35.0"
 }

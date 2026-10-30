@@ -28,6 +28,9 @@ TARGETS = [
     "CBMDWeightedDynamics.weighted_transfer",
     "CBMDWeightedDynamics.ordered_has_no_closed_set",
     "CBMDWeightedDynamics.cycle_defeats_every_capacity",
+    "CBMDWeightedDynamics.dead_is_ordinarily_stable",
+    "CBMDWeightedDynamics.live_terminal_implies_ordinary_stable",
+    "CBMDWeightedDynamics.filled_set_obstruction",
 ]
 ALLOWED_AXIOMS = {"propext", "Classical.choice", "Quot.sound"}
 # A proof escape is one of these as a Lean token, not as a word inside a comment.

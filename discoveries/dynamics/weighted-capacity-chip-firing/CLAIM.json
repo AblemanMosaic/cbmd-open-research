@@ -1,17 +1,17 @@
 {
  "schema": "cbmd.open-research.claim.v1",
  "id": "CBMD-DYN-WEIGHTED-CAPACITY-001",
- "title": "Weighted-transfer capacity-blocked chip-firing preservation",
+ "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.2.0",
+ "public_version": "0.3.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED",
   "INDEPENDENTLY_REPRODUCED"
  ],
- "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1. Conversely, if the arc relation contains a directed cycle then preservation fails at every capacity with C(v) >= d(v); the two cases partition the model.",
+ "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1. Conversely, if the arc relation contains a directed cycle then preservation fails at every capacity with C(v) >= d(v); the two cases partition the model. Over arbitrary digraphs and arbitrary capacities, writing Live v for outdegree v <= capacity v, transfer holds exactly when the live subgraph is rank-ordered, satisfies outdegree v + mult u v <= capacity v + 1 on live arcs, and is closed under arcs out of live vertices.",
  "resolves": "CBMD-DYN-CAPACITY-FIRING-001 open successor: the named candidate C(v) >= d(v) + max_u m(u,v) - 1",
  "verified": [
   "The weighted overflow lemma, preservation of terminal states, and the full weighted transfer theorem compile under Lean 4.35.0 with no sorry, admit, or axiom declaration in the source.",
@@ -23,19 +23,25 @@
   "The checks gate on the transfer property rather than on nonconfluence, after enumeration showed the smallest C=d failure is confluent with a single wrong normal form.",
   "The cycle obstruction compiles: a directed cycle plus C(v) >= d(v) yields a capacity-terminal state that is not ordinarily stable, built from the capacities themselves and therefore surviving every enlargement.",
   "A forward ordering provably excludes the cycle structure used by that obstruction (ordered_has_no_closed_set, axiom dependency propext alone).",
-  "The cycle obstruction witness is confirmed in all 27,440 tested cyclic graph and capacity pairs, and an exhaustive state sweep found no cyclic system preserving transfer at any slack from 0 to 4."
+  "The cycle obstruction witness is confirmed in all 27,440 tested cyclic graph and capacity pairs, and an exhaustive state sweep found no cyclic system preserving transfer at any slack from 0 to 4.",
+  "Sufficiency over arbitrary digraphs compiles: under the three live-set conditions an admissible capacity-terminal state is ordinarily stable; vertices outside the live set are permanently ordinarily stable and need no argument.",
+  "A single filled-set obstruction compiles and yields both the cycle failure and the live-to-dead failure as instances; liveToDeadFilledSet constructs the two-member case and depends on no axioms.",
+  "Exactness census: over 798,025 systems (n<=3, multiplicity<=2, unit sink arcs, every capacity in 0..d(v)+2) the three conditions agree with the exact transfer property in every case, with zero unsound and zero incomplete.",
+  "Minimality: dropping ordered-on-live makes the predicate wrong on 63,847 systems, dropping the bound on 4,998, and dropping live-closed on 393,192; no drop produces an incomplete predicate, so the conditions are independent."
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
   "necessity of the bound at receivers of incoming multiplicity one",
-  "non-absorbing sinks"
+  "non-absorbing sinks",
+  "a proof that the three live-set conditions are exhaustive over all digraphs; exactness is established by census over the stated box only"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",
   "not an external independent verification; the second implementation is separately written but not externally authored",
   "finite enumeration corroborates the theorem and does not prove it",
   "ordinary well-foundedness and uniqueness enter as explicit hypotheses and are not proved here",
-  "the cycle obstruction assumes every vertex has positive outdegree and says nothing about capacities below d(v)"
+  "the cycle obstruction assumes every vertex has positive outdegree and says nothing about capacities below d(v)",
+  "the characterization's exactness is a finite census result, not a proved equivalence"
  ],
  "smallest_decisive_test": "Exhibit an ordered multigraph satisfying d(v) + max_u m(u,v) <= C(v) + 1 with a reachable capacity-terminal state that is not the ordinary normal form of its initial state; or a reference proving the same preservation statement with an explicit semantic translation.",
  "checks": [
@@ -57,6 +63,15 @@
     "--audit-only"
    ],
    "required": true
+  },
+  {
+   "id": "WEIGHTED_CHARACTERIZATION",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/characterize.py"
+   ],
+   "required": false
   }
  ],
  "authority_effect": "NONE"

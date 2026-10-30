@@ -1,0 +1,19 @@
+{
+ "schema": "cbmd.transfer-characterization.v1",
+ "box": {
+  "n_max": 3,
+  "max_multiplicity": 2,
+  "max_sink_multiplicity": 1,
+  "capacity_range": "0..d(v)+2"
+ },
+ "confusion": {
+  "predicate_and_transfer": 119251,
+  "predicate_not_transfer_UNSOUND": 0,
+  "transfer_not_predicate_INCOMPLETE": 0,
+  "neither": 678774,
+  "skipped": 0
+ },
+ "unsound_samples": [],
+ "incomplete_samples": [],
+ "exact": true
+}

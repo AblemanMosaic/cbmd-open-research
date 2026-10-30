@@ -125,12 +125,13 @@
       "field": "dynamics",
       "slug": "weighted-capacity-chip-firing",
       "path": "discoveries/dynamics/weighted-capacity-chip-firing",
-      "title": "Weighted-transfer capacity-blocked chip-firing: sharp bound and cycle obstruction",
+      "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
       "pipeline_stage": "REVIEW_READY",
       "next_obligation": "Obtain a targeted prior-art assessment of the weighted threshold and the cycle obstruction against the bounded-Petri-net deadlock and capacity-constrained abelian network literature, and an external review of the Lean-to-prose correspondence.",
       "promotion_blockers": [
         "specialist novelty and prior-art assessment remains open",
-        "external independent verification remains open"
+        "external independent verification remains open",
+        "exhaustiveness of the three live-set conditions is a census result, not proved"
       ],
       "status": [
         "PROVISIONAL_WRITTEN_ARGUMENT",

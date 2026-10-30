@@ -1,0 +1,110 @@
+{
+ "ablation": {
+  "none": {
+   "unsound": 0,
+   "incomplete": 0,
+   "sample": null
+  },
+  "acyclic": {
+   "unsound": 63847,
+   "incomplete": 0,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "outdeg": [
+     1,
+     2
+    ],
+    "live": [
+     0,
+     1
+    ]
+   }
+  },
+  "bound": {
+   "unsound": 4998,
+   "incomplete": 0,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "outdeg": [
+     1,
+     2
+    ],
+    "live": [
+     0,
+     1
+    ]
+   }
+  },
+  "livedead": {
+   "unsound": 393192,
+   "incomplete": 0,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     0,
+     1
+    ],
+    "outdeg": [
+     1,
+     1
+    ],
+    "live": [
+     1
+    ]
+   }
+  }
+ },
+ "reading": {
+  "none": "the full characterization; must be 0/0",
+  "acyclic": "acyclicity on live vertices dropped",
+  "bound": "capacity bound on live receivers dropped",
+  "livedead": "the no-live-to-dead condition dropped"
+ }
+}

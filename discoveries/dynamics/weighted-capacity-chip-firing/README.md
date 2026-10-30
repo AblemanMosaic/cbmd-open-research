@@ -1,4 +1,4 @@
-# Weighted-transfer capacity-blocked chip-firing
+# Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization
 
 > **Standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `SOURCE_BOUND_COMPILED`,
 > `EXACT_MODEL_VERIFIED`, `INDEPENDENTLY_REPRODUCED`
@@ -76,6 +76,30 @@ excludes the structure this uses, so the two results partition the model:
 Confirmed in all 27,440 tested cyclic graph and capacity pairs, with an
 exhaustive state sweep finding no cyclic system that preserves transfer at any
 slack from 0 to 4. See [`revisions/0.2.0-cycle-obstruction.md`](revisions/0.2.0-cycle-obstruction.md).
+
+## A characterization over arbitrary digraphs (revision 0.3.0)
+
+Dropping both the ordering and the assumption that every vertex can fire, write
+`Live v` for `outdegree v <= capacity v`. A vertex outside the live set is
+permanently ordinarily stable, because its chips never exceed its capacity.
+Transfer then holds exactly when the live set is
+
+1. **ordered** — its arcs admit a rank, i.e. the live subgraph is acyclic,
+2. **bounded** — `outdegree v + mult u v <= capacity v + 1` on live arcs,
+3. **closed** — live vertices send only to live vertices.
+
+Condition 3 was not anticipated: a live vertex pointing at a dead one is blocked
+forever once the dead receiver fills, while ordinary firing proceeds regardless.
+
+Over **798,025 systems** the three conditions agree with the exact transfer
+property in every case — zero unsound, zero incomplete — and each is separately
+necessary (dropping them makes the predicate wrong on 63,847 / 4,998 / 393,192
+systems respectively). Sufficiency is proved; exactness is a census result.
+
+Both failures are also now **one** theorem. `filled_set_obstruction`: fill any
+set whose live members point back into it, empty the rest, and the state is
+capacity-terminal but not ordinarily stable. The cycle and the live-to-dead case
+are instances. See [`revisions/0.3.0-characterization.md`](revisions/0.3.0-characterization.md).
 
 ## What remains unresolved
 
