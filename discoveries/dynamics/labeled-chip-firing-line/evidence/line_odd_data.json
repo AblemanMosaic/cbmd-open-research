@@ -1,0 +1,76 @@
+{
+ "exhaustive_cpp": {
+  "n": {
+   "3": {
+    "states": 4,
+    "outcomes": 3,
+    "max_inversions": 1
+   },
+   "5": {
+    "states": 56,
+    "outcomes": 12,
+    "max_inversions": 2
+   },
+   "7": {
+    "states": 1699,
+    "outcomes": 54,
+    "max_inversions": 3
+   },
+   "9": {
+    "states": 84793,
+    "outcomes": 232,
+    "max_inversions": 4
+   },
+   "11": {
+    "states": 6520201,
+    "outcomes": 819,
+    "max_inversions": 5,
+    "example": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     10,
+     6,
+     7,
+     9,
+     8,
+     11
+    ]
+   }
+  }
+ },
+ "exact_P_sorted_cpp": {
+  "protocol2": {
+   "3": 0.3333333333,
+   "5": 0.2,
+   "7": 0.2500960288,
+   "9": 0.3118227478,
+   "11": 0.3305156511
+  },
+  "protocol1": {
+   "3": 0.3333333333,
+   "5": 0.2,
+   "7": 0.2511956417,
+   "9": 0.3146777496,
+   "11": 0.3314399523
+  }
+ },
+ "monte_carlo_mc_cpp_20000_runs": {
+  "protocol2": {
+   "m=2": 0.1969,
+   "m=5": 0.3281,
+   "m=10": 0.3387,
+   "m=20": 0.3307,
+   "m=40": 0.3336
+  },
+  "protocol1": {
+   "m=10": 0.3304,
+   "m=20": 0.331,
+   "m=40": 0.3345
+  },
+  "std_error": 0.0033
+ },
+ "authority_effect": "NONE"
+}

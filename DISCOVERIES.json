@@ -244,6 +244,22 @@
         "EXACT_MODEL_VERIFIED",
         "PROVISIONAL_WRITTEN_ARGUMENT"
       ]
+    },
+    {
+      "id": "CBMD-DYN-LABELED-LINE-001",
+      "field": "dynamics",
+      "slug": "labeled-chip-firing-line",
+      "path": "discoveries/dynamics/labeled-chip-firing-line",
+      "title": "Labeled chip-firing on the line with an odd number of chips: evidence for two open conjectures",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Find a structural description of the odd-n outcome set and prove HMP Conjectures 26 and 27.",
+      "promotion_blockers": [
+        "evidence only, no proof"
+      ],
+      "status": [
+        "CONJECTURE",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }
