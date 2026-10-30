@@ -48,13 +48,15 @@ linear in `n` with constant `≈ 1.206`.
     9-dimensional one, by exact linear algebra.
 
   So the SS length is Fibonacci-regular, and the SS winner (its parity) is
-  computed by a finite automaton. Player 1 wins SS for about half of all `n`
+  computed by a finite automaton. An independent review found the proof
+  correct given the written lemmas; its wording fixes are applied. Player 1 wins SS for about half of all `n`
   (50.02% up to 120,000).
 - **Closed form at Fibonacci numbers.** In the shifted sequence `G_k = F_{k+1}`
   (`G_0 = 1, G_1 = 2`):
   `S_SS(G_k) = S_SS(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8` for all
-  `k`. This is proved from the representation: both sides are linear
-  recurrences of order at most 15.
+  `k ≥ 2`. This is proved from the representation: both sides are linear
+  recurrences in `k` of total order at most 24, and they agree for
+  `k = 2, …, 40`.
 - **The exact length of Split Smallest (proved, written).**
   `L_SS(n) = n − Z(n) + Σ_{w ∈ 𝓛, w < w*} tr₁(w) + E(w*, n − val(w*))`.
   Here:
@@ -74,7 +76,7 @@ linear in `n` with constant `≈ 1.206`.
   Fibonacci representations plus a transient tail. It makes as many splits as
   the previous word has trailing `1`s.
 - **A block law (proved).** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends
-  only on `m` and the parity of `k`, for `m < F_{k−1}`. This is proved by
+  only on `m` and the parity of `k`, for `k ≥ 2` and `m < F_{k−1}`. This is proved by
   finite linear algebra on the representation.
 - **The Combine Smallest constant (proved, written).**
   `L_CS(n) = c·n + O(log² n)`, with

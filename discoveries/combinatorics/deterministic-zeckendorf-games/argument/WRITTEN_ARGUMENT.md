@@ -281,7 +281,10 @@ The proof is a chain of exact constructions
    - Leading zeros are made inert.
 2. **Zeckendorf to lazy.** `Rel` is a finite automaton on aligned digit pairs
    `(x, y)`. Here `x` is a Zeckendorf word and `y` is a lazy word padded with
-   leading zeros; `lazy(n)` is never longer than `Zeck(n)`.
+   leading zeros. `lazy(n)` is never longer than `Zeck(n)`: the lazy words of
+   length `l` have values exactly `[F_{l+1} − 1, F_{l+2} − 2]`, and these
+   intervals partition the positive integers. That partition also gives
+   uniqueness of lazy representations.
    - Its state `(a, b)` records the value difference of the prefixes read:
      `e = a F_{j+1} + b F_j`, with `j` digits still to read.
    - A digit pair moves it to `(a + b + x − y, a)`.
@@ -292,6 +295,8 @@ The proof is a chain of exact constructions
      by subset construction.
    - With uniqueness of lazy representations, `Rel` accepts exactly the pairs
      `(Zeck(n), lazy(n))`.
+   - `Rel` is deterministic on digit pairs. So each accepted pair has exactly
+     one accepting path, and the composition below counts it once.
    - After trimming it has 9 states, all with `(a, b) ∈ {(0,0), (1,0), (0,1)}`,
      and a larger bound gives the same automaton.
 3. **Composition.** `SX(x) = Σ_y [Rel(x, y)] S_lazy(y)` is a 252-dimensional
@@ -303,20 +308,35 @@ The proof is a chain of exact constructions
 
 **Consequences.**
 
-- **The block law.** It holds for all `k` and `m < F_{k−1}`. In the
+- **The block law.** It holds for all `k ≥ 2` and `m < F_{k−1}`. In the
   representation it says that
   `x₀ C₁₀ C₀^{g−1}(C₀² − I)` annihilates `V(m) − C₀^{|m|} f_E` for all
   `g ≥ 1` and all Zeckendorf words `m`. That is finite linear algebra
   (gate `BLOCK_LAW`).
 - **The closed form at Fibonacci numbers.**
   `S(G_k) = S(G_k − 1) = G_{k+1} − (2k² + 8k + 15 + (−1)^k)/8` holds for all
-  `k`. Both sides are linear recurrence sequences of order at most `9 + 6`, so
-  agreement on `k ≤ 40` is a proof.
-- **The winner.** The SS winner is the parity of `L_SS(n)`, and `S_SS` is an
-  integer-valued Fibonacci-regular sequence. By the Fatou property of `ℤ`, a
-  ℚ-rational series with integer values is ℤ-rational (Berstel–Reutenauer,
-  *Noncommutative Rational Series*, Ch. 7). So the parity is computed by a
-  finite automaton on Zeckendorf words. Its size is not computed here.
+  `k ≥ 2`. Both sides are linear recurrence sequences in `k`.
+  - **At `G_k`:** the representation side has order at most 9 (powers of
+    `C₀`) and the closed form has order 6, so the total is at most 15.
+  - **At `G_k − 1`:** the word is `(10)^p` or `(10)^p 1`, which interleaves two
+    sequences of powers of `C₁₀`. That gives order at most 18, so the total is
+    at most 24.
+
+  Agreement on `k = 2, …, 40` is therefore a proof. (The actual Hankel rank of
+  both sequences is 6.)
+- **The winner.** The SS winner is the parity of
+  `L_SS(n) = n − Z(n) + S_SS(n)`.
+  - The letter-level series (`SX`, or the 9-dimensional representation read
+    letter by letter) is integer-valued on all of `{0,1}*`: it is 0 off the
+    Zeckendorf words.
+  - By the Fatou property of `ℤ`, it is therefore ℤ-rational
+    (Berstel–Reutenauer, *Noncommutative Rational Series*, Ch. 7).
+  - Reducing a ℤ-representation mod 2 gives a finite automaton for
+    `S_SS(n) mod 2`.
+  - `n mod 2` and `Z(n) mod 2` are Fibonacci-automatic too (standard).
+
+  So the winner is computed by a finite automaton on Zeckendorf words. Its size
+  is not computed here.
 
 What this rests on:
 
@@ -633,3 +653,14 @@ Its fixes are applied:
 - the round's moves are a multiset, not a time order;
 - the tail move bound is 5, not 7, and `P = 2` is covered;
 - the unused moves-rate line is dropped.
+
+A third independent review (fresh agent, own simulator, own lazy-representation
+code, random words up to length 80, the opposite-direction equivalence test)
+found the SS regularity proof correct, given the §4 lemmas. It found no logical
+gap. Its wording fixes are applied:
+
+- the order bound at `G_k − 1` is 24, not 15;
+- `Rel` is deterministic;
+- why `lazy(n)` is never longer than `Zeck(n)`;
+- which series the Fatou argument applies to;
+- the block law holds for every `k ≥ 2`.

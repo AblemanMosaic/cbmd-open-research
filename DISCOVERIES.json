@@ -184,9 +184,9 @@
       "path": "discoveries/combinatorics/deterministic-zeckendorf-games",
       "title": "Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant",
       "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Independent review of the SS regularity construction (ss_regularity.py); proof-assistant formalization of the counter lemmas.",
+      "next_obligation": "Proof-assistant formalization of the SS counting/end-phase lemmas and the CS counter lemma; prove the Theta(log n) CS deviation.",
       "promotion_blockers": [
-        "the SS exact length and the CS constant are written proofs, each independently reviewed once, not machine-checked",
+        "the SS exact length, SS regularity and CS constant are written or computer-assisted proofs, each independently reviewed, not proof-assistant checked",
         "external review open"
       ],
       "status": [
