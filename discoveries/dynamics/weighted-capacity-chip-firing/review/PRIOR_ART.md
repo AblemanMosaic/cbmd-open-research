@@ -25,12 +25,30 @@ successor starts here rather than repeating them.
 | "implicit place" Petri net capacity constraint does not change reachable dead markings redundant | structural-redundancy literature; the implicit-place notion is strictly stronger than what is used here |
 | chip-firing game bounded vertex capacity stabilization unchanged threshold outdegree plus maximum edge multiplicity | chip-firing surveys and theses; no match |
 
+## Queries run for the characterization (revision 0.3.0 / 0.4.0)
+
+| Query | Outcome |
+|---|---|
+| bounded Petri net capacity constraint preserves dead markings deadlock-free acyclic live places characterization | general bounded-net theory, non-blockingness verification and deadlock analysis; no live-set characterization of capacity-preserving nets located |
+
+The live-set condition has a natural Petri-net reading: a place whose capacity is
+below the firing threshold of its own output transition can never enable that
+transition, and a transition feeding such a place can deadlock while the
+uncapacitated net proceeds. The nearest named notions are **implicit places**
+(capacities that never restrict firing, strictly stronger than what is needed
+here) and **non-blockingness** of bounded nets (a reachability property rather
+than a structural condition on capacities). Neither is the statement below.
+
 ## The statement to compare against
 
 For an ordered multigraph with absorbing sink, if every vertex satisfies
 `C(v) >= d(v) + max_u m(u,v) - 1`, then every capacity-blocked terminal state
 equals the ordinary normal form; and the bound is sharp at every receiver of
 incoming multiplicity at least two.
+
+Over arbitrary digraphs, with `Live v` meaning `C(v) >= d(v)`: preservation holds
+exactly when the live subgraph is acyclic, satisfies the bound on its arcs, and
+is closed under arcs leaving live vertices.
 
 A prior-art match must carry an explicit translation of capacity, firing
 threshold, transfer multiplicity, and terminal-state semantics. The most likely
