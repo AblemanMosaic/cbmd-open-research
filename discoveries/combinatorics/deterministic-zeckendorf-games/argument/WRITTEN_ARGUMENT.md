@@ -229,12 +229,231 @@ The 9-dimensional representation of §4 remains an observed compression of
 this formula. Its exactness for all `n` is still conjectural; the formula above
 is the proved statement.
 
-## 5. Combine Smallest
+## 5. Combine Smallest: the length constant (proved, written)
 
-The CS split count has Hankel rank 13, 21 and 34: full rank at every tested
-length. It is not Fibonacci-regular of small rank in the tested window. Its
-length ratio is `1.206474` at `n = 10^6` and `1.206480` at `n = 9,227,465`,
-consistent with Li et al.'s conjectured `≈ 1.20647`.
+**Theorem.** `L_CS(n) = c·n + O(log² n)`, where
+
+`c = 1/2 + Σ_{j ≥ 1} (1/F_{2j})(1 − 1/F_{2j+2}) = Σ_{k ≥ 1} 1/f_{2k−1} − 1/φ = 1.2064811686570297199…`
+
+Here `F` is the game indexing (`F_1 = 1, F_2 = 2`) and `f` is the standard
+Fibonacci sequence (`f_1 = f_2 = 1`, so `F_k = f_{k+1}`). This proves Li et
+al.'s Conjecture 1.4 (CS length linear in `n`, constant `≈ 1.206`) and
+identifies the constant. The sum `Σ 1/f_{2k−1}` is transcendental
+(Duverney, Nishioka, Nishioka and Shiokawa 1997, as recorded in OEIS
+A153387), so `c` is transcendental.
+
+By §1, `L = n − Z(n) + S` with `S` the number of splits, and `Z(n) = O(log n)`.
+So it suffices to count splits.
+
+Notation: a configuration is *normal* on an index range if it has no
+duplicate and no two consecutive pieces there. The normal configurations on
+indices `≤ s` are exactly the Zeckendorf representations of `0, …, F_{s+1} − 1`
+(with `F_0 = 1`), so there are `F_{s+1}` of them.
+
+### 5.1 The counter lemma
+
+The *counter* `Q_s` holds a normal configuration on indices `≤ s`. A *feed*
+adds one piece at index `s`; then CS runs, and any piece reaching index
+`s + 1` is removed at once (a *carry*).
+
+*Lemma (one feed).* For `s ≥ 3`, write the top of the state as
+`(c_s, c_{s−1})`. One feed acts as follows.
+
+- **A, top `(0, 0)`:** the new piece stays at `s`. No moves, no carry.
+- **B, top `(1, 0)`:** CS splits at `s`. That makes a carry at `s + 1` and
+  feeds the sub-counter `Q_{s−2}` (indices `≤ s − 2`) at `s − 2`. The
+  sub-counter's carry, if any, stays at `s − 1`. Moves: `1 +` the
+  sub-counter's moves; splits likewise.
+- **C, top `(0, 1)`:** CS adds `(s − 1, s)` into `s + 1`: one move, one
+  carry.
+
+After every feed the state is normal on `≤ s`. There is at most one carry per
+feed, and a carry always leaves `c_s = 0`.
+
+*Proof.* Induction on `s`. The bases are direct:
+
+- `Q_1` is a ones-add every second feed;
+- `Q_2` goes `(0,0) → (0,1)`, then `(0,1) → (1,0)` by a split at 2 (carry at
+  3, `F_1` returned), then `(1,0) → (0,0)` by the add `(1, 2)`.
+
+For `s ≥ 3`, take each case in turn.
+
+- **A.** The new piece has no neighbour and no twin, so there is no move.
+- **B.** `c_{s−1} = 0` and the rest is normal, so there is no add. The
+  smallest duplicate is at `s`, and its split sends one piece to `s + 1` and
+  one to `s − 2`. By induction the sub-counter then normalises inside
+  `≤ s − 2` and emits at most one piece at `s − 1`. That piece meets nothing:
+  `c_s = 0`, and the emission left `c_{s−2} = 0` (induction hypothesis). It
+  also never moves again during this feed.
+- **C.** Normality and `c_{s−2} = 0` (the emission left it empty) make
+  `(s − 1, s)` the only consecutive pair. There is no duplicate.
+
+In B and C the carry is made by a split or an add that empties index `s`. ∎
+
+*Lemma (cycle).* From the empty state, `F_{s+1}` feeds of `Q_s` make
+`F_{s+1} − 1` moves, `F_s − 1` of them splits, and `F_s` carries. They visit
+every normal state once and return to empty.
+
+*Proof.* Induction on `s`; the bases `s = 1, 2` are the cycles above. For
+`s ≥ 3`, run the sub-counter through one full cycle: `D = F_{s−1}` feeds and
+`E = F_{s−2}` carries. Each sub-feed costs two feeds of `Q_s` (A then B). Each
+sub-carry costs one more (C). So the feeds number `2D + E = F_{s+1}` and the
+carries `D + E = F_s`. The moves number `D + E + (F_{s−1} − 1) = F_{s+1} − 1`.
+The splits number `D + (F_{s−2} − 1) = F_s − 1`. Values are conserved, so the
+state after `k` feeds has value `k F_s mod F_{s+1}`. These values are distinct
+for `0 ≤ k < F_{s+1}`, since `gcd(F_s, F_{s+1}) = 1`. ∎
+
+*Rates.* Start from any normal state and make `k` feeds. Then:
+
+- carries `= k F_s / F_{s+1} + θ`, with `|θ| < 1` (the value of a normal
+  state lies in `[0, F_{s+1})`);
+- splits `= k (F_s − 1)/F_{s+1} + O(s)`;
+- moves `= k (F_{s+1} − 1)/F_{s+1} + O(s)`.
+
+For the last two, let `D` be the number of B-feeds among the `k`. The A-feeds
+number `D + O(1)` and the C-feeds number `D F_{s−2}/F_{s−1} + O(1)`. So
+`D = k F_{s−1}/F_{s+1} + O(1)`. Then `splits_s(k) = D + splits_{s−2}(D)`, and
+induction adds `O(1)` per level of `s`. Moves are similar.
+
+### 5.2 Rounds
+
+Fix an even level `P ≥ 2`. A configuration is in *level form* if:
+
+- it has `p` pieces at `P` (the pile);
+- it is normal on `≤ P − 2`;
+- indices `P − 1`, `P + 1` and `P + 3` are empty;
+- it has `q` pieces at `P + 2` (the output);
+- nothing lies above `P + 2`.
+
+*Lemma (round).* In level form with `p ≥ 5`, CS performs a *round* and returns
+to level form. A round is:
+
+- a split at `P`, giving `F_{P+1}` and one feed of the counter `Q_{P−2}`;
+- the counter's normalisation;
+- the add `(P − 1, P) → P + 1` if the counter carried;
+- one add `(P, P + 1) → P + 2` per piece at `P + 1`.
+
+The round makes `2 + 2·[carry] +` (counter moves) moves, of which
+`1 +` (counter splits) are splits. It uses `3 + 2·[carry]` pile pieces and adds
+`1 + [carry]` output pieces.
+
+*Proof.* In level form there is no add, and the smallest duplicate is the
+pile. After the split, CS takes:
+
+- counter adds before pile-region adds (smaller indices);
+- pile-region adds before counter splits (adds first).
+
+The counter's moves are the same as in isolation: by the one-feed lemma its
+carry at `P − 1` meets only the pile. `(P + 1, P + 2)` is never chosen, because
+`(P, P + 1)` is smaller and the pile keeps at least one piece (`p ≥ 5` covers
+the worst case, a carry, which uses 5). Nothing reaches `P + 3`.
+
+For `P = 2` the split returns its `F_1` directly. The `F_1` is the carry, and
+`(1, 2) → 3` absorbs it. This is the formula with a trivial counter: every feed
+carries and makes no moves. ∎
+
+### 5.3 Tails
+
+*Lemma (tail).* Suppose a level-form state has `p ≤ 4` and `q ≥ 6`. Then
+within at most 7 moves outside the counter, plus at most one counter feed, CS
+reaches a split at `P + 2`. At that point the configuration is in level form
+for `P + 2`, with at most 2 pieces at `P + 4`.
+
+*Proof.*
+
+- **`p ≤ 1`.** The state is already in level form for `P + 2`. It is normal on
+  `≤ P`, because `c_{P−1} = 0`.
+- **`p ∈ {2, 3, 4}`.** After the split, the counter's top state decides the
+  order (A: no carry; B: carry made by a counter split, after the pile adds;
+  C: carry made by a counter add, before them):
+
+| `p` | top | moves after the split, outside the counter | end |
+|---|---|---|---|
+| 2 | any | `(P+1,P+2)`, `(P+2,P+3)`; a carry stays at `P − 1` | 1 at `P + 4` |
+| 3 | A | `(P,P+1)` | nothing above |
+| 3 | B | `(P,P+1)`; then the carry stays at `P − 1` | nothing above |
+| 3 | C | `(P−1,P)`, then `(P+1,P+2)` twice, then `(P+2,P+3)` twice | 2 at `P + 4`; needs `q ≥ 6` |
+| 4 | A | `(P,P+1)`, leaving `p = 1` | nothing above |
+| 4 | B | `(P,P+1)`, `(P−1,P)`, `(P+1,P+2)`, `(P+2,P+3)` | 1 at `P + 4` |
+| 4 | C | `(P−1,P)`, `(P,P+1)`, `(P+1,P+2)`, `(P+2,P+3)` | 1 at `P + 4` |
+
+In each row the order is CS's: smallest pair first, and adds before splits.
+The output keeps at least 2 pieces. Only indices `P − 1, …, P + 4` and one
+counter feed are involved, so the table does not depend on `P`.
+
+The gate `TAIL_CASES` replays every case under CS for even `P ≤ 14`, every
+counter state, `p ≤ 6` and `6 ≤ q ≤ 9`. ∎
+
+A level-form state for `P + 2` with up to 2 pieces at `P + 4` still behaves as
+in the round lemma: those pieces are output. The full game starts in level form
+for `P = 2`, as follows:
+
+- `⌊n/2⌋` ones-adds;
+- if `n` is odd, the adds `(1, 2)` and `(2, 3)`.
+
+These are all merges. The gate `LEVEL_START` checks the level form at every
+level with a pile of at least 5, for every `n ≤ 3000`.
+
+### 5.4 Assembly
+
+At the start of level `P`, conservation of value gives `n = p_P F_P + v + w`,
+with `v < F_{P−1}` (the normal part) and `w ≤ 2 F_{P+2}` (output). So
+`p_P = n/F_P + O(1)`.
+
+Let level `P` make `r` rounds. They use `3r + 2E(r) = p_P − O(1)` pile pieces,
+where `E(r) = r F_{P−2}/F_{P−1} + O(1)` counts the counter's carries. Since
+`3F_{P−1} + 2F_{P−2} = F_{P+2}`, this gives `r = p_P F_{P−1}/F_{P+2} + O(1)`.
+The splits at level `P` are then
+
+`r + splits_{P−2}(r) + O(P) = r (F_P − 1)/F_{P−1} + O(P) = n (F_P − 1)/(F_P F_{P+2}) + O(P)`.
+
+The rounds leave `q ≈ n/F_{P+2}` output pieces. So every level with
+`n/F_{P+2}` above a fixed constant ends with `q ≥ 6`, and the tail lemma hands
+over to level `P + 2` in level form.
+
+Let `P*` be the first level where this fails. Then `F_{P*} ≥ n/C`, and only
+`O(log n)` pieces remain, all at indices `O(log n)`.
+
+*Budget lemma.* From any configuration of `m` pieces at indices `≤ I`, every
+remaining play has at most `Z(V) + m(I + 3)` moves, where `V` is the value.
+
+*Proof.* The identity of §2 holds between any two configurations:
+`L = Σ_end c − Σ_start c − Σ_adds (j − 2) ≤ Σ_end c − Σ_start c`. Write
+`c_i = F_{i+2} − i − 2`, and use `|F_{i+2} − φ² F_i| ≤ 1` (gate
+`BUDGET_ERROR`). Then `Σ_end c ≤ φ²V + Z(V)` and
+`Σ_start c ≥ φ²V − m − m(I + 2)`. ∎
+
+So the levels from `P*` on cost `O(log² n)` moves. Summing the levels below
+`P*`:
+
+`S = n Σ_{P even ≥ 2} (F_P − 1)/(F_P F_{P+2}) + O(log² n)`.
+
+The tail of the series beyond `P*` is `O(n/F_{P*}) = O(1)`. Finally,
+`1 + Σ (F_P − 1)/(F_P F_{P+2})` equals `c`, by telescoping
+`Σ (1/F_P − 1/F_{P+2}) = 1/F_2 = 1/2`. ∎
+
+### 5.5 The closed form
+
+`Σ_{j≥1} 1/F_{2j} = Σ_{k≥1} 1/f_{2k−1} − 1`. For the other sum, use
+`1/(f_a f_{a+2}) = 1/(f_a f_{a+1}) − 1/(f_{a+1} f_{a+2})` and
+`Σ_{b=1}^{N} (−1)^{b+1}/(f_b f_{b+1}) = f_N/f_{N+1} → 1/φ`. These give
+`Σ_{j≥1} 1/(F_{2j}F_{2j+2}) = 1/φ − 1/2`. Hence
+`c = Σ 1/f_{2k−1} − 1/φ`. The gate `CONSTANT` checks the three forms of `c`
+to 45 digits.
+
+### 5.6 What is and is not proved
+
+- **Proved (written):**
+  - the counter lemma and its cycle;
+  - the round and tail lemmas;
+  - the asymptotic `L_CS(n) = c n + O(log² n)`;
+  - the closed form of `c`.
+- **Observed, not proved:** `L_CS(n) − c n` is small and negative. It lies in
+  `[−16.4, −1.2]` for `n ≤ 30,000` and is about `−22` at `n = 10⁹`. So it
+  grows slowly, if at all. Boundedness is not claimed.
+- **Hankel ranks.** The CS split count has full Hankel rank 13, 21 and 34 at
+  the tested lengths. This is evidence that CS is not Fibonacci-regular of
+  small rank; it is not a proof, and nothing here decides regularity.
 
 ## 6. Winners
 
@@ -243,7 +462,7 @@ consistent with Li et al.'s conjectured `≈ 1.20647`.
 - **SS:** Player 1 wins when `L_SS(n)` from the exact formula of §4 is odd. For `n ≤ 60`
   the winners are `212112221111211121121222212212121122212212111112212211122221`
   (digit = winning player).
-- **CS:** by direct simulation only.
+- **CS:** by direct simulation only; §5 fixes the length to within `O(log² n)`, not its parity.
 
 ## 7. Review
 

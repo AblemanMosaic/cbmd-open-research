@@ -1,0 +1,24 @@
+{
+ "authority_effect": "NONE",
+ "deviation_max": -1.2064811686570298,
+ "deviation_min": -16.404672905520695,
+ "nonclaims": [
+  "deviations are observed; only O(log^2 n) is proved"
+ ],
+ "range_n_max": 30000,
+ "range_python_agreement_n_le_2000": true,
+ "range_sha256": "68ddd61bce0f83404a45f4f79b03245610ea0f002a555e854437b0b8a8fb0006",
+ "schema": "cbmd.deterministic-zeckendorf.cs-large.v1",
+ "single_n_deviations": {
+  "1000": -5.4812,
+  "10000": -9.8117,
+  "100000": -8.1169,
+  "1000000": -7.1687,
+  "10000000": -16.6866,
+  "100000000": -19.8657,
+  "1000000000": -21.657,
+  "4000000000": -17.6281
+ },
+ "single_sha256": "89ba3a8989697c54e6521f2b3293e59ae0a2796b3cca89c3e4bcde720768df61",
+ "status": "PASS"
+}

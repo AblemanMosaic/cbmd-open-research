@@ -29,5 +29,17 @@ What is proposed as new:
 - the Hankel-rank evidence separating CS from SS;
 - the resulting winner descriptions.
 
-None of these is proved here except the `F_k − 1` closed form, which rests on
-Cusenza et al.'s theorems. Not a novelty determination.
+Since 0.3.0 the exact SS length is proved here (written), and since 0.4.0 the
+CS constant: `L_CS(n) = c n + O(log² n)` with `c = Σ 1/f_{2k−1} − 1/φ`.
+
+- The sum of reciprocal odd-indexed Fibonacci numbers is OEIS A153387
+  (`1.8245151574…`). Its theta-function form goes back to Landau (1899). Its
+  transcendence is due to D. Duverney, Ke. Nishioka, Ku. Nishioka and
+  I. Shiokawa, Proc. Japan Acad. 73A (1997) 140–142.
+- Searches (October 2026) found no later paper that determines the CS
+  constant or proves Conjecture 1.4. The random-game work (arXiv 2210.11038)
+  and the ordered and reversed variants (arXiv 2508.20222, 2309.12748) do not
+  address it.
+
+The remaining items (SS regularity, the block law, the `G_k` closed form beyond
+`G_k − 1`) are not proved. Not a novelty determination.

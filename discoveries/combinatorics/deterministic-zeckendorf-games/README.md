@@ -1,4 +1,4 @@
-# Deterministic Zeckendorf games: the exact length of Split Smallest
+# Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant
 
 > **Standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`, `CONJECTURE`
 
@@ -21,7 +21,8 @@ Combine Largest (CL), Split Largest (SL), Combine Smallest (CS) and Split
 Smallest (SS). They ask: *"For each of the four deterministic games, how long
 do they take and who wins as a function of n?"* For CL and SL they prove the
 length is `n − Z(n)`. SS is known to realise the longest possible game. No
-exact length was known for SS or CS.
+exact length was known for SS or CS. Their Conjecture 1.4 says the CS length is
+linear in `n` with constant `≈ 1.206`.
 
 ## What this dossier finds
 
@@ -64,10 +65,24 @@ exact length was known for SS or CS.
   the previous word has trailing `1`s.
 - **A block law.** `S_SS(F_k + m) − S_SS(F_k) − S_SS(m)` depends only on `m`
   and the parity of `k`, for `k ≥ 4` and `m < F_{k−1}`. Checked to 120,000.
-- **Combine Smallest is different.** Its Hankel matrices over Zeckendorf words
-  have full rank (13, 21, 34 at word lengths 6, 7, 8). That is evidence, not
-  proof, that CS is not Fibonacci-regular of small rank. Its length ratio
-  converges to `1.20648…`, the constant conjectured by Li et al.
+- **The Combine Smallest constant (proved, written).**
+  `L_CS(n) = c·n + O(log² n)`, with
+  `c = Σ_{k≥1} 1/f_{2k−1} − 1/φ = 1.2064811686570297…`. Here `f` is the
+  standard Fibonacci sequence, so `c` is the sum of reciprocal odd-indexed
+  Fibonacci numbers minus `1/φ`. That sum is transcendental (Duverney et al.
+  1997), so `c` is too. This proves Li et al.'s Conjecture 1.4 and names the
+  constant.
+
+  The mechanism:
+  - CS moves a pile up two indices at a time;
+  - below the pile, a counter absorbs one piece per split;
+  - the counter is a self-similar Fibonacci counter: `F_{s+1}` feeds cost
+    exactly `F_{s+1} − 1` moves and return it to empty.
+
+  Observed: `L_CS(n) − c·n` stays between `−22` and `−1` up to `n = 4·10⁹`.
+- **Combine Smallest is not low-rank.** Its Hankel matrices over Zeckendorf
+  words have full rank (13, 21, 34 at word lengths 6, 7, 8). That is evidence,
+  not proof, that CS is not Fibonacci-regular of small rank.
 - **Winners of CL and SL.** Player 1 wins exactly when `n − Z(n)` is odd. This
   is immediate from the known length.
 
@@ -77,13 +92,15 @@ exact length was known for SS or CS.
   `n`. That would make SS Fibonacci-regular; it is observed, not proved.
 - The block law and the closed form at `G_k`, beyond the checked range.
 - A machine-checked version of the written proofs.
-- Anything exact about CS beyond the evidence above.
+- An exact CS length, or a bound on `L_CS(n) − c·n` better than `O(log² n)`; the CS winner.
 - Novelty beyond the cited papers. See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
 ## Smallest decisive tests
 
 - A gap in the counting-phase or end-phase lemma; see `argument/WRITTEN_ARGUMENT.md` §4.
 - An `n` where SS's split count differs from the representation.
+- A gap in the CS counter, round or tail lemma; see §5. A counter state where
+  one feed does not follow the A/B/C rule would break it.
 
 ## Reproduction
 
@@ -92,6 +109,11 @@ python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/
 cc -O2 -o deterministic_games discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/deterministic_games.c
 ./deterministic_games 120000 S > ss.txt
 python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/check_large.py ss.txt
+python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_constant.py 3000
+./deterministic_games 30000 C > cs.txt
+cc -O2 -o cs_single discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/cs_single.c
+./cs_single 1000 10000 100000 1000000 10000000 100000000 1000000000 4000000000 > cs_single.txt
+python -B discoveries/combinatorics/deterministic-zeckendorf-games/verification/reference/check_cs_large.py cs.txt cs_single.txt
 ```
 
 ## Repository map

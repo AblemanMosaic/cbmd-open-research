@@ -1,0 +1,25 @@
+{
+ "authority_effect": "NONE",
+ "constant": "1.206481168657029719937571571901690055601584362",
+ "gates": {
+  "BUDGET_ERROR_bound": true,
+  "CONSTANT_three_forms_agree": true,
+  "CONTROL_mutated_counter_model_fails": true,
+  "COUNTER_CYCLE_s_le_18": true,
+  "COUNTER_TRANSITIONS_direct_equals_model_s_le_14": true,
+  "LENGTH_within_log_squared": true,
+  "LEVEL_START_standard_form": true,
+  "PILE_CYCLE_i_le_10": true,
+  "TAIL_CASES_even_P_4_to_14": true
+ },
+ "max_abs_deviation_L_minus_cn": 12.344591,
+ "max_deviation": -1.238887,
+ "min_deviation": -12.344591,
+ "n_max": 3000,
+ "nonclaims": [
+  "the asymptotic L_CS(n) = c n + O(log^2 n) is a written proof, not machine-checked",
+  "boundedness of L_CS(n) - c n is not claimed"
+ ],
+ "schema": "cbmd.deterministic-zeckendorf.cs-constant.v1",
+ "status": "PASS"
+}
