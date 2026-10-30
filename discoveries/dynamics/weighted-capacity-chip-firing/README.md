@@ -229,7 +229,12 @@ breaks them. See
   that is not ordinarily stable is a deadlock-reachability question in a
   bounded net. Its capacity places, read as complementary places, are consumed
   by every sender, so the net is not conflict-free. No algorithm or reduction
-  is recorded.
+  is recorded. One census fact bears on it. Over every system with `n ≤ 3`,
+  multiplicity ≤ 2 and capacity ≤ `d(v) + 1`, and every admissible initial
+  state, 8,317,003 pairs reach only the ordinary normal form and 3,566,933 reach
+  only terminal states that are not ordinarily stable. **18,276 reach both.** So
+  firing order genuinely matters from a fixed state, though rarely, and "can"
+  and "must" are different questions.
 
 ## Smallest decisive tests
 
