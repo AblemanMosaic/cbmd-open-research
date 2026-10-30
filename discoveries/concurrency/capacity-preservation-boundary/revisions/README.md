@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.14.0 | Input-less transitions make conflict-free nets coNP-hard: the input-place hypothesis is exactly what makes them tractable. Reduction compiled, census exact, and it explains where the 0.12.0 procedure fails. |
 | 0.13.0 | The conflict-free characterization compiled: a bad marking exists exactly when a chain certificate does; conflict-freeness makes the chain deterministic and the input-place hypothesis is used once. Fixpoint-decides-certificate bridged by census. |
 | 0.12.0 | Conflict-free nets are polynomial when every transition has an input place, so zero conflict places is polynomial and one is coNP-complete. Written argument; census with three ablations and a test showing the input-place hypothesis is load-bearing. |
 | 0.11.0 | Marked graphs are polynomial at any weights and capacities, by a two-occurrence orientation argument; written, with a census and two load-bearing ablations. Conflict-free nets named as the open class between. |

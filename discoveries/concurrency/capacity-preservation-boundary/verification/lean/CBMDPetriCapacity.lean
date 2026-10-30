@@ -8,3 +8,4 @@ import CBMDPetriCapacity.Reduction
 import CBMDPetriCapacity.Guard
 import CBMDPetriCapacity.FreeChoice
 import CBMDPetriCapacity.ConflictFree
+import CBMDPetriCapacity.InputLess

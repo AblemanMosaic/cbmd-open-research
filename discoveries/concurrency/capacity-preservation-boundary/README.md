@@ -240,6 +240,19 @@ certificate does. Only the classical step that the greatest fixpoint decides
 the certificate is left to a census bridge. See
 [`revisions/0.13.0-conflict-free-compiled.md`](revisions/0.13.0-conflict-free-compiled.md).
 
+## Input-less transitions are the other route to hardness (revision 0.14.0)
+
+The conflict-free result needs every transition to have an input place, and
+that hypothesis is exactly what makes it work. With input-less transitions
+allowed, conflict-free nets are **coNP-complete** at capacity 1. Each clause
+becomes an input-less transition into its literal places, always enabled and
+blocked only by a true literal. A two-input transition per variable forbids
+`x⁺` and `x⁻` from both holding. Compiled as
+`inputless_preserves_iff_unsatisfiable`, with an exact census. So two features
+each suffice for hardness — a single conflict place, or input-less transitions
+— and without either the problem is polynomial. See
+[`revisions/0.14.0-inputless.md`](revisions/0.14.0-inputless.md).
+
 ## Marked graphs are polynomial (revision 0.11.0)
 
 On the other side of the free-choice line: in a **marked graph** — at most one
@@ -279,8 +292,8 @@ not enabled because its other input is short.
 - ~~Conflict-free nets (each place has at most one consumer, any number of
   producers): neither the free-choice reduction nor the marked-graph argument
   applies. See revision 0.11.0.~~ Settled in revision 0.12.0 when every
-  transition has an input place. Still open: conflict-free nets *with*
-  input-less transitions, where the procedure is demonstrably wrong.
+  transition has an input place. Conflict-free nets *with* input-less
+  transitions are coNP-complete (revision 0.14.0).
 - The marked-graph procedure (0.11.0) is a written argument with a census. The
   conflict-free characterization is compiled (0.13.0); that its greatest
   fixpoint decides the certificate is bridged by census, not compiled.
