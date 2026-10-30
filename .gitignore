@@ -11,3 +11,4 @@ discoveries/dynamics/finite-capacity-chip-firing/verification/lean/.lake/
 .cbmd-work/
 discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/.lake/
 discoveries/concurrency/capacity-preservation-boundary/verification/lean/.lake/
+discoveries/combinatorics/owner-fiber-structure/verification/lean/.lake/

@@ -240,6 +240,45 @@ def degeneracy(Q, r, A, R):
             "status": "DEGENERATE_DIAGONAL_ONLY" if cand and nz == 0 else "NONDEGENERATE"}
 
 
+def check_lean_hypotheses(Q, r, A, R, owners_count, trials):
+    """Do the hypotheses the compiled theorem assumes actually hold of this model?
+
+    The Lean development proves U1 from exactly two inputs: that a nonzero
+    source row forces the type into the target's orbit, and that a column's
+    head word is its owner's head word.  A proof of the right statement about
+    the wrong model would be worth nothing, so both are measured here, together
+    with the conclusion the theorem derives -- orbit elements with equal heads
+    are equal -- so that the compiled chain is checked end to end against the
+    model it claims to describe.
+    """
+    stats = {"rows_examined": 0, "nonzero_rows": 0,
+             "nonzero_off_orbit": 0, "coherence_failures": 0,
+             "distinct_orbit_pairs": 0, "orbit_head_collisions": 0}
+    for seed in range(trials):
+        heads, columns = layouts(Q, r, owners_count, seed)
+        types = [y for (y, _) in columns]
+        for (u, _) in columns:
+            for y in types:
+                stats["rows_examined"] += 1
+                if nonzero(source_row(u, y, A, R, Q)):
+                    stats["nonzero_rows"] += 1
+                    if not in_orbit(u, y, Q):
+                        stats["nonzero_off_orbit"] += 1
+            orb = sorted({y for y in types if in_orbit(u, y, Q)})
+            for i in range(len(orb)):
+                for j in range(i + 1, len(orb)):
+                    # distinct elements of one orbit: these are what the head
+                    # has to tell apart, and the count being zero would mean
+                    # injectivity was never put to work
+                    stats["distinct_orbit_pairs"] += 1
+                    if orb[i][:Q] == orb[j][:Q]:
+                        stats["orbit_head_collisions"] += 1
+        for (y, own) in columns:
+            if heads[own] != y[:Q]:
+                stats["coherence_failures"] += 1
+    return stats
+
+
 def main() -> int:
     Q, r, owners_count, trials = 2, 2, 5, 6   # 4 head words + 1 duplicate (head collision)
     live = {"A": 1, "R": 2}            # non-degenerate: A >= 1
@@ -252,6 +291,8 @@ def main() -> int:
         "U1_unique_contributor": check_U1(Q, r, live["A"], live["R"], owners_count, trials),
         "U2_class_count_bound": check_U2(Q, r, live["A"], live["R"], owners_count, trials),
         "U3_active_coherence_necessary": check_U3(Q, r, live["A"], live["R"]),
+        "lean_hypotheses": check_lean_hypotheses(Q, r, live["A"], live["R"],
+                                                 owners_count, trials),
         "U1_breadth_Q3": {"box": {"Q": 3, "r": 2, "A": 1, "R": 2, "seeds": 3},
                           "degeneracy": degeneracy(3, 2, 1, 2),
                           **check_U1(3, 2, 1, 2, 9, 3)},
@@ -259,6 +300,8 @@ def main() -> int:
             "a finite model of the owner-fiber statement; no binding to the packed source definitions",
             "no native SAT consequence, no refinement proof, no novelty determination",
             "block structure is modelled as a single covered target block",
+            "the compiled theorem proves U1 from the two hypotheses measured in "
+            "lean_hypotheses; it does not formalize the amplitude or the packed source",
         ],
         "authority_effect": "NONE",
     }
@@ -286,6 +329,21 @@ def main() -> int:
         gates.append("U2 bound never attained; sharpness untested")
     if not report["U3_active_coherence_necessary"]["found"]:
         gates.append("U3 adverse control found no two-contributor witness")
+    lh = report["lean_hypotheses"]
+    if lh["nonzero_off_orbit"]:
+        gates.append("a nonzero source row sits outside the orbit; the compiled "
+                     "theorem's support hypothesis does not hold of this model")
+    if lh["coherence_failures"]:
+        gates.append("a column's head is not its owner's head; the compiled "
+                     "theorem's coherence hypothesis does not hold of this model")
+    if lh["orbit_head_collisions"]:
+        gates.append("two distinct orbit elements share a head word, contradicting "
+                     "the compiled orbit_head_injective")
+    if lh["distinct_orbit_pairs"] == 0:
+        gates.append("every orbit met was a singleton, so orbit-head injectivity "
+                     "was never put to work")
+    if lh["nonzero_rows"] == 0:
+        gates.append("no nonzero source row was examined")
     report["content_gate_failures"] = gates
     report["status"] = "PASS" if not gates else "FAIL"
     print(json.dumps(report, indent=1))

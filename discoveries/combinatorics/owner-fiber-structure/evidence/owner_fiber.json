@@ -58,6 +58,14 @@
   ],
   "count": 2
  },
+ "lean_hypotheses": {
+  "rows_examined": 1536,
+  "nonzero_rows": 144,
+  "nonzero_off_orbit": 0,
+  "coherence_failures": 0,
+  "distinct_orbit_pairs": 192,
+  "orbit_head_collisions": 0
+ },
  "U1_breadth_Q3": {
   "box": {
    "Q": 3,
@@ -82,7 +90,8 @@
  "nonclaims": [
   "a finite model of the owner-fiber statement; no binding to the packed source definitions",
   "no native SAT consequence, no refinement proof, no novelty determination",
-  "block structure is modelled as a single covered target block"
+  "block structure is modelled as a single covered target block",
+  "the compiled theorem proves U1 from the two hypotheses measured in lean_hypotheses; it does not formalize the amplitude or the packed source"
  ],
  "authority_effect": "NONE",
  "content_gate_failures": [],

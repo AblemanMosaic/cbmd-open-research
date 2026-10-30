@@ -1,0 +1,49 @@
+{
+ "actual_axiom_dependencies_checked": true,
+ "allowed_axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "authority_effect": "NONE",
+ "axiom_report": "'CBMDOwnerFiber.Typ.ext' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.inOrbit_refl' does not depend on any axioms\n'CBMDOwnerFiber.orbit_head_injective' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.unique_contributor' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.candidate_head' does not depend on any axioms\n'CBMDOwnerFiber.candidate_inOrbit' depends on axioms: [propext]\n'CBMDOwnerFiber.contributor_eq_candidate' depends on axioms: [propext, Quot.sound]\n'CBMDOwnerFiber.orbit_head_mem' does not depend on any axioms\n'CBMDOwnerFiber.active_head_determines_swap' does not depend on any axioms",
+ "axioms_observed": [
+  "Quot.sound",
+  "propext"
+ ],
+ "axioms_within_allowlist": true,
+ "build_status": "PASS",
+ "build_stderr_tail": "",
+ "dependencies": [],
+ "independent_verification": false,
+ "lean_recompiled": true,
+ "members": [
+  {
+   "bytes": 6386,
+   "path": "CBMDOwnerFiber/Core.lean",
+   "sha256": "7ac665932fc10cfa391a4ab2ccf0c3af5d4ece8ae1c3eca87acc659d9c2747e5"
+  },
+  {
+   "bytes": 27,
+   "path": "CBMDOwnerFiber.lean",
+   "sha256": "423a6897bd30a09a989a74543740bea00d15d3c850b6ebad8563dd1098d1e34f"
+  }
+ ],
+ "no_escape": true,
+ "proof_escapes": [],
+ "schema": "cbmd.owner-fiber-lean-audit.v1",
+ "some_target_axiom_free": true,
+ "status": "PASS",
+ "target_declarations": [
+  "CBMDOwnerFiber.Typ.ext",
+  "CBMDOwnerFiber.inOrbit_refl",
+  "CBMDOwnerFiber.orbit_head_injective",
+  "CBMDOwnerFiber.unique_contributor",
+  "CBMDOwnerFiber.candidate_head",
+  "CBMDOwnerFiber.candidate_inOrbit",
+  "CBMDOwnerFiber.contributor_eq_candidate",
+  "CBMDOwnerFiber.orbit_head_mem",
+  "CBMDOwnerFiber.active_head_determines_swap"
+ ],
+ "toolchain": "leanprover/lean4:v4.35.0"
+}

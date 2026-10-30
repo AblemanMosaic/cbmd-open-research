@@ -4,20 +4,25 @@
  "title": "Owner-fiber structure and support",
  "field": "combinatorics",
  "slug": "owner-fiber-structure",
- "public_version": "0.2.0",
+ "public_version": "0.3.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
+  "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED",
   "REVISED"
  ],
- "statement": "Under full-head coherence and orbit-head injectivity, a fixed covered target and requested owner have at most one nonzero contributing source row, determined by the orbit candidate; target sums are bounded by distinct block/orbit-class pairs, and coherence is required only on active coordinates.",
+ "statement": "Under full-head coherence and orbit-head injectivity, a fixed covered target and requested owner have at most one nonzero contributing source row, determined by the orbit candidate; target sums are bounded by distinct block/orbit-class pairs, and coherence is required only on active coordinates. The unique-contributor statement is compiled under Lean 4.35.0 from two hypotheses only: that a nonzero source row forces the type into the target's orbit, and that a column's head word is its owner's head word. Orbit-head injectivity is derived rather than assumed, and the contributing column is proved to be the explicit candidate.",
  "verified": [
   "A standalone verifier importing nothing from the archive reproduces the finite model; it rebuilds the source row from the integer amplitude and the Lagrange assembly.",
   "Unique contributor: 0 violations over 480 fibers with 48 off-diagonal contributors at Q=2, and 0 over 1,728 fibers with 288 off-diagonal contributors at Q=3.",
   "The candidate lookup predicts the contributing column exactly: 144 of 144 agreements at Q=2 and 480 of 480 at Q=3, with no mismatches.",
   "Class-count bound for sums of target rows: 0 violations over 1,230 sums, with the bound attained 54 times.",
   "Active-coordinate coherence is necessary: breaking it at one active coordinate yields two contributors at target (0,0|1,1).",
-  "Degeneracy controls: the known A=0, R>=|D| regime reproduces as diagonal-only, and the run refuses to report success from a degenerate box or from layouts containing no off-diagonal contributor."
+  "Degeneracy controls: the known A=0, R>=|D| regime reproduces as diagonal-only, and the run refuses to report success from a degenerate box or from layouts containing no off-diagonal contributor.",
+  "unique_contributor compiles under Lean 4.35.0 with no sorry, admit or axiom declaration, with observed axioms [propext, Quot.sound] and no use of Classical.choice.",
+  "Orbit-head injectivity, listed as a premise in the written claim, is derived: at a coordinate where the target's head and slot differ the head settles whether that coordinate was swapped, and where they agree there is nothing to settle.",
+  "contributor_eq_candidate proves what the census could only observe: the contributing column is the explicit candidate, so the lookup's agreement is not a property of the sampled layouts.",
+  "The compiled theorem's own hypotheses are measured against the model: over 1,536 source rows, all 144 nonzero rows lie in the target's orbit, no column's head differs from its owner's, and among 192 distinct pairs inside a single orbit none share a head word."
  ],
  "unresolved": [
   "formal correspondence to the exact packed source definitions",
@@ -30,7 +35,8 @@
   "not a Python-to-source refinement proof",
   "not a novelty determination",
   "not specialist review",
-  "a finite model check; the packed source definitions are not bound and multiple blocks are not modelled"
+  "a finite model check; the packed source definitions are not bound and multiple blocks are not modelled",
+  "the compiled theorem proves U1 from the two measured hypotheses; it does not formalize the amplitude, the class-count bound, or the packed source definitions"
  ],
  "smallest_decisive_test": "Against the exact packed definitions, either prove the unique-contributor statement while preserving missing-address, first-occurrence, repeated-incidence, uncovered-target, and exact-owner branches, or give the smallest counterexample.",
  "checks": [
@@ -40,6 +46,16 @@
     "python",
     "-B",
     "discoveries/combinatorics/owner-fiber-structure/verification/owner_fiber.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "OWNER_FIBER_LEAN_AUDIT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/owner-fiber-structure/verification/lean/replay.py",
+    "--audit-only"
    ],
    "required": true
   }

@@ -24,7 +24,7 @@
    "path": "discoveries/combinatorics/owner-fiber-structure",
    "title": "Owner-fiber structure and support",
    "pipeline_stage": "QUALIFYING",
-   "next_obligation": "State and compile the correspondence to the exact packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches.",
+   "next_obligation": "State and compile the correspondence to the packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches; the source is not in this repository, so this needs the archive. The unique-contributor statement itself is now compiled.",
    "promotion_blockers": [
     "source-bound formal correspondence not stated",
     "multi-block packing not modelled",
@@ -32,6 +32,7 @@
    ],
    "status": [
     "PROVISIONAL_WRITTEN_ARGUMENT",
+    "SOURCE_BOUND_COMPILED",
     "EXACT_MODEL_VERIFIED",
     "REVISED"
    ]

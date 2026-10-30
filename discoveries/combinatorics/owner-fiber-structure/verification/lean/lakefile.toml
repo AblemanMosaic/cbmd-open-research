@@ -1,0 +1,6 @@
+name = "CBMDOwnerFiber"
+version = "0.1.0"
+defaultTargets = ["CBMDOwnerFiber"]
+
+[[lean_lib]]
+name = "CBMDOwnerFiber"
