@@ -9,3 +9,4 @@ import CBMDPetriCapacity.Guard
 import CBMDPetriCapacity.FreeChoice
 import CBMDPetriCapacity.ConflictFree
 import CBMDPetriCapacity.InputLess
+import CBMDPetriCapacity.ConflictFreeDecide

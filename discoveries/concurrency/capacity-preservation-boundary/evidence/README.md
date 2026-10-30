@@ -17,6 +17,7 @@
 | `marked_graph.json` | Revision 0.11.0: the marked-graph procedure against brute force over 20,000 nets, with both ablations and the checker control. |
 | `conflict_free.json` | Revision 0.12.0: the conflict-free procedure against brute force over 20,000 nets, three ablations, the input-place hypothesis test, and the one-conflict-place count of the 0.10.0 nets. |
 | `inputless.json` | Revision 0.14.0: conflict-free nets with input-less transitions against the SAT oracle, with the bridge, ablation, the 0.12.0 procedure's failures, and the empty-CNF exception. |
+| `lean_decider_bridge.json` | Revision 0.15.0: the compiled decider `decidePreserves`, evaluated by Lean on 400 random conflict-free nets, against brute force. |
 | `run_checks.json` | Bundled fast subset with content gates. |
 
 Reproduce with

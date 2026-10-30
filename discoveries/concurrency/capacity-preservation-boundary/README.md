@@ -236,9 +236,13 @@ so does dropping the input-place hypothesis. See
 [`revisions/0.12.0-conflict-free.md`](revisions/0.12.0-conflict-free.md).
 Since revision 0.13.0 the characterization behind it is **compiled**
 (`not_preserves_iff_certificate`): a bad marking exists exactly when a chain
-certificate does. Only the classical step that the greatest fixpoint decides
-the certificate is left to a census bridge. See
+certificate does. See
 [`revisions/0.13.0-conflict-free-compiled.md`](revisions/0.13.0-conflict-free-compiled.md).
+Since revision 0.15.0 the fixpoint step and the threshold optimisation are
+compiled too. The result is an executable polynomial decider with a
+correctness theorem (`preserves_iff_decideFast`). Lean evaluates it on 400
+random nets and every verdict matches brute force. See
+[`revisions/0.15.0-verified-decider.md`](revisions/0.15.0-verified-decider.md).
 
 ## Input-less transitions are the other route to hardness (revision 0.14.0)
 
@@ -295,8 +299,8 @@ not enabled because its other input is short.
   transition has an input place. Conflict-free nets *with* input-less
   transitions are coNP-complete (revision 0.14.0).
 - The marked-graph procedure (0.11.0) is a written argument with a census. The
-  conflict-free characterization is compiled (0.13.0); that its greatest
-  fixpoint decides the certificate is bridged by census, not compiled.
+  conflict-free side is compiled end to end, as an executable polynomial
+  decider proved correct (0.13.0, 0.15.0).
 
 - A formal proof of the complexity-class statement. The reduction's
   correctness and input-place bounds are compiled (revision 0.9.0); membership

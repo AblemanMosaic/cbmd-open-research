@@ -1,0 +1,20 @@
+{
+ "schema": "cbmd.petri-lean-decider-bridge.v1",
+ "nets": 400,
+ "agree": 400,
+ "disagree": 0,
+ "preserving": 302,
+ "not_preserving": 98,
+ "with_multi_input_transition": 129,
+ "lean_exit": 0,
+ "gates": {
+  "lean_verdicts_equal_brute_force": true,
+  "both_verdicts_occur": true,
+  "multi_input_nets_occur": true
+ },
+ "status": "PASS",
+ "nonclaims": [
+  "Lean's #eval runs the compiled decider through the interpreter; the theorem preserves_iff_decide is what makes its output the answer"
+ ],
+ "authority_effect": "NONE"
+}
