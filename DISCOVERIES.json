@@ -139,6 +139,23 @@
         "EXACT_MODEL_VERIFIED",
         "INDEPENDENTLY_REPRODUCED"
       ]
+    },
+    {
+      "id": "CBMD-CON-CAPACITY-PRESERVATION-001",
+      "field": "concurrency",
+      "slug": "capacity-preservation-boundary",
+      "path": "discoveries/concurrency/capacity-preservation-boundary",
+      "title": "Where the capacity-preservation characterization transfers, and where it stops",
+      "pipeline_stage": "REVIEW_READY",
+      "next_obligation": "Decide whether any local per-place capacity condition is sound for multi-input transitions, or record an impossibility; and run a targeted prior-art comparison against structural conditions in the bounded-Petri-net literature.",
+      "promotion_blockers": [
+        "novelty and prior-art assessment open",
+        "external review open"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

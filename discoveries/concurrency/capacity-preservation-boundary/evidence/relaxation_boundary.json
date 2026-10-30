@@ -1,0 +1,188 @@
+[
+ {
+  "relaxation": "none",
+  "both": 552,
+  "UNSOUND": 0,
+  "INCOMPLETE": 0,
+  "neither": 600,
+  "exact": true,
+  "unsound_samples": []
+ },
+ {
+  "relaxation": "selffeed",
+  "both": 1638,
+  "UNSOUND": 0,
+  "INCOMPLETE": 1636,
+  "neither": 5814,
+  "exact": false,
+  "unsound_samples": []
+ },
+ {
+  "relaxation": "shared",
+  "both": 592,
+  "UNSOUND": 80,
+  "INCOMPLETE": 112,
+  "neither": 368,
+  "exact": false,
+  "unsound_samples": [
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     0,
+     1
+    ],
+    "initial": [
+     0,
+     1
+    ],
+    "dead_marking": [
+     0,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     0,
+     2
+    ],
+    "initial": [
+     0,
+     1
+    ],
+    "dead_marking": [
+     0,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   }
+  ]
+ },
+ {
+  "relaxation": "multi_input",
+  "both": 1056,
+  "UNSOUND": 48,
+  "INCOMPLETE": 514,
+  "neither": 686,
+  "exact": false,
+  "unsound_samples": [
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     1,
+     1
+    ],
+    "initial": [
+     1,
+     1
+    ],
+    "dead_marking": [
+     1,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "initial": [
+     0,
+     2
+    ],
+    "dead_marking": [
+     1,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   }
+  ]
+ }
+]

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Added the capacity-preservation boundary dossier
+  (`CBMD-CON-CAPACITY-PRESERVATION-001`), mapping how far the chip-firing
+  characterization reaches in Petri nets with place capacities: exact for
+  chip-firing-shaped nets, sound but incomplete under self-feedback, and unsound
+  once a place has two consumers or a transition has two inputs.
+
 - Added the weighted-transfer capacity-blocked chip-firing dossier
   (`CBMD-DYN-WEIGHTED-CAPACITY-001`), resolving the named open successor of the
   finite-capacity result with a compiled Lean 4.35.0 transfer theorem, exact

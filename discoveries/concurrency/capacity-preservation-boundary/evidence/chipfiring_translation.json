@@ -1,0 +1,42 @@
+{
+ "P2T2": {
+  "schema": "cbmd.petri-chipfiring-translation.v1",
+  "box": {
+   "places": 2,
+   "transitions": 2,
+   "max_arc_weight": 2,
+   "max_capacity": 3
+  },
+  "chipfiring_shaped_systems": 1152,
+  "confusion": {
+   "both": 552,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "neither": 600,
+   "skipped": 0
+  },
+  "exact": true,
+  "unsound_samples": [],
+  "incomplete_samples": []
+ },
+ "P3T3": {
+  "schema": "cbmd.petri-chipfiring-translation.v1",
+  "box": {
+   "places": 3,
+   "transitions": 3,
+   "max_arc_weight": 1,
+   "max_capacity": 2
+  },
+  "chipfiring_shaped_systems": 10368,
+  "confusion": {
+   "both": 3024,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "neither": 7344,
+   "skipped": 0
+  },
+  "exact": true,
+  "unsound_samples": [],
+  "incomplete_samples": []
+ }
+}

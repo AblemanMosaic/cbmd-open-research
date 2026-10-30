@@ -1,0 +1,46 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-CON-CAPACITY-PRESERVATION-001",
+ "title": "Where the capacity-preservation characterization transfers, and where it stops",
+ "field": "concurrency",
+ "slug": "capacity-preservation-boundary",
+ "public_version": "0.1.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all.",
+ "verified": [
+  "Exact transfer to chip-firing-shaped nets: zero unsound and zero incomplete over 1,152 systems (2 places, 2 transitions, weights <=2, capacities <=3) and 10,368 systems (3 places, 3 transitions, weights <=1, capacities <=2), in a model coded independently of the chip-firing dossier.",
+  "Self-feedback relaxation yields 1,636 incomplete cases and zero unsound ones over the newly admitted nets, so sufficiency survives it.",
+  "Shared consumption yields 80 unsound witnesses and conjunctive input yields 48, with minimal two-place examples recorded.",
+  "The usable-transition refinement of liveness remains unsound over three boxes, with 64, 7,200 and 552 witnesses."
+ ],
+ "unresolved": [
+  "whether some other local capacity condition repairs the multi-input case; only the natural refinement is refuted",
+  "targeted novelty comparison against bounded-Petri-net structural conditions",
+  "external review"
+ ],
+ "nonclaims": [
+  "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
+  "no claim that NO local capacity condition can repair the multi-input case",
+  "the chip-firing characterization itself is proved elsewhere; this dossier only maps its reach",
+  "not a novelty determination"
+ ],
+ "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a per-place capacity condition that is sound over the multi-input boxes where the usable-transition refinement fails.",
+ "checks": [
+  {
+   "id": "CAPACITY_BOUNDARY_CHECKS",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/concurrency/capacity-preservation-boundary/verification/run_checks.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE",
+ "related": [
+  "CBMD-DYN-WEIGHTED-CAPACITY-001"
+ ]
+}

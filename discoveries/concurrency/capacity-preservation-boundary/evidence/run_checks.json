@@ -1,0 +1,489 @@
+{
+ "schema": "cbmd.capacity-preservation-boundary-checks.v1",
+ "chipfiring_translation": {
+  "schema": "cbmd.petri-chipfiring-translation.v1",
+  "box": {
+   "places": 2,
+   "transitions": 2,
+   "max_arc_weight": 2,
+   "max_capacity": 3
+  },
+  "chipfiring_shaped_systems": 1152,
+  "confusion": {
+   "both": 552,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "neither": 600,
+   "skipped": 0
+  },
+  "exact": true,
+  "unsound_samples": [],
+  "incomplete_samples": []
+ },
+ "relaxation_boundary": [
+  {
+   "relaxation": "none",
+   "both": 552,
+   "UNSOUND": 0,
+   "INCOMPLETE": 0,
+   "neither": 600,
+   "exact": true,
+   "unsound_samples": []
+  },
+  {
+   "relaxation": "selffeed",
+   "both": 1638,
+   "UNSOUND": 0,
+   "INCOMPLETE": 1636,
+   "neither": 5814,
+   "exact": false,
+   "unsound_samples": []
+  },
+  {
+   "relaxation": "shared",
+   "both": 592,
+   "UNSOUND": 80,
+   "INCOMPLETE": 112,
+   "neither": 368,
+   "exact": false,
+   "unsound_samples": [
+    {
+     "pre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "post": [
+      [
+       1,
+       0
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "capacity": [
+      0,
+      1
+     ],
+     "initial": [
+      0,
+      1
+     ],
+     "dead_marking": [
+      0,
+      1
+     ],
+     "ordinarily_enabled": [
+      0
+     ]
+    },
+    {
+     "pre": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "post": [
+      [
+       1,
+       0
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "capacity": [
+      0,
+      2
+     ],
+     "initial": [
+      0,
+      1
+     ],
+     "dead_marking": [
+      0,
+      1
+     ],
+     "ordinarily_enabled": [
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "relaxation": "multi_input",
+   "both": 1056,
+   "UNSOUND": 48,
+   "INCOMPLETE": 514,
+   "neither": 686,
+   "exact": false,
+   "unsound_samples": [
+    {
+     "pre": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "post": [
+      [
+       1,
+       0
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "capacity": [
+      1,
+      1
+     ],
+     "initial": [
+      1,
+      1
+     ],
+     "dead_marking": [
+      1,
+      1
+     ],
+     "ordinarily_enabled": [
+      0
+     ]
+    },
+    {
+     "pre": [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "post": [
+      [
+       1,
+       0
+      ],
+      [
+       0,
+       0
+      ]
+     ],
+     "capacity": [
+      1,
+      2
+     ],
+     "initial": [
+      0,
+      2
+     ],
+     "dead_marking": [
+      1,
+      1
+     ],
+     "ordinarily_enabled": [
+      0
+     ]
+    }
+   ]
+  }
+ ],
+ "generalized_conditions": {
+  "box": {
+   "P": 2,
+   "T": 2,
+   "maxw": 2,
+   "capmax": 2
+  },
+  "both": 23899,
+  "UNSOUND": 16,
+  "INCOMPLETE": 6927,
+  "neither": 15238,
+  "sound": false,
+  "exact": false,
+  "unsound_samples": [
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "initial": [
+     0,
+     2
+    ],
+    "dead_marking": [
+     1,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     2,
+     2
+    ],
+    "initial": [
+     1,
+     2
+    ],
+    "dead_marking": [
+     2,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "post": [
+     [
+      2,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     2,
+     2
+    ],
+    "initial": [
+     0,
+     2
+    ],
+    "dead_marking": [
+     2,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "post": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "capacity": [
+     2,
+     2
+    ],
+    "initial": [
+     1,
+     2
+    ],
+    "dead_marking": [
+     2,
+     1
+    ],
+    "ordinarily_enabled": [
+     0
+    ]
+   }
+  ],
+  "incomplete_samples": [
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "post": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "capacity": [
+     0,
+     1
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "post": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "capacity": [
+     0,
+     2
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "post": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "capacity": [
+     1,
+     1
+    ]
+   },
+   {
+    "pre": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "post": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "capacity": [
+     1,
+     2
+    ]
+   }
+  ]
+ },
+ "content_gate_failures": [],
+ "status": "PASS",
+ "nonclaims": [
+  "finite censuses over the stated boxes; no unbounded theorem is established here",
+  "the chip-firing characterization itself is proved in CBMD-DYN-WEIGHTED-CAPACITY-001; this dossier only maps where it transfers",
+  "no claim that NO local capacity condition can repair the multi-input case"
+ ],
+ "authority_effect": "NONE"
+}
