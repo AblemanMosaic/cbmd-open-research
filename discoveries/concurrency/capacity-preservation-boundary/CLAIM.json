@@ -39,7 +39,8 @@
   "Both steps of the algorithm are load-bearing: dropping the overflow test gives 15,700 wrong verdicts and stopping after a single pass gives 784.",
   "Termination is compiled, not asserted: sumBelow_lt (no axioms) gives strict decrease of a sum from a pointwise bound plus one strict drop, total_lt transports it to markings, and exists_capped_capDead runs the induction on an explicit bound to produce a certified greatest capacity-dead marking from the capacities.",
   "preserves_decided_by_lowering states the single-input case end to end: there is a marking reached from the capacities by lowering such that preservation holds exactly when it is ordinarily dead.",
-  "Compiling the termination exposed a hypothesis that had been implicit: each transition must actually consume from the place named as its input. The SNet structure only required pre to vanish off that place."
+  "Compiling the termination exposed a hypothesis that had been implicit: each transition must actually consume from the place named as its input. The SNet structure only required pre to vanish off that place.",
+  "The reduction is also checked exhaustively rather than only by sampling: over every CNF on two variables with at most three clauses of width at most two, 164 formulas, 138 satisfiable and 26 not, with zero disagreements and every transition carrying one or two input places."
  ],
  "unresolved": [
   "external review",
@@ -66,7 +67,8 @@
   "single input place per transition; outputs and arc weights are unconstrained, and nothing here covers two input places",
   "for unit-weight single-output conservative nets the obstruction is known as a cycle of full buffers, with an exact deadlock-freedom iff in the queueing-with-blocking literature; revision 0.3.0 is a restatement in a setting that additionally has drains and zero capacities",
   "the absence of reachability in this dossier's question is the degenerate case of that literature's job-count condition, not an independent vantage point",
-  "on the proved side nothing is left in prose for the single-input case; what remains prose in this dossier is the complexity statement of revision 0.4.0"
+  "on the proved side nothing is left in prose for the single-input case; what remains prose in this dossier is the complexity statement of revision 0.4.0",
+  "the exhaustive pass covers a small box and the random pass larger instances; neither proves the reduction, which is the written argument"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a polynomial-time algorithm deciding preservation for nets with two input places per transition, which would collapse coNP to P; or an error in the reduction, exhibited as a CNF whose constructed net's preservation verdict differs from its unsatisfiability.",
  "checks": [

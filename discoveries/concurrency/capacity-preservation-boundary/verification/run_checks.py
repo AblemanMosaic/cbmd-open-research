@@ -18,6 +18,8 @@ def main() -> int:
     af = allfull.run()
     fl = flow.run()
     hd = hardness.run(trials=80)
+    hd["exhaustive"] = hardness.exhaustive()
+    hd["gates"].update(hd["exhaustive"]["gates"])
     wf = weighted_flow.report()
     si = single_input.run()
     gates = []

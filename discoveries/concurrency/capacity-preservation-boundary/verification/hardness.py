@@ -188,12 +188,74 @@ def run(trials=240, seed=1030):
                 "checked here is the correctness of the reduction",
                 "unit arc weights and capacities in {0,1} only -- which makes the "
                 "hardness stronger, not weaker",
+                "the exhaustive pass enumerates every CNF in a small box; the random "
+                "pass reaches larger instances. Neither proves the reduction, which is "
+                "the written argument",
             ],
             "authority_effect": "NONE"}
+
+
+def all_clauses(n, max_width=3):
+    """Every clause over n variables, up to the given width, no repeated
+    variable inside a clause."""
+    from itertools import combinations
+    out = []
+    for w in range(1, min(max_width, n) + 1):
+        for vs in combinations(range(1, n + 1), w):
+            for signs in product([1, -1], repeat=w):
+                out.append([s * v for s, v in zip(signs, vs)])
+    return out
+
+
+def exhaustive(n=2, max_clauses=3, max_width=2):
+    """Every CNF over n variables with at most max_clauses clauses, rather than
+    a random sample.  A reduction is a claim about ALL inputs, so a census that
+    enumerates them is worth more than one that draws from them -- in
+    particular it cannot miss a shape the sampler never produced."""
+    from itertools import combinations_with_replacement
+    clauses_all = all_clauses(n, max_width)
+    agree = disagree = sat = unsat = 0
+    lo, hi = 99, 0
+    samples = []
+    for m in range(1, max_clauses + 1):
+        for cnf in combinations_with_replacement(clauses_all, m):
+            cnf = [list(c) for c in cnf]
+            n_atoms, enc = guarded_cnf(n, cnf)
+            pre, post, cap, P, T = build(n_atoms, enc)
+            counts = input_place_counts(pre, P)
+            lo, hi = min(lo, min(counts)), max(hi, max(counts))
+            ok = preserves(pre, post, cap, P, T)
+            if ok is None:
+                continue
+            s_ = satisfiable(n, cnf)
+            sat += s_
+            unsat += (not s_)
+            if ok == (not s_):
+                agree += 1
+            else:
+                disagree += 1
+                if len(samples) < 4:
+                    samples.append({"clauses": cnf, "preserves": ok,
+                                    "satisfiable": s_})
+    return {"box": {"variables": n, "max_clauses": max_clauses,
+                    "max_clause_width": max_width,
+                    "distinct_clauses": len(clauses_all)},
+            "formulas": agree + disagree,
+            "agree": agree, "DISAGREE": disagree,
+            "satisfiable": sat, "unsatisfiable": unsat,
+            "input_places_per_transition": {"min": lo, "max": hi},
+            "samples": samples,
+            "gates": {"exhaustive_reduction_is_exact": disagree == 0,
+                      "both_outcomes_occur": sat > 0 and unsat > 0,
+                      "every_transition_has_an_input_place": lo >= 1,
+                      "at_most_two_input_places": hi <= 2}}
 
 
 if __name__ == "__main__":
     trials = int(sys.argv[1]) if len(sys.argv) > 1 else 240
     r = run(trials=trials)
+    r["exhaustive"] = exhaustive()
+    r["gates"].update(r["exhaustive"]["gates"])
+    r["pass"] = all(r["gates"].values())
     print(json.dumps(r, indent=1))
     raise SystemExit(0 if r["pass"] else 1)
