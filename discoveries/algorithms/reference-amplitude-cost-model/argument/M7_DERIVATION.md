@@ -6,10 +6,28 @@ The cost theorem compares the frozen producer `literal_numerator` with
 n(A,R,δ,f) = 2^(R−1) (−1)^A Σ_{k=0}^{d} C(N,k) C(A+d−k−1, d−k),    d = R−1−f,  N = A+R−δ,
 ```
 
-and calls it "the proved identity B5-M7". That proof is in the sealed source
-archive, not in this repository. This note gives a self-contained proof from
-the producer's own definition, in four steps, each checked separately by
+and calls it "the proved identity B5-M7".
+
+> **Correction.** An earlier version of this note said that proof was held
+> only in the sealed source archive. That was wrong. This repository's native
+> proof package contains it, compiled against Mathlib:
+> `entry_eq_masterNumerator` in
+> [`proofs/native/.../SqrtLog/NativeAmplitudeScalarBridge.lean`](../../../../proofs/native/lean/OAI/Algorithms/SubexponentialSAT/SqrtLog/NativeAmplitudeScalarBridge.lean).
+> It is about the native Lean definition `LayoutNumerator.entry`. The note
+> was written without first searching `proofs/native/`; see
+> [`docs/CORRECTIONS.md`](../../../../docs/CORRECTIONS.md).
+
+What this note adds is narrower. It gives a written derivation against the
+**Python producer** `literal_numerator` that the cost theorem actually
+measures, in four steps, each checked separately by
 [`verification/independent/derive_m7.py`](../verification/independent/derive_m7.py).
+The steps follow the same route as the native proof:
+- Step 1–2 correspond to `entry_closed_form_guarded`;
+- Step 3 to `parityCoefficient_closed_form`;
+- Step 4 to `finite_euler_binomial_transform`.
+
+The novelty is only the target, the Python producer, and the standalone
+check.
 
 **Setting.** `u` has length `2Q`. `swap(u,S)` exchanges `u[p]` and `u[Q+p]` for
 `p ∈ S`. `D = {p : u[p] ≠ u[Q+p]}`, `δ = |D|`. The producer is called with `y` in
@@ -107,5 +125,6 @@ separately labelled cross-check does.
 
 This is a written proof checked step by step on finite boxes. It is separately
 written in this repository, not externally authored, so it does not discharge
-external mathematical review. It does remove the dependence of the cost
-theorem on a proof held only in the sealed archive.
+external mathematical review. The compiled proof of the identity is the native
+`entry_eq_masterNumerator`. This note's contribution is a check that the
+Python producer measured by the cost theorem computes the same quantity.

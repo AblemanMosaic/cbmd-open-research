@@ -16,11 +16,13 @@ The corrected r7 source package is sealed, cold-replayed, and represented here b
 
 The archived cost write-up's phrase "exponentially cheaper in Q" needs a parameter qualification: at fixed R, the enumeration count is polynomial in Q. The [scope correction](revisions/0.3.0-scope-and-parameter-regime.md) controls the current interpretation while preserving the exact archived source bytes.
 
-## The master formula, derived here (revision 0.4.0-candidate)
+## The master formula, checked against the Python producer (revision 0.4.0-candidate)
 
-The closed route rests on B5-M7, whose proof was held only in the sealed
-archive. [`argument/M7_DERIVATION.md`](argument/M7_DERIVATION.md) now proves it
-from the producer's definition:
+The closed route rests on B5-M7, which is compiled in this repository's native
+package (`entry_eq_masterNumerator`, about the native `LayoutNumerator.entry`).
+[`argument/M7_DERIVATION.md`](argument/M7_DERIVATION.md) derives it again
+against the **Python** producer the cost theorem measures, along the same
+route:
 - an indicator collapse shows the amplitude depends only on `(|D|, |E|−1)`;
 - an inner sum collapses;
 - the parity coefficients have a closed form;

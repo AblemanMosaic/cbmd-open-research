@@ -6,10 +6,11 @@ against the closed formula
     n(A,R,delta,f) = 2^(R-1) (-1)^A  sum_{k=0}^{d} C(N,k) C(A+d-k-1, d-k),
     d = R-1-f,  N = A+R-delta,
 
-which it calls "the proved identity B5-M7"; the proof lives in the sealed
-source archive, not in this repository.  `argument/M7_DERIVATION.md` gives a
-self-contained proof from the producer's definition in four steps, and this
-script checks each step separately.  Steps 1-4 are checked with code written
+which it calls "the proved identity B5-M7".  The identity is compiled in this
+repository's native package (`entry_eq_masterNumerator`, about the native
+`LayoutNumerator.entry`).  `argument/M7_DERIVATION.md` derives it again against
+the PYTHON producer the cost theorem measures, along the native proof's route,
+and this script checks each step separately.  Steps 1-4 are checked with code written
 here from the definitions -- NOTHING is imported from `reference-model/src`
 until the final, separately labelled cross-check.
 
