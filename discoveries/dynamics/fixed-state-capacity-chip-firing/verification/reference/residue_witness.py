@@ -28,8 +28,8 @@ Gates (each required):
         on some instance that has one, so the question is not settled by a
         fixed greedy order;
   * OBSERVATIONS (recorded, not gated): whether some witness of minimum fired
-    total has a fired set that some order packs completely, and whether every
-    order does.  The every-order form held up to B = 10, k = 6 and FAILS in the
+    total has a fired set that some order packs completely, whether the
+    largest-fit order does, and whether every order does.  The every-order form held up to B = 10, k = 6 and FAILS in the
     larger range (B <= 13, k <= 8), so it is not a route to a proof.
 """
 from __future__ import annotations
@@ -179,6 +179,7 @@ def main():
                   single_bin_misses=0, nonstrict_false_accepts=0,
                   largest_fit_misses=0, smallest_fit_misses=0,
                   min_total_witness_not_every_order=0, min_total_witness_not_packable=0,
+                  min_total_witness_not_largest_fit=0,
                   oversize_instances=0)
     examples = {}
     for B in range(1, B_MAX + 1):
@@ -219,6 +220,9 @@ def main():
                     if not any(every_order_completes(F, B) for F in lows):
                         counts["min_total_witness_not_every_order"] += 1
                         examples.setdefault("min_total_witness_not_every_order", [a, B])
+                    if not any(not greedy_stuck(F, B, max) for F in lows):
+                        counts["min_total_witness_not_largest_fit"] += 1
+                        examples.setdefault("min_total_witness_not_largest_fit", [a, B])
                     if not any(some_order_completes(F, B) for F in lows):
                         counts["min_total_witness_not_packable"] += 1
                         examples.setdefault("min_total_witness_not_packable", [a, B])

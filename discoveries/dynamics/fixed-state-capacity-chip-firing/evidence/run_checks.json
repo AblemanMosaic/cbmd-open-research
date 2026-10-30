@@ -51,6 +51,7 @@
      "instances": 20797,
      "largest_fit_misses": 5817,
      "min_total_witness_not_every_order": 0,
+     "min_total_witness_not_largest_fit": 0,
      "min_total_witness_not_packable": 0,
      "nonstrict_false_accepts": 764,
      "oversize_instances": 1360,

@@ -135,10 +135,13 @@ different witness. The obvious extremal choices also fail in range:
   fired set packs. This held up to `B ≤ 10, k ≤ 6` and fails in the larger
   range (11 instances).
 
-The weaker form held everywhere in range: some least-total witness has a fired
+The weaker form held everywhere in range. Some least-total witness has a fired
 set that *some* order packs into closed blocks plus the open block (0
-failures). So a sharper conjecture is that a witness of least fired total is
-always realisable. That would prove the conjecture, but it needs an argument
+failures). In fact the **largest-fit** order does: repeatedly fire the largest
+fired-set bundle that fits (0 failures). Smallest-fit fails. So a sharper
+conjecture is that, for a witness of least fired total, firing its set
+largest-fit-first never gets stuck before the set is exhausted. The run then
+ends at fill `(Σ_F a) mod B`, with every unfired bundle blocked. That would prove the conjecture, but it needs an argument
 this revision does not have.
 
 **Binary encoding.** With the numbers in binary, the witness condition is a

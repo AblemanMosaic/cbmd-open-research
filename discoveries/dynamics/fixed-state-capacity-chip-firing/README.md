@@ -80,7 +80,8 @@ not ordinarily stable. On the star:
 - **Written, checked against the definition:** the witness condition is
   decided in `O(kB)` time after sorting, i.e. pseudo-polynomially.
 - **Conjectured, not proved:** every residue witness is realised by a stuck
-  run. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
+  run. Sharper: for a witness of least fired total, firing its set
+  largest-fit-first realises it. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
   "can it end badly?" is pseudo-polynomial on stars while "can it end well?" is
   strongly NP-hard there.
 

@@ -6,6 +6,7 @@
   "instances": 500461,
   "largest_fit_misses": 98872,
   "min_total_witness_not_every_order": 11,
+  "min_total_witness_not_largest_fit": 0,
   "min_total_witness_not_packable": 0,
   "nonstrict_false_accepts": 3139,
   "oversize_instances": 3055,
