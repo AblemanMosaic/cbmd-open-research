@@ -432,6 +432,225 @@
    }
   },
   {
+   "id": "WEIGHTED_WELLFOUNDED_EQUIVALENCE",
+   "command": [
+    "/usr/local/bin/python3",
+    "-I",
+    "-B",
+    "/home/claude/ablemanmosaic/cbmd-open-research/discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/equivalence.py",
+    "2"
+   ],
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.wellfounded-equivalence.v1",
+    "box": {
+     "n_max": 2,
+     "max_multiplicity": 2,
+     "max_sink_multiplicity": 1,
+     "capacity_range": "0..d(v)+2"
+    },
+    "theorem_A": {
+     "hypotheses_satisfied": 199,
+     "conclusion_holds": 199,
+     "UNSOUND": 0,
+     "INCOMPLETE": 0,
+     "unsound_samples": [],
+     "wf_by_conclusion_table": {
+      "wf_concl": 199,
+      "wf_noconcl": 192,
+      "nowf_concl": 0,
+      "nowf_noconcl": 108
+     },
+     "skipped": 0
+    },
+    "theorem_B": {
+     "live_closed_agree": 319,
+     "live_closed_DISAGREE": 0,
+     "disagree_samples": [],
+     "not_live_closed_agree": 0,
+     "not_live_closed_disagree": 180,
+     "not_live_closed_disagree_samples": [
+      {
+       "arcs": [
+        [
+         0,
+         0
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0
+       ],
+       "capacity": [
+        0,
+        1
+       ],
+       "live": [
+        1
+       ],
+       "wf": true,
+       "filled_set": true
+      },
+      {
+       "arcs": [
+        [
+         0,
+         0
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0
+       ],
+       "capacity": [
+        0,
+        2
+       ],
+       "live": [
+        1
+       ],
+       "wf": true,
+       "filled_set": true
+      },
+      {
+       "arcs": [
+        [
+         0,
+         0
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0
+       ],
+       "capacity": [
+        0,
+        3
+       ],
+       "live": [
+        1
+       ],
+       "wf": true,
+       "filled_set": true
+      }
+     ],
+     "systems_with_a_filled_set": 288
+    },
+    "gates": {
+     "A_sound": true,
+     "A_hypotheses_nonvacuous": true,
+     "A_wf_necessary": true,
+     "A_wf_failure_population_nonempty": true,
+     "A_wf_alone_insufficient": true,
+     "A_exact_for_the_conclusion": true,
+     "B_exact_under_live_closed": true,
+     "B_live_closed_is_load_bearing": true,
+     "filled_sets_are_found": true,
+     "A_every_hypothesis_load_bearing": true
+    },
+    "pass": true,
+    "ablation": {
+     "well_founded": {
+      "unsound": 6,
+      "hypotheses_satisfied": 274,
+      "sample": {
+       "arcs": [
+        [
+         0,
+         1
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "sink": [
+        0,
+        1
+       ],
+       "capacity": [
+        1,
+        2
+       ],
+       "live": [
+        0,
+        1
+       ]
+      }
+     },
+     "live_closed": {
+      "unsound": 6,
+      "hypotheses_satisfied": 379,
+      "sample": {
+       "arcs": [
+        [
+         0,
+         0
+        ],
+        [
+         1,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0
+       ],
+       "capacity": [
+        0,
+        1
+       ],
+       "live": [
+        1
+       ]
+      }
+     },
+     "live_bound": {
+      "unsound": 6,
+      "hypotheses_satisfied": 211,
+      "sample": {
+       "arcs": [
+        [
+         0,
+         0
+        ],
+        [
+         2,
+         0
+        ]
+       ],
+       "sink": [
+        1,
+        0
+       ],
+       "capacity": [
+        1,
+        2
+       ],
+       "live": [
+        0,
+        1
+       ]
+      }
+     },
+     "_gate": true
+    }
+   }
+  },
+  {
    "id": "WEIGHTED_LEAN_AUDIT",
    "command": [
     "/usr/local/bin/python3",
@@ -454,6 +673,11 @@
     "lean_recompiled": false,
     "members": [
      {
+      "bytes": 7835,
+      "path": "CBMDWeightedDynamics/Characterization.lean",
+      "sha256": "4e1351d01b1fde9fc5a77529fe050234ef5a1a7f86928013bf999a8ae827b0c0"
+     },
+     {
       "bytes": 5248,
       "path": "CBMDWeightedDynamics/Core.lean",
       "sha256": "00f45407fec0c9c5aa09d4dab887580743448c5d401d52c3bfbdb94d84b705b9"
@@ -464,14 +688,24 @@
       "sha256": "0aee2060b9919922aa846ed016a2c2c07f808019294f7d165fd9289af25028de"
      },
      {
+      "bytes": 11416,
+      "path": "CBMDWeightedDynamics/Equivalence.lean",
+      "sha256": "486db3febc034396abf4a264d0c220ce3c3e9b763e1ca964c036f91e6daebb04"
+     },
+     {
+      "bytes": 4577,
+      "path": "CBMDWeightedDynamics/Necessity.lean",
+      "sha256": "00f4713ceac1e8be4b2fd6e88ade159cbb5cc316b73d2a10a97a45b88a7bd8ae"
+     },
+     {
       "bytes": 7726,
       "path": "CBMDWeightedDynamics/Transfer.lean",
       "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
      },
      {
-      "bytes": 115,
+      "bytes": 238,
       "path": "CBMDWeightedDynamics.lean",
-      "sha256": "2f5d74097ada3cbe49f741aa4022feb618dbc8d01a4e43c180e231a32131874a"
+      "sha256": "aa5ec4481d934655e59bd2be2d8ecfa7c6f622bb058eb431f8c0aba44596aaac"
      }
     ],
     "no_escape": true,
@@ -486,7 +720,17 @@
      "CBMDWeightedDynamics.every_capacity_terminal_eq_ordinary_normal",
      "CBMDWeightedDynamics.weighted_transfer",
      "CBMDWeightedDynamics.ordered_has_no_closed_set",
-     "CBMDWeightedDynamics.cycle_defeats_every_capacity"
+     "CBMDWeightedDynamics.cycle_defeats_every_capacity",
+     "CBMDWeightedDynamics.dead_is_ordinarily_stable",
+     "CBMDWeightedDynamics.live_terminal_implies_ordinary_stable",
+     "CBMDWeightedDynamics.filled_set_obstruction",
+     "CBMDWeightedDynamics.bound_violation_defeats_transfer",
+     "CBMDWeightedDynamics.ordered_live_closed_excludes_filled_set",
+     "CBMDWeightedDynamics.wf_terminal_implies_ordinary_stable",
+     "CBMDWeightedDynamics.filledSetOfNotWellFounded",
+     "CBMDWeightedDynamics.wellFounded_iff_no_filled_set",
+     "CBMDWeightedDynamics.wellFounded_of_rank",
+     "CBMDWeightedDynamics.not_wellFounded_of_live_cycle"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

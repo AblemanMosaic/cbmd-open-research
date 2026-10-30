@@ -3,3 +3,4 @@ import CBMDWeightedDynamics.Transfer
 import CBMDWeightedDynamics.CycleObstruction
 import CBMDWeightedDynamics.Characterization
 import CBMDWeightedDynamics.Necessity
+import CBMDWeightedDynamics.Equivalence

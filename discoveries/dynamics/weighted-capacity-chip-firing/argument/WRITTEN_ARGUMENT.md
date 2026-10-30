@@ -117,3 +117,45 @@ beyond `C(v) >= d(v)`; cyclic graphs (the predecessor's cycle witness applies
 unchanged); non-absorbing sinks; novelty. The capacity rule remains classical
 finite-capacity Petri-net semantics and the ordinary theory is classical; only
 the weighted threshold and its preservation argument are at issue.
+
+## 9. The ordering hypothesis, restated (revision 0.5.0)
+
+Sections 4–6 and the characterization of revision 0.3.0 both carry the ordering
+as a *rank*: a function `Vertex n → Nat`, bounded by `n`, strictly increasing
+along the relevant arcs. The rank exists only to supply a descent measure, and
+carrying it has a cost: the step from "no such rank exists" to "an obstruction
+exists" is then the classical finite-digraph fact that an acyclic finite
+relation admits a topological order, which this dossier does not prove.
+
+Taking the relation itself as the hypothesis removes the cost. Write
+
+```
+LiveArc v u   iff   Live u  and  Live v  and  mult u v > 0
+```
+
+so that `Acc LiveArc x` says that chasing blocked senders forward from `x`
+terminates. Three things follow.
+
+**Sufficiency needs no finiteness.** The proof of §5, read on `LiveArc`, is a
+well-founded recursion with no appeal to the index bound. `n` survives only as
+the type's parameter.
+
+**The old hypotheses are a special case.** `n - rank` is a measure for
+`LiveArc`, so a rank gives well-foundedness and the earlier theorem is an
+instance.
+
+**The obstruction comes from the hypothesis failing.** Suppose `LiveArc` is not
+well founded. Some vertex `w` is not accessible. Then there is an arc from `w`
+to a vertex that is also not accessible — if every `LiveArc`-predecessor of `w`
+were accessible, `Acc.intro` would make `w` accessible. Take membership in the
+filled set to be non-accessibility and that arc as the successor map. A vertex
+that is not live is accessible outright, because every `LiveArc y x` carries
+`Live x`, so the witness is live without further assumption. Nothing is counted
+and nothing is ordered.
+
+Hence, under live-closure, `LiveArc` is well founded exactly when no filled set
+exists; the sufficient conditions and the obstruction are two readings of one
+statement. What remains imported is only that a *finite acyclic* live subgraph
+is well founded, which is what lets an exhaustive census decide the hypothesis
+by cycle detection. That is a property of the decision procedure, not a step in
+any proof here.

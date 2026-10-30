@@ -39,6 +39,8 @@ def main() -> int:
              "--n", "3", "--mult", "2", "--sink", "1", "--extra", "0"]),
         run("WEIGHTED_INDEPENDENT_CHECK",
             [PY, "-I", "-B", str(HERE / "independent" / "independent_check.py"), "3", "2", "1"]),
+        run("WEIGHTED_WELLFOUNDED_EQUIVALENCE",
+            [PY, "-I", "-B", str(HERE / "reference" / "equivalence.py"), "2"]),
         run("WEIGHTED_LEAN_AUDIT",
             [PY, "-B", str(HERE / "lean" / "replay.py"), "--audit-only"]),
     ]
@@ -70,6 +72,16 @@ def main() -> int:
             gates.append("independent adverse control did not fail as required")
     else:
         gates.append("independent check produced no parsable result")
+
+    # The well-foundedness reformulation (revision 0.5.0).  Run on the small box
+    # so the bundled checks stay fast; the n<=3 run is a separate dossier check.
+    eqv = next(c for c in checks if c["id"] == "WEIGHTED_WELLFOUNDED_EQUIVALENCE").get("result", {})
+    if eqv:
+        for gate, ok in eqv["gates"].items():
+            if not ok:
+                gates.append(f"well-foundedness gate failed: {gate}")
+    else:
+        gates.append("well-foundedness equivalence produced no parsable result")
 
     audit = next(c for c in checks if c["id"] == "WEIGHTED_LEAN_AUDIT").get("result", {})
     if not audit.get("no_escape"):

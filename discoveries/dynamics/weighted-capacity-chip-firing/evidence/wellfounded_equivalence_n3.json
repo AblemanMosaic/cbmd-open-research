@@ -1,0 +1,207 @@
+{
+ "schema": "cbmd.wellfounded-equivalence.v1",
+ "box": {
+  "n_max": 3,
+  "max_multiplicity": 2,
+  "max_sink_multiplicity": 1,
+  "capacity_range": "0..d(v)+2"
+ },
+ "theorem_A": {
+  "hypotheses_satisfied": 119251,
+  "conclusion_holds": 119251,
+  "UNSOUND": 0,
+  "INCOMPLETE": 0,
+  "unsound_samples": [],
+  "wf_by_conclusion_table": {
+   "wf_concl": 119251,
+   "wf_noconcl": 418602,
+   "nowf_concl": 0,
+   "nowf_noconcl": 260172
+  },
+  "skipped": 0
+ },
+ "theorem_B": {
+  "live_closed_agree": 244453,
+  "live_closed_DISAGREE": 0,
+  "disagree_samples": [],
+  "not_live_closed_agree": 139968,
+  "not_live_closed_disagree": 413604,
+  "not_live_closed_disagree_samples": [
+   {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     0,
+     1
+    ],
+    "live": [
+     1
+    ],
+    "wf": true,
+    "filled_set": true
+   },
+   {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     0,
+     2
+    ],
+    "live": [
+     1
+    ],
+    "wf": true,
+    "filled_set": true
+   },
+   {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     0,
+     3
+    ],
+    "live": [
+     1
+    ],
+    "wf": true,
+    "filled_set": true
+   }
+  ],
+  "systems_with_a_filled_set": 673776
+ },
+ "gates": {
+  "A_sound": true,
+  "A_hypotheses_nonvacuous": true,
+  "A_wf_necessary": true,
+  "A_wf_failure_population_nonempty": true,
+  "A_wf_alone_insufficient": true,
+  "A_exact_for_the_conclusion": true,
+  "B_exact_under_live_closed": true,
+  "B_live_closed_is_load_bearing": true,
+  "filled_sets_are_found": true,
+  "A_every_hypothesis_load_bearing": true
+ },
+ "pass": true,
+ "ablation": {
+  "well_founded": {
+   "unsound": 6,
+   "hypotheses_satisfied": 274,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     0,
+     1
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "live": [
+     0,
+     1
+    ]
+   }
+  },
+  "live_closed": {
+   "unsound": 6,
+   "hypotheses_satisfied": 379,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     0,
+     1
+    ],
+    "live": [
+     1
+    ]
+   }
+  },
+  "live_bound": {
+   "unsound": 6,
+   "hypotheses_satisfied": 211,
+   "sample": {
+    "arcs": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "sink": [
+     1,
+     0
+    ],
+    "capacity": [
+     1,
+     2
+    ],
+    "live": [
+     0,
+     1
+    ]
+   }
+  },
+  "_gate": true
+ }
+}

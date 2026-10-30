@@ -4,14 +4,14 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.4.0",
+ "public_version": "0.5.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED",
   "INDEPENDENTLY_REPRODUCED"
  ],
- "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1. Conversely, if the arc relation contains a directed cycle then preservation fails at every capacity with C(v) >= d(v); the two cases partition the model. Over arbitrary digraphs and arbitrary capacities, writing Live v for outdegree v <= capacity v, transfer holds exactly when the live subgraph is rank-ordered, satisfies outdegree v + mult u v <= capacity v + 1 on live arcs, and is closed under arcs out of live vertices.",
+ "statement": "Let a finite loopless directed multigraph have an absorbing sink, nonsink arcs strictly forward in a fixed vertex order, and every nonsink vertex reaching the sink. Let b(v) bound incoming multiplicity, m(u,v) <= b(v) for all u, and assume d(v) + b(v) <= C(v) + 1, equivalently C(v) >= d(v) + max_u m(u,v) - 1 when b is the maximum. Then capacity-blocked firing terminates and every reachable capacity-terminal state is the ordinary normal form of its initial state. The unit-edge hypothesis C(v) >= d(v) is the case b = 1. Conversely, if the arc relation contains a directed cycle then preservation fails at every capacity with C(v) >= d(v); the two cases partition the model. Over arbitrary digraphs and arbitrary capacities, writing Live v for outdegree v <= capacity v, transfer holds exactly when the live subgraph is well founded under the receiver-chasing relation LiveArc v u = Live u and Live v and mult u v > 0, satisfies outdegree v + mult u v <= capacity v + 1 on live arcs, and is closed under arcs out of live vertices. Well-foundedness is equivalent, under live-closure, to the absence of a filled-set obstruction, so the ordering half of the characterization is a proved equivalence and not a census observation.",
  "resolves": "CBMD-DYN-CAPACITY-FIRING-001 open successor: the named candidate C(v) >= d(v) + max_u m(u,v) - 1",
  "verified": [
   "The weighted overflow lemma, preservation of terminal states, and the full weighted transfer theorem compile under Lean 4.35.0 with no sorry, admit, or axiom declaration in the source.",
@@ -30,13 +30,19 @@
   "Minimality: dropping ordered-on-live makes the predicate wrong on 63,847 systems, dropping the bound on 4,998, and dropping live-closed on 393,192; no drop produces an incomplete predicate, so the conditions are independent.",
   "Necessity of the bound is proved: violating it on a live arc yields an explicit capacity-terminal state that is not ordinarily stable, with the truncated-subtraction branch handled rather than assumed away.",
   "Necessity of live-closure is proved via the two-member filled set, which depends on no axioms.",
-  "Ordering together with live-closure provably admit no filled-set obstruction at all (depends on propext alone), so the sufficient conditions are exactly strong enough to exclude the obstruction."
+  "Ordering together with live-closure provably admit no filled-set obstruction at all (depends on propext alone), so the sufficient conditions are exactly strong enough to exclude the obstruction.",
+  "Sufficiency is proved without finiteness: wf_terminal_implies_ordinary_stable replaces the rank, the bound rank v < n, and the ordering hypothesis by well-foundedness of LiveArc, and wellFounded_of_rank derives that hypothesis from the 0.3.0 ones, so the earlier sufficiency theorem is now an instance.",
+  "The obstruction is constructed directly from failure of the hypothesis: filledSetOfNotWellFounded takes membership to be non-accessibility and the arc to another non-accessible vertex as successor, using no pigeonhole, no topological order and no finiteness; a non-live vertex is accessible for free, so the witness is live with no extra hypothesis.",
+  "wellFounded_iff_no_filled_set compiles both directions: under live-closure, LiveArc is well founded exactly when no FilledSet exists. not_wellFounded_of_live_cycle gives the direction necessity needs, from a closed cycle of live vertices.",
+  "An independent content check (verification/reference/equivalence.py) tests the two statements over the same 798,025-system box by methods not shared with characterize.py: Kahn peeling for well-foundedness, a greatest-fixpoint kernel for FilledSet existence, and direct simulation of the theorem's own conclusion rather than of TRANSFER. Result: 119,251 systems satisfy the hypotheses, with 0 unsound and 0 incomplete.",
+  "The same check confirms a prediction of the revision rather than a statistic: well-foundedness failing forces the conclusion to fail, in all 260,172 such systems, with zero exceptions; an exception would refute the revision.",
+  "Anti-vacuity: well-foundedness alone is insufficient in 418,602 systems, live-closure is load-bearing for the equivalence in 413,604 systems outside it, and replacing each of the three hypotheses by True in turn produces unsoundness in every case."
  ],
  "unresolved": [
   "novelty assessment and external specialist review",
   "necessity of the bound at receivers of incoming multiplicity one",
   "non-absorbing sinks",
-  "the step from 'no rank function on the live subgraph' to a concrete directed cycle: the classical finite-digraph topological-order fact, not proved here and the sole gap between the compiled theorems and the census"
+  "that a finite acyclic live subgraph is well founded: the classical finite-digraph fact, no longer used inside any theorem and now only the justification for deciding the hypothesis by cycle detection in the census"
  ],
  "nonclaims": [
   "not a novelty determination; the capacity rule is classical finite-capacity Petri-net semantics and the ordinary chip-firing theory is classical and assumed",
@@ -44,7 +50,8 @@
   "finite enumeration corroborates the theorem and does not prove it",
   "ordinary well-foundedness and uniqueness enter as explicit hypotheses and are not proved here",
   "the cycle obstruction assumes every vertex has positive outdegree and says nothing about capacities below d(v)",
-  "the characterization's exactness is a finite census result, not a proved equivalence"
+  "the ordering half of the characterization is now a proved equivalence; the exactness of the full three-condition predicate over the enumerated box remains a finite census result",
+  "Classical.choice is genuinely used to build the obstruction's successor map and is not eliminated"
  ],
  "smallest_decisive_test": "Exhibit an ordered multigraph satisfying d(v) + max_u m(u,v) <= C(v) + 1 with a reachable capacity-terminal state that is not the ordinary normal form of its initial state; or a reference proving the same preservation statement with an explicit semantic translation.",
  "checks": [
@@ -73,6 +80,17 @@
     "python",
     "-B",
     "discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/characterize.py"
+   ],
+   "required": false
+  },
+  {
+   "id": "WEIGHTED_WELLFOUNDED_EQUIVALENCE_N3",
+   "command": [
+    "python",
+    "-I",
+    "-B",
+    "discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/equivalence.py",
+    "3"
    ],
    "required": false
   }

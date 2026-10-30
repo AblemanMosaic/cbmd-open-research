@@ -98,15 +98,52 @@ systems respectively).
 
 Sufficiency is proved, and so is the necessity of the bound and of live-closure,
 each by an explicit compiled witness. Ordering plus live-closure also provably
-exclude every obstruction of this shape. The **one** step not proved is turning
-"no rank function exists" into a concrete cycle — the classical finite-digraph
-topological-order fact, not specific to this model. See
+exclude every obstruction of this shape. See
 [`revisions/0.4.0-necessity.md`](revisions/0.4.0-necessity.md).
 
 Both failures are also now **one** theorem. `filled_set_obstruction`: fill any
 set whose live members point back into it, empty the rest, and the state is
 capacity-terminal but not ordinarily stable. The cycle and the live-to-dead case
 are instances. See [`revisions/0.3.0-characterization.md`](revisions/0.3.0-characterization.md).
+
+## The ordering condition becomes an equivalence (revision 0.5.0)
+
+Condition 1 above carried an unproved step: *no rank function exists* had to be
+turned into a concrete obstruction, which is the classical finite-digraph fact
+that an acyclic finite relation admits a topological order. That step is now
+gone — not proved, but no longer needed.
+
+Replace the rank by well-foundedness of the receiver-chasing relation
+
+```
+LiveArc v u   iff   Live u  and  Live v  and  mult u v > 0
+```
+
+Then sufficiency holds with **no finiteness at all**
+(`wf_terminal_implies_ordinary_stable`), and the old hypotheses are recovered as
+an instance (`wellFounded_of_rank`). More to the point, the obstruction can be
+built directly out of the hypothesis failing: take membership to be *"not
+accessible"*; from an inaccessible vertex there is always an arc to another
+inaccessible vertex, and that is exactly the successor map a filled set needs.
+A vertex that is not live is accessible for free, so the witness is live with no
+extra hypothesis. The two directions give
+
+```lean
+wellFounded_iff_no_filled_set :
+  WellFounded (LiveArc ..) ↔ (FilledSet .. → False)      -- under live-closure
+```
+
+What is still imported is only that a *finite acyclic* live subgraph is well
+founded — the statement that lets the census **decide** the hypothesis by cycle
+detection. It is no longer a step inside any theorem.
+
+A content check written not to share machinery with the census — Kahn peeling
+for well-foundedness, a greatest-fixpoint kernel for filled sets, direct
+simulation of the theorem's own conclusion — agrees over the same 798,025
+systems: 0 unsound, 0 incomplete. It also confirms a *prediction*: well-
+foundedness failing forces the conclusion to fail, with zero exceptions in
+260,172 systems. See
+[`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
 ## What remains unresolved
 
@@ -145,7 +182,9 @@ python -B discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/r
 
 - `argument/`: the exact model, the obstruction lemma, and both theorems in prose.
 - `verification/lean/`: the Lean 4.35.0 sources, custody audit and replay driver.
-- `verification/reference/`: the finite bound search with its transfer and confluence controls.
+- `verification/reference/`: the finite bound search with its transfer and
+  confluence controls, the exactness census, and the well-foundedness check
+  with its hypothesis ablation.
 - `verification/independent/`: a separately written check of the theorem's conclusion.
 - `evidence/`: search output, independent-check output, and the Lean receipt.
 - `review/`: the bounded prior-art note and its recorded queries.
