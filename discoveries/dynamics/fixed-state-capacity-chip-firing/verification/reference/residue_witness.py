@@ -27,6 +27,10 @@ Gates (each required):
       - largest-fit and smallest-fit greedy runs each fail to find a stuck run
         on some instance that has one, so the question is not settled by a
         fixed greedy order;
+  * SCOPE: with two receivers the residue condition is necessary but NOT
+    sufficient -- an explicit two-receiver system has a residue witness and,
+    by exact simulation, no reachable bad terminal state -- so the conjecture
+    is specific to the single-receiver star;
   * OBSERVATIONS (recorded, not gated): whether some witness of minimum fired
     total has a fired set that some order packs completely, whether the
     largest-fit order does, and whether every order does.  The every-order form held up to B = 10, k = 6 and FAILS in the
@@ -172,6 +176,34 @@ def simulated_bad(a, B):
     return any(t != onf for t in T)
 
 
+TWO_RECEIVER = ([[3, 1], [1, 2], [3, 3], [0, 2], [0, 1]], [4, 6])
+
+
+def two_receiver_system(A, Bs):
+    """Senders i hold sum_j A[i][j] chips (outdegree = capacity = that), feeding
+    receivers j (outdegree = capacity = Bs[j]) which drain to the sink."""
+    k, d = len(A), len(Bs)
+    n = k + d
+    M = [[0] * n for _ in range(n)]
+    for i in range(k):
+        for j in range(d):
+            M[i][k + j] = A[i][j]
+    s = [0] * k + list(Bs)
+    out = [sum(row) for row in A] + list(Bs)
+    x = tuple(sum(row) for row in A) + (0,) * d
+    return M, s, out, n, x
+
+
+def residue_witness_multi(A, Bs):
+    k, d = len(A), len(Bs)
+    found = []
+    for m in range((1 << k) - 1):
+        r = [sum(A[i][j] for i in range(k) if m >> i & 1) % Bs[j] for j in range(d)]
+        if all(any(r[j] + A[i][j] > Bs[j] for j in range(d)) for i in range(k) if not m >> i & 1):
+            found.append(m)
+    return found
+
+
 def main():
     seed = int(sys.argv[1]) if len(sys.argv) > 1 else 20261030
     rng = random.Random(seed)
@@ -236,6 +268,15 @@ def main():
         if simulated_bad(a, B) != stuck_reachable(a, B):
             sim["disagreements"] += 1
             examples.setdefault("simulation_disagreement", [a, B])
+    A2, B2 = TWO_RECEIVER
+    M, s2, c2, n2, x2 = two_receiver_system(A2, B2)
+    T2 = cap_terminals(M, s2, c2, n2, x2)
+    onf2 = ordinary_normal(M, s2, n2, x2)
+    two = {"system": {"A": A2, "B": B2},
+           "residue_witnesses": [[i for i in range(len(A2)) if w >> i & 1]
+                                 for w in residue_witness_multi(A2, B2)],
+           "terminal_states": len(T2) if T2 is not None else None,
+           "bad_terminal_reachable": (any(t != onf2 for t in T2) if T2 is not None else None)}
     gates = {
         "SOUND_stuck_implies_witness": counts["sound_fail"] == 0 and counts["stuck"] > 0,
         "CONJECTURE_witness_implies_stuck_no_counterexample": counts["conj_fail"] == 0,
@@ -246,11 +287,13 @@ def main():
         "CONTROL_largest_fit_greedy_bites": counts["largest_fit_misses"] > 0,
         "CONTROL_smallest_fit_greedy_bites": counts["smallest_fit_misses"] > 0,
         "oversize_bundles_covered": counts["oversize_instances"] > 0,
+        "SCOPE_two_receivers_witness_not_sufficient":
+            bool(two["residue_witnesses"]) and two["bad_terminal_reachable"] is False,
     }
     out = {"schema": "cbmd.fixed-state-residue-witness.v1",
            "range": {"B": [1, B_MAX], "k": [1, K_MAX],
                      "bundles": "all multisets with entries 1..B (1..B+1 when k <= 4)"},
-           "seed": seed, "counts": counts, "simulation": sim, "examples": examples,
+           "seed": seed, "counts": counts, "simulation": sim, "two_receiver_scope": two, "examples": examples,
            "gates": gates, "status": "PASS" if all(gates.values()) else "FAIL",
            "nonclaims": ["the CONJECTURE gate is exhaustive evidence in range, not a proof",
                          "the DP decider is checked against the definition, not proved in Lean"],

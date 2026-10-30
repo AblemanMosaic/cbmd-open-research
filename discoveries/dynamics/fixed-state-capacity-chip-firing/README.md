@@ -83,7 +83,9 @@ not ordinarily stable. On the star:
   run. Sharper: for a witness of least fired total, firing its set
   largest-fit-first realises it. The evidence is exhaustive: all 500,461 star instances with B ≤ 13 and k ≤ 8, no counterexample. If the conjecture holds,
   "can it end badly?" is pseudo-polynomial on stars while "can it end well?" is
-  strongly NP-hard there.
+  strongly NP-hard there. The conjecture is specific to one receiver. With two
+  receivers an explicit system has a witness but, by exact simulation, no bad
+  ending.
 
 ## What remains unresolved
 

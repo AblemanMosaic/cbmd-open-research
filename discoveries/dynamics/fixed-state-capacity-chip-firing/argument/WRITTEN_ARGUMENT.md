@@ -144,6 +144,20 @@ largest-fit-first never gets stuck before the set is exhausted. The run then
 ends at fill `(Σ_F a) mod B`, with every unfired bundle blocked. That would prove the conjecture, but it needs an argument
 this revision does not have.
 
+**The conjecture is specific to one receiver.** With several receivers, the
+same reasoning shows that each receiver's fill is the residue of its own fired
+total. So a stuck run still yields a vector residue witness, and the condition
+is still necessary. It is not sufficient. Take five senders whose bundles split
+between two receivers of capacity 4 and 6 as `(3,1), (1,2), (3,3), (0,2),
+(0,1)`. The set {1st, 3rd, 5th} is a witness: residues `(2, 5)`, and both
+other senders overflow the second receiver. Yet exact simulation finds only one
+terminal state, the normal form. To realise the witness, the first receiver
+would have to close a block of 4 after the first sender's 3, and the only
+bundle that can supply that 1 belongs to a sender the witness leaves unfired.
+Random search found this instance among 23,741 two- and three-receiver
+systems. It is checked against the weighted dossier's simulator in
+`residue_witness.py`.
+
 **Binary encoding.** With the numbers in binary, the witness condition is a
 subset-residue problem with a window. Whether FIXED-BAD on stars is NP-hard in
 that encoding is not determined here.

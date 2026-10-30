@@ -50,6 +50,7 @@
   "CONTROL_single_bin_rule_bites": true,
   "CONTROL_smallest_fit_greedy_bites": true,
   "DP_decider_matches_definition": true,
+  "SCOPE_two_receivers_witness_not_sufficient": true,
   "SIMULATION_agrees": true,
   "SOUND_stuck_implies_witness": true,
   "oversize_bundles_covered": true
@@ -75,5 +76,44 @@
   "disagreements": 0,
   "samples": 400
  },
- "status": "PASS"
+ "status": "PASS",
+ "two_receiver_scope": {
+  "bad_terminal_reachable": false,
+  "residue_witnesses": [
+   [
+    0,
+    2,
+    4
+   ]
+  ],
+  "system": {
+   "A": [
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     1
+    ]
+   ],
+   "B": [
+    4,
+    6
+   ]
+  },
+  "terminal_states": 1
+ }
 }
