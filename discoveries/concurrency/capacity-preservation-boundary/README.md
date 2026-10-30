@@ -2,7 +2,8 @@
 
 > **Pipeline stage:** `REVIEW_READY`
 >
-> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`
+> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `SOURCE_BOUND_COMPILED`,
+> `EXACT_MODEL_VERIFIED`
 
 Permanent discovery ID: `CBMD-CON-CAPACITY-PRESERVATION-001`
 
@@ -34,6 +35,36 @@ marking is a deadlock the capacity invented.
   transitions can fire at all leaves the conditions unsound over three boxes
   (64, 7,200 and 552 witnesses).
 
+## One region is now proved (revision 0.2.0)
+
+Everything above is census. One part of the map is now a theorem.
+
+Call a net **increasing** when every transition strictly increases the token
+count at some place, and **inert** at `C` when no transition can ever fire
+inside the box.
+
+> For an increasing net, `PRESERVES(N, C)` holds **exactly when** the net is
+> inert at `C`.
+
+The whole proof is one marking. Take `m = C`. Firing any transition from it
+would push its strictly-increasing place over capacity, so `C` is capacity-dead;
+and any transition whose inputs fit inside the capacities is ordinarily enabled
+there. So an increasing net is either frozen or broken, with nothing in between,
+and raising the capacities does not help because the witness is rebuilt from
+whatever the capacities are.
+
+This says something about the predecessor rather than only about Petri nets.
+A chip-firing transition increases a place — *unless* the receiver is the
+absorbing sink, which carries no capacity. The sink is the only thing keeping
+chip-firing outside this hypothesis.
+
+Compiled in Lean 4.35.0 with no proof escape and without `Classical.choice`,
+including the modelling step that admissible markings and capacity-reachable
+markings are the same set. Corroborated over 37,197 nets in the class with zero
+disagreements, of which 25,586 are non-inert; the hypothesis is load-bearing,
+since outside the class the conclusion is wrong on 39,464 nets. See
+[`revisions/0.2.0-allfull-obstruction.md`](revisions/0.2.0-allfull-obstruction.md).
+
 ## The mechanism
 
 The descent argument certifies one place at a time: this receiver is full, so it
@@ -50,8 +81,10 @@ not enabled because its other input is short.
   the natural one is refuted here, with witnesses; no impossibility is claimed.
 - Novelty. The nearest named notions are implicit places and non-blockingness of
   bounded nets; neither is this statement. See [`review/README.md`](review/README.md).
-- Everything here is a finite census over stated boxes. No unbounded theorem
-  about general Petri nets is established.
+- Whether the **draining** case — some transition that increases nothing —
+  admits any comparable characterization. The all-full witness does not reach it.
+- Apart from the all-full obstruction, everything here is a finite census over
+  stated boxes.
 
 ## Smallest decisive tests
 
@@ -64,4 +97,10 @@ not enabled because its other input is short.
 
 ```text
 python -B discoveries/concurrency/capacity-preservation-boundary/verification/run_checks.py
+```
+
+With the pinned toolchain available:
+
+```text
+python -B discoveries/concurrency/capacity-preservation-boundary/verification/lean/replay.py --build
 ```

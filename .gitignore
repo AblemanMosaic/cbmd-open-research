@@ -10,3 +10,4 @@ proofs/native/.lake/
 discoveries/dynamics/finite-capacity-chip-firing/verification/lean/.lake/
 .cbmd-work/
 discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/.lake/
+discoveries/concurrency/capacity-preservation-boundary/verification/lean/.lake/

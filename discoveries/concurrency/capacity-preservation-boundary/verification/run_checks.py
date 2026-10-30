@@ -9,13 +9,17 @@ import json, sys
 from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import petri2, boundary, general
+import petri2, boundary, general, allfull
 
 def main() -> int:
     translation = petri2.run(2, 2, 2, 3)
     relax = [boundary.run(r) for r in ("none", "selffeed", "shared", "multi_input")]
     gen = general.run(2, 2, 2, 2)
+    af = allfull.run()
     gates = []
+    for gate, ok in af["gates"].items():
+        if not ok:
+            gates.append(f"all-full obstruction gate failed: {gate}")
     if not translation["exact"]:
         gates.append("the chip-firing-shaped translation is no longer exact")
     if translation["chipfiring_shaped_systems"] == 0:
@@ -32,16 +36,23 @@ def main() -> int:
             gates.append(f"relaxation '{r}' produced no unsound case; load-bearing claim unsupported")
     if gen["UNSOUND"] == 0:
         gates.append("the generalized conditions were not shown unsound")
+    audit = json.loads(__import__("subprocess").run(
+        [sys.executable, "-B", str(HERE / "lean" / "replay.py"), "--audit-only"],
+        capture_output=True, text=True).stdout or "{}")
+    if not audit.get("no_escape"):
+        gates.append("Lean source audit found a proof escape")
     out = {"schema": "cbmd.capacity-preservation-boundary-checks.v1",
            "chipfiring_translation": translation,
            "relaxation_boundary": relax,
            "generalized_conditions": gen,
+           "allfull_obstruction": af,
            "content_gate_failures": gates,
            "status": "PASS" if not gates else "FAIL",
            "nonclaims": [
                "finite censuses over the stated boxes; no unbounded theorem is established here",
                "the chip-firing characterization itself is proved in CBMD-DYN-WEIGHTED-CAPACITY-001; this dossier only maps where it transfers",
                "no claim that NO local capacity condition can repair the multi-input case",
+               "the all-full obstruction is proved in verification/lean/; the census here corroborates it and is not the proof",
            ],
            "authority_effect": "NONE"}
     print(json.dumps(out, indent=1))

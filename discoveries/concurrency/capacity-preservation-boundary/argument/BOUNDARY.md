@@ -103,3 +103,62 @@ Finite censuses over the stated boxes. The chip-firing characterization itself
 is proved and compiled in `CBMD-DYN-WEIGHTED-CAPACITY-001`; this dossier maps
 where it transfers and gives witnesses where it does not. No unbounded theorem
 about general Petri nets is established, and novelty is unassessed.
+
+## The increasing class, proved
+
+Everything above is census. This section is a theorem, compiled in
+[`../verification/lean/`](../verification/lean/).
+
+Call a net **increasing** when every transition strictly increases the token
+count at some place:
+
+```
+for every t there is a q with  post(t, q) > pre(t, q)
+```
+
+and **inert** at a capacity vector `C` when no transition can ever fire inside
+the box:
+
+```
+for every t there is a q with  C(q) < pre(t, q)
+```
+
+> **Theorem (all-full obstruction).** For an increasing net,
+> `PRESERVES(N, C)` holds if and only if `N` is inert at `C`.
+
+*Proof.* Suppose `N` is inert. At any admissible `m` and any `t`, pick `q` with
+`C(q) < pre(t,q)`; then `m(q) ≤ C(q) < pre(t,q)`, so `t` is not ordinarily
+enabled. No admissible marking enables anything, so preservation holds.
+
+Suppose `N` is not inert, so some `t₀` has `pre(t₀,q) ≤ C(q)` at every `q`.
+Take the marking `m = C`, which is admissible. For any `t`, pick `q` with
+`post(t,q) > pre(t,q)`. Either `t` is not ordinarily enabled at `C`, and then
+not capacity enabled; or it is, and then `pre(t,q) ≤ C(q)`, so firing would
+leave `C(q) − pre(t,q) + post(t,q) > C(q)`, which the capacity refuses. Either
+way `t` is not capacity enabled, so `C` is capacity-dead. But `t₀` is ordinarily
+enabled at `C`. Preservation fails. ∎
+
+Three remarks.
+
+**No capacity escapes it.** The witness is the capacity vector itself, so
+raising capacities reruns the same argument at the new all-full marking. This is
+the shape of the filled-set obstruction in the predecessor dossier, with the
+filled set taken to be every place.
+
+**It explains the sink.** A chip-firing vertex's transition adds chips to its
+out-neighbours, so it increases a place — unless the receiver is the absorbing
+sink, which carries no capacity and is therefore not a place of this model at
+all. The sink is precisely what keeps chip-firing out of the hypothesis. Read in
+reverse, the theorem says a capacitated chip-firing model without a sink cannot
+work, whatever capacities are chosen.
+
+**The hypothesis is not decoration.** Outside the increasing class the
+conclusion is simply false: a net whose transitions only drain can fire happily
+and still invent no deadlock. In the measured boxes the conclusion would be
+wrong on 39,464 such nets.
+
+The modelling step is proved too. The census quantifies over markings
+capacity-reachable from an admissible initial marking; the theorem quantifies
+over admissible markings. `preserves_iff_reachable_form` shows these agree,
+because capacity firing cannot leave the box and every admissible marking is
+reachable from itself.

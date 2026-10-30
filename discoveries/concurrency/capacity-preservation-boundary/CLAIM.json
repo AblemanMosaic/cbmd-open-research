@@ -4,28 +4,36 @@
  "title": "Where the capacity-preservation characterization transfers, and where it stops",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.1.0",
+ "public_version": "0.2.0",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
+  "SOURCE_BOUND_COMPILED",
   "EXACT_MODEL_VERIFIED"
  ],
- "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all.",
+ "statement": "In Petri nets with place capacities, asking whether every capacity-reachable capacity-dead marking is also dead in the uncapacitated net: the live-set characterization of CBMD-DYN-WEIGHTED-CAPACITY-001 transfers exactly to chip-firing-shaped nets (one input place per transition, distinct across transitions, no self-feedback); it remains sound but becomes incomplete if self-feedback is allowed; and it becomes unsound once a place has two consumers or a transition has two input places, as does the natural refinement that tracks which transitions can fire at all. One region of that boundary is now proved rather than censused: if every transition strictly increases the count at some place, then the net preserves the uncapacitated deadlock behaviour exactly when no transition can ever fire inside the capacity box. The witness is the all-full marking itself, so no enlargement of the capacities escapes it; the hypothesis fails precisely for transitions that drain, which is what an absorbing sink supplies and why chip-firing is not covered by it.",
  "verified": [
   "Exact transfer to chip-firing-shaped nets: zero unsound and zero incomplete over 1,152 systems (2 places, 2 transitions, weights <=2, capacities <=3) and 10,368 systems (3 places, 3 transitions, weights <=1, capacities <=2), in a model coded independently of the chip-firing dossier.",
   "Self-feedback relaxation yields 1,636 incomplete cases and zero unsound ones over the newly admitted nets, so sufficiency survives it.",
   "Shared consumption yields 80 unsound witnesses and conjunctive input yields 48, with minimal two-place examples recorded.",
-  "The usable-transition refinement of liveness remains unsound over three boxes, with 64, 7,200 and 552 witnesses."
+  "The usable-transition refinement of liveness remains unsound over three boxes, with 64, 7,200 and 552 witnesses.",
+  "The all-full obstruction compiles under Lean 4.35.0 with no sorry, admit or axiom declaration: increasing_preserves_iff_inert, with observed axioms [propext, Quot.sound] and no use of Classical.choice.",
+  "The modelling step is proved rather than asserted: preserves_iff_reachable_form shows that quantifying over admissible markings and over markings capacity-reachable from admissible ones give the same property, since capacity firing stays inside the box (fire_admissible, no axioms) and every admissible marking is reachable from itself.",
+  "Census corroboration over 37,197 nets inside the class across three boxes: zero disagreements with the proved equivalence, of which 25,586 are non-inert, so the claim that all of those fail is doing work.",
+  "The increasing hypothesis is load-bearing, not decoration: outside the class the conclusion would be wrong on 39,464 nets, all of them with a draining transition."
  ],
  "unresolved": [
   "whether some other local capacity condition repairs the multi-input case; only the natural refinement is refuted",
   "targeted novelty comparison against bounded-Petri-net structural conditions",
-  "external review"
+  "external review",
+  "whether the non-increasing (draining) case admits any comparable characterization; the all-full witness does not apply there"
  ],
  "nonclaims": [
   "finite censuses over stated boxes; no unbounded theorem about general Petri nets",
   "no claim that NO local capacity condition can repair the multi-input case",
   "the chip-firing characterization itself is proved elsewhere; this dossier only maps its reach",
-  "not a novelty determination"
+  "not a novelty determination",
+  "the all-full obstruction is proved only for nets in which every transition strictly increases some place; chip-firing with an absorbing sink is outside it, which is the point",
+  "the census in verification/allfull.py corroborates the Lean theorem and is not the proof"
  ],
  "smallest_decisive_test": "Exhibit a chip-firing-shaped net satisfying the conditions with a capacity-dead, ordinarily enabled marking; or a per-place capacity condition that is sound over the multi-input boxes where the usable-transition refinement fails.",
  "checks": [
@@ -35,6 +43,16 @@
     "python",
     "-B",
     "discoveries/concurrency/capacity-preservation-boundary/verification/run_checks.py"
+   ],
+   "required": true
+  },
+  {
+   "id": "CAPACITY_BOUNDARY_LEAN_AUDIT",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/concurrency/capacity-preservation-boundary/verification/lean/replay.py",
+    "--audit-only"
    ],
    "required": true
   }

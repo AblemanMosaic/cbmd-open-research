@@ -1,0 +1,6 @@
+name = "CBMDPetriCapacity"
+version = "0.1.0"
+defaultTargets = ["CBMDPetriCapacity"]
+
+[[lean_lib]]
+name = "CBMDPetriCapacity"

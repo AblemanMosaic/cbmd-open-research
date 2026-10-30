@@ -478,12 +478,393 @@
    }
   ]
  },
+ "allfull_obstruction": {
+  "schema": "cbmd.petri-allfull-obstruction.v1",
+  "censuses": [
+   {
+    "box": {
+     "places": 2,
+     "transitions": 2,
+     "max_arc_weight": 2,
+     "max_capacity": 2
+    },
+    "inside_the_class": {
+     "members": 12321,
+     "agree": 12321,
+     "DISAGREE": 0,
+     "non_inert_members": 7514,
+     "samples": []
+    },
+    "outside_the_class": {
+     "members": 33759,
+     "conclusion_would_be_wrong_on": 8666,
+     "samples": [
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        2
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        1,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      }
+     ]
+    },
+    "skipped": 0
+   },
+   {
+    "box": {
+     "places": 3,
+     "transitions": 2,
+     "max_arc_weight": 1,
+     "max_capacity": 2
+    },
+    "inside_the_class": {
+     "members": 24300,
+     "agree": 24300,
+     "DISAGREE": 0,
+     "non_inert_members": 17592,
+     "samples": []
+    },
+    "outside_the_class": {
+     "members": 59049,
+     "conclusion_would_be_wrong_on": 21414,
+     "samples": [
+      {
+       "pre": [
+        [
+         0,
+         0,
+         1
+        ],
+        [
+         0,
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        0,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         0,
+         1
+        ],
+        [
+         0,
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        0,
+        2
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         0,
+         1
+        ],
+        [
+         0,
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0,
+         0
+        ],
+        [
+         0,
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        1,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      }
+     ]
+    },
+    "skipped": 0
+   },
+   {
+    "box": {
+     "places": 2,
+     "transitions": 3,
+     "max_arc_weight": 1,
+     "max_capacity": 2
+    },
+    "inside_the_class": {
+     "members": 576,
+     "agree": 576,
+     "DISAGREE": 0,
+     "non_inert_members": 480,
+     "samples": []
+    },
+    "outside_the_class": {
+     "members": 14733,
+     "conclusion_would_be_wrong_on": 9384,
+     "samples": [
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        0,
+        2
+       ],
+       "preserves": true,
+       "inert": false
+      },
+      {
+       "pre": [
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         0,
+         1
+        ]
+       ],
+       "post": [
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "capacity": [
+        1,
+        1
+       ],
+       "preserves": true,
+       "inert": false
+      }
+     ]
+    },
+    "skipped": 0
+   }
+  ],
+  "totals": {
+   "inside_the_class": 37197,
+   "disagreements": 0,
+   "non_inert_members": 25586,
+   "outside_where_conclusion_would_be_wrong": 39464
+  },
+  "gates": {
+   "equivalence_holds_inside_the_class": true,
+   "class_is_populated": true,
+   "class_contains_non_inert_nets": true,
+   "hypothesis_is_load_bearing": true
+  },
+  "pass": true,
+  "nonclaims": [
+   "finite censuses over stated boxes; the unbounded statement is the Lean theorem, not this script",
+   "agreement inside the class is corroboration of a proof, not the proof"
+  ],
+  "authority_effect": "NONE"
+ },
  "content_gate_failures": [],
  "status": "PASS",
  "nonclaims": [
   "finite censuses over the stated boxes; no unbounded theorem is established here",
   "the chip-firing characterization itself is proved in CBMD-DYN-WEIGHTED-CAPACITY-001; this dossier only maps where it transfers",
-  "no claim that NO local capacity condition can repair the multi-input case"
+  "no claim that NO local capacity condition can repair the multi-input case",
+  "the all-full obstruction is proved in verification/lean/; the census here corroborates it and is not the proof"
  ],
  "authority_effect": "NONE"
 }

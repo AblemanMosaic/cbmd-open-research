@@ -1,161 +1,162 @@
 {
-  "schema": "cbmd.open-research.discovery-registry.v1",
-  "repository_standing": "PUBLIC_PROVISIONAL_RESEARCH_TOOLKIT_V0_1",
-  "discoveries": [
-    {
-      "id": "CBMD-ECH-G2-LS-001",
-      "field": "ech",
-      "slug": "genus-two-low-sector",
-      "path": "discoveries/ech/genus-two-low-sector",
-      "title": "Genus-two low-sector pairing",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations.",
-      "promotion_blockers": [],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "EXACT_MODEL_VERIFIED",
-        "GEOMETRIC_TRANSPORT_UNRESOLVED"
-      ]
-    },
-    {
-      "id": "CBMD-COMB-OWNER-FIBER-001",
-      "field": "combinatorics",
-      "slug": "owner-fiber-structure",
-      "path": "discoveries/combinatorics/owner-fiber-structure",
-      "title": "Owner-fiber structure and support",
-      "pipeline_stage": "QUALIFYING",
-      "next_obligation": "State and compile the correspondence to the exact packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches.",
-      "promotion_blockers": [
-        "source-bound formal correspondence not stated",
-        "multi-block packing not modelled",
-        "novelty unassessed"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "EXACT_MODEL_VERIFIED",
-        "REVISED"
-      ]
-    },
-    {
-      "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
-      "field": "combinatorics",
-      "slug": "parity-amplitude-spectrum",
-      "path": "discoveries/combinatorics/parity-amplitude-spectrum",
-      "title": "Classical Krawtchouk identification and native vanishing",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements.",
-      "promotion_blockers": [
-        "source-specific novelty and external review remain unassessed"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "REVISED"
-      ]
-    },
-    {
-      "id": "CBMD-ALG-AMPLITUDE-COST-001",
-      "field": "algorithms",
-      "slug": "reference-amplitude-cost-model",
-      "path": "discoveries/algorithms/reference-amplitude-cost-model",
-      "title": "Reference amplitude cost model (no native speedup claim)",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Review the reference-only cost model and parameter regimes; the successor native evaluator is tracked separately.",
-      "promotion_blockers": [],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "EXACT_MODEL_VERIFIED"
-      ]
-    },
-    {
-      "id": "CBMD-ALG-NATIVE-JOINT-001",
-      "field": "algorithms",
-      "slug": "native-joint-realization",
-      "path": "discoveries/algorithms/native-joint-realization",
-      "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Bind one executable native consumer and charge the complete per-cell and traversal route before making any speed claim.",
-      "promotion_blockers": [
-        "whole-cell and whole-algorithm costs remain unproved",
-        "external review and novelty assessment remain open"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT"
-      ]
-    },
-    {
-      "id": "CBMD-ALG-RESIDUE-LIFT-001",
-      "field": "algebra",
-      "slug": "residue-lift-transport-boundaries",
-      "path": "discoveries/algebra/residue-lift-transport-boundaries",
-      "title": "Residue and lift transport boundaries",
-      "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Extract and independently replay the inherited selected-degree-six source fixture at residue and two lifted precisions, and settle whether a full-digit base-three criterion exists off the central line.",
-      "promotion_blockers": [
-        "inherited degree-six source fixture not yet extracted",
-        "independent source-correspondence check open",
-        "novelty unassessed"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "EXACT_MODEL_VERIFIED",
-        "REVISED"
-      ]
-    },
-    {
-      "id": "CBMD-DYN-CAPACITY-FIRING-001",
-      "field": "dynamics",
-      "slug": "finite-capacity-chip-firing",
-      "path": "discoveries/dynamics/finite-capacity-chip-firing",
-      "title": "Finite-capacity chip-firing preservation on ordered DAGs",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Determine whether the weighted successor's prior art is settled; the sharp weighted candidate C(v) >= d(v) + max_u m(u,v) - 1 is now compiled as CBMD-DYN-WEIGHTED-CAPACITY-001.",
-      "promotion_blockers": [
-        "specialist novelty and prior-art assessment remains open",
-        "external graph-instance decoding is not certified by the Lean theorem"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "SOURCE_BOUND_COMPILED",
-        "EXACT_MODEL_VERIFIED",
-        "INDEPENDENTLY_REPRODUCED"
-      ]
-    },
-    {
-      "id": "CBMD-DYN-WEIGHTED-CAPACITY-001",
-      "field": "dynamics",
-      "slug": "weighted-capacity-chip-firing",
-      "path": "discoveries/dynamics/weighted-capacity-chip-firing",
-      "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Obtain a targeted prior-art assessment of the weighted threshold and the cycle obstruction against the bounded-Petri-net deadlock and capacity-constrained abelian network literature, and an external review of the Lean-to-prose correspondence.",
-      "promotion_blockers": [
-        "specialist novelty and prior-art assessment remains open",
-        "external independent verification remains open",
-        "exhaustiveness of the three live-set conditions is a census result, not proved"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "SOURCE_BOUND_COMPILED",
-        "EXACT_MODEL_VERIFIED",
-        "INDEPENDENTLY_REPRODUCED"
-      ]
-    },
-    {
-      "id": "CBMD-CON-CAPACITY-PRESERVATION-001",
-      "field": "concurrency",
-      "slug": "capacity-preservation-boundary",
-      "path": "discoveries/concurrency/capacity-preservation-boundary",
-      "title": "Where the capacity-preservation characterization transfers, and where it stops",
-      "pipeline_stage": "REVIEW_READY",
-      "next_obligation": "Decide whether any local per-place capacity condition is sound for multi-input transitions, or record an impossibility; and run a targeted prior-art comparison against structural conditions in the bounded-Petri-net literature.",
-      "promotion_blockers": [
-        "novelty and prior-art assessment open",
-        "external review open"
-      ],
-      "status": [
-        "PROVISIONAL_WRITTEN_ARGUMENT",
-        "EXACT_MODEL_VERIFIED"
-      ]
-    }
-  ]
+ "schema": "cbmd.open-research.discovery-registry.v1",
+ "repository_standing": "PUBLIC_PROVISIONAL_RESEARCH_TOOLKIT_V0_1",
+ "discoveries": [
+  {
+   "id": "CBMD-ECH-G2-LS-001",
+   "field": "ech",
+   "slug": "genus-two-low-sector",
+   "path": "discoveries/ech/genus-two-low-sector",
+   "title": "Genus-two low-sector pairing",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations.",
+   "promotion_blockers": [],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED",
+    "GEOMETRIC_TRANSPORT_UNRESOLVED"
+   ]
+  },
+  {
+   "id": "CBMD-COMB-OWNER-FIBER-001",
+   "field": "combinatorics",
+   "slug": "owner-fiber-structure",
+   "path": "discoveries/combinatorics/owner-fiber-structure",
+   "title": "Owner-fiber structure and support",
+   "pipeline_stage": "QUALIFYING",
+   "next_obligation": "State and compile the correspondence to the exact packed source definitions, preserving the missing-address, first-occurrence, repeated-incidence, uncovered-target and exact-owner branches.",
+   "promotion_blockers": [
+    "source-bound formal correspondence not stated",
+    "multi-block packing not modelled",
+    "novelty unassessed"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED",
+    "REVISED"
+   ]
+  },
+  {
+   "id": "CBMD-COMB-PARITY-AMPLITUDE-001",
+   "field": "combinatorics",
+   "slug": "parity-amplitude-spectrum",
+   "path": "discoveries/combinatorics/parity-amplitude-spectrum",
+   "title": "Classical Krawtchouk identification and native vanishing",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Obtain an independent source-specific derivation, convention audit, and targeted prior-art assessment of the native coefficient and vanishing statements.",
+   "promotion_blockers": [
+    "source-specific novelty and external review remain unassessed"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "REVISED"
+   ]
+  },
+  {
+   "id": "CBMD-ALG-AMPLITUDE-COST-001",
+   "field": "algorithms",
+   "slug": "reference-amplitude-cost-model",
+   "path": "discoveries/algorithms/reference-amplitude-cost-model",
+   "title": "Reference amplitude cost model (no native speedup claim)",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Review the reference-only cost model and parameter regimes; the successor native evaluator is tracked separately.",
+   "promotion_blockers": [],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED"
+   ]
+  },
+  {
+   "id": "CBMD-ALG-NATIVE-JOINT-001",
+   "field": "algorithms",
+   "slug": "native-joint-realization",
+   "path": "discoveries/algorithms/native-joint-realization",
+   "title": "Source-equal joint evaluator and BCM-1 arithmetic counts",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Bind one executable native consumer and charge the complete per-cell and traversal route before making any speed claim.",
+   "promotion_blockers": [
+    "whole-cell and whole-algorithm costs remain unproved",
+    "external review and novelty assessment remain open"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT"
+   ]
+  },
+  {
+   "id": "CBMD-ALG-RESIDUE-LIFT-001",
+   "field": "algebra",
+   "slug": "residue-lift-transport-boundaries",
+   "path": "discoveries/algebra/residue-lift-transport-boundaries",
+   "title": "Residue and lift transport boundaries",
+   "pipeline_stage": "QUALIFYING",
+   "next_obligation": "Extract and independently replay the inherited selected-degree-six source fixture at residue and two lifted precisions, and settle whether a full-digit base-three criterion exists off the central line.",
+   "promotion_blockers": [
+    "inherited degree-six source fixture not yet extracted",
+    "independent source-correspondence check open",
+    "novelty unassessed"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "EXACT_MODEL_VERIFIED",
+    "REVISED"
+   ]
+  },
+  {
+   "id": "CBMD-DYN-CAPACITY-FIRING-001",
+   "field": "dynamics",
+   "slug": "finite-capacity-chip-firing",
+   "path": "discoveries/dynamics/finite-capacity-chip-firing",
+   "title": "Finite-capacity chip-firing preservation on ordered DAGs",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Determine whether the weighted successor's prior art is settled; the sharp weighted candidate C(v) >= d(v) + max_u m(u,v) - 1 is now compiled as CBMD-DYN-WEIGHTED-CAPACITY-001.",
+   "promotion_blockers": [
+    "specialist novelty and prior-art assessment remains open",
+    "external graph-instance decoding is not certified by the Lean theorem"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "SOURCE_BOUND_COMPILED",
+    "EXACT_MODEL_VERIFIED",
+    "INDEPENDENTLY_REPRODUCED"
+   ]
+  },
+  {
+   "id": "CBMD-DYN-WEIGHTED-CAPACITY-001",
+   "field": "dynamics",
+   "slug": "weighted-capacity-chip-firing",
+   "path": "discoveries/dynamics/weighted-capacity-chip-firing",
+   "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Obtain a targeted prior-art assessment of the weighted threshold and the cycle obstruction against the bounded-Petri-net deadlock and capacity-constrained abelian network literature, and an external review of the Lean-to-prose correspondence.",
+   "promotion_blockers": [
+    "specialist novelty and prior-art assessment remains open",
+    "external independent verification remains open",
+    "exhaustiveness of the full three-condition predicate is a census result; the ordering condition alone is now a proved equivalence"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "SOURCE_BOUND_COMPILED",
+    "EXACT_MODEL_VERIFIED",
+    "INDEPENDENTLY_REPRODUCED"
+   ]
+  },
+  {
+   "id": "CBMD-CON-CAPACITY-PRESERVATION-001",
+   "field": "concurrency",
+   "slug": "capacity-preservation-boundary",
+   "path": "discoveries/concurrency/capacity-preservation-boundary",
+   "title": "Where the capacity-preservation characterization transfers, and where it stops",
+   "pipeline_stage": "REVIEW_READY",
+   "next_obligation": "Settle the draining regime left open by the all-full obstruction, and decide whether any local per-place capacity condition is sound for multi-input transitions, or record an impossibility; and run a targeted prior-art comparison against structural conditions in the bounded-Petri-net literature.",
+   "promotion_blockers": [
+    "novelty and prior-art assessment open",
+    "external review open"
+   ],
+   "status": [
+    "PROVISIONAL_WRITTEN_ARGUMENT",
+    "SOURCE_BOUND_COMPILED",
+    "EXACT_MODEL_VERIFIED"
+   ]
+  }
+ ]
 }

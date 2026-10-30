@@ -1,0 +1,47 @@
+{
+ "actual_axiom_dependencies_checked": true,
+ "allowed_axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "authority_effect": "NONE",
+ "axiom_report": "'CBMDPetriCapacity.fire_admissible' does not depend on any axioms\n'CBMDPetriCapacity.reach_admissible' does not depend on any axioms\n'CBMDPetriCapacity.preserves_iff_reachable_form' does not depend on any axioms\n'CBMDPetriCapacity.inert_ordDead' does not depend on any axioms\n'CBMDPetriCapacity.increasing_allFull_capDead' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_preserves_iff_inert' depends on axioms: [propext, Quot.sound]\n'CBMDPetriCapacity.increasing_firing_breaks_preservation' depends on axioms: [propext, Quot.sound]",
+ "axioms_observed": [
+  "Quot.sound",
+  "propext"
+ ],
+ "axioms_within_allowlist": true,
+ "build_status": "PASS",
+ "build_stderr_tail": "",
+ "dependencies": [],
+ "independent_verification": false,
+ "lean_recompiled": true,
+ "members": [
+  {
+   "bytes": 7071,
+   "path": "CBMDPetriCapacity/Core.lean",
+   "sha256": "a5514973a4d0a1318a36c986c3572df9e6024f94410117ba86fb209fda402d0b"
+  },
+  {
+   "bytes": 30,
+   "path": "CBMDPetriCapacity.lean",
+   "sha256": "f0f438ee11ff0c63b54743ece233af773fefac9cfa72f26a0db67a6f0a4facc4"
+  }
+ ],
+ "no_escape": true,
+ "proof_escapes": [],
+ "schema": "cbmd.petri-lean-audit.v1",
+ "some_target_axiom_free": true,
+ "status": "PASS",
+ "target_declarations": [
+  "CBMDPetriCapacity.fire_admissible",
+  "CBMDPetriCapacity.reach_admissible",
+  "CBMDPetriCapacity.preserves_iff_reachable_form",
+  "CBMDPetriCapacity.inert_ordDead",
+  "CBMDPetriCapacity.increasing_allFull_capDead",
+  "CBMDPetriCapacity.increasing_preserves_iff_inert",
+  "CBMDPetriCapacity.increasing_firing_breaks_preservation"
+ ],
+ "toolchain": "leanprover/lean4:v4.35.0"
+}
