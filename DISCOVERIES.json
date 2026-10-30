@@ -9,8 +9,10 @@
    "path": "discoveries/ech/genus-two-low-sector",
    "title": "Genus-two low-sector pairing",
    "pipeline_stage": "REVIEW_READY",
-   "next_obligation": "Determine whether the cap/fill composition formula applies to the unstable initial-sector representatives with the asserted classes, signs, and orientations.",
-   "promotion_blockers": [],
+   "next_obligation": "Compare this dossier's U-recurrence at Gamma = 0, e = -3 against Chen's explicit U-map formula, which lies inside his hypothesis and would validate the algebraic model against a published computation; then determine whether the cap/fill composition and closed-invariant formulas apply to the unstable initial-sector representatives with the asserted classes, signs and orientations. Prior art is assessed: the groups and the count of sixteen U-towers are published, and Gamma in {1,2} at genus two is exactly the interval Chen's hypothesis excludes.",
+   "promotion_blockers": [
+    "the count of sixteen U-towers is published prior art, not a result of this dossier"
+   ],
    "status": [
     "PROVISIONAL_WRITTEN_ARGUMENT",
     "EXACT_MODEL_VERIFIED",

@@ -23,6 +23,11 @@ The algebraic pairing model and recurrence are proved at the written-argument le
 
 These are model statements and tests, not geometric certification.
 
+A prior-art pass has since placed the result: the groups and the count of
+sixteen `U`-towers are published, and what is not published is the `U`-module
+structure at exactly this dossier's `Γ`. See
+[`review/PRIOR_ART.md`](review/PRIOR_ART.md).
+
 ## What remains unresolved
 
 1. Whether the cap/fill composition and closed-invariant formulas apply to the unstable initial-sector representatives with the asserted relative classes, signs, and orientations.
@@ -30,7 +35,18 @@ These are model statements and tests, not geometric certification.
 3. Whether the polynomial (u) insertion matches the geometric point action with the same conventions.
 4. Whether the continuation gluing identity holds through the required deformation, chamber, insertion, orientation, and cutoff comparisons.
 5. Whether the rational direct limit identifies the algebraic union with ECH in the asserted way.
-6. Whether an existing Floer calculation already contains the result in other coordinates.
+6. ~~Whether an existing Floer calculation already contains the result in other
+   coordinates.~~ **Answered.** See [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
+   The groups are Nelson–Weiler, J. Symplectic Geom. 21 (2023) 1077–1189,
+   Theorem 1.1, over `Z_2` and for all `Γ`, making rigorous Farris's 2011
+   thesis. The sixteen ungraded `U`-towers are Chen's Theorem 1 — but only for
+   `Γ = 0` or `Γ > 2g−2`, so at genus two this dossier's `Γ ∈ {1,2}` is exactly
+   the excluded interval. The count sixteen is `2^{2g}` from
+   `dim H^*(Sym^n Σ)` and is **not** new.
+7. Whether this dossier's `U`-recurrence at `Γ = 0`, `e = −3` agrees with
+   Chen's explicit `U`-map formula. `Γ = 0` is inside Chen's hypothesis, so
+   agreement would validate the algebraic model against a published
+   computation. **This comparison has not been done.**
 
 ## Smallest decisive test
 
