@@ -197,6 +197,16 @@ untouched.
   it directly: if its formula gives a nonzero `HF_red` for some torsion spin-c
   structure with `|n| ≥ 2g − 1`, step 5 is wrong.
 
+**A second source for steps 3 and 4, over `Z`.** Jabuka–Mark, *The Heegaard
+Floer homology of a surface times a circle*
+(<https://arxiv.org/html/math/0502328v1>), work with the same knot
+`K ⊂ #^{2g}(S^1 × S^2)`, the one whose 0-surgery is `Σ_g × S^1`. Their
+equation (13) gives `\widehat{HFK}(Y, K, j, s) ≅ Λ^{g+j} H^1(Σ_g)` for
+`j = −g, …, g`, and `HFK^∞ ≅ \widehat{HFK} ⊗ Z[U, U^{−1}]`. Their Theorem 2.1,
+the large-surgery isomorphism attributed to Ozsváth–Szabó, holds "for all
+n ≥ 2g − 1 where g is the genus of K". This supplies the integral form of
+step 3 and the `2g − 1` bound of step 4 for this knot directly.
+
 **Independent check.** A second reader, working from this text without the
 dossier, tried to break each step. Steps 1, 2 and 4 were confirmed from
 sources (step 4 with the caveat that Remark 4.3 is only sketched). Steps 3
