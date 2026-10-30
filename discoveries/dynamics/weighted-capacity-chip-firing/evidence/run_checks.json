@@ -651,6 +651,53 @@
    }
   },
   {
+   "id": "WEIGHTED_SINK_COLLAPSE",
+   "command": [
+    "/usr/local/bin/python3",
+    "-I",
+    "-B",
+    "/home/claude/ablemanmosaic/cbmd-open-research/discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/sink_collapse.py",
+    "2"
+   ],
+   "exit_code": 0,
+   "status": "PASS",
+   "result": {
+    "schema": "cbmd.weighted-sink-collapse.v1",
+    "box": {
+     "n_max": 2,
+     "max_mult": 2,
+     "max_sink_mult": 1,
+     "capacity_slack": 1,
+     "sink_capacities": [
+      0,
+      1,
+      2,
+      4
+     ]
+    },
+    "agree": 1260,
+    "disagree": 0,
+    "systems_with_live_vertex": 242,
+    "systems_all_dead": 73,
+    "bridge_failures": 0,
+    "witness_failures": 0,
+    "transfer_absorbing_but_fails_every_cap": 66,
+    "disagreement_samples": [],
+    "gates": {
+     "zero_disagreements": true,
+     "live_population_nonempty": true,
+     "dead_population_nonempty": true,
+     "bridge_sends_holds": true,
+     "allfull_witness_checked": true,
+     "cap_not_idle": true
+    },
+    "status": "PASS",
+    "nonclaims": [
+     "finite census over the stated box; corroborates the Lean theorems, does not prove them"
+    ]
+   }
+  },
+  {
    "id": "WEIGHTED_LEAN_AUDIT",
    "command": [
     "/usr/local/bin/python3",
@@ -693,9 +740,14 @@
       "sha256": "486db3febc034396abf4a264d0c220ce3c3e9b763e1ca964c036f91e6daebb04"
      },
      {
-      "bytes": 4577,
+      "bytes": 6028,
       "path": "CBMDWeightedDynamics/Necessity.lean",
-      "sha256": "00f4713ceac1e8be4b2fd6e88ade159cbb5cc316b73d2a10a97a45b88a7bd8ae"
+      "sha256": "93077fdcc75b7c2ff3f857cab9b5653e344e3f97775afe19ec6648c8472d15ad"
+     },
+     {
+      "bytes": 4210,
+      "path": "CBMDWeightedDynamics/SinkCollapse.lean",
+      "sha256": "d2e8838b1b835408072e6ea9b83e0cb3e38e4e8035e33af537c8d59f8d0d62d9"
      },
      {
       "bytes": 7726,
@@ -703,9 +755,9 @@
       "sha256": "d5b9133b2750a4589ebb354d8e36a55841093d41231b09e00c1096ce652d60d5"
      },
      {
-      "bytes": 238,
+      "bytes": 279,
       "path": "CBMDWeightedDynamics.lean",
-      "sha256": "aa5ec4481d934655e59bd2be2d8ecfa7c6f622bb058eb431f8c0aba44596aaac"
+      "sha256": "10452d8e6cc726652486846ea7978af3bc9a88d929475db3e8c5d3f347d9c86a"
      }
     ],
     "no_escape": true,
@@ -730,7 +782,11 @@
      "CBMDWeightedDynamics.filledSetOfNotWellFounded",
      "CBMDWeightedDynamics.wellFounded_iff_no_filled_set",
      "CBMDWeightedDynamics.wellFounded_of_rank",
-     "CBMDWeightedDynamics.not_wellFounded_of_live_cycle"
+     "CBMDWeightedDynamics.not_wellFounded_of_live_cycle",
+     "CBMDWeightedDynamics.bound_necessary_at_unit_arc",
+     "CBMDWeightedDynamics.CappedSink.allFull_terminal",
+     "CBMDWeightedDynamics.CappedSink.capped_sink_breaks_transfer",
+     "CBMDWeightedDynamics.CappedSink.no_live_all_stable"
     ],
     "toolchain": "leanprover/lean4:v4.35.0"
    }

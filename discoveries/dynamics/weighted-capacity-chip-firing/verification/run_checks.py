@@ -41,6 +41,8 @@ def main() -> int:
             [PY, "-I", "-B", str(HERE / "independent" / "independent_check.py"), "3", "2", "1"]),
         run("WEIGHTED_WELLFOUNDED_EQUIVALENCE",
             [PY, "-I", "-B", str(HERE / "reference" / "equivalence.py"), "2"]),
+        run("WEIGHTED_SINK_COLLAPSE",
+            [PY, "-I", "-B", str(HERE / "reference" / "sink_collapse.py"), "2"]),
         run("WEIGHTED_LEAN_AUDIT",
             [PY, "-B", str(HERE / "lean" / "replay.py"), "--audit-only"]),
     ]
@@ -82,6 +84,15 @@ def main() -> int:
                 gates.append(f"well-foundedness gate failed: {gate}")
     else:
         gates.append("well-foundedness equivalence produced no parsable result")
+
+    # The capacitated-sink collapse (revision 0.7.0), small box.
+    sink = next(c for c in checks if c["id"] == "WEIGHTED_SINK_COLLAPSE").get("result", {})
+    if sink:
+        for gate, ok in sink["gates"].items():
+            if not ok:
+                gates.append(f"sink-collapse gate failed: {gate}")
+    else:
+        gates.append("sink-collapse check produced no parsable result")
 
     audit = next(c for c in checks if c["id"] == "WEIGHTED_LEAN_AUDIT").get("result", {})
     if not audit.get("no_escape"):

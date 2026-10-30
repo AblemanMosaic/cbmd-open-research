@@ -4,3 +4,4 @@ import CBMDWeightedDynamics.CycleObstruction
 import CBMDWeightedDynamics.Characterization
 import CBMDWeightedDynamics.Necessity
 import CBMDWeightedDynamics.Equivalence
+import CBMDWeightedDynamics.SinkCollapse

@@ -112,9 +112,10 @@ Established: §4, §5, §6 compile against Lean 4.35.0 with no `sorry` and axiom
 `[propext, Classical.choice, Quot.sound]` only. Exact finite enumeration
 corroborates the theorem and confirms sharpness; it does not prove it.
 
-Not established when first written, and since settled (revision 0.6.0): that the bound is *necessary* at receivers of multiplicity one
-beyond `C(v) >= d(v)`; cyclic graphs (the predecessor's cycle witness applies
-unchanged); non-absorbing sinks; novelty. The capacity rule remains classical
+Not established when first written: that the bound is *necessary* at
+receivers of multiplicity one beyond `C(v) >= d(v)` (settled, revision 0.6.0);
+cyclic graphs (settled negatively, revision 0.2.0); non-absorbing sinks
+(settled negatively, revision 0.7.0 and §10); novelty (still open). The capacity rule remains classical
 finite-capacity Petri-net semantics and the ordinary theory is classical; only
 the weighted threshold and its preservation argument are at issue.
 
@@ -159,3 +160,20 @@ statement. What remains imported is only that a *finite acyclic* live subgraph
 is well founded, which is what lets an exhaustive census decide the hypothesis
 by cycle detection. That is a property of the decision procedure, not a step in
 any proof here.
+
+## 10. Capacitated sinks (revision 0.7.0)
+
+Every result above assumes the sink absorbs. Cap it instead at a finite
+`sinkCap`, keeping ordinary firing absorbing so ordinary normal forms exist.
+Every vertex sends a positive number of chips somewhere capacitated, so the
+all-full state — every vertex at capacity, the sink at `sinkCap` — blocks every
+firing. If some vertex is live that state is not ordinarily stable, so it is
+not its own ordinary normal form and transfer fails. If no vertex is live,
+every admissible state is already ordinarily stable and transfer is trivial.
+Hence, at every finite sink capacity, transfer holds exactly when no vertex can
+fire (`SinkCollapse.lean`: `capped_sink_breaks_transfer`,
+`no_live_all_stable`).
+
+The absorbing sink is therefore not a modelling convenience but the hypothesis
+that exempts chip-firing from the all-full obstruction of
+`CBMD-CON-CAPACITY-PRESERVATION-001`.

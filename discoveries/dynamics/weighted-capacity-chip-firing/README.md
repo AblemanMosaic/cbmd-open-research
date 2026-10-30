@@ -145,6 +145,21 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
 260,172 systems. See
 [`revisions/0.5.0-wellfounded-equivalence.md`](revisions/0.5.0-wellfounded-equivalence.md).
 
+## A capacitated sink collapses everything (revision 0.7.0)
+
+The sink was assumed absorbing throughout. If it instead holds chips under any
+finite capacity, transfer holds **only when no vertex can ever fire**. Every
+firing now fills something capacitated, so the all-full state — sink included —
+is capacity-terminal, and with a live vertex it is not ordinarily stable. No
+choice of vertex or sink capacity escapes, because the witness is built from the
+capacities themselves (`capped_sink_breaks_transfer`, `no_live_all_stable`).
+
+Census at sink capacities 0, 1, 2 and 4: exact agreement with "no vertex live",
+both populations populated, the all-full witness checked directly on every live
+system, and systems that transfer with the absorbing sink but fail at every
+finite cap — so the cap, not some prior failure, is what breaks them. See
+[`revisions/0.7.0-capacitated-sink.md`](revisions/0.7.0-capacitated-sink.md).
+
 ## What remains unresolved
 
 - **Novelty is not assessed.** The capacity rule is classical finite-capacity
@@ -153,7 +168,8 @@ foundedness failing forces the conclusion to fail, with zero exceptions in
   search located no match and is recorded in [`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 - No external independent verification. The second implementation here is
   separately written but not externally authored.
-- Non-absorbing sinks are out of scope.
+- ~~Non-absorbing sinks are out of scope.~~ Settled negatively in revision 0.7.0:
+  a capacitated sink admits transfer only when no vertex is live.
 - ~~Whether `b(v) = max_u m(u,v)` is *necessary* at receivers of multiplicity
   one beyond `C(v) >= d(v)`.~~ Settled, and had been since revision 0.4.0: at a
   unit receiver the bound is exactly `C(v) >= d(v)`, sufficient by the transfer
@@ -186,8 +202,8 @@ python -B discoveries/dynamics/weighted-capacity-chip-firing/verification/lean/r
 - `argument/`: the exact model, the obstruction lemma, and both theorems in prose.
 - `verification/lean/`: the Lean 4.35.0 sources, custody audit and replay driver.
 - `verification/reference/`: the finite bound search with its transfer and
-  confluence controls, the exactness census, and the well-foundedness check
-  with its hypothesis ablation.
+  confluence controls, the exactness census, the well-foundedness check
+  with its hypothesis ablation, and the capacitated-sink census.
 - `verification/independent/`: a separately written check of the theorem's conclusion.
 - `evidence/`: search output, independent-check output, and the Lean receipt.
 - `review/`: the bounded prior-art note and its recorded queries.
