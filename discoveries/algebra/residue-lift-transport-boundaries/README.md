@@ -1,7 +1,7 @@
 # Residue and lift transport boundaries
 
-> **Pipeline stage:** `CLAIM_BOUND`  
-> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`
+> **Pipeline stage:** `QUALIFYING`  
+> **Claim standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`, `REVISED`
 
 Permanent discovery ID: `CBMD-ALG-RESIDUE-LIFT-001`
 
@@ -11,11 +11,25 @@ In the retained selected-degree-six source fixture, the correction has residue o
 
 ## Current standing
 
-The r6 package retains a written all-precision argument and exact finite controls inherited from Batch 4, plus a Batch 5 structural count of residue-zero/lift-nonzero amplitude classes. The public repository has not yet extracted a standalone counterexample or replay.
+The amplitude-spectrum half of the standing obligation is now extracted as a
+standalone verifier ([`argument/SEPARATION.md`](argument/SEPARATION.md),
+[`verification/separation.py`](verification/separation.py)). The smallest
+off-diagonal separation is `A=0, R=2, delta=5, f=0` with amplitude `-6`: zero in
+`Z/3`, nonzero in `Z` and `Z/9`. At `(A,R,Q) = (17,5,80)`, 120 of 385 classes are
+residue-zero while only 2 are genuinely zero.
+
+A positive control fixes the valuation on the central line by Kummer's theorem,
+and a **recorded negative** closes the obvious route: off that line `v_3` is not
+a function of the low base-three digits at depth 2 or 3.
+
+The inherited selected-degree-six source fixture is still not reproduced.
 
 ## Next obligation
 
-Publish the smallest neutral source-bound fixture with its exact ring arithmetic, then replay it independently at residue and lifted precisions.
+Extract and independently replay the inherited degree-six fixture at residue and
+two lifted precisions, binding every ring, node, centre, amplitude and
+source-row parameter; and settle whether a full-digit criterion exists off the
+central line.
 
 ## Nonclaims
 

@@ -1,26 +1,48 @@
 {
-  "schema": "cbmd.open-research.claim.v1",
-  "id": "CBMD-ALG-RESIDUE-LIFT-001",
-  "title": "Residue and lift transport boundaries",
-  "field": "algebra",
-  "slug": "residue-lift-transport-boundaries",
-  "public_version": "0.1.0-candidate",
-  "status": ["PROVISIONAL_WRITTEN_ARGUMENT"],
-  "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity.",
-  "verified": [],
-  "unresolved": [
-    "standalone public extraction and replay",
-    "independent source-correspondence check",
-    "scope inside a produced native leaf",
-    "targeted novelty comparison"
-  ],
-  "nonclaims": [
-    "not a fault in the upstream solver",
-    "not a full produced-leaf realization",
-    "not a native SAT correctness conclusion",
-    "not a novelty determination"
-  ],
-  "smallest_decisive_test": "Reproduce the selected degree-six fixture at residue precision and at two compatible lifted precisions, checking the linear coefficient exactly and binding every ring, node, center, amplitude, and source-row parameter.",
-  "checks": [],
-  "authority_effect": "NONE"
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-ALG-RESIDUE-LIFT-001",
+ "title": "Residue and lift transport boundaries",
+ "field": "algebra",
+ "slug": "residue-lift-transport-boundaries",
+ "public_version": "0.2.0",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED",
+  "REVISED"
+ ],
+ "statement": "A retained selected-degree-six source fixture has residue order two but lifted order one for every compatible exponent mu>=2, and the reference amplitude family contains explicit classes that vanish modulo three while remaining nonzero over the integers; zero certificates therefore cannot be transported without binding ring, precision, nodes, amplitude, and source identity.",
+ "verified": [
+  "The closed-form amplitude agrees with the defining Newton/parity construction on 2,597 instances, checked by a standard-library file importing nothing from the archive.",
+  "Smallest off-diagonal class vanishing modulo three while nonzero over the integers: A=0, R=2, delta=5, f=0, amplitude -6, v_3 = 1.",
+  "Census at native-like parameters: 120 of 385 classes at (A,R,Q)=(17,5,80), 269 of 604 at (15,8,80) and 24 of 150 at (7,4,40) are zero modulo three and nonzero over the integers, against 2, 4 and 2 genuinely zero.",
+  "Positive control: on the central line delta = 2A+R with even d, v_3 of the amplitude equals the base-three carry count of d/2 and A-1 (Kummer), on 1,200 instances with no exceptions.",
+  "Recorded negative: off the central line v_3 is not a function of (A mod 3^t, N mod 3^t, d) for t = 2 or 3, with 3,967 and 1,144 conflicting points over 79,680; no bounded-depth low-digit criterion exists at these depths."
+ ],
+ "unresolved": [
+  "extraction and independent replay of the inherited selected-degree-six source fixture",
+  "whether a full-digit base-three criterion exists off the central line",
+  "independent source-correspondence check",
+  "scope inside a produced native leaf",
+  "targeted novelty comparison"
+ ],
+ "nonclaims": [
+  "not a fault in the upstream solver",
+  "not a full produced-leaf realization",
+  "not a native SAT correctness conclusion",
+  "not a novelty determination",
+  "the amplitude-spectrum separation is extracted here; the inherited degree-six source fixture is not reproduced"
+ ],
+ "smallest_decisive_test": "Exhibit a bounded-depth base-three digit criterion for v_3 off the central line that survives the recorded conflict set, or reproduce the inherited degree-six fixture at residue and two lifted precisions with every ring, node, centre and amplitude parameter bound.",
+ "checks": [
+  {
+   "id": "RESIDUE_LIFT_SEPARATION",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/algebra/residue-lift-transport-boundaries/verification/separation.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
 }

@@ -28,4 +28,9 @@ Negative results, source mismatches, and prior-art identifications receive the s
 | Weighted checks first gated on nonconfluence | Corrected to gate on the transfer property | A capacity system can be confluent and still terminate away from the ordinary normal form; the smallest `C=d` witness has one normal form. Recorded in the weighted dossier README. |
 | Finite-dynamics Q8 qualification depended on an injected repository `PYTHONPATH` | Preserve Q8 as failed; repair both older producers for direct-path launch | [Qualification-path repair](../discoveries/dynamics/finite-capacity-chip-firing/revisions/0.1.0-qualification-path-repair.md); Q9 and Q10 passed without the injected path. |
 
-The negative crossover, neutral ring-operation result and rejected low-digit criterion from the source ledger still need individual neutral exports with exact claim and revision bindings. Recording them as integration work does not turn them into new qualified repository results.
+The negative crossover and the neutral ring-operation result are now exported in
+[the cost-model neutral results](../discoveries/algorithms/reference-amplitude-cost-model/argument/NEUTRAL_RESULTS.md),
+and the rejected low-digit criterion in
+[the residue/lift separation](../discoveries/algebra/residue-lift-transport-boundaries/argument/SEPARATION.md),
+each bound to evidence reproducible from this checkout. Export does not make them
+externally reviewed or novelty-assessed; both remain open for all three.

@@ -33,3 +33,12 @@ python -B discoveries/algorithms/reference-amplitude-cost-model/verification/ref
 ```
 
 The source archive itself is retained outside this repository; its detached receipt and exact member hashes are in `evidence/`.
+
+## Neutral and negative results
+
+Three outcomes of this line are neutral or negative and are stated explicitly in
+[`argument/NEUTRAL_RESULTS.md`](argument/NEUTRAL_RESULTS.md): the row-assembly
+identity is exact but arithmetically neutral, the amplitude table is where the
+saving actually lies, and row-centric evaluation loses to the owner-centric
+route by orders of magnitude at realistic sizes. They are published so the
+rejected ideas are not rebuilt.

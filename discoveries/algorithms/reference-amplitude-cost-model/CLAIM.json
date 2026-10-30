@@ -1,44 +1,46 @@
 {
-  "schema": "cbmd.open-research.claim.v1",
-  "id": "CBMD-ALG-AMPLITUDE-COST-001",
-  "title": "Reference amplitude cost model (no native speedup claim)",
-  "field": "algorithms",
-  "slug": "reference-amplitude-cost-model",
-  "public_version": "0.3.0-candidate",
-  "status": [
-    "PROVISIONAL_WRITTEN_ARGUMENT",
-    "EXACT_MODEL_VERIFIED"
-  ],
-  "statement": "Under BCM-1, the closed coefficient formula evaluates one reference amplitude in O(R) big-integer operations, the frozen enumeration producer performs exactly sum_{j<R} C(Q-1,j)2^j indicator tests per amplitude call, and all amplitude classes fit in a table of at most QR entries; row assembly is conditional on explicit ring-unit hypotheses.",
-  "verified": [
-    "closed coefficient route equals the frozen enumeration producer on 163,912 bounded calls",
-    "row assembly equals the reference route on 10,476 rows over the rationals and Z/25",
-    "the required unit hypotheses refuse node 5 modulo 25 and denominator 2 modulo 8",
-    "the corrected evidence replays from a clean extraction of the sealed r7 source package and from this repository checkout"
-  ],
-  "unresolved": [
-    "the historical cost argument needs explicit joint parameter regimes; at fixed R its enumeration count is polynomial in Q",
-    "standalone separately implemented verifier and external mathematical review",
-    "targeted novelty review",
-    "the later source correspondence and candidate evaluator are a separate discovery line, not a result of this reference-only checker"
-  ],
-  "nonclaims": [
-    "not a native SAT speedup",
-    "not a wall-clock theorem",
-    "not a total owner-sum cost theorem",
-    "not a claim about an executable native entry"
-  ],
-  "smallest_decisive_test": "Reproduce the declared reference checks and audit each asymptotic comparison with its parameter regime; review the separately tracked native evaluator independently.",
-  "checks": [
-    {
-      "id": "reference-amplitude-cost-replay",
-      "command": [
-        "{python}",
-        "-B",
-        "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"
-      ],
-      "required": true
-    }
-  ],
-  "authority_effect": "NONE"
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-ALG-AMPLITUDE-COST-001",
+ "title": "Reference amplitude cost model (no native speedup claim)",
+ "field": "algorithms",
+ "slug": "reference-amplitude-cost-model",
+ "public_version": "0.3.0-candidate",
+ "status": [
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "Under BCM-1, the closed coefficient formula evaluates one reference amplitude in O(R) big-integer operations, the frozen enumeration producer performs exactly sum_{j<R} C(Q-1,j)2^j indicator tests per amplitude call, and all amplitude classes fit in a table of at most QR entries; row assembly is conditional on explicit ring-unit hypotheses.",
+ "verified": [
+  "closed coefficient route equals the frozen enumeration producer on 163,912 bounded calls",
+  "row assembly equals the reference route on 10,476 rows over the rationals and Z/25",
+  "the required unit hypotheses refuse node 5 modulo 25 and denominator 2 modulo 8",
+  "the corrected evidence replays from a clean extraction of the sealed r7 source package and from this repository checkout",
+  "Neutral result N1: the closed row-assembly identity is exact on 10,476 orbit rows with zero mismatches but arithmetically neutral, 120,876 ring operations against the reference route's 123,588; the hypothesised quadratic-against-cubic gain was wrong and both routes are quadratic in |E|.",
+  "Negative result N3: exact live-column counts place the row-centric crossover above 5.8e5 owners at the centred mismatch count for (A,R,Q)=(17,5,80) and above 5.2e7 for (15,8,80), so the owner-centric route is correct by orders of magnitude at realistic sizes."
+ ],
+ "unresolved": [
+  "standalone separately implemented verifier and external mathematical review",
+  "targeted novelty review",
+  "the later source correspondence and candidate evaluator are a separate discovery line, not a result of this reference-only checker",
+  "the historical cost argument's parameter regimes are corrected in revision 0.3.0; at fixed R the enumeration count is polynomial in Q"
+ ],
+ "nonclaims": [
+  "not a native SAT speedup",
+  "not a wall-clock theorem",
+  "not a total owner-sum cost theorem",
+  "not a claim about an executable native entry"
+ ],
+ "smallest_decisive_test": "Reproduce the declared reference checks and audit each asymptotic comparison with its parameter regime; review the separately tracked native evaluator independently.",
+ "checks": [
+  {
+   "id": "reference-amplitude-cost-replay",
+   "command": [
+    "{python}",
+    "-B",
+    "discoveries/algorithms/reference-amplitude-cost-model/verification/reference-model/verify.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
 }

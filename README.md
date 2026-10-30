@@ -67,7 +67,7 @@ The harness ships with execution disabled. Its local-workspace example, the refe
 | ID | Discovery | Claim standing | Stage | Next obligation | Promotion blockers |
 |---|---|---|---|---|---|
 | `CBMD-COMB-OWNER-FIBER-001` | [Owner-fiber structure and support](discoveries/combinatorics/owner-fiber-structure/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Import a standalone non-degenerate reference verifier and reproduce the fixed-target owner-fiber identity from a clean checkout. | public standalone verifier not yet imported; native source correspondence remains unproved; targeted novelty review remains unperformed |
-| `CBMD-ALG-RESIDUE-LIFT-001` | [Residue and lift transport boundaries](discoveries/algebra/residue-lift-transport-boundaries/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT` | `CLAIM_BOUND` | Extract the smallest source-bound example separating integer, residue-ring, and lifted zero sets under explicit ring and precision hypotheses. | standalone public counterexample has not been extracted; ring, precision, node, and source-identity hypotheses need one bounded statement; novelty remains unassessed |
+| `CBMD-ALG-RESIDUE-LIFT-001` | [Residue and lift transport boundaries](discoveries/algebra/residue-lift-transport-boundaries/README.md) | `PROVISIONAL_WRITTEN_ARGUMENT`<br>`EXACT_MODEL_VERIFIED`<br>`REVISED` | `QUALIFYING` | Extract and independently replay the inherited selected-degree-six source fixture at residue and two lifted precisions, and settle whether a full-digit base-three criterion exists off the central line. | inherited degree-six source fixture not yet extracted; independent source-correspondence check open; novelty unassessed |
 
 <!-- END GENERATED DISCOVERY INDEX -->
 

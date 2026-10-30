@@ -1,0 +1,109 @@
+{
+ "schema": "cbmd.residue-lift-separation.v1",
+ "closed_form_cross_check": {
+  "agreements": 2597,
+  "disagreements": 0,
+  "first_disagreement": null
+ },
+ "smallest_residue_zero_lift_nonzero": {
+  "A": 1,
+  "R": 2,
+  "delta": 1,
+  "f": 0,
+  "amplitude": -6,
+  "v3": 1,
+  "zero_mod_3": true,
+  "zero_over_Z": false,
+  "A_plus_R_plus_delta": 4
+ },
+ "smallest_off_diagonal_residue_zero_lift_nonzero": {
+  "A": 0,
+  "R": 2,
+  "delta": 5,
+  "f": 0,
+  "amplitude": -6,
+  "v3": 1,
+  "zero_mod_3": true,
+  "zero_over_Z": false,
+  "A_plus_R_plus_delta": 7
+ },
+ "native_like_census": [
+  {
+   "A": 17,
+   "R": 5,
+   "Q": 80,
+   "v3_histogram": {
+    "0": 263,
+    "1": 55,
+    "2": 44,
+    "3": 16,
+    "4": 5,
+    "inf": 2
+   },
+   "residue_zero_lift_nonzero": 120,
+   "exact_zero_over_Z": 2,
+   "classes": 385
+  },
+  {
+   "A": 15,
+   "R": 8,
+   "Q": 80,
+   "v3_histogram": {
+    "0": 331,
+    "1": 161,
+    "2": 77,
+    "3": 23,
+    "4": 6,
+    "5": 1,
+    "8": 1,
+    "inf": 4
+   },
+   "residue_zero_lift_nonzero": 269,
+   "exact_zero_over_Z": 4,
+   "classes": 604
+  },
+  {
+   "A": 7,
+   "R": 4,
+   "Q": 40,
+   "v3_histogram": {
+    "0": 124,
+    "1": 18,
+    "2": 6,
+    "inf": 2
+   },
+   "residue_zero_lift_nonzero": 24,
+   "exact_zero_over_Z": 2,
+   "classes": 150
+  }
+ ],
+ "central_line_kummer_control": {
+  "instances": 1200,
+  "agreements": 1200,
+  "disagreements": 0
+ },
+ "recorded_negative_low_digit_criterion": [
+  {
+   "depth": 2,
+   "modulus": 9,
+   "points": 79680,
+   "conflicting_points": 3967,
+   "criterion_exists_at_this_depth": false
+  },
+  {
+   "depth": 3,
+   "modulus": 27,
+   "points": 79680,
+   "conflicting_points": 1144,
+   "criterion_exists_at_this_depth": false
+  }
+ ],
+ "nonclaims": [
+  "the inherited selected-degree-six source fixture is NOT reproduced here; this file covers the amplitude spectrum only",
+  "no native SAT consequence and no novelty determination",
+  "a residue-zero class is not a lifted-zero class; that is the point of the separation"
+ ],
+ "authority_effect": "NONE",
+ "content_gate_failures": [],
+ "status": "PASS"
+}
