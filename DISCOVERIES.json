@@ -293,6 +293,22 @@
         "CONJECTURE",
         "EXACT_MODEL_VERIFIED"
       ]
+    },
+    {
+      "id": "CBMD-COMB-CAYLEY-JAC-001",
+      "field": "combinatorics",
+      "slug": "cayley-digraph-jacobian",
+      "path": "discoveries/combinatorics/cayley-digraph-jacobian",
+      "title": "Jacobians of abelian Cayley digraphs: an answer to Reiner's question",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Independent specialist review of the written proof; consider the non-abelian analogue.",
+      "promotion_blockers": [
+        "written argument not yet specialist-reviewed"
+      ],
+      "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
     }
   ]
 }

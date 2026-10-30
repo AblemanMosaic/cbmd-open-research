@@ -1,0 +1,35 @@
+{
+ "schema": "cbmd.cayley-jacobian.scans.v1",
+ "scans": [
+  {
+   "tool": "cayley_jac.py 24 5",
+   "range": "all abelian A with |A| <= 24, all generating sum-zero multisets S of nonzero elements with |S| <= 5",
+   "pairs_tested": 32551,
+   "jac_iso_A": 90,
+   "exceptions": 0
+  },
+  {
+   "tool": "cayley_jac.py 14 7",
+   "range": "|A| <= 14, |S| <= 7",
+   "pairs_tested": 19633,
+   "jac_iso_A": 32,
+   "exceptions": 0
+  }
+ ],
+ "bound_check": {
+  "tool": "check_bound.py 16 5",
+  "cases": 6236,
+  "checks": "n|Jac| = prod lambda_chi; cyclic s>=3: |Jac| >= (3/2)^phi(n) n; noncyclic: |Jac| != n",
+  "failures": 0
+ },
+ "norm_check": {
+  "tool": "check_norms.py 18 4",
+  "cases": 1601,
+  "checks": "cyclic n <= 18: orbit-norm factorisation, p^2 | N(lambda_{p^k}), AM-GM bound for s >= 3",
+  "failures": 0
+ },
+ "norm_scan": {
+  "tool": "normscan.py 5 2 3 4 5 7 8 9 11 13",
+  "result": "for q in {2,3,4,5,7,8,9,11,13} and sum-zero multisets T of nonzero residues with |T| <= 5, norm p^2 occurs only for |T| = 2"
+ }
+}

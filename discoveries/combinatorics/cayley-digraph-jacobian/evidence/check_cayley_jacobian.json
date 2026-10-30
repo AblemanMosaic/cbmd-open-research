@@ -1,0 +1,34 @@
+{
+ "schema": "cbmd.cayley-jacobian.check.v1",
+ "gates": {
+  "EXHAUSTIVE_SMALL": {
+   "pass": true,
+   "cases": 516,
+   "jac_iso_A": 23,
+   "exceptions": []
+  },
+  "PRODUCT_FORMULA": {
+   "pass": true,
+   "cases": 280,
+   "failures": []
+  },
+  "ORBIT_NORMS": {
+   "pass": true,
+   "cases": 387,
+   "failures": []
+  },
+  "NONCYCLIC_COUNT": {
+   "pass": true,
+   "groups": 26,
+   "failures": []
+  },
+  "CONTROL": {
+   "pass": true,
+   "jac_order_Z3_S1": 1
+  },
+  "EVIDENCE_SUMMARY": {
+   "pass": true
+  }
+ },
+ "pass": true
+}
