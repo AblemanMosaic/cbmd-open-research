@@ -31,6 +31,18 @@ sys.path.insert(0, str(HERE))
 from characterize import digraphs, od, transfer_holds  # noqa: E402
 
 
+def tool_path(env, name):
+    executable = name + (".exe" if os.name == "nt" else "")
+    bin_dir = env.get("CBMD_LEAN_BIN", "")
+    candidate = Path(bin_dir, executable) if bin_dir else None
+    if candidate is not None and candidate.is_file():
+        return str(candidate.resolve())
+    discovered = shutil.which(name, path=env.get("PATH"))
+    if discovered:
+        return discovered
+    raise FileNotFoundError(f"pinned {name} executable not found")
+
+
 def built_library(env):
     files = sorted(p for p in LEAN.rglob("*") if p.is_file() and ".lake" not in p.parts
                    and (p.suffix in (".lean", ".toml", ".json") or p.name == "lean-toolchain"))
@@ -43,7 +55,7 @@ def built_library(env):
             dst = work / p.relative_to(LEAN)
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p, dst)
-        subprocess.run(["lake", "build"], cwd=work, env=env, check=True,
+        subprocess.run([tool_path(env, "lake"), "build"], cwd=work, env=env, check=True,
                        capture_output=True, timeout=3600)
     return lib
 
@@ -87,7 +99,8 @@ def run(count=500, seed=909):
                    f"(fun u v => (m{i}[u.val]!)[v.val]!) (fun v => d{i}[v.val]!) (fun v => c{i}[v.val]!)}}\"")
     d = Path(tempfile.mkdtemp(prefix="cbmd-wdecider-"))
     (d / "Bridge.lean").write_text("\n".join(src) + "\n", encoding="utf-8")
-    p = subprocess.run(["lean", str(d / "Bridge.lean")], capture_output=True, text=True, env=env,
+    p = subprocess.run([tool_path(env, "lean"), str(d / "Bridge.lean")],
+                       capture_output=True, text=True, env=env,
                        timeout=3600)
     verdicts = {}
     for line in p.stdout.splitlines():
@@ -115,14 +128,20 @@ def run(count=500, seed=909):
 
 if __name__ == "__main__":
     import shutil as _shutil
-    if _shutil.which("lean") is None or _shutil.which("lake") is None:
-        import os as _os
-        _bin = _os.environ.get("CBMD_LEAN_BIN", "")
-        if not (_bin and _os.path.exists(_os.path.join(_bin, "lean"))):
-            print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",
-                              "detail": "set CBMD_LEAN_BIN to the pinned Lean 4.35.0 bin directory or put lean and lake on PATH",
-                              "authority_effect": "NONE"}))
-            raise SystemExit(3)
+    import os as _os
+    _bin = _os.environ.get("CBMD_LEAN_BIN", "")
+
+    def _available(name):
+        executable = name + (".exe" if _os.name == "nt" else "")
+        return _shutil.which(name) is not None or bool(
+            _bin and _os.path.isfile(_os.path.join(_bin, executable))
+        )
+
+    if not (_available("lean") and _available("lake")):
+        print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",
+                          "detail": "set CBMD_LEAN_BIN to the pinned Lean 4.35.0 bin directory or put lean and lake on PATH",
+                          "authority_effect": "NONE"}))
+        raise SystemExit(3)
     out = run(int(sys.argv[1]) if len(sys.argv) > 1 else 500)
     print(json.dumps(out, indent=1))
     raise SystemExit(0 if out["status"] == "PASS" else 1)

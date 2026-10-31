@@ -16,9 +16,9 @@ This public repository presents selected CBMD research for verification, correct
 
 “Discovery” here names the inquiry process, not a guarantee that every generated statement is new or true. A CBMD artifact is provisional until its stated obligations are discharged, and neither the workflow nor the Mosaic branding substitutes for proof, specialist review, novelty review, or publication.
 
-## Current iteration: v0.1 toolkit and provisional finite dynamics
+## Current iteration: v0.1 toolkit and provisional research portfolio
 
-The original complexity investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, minimal native Lean source closure, pinned replay driver, and public discovery dossiers in one checkout. A separate finite-dynamics line now adds a source-bound Lean theorem and independently reproduced finite evidence for capacity-blocked chip-firing. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) distinguishes the completed toolkit work from the mathematical remainder.
+The original complexity investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, native Lean source closures, pinned replay drivers, and 19 public discovery dossiers in one checkout. Twelve dossiers are review-ready under their stated claim ceilings; seven remain in the qualifying pipeline. The portfolio now spans algebra, algorithms, combinatorics, concurrency, dynamics, and an ECH review request. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) distinguishes toolkit work from each mathematical remainder.
 
 | Layer | Meaning | Current outcome |
 |---|---|---|
@@ -26,20 +26,32 @@ The original complexity investigation remains paused after Cycle 17. The v0.1 in
 | Governed harness | Software operating that method | Portable execution custody, evidence checks and claim ceilings; UCM native proof adapter remains unbound. |
 | Complexity investigation | Mathematics about the pinned source entries and joint matrix | The minimal public Lean envelope recompiles the native chain under exact pins. |
 | BCM-1 | Declared arithmetic cost model used to count that evaluator's core | Exact counts of multiplications, divisions and additions; whole-algorithm cost remains open. |
+| Public research portfolio | Nineteen claim-bounded dossiers | Compiled theorems, written arguments, exact-model evidence, counterexamples, conjectures, corrections and open review obligations remain distinguished. |
 
 The result chain establishes native centered vanishing and A=0 collapse, an explicit parity-coefficient formula, a source-to-master-numerator identity, a recurrence evaluator with checked arithmetic counts, and a total joint realization using coordinatewise orbit compatibility. The bootstrap snapshot binds the original reports; `proofs/native/` now carries the minimal public sources and exact replay boundary.
 
-The parity identification reduces to classical Krawtchouk ingredients. Source-specific novelty remains unassessed. The ECH review request is a separate investigation and retains its unresolved geometric transport question.
+The newer lines include source-bound Lean developments for finite, weighted, fixed-state and Petri-net capacity questions; exact or computer-assisted work on Zeckendorf and Fibonacci games, labeled chip-firing, forest correlation, Cayley and McKay critical groups; and explicit counterexamples and unresolved conjectures. Their generated index below is the authoritative front-door inventory. These statements do not share one proof level: each dossier records its own evidence, corrections and nonclaims.
+
+The parity identification reduces to classical Krawtchouk ingredients. Source-specific novelty remains unassessed. The ECH review request is a separate investigation and retains its unresolved geometric transport question. No repository status is a novelty determination or substitute for specialist review.
 
 Start with the [toolkit guide](docs/TOOLKIT.md), the [native evaluator dossier](discoveries/algorithms/native-joint-realization/README.md), or the [CBMD method and harness guide](methods/governed-discovery/README.md). Reviewers can challenge the [recorded corrections](docs/CORRECTIONS.md) alongside the positive results.
 
 ## Toolkit v0.1
 
+The dependency-free repository gates need only Python 3.12+:
+
 ```text
+python -B tools/qualify_repository.py --repository-only
+```
+
+Full qualification additionally needs the exact packages in `requirements-qualification.txt`, GAP 4 with SmallGrp and CTblLib, and the pinned Lean 4.35.0 toolchain (`lean` and `lake` on `PATH`, or `CBMD_LEAN_BIN` pointing to their bin directory):
+
+```text
+python -m pip install --requirement requirements-qualification.txt
 python -B tools/qualify_repository.py
 ```
 
-That one command checks the repository structure, every review-ready discovery, all 37 harness tests, the standalone finite reference audit and mutations, and formal-source custody. The full Lean replay is deliberately separate because it installs or uses pinned compiler dependencies:
+Full qualification checks the repository structure, every declared discovery gate, all 37 harness tests, standalone and independent finite models, adverse controls, checked decoders, and formal-source custody. Source-bound Lean recompilation is deliberately separate so an audit-only pass cannot be mistaken for a build:
 
 ```text
 python -B tools/replay_lean.py --prepare --fresh
@@ -131,13 +143,15 @@ Use the structured issue forms under [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TE
 
 ## Reproduce the repository checks
 
-Python 3.12+ is sufficient for the default checks:
+Python 3.12+ is sufficient for the dependency-free repository checks:
 
 ```text
-python -B tools/qualify_repository.py
+python -B tools/qualify_repository.py --repository-only
 ```
 
-The grid-audit command checks the implemented model's extended block structure and the evidentiary reach of its adverse control. The browser-level explorer check is optional and additionally requires Node.js, Playwright, and a supported installed browser. No browser or network service is required for the default qualification. The iteration-snapshot check verifies copied historical records and claim bindings; the separate Lean replay recompiles the public proof envelope.
+Install the pinned Python requirements, GAP packages and Lean toolchain described under **Toolkit v0.1** before running the full command. The continuous-integration workflow runs the repository-only scope on Windows and Ubuntu, the full qualification with its dependencies on Ubuntu, and separate build jobs for every public Lean project.
+
+The grid-audit command checks the implemented model's extended block structure and the evidentiary reach of its adverse control. The browser-level explorer check is optional and additionally requires Node.js, Playwright, and a supported installed browser. No browser or network service is required for qualification. The iteration-snapshot check verifies copied historical records and claim bindings; the separate Lean jobs recompile the public proof envelopes.
 
 ## Add another discovery
 

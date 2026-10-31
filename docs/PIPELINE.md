@@ -39,7 +39,7 @@ Qualification examines five independent boundaries:
 4. **Engineering:** clean checkout, platform behavior, exact dependencies, and receipts.
 5. **Publication:** licensing, attribution, citations, neutral naming, AI disclosure, and sensitive-material exclusion.
 
-Each discovery declares executable checks in `CLAIM.json`. `tools/qualify_repository.py` runs the repository gates and all declared discovery checks without a shell. GitHub Actions runs that command on Windows and Ubuntu.
+Each discovery declares executable checks in `CLAIM.json`. `tools/qualify_repository.py` runs the repository gates and all declared discovery checks without a shell. `--repository-only` selects the dependency-free structural and harness gates. GitHub Actions runs that portable scope on Windows and Ubuntu, then runs full qualification on Ubuntu with the pinned Python, GAP and Lean dependencies installed. Separate jobs recompile every public Lean project.
 
 When `evidence/SOURCE_CUSTODY.json` gives a `public_copy` for an archive member, the repository validator requires that file and checks its SHA-256. A declared detached receipt is checked the same way. This keeps the readable projection tied to the sealed source without placing the full internal archive in the repository.
 
@@ -47,7 +47,7 @@ When `evidence/SOURCE_CUSTODY.json` gives a `public_copy` for an archive member,
 
 1. Add or revise the discovery directory and registry row.
 2. Run `python -B tools/render_discovery_index.py --write`.
-3. Run `python -B tools/qualify_repository.py`.
+3. Install `requirements-qualification.txt`, GAP 4 with SmallGrp and CTblLib, and the pinned Lean toolchain; then run `python -B tools/qualify_repository.py`.
 4. Preserve failed checks and narrowed statements in the revision record.
 5. Promote the stage only when its gate is satisfied; never promote a claim status merely because an engineering check passed.
 6. For a public release, separately create an immutable archive and detached receipt. A Git commit alone is not a release qualification.

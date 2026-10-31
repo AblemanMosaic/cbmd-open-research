@@ -1,6 +1,7 @@
 """Run repository and per-discovery checks without a shell."""
 from __future__ import annotations
 
+import argparse
 import json
 from pathlib import Path
 import subprocess
@@ -33,6 +34,13 @@ def run(command: list[str]) -> dict[str, object]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--repository-only",
+        action="store_true",
+        help="run the dependency-free repository gates but not discovery checks",
+    )
+    args = parser.parse_args()
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     gates = [
         ("repository-validator", [sys.executable, "-B", "tools/validate_repository.py"]),
@@ -50,6 +58,7 @@ def main() -> int:
     ]
     report: dict[str, object] = {
         "schema": "cbmd.open-research.qualification.v2",
+        "scope": "REPOSITORY_ONLY" if args.repository_only else "FULL",
         "repository_gates": [],
         "discoveries": [],
     }
@@ -60,7 +69,7 @@ def main() -> int:
         report["repository_gates"].append(result)
         failed = failed or result["status"] != "PASS"
 
-    for row in registry["discoveries"]:
+    for row in [] if args.repository_only else registry["discoveries"]:
         claim_path = ROOT / row["path"] / "CLAIM.json"
         claim = json.loads(claim_path.read_text(encoding="utf-8"))
         checks = claim.get("checks", [])

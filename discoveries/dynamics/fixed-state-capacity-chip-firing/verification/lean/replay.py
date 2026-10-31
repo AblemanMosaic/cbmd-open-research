@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -96,10 +97,15 @@ def audit() -> dict:
 
 
 def build(receipt: dict) -> dict:
-    if shutil.which("lake") is None:
+    env = dict(os.environ)
+    if env.get("CBMD_LEAN_BIN"):
+        env["PATH"] = env["CBMD_LEAN_BIN"] + os.pathsep + env.get("PATH", "")
+    lake = shutil.which("lake", path=env.get("PATH"))
+    lean = shutil.which("lean", path=env.get("PATH"))
+    if lake is None or lean is None:
         receipt["build_status"] = "LAKE_NOT_AVAILABLE"
         return receipt
-    proc = subprocess.run(["lake", "build"], cwd=HERE, capture_output=True, text=True)
+    proc = subprocess.run([lake, "build"], cwd=HERE, capture_output=True, text=True, env=env)
     receipt["build_status"] = "PASS" if proc.returncode == 0 else "FAIL"
     receipt["build_stderr_tail"] = proc.stderr[-2000:]
     if proc.returncode != 0:
@@ -110,8 +116,8 @@ def build(receipt: dict) -> dict:
                      + "".join(f"#print axioms {t}\n" for t in TARGETS), encoding="utf-8")
     try:
         env_path = HERE / ".lake" / "build" / "lib" / "lean"
-        out = subprocess.run(["lean", str(probe)], cwd=HERE, capture_output=True, text=True,
-                             env={**__import__("os").environ, "LEAN_PATH": str(env_path)})
+        out = subprocess.run([lean, str(probe)], cwd=HERE, capture_output=True, text=True,
+                             env={**env, "LEAN_PATH": str(env_path)})
         text = out.stdout
         receipt["axiom_report"] = text.strip()
         found: set[str] = set()

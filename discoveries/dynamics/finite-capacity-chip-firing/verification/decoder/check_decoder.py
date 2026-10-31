@@ -136,14 +136,20 @@ def run(count=60, seed=31):
 
 if __name__ == "__main__":
     import shutil as _shutil
-    if _shutil.which("lean") is None or _shutil.which("lake") is None:
-        import os as _os
-        _bin = _os.environ.get("CBMD_LEAN_BIN", "")
-        if not (_bin and _os.path.exists(_os.path.join(_bin, "lean"))):
-            print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",
-                              "detail": "set CBMD_LEAN_BIN to the pinned Lean 4.35.0 bin directory or put lean and lake on PATH",
-                              "authority_effect": "NONE"}))
-            raise SystemExit(3)
+    import os as _os
+    _bin = _os.environ.get("CBMD_LEAN_BIN", "")
+
+    def _available(name):
+        executable = name + (".exe" if _os.name == "nt" else "")
+        return _shutil.which(name) is not None or bool(
+            _bin and _os.path.isfile(_os.path.join(_bin, executable))
+        )
+
+    if not (_available("lean") and _available("lake")):
+        print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",
+                          "detail": "set CBMD_LEAN_BIN to the pinned Lean 4.35.0 bin directory or put lean and lake on PATH",
+                          "authority_effect": "NONE"}))
+        raise SystemExit(3)
     out = run()
     print(json.dumps(out, indent=1))
     raise SystemExit(0 if out["status"] == "PASS" else 1)

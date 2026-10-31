@@ -33,12 +33,25 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 LEAN_PROJECT = HERE.parent / "lean"
+
+
+def tool_path(env, name):
+    executable = name + (".exe" if os.name == "nt" else "")
+    bin_dir = env.get("CBMD_LEAN_BIN", "")
+    candidate = Path(bin_dir, executable) if bin_dir else None
+    if candidate is not None and candidate.is_file():
+        return str(candidate.resolve())
+    discovered = shutil.which(name, path=env.get("PATH"))
+    if discovered:
+        return discovered
+    raise FileNotFoundError(f"pinned {name} executable not found")
 
 
 class Refusal(ValueError):
@@ -154,7 +167,6 @@ def reconstruct(evald, order, sink):
 def built_library(env):
     """Build the dossier's Lean sources in a private copy outside the checkout
     (keyed by their hash), so no build artefact lands in the public tree."""
-    import shutil
     import tempfile
     files = sorted(p for p in LEAN_PROJECT.rglob("*") if p.is_file() and ".lake" not in p.parts
                    and p.suffix in (".lean", ".toml", ".json") or p.name == "lean-toolchain")
@@ -167,7 +179,7 @@ def built_library(env):
             dst = work / p.relative_to(LEAN_PROJECT)
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p, dst)
-        subprocess.run(["lake", "build"], cwd=work, env=env, check=True,
+        subprocess.run([tool_path(env, "lake"), "build"], cwd=work, env=env, check=True,
                        capture_output=True, timeout=1800)
     return lib
 
@@ -185,7 +197,8 @@ def run_lean(src: str):
     import tempfile
     path = Path(tempfile.mkdtemp(prefix="cbmd-decode-")) / "Decoded.lean"
     path.write_text("import CBMDFiniteDynamics\n" + src, encoding="utf-8")
-    p = subprocess.run(["lean", str(path)], capture_output=True, text=True, env=lean_env(),
+    env = lean_env()
+    p = subprocess.run([tool_path(env, "lean"), str(path)], capture_output=True, text=True, env=env,
                        timeout=900)
     path.unlink()
     return p.returncode, p.stdout, p.stderr

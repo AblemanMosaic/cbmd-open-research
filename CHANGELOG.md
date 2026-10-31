@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Integrated the 19-dossier research portfolio and repaired its reproduction
+  boundary: checked Lean runners now resolve `lean.exe` and `lake.exe` through
+  `CBMD_LEAN_BIN` on Windows, full qualification installs pinned Python and GAP
+  dependencies, and CI separately recompiles all five source-bound discovery
+  proof projects.
+- Split dependency-free repository qualification from full discovery
+  qualification with `--repository-only`, while keeping missing dependencies a
+  fail-closed error in the full scope.
+
 - Added the capacity-preservation boundary dossier
   (`CBMD-CON-CAPACITY-PRESERVATION-001`), mapping how far the chip-firing
   characterization reaches in Petri nets with place capacities: exact for

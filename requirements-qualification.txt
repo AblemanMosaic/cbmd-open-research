@@ -1,0 +1,4 @@
+# Exact third-party Python environment for the full discovery qualification.
+mpmath==1.3.0
+numpy==2.3.2
+sympy==1.14.0

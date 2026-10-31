@@ -23,6 +23,7 @@ from __future__ import annotations
 import json
 import os
 import random
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -43,12 +44,25 @@ _spec.loader.exec_module(_wmod)
 weighted_library = _wmod.built_library
 
 
+def tool_path(env, name):
+    executable = name + (".exe" if os.name == "nt" else "")
+    bin_dir = env.get("CBMD_LEAN_BIN", "")
+    candidate = Path(bin_dir, executable) if bin_dir else None
+    if candidate is not None and candidate.is_file():
+        return str(candidate.resolve())
+    discovered = shutil.which(name, path=env.get("PATH"))
+    if discovered:
+        return discovered
+    raise FileNotFoundError(f"pinned {name} executable not found")
+
+
 def run_lean(src, lib, env):
     env = dict(env)
     env["LEAN_PATH"] = str(lib)
     d = Path(tempfile.mkdtemp(prefix="cbmd-cross-"))
     (d / "X.lean").write_text(src, encoding="utf-8")
-    p = subprocess.run(["lean", str(d / "X.lean")], capture_output=True, text=True, env=env,
+    p = subprocess.run([tool_path(env, "lean"), str(d / "X.lean")],
+                       capture_output=True, text=True, env=env,
                        timeout=3600)
     out = {}
     for line in p.stdout.splitlines():
@@ -106,9 +120,15 @@ def run(count=300, seed=515):
 
 
 if __name__ == "__main__":
-    import shutil
-    if shutil.which("lean") is None and not (os.environ.get("CBMD_LEAN_BIN")
-                                              and Path(os.environ["CBMD_LEAN_BIN"], "lean").exists()):
+    _bin = os.environ.get("CBMD_LEAN_BIN", "")
+
+    def _available(name):
+        executable = name + (".exe" if os.name == "nt" else "")
+        return shutil.which(name) is not None or bool(
+            _bin and Path(_bin, executable).is_file()
+        )
+
+    if not (_available("lean") and _available("lake")):
         print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE", "authority_effect": "NONE"}))
         raise SystemExit(3)
     out = run(int(sys.argv[1]) if len(sys.argv) > 1 else 300)

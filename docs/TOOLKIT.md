@@ -4,11 +4,14 @@ The toolkit turns the repository from a readable research snapshot into a reprod
 
 | Component | Command | What a pass establishes | What it does not establish |
 |---|---|---|---|
-| Repository qualification | `python -B tools/qualify_repository.py` | Structure, discovery checks, harness tests, finite reference audit, proof-source custody and adversarial packaging tests pass. | Lean recompilation, peer review, novelty or a total performance result. |
+| Portable repository qualification | `python -B tools/qualify_repository.py --repository-only` | Structure, harness tests, finite reference audit, proof-source custody and adversarial packaging tests pass using only Python 3.12+. | Per-discovery checks, Lean recompilation, peer review, novelty or a total performance result. |
+| Full discovery qualification | `python -B tools/qualify_repository.py` | Every declared required discovery check passes with the pinned Python packages, GAP libraries and Lean toolchain present. | Separate Lean recompilation, peer review, novelty or a total performance result. |
 | Governed harness | `python -B tools/verify_harness.py` | Exact shipped source bytes and all 37 required control tests pass. | Mathematical truth, process confinement, multi-writer safety or UCM-native proof. |
 | Exact reference toolkit | `python -B tools/verify_standalone.py` | The declared finite boxes agree across the recurrence, falling-factorial/interpolation/literal-expansion oracles, and nine mutations are detected. | A general proof, external independence or whole-algorithm cost. |
 | Lean source custody | `python -B tools/verify_proof_sources.py` | Every public Lean input, pin and local import is bound; forbidden proof escapes are absent from code. | Compilation or the actual dependency set of a compiled theorem. |
 | Lean replay | `python -B tools/replay_lean.py --prepare --fresh` | The nine targets compile from a project without prior CBMD proof objects and the audit module admits only the declared logical primitives. | A dependency build from raw compiler source, independent review, novelty or deployment. |
+
+The exact third-party Python versions for full qualification are in `requirements-qualification.txt`. The McKay gate additionally requires GAP 4 with SmallGrp and CTblLib. Checked decoder gates require Lean 4.35.0 and Lake on `PATH`, or `CBMD_LEAN_BIN` pointing to the toolchain's bin directory. Each discovery with `SOURCE_BOUND_COMPILED` standing also carries a local `verification/lean/replay.py --build` command; continuous integration executes all of them independently of the audit-only qualification.
 
 ## Research workflow
 

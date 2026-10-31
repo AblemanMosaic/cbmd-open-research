@@ -36,6 +36,18 @@ HERE = Path(__file__).resolve().parent
 LEAN = HERE.parent / "lean"
 
 
+def tool_path(env, name):
+    executable = name + (".exe" if os.name == "nt" else "")
+    bin_dir = env.get("CBMD_LEAN_BIN", "")
+    candidate = Path(bin_dir, executable) if bin_dir else None
+    if candidate is not None and candidate.is_file():
+        return str(candidate.resolve())
+    discovered = shutil.which(name, path=env.get("PATH"))
+    if discovered:
+        return discovered
+    raise FileNotFoundError(f"pinned {name} executable not found")
+
+
 class Refusal(ValueError):
     def __init__(self, code):
         super().__init__(code)
@@ -128,7 +140,7 @@ def built_library(env):
             dst = work / p.relative_to(LEAN)
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p, dst)
-        subprocess.run(["lake", "build"], cwd=work, env=env, check=True,
+        subprocess.run([tool_path(env, "lake"), "build"], cwd=work, env=env, check=True,
                        capture_output=True, timeout=3600)
     return lib
 
@@ -140,7 +152,8 @@ def run_lean(src):
     env["LEAN_PATH"] = str(built_library(env))
     d = Path(tempfile.mkdtemp(prefix="cbmd-wdecode-"))
     (d / "Decoded.lean").write_text("import CBMDWeightedDynamics\n" + src, encoding="utf-8")
-    p = subprocess.run(["lean", str(d / "Decoded.lean")], capture_output=True, text=True, env=env,
+    p = subprocess.run([tool_path(env, "lean"), str(d / "Decoded.lean")],
+                       capture_output=True, text=True, env=env,
                        timeout=3600)
     return p.returncode, p.stdout
 
