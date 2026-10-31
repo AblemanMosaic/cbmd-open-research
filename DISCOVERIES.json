@@ -285,7 +285,7 @@
       "path": "discoveries/dynamics/quadrant-chip-firing-triangle",
       "title": "Chip-firing on the quadrant: the bottom-triangle conjecture checked to 2^34 chips",
       "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Prove the structure statement (S): the first thin row of F is a longest row entered by a length increase.",
+      "next_obligation": "A proof of IKL Conjecture 7.3 or of the observed statement (S); the rectangle-count discrepancy is resolved in 0.1.2.",
       "promotion_blockers": [
         "evidence only for the conjecture; only the thin-row lemma is proved"
       ],

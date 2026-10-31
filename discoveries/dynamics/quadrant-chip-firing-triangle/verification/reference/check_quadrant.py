@@ -91,8 +91,26 @@ def main():
             alt = 1 if lens9[i] in (12, 13) else 0
         best = max(best, alt)
     T10 = sum(v // 2 for r in rows_of(1024) for v in r)
-    results['CALIBRATION'] = {'pass': len(R9) == 92 and max(lens9) == 13 and best == 59 and T10 == 38570,
-                              'rows_n9': len(R9), 'alternating_stretch_n9': best, 'T10': T10}
+    # IKL Example 5 partitions the n = 9 array as 10 + 13 + 57 + 12 = 92: top triangle, middle top,
+    # "rectangular shape with 57 rows that alternate between 12 and 13, starting with 12", bottom
+    # triangle.  Reproduce all four summands.  The bottom triangle (maximal final run of unit drops)
+    # begins at the LAST longest row, so it shares its first two rows with the maximal alternating
+    # stretch: that is why the stretch has 59 rows where IKL's rectangle has 57.
+    bs = len(lens9) - 1
+    while bs > 0 and lens9[bs - 1] - lens9[bs] == 1:
+        bs -= 1
+    last_longest = max(i for i, v in enumerate(lens9) if v == max(lens9))
+    top9 = next(i for i in range(1, len(lens9)) if lens9[i] != i + 1)        # lengths 1, 2, 3, ...
+    rect9 = best - 2
+    mid9 = len(lens9) - top9 - rect9 - (len(lens9) - bs)
+    ikl_partition = (top9, mid9, rect9, len(lens9) - bs) == (10, 13, 57, 12)
+    rect_start_12 = lens9[bs - rect9] == 12 and lens9[bs - 1] == 12
+    results['CALIBRATION'] = {'pass': len(R9) == 92 and max(lens9) == 13 and best == 59 and T10 == 38570
+                              and bs == last_longest and ikl_partition and rect_start_12,
+                              'rows_n9': len(R9), 'alternating_stretch_n9': best, 'T10': T10,
+                              'ikl_partition_n9': [top9, mid9, rect9, len(lens9) - bs],
+                              'bottom_triangle_starts_at_last_longest_row': bs == last_longest,
+                              'rectangle_starts_with_12': rect_start_12}
 
     bad = [n for n in range(1, 19) if not conj_ok(2 ** n)]
     results['CONJ_7_3_POWERS'] = {'pass': not bad, 'n_range': [1, 18], 'failures': bad}

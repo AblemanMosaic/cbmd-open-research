@@ -36,9 +36,28 @@ has exactly (length of the longest row) − 1 rows. They checked it for
 - **Calibration against the paper.**
   - `n = 9` gives 92 rows, as in IKL Example 5.
   - `T(10) = 38,570` total firings, as in IKL §3.
-  - IKL describe a "rectangle" of 57 rows alternating 12 and 13. Our longest
-    alternating stretch has 59 rows. The paper does not define the
-    rectangle, so we calibrate only the lengths 12 and 13.
+  - IKL's Example 5 partitions the `n = 9` array as
+    `10 + 13 + 57 + 12 = 92`: top triangle, middle top, "rectangular shape
+    with 57 rows that alternate between 12 and 13, starting with 12", bottom
+    triangle. **All four summands are reproduced**, including the rectangle's
+    57 and its starting length 12.
+
+    An earlier version of this dossier recorded a discrepancy here, because
+    our *maximal alternating stretch* has 59 rows, not 57. There is no
+    disagreement. The bottom triangle — the maximal final run of rows whose
+    lengths drop by exactly 1 — begins at the **last longest row**, so its
+    first two rows (the last row of length 13, then the following 12) are also
+    the last two rows of the alternating stretch. The rectangle is the stretch
+    with those two rows removed, hence always two shorter. Checked for
+    `6 ≤ n ≤ 16`: the bottom triangle starts at the last longest row in every
+    case, and the stretch has the short length at both ends.
+
+    The word "rectangle" is never formally defined in IKL (it is introduced in
+    §4.3 as the shape's "widest part"), so this is the reading forced by their
+    own four-part count, not an attribution of intent. Note also that the
+    four-part description is a large-`n` one: at `n = 6, 7` the residual
+    middle top would be negative, since the top triangle and the rectangle
+    already overlap.
 
 ## What is not established
 

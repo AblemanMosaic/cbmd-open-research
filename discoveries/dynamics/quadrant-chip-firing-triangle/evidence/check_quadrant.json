@@ -5,7 +5,15 @@
    "pass": true,
    "rows_n9": 92,
    "alternating_stretch_n9": 59,
-   "T10": 38570
+   "T10": 38570,
+   "ikl_partition_n9": [
+    10,
+    13,
+    57,
+    12
+   ],
+   "bottom_triangle_starts_at_last_longest_row": true,
+   "rectangle_starts_with_12": true
   },
   "CONJ_7_3_POWERS": {
    "pass": true,

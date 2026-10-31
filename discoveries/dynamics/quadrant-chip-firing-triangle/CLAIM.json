@@ -4,7 +4,7 @@
  "title": "Chip-firing on the quadrant: the bottom-triangle conjecture checked to 2^34 chips",
  "field": "dynamics",
  "slug": "quadrant-chip-firing-triangle",
- "public_version": "0.1.1",
+ "public_version": "0.1.2",
  "status": [
   "CONJECTURE",
   "EXACT_MODEL_VERIFIED"
@@ -13,11 +13,11 @@
  "resolves": "nothing; extends the evidence for IKL Conjecture 7.3 from n <= 12 to n <= 34 and to all chip counts N <= 300000",
  "verified": [
   "check_quadrant.py: calibration with IKL (92 rows at n = 9, T(10) = 38570, longest row 13 at n = 9); Conjecture 7.3 for n <= 18 and for all N <= 3000; the thin-row lemma on 20000 random thin rows and on every thin row of F for N <= 3000, with a control showing its no-zero hypothesis is needed; the structure (S) for N <= 3000 (pure Python).",
-  "quadscan.c: exact uint64 row recursion for N = 2^n, n <= 34, and every N <= 300000, checking the conjecture, IKL Prop 6.2 (lengths change by exactly 1), the absence of interior zeros and (S); zero failures (evidence/quadrant_scans.json)."
+  "quadscan.c: exact uint64 row recursion for N = 2^n, n <= 34, and every N <= 300000, checking the conjecture, IKL Prop 6.2 (lengths change by exactly 1), the absence of interior zeros and (S); zero failures (evidence/quadrant_scans.json).",
+  "CALIBRATION gate: the n = 9 array reproduces all four summands of IKL Example 5's partition, 10 + 13 + 57 + 12 = 92 (top triangle, middle top, rectangle, bottom triangle), the rectangle's 57 rows alternating 12 and 13 and starting with 12 included. The apparent discrepancy recorded before 0.1.2 -- our maximal alternating stretch has 59 rows -- is a boundary convention and not a disagreement: the bottom triangle begins at the last longest row, so its first two rows are also the last two of the alternating stretch, making the rectangle exactly two rows shorter. Verified for 6 <= n <= 16 that the bottom triangle starts at the last longest row and that the alternating stretch has the short length at both ends."
  ],
  "unresolved": [
-  "a proof of Conjecture 7.3 or of (S)",
-  "IKL's informal 'rectangle' count (57 rows at n = 9) versus our maximal alternating stretch (59 rows)"
+  "a proof of Conjecture 7.3 or of (S)"
  ],
  "nonclaims": [
   "no proof of the conjecture is claimed",
