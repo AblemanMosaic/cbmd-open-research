@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.12.0",
+ "public_version": "0.12.1",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -59,7 +59,8 @@
   "Classical.choice is genuinely used to build the obstruction's successor map and is not eliminated",
   "the cycle obstruction is the Petri-net-side form of a known queueing result: Liebeherr and Akyildiz give a necessary and sufficient deadlock-freedom condition over buffer cycles for closed networks under blocking-after-service, and no novelty is claimed for it",
   "the live-set obstruction is a trap in the net, dually a siphon in the complemented net, and the two enabledness notions are Murata's strict and weak transition rules; both are classical objects",
-  "the capacitated-sink result says nothing about leaking or draining sinks, which are different models"
+  "the capacitated-sink result says nothing about leaking or draining sinks, which are different models",
+  "not a corollary of the abelian-network theory of Bond and Levine (arXiv:1309.3445): their processors cannot read neighbouring states, whereas capacity-blocked firing is enabled by the receivers having room, so their Theorem 4.6 does not apply. Their papers II and III were located but not read."
  ],
  "smallest_decisive_test": "Exhibit an ordered multigraph satisfying d(v) + max_u m(u,v) <= C(v) + 1 with a reachable capacity-terminal state that is not the ordinary normal form of its initial state; or a reference proving the same preservation statement with an explicit semantic translation.",
  "checks": [

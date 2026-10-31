@@ -25,6 +25,56 @@ successor starts here rather than repeating them.
 | "implicit place" Petri net capacity constraint does not change reachable dead markings redundant | structural-redundancy literature; the implicit-place notion is strictly stronger than what is used here |
 | chip-firing game bounded vertex capacity stabilization unchanged threshold outdegree plus maximum edge multiplicity | chip-firing surveys and theses; no match |
 
+## Abelian networks: the closest general framework, and why it does not apply
+
+Added 2026-10-31. This is the one general theory that would plausibly subsume
+the preservation theorem, and it was missing from the queries above.
+
+- **B. Bond and L. Levine, *Abelian networks I. Foundations and examples*,
+  arXiv:1309.3445.** Read: the definition of an abelian processor and network
+  (§2) and the order-independence results (§4), via the arXiv PDF; the full
+  text was also searched for "capacity", "bounded in-degree", "blocked",
+  "blocking" and "room", none of which occurs.
+  - Definition 2.1 (abelian processor): for any two input words with the same
+    letter counts the resulting state agrees, and each output word has the same
+    letter counts.
+  - Lemma 4.3 (least action principle), Lemma 4.4 (halting dichotomy: either no
+    finite complete execution exists, or every legal execution is finite and
+    all complete legal executions have the same letter counts), and Theorem 4.6
+    (halting status, final states and run times are independent of execution
+    order).
+  - **Why the present model is not an abelian network.** Their processors are
+    local. In their words:
+
+    > "An individual processor in an abelian network cannot access the states of
+    > neighboring processors. It can only read the messages they send."
+
+    Capacity-blocked firing is exactly the opposite: a vertex may fire only if
+    its *receivers* have room, so the enabling condition reads the state of
+    neighbouring vertices. Their model has no capacity on input ports and
+    messages accumulate without bound, and the paper never treats a firing
+    forbidden by a full receiver. So Theorem 4.6 does not apply here, and the
+    preservation theorem is not a corollary of it.
+  - What this does mean: the *conclusion* of the present theorem — every
+    reachable capacity-terminal state is the ordinary normal form — is the
+    analogue of their Lemma 4.4 and Theorem 4.6 for a rule that is not local.
+    The content is in recovering an abelian-style conclusion for a non-local
+    firing rule, under the capacity threshold and the acyclicity hypothesis;
+    the cycle converse shows both hypotheses are needed.
+  - **Not read:** *Abelian networks II. Halting on all inputs*
+    (arXiv:1409.0169) and *III. The critical group*. They were located but not
+    read; II concerns halting on all inputs and III the critical group, neither
+    of which is the question here, but this is recorded as a gap rather than
+    as a clearance.
+- **A. E. Holroyd, L. Levine and P. Winkler, *Abelian logic gates*.** Located
+  in the same search, not read. Noted because abelian logic gates are the
+  natural place a "blocking" gate might appear.
+
+This changes the standing of the bounded note above: the closest general
+theory is now identified by name, with the definitional reason it does not
+cover the model quoted from the source. Novelty remains **UNASSESSED** — this
+rules out one framework, it does not survey the field.
+
 ## Queries run for the characterization (revision 0.3.0 / 0.4.0)
 
 | Query | Outcome |
