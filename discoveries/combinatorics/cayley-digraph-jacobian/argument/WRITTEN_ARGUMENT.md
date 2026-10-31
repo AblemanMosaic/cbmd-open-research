@@ -2,9 +2,16 @@
 
 ## Setting
 
-Let `A` be a finite abelian group of order `n`, and `S` a multiset of `s`
-nonzero elements of `A` with `Σ_{x∈S} x = 0`. Assume `S` generates `A`; this
-is the faithfulness of the corresponding McKay representation. Let `G` be the
+Let `A` be a finite abelian group of order `n ≥ 2`, and `S` a multiset of `s`
+nonzero elements of `A` with `Σ_{x∈S} x = 0`. Assume `S` generates `A`.
+Reiner's text leaves this hypothesis implicit. It is the faithfulness of the
+corresponding McKay representation, which BKR's surjection needs.
+
+Without it the digraph is disconnected and the reduced-Laplacian cokernel is
+infinite. Under the alternative convention "torsion of the cokernel of the
+full Laplacian", `A = (ℤ/2)²` with `S = {(1,0), (1,0)}` gives a torsion group
+isomorphic to `A`, although `A` is not cyclic. So the hypothesis cannot be
+dropped. Let `G` be the
 Cayley digraph `Cay(A, S)`, with one arc `g → g + x` for each `x ∈ S`, counted
 with multiplicity. `G` is Eulerian (every in- and out-degree is `s`) and
 strongly connected. Its Jacobian `Jac(G)` is the cokernel of its reduced
@@ -73,8 +80,8 @@ and let `π = 1 − ζ`. Then
 
 ## Lemma 4 (an AM–GM lower bound)
 
-Let `χ` have order `d`, and suppose three elements `x_1, x_2, x_3` of `S`
-(repetition allowed) satisfy `χ(x_j) ≠ 1`. Then
+Let `χ` have order `d`, and suppose three distinct members `x_1, x_2, x_3`
+of the multiset `S` satisfy `χ(x_j) ≠ 1`; their values may coincide. Then
 
     N(λ_χ) ≥ (3/2)^{φ(d)} · Π_{j=1}^{3} N(1 − χ(x_j))^{2/3},
 
@@ -98,7 +105,7 @@ Multiplying over `k ∈ (ℤ/d)^×` gives the claim. ∎
 
 Suppose `|Jac(G)| = n`, so `Π_H N_H = n²` (Lemmas 1 and 2).
 
-**`A` is cyclic.** Fix a prime `p` with `A_p ≅ ⊕_{i=1}^{r} ℤ/p^{e_i}`.
+**Step 1: ruling out non-cyclic `A`.** Fix a prime `p` with `A_p ≅ ⊕_{i=1}^{r} ℤ/p^{e_i}`.
 Write `e = Σ e_i`, so `v_p(n) = e`. Under the duality `H ↦ H^⊥`, the
 subgroups `H` with `A/H` cyclic of order `p^k` (`k ≥ 1`) correspond to the
 nontrivial cyclic subgroups of `p`-power order in `Â ≅ A`. Their number `c_p`
@@ -106,10 +113,11 @@ is at least `e`, from the subgroups `⟨p^{e_i − j} u_i⟩` along the coordina
 axes, `1 ≤ j ≤ e_i`. If `r ≥ 2`, the subgroup
 `⟨p^{e_1−1} u_1 + p^{e_2−1} u_2⟩` gives one more, so `c_p ≥ e + 1`. By
 Lemma 3, `v_p(Π_H N_H) ≥ 2 c_p ≥ 2e + 2 > 2e = v_p(n²)`, a contradiction.
-So every `A_p` is cyclic, and so is `A`. The same count proves the stated
-divisibility `p^{2+v_p(n)} | |Jac(G)|` for noncyclic `A_p`.
+So every `A_p` is cyclic, and so is `A`. The same count does not use `|Jac| = n`, so it proves the stated
+divisibility `p^{2+v_p(n)} | |Jac(G)|` for noncyclic `A_p`. In particular
+`|Jac(G)| ≥ p² n`.
 
-**`s = 2`.** Let `A = ℤ/n` and suppose `s ≥ 3`. Take `χ` faithful, of order
+**Step 2: ruling out `s ≥ 3` for cyclic `A`.** Let `A = ℤ/n` and suppose `s ≥ 3`. Take `χ` faithful, of order
 `d = n`. Then `χ(x) ≠ 1` for every `x ∈ S`, since the elements of `S` are
 nonzero.
 
@@ -133,3 +141,36 @@ In both cases the same estimates give
   The conclusion then concerns the nonzero part of `S`.
 - The argument uses only `|Jac(G)|`. The quantitative bounds show how far
   `Jac(G)` is from `A` in general.
+
+## Remark: the non-abelian analogue fails
+
+For a finite group `G` and a faithful representation `γ : G → SL_n(ℂ)`, BKR
+prove that the critical group `K(γ)` surjects onto the dual of `G^{ab}`
+(their Theorem 1.3). When `n = 2` this surjection is an isomorphism (their
+Theorem 1.4). The theorem above says that for abelian `G`, an isomorphism
+forces `γ` to be a sum of trivial characters and one pair `{a, −a}`.
+
+For non-abelian `G` the analogous statement is false:
+
+- For `A_4 ⊂ SO(3) ⊂ SL_3` (the rotations of a tetrahedron),
+  `K(γ) ≅ ℤ/3 ≅ A_4^{ab}`.
+- For `A_5 ⊂ SO(3)` (the rotations of an icosahedron), `K(γ)` is trivial,
+  and so is `A_5^{ab}`.
+- For the octahedral group `S_4 ⊂ SO(3)`, `K(γ) ≅ ℤ/4`, while
+  `S_4^{ab} ≅ ℤ/2`.
+
+All three groups act through irreducible 3-dimensional representations.
+`verification/reference/nonabelian_examples.py` computes these by Smith normal
+form of the reduced McKay–Cartan matrix, built from tensor-product
+multiplicities. They agree with the order formula
+`|K(γ)| = |G|^{−1} Π_{c ≠ 1} (n − χ_γ(c))` (Gaetz):
+
+- `A_4`: `4·3·3/12 = 3`;
+- `S_4`: `4·3·4·2/24 = 4`;
+- `A_5`: `4·3·5/60 = 1`.
+
+In these examples every group element has at most two eigenvalues different
+from 1, so the AM–GM step (Lemma 4) has nothing to bite on. Lemma 3 also
+weakens, because the norm over a Galois orbit of conjugacy classes can drop to
+`p` once the classes `g^k` fuse. Which pairs `(G, γ)` give `K(γ) ≅ (G^{ab})^`
+in general is left open.

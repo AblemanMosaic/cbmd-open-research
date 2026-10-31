@@ -48,9 +48,12 @@ The proof uses only the order of the Jacobian:
 
 ## What is not established
 
-- An independent specialist review of the proof.
-- The non-abelian version of the question, for McKay quivers of
-  non-abelian groups and `G^{ab}`.
+- Review by a human specialist. An independent agent review found the proof
+  correct, and its minor fixes are applied.
+- A characterisation for non-abelian groups. The naive analogue is false:
+  the rotation groups `A_4` and `A_5` in `SO(3)` have critical group
+  isomorphic to the dual of `G^{ab}` with `n = 3`. See the remark in
+  `argument/WRITTEN_ARGUMENT.md` and `nonabelian_examples.py`.
 - The full structure of `Jac` beyond its order.
 
 ## Reproduction
