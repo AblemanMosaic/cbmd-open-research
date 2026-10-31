@@ -22,6 +22,9 @@ Gates (each required):
     formula follows), and Theorem M (the row expansion has only nonnegative terms, the strictness
     witness arc u -> 0 exists and the swapped map is again an arborescence, and the inequality is
     strict), on all groups of order <= 24 with at most 6 classes and all degrees <= 4;
+  * M1_HYPOTHESIS: m1_hypothesis_check.g -- Corollary M1 needs det gamma_1 = 1, because (F1) is a
+    statement about representations into SL_n: with det = 1 every faithful representation in the
+    range satisfies |K| >= |G^ab|, without it 136 do not (smallest: Z/2 with the sign character);
   * SECTOR_LEMMA: sector_check.py -- the edge inequality behind Lemma 2's sector lemma, numerically;
   * BOUNDS_N3: bounds_check.py -- the analytic inequalities of Theorems 7 and 9 leave only the finite
     regions covered by the computations;
@@ -150,6 +153,23 @@ def gate_arborescence():
     return {'pass': ok, 'counts': got, 'expected': want}
 
 
+def gate_m1_hypothesis():
+    """Corollary M1's determinant hypothesis: (F1) holds for every faithful representation of
+    determinant 1 in the range, and fails for some of determinant != 1, so it cannot be dropped."""
+    txt = run_gap(['ORDMAX := 20;; DEG := 3;;', 'Read("m1_hypothesis_check.g");'], 'm1h.out')
+    if txt is None:
+        return {'pass': False, 'reason': 'GAP unavailable or produced no output'}
+    line = next((l for l in txt.splitlines() if l.startswith('M1_HYPOTHESIS')), None)
+    if line is None:
+        return {'pass': False, 'reason': 'no M1_HYPOTHESIS summary', 'output': txt[-500:]}
+    got = {k: int(v) for k, v in re.findall(r'(\w+)=(\d+)', line)}
+    want = {'det1_tested': 591, 'det1_below_Gab': 0, 'detnot1_tested': 10963,
+            'detnot1_below_Gab': 136}
+    ok = got == want and not any(l.startswith('BKR_VIOLATION') for l in txt.splitlines())
+    return {'pass': ok, 'counts': got, 'expected': want,
+            'witness': next((l for l in txt.splitlines() if l.startswith('FIRST_WITNESS')), '')}
+
+
 def gate_sector():
     proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'sector_check.py')], capture_output=True, text=True)
     return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
@@ -254,6 +274,7 @@ def main():
         'SCAN_SMALL': gate_scan(),
         'ATLAS_SMALL': gate_atlas(),
         'ARBORESCENCE': gate_arborescence(),
+        'M1_HYPOTHESIS': gate_m1_hypothesis(),
         'SECTOR_LEMMA': gate_sector(),
         'BOUNDS_N3': gate_bounds(),
         'MONOMIAL_ENUM': gate_monomial(),

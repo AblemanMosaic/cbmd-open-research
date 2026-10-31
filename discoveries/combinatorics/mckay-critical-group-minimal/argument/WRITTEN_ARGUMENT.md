@@ -46,6 +46,13 @@ faithfulness says `S` generates `Ĝ`, and `K(γ)` is the Jacobian of the Cayley
 digraph `Cay(Ĝ, S)`. The minimal cases are exactly `Ĝ` cyclic with
 `S = {a, −a}` plus zeros. This is BKR's Proposition 6.19 (proof sketch due to S. Koplewitz).
 An independent proof with quantitative bounds is in `CBMD-COMB-CAYLEY-JAC-001`.
+In that language all degrees are 1, so Lemma A is the ordinary matrix-tree
+theorem for the Cayley digraph and Theorem M says that enlarging the
+generating multiset `S` by a nonzero element strictly increases
+`|Jac(Cay(Ĝ, S))|` — the digraph form of the classical fact that adding an
+edge to a connected graph increases its number of spanning trees. For
+abelian `G` that case is folklore; the content of Theorem M is that it
+survives when the degrees `δ_i` are not all 1.
 
 ## Lemma 1 (reductions)
 
@@ -179,11 +186,25 @@ since the remaining arcs are `T`-arcs and `T` is acyclic; and cannot use
 `(T', S = {1, …, ℓ} ∖ {u})` contributes a positive term absent from
 `|K(γ_1)|`, and the inequality is strict. ∎
 
-**Corollary M1.** If `γ : G ↪ SL_n(ℂ)` is faithful and `γ = γ_1 ⊕ γ_2` with
-`γ_1` faithful and `γ_2` not a multiple of the trivial representation, then
-`|K(γ)| > |K(γ_1)| ≥ |G^{ab}|` by (F1), so `γ` is not minimal. Hence in
-Question 6.11 and Gaetz's Question 2 one may assume that no proper direct
-summand of `γ`, after deleting trivial summands, is faithful.
+**Corollary M1.** Let `γ : G ↪ SL_n(ℂ)` be faithful and `γ = γ_1 ⊕ γ_2` with
+`γ_1` faithful, **`det γ_1 = 1`** (equivalently `det γ_2 = 1`), and `γ_2` not
+a multiple of the trivial representation. Then
+`|K(γ)| > |K(γ_1)| ≥ |G^{ab}|`, the second inequality by (F1) applied to
+`γ_1`, so `γ` is not minimal. Hence in Question 6.11 and Gaetz's Question 2
+one may assume that no proper direct summand of `γ` of determinant 1 is
+faithful, after deleting trivial summands.
+
+The determinant hypothesis on `γ_1` cannot be dropped: (F1) is a statement
+about representations into `SL_n`, and it fails otherwise. The smallest
+example is `G = ℤ/2` with `γ_1` the sign character: `C̃ = I − P` for the
+transposition `P`, the reduced matrix is `(1)`, and
+`|K(γ_1)| = 1 < 2 = |G^{ab}|`. Among all faithful representations of degree
+`≤ 3` of the groups of order `≤ 20`, the 591 with `det = 1` all satisfy
+`|K| ≥ |G^{ab}|`, as (F1) requires, while 136 of the 10,963 with `det ≠ 1`
+have `|K| < |G^{ab}|` (gate `M1_HYPOTHESIS`). Theorem M itself is unaffected — it never
+uses (F1). This is also why Theorem 8 is still needed: its
+`γ = det ρ^{−1} ⊕ ρ` has `det γ = 1` but `det ρ ≠ 1`, so Corollary M1 does
+not apply to it, even though Theorem M does give `|K(γ)| > det C(ρ)`.
 
 **Corollary M2.** The terms with `S = ∅` sum to `det C(γ_2) ≥ 0`, so
 `|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + det C(γ_2)`; when `γ_2` is also faithful this

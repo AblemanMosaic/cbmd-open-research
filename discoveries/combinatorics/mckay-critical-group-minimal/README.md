@@ -67,11 +67,20 @@ hypotheses.** For `γ_1` faithful and `γ_2` *any* representation of `G`,
     |K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)|,
 
 with equality exactly when `γ_2` is a multiple of the trivial
-representation. So a minimal `γ` has no faithful proper summand once trivial
-summands are deleted (Corollary M1), which is the reduction Gaetz's Question
-2 needs; and for two faithful summands
+representation. So a minimal `γ` has no faithful proper summand **of
+determinant 1** once trivial summands are deleted (Corollary M1), which is
+the reduction Gaetz's Question 2 needs; and for two faithful summands
 `|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + |K(γ_2)|` (Corollary M2, attained already for
 `G = ℤ/2`).
+
+Corollary M1's determinant hypothesis is not decoration. It applies (F1) to
+the summand `γ_1`, and (F1) is a statement about representations into
+`SL_n`: for `G = ℤ/2` and `γ_1` the sign character, `|K(γ_1)| = 1 < 2`. Of
+the faithful representations of degree `≤ 3` of the groups of order `≤ 20`,
+all 591 with determinant 1 satisfy `|K| ≥ |G^{ab}|`, while 136 of the 10,963
+with determinant `≠ 1` do not (gate `M1_HYPOTHESIS`). This is why Theorem 8
+is still needed: its `γ = det ρ^{−1} ⊕ ρ` has `det γ = 1` but
+`det ρ ≠ 1`.
 
 The route is the matrix-tree theorem rather than the sector geometry. The
 McKay–Cartan matrix `nI − M` is not a digraph Laplacian — the McKay quiver's

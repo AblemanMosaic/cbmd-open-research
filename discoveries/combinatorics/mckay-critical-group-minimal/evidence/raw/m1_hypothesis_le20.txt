@@ -1,0 +1,2 @@
+M1_HYPOTHESIS det1_tested=591 det1_below_Gab=0 detnot1_tested=10963 detnot1_below_Gab=136
+FIRST_WITNESS [ 2, 1 ] n=1 |K|=1 |Gab|=2
