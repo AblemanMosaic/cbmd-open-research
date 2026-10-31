@@ -74,15 +74,20 @@
     of `Σ_v δ_v² = |G|`; Corollary 7.4 (faithful representations of a finite
     group are always tensor-rich) is the general form of the faithfulness
     input to Theorem M.
-  - **A Hopf-algebra extension, stated but NOT verified here.** Their
-    Propositions 3.1, 3.8 and 2.2 are exactly the three ingredients Lemma A
-    and Proposition B use, so for a tensor-rich module over a
-    finite-dimensional Hopf algebra one expects
-    `#K(V) = γ · A_ε(V)`, where `A_ε(V)` is the weighted arborescence count
-    rooted at the trivial module with weights `(M_V)_{ij} p_j / p_i`, and
-    `M_{V⊕W} = M_V + M_W` should then give the same monotonicity. This is
-    recorded as a direction, not a result: it has not been checked, by hand
-    or by machine, and nothing in this dossier depends on it.
+  - **The modular extension, now carried out (0.4.5).** Their Propositions
+    3.1, 3.8 and 2.2 and Theorems 1.2 and 1.4 are exactly what Lemma A and
+    Proposition B need, with `s` and `p` in place of the degree vector. The
+    result, verified over modular group algebras and proved below modulo
+    their theorems, is
+
+        A_v = κ · p_v s_v    and    #K(V) = γ · A_v / (p_v s_v)
+
+    for every `v`, where the arborescence weights are `(M_V)_{ij} p_j / p_i`
+    in their convention. A first guess recorded here in 0.4.4,
+    `#K(V) = γ · A_ε(V)`, was **wrong**: `p_ε = dim P_ε` is not 1 in
+    characteristic `p`, and the factor does not drop out. For `A_5` at
+    `p = 3` with `V` the 3-dimensional simple, `A_ε = 2`, `p_ε = 6`,
+    `γ = 3`, so the correct value is `3·2/6 = 1`, while the guess gives 6.
 
 - **H. Browne, *Connectivity properties of McKay quivers*,
   arXiv:2003.09502.** Read: the full list of numbered results.

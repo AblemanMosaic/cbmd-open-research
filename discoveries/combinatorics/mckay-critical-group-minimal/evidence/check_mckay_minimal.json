@@ -132,6 +132,14 @@
    },
    "witness": "FIRST_WITNESS [ 2, 1 ] n=1 |K|=1 |Gab|=2"
   },
+  "MODULAR_ARBORESCENCE": {
+   "pass": true,
+   "counts": {
+    "modules_ok": 17,
+    "modules_bad": 0,
+    "monotonicity_failures": 0
+   }
+  },
   "SECTOR_LEMMA": {
    "pass": true,
    "output": [

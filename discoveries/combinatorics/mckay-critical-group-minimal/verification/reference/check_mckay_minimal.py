@@ -25,6 +25,11 @@ Gates (each required):
   * M1_HYPOTHESIS: m1_hypothesis_check.g -- Corollary M1 needs det gamma_1 = 1, because (F1) is a
     statement about representations into SL_n: with det = 1 every faithful representation in the
     range satisfies |K| >= |G^ab|, without it 136 do not (smallest: Z/2 with the sign character);
+  * MODULAR_ARBORESCENCE: modular_arborescence.g -- the same picture over modular group algebras,
+    where the degree vector splits into s (simple dimensions) and p (projective indecomposable
+    dimensions): the Laplacian conjugation uses s, A_v = kappa p_v s_v, and
+    #K(V) = gamma A_v / (p_v s_v) agrees with Grinberg-Huang-Reiner Theorem 1.2, on S3, S4 and A5
+    at every prime dividing the order;
   * SECTOR_LEMMA: sector_check.py -- the edge inequality behind Lemma 2's sector lemma, numerically;
   * BOUNDS_N3: bounds_check.py -- the analytic inequalities of Theorems 7 and 9 leave only the finite
     regions covered by the computations;
@@ -170,6 +175,27 @@ def gate_m1_hypothesis():
             'witness': next((l for l in txt.splitlines() if l.startswith('FIRST_WITNESS')), '')}
 
 
+def gate_modular_arborescence():
+    """The arborescence picture over a modular group algebra, where the degree vector splits into
+    s (simple dimensions) and p (projective indecomposable dimensions): A_v = kappa p_v s_v and
+    #K(V) = gamma A_v / (p_v s_v), plus additivity and monotonicity of A_eps."""
+    drv = ['CASES := [ [[SymmetricGroup,[4],"S4"],2], [[SymmetricGroup,[4],"S4"],3],',
+           '           [[AlternatingGroup,[5],"A5"],2], [[AlternatingGroup,[5],"A5"],3],',
+           '           [[AlternatingGroup,[5],"A5"],5], [[SymmetricGroup,[3],"S3"],3],',
+           '           [[SymmetricGroup,[3],"S3"],2] ];;',
+           'Read("modular_arborescence.g");']
+    txt = run_gap(drv, 'modarb.out')
+    if txt is None:
+        return {'pass': False, 'reason': 'GAP unavailable or produced no output'}
+    line = next((l for l in txt.splitlines() if l.startswith('MODULAR_ARB')), None)
+    if line is None:
+        return {'pass': False, 'reason': 'no MODULAR_ARB summary', 'output': txt[-400:]}
+    got = {k: int(v) for k, v in re.findall(r'(\w+)=(\d+)', line)}
+    ok = got.get('modules_ok') == 17 and got.get('modules_bad') == 0 \
+        and got.get('monotonicity_failures') == 0
+    return {'pass': ok, 'counts': got}
+
+
 def gate_sector():
     proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'sector_check.py')], capture_output=True, text=True)
     return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
@@ -275,6 +301,7 @@ def main():
         'ATLAS_SMALL': gate_atlas(),
         'ARBORESCENCE': gate_arborescence(),
         'M1_HYPOTHESIS': gate_m1_hypothesis(),
+        'MODULAR_ARBORESCENCE': gate_modular_arborescence(),
         'SECTOR_LEMMA': gate_sector(),
         'BOUNDS_N3': gate_bounds(),
         'MONOMIAL_ENUM': gate_monomial(),

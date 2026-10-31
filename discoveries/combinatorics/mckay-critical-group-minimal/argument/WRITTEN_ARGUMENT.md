@@ -181,6 +181,61 @@ Lemma 4.1), hence a weight-preserving bijection `Arb_0 → Arb_v`. Dropping
 acyclicity from Lemma A gives the upper bound
 `det C(γ) ≤ Π_{i ≠ 0}(n − M_{ii})`.
 
+## Remark: the modular and Hopf-algebra form of Lemma A and Proposition B
+
+Nothing in Lemma A or Proposition B uses the characteristic. They need three
+facts: `M δ = n δ`, `Mᵗ δ = n δ`, and additivity of `M` in `γ`. For a
+finite-dimensional Hopf algebra `A` over an algebraically closed field,
+Grinberg–Huang–Reiner supply the first two with the degree vector replaced by
+**two** vectors — `s`, the dimensions of the simple modules, and `p`, the
+dimensions of the indecomposable projectives:
+
+- `s` is a left-nullvector of `L_V = nI − M_V` (their Proposition 3.1);
+- `p` is a right-nullvector (their Proposition 3.8);
+- `sᵀ p = dim A` (their Proposition 2.2), replacing `Σ_v δ_v² = |G|`;
+- `L_V` has nullity 1 exactly when `V` is tensor-rich (their Theorem 1.4),
+  replacing faithfulness;
+- `#K(V) = |(γ/d)(λ_1 ⋯ λ_ℓ)|` with `d = dim A` and `γ = gcd(p)` (their
+  Theorem 1.2).
+
+Running the same two arguments gives, for tensor-rich `V`:
+
+    A_v = κ · p_v s_v   for every v,   and   #K(V) = γ · A_v / (p_v s_v),
+
+where `A_v` is the weighted arborescence count rooted at `v` with arc weights
+`(M_V)_{ij} p_j / p_i`, and `κ = (λ_1 ⋯ λ_ℓ)/ dim A`. The proof is the one
+above: conjugating by `diag(p)` makes `L_V` a weighted digraph Laplacian
+(nonpositive off-diagonals, vanishing row sums by `L_V p = 0`), the
+matrix-tree theorem identifies `A_v` with the `(v,v)` cofactor, corank 1 makes
+the adjugate `κ · p sᵀ`, and summing the cofactors against `sᵀp = dim A`
+gives `κ`; their Theorem 1.2 converts `κ` into `#K(V)`. Monotonicity follows
+unchanged, since `M_{V⊕W} = M_V + M_W` and `γ`, `p_v`, `s_v` do not depend on
+`V`.
+
+In characteristic 0 for a group algebra, `s = p = δ` and `γ = 1`, and this is
+Proposition B.
+
+**Two cautions.** First, the formula is *not* `#K(V) = γ · A_ε(V)`: in
+characteristic `p` the projective cover of the trivial module has
+`dim P_ε > 1` and that factor does not cancel. For `A_5` at `p = 3` with `V`
+the 3-dimensional simple, `A_ε = 2`, `p_ε = 6` and `γ = 3`, so
+`#K(V) = 3·2/6 = 1`, not 6. Second, the convention matters: with `M` indexed
+as in this dossier, `M_{ij}` being the multiplicity of `χ_j` in `γ ⊗ χ_i`,
+the matrix is the transpose of theirs, the right-nullvector is `s` rather than
+`p`, and the Laplacian conjugation must use `diag(s)`. In characteristic 0
+`s = p`, so the distinction is invisible — it was caught only when the first
+modular run failed.
+
+Verified in exact arithmetic by `modular_arborescence.g` (gate
+`MODULAR_ARBORESCENCE`) over `S_3`, `S_4` and `A_5` at every prime dividing
+the group order, 17 modules: the ratio `A_v/(p_v s_v)` is constant in `v`, the
+cofactor sum matches `κ · dim A`, the predicted `#K(V)` agrees with their
+Theorem 1.2 in every case, `M` is additive, and no monotonicity failure
+occurs. **Not established:** the equality case in the modular setting. The
+strictness witness of Theorem M uses the dual of a nontrivial constituent, and
+that argument has not been checked over a modular group algebra; only the weak
+inequality is claimed there.
+
 ## Theorem M (adding a summand enlarges `K`, unconditionally)
 
 **Theorem M.** Let `γ_1` be a faithful representation of `G` and `γ_2` any
