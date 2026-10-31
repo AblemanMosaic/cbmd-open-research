@@ -4,7 +4,7 @@
  "title": "Minimal critical groups of McKay quivers: Gaetz's Question 2 settled for n = 3 (computer-assisted), conjectured for n >= 4",
  "field": "combinatorics",
  "slug": "mckay-critical-group-minimal",
- "public_version": "0.4.2",
+ "public_version": "0.4.3",
  "status": [
   "CONJECTURE",
   "PROVISIONAL_WRITTEN_ARGUMENT",
@@ -20,7 +20,7 @@
   "Independent agent review of 0.1.0 (Lemmas 1-2, Proposition 3, Theorem 4): proofs correct; wording fixes applied in 0.2.0.",
   "Independent agent review of 0.2.0 (Lemma 6, Theorems 7-9): no mathematical error; notation (X' in type D), tail arguments of the bounds, and several justifications made explicit in 0.3.0.",
   "Monotonicity search: 1,359,437 pairs (gamma_1 faithful det 1, gamma_2 det 1 nontrivial, dimensions <= 4, non-abelian groups of order <= 60), no violation of |K(gamma_1 + gamma_2)| > |K(gamma_1)|; sector_check.py checks the edge inequality numerically for n <= 10.",
-  "arborescence_check.g (gate ARBORESCENCE): on all groups of order <= 24 with at most 6 conjugacy classes and all representations of degree <= 4 without trivial constituent, in exact arithmetic -- Lemma A (372 cases), the order formula of Proposition B (372), Proposition B(i)'s delta_v^2 ratio (1545 vertex checks), and Theorem M's row expansion with every mixed term nonnegative together with the strictness witness and the strict inequality (24584 pairs each); 0 failures. The same script at ORDMAX = 48, LMAX = 8, DEG = 5 is recorded separately.",
+  "arborescence_check.g (gate ARBORESCENCE): on all groups of order <= 24 with at most 6 conjugacy classes and all representations of degree <= 4 without trivial constituent, in exact arithmetic -- Lemma A (372 cases), the order formula of Proposition B (372), Proposition B(i)'s delta_v^2 ratio (1545 vertex checks), and Theorem M's row expansion with every mixed term nonnegative together with the strictness witness and the strict inequality (24584 pairs each); 0 failures. A wider run (order <= 48, at most 8 classes, degrees <= 5) was attempted with an earlier version of the same script; it ran about 100 minutes, emitted no failure line, and was then cut off by its own timeout without writing a summary, so it is NOT claimed and no evidence file records it. The independent review covers that range by other means.",
   "super.g: Corollary M2 on 45 groups of order <= 48 with at most 9 classes and degrees <= 5, with no determinant condition: 4,632,464 pairwise and 120,613 three-fold tests, 0 failures; minimum slack 0, so the bound is tight.",
   "mono2.g: Theorem M itself (the inequality and the equality case) with no determinant condition on either summand, over SmallGroups -- see evidence/raw/monotonicity_unconditional_le48.txt.",
   "m1_hypothesis_check.g (gate M1_HYPOTHESIS): among the faithful representations of degree <= 3 of the groups of order <= 20, all 591 with det = 1 satisfy |K| >= |G^ab| as (F1) requires, while 136 of the 10,963 with det != 1 do not. This pins the determinant hypothesis of Corollary M1 as necessary; it was found by checking Corollary M1 against Theorem 8 rather than by the gate.",
