@@ -16,7 +16,7 @@
   "check_mckay_minimal.py (GAP + Python): SO(3) formula and classification (cyclic/dihedral m <= 12, A4, S4, A5); primitive SL3 table; exhaustive scan of all groups of order <= 24 with n <= 5; ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6; analytic finite regions of Theorems 7-8 (bounds_check.py); monomial enumeration reproduced (47 type C, 23 type D; minimal only C3 with trivial constituent, S3, A4); GAP recomputation of enumerated monomial groups of order <= 60; the 18 exceptional type B groups (minimal only inside SL2).",
   "Exhaustive SmallGroups scans (faithful, det 1, no trivial constituent): all groups of order <= 40 with n <= 5; non-abelian groups of order <= 71 with n <= 6; all 3595 non-abelian groups of order <= 150 with n = 3. Minimal cases exactly as predicted; no case below the BKR bound; none with n >= 4.",
   "47 ATLAS character tables with n <= 8: minimal only for A5 (n = 3) and 2.A5 (n = 2).",
-  "Monomial enumeration cross-checked against GAP matrix groups for all enumerated groups of order <= 60 (run to order <= 220 in progress).",
+  "Monomial enumeration cross-checked against GAP matrix groups for all 59 enumerated groups of order <= 220.",
   "Independent agent review of 0.1.0 (Lemmas 1-2, Proposition 3, Theorem 4): proofs correct; wording fixes applied in 0.2.0."
  ],
  "unresolved": [

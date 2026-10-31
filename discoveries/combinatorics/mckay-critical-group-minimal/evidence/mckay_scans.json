@@ -52,7 +52,7 @@
     "real_character": true
    }
   ],
-  "gap_crosscheck": "CROSSCHECK 18 true\nFAILURES [  ]"
+  "gap_crosscheck": "CROSSCHECK 59 true\nFAILURES [  ]"
  },
  "gap": "GAP 4.12.1, SmallGrp 1.5.3, CTblLib 1.3.7",
  "scans": [

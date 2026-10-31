@@ -11,5 +11,5 @@
 | `raw/so3.txt` | `so3.g` with `MMAX = 30`. |
 | `raw/primitive_sl3.txt` | `prim.g`. |
 | `raw/monomial_le76.jsonl` | `monomial_enum.py 76`: all monomial subgroups of `SL_3(ℂ)` in normal form with diagonal part of order ≤ 76. |
-| `raw/monomial_gap_crosscheck.txt` | `monomial_gap_crosscheck.py` on the enumerated groups (currently order ≤ 60; order ≤ 220 pending). |
+| `raw/monomial_gap_crosscheck.txt` | `monomial_gap_crosscheck.py` on the 59 enumerated groups of order ≤ 220. |
 | `raw/typeB_exceptional.txt` | `typeB_exceptional.g`. |

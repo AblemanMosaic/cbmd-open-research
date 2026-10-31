@@ -356,7 +356,7 @@ For each group the enumeration computes, exactly:
 
 Its counts are 47 groups of type C and 23 of type D. The only minimal ones are
 the three listed. GAP recomputed `|G|`, `P` and `|G^{ab}|` from explicit
-matrices for every enumerated group of order `≤ 60` (recorded evidence; a run to order `≤ 220` is in progress). ∎
+matrices for every enumerated group of order `≤ 220` (59 groups). ∎
 
 ## Theorem 8 (reducible case: Blichfeldt type B)
 
