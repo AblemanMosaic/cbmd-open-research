@@ -1,0 +1,5 @@
+SUMMARY graphs=2016427 pairs=213200562 zero=0 p1neg=0 coefneg=0 posneg_numeric=0 min_ratio=5.47884863092e-07 at 7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6
+
+real	24m11.001s
+user	23m46.139s
+sys	0m1.317s

@@ -1,0 +1,1 @@
+SUMMARY graphs=76258 pairs=14363798 zero=0 p1neg=0 coefneg=0 posneg_numeric=0 min_ratio=4.46366775314e-07 at HQhTVbp e=1-5 f=4-6

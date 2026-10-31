@@ -1,0 +1,6 @@
+# independent cross-checks of the n = 10 forest run (nauty 2.8.8 geng, this workspace)
+# 1. graph count, geng alone (no checker):
+>A ./geng -Cd2D9 n=10 e=10-45
+>Z 9743542 graphs generated in 3.53 sec
+# 2. pair total, independent pass summing m(m-1)/2 over the same enumeration:
+graphs 9743542 pairs 2570347998

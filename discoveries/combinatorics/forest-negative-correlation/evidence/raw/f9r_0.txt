@@ -1,0 +1,1 @@
+SUMMARY parallel_pairs=0 graphs=117808 pairs=19979088 zero=0 p1neg=0 coefneg=0 posneg=0 min_ratio=1.92847789739e-06 at HCQrThn e=0-3 f=1-4

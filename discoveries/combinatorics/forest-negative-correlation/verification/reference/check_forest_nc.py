@@ -43,6 +43,7 @@ import itertools
 import json
 import os
 import random
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -604,16 +605,60 @@ def main():
 
     # EVIDENCE_SUMMARY
     ev = json.load(open(os.path.join(EVIDENCE, 'forest_nc_runs.json')))
+    # A002218 (2-connected graphs by vertices); 10 is the order of the forest run
     expect = {'3': 1, '4': 3, '5': 10, '6': 56, '7': 468, '8': 7123, '9': 194066}
     pair_tot = {str(n): sum(len(E) * (len(E) - 1) // 2 for E in by_n[n]) for n in range(3, 8)}
     ok = True
     for model in ('forests', 'connected'):
+        negkey = 'posneg' if model == 'forests' else 'posneg_numeric'
         for n, cnt in expect.items():
             r = ev[model][n]
             ok = ok and r['graphs'] == cnt and r['p1neg'] == 0 and r['coefneg'] == 0 and r['zero'] == 0
+            ok = ok and r[negkey] == 0
             if n in pair_tot:
                 ok = ok and r['pairs'] == pair_tot[n]
-    results['EVIDENCE_SUMMARY'] = {'pass': ok}
+    ok = ok and '10' not in ev['connected']          # n = 10 was run for forests only
+    r10 = ev['forests']['10']
+    ok = ok and (r10['graphs'], r10['pairs'], r10['chunks']) == (9743542, 2570347998, 500)
+    ok = ok and all(r10[k] == 0 for k in ('zero', 'p1neg', 'coefneg', 'posneg', 'parallel_pairs'))
+    # the two independent cross-checks of the n = 10 totals, as recorded by the tools that produced them
+    xc = open(os.path.join(EVIDENCE, 'raw', 'n10_crosschecks.txt')).read()
+    ok = ok and '9743542 graphs generated' in xc and 'graphs 9743542 pairs 2570347998' in xc
+    results['EVIDENCE_SUMMARY'] = {'pass': ok, 'n10_forest_pairs': r10['pairs']}
+
+    # RAW_PROVENANCE: re-derive every recorded count from the raw run outputs in evidence/raw/,
+    # so a hand-edited evidence file fails rather than being believed.
+    def raw_sum(files):
+        tot, seen = {}, 0
+        for fn in files:
+            for l in open(os.path.join(EVIDENCE, 'raw', fn)):
+                if l.startswith('SUMMARY'):
+                    seen += 1
+                    for kv in l.split(' at ')[0].split()[1:]:
+                        k, v = kv.split('=')
+                        if 'ratio' not in k:
+                            tot[k] = tot.get(k, 0) + int(v)
+                elif re.match(r'(P1NEG|COEFNEG|POSNEG)', l):
+                    raise SystemExit('violation line in raw/' + fn)
+        return tot, seen
+    groups = [('forests', str(n), [f'f{n}.txt']) for n in range(3, 9)] + \
+             [('connected', str(n), [f'c{n}.txt']) for n in range(3, 9)] + \
+             [('forests', '9', ['f9r_0.txt', 'f9r_1.txt']), ('connected', '9', ['c9r_0.txt', 'c9r_1.txt']),
+              ('forests', '10', ['f10.txt']),
+              ('multigraphs', 'forests_n6_mult_le3', ['mf6.txt']), ('multigraphs', 'connected_n6_mult_le3', ['mc6.txt']),
+              ('multigraphs', 'forests_n7_mult_le2', ['mf7.txt']), ('multigraphs', 'connected_n7_mult_le2', ['mc7.txt'])]
+    prov_bad, prov_n = [], 0
+    for model, key, files in groups:
+        tot, seen = raw_sum(files)
+        rec = ev[model][key]
+        for k, v in tot.items():
+            prov_n += 1
+            if rec.get(k) != v:
+                prov_bad.append((model, key, k, rec.get(k), v))
+        if key == '10' and seen != 500:
+            prov_bad.append((model, key, 'summaries', seen, 500))
+    results['RAW_PROVENANCE'] = {'pass': not prov_bad and prov_n > 0, 'fields_rederived': prov_n,
+                                 'mismatches': prov_bad[:5]}
 
     all_pass = all(v['pass'] for v in results.values())
     for k, v in results.items():

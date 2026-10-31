@@ -266,9 +266,9 @@
       "field": "combinatorics",
       "slug": "forest-negative-correlation",
       "path": "discoveries/combinatorics/forest-negative-correlation",
-      "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices",
+      "title": "Negative edge correlation for forests and connected subgraphs: exhaustive checks, forests to 10 vertices and connected subgraphs to 9",
       "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Complete the resumable 10-vertex forest run (9,743,542 graphs), and seek a structural explanation of coefficientwise nonnegativity in lambda.",
+      "next_obligation": "Seek a structural explanation of coefficientwise nonnegativity in lambda; the exhaustive route is spent (10 vertices done for forests, 11 vertices is about 10^3 times the work).",
       "promotion_blockers": [
         "evidence only, no proof"
       ],

@@ -1,4 +1,4 @@
-# Negative edge correlation for forests and connected subgraphs: exhaustive checks to 9 vertices
+# Negative edge correlation for forests and connected subgraphs: exhaustive checks — forests to 10 vertices, connected subgraphs to 9
 
 > **Standing:** `CONJECTURE`, `EXACT_MODEL_VERIFIED`, `PROVISIONAL_WRITTEN_ARGUMENT` (small-`λ` theorem)
 
@@ -48,6 +48,18 @@ connected-subgraph model):
 - so is the `λ`-weighted measure, for every `λ > 0` (Kahn's weighted form for
   forests, and the `q → 0` random-cluster form for connected subgraphs).
 
+**Forests on 10 vertices.** The forest check now also covers all 9,743,542
+2-connected 10-vertex graphs (OEIS A002218) and all 2,570,347,998 pairs of
+distinct edges: every coefficient of `P_Z` nonnegative, `P_Z(1) > 0`
+throughout, no pair with `P_Z` negative anywhere on `(0, ∞)`. By the block
+reduction (§2) this covers every graph on at most 10 vertices. The run used
+`fnc4.c`, a faster checker whose per-pair output agrees line for line with
+the reference `fnc.c` on all 2-connected graphs with at most 8 vertices
+(`verification/reference/validate_fnc4.sh`). The graph total was
+re-counted by `geng` alone and the pair total by an independent pass over the
+same enumeration (`evidence/raw/n10_crosschecks.txt`). The connected-subgraph
+model was **not** run at 10 vertices.
+
 **Multigraphs.** Grimmett–Winkler call multigraphs "more interesting". The
 same holds, with all coefficients nonnegative, on:
 
@@ -69,6 +81,7 @@ Both multigraph families were run for forests and for connected subgraphs.
 | 3–7 | 538 | 37,531 | 0 | 0 |
 | 8 | 7,123 | 827,928 | 0 | 0 |
 | 9 | 194,066 | 34,342,886 | 0 | 0 |
+| 10 | 9,743,542 | 2,570,347,998 | 0 | not run |
 
 Here "violation" means `P_X(1) < 0` or a negative coefficient. Neither ever
 occurs.
@@ -120,8 +133,11 @@ sets that contain a cycle) does show positive covariances.
 
 - A proof of either conjecture for any infinite class beyond those already in
   the literature.
-- Graphs on 10 or more vertices. A resumable run over the 9,743,542
-  2-connected 10-vertex graphs (forests) is in progress and is not claimed.
+- Connected spanning subgraphs on 10 vertices: not run. `cnc.c` has no
+  analogue of the `fnc4.c` speed-up, and on 8 vertices it is already about
+  2.5 times slower than `fnc4.c` (9.6 s against 3.8 s here), a factor that
+  grows with `n`. Graphs on 11 or more vertices are out of reach for both
+  models.
 - General real edge weights (Grimmett–Winkler (1.7)). For forests, a class
   of `k` parallel copies acts like one edge of weight `kλ`, so the multigraph
   runs cover some integer weight ratios. For connected subgraphs there is no
@@ -138,6 +154,12 @@ cc -O2 -o fnc fnc.c -lm && cc -O2 -o cnc cnc.c -lm
 geng -Cq 9 | ./fnc        # forests, about 20 minutes on 2 cores (split with res/mod)
 geng -Cq 9 | ./cnc        # connected subgraphs, about 20 minutes on 2 cores
 geng -Cq 6 | multig -q -T -m3 | ./fnc -T
+
+# the 10-vertex forest run: fast checker, validated against the reference one first
+GENG=/path/to/geng ./validate_fnc4.sh "4 5 6 7 8"
+cc -O3 -o fnc4n fnc4.c -lm
+for r in $(seq 0 499); do geng -Cq 10 $r/500 | ./fnc4n > chunk_$r.txt; done   # ~8 CPU-hours
+python3 build_evidence.py out.json RAWDIR        # RAWDIR holds the 500 summaries as f10.txt
 ```
 
 `geng` and `multig` are from nauty 2.8.8; the source ships inside the PyPI

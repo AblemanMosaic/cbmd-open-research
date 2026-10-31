@@ -58,7 +58,13 @@
    }
   },
   "EVIDENCE_SUMMARY": {
-   "pass": true
+   "pass": true,
+   "n10_forest_pairs": 2570347998
+  },
+  "RAW_PROVENANCE": {
+   "pass": true,
+   "fields_rederived": 124,
+   "mismatches": []
   }
  },
  "pass": true

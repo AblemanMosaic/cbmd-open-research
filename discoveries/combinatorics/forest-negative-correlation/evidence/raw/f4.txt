@@ -1,0 +1,1 @@
+SUMMARY parallel_pairs=0 graphs=3 pairs=31 zero=0 p1neg=0 coefneg=0 posneg=0 min_ratio=0.030612244898 at C~ e=0-1 f=2-3

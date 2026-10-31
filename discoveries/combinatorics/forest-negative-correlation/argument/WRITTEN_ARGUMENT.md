@@ -73,9 +73,17 @@ one edge. The same reduction holds for multigraphs.
 
 The 2-connected graphs come from `geng -C` (nauty 2.8.8, built from the
 source shipped in pynauty 2.8.8.1). Its counts 1, 3, 10, 56, 468, 7123,
-194066 for 3..9 vertices match OEIS A002218. Within each graph, every
+194066, 9743542 for 3..10 vertices match OEIS A002218. Within each graph, every
 unordered pair of distinct edges is tested, without symmetry reduction. The
 multigraph runs use `multig` on the same lists.
+
+The 10-vertex forest run is split into the 500 residue classes of
+`geng -Cq 10 r/500`, one output file per class, so it resumes from the last
+finished class; 13 classes are empty. Its totals are confirmed twice over
+independently of the checker: `geng` alone regenerates the 9,743,542 graphs,
+and a separate pass over the same enumeration sums `m(m−1)/2` to the same
+2,570,347,998 pairs (`evidence/raw/n10_crosschecks.txt`). The gate
+`RAW_PROVENANCE` re-derives every recorded total from the raw outputs.
 
 ## 4. Theorem: the small-`λ` law (proved)
 

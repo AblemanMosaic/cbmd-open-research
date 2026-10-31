@@ -1,0 +1,1 @@
+SUMMARY parallel_pairs=0 graphs=10 pairs=240 zero=0 p1neg=0 coefneg=0 posneg=0 min_ratio=0.00490998363339 at DV{ e=0-2 f=1-3

@@ -1,0 +1,5 @@
+SUMMARY parallel_pairs=14527883 graphs=2016427 pairs=213200562 zero=0 p1neg=0 coefneg=0 posneg=0 min_ratio=1.09949162256e-05 at 7 11  0 3 1 0 4 1 0 6 2 1 4 1 1 5 1 1 6 2 2 5 1 2 6 2 3 6 2 4 6 2 5 6 2 e=2-6 f=3-6
+
+real	9m28.165s
+user	9m22.843s
+sys	0m1.122s

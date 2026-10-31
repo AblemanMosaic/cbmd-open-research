@@ -1,0 +1,1 @@
+SUMMARY graphs=56 pairs=2496 zero=0 p1neg=0 coefneg=0 posneg_numeric=0 min_ratio=0.000165289256198 at EQ~w e=0-2 f=1-3
