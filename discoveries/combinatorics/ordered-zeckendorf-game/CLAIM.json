@@ -4,7 +4,7 @@
  "title": "The ordered Zeckendorf game: the Long Game Strategy's constant",
  "field": "combinatorics",
  "slug": "ordered-zeckendorf-game",
- "public_version": "0.1.1",
+ "public_version": "0.1.2",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED"
@@ -15,7 +15,8 @@
   "lgs_constant.py: count model equals direct list simulation of LGS for n <= 40; for every n <= 600: no merges in the pile phase, upper splits create no inversions, rest words run through the counter language in increasing order with 1 + [ends in 1] draining splits per step, the invariant U - 2P, the exact identity n^2/2 - L = sum P_k + R; density of 1's (weighted and unweighted, lazy and full counter language) within the stated bound for lengths <= 60; the window and a control with wrong constants.",
   "lgs_fast.c: (n^2/2 - L)/n - (phi/sqrt5) log_phi n in [-4.21, -4.06] for n = 10^3, ..., 10^9.",
   "Exhaustive search: M(n) equals the LGS length for every n <= 24 (C++ search over about 2.9 million ordered states at n = 24).",
-  "Independent review (fresh agent, own simulators, n to 2 x 10^9): theorem proved with fixable gaps (closed form of R off by m, partial-length error O(n) not O(weight), definitions, attribution), all fixed; the identity gate now tests the closed form of R."
+  "Independent review (fresh agent, own simulators, n to 2 x 10^9): theorem proved with fixable gaps (closed form of R off by m, partial-length error O(n) not O(weight), definitions, attribution), all fixed; the identity gate now tests the closed form of R.",
+  "Independent literature audit (October 2026): Remark 3.1 is unchanged in v1 and v2 of arXiv 2508.20222, no later work determines the constant, and the exact value phi/sqrt5 = 0.7236 lies inside the published numerical bracket [0.4, 1)."
  ],
  "unresolved": [
   "whether LGS is longest (Conjecture 1.7)",

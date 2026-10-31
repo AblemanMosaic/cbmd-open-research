@@ -4,7 +4,7 @@
  "title": "The Fibonacci Quilt game: a linear bound on game length",
  "field": "combinatorics",
  "slug": "fibonacci-quilt-game",
- "public_version": "0.1.2",
+ "public_version": "0.1.3",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED"
@@ -15,7 +15,8 @@
   "fq_bound.py: every rule instance with indices <= 200 lowers the potential by >= 1 in exact rational arithmetic; the closed-form tail reduces to four inequalities that hold; u_i <= 2.3 q_i; exhaustive longest games for n <= 40 within the bound; lowering alpha to 2.2 breaks the certificate.",
   "fq_longest_exhaustive.cpp: exhaustive longest games for n <= 90 (about 11 million states), all within the bound; first length >= 2n at n = 78; maximum ratio 2.022 at n = 89.",
   "Independent review (fresh agent): rules re-typed from the paper, certificate re-derived exactly for indices <= 400, exhaustive longest games re-run with independent code (11,408,896 states, all values matching), Lemma 2.2 (rule 2(a) at most once) checked exhaustively on all 78,464 positions where 2(a) is the only move (other indices <= 40) under three readings of rule 3(f).",
-  "fq_strategy.cpp: a fixed priority strategy (evidence/fq_long_strategy.json) plays legal games of length 2231, 22718, 227740, 2278223 on n = 10^3, 10^4, 10^5, 10^6 (2.2782n at 10^6), so the longest game there is within [2.2782n, 2.3n + 2.95]."
+  "fq_strategy.cpp: a fixed priority strategy (evidence/fq_long_strategy.json) plays legal games of length 2231, 22718, 227740, 2278223 on n = 10^3, 10^4, 10^5, 10^6 (2.2782n at 10^6), so the longest game there is within [2.2782n, 2.3n + 2.95].",
+  "Independent literature audit (October 2026): no later paper addresses the Miller-Newlon upper-bound question, and their '2n' remark concerns 10,000 uniformly random simulated games with no exhaustiveness claim, so the exhaustive n <= 90 data (first 2n at n = 78, peak 2.022n) and the 2.2782n strategy at n = 10^3..10^6 do not contradict it."
  ],
  "unresolved": [
   "the exact asymptotic constant of the longest game (between about 2.278, from an explicit strategy, and 2.3 proved; the potential-method limit is about 2.2899)",
