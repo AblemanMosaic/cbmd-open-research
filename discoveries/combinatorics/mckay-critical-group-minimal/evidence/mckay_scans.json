@@ -1,5 +1,16 @@
 {
  "schema": "cbmd.mckay-minimal.evidence.v2",
+ "monotonicity_search": {
+  "params": {
+   "ORDMAX": 60,
+   "D1": 4,
+   "D2": 4,
+   "nonabelian": true
+  },
+  "tests": 1359437,
+  "violations": 0,
+  "equalities": 0
+ },
  "typeB_exceptional": {
   "groups": 18,
   "rows": [

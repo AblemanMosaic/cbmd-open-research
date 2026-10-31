@@ -1,7 +1,7 @@
 """Assemble evidence/mckay_scans.json from raw GAP outputs (copies them into evidence/raw/).
 
 usage: python3 build_evidence.py SCAN_ALL_LE40_N5 SCAN_NONAB_LE71_N6 SCAN_NONAB_LE150_N3 ATLAS_OUT SO3_OUT
-                                PRIM_OUT TYPEB_OUT MONOMIAL_JSONL CROSSCHECK_OUT
+                                PRIM_OUT TYPEB_OUT MONOMIAL_JSONL CROSSCHECK_OUT MONOTONICITY_OUT
 """
 import json, os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -36,7 +36,7 @@ def scan_summary(path, name, rawname, params):
     }
 
 
-scan_all, scan_nonab, scan_n3, atlas, so3, prim, typeb, mono, cross = sys.argv[1:10]
+scan_all, scan_nonab, scan_n3, atlas, so3, prim, typeb, mono, cross, monot = sys.argv[1:11]
 scans = [
     scan_summary(scan_all, 'all groups of order <= 40, n <= 5', 'scan_all_le40_n5.txt',
                  {'ORDERS': '2..40', 'DMAX': 5, 'SKIPAB': False}),
@@ -67,8 +67,11 @@ shutil.copy(mono, os.path.join(EV, 'raw', 'monomial_le76.jsonl'))
 mrec = [json.loads(l) for l in open(mono)]
 shutil.copy(cross, os.path.join(EV, 'raw', 'monomial_gap_crosscheck.txt'))
 ctext = open(cross).read()
+shutil.copy(monot, os.path.join(EV, 'raw', 'monotonicity_le60_d4.txt'))
+mline = [l for l in open(monot) if l.startswith('TESTS')][0].split()
 out = {
     'schema': 'cbmd.mckay-minimal.evidence.v2',
+    'monotonicity_search': {'params': {'ORDMAX': 60, 'D1': 4, 'D2': 4, 'nonabelian': True}, 'tests': int(mline[1]), 'violations': int(mline[3]), 'equalities': int(mline[5])},
     'typeB_exceptional': {'groups': len(tbl), 'rows': tbl,
                           'minimal_iff_trivial_constituent': all(('minimal=true' in l) == ('trivial_constituent=1' in l) for l in tbl)},
     'monomial': {'groups': len(mrec), 'type_C': sum(r['type'] == 'C' for r in mrec), 'type_D': sum(r['type'] == 'D' for r in mrec),

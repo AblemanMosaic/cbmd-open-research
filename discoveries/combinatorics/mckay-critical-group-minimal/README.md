@@ -61,9 +61,16 @@ following Blichfeldt's classification of finite subgroups of `SL_3(ℂ)`:
   all eight. Only `A_5` is minimal; Klein's `PSL(2,7)` has `K ≅ ℤ/2`.
 - **Abelian groups (type A):** `CBMD-COMB-CAYLEY-JAC-001`.
 
-**Also proved: Lemma 2.** Let `γ_1` be faithful with determinant 1. If all
-characters are real, adding to `γ_1` a nontrivial summand of determinant 1
-strictly enlarges `|K|`.
+**Also proved: Lemma 2 (adding a summand enlarges `K`).** Let `γ_1` be
+faithful with determinant 1, and `γ_2` nontrivial with determinant 1. Then
+`|K(γ_1 ⊕ γ_2)| > |K(γ_1)|` whenever `χ_1` is real-valued, or
+`1/n_1 + 1/n_2 ≥ 1/2`. So `γ` is never minimal when it contains, for
+example, a faithful `SL_2` summand.
+
+The proof rests on a sector lemma: for `U ∈ SU(n)`, `n − tr U` lies in the
+sector `|arg| ≤ π/2 − π/n`. A search of 1,359,437 pairs (non-abelian groups
+of order ≤ 60, dimensions ≤ 4) found no violation even without the dimension
+condition.
 
 **Checked**, with no exception. The scans cover every faithful
 representation into `SL_n` without trivial constituent, from GAP's
@@ -79,9 +86,13 @@ No minimal case with `n ≥ 4` was found.
 ## What is not established
 
 - Conjecture 10 (`n ≥ 4`).
-- Specialist review. An independent agent review of Lemmas 1–2,
-  Proposition 3 and Theorem 4 (version 0.1.0) found no error. Theorems 7–9
-  (added in 0.2.0) have not yet been reviewed.
+- Specialist review. Two independent agent reviews found no mathematical
+  error:
+  - of Lemmas 1–2 (the real case), Proposition 3 and Theorem 4, in 0.1.0;
+  - of Lemma 6 and Theorems 7–9, in 0.2.0.
+  
+  Their fixes are applied. The sector form of Lemma 2 (0.3.0) has not been
+  reviewed.
 - **Prior art.**
   - The abelian case is BKR's Proposition 6.19.
   - The `SO(3)` classification and the conjecture itself are Gaetz's (2016).

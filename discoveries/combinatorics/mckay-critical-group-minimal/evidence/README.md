@@ -13,3 +13,4 @@
 | `raw/monomial_le76.jsonl` | `monomial_enum.py 76`: all monomial subgroups of `SL_3(ℂ)` in normal form with diagonal part of order ≤ 76. |
 | `raw/monomial_gap_crosscheck.txt` | `monomial_gap_crosscheck.py` on the 59 enumerated groups of order ≤ 220. |
 | `raw/typeB_exceptional.txt` | `typeB_exceptional.g`. |
+| `raw/monotonicity_le60_d4.txt` | `monotonicity_search.g` with `ORDMAX = 60`, `D1 = D2 = 4`. |

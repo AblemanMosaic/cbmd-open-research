@@ -10,6 +10,8 @@ GAP 4.12.1, SmallGrp 1.5.3, CTblLib 1.3.7; on Ubuntu `apt-get install gap-core g
 | `so3.g` | Proposition 3 and Theorem 4 for cyclic and dihedral groups (`m ≤ MMAX`), `A_4`, `S_4`, `A_5`, built from explicit matrices in `SU(2)` and their symmetric squares. Variables `MMAX`, `OUT`. |
 | `prim.g` | The primitive finite subgroups of `SL_3(ℂ)` (Proposition 5). Variable `OUT`. |
 | `atlas_scan.g` | Same scan as `mckay_scan.g` on ATLAS character tables. Variables `NAMES`, `DMAX`; prints to stdout. |
+| `sector_check.py` | Numerical check of the edge inequality behind the sector lemma (Lemma 2), `n ≤ 10`. |
+| `monotonicity_search.g` | Exhaustive search for violations of `|K(γ_1 ⊕ γ_2)| > |K(γ_1)|`. Variables `ORDMAX`, `D1`, `D2`. |
 | `bounds_check.py` | Recomputes the finite regions left by the analytic inequalities of Theorems 7 and 8 (pure Python, about 1 s). |
 | `monomial_enum.py` | Exact enumeration of the monomial (types C, D) subgroups of `SL_3(ℂ)` in normal form with diagonal part of order `≤ NMAX`; classes, `|G^{ab}|` and Gaetz's product (mpmath). `python3 monomial_enum.py 76 out.jsonl`, about 25 s. |
 | `monomial_gap_crosscheck.py` | Rebuilds the enumerated groups as GAP matrix groups and recomputes `|G|`, the product and `|G^{ab}|`. |

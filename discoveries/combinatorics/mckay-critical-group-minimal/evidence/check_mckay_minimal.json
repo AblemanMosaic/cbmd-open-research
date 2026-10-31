@@ -97,6 +97,21 @@
     "HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1"
    ]
   },
+  "SECTOR_LEMMA": {
+   "pass": true,
+   "output": [
+    "n=2 max(sum cos - n cos(pi/n)) = 2.106e-16  attained_by_scalar=True  OK",
+    "n=3 max(sum cos - n cos(pi/n)) = 0.000e+00  attained_by_scalar=True  OK",
+    "n=4 max(sum cos - n cos(pi/n)) = 0.000e+00  attained_by_scalar=True  OK",
+    "n=5 max(sum cos - n cos(pi/n)) = -1.343e-02  attained_by_scalar=True  OK",
+    "n=6 max(sum cos - n cos(pi/n)) = -1.217e-01  attained_by_scalar=True  OK",
+    "n=7 max(sum cos - n cos(pi/n)) = -9.488e-02  attained_by_scalar=True  OK",
+    "n=8 max(sum cos - n cos(pi/n)) = -3.569e-01  attained_by_scalar=True  OK",
+    "n=9 max(sum cos - n cos(pi/n)) = -4.741e-01  attained_by_scalar=True  OK",
+    "n=10 max(sum cos - n cos(pi/n)) = -8.787e-01  attained_by_scalar=True  OK",
+    "ALL OK"
+   ]
+  },
   "BOUNDS_N3": {
    "pass": true,
    "output": [

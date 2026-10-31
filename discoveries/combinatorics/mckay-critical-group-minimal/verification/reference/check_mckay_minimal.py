@@ -17,6 +17,7 @@ Gates (each required):
     form;
   * ATLAS_SMALL: ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6: hits are exactly the two
     3-dimensional representations of A5 and the two 2-dimensional ones of 2.A5;
+  * SECTOR_LEMMA: sector_check.py -- the edge inequality behind Lemma 2's sector lemma, numerically;
   * BOUNDS_N3: bounds_check.py -- the analytic inequalities of Theorems 7 and 9 leave only the finite
     regions covered by the computations;
   * MONOMIAL_ENUM: monomial_enum.py 76 reproduces evidence/raw/monomial_le76.jsonl (47 type C,
@@ -126,6 +127,11 @@ def gate_atlas():
     return {'pass': ok, 'groups': len(done), 'hits': hits}
 
 
+def gate_sector():
+    proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'sector_check.py')], capture_output=True, text=True)
+    return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
+
+
 def gate_bounds():
     proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'bounds_check.py')], capture_output=True, text=True)
     return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
@@ -188,6 +194,8 @@ def gate_evidence():
     cc = ev.get('monomial', {}).get('gap_crosscheck', '')
     ok &= cc.startswith('CROSSCHECK') and cc.splitlines()[0].endswith(' true')
     ok &= any(s['name'].endswith('n = 3') and s['groups'] > 0 for s in ev['scans'])
+    ms = ev.get('monotonicity_search', {})
+    ok &= ms.get('tests', 0) > 0 and ms.get('violations') == 0
     return {'pass': bool(ok), 'scans': len(ev['scans'])}
 
 
@@ -197,6 +205,7 @@ def main():
         'PRIMITIVE_SL3': gate_primitive(),
         'SCAN_SMALL': gate_scan(),
         'ATLAS_SMALL': gate_atlas(),
+        'SECTOR_LEMMA': gate_sector(),
         'BOUNDS_N3': gate_bounds(),
         'MONOMIAL_ENUM': gate_monomial(),
         'MONOMIAL_GAP_SMALL': gate_monomial_gap(),

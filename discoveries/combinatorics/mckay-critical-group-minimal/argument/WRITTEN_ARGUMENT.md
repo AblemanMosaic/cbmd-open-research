@@ -60,28 +60,93 @@ By (a), we may assume `γ` has **no trivial constituent**. Then `n ≥ 2` when
 `G ≠ 1`, because a 1-dimensional representation with trivial determinant is
 trivial. Every faithful `γ` with `n = 2` is minimal (F2).
 
-## Lemma 2 (adding real summands strictly enlarges `K`)
+## Lemma 2 (adding a summand strictly enlarges `K`)
 
-Let:
+**Sector lemma.** Let `U ∈ SU(n)`. Then `z = n − tr U` is either 0 or
+satisfies `|arg z| ≤ π/2 − π/n`. For `n = 2`, `z` is real and `≥ 0`.
 
-- `γ_1` be faithful with `det γ_1 = 1`;
-- `γ_2` have `det γ_2 = 1`, and not be a multiple of the trivial
-  representation;
-- both characters `χ_1, χ_2` be real-valued.
+*Proof.* Let `e^{iθ_j}` be the eigenvalues of `U`, so `Σ θ_j ∈ 2πℤ`. Put
+`φ_j = θ_j − π/n`, reduced to `(−π, π]`. Then `Σ φ_j ≡ π (mod 2π)`, and we
+claim
 
-Then `|K(γ_1 ⊕ γ_2)| > |K(γ_1)| ≥ |G^{ab}|`, so `γ_1 ⊕ γ_2` is not minimal.
+    Σ_j cos φ_j ≤ n cos(π/n).
 
-*Proof.* Let `g ≠ 1`, and let `ε_1, …, ε_{n_1}` be the eigenvalues of the
-unitary matrix `γ_1(g)`. Since `χ_1(g)` is real,
-`n_1 − χ_1(g) = Σ_j (1 − Re ε_j)`. Every term is `≥ 0`, and the sum is `> 0`
-because `γ_1(g) ≠ I`. In the same way `n_2 − χ_2(g) ≥ 0`, with strict
-inequality for every `g ∉ ker γ_2 ≠ G`. So each factor of the product (F3) for
-`γ_1 ⊕ γ_2` is at least the corresponding factor for `γ_1`, and at least one
-is strictly larger. The second inequality is (F1). ∎
+Let `k` be the number of `j` with `|φ_j| > π/2`.
 
-Lemma 2 needs the characters to be real. For complex values `|z + w|` can be
-smaller than `|z|` even when `Re w ≥ 0`. We do not know whether the lemma
-holds without the reality assumption.
+- **`k = 0`.** `cos` is concave on `[−π/2, π/2]`. Let `S = Σφ_j`; it is an
+  odd multiple of `π`, so `|S| ≥ π`. Jensen gives
+  `Σ cos φ_j ≤ n cos(S/n) ≤ n cos(π/n)`.
+- **`k ≥ 1`.** Each such `j` has `cos φ_j < 0`, so the total is `< n − 1`.
+  For `n ≥ 5`, `n − 1 ≤ n cos(π/n)`, since
+  `cos x ≥ 1 − x²/2` and `n ≥ π²/2`.
+- **Small `n`.**
+  - For `n = 2`, `tr U` is real, so the claim is immediate.
+  - For `n ∈ {3, 4}` with `k ≥ 2`, the total is `≤ n − 2 < n cos(π/n)`.
+  - For `n ∈ {3, 4}` with `k = 1`, apply Jensen to the other `n − 1` terms,
+    whose sum is `S − φ`, `|φ| ∈ (π/2, π]`. The total is at most
+    `(n−1) cos((π − |φ|)/(n−1)) + cos φ`. This is maximal at
+    `|φ| = π/2`, where it equals `2 sin(π/4) ≈ 1.414 < 1.5` (`n = 3`) and
+    `3 cos(π/6) ≈ 2.598 < 2.828` (`n = 4`). The cases `|S| ≥ 3π` cannot
+    occur, because then the other terms would leave `[−π/2, π/2]`.
+
+So `Re(e^{−iπ/n}(n − tr U)) ≥ 0`. Applying the same to `Ū` gives
+`Re(e^{iπ/n}(n − tr U)) ≥ 0`, and the two together are the sector. The bound
+is attained by the scalar matrix `ζ_n I`. ∎
+
+Geometrically, `tr SU(n)` lies in the regular `n`-gon with vertices
+`n ζ_n^k`, and `π − 2π/n` is that polygon's interior angle.
+
+**Lemma 2.** Let:
+
+- `γ_1` be faithful with `det γ_1 = 1`, of dimension `n_1`;
+- `γ_2` have `det γ_2 = 1`, have dimension `n_2`, and not be a multiple of
+  the trivial representation.
+
+Suppose that `χ_1` is real-valued, or that `1/n_1 + 1/n_2 ≥ 1/2`. Then
+`|K(γ_1 ⊕ γ_2)| > |K(γ_1)| ≥ |G^{ab}|`, so `γ_1 ⊕ γ_2` is not minimal.
+
+*Proof.* For a class `c ≠ 1`, put `a = n_1 − χ_1(c)` and `b = n_2 − χ_2(c)`.
+
+- **`a`.** It is nonzero because `γ_1` is faithful. If `χ_1` is
+  real-valued, `a` is real and positive. In any case
+  `|arg a| ≤ π/2 − π/n_1`, by the sector lemma.
+- **`b`.** It is 0 or satisfies `|arg b| ≤ π/2 − π/n_2`, and `Re b ≥ 0`.
+- **The angle.** Under either hypothesis the angle between `a` and `b` is at
+  most `π/2`. If `χ_1` is real, `a` points along the positive axis and
+  `|arg b| ≤ π/2`. Otherwise,
+  `(π/2 − π/n_1) + (π/2 − π/n_2) ≤ π/2`. So `Re(a b̄) ≥ 0`.
+- **Each factor.** Hence `|a + b|² ≥ |a|² + |b|²`. So `|a + b| ≥ |a|`, with
+  strict inequality whenever `b ≠ 0`, that is, whenever
+  `γ_2(c) ≠ I`. Such a class exists because `γ_2` is not trivial.
+- **Conclusion.** Multiply over classes, then apply (F3) and (F1). ∎
+
+**When the hypothesis holds.**
+
+- `χ_1` real-valued: any `n_2`. In particular `n_1 = 2`, since a faithful
+  `SL_2` representation has real character.
+- `n_2 = 2`: any `n_1`.
+- `n_1 = 3`: `n_2 ≤ 6`.
+- `n_1 = 4`: `n_2 ≤ 4`.
+- `n_1 ∈ {5, 6}`: `n_2 ≤ 3`.
+
+**Consequence.** Let `γ` be minimal with no trivial constituent. Then `γ` has
+no decomposition `γ_1 ⊕ γ_2` with:
+
+- `γ_1` faithful;
+- both summands of determinant 1;
+- `γ_2 ≠ 0`;
+- the dimension condition above.
+
+This applies, for example, to `γ = (faithful SL_2 rep) ⊕ (anything of
+determinant 1)`. It does not touch the case where no faithful summand has
+determinant 1. Reducible type B in dimension 3 is such a case, and needs
+Theorem 8.
+
+An exhaustive search of the remaining pairs found no violation of
+`|K(γ_1 ⊕ γ_2)| > |K(γ_1)|` either. It covered `γ_1` faithful with
+determinant 1, `γ_2` with determinant 1 and not trivial, `n_1, n_2 ≤ 4`, and
+non-abelian groups of order `≤ 60`: 1,359,437 pairs. So the dimension
+condition may be removable.
 
 ## Proposition 3 (from `SU(2)` to `SO(3)`)
 
@@ -317,13 +382,18 @@ Let `e = |A^τ|` for the transposition `τ = (1 2)`.
   - The transposition cosets are all conjugate. They contain `e` classes,
     with `χ = w` a root of unity, so each factor has `|3 − w| ≥ 2`.
   - The classes in `A ∖ 1` are the `S_3`-orbits.
-- **Products.** Let `Y` be the product over the `S_3`-orbits, and `X` the
-  product over the `σ`-orbits. An `S_3`-orbit is one `σ`-orbit (fixed by
+- **Products.** Let `Y` be the product over the `S_3`-orbits. Let `X'` be
+  the product over *all* `σ`-orbits on `A ∖ 1`, including the scalar
+  singletons, so `X' = X · 27^{[f=3]}` with `X` as in type C. An `S_3`-orbit is one `σ`-orbit (fixed by
   `τ`) or two. A `τ`-fixed free `σ`-orbit contains exactly one element
-  `diag(x, x, x^{−2})` of `A^τ`. Hence `Y² = X · Q · F`, where
+  `diag(x, x, x^{−2})` of `A^τ`. Hence `Y² = X' · Q · F`, where
   - `Q = Π_{a ∈ A^τ∖scalars} |3 − 2x − x^{−2}|`, and
     `3 − 2x − x^{−2} = −(x−1)²(2x+1)/x²`, so `Q ≥ e²/9^{[f=3]}`;
-  - `F = 27^{[f=3]}`.
+  - `F = 27^{[f=3]}` comes from the `τ`-fixed scalar singletons.
+  
+  Check on `A = T[3]`: `Y = 81`, `X' = 9·27`, `Q = 1`, `F = 27`.
+  Also `X' ≥ 9^{[f=3]} m² (3/2)^{|B|/3}`, by Lemma 6 and
+  `X'³ = Π_{a≠1} · 27^{2[f=3]}`.
 - **Abelianisation.** `[G, G] ∩ A ⊇ (1−σ)A + (1−τ)A`, so
   `|G^{ab}| ≤ 2 min(e, f)`.
 - **The constraint.** Minimality gives
@@ -337,7 +407,16 @@ Combining these with Lemma 6:
   impossible for `m ≥ 3`. It forces `|A| ≤ 36` for `m = 2`, and `|A| ≤ 75`
   for `m = 1`.
 - **`f = 3`.** Here `e ≥ 3`, and we get
-  `93 · m · (3/2)^{(|A|−3m+2)/6} < |A|`, which never holds.
+  `93 · m · (3/2)^{(|A|−3m+2)/6} ≤ |A|`. This never holds:
+  - if `|A| ≤ 93`, the left side is at least 93, because the exponent is
+    `≥ 0`;
+  - beyond that, the exponent is at least `(|A| − 3√|A| + 2)/6`, and the left
+    side grows exponentially.
+
+`bounds_check.py` recomputes all four regions by brute force for
+`|A| ≤ 4000`. Beyond 4000, each left side exceeds its right side by a factor
+that only grows. The exponent is at least `(|A| − 3√|A| + 2)/6`, using
+`m ≤ √|A|`.
 
 **Finite check.** `monomial_enum.py` enumerates every group of type C or D
 in normal form with `|A| ≤ 76`:
@@ -345,8 +424,15 @@ in normal form with `|A| ≤ 76`:
 - every `A` that is `C_3`- or `S_3`-stable;
 - for type D, every `t = D_d P_τ` modulo `A`.
 
-The diagonal entries of `t` lie in `μ_{2|A|}`. This follows from
-`t² ∈ A` and `t P_σ t^{−1} P_σ ∈ A`.
+The diagonal entries of `t` lie in `μ_{2|A|}`. To see this, write
+`d = (d_1, d_2, d_3)`. Then:
+
+- `t² = diag(d_1 d_2, d_1 d_2, d_3²) ∈ A`;
+- `t P_σ t^{−1} P_σ` is the diagonal matrix of the three cyclic ratios
+  `d_i/d_j`, and it also lies in `A ⊂ μ_{|A|}³`.
+
+Hence `d_3 ∈ μ_{2|A|}`, and each `d_i ∈ d_3 · μ_{|A|}`. No further
+normalisation of `t` is needed.
 
 For each group the enumeration computes, exactly:
 
@@ -372,8 +458,11 @@ and `Ḡ = G/Z ∈ {D_{2k}, A_4, S_4, A_5}`.
 - **Central classes.** For `ζ ∈ μ_z ∖ 1`, `γ(ζ) = diag(ζ^{−2}, ζ, ζ)`. Its
   factor is `3 − 2ζ − ζ^{−2} = −(ζ − 1)²(2ζ + 1)/ζ²`. The product over
   `Z ∖ 1` is `C_z = z² |1 − (−2)^z| / 3`.
-- **Non-central classes.** Their factors group into Galois orbits, and each
-  orbit gives a positive integer. So `P ≥ C_z`.
+- **Non-central classes.** Their factors group into Galois orbits of
+  classes, and each orbit gives a positive integer. It is a rational integer
+  because it is a norm. It is positive because every conjugate
+  `3 − χ(c^k)` has positive real part, and the orbit is closed under complex
+  conjugation, `c ↦ c^{−1}`. So `P ≥ C_z`.
 - **Abelianisation.** `|G| |G^{ab}| ≤ z² |Ḡ| |Ḡ^{ab}|`.
 
 **Exceptional `Ḡ`.**
@@ -391,9 +480,11 @@ and `Ḡ = G/Z ∈ {D_{2k}, A_4, S_4, A_5}`.
 - **Check.** `typeB_exceptional.g` computes all of them. None is minimal
   unless `G ⊂ SL_2`.
 
-**Dihedral `Ḡ`.** The preimage `C̃` of the rotation subgroup is abelian of
-index 2, and diagonal in a suitable basis. Elements outside `C̃` swap the two
-eigenlines. Write `c = |C̃|`.
+**Dihedral `Ḡ`.** The preimage `C̃` of a cyclic subgroup of index 2 is
+abelian of index 2; for `Ḡ = V_4`, any of the three choices works. `C̃` is
+diagonal in a suitable basis. It is not scalar, since otherwise `ρ` would be
+reducible, so its two eigencharacters are distinct. Elements outside `C̃`
+therefore swap the two eigenlines. Write `c = |C̃|`.
 
 - **Classes in `C̃`.** The classes are the central elements together with
   swap-pairs. So their contribution to `P` is
@@ -407,6 +498,11 @@ eigenlines. Write `c = |C̃|`.
 
 **Case `C̃ ⊄ SL_2`.** Then `m' ≤ c/2`, and with `m² | c`, `m m' | c`,
 `z | c`, the inequality forces `c ≤ 23`, so `|G| ≤ 46`.
+
+- `bounds_check.py` searches `c ≤ 4000` and `z ≤ 64`.
+- For `z > 64`, `|1 − (−2)^z| > 48 · 4000²` already.
+- For `c > 4000`, the exponent is at least `c/2 − 2√c + 2`, because
+  `m' ≤ c/2` and `m ≤ √c`.
 
 **Case `C̃ ⊂ SL_2`.** Then `C̃ = ⟨diag(η, η^{−1})⟩` is cyclic of order `c`.
 `det ρ` factors through `G/C̃`, and is not trivial, so `det r = −1` and
@@ -423,18 +519,28 @@ eigenlines. Write `c = |C̃|`.
 
 Let `γ : G ↪ SL_3(ℂ)` be faithful without trivial constituent. Then `γ` is
 minimal if and only if `χ_γ` is real-valued and `G` is dihedral of order `2m`
-with `m` odd, `A_4` or `A_5`.
+with `m ≥ 3` odd, `A_4` or `A_5`.
 
-*Proof.* By Blichfeldt's classification, the inclusion `G ⊂ SL_3(ℂ)` falls
-into exactly one of these cases:
+*Proof.* `K(γ)` depends only on the subgroup `γ(G)` up to conjugacy
+(Lemma 1 and BKR, Proposition 6.12). By Blichfeldt's classification, the
+inclusion `γ(G) ⊂ SL_3(ℂ)` falls into one of these cases:
 
 - abelian (type A): `CBMD-COMB-CAYLEY-JAC-001`, no minimal case;
-- reducible `1 + 2` (type B): Theorem 8;
+- reducible `1 + 2` (type B): Theorem 8. If the 2-dimensional part is
+  itself reducible, `G` is abelian (type A);
 - irreducible imprimitive, hence monomial with transitive permutation image
   (types C and D): Theorem 7;
 - primitive (types E–L): Proposition 5.
 
-In every case the minimal ones are those listed. ∎
+Some reducible monomial groups appear in Theorem 7 as well, for example
+`S_3 = sgn ⊕ std`. The overlap is harmless.
+
+For primitive images, Proposition 5 covers every faithful 3-dimensional
+irreducible character with trivial determinant of each of the eight abstract
+groups. That covers every embedding.
+
+In every case the minimal ones are those listed. The proof depends on the
+completeness of Blichfeldt's list, as tabulated by Yau–Yu. ∎
 
 Theorems 7, 8 and 9 are computer-assisted. The analytic bounds reduce each
 case to finitely many groups, and exact computation settles those groups.
@@ -458,14 +564,14 @@ vector.
 | `n = 2` | theorem (BKR) |
 | `n = 3`, `χ` real-valued | theorem (Gaetz, Theorem 8(ii); uniform proof in Theorem 4) |
 | `n = 3` | theorem, computer-assisted (Theorem 9) |
-| `n ≥ 4` | conjecture; see the evidence below. Lemma 2 excludes a real `γ` that has a faithful real summand of determinant 1 whose complement also has determinant 1. |
+| `n ≥ 4` | conjecture; see the evidence below. Lemma 2 excludes every `γ` with a faithful summand of determinant 1 whose complement has determinant 1 and satisfies its dimension condition. |
 
 **Evidence.** `evidence/mckay_scans.json` records exhaustive scans over
 GAP's SmallGroups library. Each covers every faithful `γ` into `SL_n` with
 no trivial constituent:
 
 - every group of order `≤ 40`, with `n ≤ 5`;
-- every non-abelian group of order `≤ 72`, with `n ≤ 6`;
+- every non-abelian group of order `≤ 71`, with `n ≤ 6`;
 - every non-abelian group of order `≤ 150`, with `n = 3`.
 
 It also records ATLAS character tables of 47 groups with `n ≤ 8`. Of these, 27

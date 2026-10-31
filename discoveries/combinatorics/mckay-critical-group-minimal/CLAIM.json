@@ -4,24 +4,27 @@
  "title": "Minimal critical groups of McKay quivers: Gaetz's Question 2 settled for n = 3 (computer-assisted), conjectured for n >= 4",
  "field": "combinatorics",
  "slug": "mckay-critical-group-minimal",
- "public_version": "0.2.0",
+ "public_version": "0.3.0",
  "status": [
   "CONJECTURE",
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED"
  ],
- "statement": "Let gamma: G -> SL_n(C) be a faithful representation of a finite group without trivial constituent. Theorem 9 (computer-assisted): for n = 3, the BKR surjection K(gamma) ->> (G^ab)^ is an isomorphism iff chi_gamma is real-valued and G is dihedral of order 2m with m >= 3 odd, A_4 or A_5 (rotation groups in SO(3)). Ingredients: Proposition 3, |K(gamma)| = 2^(u-1)|G~^ab| for G in SO(3) (u = number of classes of the preimage G~ in SU(2) equal to their negatives), giving a uniform proof of Gaetz's SO(3) classification (Theorem 4); Lemma 6 (abelian product bound) and Theorem 7 (monomial types C, D: analytic reduction to diagonal part of order <= 75, exact enumeration of 70 groups); Theorem 8 (reducible type B: central-factor bound, dihedral reduction to order <= 46 or the real dihedral family, 18 exceptional groups computed); Proposition 5 (primitive types E-L computed; only A_5 minimal); abelian type A is BKR Proposition 6.19. Lemma 2: for real-valued characters, adding a nontrivial determinant-one summand to a faithful determinant-one gamma strictly enlarges |K|. Conjecture 10 (Gaetz's Question 2 for n >= 4): no minimal gamma with n >= 4.",
+ "statement": "Let gamma: G -> SL_n(C) be a faithful representation of a finite group without trivial constituent. Theorem 9 (computer-assisted): for n = 3, the BKR surjection K(gamma) ->> (G^ab)^ is an isomorphism iff chi_gamma is real-valued and G is dihedral of order 2m with m >= 3 odd, A_4 or A_5 (rotation groups in SO(3)). Ingredients: Proposition 3, |K(gamma)| = 2^(u-1)|G~^ab| for G in SO(3) (u = number of classes of the preimage G~ in SU(2) equal to their negatives), giving a uniform proof of Gaetz's SO(3) classification (Theorem 4); Lemma 6 (abelian product bound) and Theorem 7 (monomial types C, D: analytic reduction to diagonal part of order <= 75, exact enumeration of 70 groups); Theorem 8 (reducible type B: central-factor bound, dihedral reduction to order <= 46 or the real dihedral family, 18 exceptional groups computed); Proposition 5 (primitive types E-L computed; only A_5 minimal); abelian type A is BKR Proposition 6.19. Lemma 2: if gamma_1 is faithful with det 1 and gamma_2 is nontrivial with det 1, then |K(gamma_1 + gamma_2)| > |K(gamma_1)| whenever chi_1 is real-valued or 1/n_1 + 1/n_2 >= 1/2 (via the sector lemma: for U in SU(n), n - tr U lies in |arg| <= pi/2 - pi/n). Conjecture 10 (Gaetz's Question 2 for n >= 4): no minimal gamma with n >= 4.",
  "resolves": "Gaetz's Question 2 (honors thesis, 2016) / BKR Question 6.11 in dimension 3 (computer-assisted written argument, pending specialist review)",
  "verified": [
   "check_mckay_minimal.py (GAP + Python): SO(3) formula and classification (cyclic/dihedral m <= 12, A4, S4, A5); primitive SL3 table; exhaustive scan of all groups of order <= 24 with n <= 5; ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6; analytic finite regions of Theorems 7-8 (bounds_check.py); monomial enumeration reproduced (47 type C, 23 type D; minimal only C3 with trivial constituent, S3, A4); GAP recomputation of enumerated monomial groups of order <= 60; the 18 exceptional type B groups (minimal only inside SL2).",
   "Exhaustive SmallGroups scans (faithful, det 1, no trivial constituent): all groups of order <= 40 with n <= 5; non-abelian groups of order <= 71 with n <= 6; all 3595 non-abelian groups of order <= 150 with n = 3. Minimal cases exactly as predicted; no case below the BKR bound; none with n >= 4.",
   "47 ATLAS character tables with n <= 8: minimal only for A5 (n = 3) and 2.A5 (n = 2).",
   "Monomial enumeration cross-checked against GAP matrix groups for all 59 enumerated groups of order <= 220.",
-  "Independent agent review of 0.1.0 (Lemmas 1-2, Proposition 3, Theorem 4): proofs correct; wording fixes applied in 0.2.0."
+  "Independent agent review of 0.1.0 (Lemmas 1-2, Proposition 3, Theorem 4): proofs correct; wording fixes applied in 0.2.0.",
+  "Independent agent review of 0.2.0 (Lemma 6, Theorems 7-9): no mathematical error; notation (X' in type D), tail arguments of the bounds, and several justifications made explicit in 0.3.0.",
+  "Monotonicity search: 1,359,437 pairs (gamma_1 faithful det 1, gamma_2 det 1 nontrivial, dimensions <= 4, non-abelian groups of order <= 60), no violation of |K(gamma_1 + gamma_2)| > |K(gamma_1)|; sector_check.py checks the edge inequality numerically for n <= 10."
  ],
  "unresolved": [
   "Conjecture 10 (n >= 4)",
-  "specialist review of Theorems 7-9 (new in 0.2.0) and of Proposition 3",
+  "removing the dimension condition from Lemma 2 (no counterexample in 1.36 million pairs)",
+  "specialist review (agent reviews only so far; the sector form of Lemma 2 unreviewed)",
   "Theorem 9 depends on Blichfeldt's classification of finite subgroups of SL3(C) (as tabulated by Yau-Yu)",
   "structure of K beyond its order outside the cases computed by Gaetz"
  ],
