@@ -79,6 +79,8 @@ SmallGroups library:
 - all groups of order ≤ 40 with `n ≤ 5`;
 - non-abelian groups of order ≤ 71 with `n ≤ 6`;
 - non-abelian groups of order ≤ 150 with `n = 3`;
+- non-abelian groups of order 72–150 with `n ≤ 4` (so every non-abelian
+  group of order ≤ 150 is covered for `n ≤ 4`);
 - 47 ATLAS character tables with `n ≤ 8`.
 
 No minimal case with `n ≥ 4` was found.

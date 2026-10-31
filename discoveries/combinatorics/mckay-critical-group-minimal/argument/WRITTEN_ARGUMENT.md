@@ -572,7 +572,8 @@ no trivial constituent:
 
 - every group of order `≤ 40`, with `n ≤ 5`;
 - every non-abelian group of order `≤ 71`, with `n ≤ 6`;
-- every non-abelian group of order `≤ 150`, with `n = 3`.
+- every non-abelian group of order `≤ 150`, with `n = 3`;
+- every non-abelian group of order `72`–`150`, with `n ≤ 4`.
 
 It also records ATLAS character tables of 47 groups with `n ≤ 8`. Of these, 27
 have at least one faithful representation of that size into `SL_n`, among

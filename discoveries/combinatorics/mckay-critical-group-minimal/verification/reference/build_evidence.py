@@ -1,7 +1,7 @@
 """Assemble evidence/mckay_scans.json from raw GAP outputs (copies them into evidence/raw/).
 
 usage: python3 build_evidence.py SCAN_ALL_LE40_N5 SCAN_NONAB_LE71_N6 SCAN_NONAB_LE150_N3 ATLAS_OUT SO3_OUT
-                                PRIM_OUT TYPEB_OUT MONOMIAL_JSONL CROSSCHECK_OUT MONOTONICITY_OUT
+                                PRIM_OUT TYPEB_OUT MONOMIAL_JSONL CROSSCHECK_OUT MONOTONICITY_OUT SCAN_NONAB_72_150_N4
 """
 import json, os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -36,7 +36,7 @@ def scan_summary(path, name, rawname, params):
     }
 
 
-scan_all, scan_nonab, scan_n3, atlas, so3, prim, typeb, mono, cross, monot = sys.argv[1:11]
+scan_all, scan_nonab, scan_n3, atlas, so3, prim, typeb, mono, cross, monot, scan_n4 = sys.argv[1:12]
 scans = [
     scan_summary(scan_all, 'all groups of order <= 40, n <= 5', 'scan_all_le40_n5.txt',
                  {'ORDERS': '2..40', 'DMAX': 5, 'SKIPAB': False}),
@@ -44,6 +44,8 @@ scans = [
                  {'ORDERS': '2..71', 'DMAX': 6, 'SKIPAB': True}),
     scan_summary(scan_n3, 'non-abelian groups of order <= 150, n = 3', 'scan_nonabelian_le150_n3.txt',
                  {'ORDERS': '2..150', 'DMAX': 3, 'SKIPAB': True}),
+    scan_summary(scan_n4, 'non-abelian groups of order 72..150, n <= 4', 'scan_nonabelian_72_150_n4.txt',
+                 {'ORDERS': '72..150', 'DMAX': 4, 'SKIPAB': True}),
 ]
 shutil.copy(atlas, os.path.join(EV, 'raw', 'atlas_n8.txt'))
 expected = {('A5', 'n=3'): 2, ('2.A5', 'n=2'): 2}

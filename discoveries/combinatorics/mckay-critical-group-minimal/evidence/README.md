@@ -7,6 +7,7 @@
 | `raw/scan_all_le40_n5.txt` | `mckay_scan.g`, all groups of order ≤ 40, `n ≤ 5`. One `DONE` line per group, one `HIT` line per minimal representation. |
 | `raw/scan_nonabelian_le71_n6.txt` | `mckay_scan.g`, non-abelian groups of order ≤ 71, `n ≤ 6`. |
 | `raw/scan_nonabelian_le150_n3.txt` | `mckay_scan.g`, non-abelian groups of order ≤ 150, `n = 3`. |
+| `raw/scan_nonabelian_72_150_n4.txt` | `mckay_scan.g`, non-abelian groups of order 72–150, `n ≤ 4`. |
 | `raw/atlas_n8.txt` | `atlas_scan.g` on 47 ATLAS tables, `n ≤ 8`. |
 | `raw/so3.txt` | `so3.g` with `MMAX = 30`. |
 | `raw/primitive_sl3.txt` | `prim.g`. |
