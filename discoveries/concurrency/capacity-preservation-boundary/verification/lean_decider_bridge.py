@@ -25,6 +25,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 LEAN = HERE / "lean"
+TOOLCHAIN_DIR = "leanprover--lean4---v4.35.0"
 sys.path.insert(0, str(HERE))
 from conflict_free import random_conflict_free  # noqa: E402
 from marked_graph import brute  # noqa: E402
@@ -36,6 +37,10 @@ def tool_path(env, name):
     candidate = Path(bin_dir, executable) if bin_dir else None
     if candidate is not None and candidate.is_file():
         return str(candidate.resolve())
+    elan_home = Path(env.get("ELAN_HOME", Path.home() / ".elan"))
+    pinned = elan_home / "toolchains" / TOOLCHAIN_DIR / "bin" / executable
+    if pinned.is_file():
+        return str(pinned.resolve())
     discovered = shutil.which(name, path=env.get("PATH"))
     if discovered:
         return discovered
@@ -117,15 +122,14 @@ def run(count=400, seed=88):
 
 
 if __name__ == "__main__":
-    import shutil as _shutil
     import os as _os
-    _bin = _os.environ.get("CBMD_LEAN_BIN", "")
 
     def _available(name):
-        executable = name + (".exe" if _os.name == "nt" else "")
-        return _shutil.which(name) is not None or bool(
-            _bin and _os.path.isfile(_os.path.join(_bin, executable))
-        )
+        try:
+            tool_path(dict(_os.environ), name)
+            return True
+        except FileNotFoundError:
+            return False
 
     if not (_available("lean") and _available("lake")):
         print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",

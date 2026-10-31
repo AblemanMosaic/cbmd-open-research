@@ -40,6 +40,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 LEAN_PROJECT = HERE.parent / "lean"
+TOOLCHAIN_DIR = "leanprover--lean4---v4.35.0"
 
 
 def tool_path(env, name):
@@ -48,6 +49,10 @@ def tool_path(env, name):
     candidate = Path(bin_dir, executable) if bin_dir else None
     if candidate is not None and candidate.is_file():
         return str(candidate.resolve())
+    elan_home = Path(env.get("ELAN_HOME", Path.home() / ".elan"))
+    pinned = elan_home / "toolchains" / TOOLCHAIN_DIR / "bin" / executable
+    if pinned.is_file():
+        return str(pinned.resolve())
     discovered = shutil.which(name, path=env.get("PATH"))
     if discovered:
         return discovered
@@ -185,7 +190,7 @@ def built_library(env):
 
 
 def lean_env():
-    """The pinned toolchain: `$CBMD_LEAN_BIN` if set, else `lean` on PATH."""
+    """Resolve the pinned toolchain from the override, Elan, or PATH."""
     env = dict(os.environ)
     if env.get("CBMD_LEAN_BIN"):
         env["PATH"] = env["CBMD_LEAN_BIN"] + os.pathsep + env.get("PATH", "")

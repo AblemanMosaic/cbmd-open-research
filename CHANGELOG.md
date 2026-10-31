@@ -12,6 +12,9 @@
   checks are a fail-closed error in the full scope. Five Lean-backed checked
   decoder/decider gates that had accidentally remained optional are now
   required, so full qualification cannot report `PASS` when Lean is absent.
+  Those runners now resolve the explicit override, the exact Elan 4.35.0
+  installation, and only then `PATH`, avoiding an unconfigured Elan proxy when
+  their temporary build directory has no `lean-toolchain` file.
 
 - Added the capacity-preservation boundary dossier
   (`CBMD-CON-CAPACITY-PRESERVATION-001`), mapping how far the chip-firing

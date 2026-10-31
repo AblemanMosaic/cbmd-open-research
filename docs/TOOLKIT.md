@@ -11,7 +11,7 @@ The toolkit turns the repository from a readable research snapshot into a reprod
 | Lean source custody | `python -B tools/verify_proof_sources.py` | Every public Lean input, pin and local import is bound; forbidden proof escapes are absent from code. | Compilation or the actual dependency set of a compiled theorem. |
 | Lean replay | `python -B tools/replay_lean.py --prepare --fresh` | The nine targets compile from a project without prior CBMD proof objects and the audit module admits only the declared logical primitives. | A dependency build from raw compiler source, independent review, novelty or deployment. |
 
-The exact third-party Python versions for full qualification are in `requirements-qualification.txt`. The McKay gate additionally requires GAP 4 with SmallGrp and CTblLib. Checked decoder gates require Lean 4.35.0 and Lake on `PATH`, or `CBMD_LEAN_BIN` pointing to the toolchain's bin directory. Each discovery with `SOURCE_BOUND_COMPILED` standing also carries a local `verification/lean/replay.py --build` command; continuous integration executes all of them independently of the audit-only qualification.
+The exact third-party Python versions for full qualification are in `requirements-qualification.txt`. The McKay gate additionally requires GAP 4 with SmallGrp and CTblLib. Checked decoder gates require Lean 4.35.0 and Lake; they resolve `CBMD_LEAN_BIN`, then the exact Elan 4.35.0 installation, then `PATH`. Each discovery with `SOURCE_BOUND_COMPILED` standing also carries a local `verification/lean/replay.py --build` command; continuous integration executes all of them independently of the audit-only qualification.
 
 ## Research workflow
 

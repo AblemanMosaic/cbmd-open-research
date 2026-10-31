@@ -24,7 +24,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from decode import Refusal, certify, emit, ns_for, parse_eval, reconstruct, run_lean  # noqa: E402
+from decode import Refusal, certify, emit, ns_for, parse_eval, reconstruct, run_lean, tool_path  # noqa: E402
 
 ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
 
@@ -135,15 +135,14 @@ def run(count=60, seed=31):
 
 
 if __name__ == "__main__":
-    import shutil as _shutil
     import os as _os
-    _bin = _os.environ.get("CBMD_LEAN_BIN", "")
 
     def _available(name):
-        executable = name + (".exe" if _os.name == "nt" else "")
-        return _shutil.which(name) is not None or bool(
-            _bin and _os.path.isfile(_os.path.join(_bin, executable))
-        )
+        try:
+            tool_path(dict(_os.environ), name)
+            return True
+        except FileNotFoundError:
+            return False
 
     if not (_available("lean") and _available("lake")):
         print(json.dumps({"status": "TOOLCHAIN_UNAVAILABLE",
