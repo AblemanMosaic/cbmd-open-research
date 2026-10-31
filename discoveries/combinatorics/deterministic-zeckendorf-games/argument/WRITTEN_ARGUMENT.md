@@ -613,10 +613,28 @@ to 45 digits.
   It takes `O(log³ n)` arithmetic operations. It matches direct simulation for
   every `n ≤ 30,000` and at single `n` up to `4·10⁹`. It also decides the CS
   winner (the parity) for any `n`.
-- **Observed, not proved:** `L_CS(n) − c n` is negative and grows like
-  `−κ log_φ n` with `κ ≈ 0.42`. It lies in `[−16.4, −1.2]` for `n ≤ 30,000`
-  and is `−60.7` at `n = 10³⁰` and `−122.5` at `n = 10⁶⁰`
-  (`evidence/cs_deviation_growth.json`). Roughly:
+- **Observed, not proved:** `L_CS(n) − c n` is negative and grows
+  logarithmically. It lies in `[−16.4, −1.2]` for `n ≤ 30,000` and is `−60.7`
+  at `n = 10³⁰` and `−122.5` at `n = 10⁶⁰`
+  (`evidence/cs_deviation_growth.json`).
+
+  There is **no single coefficient**: `D(n)/log_φ n` depends on the Zeckendorf
+  shape of `n`. At index 1000 it runs from `−0.120` for `n = F_m + F_{⌊m/2⌋}`
+  through `−0.176` for `n = F_m`, `−0.392` at maximal density and `−0.449` at
+  density 1/3, to `−0.675` for `n = F_m − 1`; for typical `n` it is about
+  `−0.42`, which is the figure recorded before 0.5.4
+  (`evidence/cs_deviation_shapes.json`, gate `CS_DEVIATION_SHAPES`). Note that
+  it is not monotone in the density, and that the two alternating families
+  differ sharply — `F_m − 1` is the odd-index alternating sum and gives
+  `−0.675`, while the even-index one gives `−0.392`. Since
+  `c = Σ 1/f_{2k−1} − 1/φ` is itself built from odd-index Fibonacci numbers,
+  that asymmetry is where an exact account of `D` would have to start.
+
+  A family with **bounded** `D` would refute `Θ(log n)` pointwise. None was
+  found: over two-term `n = F_m + F_k` the minimum of `|D|` is attained at
+  `k/m ≈ 1/3` and grows with `m` (minimum ratios `0.0765, 0.0712, 0.0602,
+  0.0587, 0.0626` at `m = 100, 200, 300, 400, 600`), so the minimum ratio has
+  a floor near `0.06` rather than tending to 0. Roughly, for typical `n`:
   - `−Z(n)` contributes about `−log_φ n/(φ² + 1)`;
   - the level errors average about `−0.28` per level.
 

@@ -1,0 +1,20 @@
+families: D/L at the largest size computed (gap g between used indices)
+  g=  2 (max density ) Z= 300 L=  599.33 D=   -235.048 D/L= -0.39219
+  g=  3 (density 1/3 ) Z= 200 L=  597.89 D=   -268.524 D/L= -0.44912
+  g=  4 (density 1/4 ) Z= 150 L=  596.66 D=   -234.321 D/L= -0.39272
+  g=  6 (density 1/6 ) Z= 100 L=  594.45 D=   -168.639 D/L= -0.28369
+  g= 10 (density 1/10) Z=  60 L=  590.34 D=   -195.874 D/L= -0.33180
+
+  F_m, m=1000          L=  998.33 D=   -175.506 D/L= -0.17580
+  F_m - 1, m=1000      L=  998.33 D=   -674.300 D/L= -0.67543
+  F_m + 1, m=1000      L=  998.33 D=   -175.713 D/L= -0.17601
+  F_m + F_2, m=1000    L=  998.33 D=   -175.713 D/L= -0.17601
+  2 F_m, m=1000        L=  999.77 D=   -179.012 D/L= -0.17905
+  F_m + F_{m//2}       L=  998.33 D=   -120.034 D/L= -0.12024
+
+random n: extremes of D/L (closest to 0 is the one that matters)
+  e=  5  max D/L (closest to 0)  -0.25430   min D/L  -0.65896
+  e= 10  max D/L (closest to 0)  -0.28307   min D/L  -0.66590
+  e= 20  max D/L (closest to 0)  -0.29076   min D/L  -0.52483
+  e= 40  max D/L (closest to 0)  -0.34838   min D/L  -0.49035
+  e= 80  max D/L (closest to 0)  -0.36909   min D/L  -0.48148

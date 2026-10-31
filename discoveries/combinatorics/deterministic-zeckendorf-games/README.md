@@ -100,8 +100,34 @@ linear in `n` with constant `≈ 1.206`.
   simulation everywhere tested. An independent review found the proof correct;
   its small fixes are applied.
 
-  Observed, not proved: `L_CS(n) − c·n` is negative and grows like
-  `−0.42 log_φ n`. It is `−22` at `10⁹` and `−123` at `10⁶⁰`.
+  Observed, not proved: `L_CS(n) − c·n` is negative and grows logarithmically.
+  It is `−22` at `10⁹` and `−123` at `10⁶⁰`.
+
+  **The coefficient is not universal.** `D(n)/log_φ n` depends on the
+  Zeckendorf shape of `n`, not only on its size. Measured at Fibonacci index
+  1000:
+
+  | shape of `n` | `D/log_φ n` |
+  |---|---|
+  | `F_m + F_{⌊m/2⌋}` | −0.120 |
+  | `F_m`, `F_m + 1`, `2F_m` | −0.176 to −0.179 |
+  | density 1/6 | −0.284 |
+  | density 1/4, maximal density | −0.393, −0.392 |
+  | density 1/3 | −0.449 |
+  | `F_m − 1` | −0.675 |
+
+  So the `−0.42` quoted before 0.5.4, and still the right figure for
+  **typical** `n`, is one point in a range spanning a factor of five. For
+  random `n` in `[10⁸⁰, 10⁸¹)` the ratio stayed inside `[−0.481, −0.369]`,
+  which is why sampling makes it look universal.
+
+  **A search for a counterexample to `Θ(log n)` found none.** The statement
+  would fail pointwise if some family kept `D` bounded. Over two-term
+  `n = F_m + F_k` the minimum of `|D|` sits at `k/m ≈ 1/3` and keeps growing:
+  exhaustive minimisation gives minimum ratios `0.0765, 0.0712, 0.0602,
+  0.0587, 0.0626` at `m = 100, 200, 300, 400, 600`, with argmin `k/m` in
+  `[0.310, 0.340]`. The ratio has a floor near `0.06`; it does not drift to
+  zero. That supports `Θ(log n)` without proving it.
 - **Combine Smallest is not low-rank.** Its Hankel matrices over Zeckendorf
   words have full rank (13, 21, 34 at word lengths 6, 7, 8). That is evidence,
   not proof, that CS is not Fibonacci-regular of small rank.

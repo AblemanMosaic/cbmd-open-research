@@ -1,0 +1,5 @@
+m=  100 minimum over k: |D|=    7.525 at k=  34 (k/m=0.340)  L=   98.33  |D|/L= 0.07653
+m=  200 minimum over k: |D|=   14.124 at k=  62 (k/m=0.310)  L=  198.33  |D|/L= 0.07122
+m=  300 minimum over k: |D|=   17.951 at k= 102 (k/m=0.340)  L=  298.33  |D|/L= 0.06017
+m=  400 minimum over k: |D|=   23.375 at k= 130 (k/m=0.325)  L=  398.33  |D|/L= 0.05868
+m=  600 minimum over k: |D|=   37.424 at k= 190 (k/m=0.317)  L=  598.33  |D|/L= 0.06255

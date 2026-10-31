@@ -1,0 +1,73 @@
+{
+ "M": 120,
+ "shapes": {
+  "F_m": {
+   "L": 118.328,
+   "D": -22.5306,
+   "ratio": -0.19041
+  },
+  "F_m_plus_1": {
+   "L": 118.328,
+   "D": -23.7371,
+   "ratio": -0.2006
+  },
+  "two_F_m": {
+   "L": 119.768,
+   "D": -22.0612,
+   "ratio": -0.1842
+  },
+  "F_m_minus_1": {
+   "L": 118.328,
+   "D": -80.3241,
+   "ratio": -0.67883
+  },
+  "density_1_over_2": {
+   "L": 117.328,
+   "D": -47.5067,
+   "ratio": -0.40491
+  },
+  "density_1_over_3": {
+   "L": 114.887,
+   "D": -48.3055,
+   "ratio": -0.42046
+  },
+  "density_1_over_4": {
+   "L": 112.655,
+   "D": -48.0914,
+   "ratio": -0.42689
+  },
+  "density_1_over_6": {
+   "L": 108.447,
+   "D": -32.205,
+   "ratio": -0.29697
+  }
+ },
+ "spread_of_abs_ratio": 3.6853,
+ "coefficient_not_universal": true,
+ "two_term_minimum": {
+  "40": {
+   "min_abs_D": 4.7613,
+   "at_k": 14,
+   "k_over_m": 0.35,
+   "L": 38.328,
+   "ratio": 0.12423
+  },
+  "80": {
+   "min_abs_D": 7.4462,
+   "at_k": 26,
+   "k_over_m": 0.325,
+   "L": 78.328,
+   "ratio": 0.09506
+  },
+  "120": {
+   "min_abs_D": 9.4485,
+   "at_k": 40,
+   "k_over_m": 0.3333,
+   "L": 118.328,
+   "ratio": 0.07985
+  }
+ },
+ "two_term_min_abs_D_increasing_in_m": true,
+ "deviation_never_zero": true,
+ "ok": true
+}
