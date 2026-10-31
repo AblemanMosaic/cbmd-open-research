@@ -61,16 +61,46 @@ following Blichfeldt's classification of finite subgroups of `SL_3(ℂ)`:
   all eight. Only `A_5` is minimal; Klein's `PSL(2,7)` has `K ≅ ℤ/2`.
 - **Abelian groups (type A):** `CBMD-COMB-CAYLEY-JAC-001`.
 
-**Also proved: Lemma 2 (adding a summand enlarges `K`).** Let `γ_1` be
-faithful with determinant 1, and `γ_2` nontrivial with determinant 1. Then
-`|K(γ_1 ⊕ γ_2)| > |K(γ_1)|` whenever `χ_1` is real-valued, or
-`1/n_1 + 1/n_2 ≥ 1/2`. So `γ` is never minimal when it contains, for
-example, a faithful `SL_2` summand.
+**Also proved: Theorem M (adding a summand enlarges `K`), with no
+hypotheses.** For `γ_1` faithful and `γ_2` *any* representation of `G`,
 
-The proof rests on a sector lemma: for `U ∈ SU(n)`, `n − tr U` lies in the
-sector `|arg| ≤ π/2 − π/n`. A search of 1,359,437 pairs (non-abelian groups
-of order ≤ 60, dimensions ≤ 4) found no violation even without the dimension
-condition.
+    |K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)|,
+
+with equality exactly when `γ_2` is a multiple of the trivial
+representation. So a minimal `γ` has no faithful proper summand once trivial
+summands are deleted (Corollary M1), which is the reduction Gaetz's Question
+2 needs; and for two faithful summands
+`|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + |K(γ_2)|` (Corollary M2, attained already for
+`G = ℤ/2`).
+
+The route is the matrix-tree theorem rather than the sector geometry. The
+McKay–Cartan matrix `nI − M` is not a digraph Laplacian — the McKay quiver's
+out-degrees are not `n` — but conjugating by the diagonal matrix of
+irreducible degrees makes it one, with arc weights `M_{ij} δ_j / δ_i`. So
+`|K(γ)|` is a weighted count of arborescences of the McKay quiver pointing at
+the trivial vertex (Lemma A); `M` is additive in `γ`, so the determinant
+expands into a sum of non-negative mixed terms, one of which is `|K(γ_1)|`;
+and strictness has a one-line witness, since a nontrivial constituent `χ_j`
+of `γ_2` forces an arc from `χ_j^*` straight to the trivial vertex, and
+swapping that arc into an arborescence of `Q(γ_1)` cannot create a cycle
+because the arc ends at the root. On the way, the count rooted at `χ_v` turns
+out to be `δ_v²` times the one at the trivial vertex, which re-proves the
+order formula (F3) by elementary linear algebra (Proposition B).
+
+This supersedes the earlier Lemma 2, which needed `det γ_1 = det γ_2 = 1`
+together with "`χ_1` real-valued or `1/n_1 + 1/n_2 ≥ 1/2`" and rested on a
+sector lemma: for `U ∈ SU(n)`, `n − tr U` lies in `|arg| ≤ π/2 − π/n`. The
+sector lemma is kept as an independent statement. The 1,359,437-pair search
+that found no violation without the dimension condition (non-abelian groups
+of order ≤ 60, dimensions ≤ 4) is now explained, including its zero
+equalities: that scan excluded multiples of the trivial character from
+`γ_2`, which is exactly the equality case.
+
+**No novelty is claimed for Lemma A, Proposition B or Theorem M.** One
+source, Grinberg–Huang–Reiner (arXiv:1704.03778), could plausibly contain
+them — the proofs use only facts that have Hopf-algebra analogues there —
+and its text past the middle of §6 cannot be retrieved by the fetch tools.
+They are recorded as proved, not as new; see `review/PRIOR_ART.md`.
 
 **Checked**, with no exception. The scans cover every faithful
 representation into `SL_n` without trivial constituent, from GAP's
@@ -93,8 +123,9 @@ No minimal case with `n ≥ 4` was found.
   - of Lemmas 1–2 (the real case), Proposition 3 and Theorem 4, in 0.1.0;
   - of Lemma 6 and Theorems 7–9, in 0.2.0.
   
-  Their fixes are applied. The sector form of Lemma 2 (0.3.0) has not been
-  reviewed.
+  Their fixes are applied. The sector form of Lemma 2 (0.3.0) and the
+  arborescence section (Lemma A, Proposition B, Theorem M; 0.4.0) have not
+  been reviewed.
 - **Prior art.**
   - The abelian case is BKR's Proposition 6.19.
   - The `SO(3)` classification and the conjecture itself are Gaetz's (2016).

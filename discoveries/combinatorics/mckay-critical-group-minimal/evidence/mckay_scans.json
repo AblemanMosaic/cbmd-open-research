@@ -755,5 +755,63 @@
   "PRIM Hessian648#4 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
   "PRIM Hessian648#5 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
   "PRIM Hessian648#6 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false"
- ]
+ ],
+ "arborescence": {
+  "tool": "arborescence_check.g",
+  "params": {
+   "ORDMAX": 24,
+   "LMAX": 6,
+   "DEG": 4
+  },
+  "raw": "raw/arborescence_le24.txt",
+  "checks": {
+   "order_formula": 372,
+   "arborescence_identity": 372,
+   "row_expansion": 24584,
+   "strictness": 24584,
+   "dv2_ratio": 1545,
+   "bad": 0
+  },
+  "note": "order_formula and arborescence_identity are Lemma A and Proposition B per faithful gamma; row_expansion and strictness are Theorem M per pair (gamma1 faithful, gamma2 arbitrary of positive degree without trivial constituent); dv2_ratio is Proposition B(i) per vertex. bad counts every failure of any of them."
+ },
+ "superadditivity": {
+  "tool": "super.g",
+  "params": {
+   "ORDMAX": 48,
+   "LMAX": 9,
+   "DEG": 5,
+   "TRIPLEMAX": 25
+  },
+  "raw": "raw/superadditivity_le48.txt",
+  "checks": {
+   "groups": 45,
+   "tests": 4632464,
+   "bad": 0,
+   "tests3": 120613,
+   "bad3": 0,
+   "min_slack": 0
+  },
+  "note": "Corollary M2 for pairs and triples of faithful representations with no determinant condition; min_slack 0 shows the bound is tight (attained already for l = 1)."
+ },
+ "monotonicity_unconditional": {
+  "tool": "mono2.g",
+  "params": {
+   "ORDMAX": 48,
+   "LMAX": 8,
+   "D1": 4,
+   "D2": 3,
+   "abelian_included": true,
+   "determinant_condition": false
+  },
+  "raw": "raw/monotonicity_unconditional_le48.txt",
+  "groups": 39,
+  "checks": {
+   "tests": 166929,
+   "violations": 0,
+   "strict_equalities": 0,
+   "trivial_gamma2_cases": 4701
+  },
+  "min_ratio": "5/4",
+  "note": "Theorem M with no determinant condition on either summand: gamma_1 faithful without trivial constituent, gamma_2 any representation of positive degree (trivial constituents allowed). violations counts |K(gamma_1+gamma_2)| < |K(gamma_1)|; strict_equalities counts equality with gamma_2 not a multiple of the trivial character (Theorem M forbids both); trivial_gamma2_cases are the cases where gamma_2 IS a multiple of the trivial character, every one of which gave exact equality."
+ }
 }

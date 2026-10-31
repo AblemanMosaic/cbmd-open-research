@@ -97,6 +97,25 @@
     "HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1"
    ]
   },
+  "ARBORESCENCE": {
+   "pass": true,
+   "counts": {
+    "order_formula": 372,
+    "arborescence_identity": 372,
+    "row_expansion": 24584,
+    "strictness": 24584,
+    "dv2_ratio": 1545,
+    "bad": 0
+   },
+   "expected": {
+    "order_formula": 372,
+    "arborescence_identity": 372,
+    "row_expansion": 24584,
+    "strictness": 24584,
+    "dv2_ratio": 1545,
+    "bad": 0
+   }
+  },
   "SECTOR_LEMMA": {
    "pass": true,
    "output": [

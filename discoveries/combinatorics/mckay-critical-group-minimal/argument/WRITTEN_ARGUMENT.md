@@ -18,7 +18,9 @@ Three known facts are used throughout.
 - **(F2)** BKR, Theorem 1.4: if `n = 2`, this surjection is an isomorphism.
 - **(F3)** Gaetz, *Critical groups of group representations*, Theorem 3(i):
   `|G| · |K(γ)| = Π_{c ≠ 1} (n − χ(c))`. The product runs over the
-  nontrivial conjugacy classes, one factor per class.
+  nontrivial conjugacy classes, one factor per class. Proposition B below
+  gives a second, self-contained proof of (F3); it is listed here as a known
+  fact because that is how it is used in Theorems 4–9.
 
 **Question (BKR, Question 6.11).** For which faithful `γ : G ↪ SL_n(ℂ)` is
 the surjection (F1) an isomorphism? We call such `γ` *minimal*.
@@ -60,7 +62,143 @@ By (a), we may assume `γ` has **no trivial constituent**. Then `n ≥ 2` when
 `G ≠ 1`, because a 1-dimensional representation with trivial determinant is
 trivial. Every faithful `γ` with `n = 2` is minimal (F2).
 
-## Lemma 2 (adding a summand strictly enlarges `K`)
+## Lemma A (the arborescence picture)
+
+Everything in this section and the next is *proved by hand*, for arbitrary
+`n` and with no determinant, dimension or reality hypothesis.
+
+For a representation `γ` of `G` of degree `n`, write `M = M(γ)`,
+`C̃(γ) = nI − M`, and let `Q(γ)` be the McKay quiver: vertices `0, …, ℓ`,
+with `M_{ij}` arcs `i → j`. Let `D = diag(δ_0, …, δ_ℓ)` be the diagonal
+matrix of degrees, `δ_0 = 1`. An *arborescence rooted at `v`* is a choice of
+one out-arc `i → T(i)` for every `i ≠ v` such that every vertex has a
+directed path to `v`; write `Arb_v` for the set of these and
+
+    A_v(γ) = Σ_{T ∈ Arb_v} Π_{i ≠ v} w(i → T(i)),    w(i → j) := M_{ij} δ_j / δ_i ≥ 0.
+
+**Lemma A.** `det C(γ) = A_0(γ)`, for *any* representation `γ`, faithful or
+not. In particular `det C(γ) ≥ 0`, as a sum of nonnegative terms. (When `γ`
+is faithful, `det C(γ) = |K(γ)|`; when it is not, both sides can vanish, and
+only the inequality is used below.)
+
+*Proof.* Evaluating `χ_γ χ_i = Σ_j M_{ij} χ_j` at the identity gives
+`Σ_j M_{ij} δ_j = n δ_i`, that is `M δ = n δ` where `δ = (δ_0, …, δ_ℓ)`
+(Gaetz, Proposition 4(i); in the language of Browne, Proposition 5.2, the
+weight vector of a McKay quiver is its dimension vector). Put
+
+    L̃ := D^{-1} C̃(γ) D,     L̃_{ij} = −M_{ij} δ_j / δ_i  (i ≠ j),   L̃_{ii} = n − M_{ii}.
+
+Its off-diagonal entries are `≤ 0` and, by `M δ = n δ`, its row sums vanish.
+So `L̃` is the Laplacian of the weighted digraph on `{0, …, ℓ}` with arc
+weights `w(i → j)`, and Tutte's weighted matrix-tree theorem for digraphs
+gives that the determinant of `L̃` with row and column `v` struck is
+`A_v(γ)`. Striking the same index from rows and from columns commutes with
+conjugating by a diagonal matrix, so that determinant equals
+`det(C̃(γ)` with row and column `v` struck`)`; for `v = 0` this is
+`det C(γ)`. ∎
+
+The weights are rational, not integral, so this is not an instance of the
+integer-outdegree digraph theory recalled in BKR, Remark 2.18: the outdegree
+of `i` in `Q(γ)` is `Σ_j M_{ij}`, which equals `n` only in special cases. It
+is the *weighted* outdegree `Σ_j M_{ij} δ_j / δ_i` that is `n` at every
+vertex.
+
+**Proposition B.** Let `γ` be **faithful**. Then `A_v(γ) = δ_v² · det C(γ)`
+for every `v`, and consequently `|G| · det C(γ) = Π_{c ≠ 1}(n − χ_γ(c))`.
+
+*Proof.* By Lemma A's proof, `A_v(γ)` is the `(v,v)` cofactor of `C̃(γ)`.
+Faithfulness gives `χ_γ(c) ≠ n` for `c ≠ 1`, so by Gaetz, Proposition 4,
+`C̃(γ)` has corank exactly 1; it has right nullvector `δ`, as above, and also left
+nullvector `δ`: the `i`-th entry of `Mᵗδ` is
+`Σ_j M_{ji} δ_j = ⟨χ_reg χ_γ, χ_i⟩ = n δ_i` (this is the computation in the
+proof of Gaetz, Proposition 4(iii); for Hopf algebras the two relations are
+Grinberg–Huang–Reiner, Propositions 3.1 and 3.8). For a matrix of corank 1
+the adjugate is `κ · x yᵗ` with `x`, `y` spanning the right and left
+nullspaces, so the `(v,v)` cofactor is `κ δ_v²`; taking `v = 0` gives
+`κ = A_0(γ) = det C(γ)` since `δ_0 = 1`.
+
+For the second claim, the coefficient of `x¹` in `det(xI − C̃(γ))` is the
+elementary symmetric function `e_ℓ` of the eigenvalue multiset
+`{0} ∪ {n − χ_γ(c) : c ≠ 1}` (Gaetz, Proposition 4(ii)), which is
+`Π_{c≠1}(n − χ_γ(c))`; it is also the sum of the principal `ℓ × ℓ` minors,
+i.e. `Σ_v A_v(γ) = det C(γ) · Σ_v δ_v² = |G| · det C(γ)`. ∎
+
+So (F3) is recovered, by elementary linear algebra and without Lorenzini's
+cokernel theorem; only the identification of `A_v` with a minor uses the
+matrix-tree theorem, and the second half of Proposition B uses none. For a
+one-dimensional `χ_v` the identity `A_v = A_0` also has a direct reason:
+`χ_i ↦ χ_i ⊗ χ_v` is a quiver automorphism carrying `0` to `v` (Browne,
+Lemma 4.1), hence a weight-preserving bijection `Arb_0 → Arb_v`. Dropping
+acyclicity from Lemma A gives the upper bound
+`det C(γ) ≤ Π_{i ≠ 0}(n − M_{ii})`.
+
+## Theorem M (adding a summand enlarges `K`, unconditionally)
+
+**Theorem M.** Let `γ_1` be a faithful representation of `G` and `γ_2` any
+representation of `G`. Then
+
+    |K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)|,
+
+with equality if and only if `γ_2` is a multiple of the trivial
+representation.
+
+*Proof.* Since `χ_{γ_1⊕γ_2} = χ_{γ_1} + χ_{γ_2}` and `n = n_1 + n_2`, we have
+`M(γ_1 ⊕ γ_2) = M(γ_1) + M(γ_2)` and `C̃(γ_1 ⊕ γ_2) = C̃(γ_1) + C̃(γ_2)`; the
+same `δ` is a nullvector of both summands, so Lemma A's conjugation serves
+both at once and `Q(γ_1 ⊕ γ_2)` is the arc-multiset union
+`Q(γ_1) ⊎ Q(γ_2)`. Write `M¹, M²` for the two McKay matrices. By Lemma A,
+
+    |K(γ_1 ⊕ γ_2)| = Σ_T Π_{i≠0} (M¹_{i,T(i)} + M²_{i,T(i)}) δ_{T(i)}/δ_i,
+
+the sum over arborescences of the union quiver rooted at `0`. Expand each
+factor and collect by the set `S ⊆ {1, …, ℓ}` of vertices taking their arc
+from `γ_1`:
+
+    |K(γ_1 ⊕ γ_2)| = Σ_T Σ_S ( Π_{i∈S} M¹_{i,T(i)} )( Π_{i∉S} M²_{i,T(i)} ) Π_{i≠0} δ_{T(i)}/δ_i,
+
+every term nonnegative. The terms with `S = {1, …, ℓ}` vanish unless `T` is
+an arborescence of `Q(γ_1)`, and they sum to `|K(γ_1)|` by Lemma A. Hence
+the inequality.
+
+If `γ_2 = m · χ_0` then `M² = mI`, so `C̃(γ_2) = 0` and
+`C̃(γ_1 ⊕ γ_2) = C̃(γ_1)`: equality, which is Lemma 1(a).
+
+Otherwise let `χ_j` be a nontrivial irreducible constituent of `γ_2` and let
+`u` be the index with `χ_u = χ_j^*`, so `u ≠ 0`. Then
+
+    M²_{u,0} = ⟨χ_{γ_2} χ_u, χ_0⟩ = ⟨χ_{γ_2}, χ_u^*⟩ = ⟨χ_{γ_2}, χ_j⟩ > 0,
+
+so `Q(γ_2)` has an arc `u → 0`. As `γ_1` is faithful, every irreducible
+occurs in some tensor power of `γ_1` (Burnside; BKR cite the strengthening
+[12, Thm. 9.34]), so `Q(γ_1)` is strongly connected (Browne, Proposition
+3.3) and has an arborescence `T` rooted at `0`. Put `T'(i) = T(i)` for
+`i ≠ u` and `T'(u) = 0`. Then `T'` is again an arborescence: a cycle of `T'`
+cannot contain `0`, which has no out-arc; cannot avoid the arc `u → 0`,
+since the remaining arcs are `T`-arcs and `T` is acyclic; and cannot use
+`u → 0` either, since that arc *enters* `0`. So the pair
+`(T', S = {1, …, ℓ} ∖ {u})` contributes a positive term absent from
+`|K(γ_1)|`, and the inequality is strict. ∎
+
+**Corollary M1.** If `γ : G ↪ SL_n(ℂ)` is faithful and `γ = γ_1 ⊕ γ_2` with
+`γ_1` faithful and `γ_2` not a multiple of the trivial representation, then
+`|K(γ)| > |K(γ_1)| ≥ |G^{ab}|` by (F1), so `γ` is not minimal. Hence in
+Question 6.11 and Gaetz's Question 2 one may assume that no proper direct
+summand of `γ`, after deleting trivial summands, is faithful.
+
+**Corollary M2.** The terms with `S = ∅` sum to `det C(γ_2) ≥ 0`, so
+`|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + det C(γ_2)`; when `γ_2` is also faithful this
+reads `|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + |K(γ_2)|`, and the same expansion gives
+`|K(γ_1 ⊕ ⋯ ⊕ γ_r)| ≥ Σ_t |K(γ_t)|` for faithful `γ_t`. The bound is tight:
+for `ℓ = 1` the expansion has only its two extreme terms, and for `G = ℤ/2`
+with `γ_1 = γ_2` the sign character, `1 + 1 = 2`.
+
+Theorem M supersedes the sector form of Lemma 2 below, which proved the
+strict inequality only under `det γ_1 = det γ_2 = 1` together with "`χ_1`
+real-valued or `1/n_1 + 1/n_2 ≥ 1/2`". The sector lemma is kept because it
+is an independent statement about `SU(n)` and makes the per-class factors
+geometrically transparent.
+
+## Lemma 2 (adding a summand: the sector form, superseded by Theorem M)
 
 **Sector lemma.** Let `U ∈ SU(n)`. Then `z = n − tr U` is either 0 or
 satisfies `|arg z| ≤ π/2 − π/n`. For `n = 2`, `z` is real and `≥ 0`.

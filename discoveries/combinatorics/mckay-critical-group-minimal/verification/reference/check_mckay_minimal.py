@@ -17,6 +17,11 @@ Gates (each required):
     form;
   * ATLAS_SMALL: ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6: hits are exactly the two
     3-dimensional representations of A5 and the two 2-dimensional ones of 2.A5;
+  * ARBORESCENCE: arborescence_check.g -- Lemma A (|K| is the weighted arborescence count at the
+    trivial vertex), Proposition B (the count at chi_v is delta_v^2 times it, and the order
+    formula follows), and Theorem M (the row expansion has only nonnegative terms, the strictness
+    witness arc u -> 0 exists and the swapped map is again an arborescence, and the inequality is
+    strict), on all groups of order <= 24 with at most 6 classes and all degrees <= 4;
   * SECTOR_LEMMA: sector_check.py -- the edge inequality behind Lemma 2's sector lemma, numerically;
   * BOUNDS_N3: bounds_check.py -- the analytic inequalities of Theorems 7 and 9 leave only the finite
     regions covered by the computations;
@@ -127,6 +132,24 @@ def gate_atlas():
     return {'pass': ok, 'groups': len(done), 'hits': hits}
 
 
+def gate_arborescence():
+    """Lemma A, Proposition B and Theorem M, exactly, on all groups of order <= 24 with at most
+    6 conjugacy classes and all representations of degree <= 4 without trivial constituent."""
+    txt = run_gap(['ORDMAX := 24;; LMAX := 6;; DEG := 4;;', 'Read("arborescence_check.g");'],
+                  'arb.out')
+    if txt is None:
+        return {'pass': False, 'reason': 'GAP unavailable or produced no output'}
+    line = next((l for l in txt.splitlines() if l.startswith('ARB_CHECKS')), None)
+    if line is None:
+        return {'pass': False, 'reason': 'no ARB_CHECKS summary', 'output': txt[-500:]}
+    got = {k: int(v) for k, v in re.findall(r'(\w+)=(\d+)', line)}
+    # the counts of the run shipped in evidence/raw/arborescence_le24.txt
+    want = {'order_formula': 372, 'arborescence_identity': 372, 'row_expansion': 24584,
+            'strictness': 24584, 'dv2_ratio': 1545, 'bad': 0}
+    ok = got == want and not [l for l in txt.splitlines() if l.startswith('BAD')]
+    return {'pass': ok, 'counts': got, 'expected': want}
+
+
 def gate_sector():
     proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'sector_check.py')], capture_output=True, text=True)
     return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
@@ -196,6 +219,31 @@ def gate_evidence():
     ok &= any(s['name'].endswith('n = 3') and s['groups'] > 0 for s in ev['scans'])
     ms = ev.get('monotonicity_search', {})
     ok &= ms.get('tests', 0) > 0 and ms.get('violations') == 0
+    # the arborescence and superadditivity records, re-derived from their raw files
+    mu = ev.get('monotonicity_unconditional', {})
+    ok &= mu.get('checks', {}).get('tests', 0) > 0 and mu['checks']['violations'] == 0 \
+        and mu['checks']['strict_equalities'] == 0 and mu['checks']['trivial_gamma2_cases'] > 0
+    if mu:
+        raw = os.path.join(EVIDENCE, mu['raw'])
+        ok &= os.path.exists(raw) and not any(
+            l.startswith(('VIOLATION', 'EQUAL', 'TRIVIAL_MISMATCH')) for l in open(raw).read().splitlines())
+    for key, marker in (('arborescence', 'ARB_CHECKS'), ('superadditivity', 'SUPERADD')):
+        rec = ev.get(key)
+        if not rec:
+            ok = False
+            continue
+        raw = os.path.join(EVIDENCE, rec['raw'])
+        if not os.path.exists(raw):
+            ok = False
+            continue
+        text = open(raw).read()
+        line = next((l for l in text.splitlines() if l.startswith(marker)), None)
+        if line is None:
+            ok = False
+            continue
+        got = {k: int(v) for k, v in re.findall(r'(\w+)=(-?\d+)', line)}
+        ok &= got == rec['checks'] and got.get('bad') == 0 and got.get('bad3', 0) == 0
+        ok &= not any(l.startswith('BAD') for l in text.splitlines())
     return {'pass': bool(ok), 'scans': len(ev['scans'])}
 
 
@@ -205,6 +253,7 @@ def main():
         'PRIMITIVE_SL3': gate_primitive(),
         'SCAN_SMALL': gate_scan(),
         'ATLAS_SMALL': gate_atlas(),
+        'ARBORESCENCE': gate_arborescence(),
         'SECTOR_LEMMA': gate_sector(),
         'BOUNDS_N3': gate_bounds(),
         'MONOMIAL_ENUM': gate_monomial(),

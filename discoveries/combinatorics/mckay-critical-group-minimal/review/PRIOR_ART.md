@@ -45,6 +45,34 @@
 - **D. Grinberg, J. Huang and V. Reiner, *Critical groups for Hopf algebra
   modules*, arXiv:1704.03778.** The Hopf algebra generalisation. Contains no
   minimality question.
+  - **Read:** §§1–6 of the arXiv PDF, through the proof of Theorem 1.4
+    (including Questions 5.2 and 5.11). Theorem 1.2 gives `#K(V)` from the
+    eigenvalues; Corollary 1.3 is the group case of (F3); Propositions 3.1
+    and 3.8 are the two eigenvector relations used in Proposition B.
+    No arborescence or spanning-tree statement, and no comparison between
+    the critical groups of two different modules, occurs in what was read.
+  - **Not read: the end of §6 onwards** — Question 6.9, and whatever
+    follows. The author's own copy of the PDF is `robots_disallowed`, and
+    both the arXiv PDF and the ar5iv HTML truncate at about 74,000
+    characters, mid-proof of (v) ⇒ (i). The PDF has been requested from the
+    user. **Until it is read, no novelty is asserted for Lemma A,
+    Proposition B, Theorem M or its corollaries.** They are recorded here as
+    proved, not as new. Their proofs use only `M δ = n δ`, `Mᵗ δ = n δ` and
+    additivity of `M`, so the same argument should run in that paper's
+    setting with `δ` replaced by the dimension vectors of the simples and of
+    the indecomposable projectives — which is one reason this is the one
+    source that could plausibly already contain them.
+- **H. Browne, *Connectivity properties of McKay quivers*,
+  arXiv:2003.09502.** Read: the full list of numbered results.
+  - Proposition 3.3: the McKay quiver of a faithful representation is
+    strongly connected (via Burnside). Used in Theorem M.
+  - Proposition 5.2: for faithful `ρ` the quiver's weight vector is the
+    dimension vector of the irreducibles; Corollary 2.4, `Γ_ρ(G)` is
+    `(dim ρ)`-weightable. This is the relation `M δ = n δ` that Lemma A
+    turns into a digraph Laplacian.
+  - Lemma 4.1: the dual group acts by quiver automorphisms, used for the
+    remark on `A_v = A_0` for one-dimensional `χ_v`.
+  - Contains no critical group, arborescence or spanning-tree statement.
 - **`CBMD-COMB-CAYLEY-JAC-001`.** The abelian case.
 - **H. F. Blichfeldt, *Finite collineation groups* (1917).** The
   classification of finite subgroups of `SL_3(ℂ)` into types A–L. We use it
@@ -54,5 +82,9 @@
   imprimitive irreducible groups are monomial.
 
 Searches in 2026 found no later answer to Gaetz's Question 2, and no
-statement of Proposition 3, Lemma 2 or Theorem 9. This is not a novelty
-determination. BKR §6 was read in full (pages 25–29 of the arXiv v2 PDF).
+statement of Proposition 3, Lemma 2 or Theorem 9. A search that finds nothing
+is not a novelty determination. BKR §6 was read in full (pages 25–29 of the
+arXiv v2 PDF); BKR §2, including Remark 2.18 on digraph critical groups and
+their arborescence count, was read in full. Gaetz's thesis §§1–5 were read in
+full. The one acknowledged gap is the tail of arXiv:1704.03778, recorded
+above.
