@@ -4,7 +4,7 @@
  "title": "Finite-capacity chip-firing preservation on ordered DAGs",
  "field": "dynamics",
  "slug": "finite-capacity-chip-firing",
- "public_version": "0.2.0",
+ "public_version": "0.2.1",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -69,7 +69,7 @@
     "-B",
     "discoveries/dynamics/finite-capacity-chip-firing/verification/decoder/check_decoder.py"
    ],
-   "required": false
+   "required": true
   }
  ],
  "authority_effect": "NONE",

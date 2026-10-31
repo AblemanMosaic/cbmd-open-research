@@ -4,7 +4,7 @@
  "title": "Capacity preservation in Petri nets: a characterization at one input place and coNP-completeness at two",
  "field": "concurrency",
  "slug": "capacity-preservation-boundary",
- "public_version": "0.17.0",
+ "public_version": "0.17.1",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -146,7 +146,7 @@
     "-B",
     "discoveries/concurrency/capacity-preservation-boundary/verification/lean_decider_bridge.py"
    ],
-   "required": false
+   "required": true
   },
   {
    "id": "CAPACITY_PRESERVATION_CROSS_DECIDER",
@@ -156,7 +156,7 @@
     "-B",
     "discoveries/concurrency/capacity-preservation-boundary/verification/cross_decider_bridge.py"
    ],
-   "required": false
+   "required": true
   }
  ],
  "authority_effect": "NONE",

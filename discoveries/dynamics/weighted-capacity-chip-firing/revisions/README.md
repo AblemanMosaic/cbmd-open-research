@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.12.2 | The two Lean-backed decider/decoder gates are required in full qualification; missing Lean can no longer coexist with an overall `PASS`. |
 | 0.12.0 | Instances given as JSON files get kernel-checked verdicts, positive or negative, on arbitrary digraphs, with round-trip and wrong-verdict controls. |
 | 0.11.0 | A verified decider for the characterization: peeling decides well-foundedness, and decideTerminalStable is proved correct and agrees with simulated transfer on 500 systems, run by Lean. |
 | 0.10.0 | The weighted transfer theorem made fully concrete: firing bound to the multigraph update, ordinary termination and uniqueness proved, no ordinary hypothesis left. |

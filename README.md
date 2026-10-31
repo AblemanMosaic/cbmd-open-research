@@ -16,9 +16,17 @@ This public repository presents selected CBMD research for verification, correct
 
 “Discovery” here names the inquiry process, not a guarantee that every generated statement is new or true. A CBMD artifact is provisional until its stated obligations are discharged, and neither the workflow nor the Mosaic branding substitutes for proof, specialist review, novelty review, or publication.
 
-## Current iteration: v0.1 toolkit and provisional research portfolio
+## Current main branch: post-v0.1 toolkit and provisional research portfolio
 
-The original complexity investigation remains paused after Cycle 17. The v0.1 integration packages the governed harness, exact reference evaluator, native Lean source closures, pinned replay drivers, and 19 public discovery dossiers in one checkout. Twelve dossiers are review-ready under their stated claim ceilings; seven remain in the qualifying pipeline. The portfolio now spans algebra, algorithms, combinatorics, concurrency, dynamics, and an ECH review request. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) distinguishes toolkit work from each mathematical remainder.
+The original complexity investigation remains paused after Cycle 17. The
+current `main` branch is post-v0.1 development: it packages the governed
+harness, exact reference evaluator, native Lean source closures, pinned replay
+drivers, and 19 public discovery dossiers in one checkout. Twelve dossiers are
+review-ready under their stated claim ceilings; seven remain in the qualifying
+pipeline. The portfolio now spans algebra, algorithms, combinatorics,
+concurrency, dynamics, and an ECH review request. The historical `v0.1.0` tag
+continues to identify the original toolkit release and is not moved to describe
+this later portfolio. The [dated evidence snapshot](evidence/iterations/bootstrap-2026-10/README.md) remains the immutable bootstrap record; the [integration roadmap](docs/INTEGRATION_ROADMAP.md) distinguishes toolkit work from each mathematical remainder.
 
 | Layer | Meaning | Current outcome |
 |---|---|---|

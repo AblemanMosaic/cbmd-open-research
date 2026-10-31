@@ -2,6 +2,7 @@
 
 | Version | Note |
 |---|---|
+| 0.17.1 | The Lean decider and cross-dossier decider gates are required in full qualification; missing Lean can no longer coexist with an overall `PASS`. |
 | 0.17.0 | The conflict-free decider and the weighted chip-firing decider, formalized independently, run by Lean on 300 chip-firing systems: full agreement with each other and with simulation. |
 | 0.16.0 | Two consumers per place suffice for hardness, via a cyclic copier chain; compiled. Maximum conflict degree 1 is polynomial, 2 is coNP-complete. The census caught an open-chain draft. |
 | 0.15.0 | The fixpoint step and the threshold optimisation compiled: an executable polynomial decider proved correct for conflict-free nets, run by Lean on 400 random nets with every verdict matching brute force. |

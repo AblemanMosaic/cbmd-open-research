@@ -4,7 +4,7 @@
  "title": "Capacity-blocked chip-firing: sharp weighted bound and a live-set characterization",
  "field": "dynamics",
  "slug": "weighted-capacity-chip-firing",
- "public_version": "0.12.1",
+ "public_version": "0.12.2",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "SOURCE_BOUND_COMPILED",
@@ -122,7 +122,7 @@
     "-B",
     "discoveries/dynamics/weighted-capacity-chip-firing/verification/reference/lean_decider_bridge.py"
    ],
-   "required": false
+   "required": true
   },
   {
    "id": "WEIGHTED_KERNEL_CERTIFIED_INSTANCES",
@@ -132,7 +132,7 @@
     "-B",
     "discoveries/dynamics/weighted-capacity-chip-firing/verification/decoder/check_decoder.py"
    ],
-   "required": false
+   "required": true
   }
  ],
  "authority_effect": "NONE"

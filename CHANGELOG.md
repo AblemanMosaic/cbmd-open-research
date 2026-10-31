@@ -8,8 +8,10 @@
   dependencies, and CI separately recompiles all five source-bound discovery
   proof projects.
 - Split dependency-free repository qualification from full discovery
-  qualification with `--repository-only`, while keeping missing dependencies a
-  fail-closed error in the full scope.
+  qualification with `--repository-only`. Missing dependencies for required
+  checks are a fail-closed error in the full scope. Five Lean-backed checked
+  decoder/decider gates that had accidentally remained optional are now
+  required, so full qualification cannot report `PASS` when Lean is absent.
 
 - Added the capacity-preservation boundary dossier
   (`CBMD-CON-CAPACITY-PRESERVATION-001`), mapping how far the chip-firing

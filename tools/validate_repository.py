@@ -24,6 +24,13 @@ VALID_STATES = {
 REQUIRED_DIRS = ("argument", "explorer", "verification", "evidence", "review", "revisions")
 PIPELINE_STAGES = {"INTAKE", "CLAIM_BOUND", "QUALIFYING", "REVIEW_READY", "RELEASED", "CLOSED"}
 UNTRACKED_RUNTIME_DIRS = {".git", ".lake", ".cbmd-work", "node_modules", "dist", "tmp"}
+LEAN_BACKED_FULL_QUALIFICATION_CHECKS = {
+    "FINITE_DYNAMICS_CHECKED_DECODING",
+    "WEIGHTED_LEAN_DECIDER",
+    "WEIGHTED_KERNEL_CERTIFIED_INSTANCES",
+    "CAPACITY_PRESERVATION_LEAN_DECIDER",
+    "CAPACITY_PRESERVATION_CROSS_DECIDER",
+}
 
 
 def fail(message: str) -> None:
@@ -46,6 +53,7 @@ def main() -> int:
     seen_ids: set[str] = set()
     seen_paths: set[str] = set()
     registered_claims: set[Path] = set()
+    declared_checks: dict[str, bool] = {}
 
     for row in rows:
         claim_id = row.get("id")
@@ -107,10 +115,13 @@ def main() -> int:
             if not isinstance(check["id"], str) or not check["id"] or check["id"] in check_ids:
                 fail(f"invalid or duplicate check id at {relative}")
             check_ids.add(check["id"])
+            if check["id"] in declared_checks:
+                fail(f"duplicate repository-wide check id: {check['id']}")
             if not isinstance(check["command"], list) or not check["command"] or any(not isinstance(value, str) or not value for value in check["command"]):
                 fail(f"invalid check command at {relative}")
             if not isinstance(check["required"], bool):
                 fail(f"invalid check requirement at {relative}")
+            declared_checks[check["id"]] = check["required"]
         if row["pipeline_stage"] in {"REVIEW_READY", "RELEASED"} and not checks:
             fail(f"qualified pipeline stage requires declared checks at {relative}")
         if claim.get("authority_effect") != "NONE":
@@ -139,6 +150,17 @@ def main() -> int:
                 actual = hashlib.sha256(receipt_path.read_bytes()).hexdigest()
                 if actual != detached.get("sha256"):
                     fail(f"detached receipt hash mismatch at {relative / receipt_relative}")
+
+    absent_lean_checks = LEAN_BACKED_FULL_QUALIFICATION_CHECKS - declared_checks.keys()
+    if absent_lean_checks:
+        fail(f"missing Lean-backed full-qualification checks: {sorted(absent_lean_checks)}")
+    optional_lean_checks = {
+        check_id
+        for check_id in LEAN_BACKED_FULL_QUALIFICATION_CHECKS
+        if not declared_checks[check_id]
+    }
+    if optional_lean_checks:
+        fail(f"Lean-backed full-qualification checks must be required: {sorted(optional_lean_checks)}")
 
     actual_claims = {path.resolve() for path in (ROOT / "discoveries").rglob("CLAIM.json")}
     if actual_claims != registered_claims:
