@@ -1,0 +1,51 @@
+HIT A5 n=3 degs=[ [ 3, 1 ] ] ratio=1
+HIT A5 n=3 degs=[ [ 3, 1 ] ] ratio=1
+DONE A5 |G|=60 DMAX=8 faithful_SL_reps=12 hits=2 min_ratio=1
+HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1
+HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1
+DONE 2.A5 |G|=120 DMAX=8 faithful_SL_reps=50 hits=2 min_ratio=1
+DONE S5 |G|=120 DMAX=8 faithful_SL_reps=12 hits=0 min_ratio=42
+DONE 2.S5 |G|=240 DMAX=8 faithful_SL_reps=17 hits=0 min_ratio=12288
+DONE L2(7) |G|=168 DMAX=8 faithful_SL_reps=8 hits=0 min_ratio=2
+DONE 2.L2(7) |G|=336 DMAX=8 faithful_SL_reps=12 hits=0 min_ratio=7040
+DONE L2(7).2 |G|=336 DMAX=8 faithful_SL_reps=5 hits=0 min_ratio=5952
+DONE A6 |G|=360 DMAX=8 faithful_SL_reps=4 hits=0 min_ratio=30
+DONE 2.A6 |G|=720 DMAX=8 faithful_SL_reps=7 hits=0 min_ratio=28800
+DONE 3.A6 |G|=1080 DMAX=8 faithful_SL_reps=24 hits=0 min_ratio=101556
+DONE 6.A6 |G|=2160 DMAX=8 faithful_SL_reps=12 hits=0 min_ratio=613962604538477752320
+DONE S6 |G|=720 DMAX=8 faithful_SL_reps=8 hits=0 min_ratio=5760
+DONE L2(8) |G|=504 DMAX=8 faithful_SL_reps=5 hits=0 min_ratio=10486
+DONE L2(11) |G|=660 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=120
+DONE 2.L2(11) |G|=1320 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=128595600
+DONE L2(13) |G|=1092 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=4704
+DONE 2.L2(13) |G|=2184 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=1928934000
+DONE A7 |G|=2520 DMAX=8 faithful_SL_reps=1 hits=0 min_ratio=294
+DONE 2.A7 |G|=5040 DMAX=8 faithful_SL_reps=5 hits=0 min_ratio=337920
+DONE 3.A7 |G|=7560 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=48656717770752
+DONE 6.A7 |G|=15120 DMAX=8 faithful_SL_reps=4 hits=0 min_ratio=883885123997774111349964800
+DONE L2(17) |G|=2448 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L2(19) |G|=3420 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE 2.L2(19) |G|=6840 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L3(3) |G|=5616 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE U3(3) |G|=6048 DMAX=8 faithful_SL_reps=4 hits=0 min_ratio=4032000
+DONE A8 |G|=20160 DMAX=8 faithful_SL_reps=1 hits=0 min_ratio=1204224
+DONE L2(16) |G|=4080 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L2(25) |G|=7800 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE 2.L2(25) |G|=15600 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE M11 |G|=7920 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L3(4) |G|=20160 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE U4(2) |G|=25920 DMAX=8 faithful_SL_reps=3 hits=0 min_ratio=1128677760
+DONE 2.U4(2) |G|=51840 DMAX=8 faithful_SL_reps=5 hits=0 min_ratio=3228389649838080
+DONE Sz(8) |G|=29120 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L2(27) |G|=9828 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L2(29) |G|=12180 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE 2.L2(29) |G|=24360 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE L2(31) |G|=14880 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE 2.L2(31) |G|=29760 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE A9 |G|=181440 DMAX=8 faithful_SL_reps=1 hits=0 min_ratio=1128701952
+DONE 2.A9 |G|=362880 DMAX=8 faithful_SL_reps=2 hits=0 min_ratio=487140856633176883200
+DONE J1 |G|=175560 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE M12 |G|=95040 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE 2.M12 |G|=190080 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE U3(4) |G|=62400 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity
+DONE U3(5) |G|=126000 DMAX=8 faithful_SL_reps=0 hits=0 min_ratio=infinity

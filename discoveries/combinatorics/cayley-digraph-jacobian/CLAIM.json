@@ -4,13 +4,13 @@
  "title": "Jacobians of abelian Cayley digraphs: an answer to Reiner's question",
  "field": "combinatorics",
  "slug": "cayley-digraph-jacobian",
- "public_version": "0.1.1",
+ "public_version": "0.1.2",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED"
  ],
  "statement": "Let A be a finite abelian group of order n >= 2 and S a multiset of nonzero elements of A with sum 0 that generates A. Then the Jacobian of the Cayley digraph Cay(A, S) is isomorphic to A if and only if A is cyclic and S = {a, -a} for a generator a. More precisely |Jac| > n whenever A is noncyclic or |S| >= 3; if A is cyclic and |S| >= 3 then |Jac| >= (3/2)^phi(n) n, and if the p-part of A is noncyclic then p^(2 + v_p(n)) divides |Jac|. This answers V. Reiner's question (BIRS sandpile-group workshop, problem 1.9) in the affirmative.",
- "resolves": "BIRS sandpile-group open problem 1.9 (V. Reiner), 'only if' direction, for finite abelian groups (written argument, pending specialist review)",
+ "resolves": "BIRS sandpile-group open problem 1.9 (V. Reiner), 'only if' direction, for finite abelian groups (written argument, pending specialist review; possibly already answered by Benkart-Klivans-Reiner Proposition 6.19, see review/PRIOR_ART.md)",
  "verified": [
   "check_cayley_jacobian.py: exhaustive Smith-normal-form check for |A| <= 12, |S| <= 4; product formula n|Jac| = prod lambda_chi; exact orbit-norm factorisation, p^2 divisibility and the AM-GM bound on cyclic groups n <= 12; cyclic-subgroup count exceeding the exponent for noncyclic p-groups of order <= 64; control without the sum-zero hypothesis.",
   "cayley_jac.py: exhaustive scans (|A| <= 24, |S| <= 5: 32,551 cases; |A| <= 14, |S| <= 7: 19,633 cases): Jac ~= A only for cyclic {a, -a}.",
@@ -18,14 +18,15 @@
   "Independent adversarial review (fresh agent).\n- Proof judged correct.\n- Laplacian and transpose conventions checked against BKR.\n- Own Bareiss/SNF code agrees with the claim:\n  - exhaustive, |A| <= 16 with |S| <= 6, and |A| <= 24 with |S| <= 5, about 48,000 cases;\n  - the requested non-cyclic groups up to |S| = 6;\n  - the cyclic bound on |S| = 3, n <= 100;\n  - zero failures.\n- Literature search found no prior answer.\n- Minor fixes applied in 0.1.1: distinct multiset members in Lemma 4; the generation hypothesis made explicit, with a counterexample without it; n >= 2."
  ],
  "unresolved": [
+  "prior art: the content of Benkart-Klivans-Reiner Proposition 6.19 (abelian answer to their Question 6.11, proof sketch credited to S. Koplewitz) could not be retrieved; it may already contain this theorem",
   "specialist review of the written proof",
-  "the non-abelian analogue (McKay quivers of non-abelian groups versus G^ab)",
+  "the non-abelian analogue (BKR Question 6.11): see CBMD-COMB-MCKAY-MIN-001",
   "the structure of Jac beyond its order"
  ],
  "nonclaims": [
-  "not a novelty determination; the argument is short and may be known",
+  "not a novelty determination; the argument is short and may be known, and BKR Proposition 6.19 may already state the abelian classification",
   "only the order of Jac is used; no structural description of Jac is claimed",
-  "the non-abelian analogue is false (A4 and A5 in SO(3) give K ~= dual of G^ab with n = 3); only the abelian question is answered"
+  "the naive non-abelian analogue is false (A4 and A5 in SO(3) give K ~= dual of G^ab with n = 3); the non-abelian question is pursued in CBMD-COMB-MCKAY-MIN-001"
  ],
  "smallest_decisive_test": "A generating sum-zero multiset S with |S| >= 3, or a noncyclic A, for which |Jac(Cay(A, S))| = |A|.",
  "checks": [

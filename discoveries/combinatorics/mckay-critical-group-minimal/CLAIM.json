@@ -1,0 +1,45 @@
+{
+ "schema": "cbmd.open-research.claim.v1",
+ "id": "CBMD-COMB-MCKAY-MIN-001",
+ "title": "Minimal critical groups of McKay quivers: a conjectured answer to BKR Question 6.11, proved for orthogonal 3-dimensional representations",
+ "field": "combinatorics",
+ "slug": "mckay-critical-group-minimal",
+ "public_version": "0.1.0",
+ "status": [
+  "CONJECTURE",
+  "PROVISIONAL_WRITTEN_ARGUMENT",
+  "EXACT_MODEL_VERIFIED"
+ ],
+ "statement": "Conjecture: for a faithful representation gamma of a finite group G into SL_n(C) without trivial constituent, the BKR surjection K(gamma) ->> (G^ab)^ is an isomorphism if and only if n = 2, or n = 3, chi_gamma is real-valued and G is dihedral of order 2m with m odd, A_4 or A_5. Proved: (Proposition 3) for finite G in SO(3) with preimage G~ in SU(2), |K(gamma)| = 2^(u-1) |G~^ab|, u = number of classes of G~ equal to their negatives; (Theorem 4) consequently the conjecture holds for all 3-dimensional representations with real-valued character, the non-minimal rotation groups being the dihedral groups with m even (|K| = 16) and S_4 (|K| = 4); (Lemma 2) for real-valued characters, adding a nontrivial determinant-one summand strictly enlarges |K|. Exact computation (Proposition 5): among the primitive finite subgroups of SL_3(C) only A_5 is minimal.",
+ "resolves": "BKR Question 6.11 for faithful 3-dimensional representations with real-valued character (written argument, pending specialist review); conjectural answer in general",
+ "verified": [
+  "check_mckay_minimal.py (GAP): SO(3) formula and classification for cyclic/dihedral m <= 12, A4, S4, A5; primitive SL3 table; exhaustive scan of all groups of order <= 24 with n <= 5 (prediction = minimality, no BKR violation, Smith normal form confirms each hit); ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6.",
+  "Exhaustive SmallGroups scans: all groups of order <= 40, n <= 5 (180 groups, 380521 representations, 310 minimal, 0 mismatches); non-abelian groups of order <= 150 except 128, n <= 6 (259 groups, 200532 representations, 159 minimal, 0 mismatches). No minimal representation with n >= 4.",
+  "47 ATLAS character tables with n <= 8: minimal only for A5 (n = 3) and 2.A5 (n = 2).",
+  "so3.g with m <= 30: every ingredient of Proposition 3 and Theorem 4 (u, -1 in [G~,G~], |K(rho)|, |K(gamma)|, Gaetz = Smith normal form)."
+ ],
+ "unresolved": [
+  "the conjecture for n = 3 with non-real character (monomial or reducible) and for n >= 4",
+  "specialist review of Proposition 3 and Theorem 4",
+  "prior art: BKR Section 6 (in particular Proposition 6.19) could not be fully read",
+  "structure of K beyond its order, e.g. (Z/4)^2 for dihedral groups with m even (computed for m <= 30 only)"
+ ],
+ "nonclaims": [
+  "not a novelty determination; BKR already give A_4 in SO(3) as a minimal n = 3 example",
+  "no proof for n >= 4 or for non-real 3-dimensional representations; those parts are conjecture backed by finite scans",
+  "the primitive SL3 statement is an exact library computation, not a hand proof"
+ ],
+ "smallest_decisive_test": "A faithful representation into SL_n without trivial constituent with |K(gamma)| = |G^ab| and either n >= 4, or n = 3 with non-real character, or n = 3 real with G not dihedral of odd degree, A_4 or A_5 (the last is excluded by Theorem 4).",
+ "checks": [
+  {
+   "id": "MCKAY_MINIMAL_GATES",
+   "command": [
+    "python",
+    "-B",
+    "discoveries/combinatorics/mckay-critical-group-minimal/verification/reference/check_mckay_minimal.py"
+   ],
+   "required": true
+  }
+ ],
+ "authority_effect": "NONE"
+}

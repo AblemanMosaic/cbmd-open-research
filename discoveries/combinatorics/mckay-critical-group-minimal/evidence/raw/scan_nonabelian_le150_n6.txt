@@ -1,0 +1,418 @@
+HIT [ 6, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 6, 1 ] abelian=false reps=4 hits=1 mismatches=0 below=0
+DONE [ 8, 3 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+HIT [ 8, 4 ] n=2 irr=[ [ 5, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 8, 4 ] abelian=false reps=16 hits=1 mismatches=0 below=0
+HIT [ 10, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 10, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 10, 1 ] abelian=false reps=10 hits=2 mismatches=0 below=0
+HIT [ 12, 1 ] n=2 irr=[ [ 5, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 12, 1 ] abelian=false reps=26 hits=1 mismatches=0 below=0
+HIT [ 12, 3 ] n=3 irr=[ [ 4, 3, 1 ] ] Gab=[ 3 ] K_SNF=[ 3 ] snf_match=true pred=true
+DONE [ 12, 3 ] abelian=false reps=5 hits=1 mismatches=0 below=0
+DONE [ 12, 4 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+HIT [ 14, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 14, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 14, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 14, 1 ] abelian=false reps=18 hits=3 mismatches=0 below=0
+DONE [ 16, 3 ] abelian=false reps=74 hits=0 mismatches=0 below=0
+DONE [ 16, 4 ] abelian=false reps=82 hits=0 mismatches=0 below=0
+DONE [ 16, 6 ] abelian=false reps=98 hits=0 mismatches=0 below=0
+DONE [ 16, 7 ] abelian=false reps=36 hits=0 mismatches=0 below=0
+DONE [ 16, 8 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+HIT [ 16, 9 ] n=2 irr=[ [ 6, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 16, 9 ] n=2 irr=[ [ 7, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 16, 9 ] abelian=false reps=44 hits=2 mismatches=0 below=0
+DONE [ 16, 11 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 16, 12 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 16, 13 ] abelian=false reps=104 hits=0 mismatches=0 below=0
+HIT [ 18, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 18, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 18, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 18, 1 ] abelian=false reps=24 hits=3 mismatches=0 below=0
+DONE [ 18, 3 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 18, 4 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+HIT [ 20, 1 ] n=2 irr=[ [ 5, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 20, 1 ] n=2 irr=[ [ 6, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 20, 1 ] abelian=false reps=68 hits=2 mismatches=0 below=0
+DONE [ 20, 3 ] abelian=false reps=3 hits=0 mismatches=0 below=0
+DONE [ 20, 4 ] abelian=false reps=62 hits=0 mismatches=0 below=0
+DONE [ 21, 1 ] abelian=false reps=11 hits=0 mismatches=0 below=0
+HIT [ 22, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 22, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 22, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 22, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 22, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 22, 1 ] abelian=false reps=40 hits=5 mismatches=0 below=0
+DONE [ 24, 1 ] abelian=false reps=195 hits=0 mismatches=0 below=0
+HIT [ 24, 3 ] n=2 irr=[ [ 4, 2, 1 ] ] Gab=[ 3 ] K_SNF=[ 3 ] snf_match=true pred=true
+DONE [ 24, 3 ] abelian=false reps=34 hits=1 mismatches=0 below=0
+HIT [ 24, 4 ] n=2 irr=[ [ 8, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 24, 4 ] n=2 irr=[ [ 9, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 24, 4 ] abelian=false reps=72 hits=2 mismatches=0 below=0
+DONE [ 24, 5 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 24, 6 ] abelian=false reps=60 hits=0 mismatches=0 below=0
+DONE [ 24, 7 ] abelian=false reps=170 hits=0 mismatches=0 below=0
+DONE [ 24, 8 ] abelian=false reps=48 hits=0 mismatches=0 below=0
+DONE [ 24, 10 ] abelian=false reps=372 hits=0 mismatches=0 below=0
+DONE [ 24, 11 ] abelian=false reps=393 hits=0 mismatches=0 below=0
+DONE [ 24, 12 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 24, 13 ] abelian=false reps=17 hits=0 mismatches=0 below=0
+DONE [ 24, 14 ] abelian=false reps=164 hits=0 mismatches=0 below=0
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 26, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 26, 1 ] abelian=false reps=54 hits=6 mismatches=0 below=0
+DONE [ 27, 3 ] abelian=false reps=45 hits=0 mismatches=0 below=0
+DONE [ 27, 4 ] abelian=false reps=37 hits=0 mismatches=0 below=0
+HIT [ 28, 1 ] n=2 irr=[ [ 5, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 28, 1 ] n=2 irr=[ [ 6, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 28, 1 ] n=2 irr=[ [ 7, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 28, 1 ] abelian=false reps=130 hits=3 mismatches=0 below=0
+DONE [ 28, 3 ] abelian=false reps=114 hits=0 mismatches=0 below=0
+DONE [ 30, 1 ] abelian=false reps=436 hits=0 mismatches=0 below=0
+DONE [ 30, 2 ] abelian=false reps=194 hits=0 mismatches=0 below=0
+HIT [ 30, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 30, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 30, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 30, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 30, 3 ] abelian=false reps=56 hits=4 mismatches=0 below=0
+DONE [ 32, 2 ] abelian=false reps=581 hits=0 mismatches=0 below=0
+DONE [ 32, 4 ] abelian=false reps=864 hits=0 mismatches=0 below=0
+DONE [ 32, 5 ] abelian=false reps=864 hits=0 mismatches=0 below=0
+DONE [ 32, 6 ] abelian=false reps=6 hits=0 mismatches=0 below=0
+DONE [ 32, 7 ] abelian=false reps=6 hits=0 mismatches=0 below=0
+DONE [ 32, 8 ] abelian=false reps=6 hits=0 mismatches=0 below=0
+DONE [ 32, 9 ] abelian=false reps=200 hits=0 mismatches=0 below=0
+DONE [ 32, 10 ] abelian=false reps=212 hits=0 mismatches=0 below=0
+DONE [ 32, 11 ] abelian=false reps=252 hits=0 mismatches=0 below=0
+DONE [ 32, 12 ] abelian=false reps=893 hits=0 mismatches=0 below=0
+DONE [ 32, 13 ] abelian=false reps=198 hits=0 mismatches=0 below=0
+DONE [ 32, 14 ] abelian=false reps=234 hits=0 mismatches=0 below=0
+DONE [ 32, 15 ] abelian=false reps=262 hits=0 mismatches=0 below=0
+DONE [ 32, 17 ] abelian=false reps=1060 hits=0 mismatches=0 below=0
+DONE [ 32, 18 ] abelian=false reps=120 hits=0 mismatches=0 below=0
+DONE [ 32, 19 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+HIT [ 32, 20 ] n=2 irr=[ [ 8, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 32, 20 ] n=2 irr=[ [ 9, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 32, 20 ] n=2 irr=[ [ 10, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 32, 20 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 32, 20 ] abelian=false reps=152 hits=4 mismatches=0 below=0
+DONE [ 32, 22 ] abelian=false reps=576 hits=0 mismatches=0 below=0
+DONE [ 32, 23 ] abelian=false reps=602 hits=0 mismatches=0 below=0
+DONE [ 32, 24 ] abelian=false reps=872 hits=0 mismatches=0 below=0
+DONE [ 32, 25 ] abelian=false reps=872 hits=0 mismatches=0 below=0
+DONE [ 32, 26 ] abelian=false reps=930 hits=0 mismatches=0 below=0
+DONE [ 32, 27 ] abelian=false reps=48 hits=0 mismatches=0 below=0
+DONE [ 32, 28 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 32, 29 ] abelian=false reps=60 hits=0 mismatches=0 below=0
+DONE [ 32, 30 ] abelian=false reps=48 hits=0 mismatches=0 below=0
+DONE [ 32, 31 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 32, 32 ] abelian=false reps=60 hits=0 mismatches=0 below=0
+DONE [ 32, 33 ] abelian=false reps=48 hits=0 mismatches=0 below=0
+DONE [ 32, 34 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 32, 35 ] abelian=false reps=88 hits=0 mismatches=0 below=0
+DONE [ 32, 37 ] abelian=false reps=884 hits=0 mismatches=0 below=0
+DONE [ 32, 38 ] abelian=false reps=1080 hits=0 mismatches=0 below=0
+DONE [ 32, 39 ] abelian=false reps=232 hits=0 mismatches=0 below=0
+DONE [ 32, 40 ] abelian=false reps=208 hits=0 mismatches=0 below=0
+DONE [ 32, 41 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 32, 42 ] abelian=false reps=272 hits=0 mismatches=0 below=0
+DONE [ 32, 43 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 32, 44 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 32, 46 ] abelian=false reps=592 hits=0 mismatches=0 below=0
+DONE [ 32, 47 ] abelian=false reps=644 hits=0 mismatches=0 below=0
+DONE [ 32, 48 ] abelian=false reps=912 hits=0 mismatches=0 below=0
+DONE [ 32, 49 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 32, 50 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 34, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 34, 1 ] abelian=false reps=88 hits=8 mismatches=0 below=0
+HIT [ 36, 1 ] n=2 irr=[ [ 10, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 36, 1 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 36, 1 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 36, 1 ] abelian=false reps=190 hits=3 mismatches=0 below=0
+DONE [ 36, 3 ] abelian=false reps=54 hits=0 mismatches=0 below=0
+DONE [ 36, 4 ] abelian=false reps=156 hits=0 mismatches=0 below=0
+DONE [ 36, 6 ] abelian=false reps=740 hits=0 mismatches=0 below=0
+DONE [ 36, 7 ] abelian=false reps=112 hits=0 mismatches=0 below=0
+DONE [ 36, 9 ] abelian=false reps=6 hits=0 mismatches=0 below=0
+DONE [ 36, 10 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 36, 11 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 36, 12 ] abelian=false reps=732 hits=0 mismatches=0 below=0
+DONE [ 36, 13 ] abelian=false reps=84 hits=0 mismatches=0 below=0
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 38, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 38, 1 ] abelian=false reps=108 hits=9 mismatches=0 below=0
+DONE [ 39, 1 ] abelian=false reps=26 hits=0 mismatches=0 below=0
+DONE [ 40, 1 ] abelian=false reps=472 hits=0 mismatches=0 below=0
+DONE [ 40, 3 ] abelian=false reps=7 hits=0 mismatches=0 below=0
+HIT [ 40, 4 ] n=2 irr=[ [ 8, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 40, 4 ] n=2 irr=[ [ 9, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 40, 4 ] n=2 irr=[ [ 10, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 40, 4 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 40, 4 ] abelian=false reps=224 hits=4 mismatches=0 below=0
+DONE [ 40, 5 ] abelian=false reps=464 hits=0 mismatches=0 below=0
+DONE [ 40, 6 ] abelian=false reps=168 hits=0 mismatches=0 below=0
+DONE [ 40, 7 ] abelian=false reps=428 hits=0 mismatches=0 below=0
+DONE [ 40, 8 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 40, 10 ] abelian=false reps=2368 hits=0 mismatches=0 below=0
+DONE [ 40, 11 ] abelian=false reps=2426 hits=0 mismatches=0 below=0
+DONE [ 40, 12 ] abelian=false reps=9 hits=0 mismatches=0 below=0
+DONE [ 40, 13 ] abelian=false reps=412 hits=0 mismatches=0 below=0
+DONE [ 42, 1 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 42, 2 ] abelian=false reps=35 hits=0 mismatches=0 below=0
+DONE [ 42, 3 ] abelian=false reps=1396 hits=0 mismatches=0 below=0
+DONE [ 42, 4 ] abelian=false reps=342 hits=0 mismatches=0 below=0
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 42, 5 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 42, 5 ] abelian=false reps=108 hits=6 mismatches=0 below=0
+HIT [ 44, 1 ] n=2 irr=[ [ 10, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 44, 1 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 44, 1 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 44, 1 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 44, 1 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 44, 1 ] abelian=false reps=330 hits=5 mismatches=0 below=0
+DONE [ 44, 3 ] abelian=false reps=260 hits=0 mismatches=0 below=0
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 46, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 46, 1 ] abelian=false reps=154 hits=11 mismatches=0 below=0
+DONE [ 48, 1 ] abelian=false reps=2070 hits=0 mismatches=0 below=0
+DONE [ 48, 3 ] abelian=false reps=30 hits=0 mismatches=0 below=0
+DONE [ 48, 4 ] abelian=false reps=2060 hits=0 mismatches=0 below=0
+DONE [ 48, 5 ] abelian=false reps=364 hits=0 mismatches=0 below=0
+DONE [ 48, 6 ] abelian=false reps=160 hits=0 mismatches=0 below=0
+DONE [ 48, 7 ] abelian=false reps=216 hits=0 mismatches=0 below=0
+HIT [ 48, 8 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 48, 8 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 48, 8 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 48, 8 ] n=2 irr=[ [ 15, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 48, 8 ] abelian=false reps=312 hits=4 mismatches=0 below=0
+DONE [ 48, 9 ] abelian=false reps=1742 hits=0 mismatches=0 below=0
+DONE [ 48, 10 ] abelian=false reps=406 hits=0 mismatches=0 below=0
+DONE [ 48, 11 ] abelian=false reps=1748 hits=0 mismatches=0 below=0
+DONE [ 48, 12 ] abelian=false reps=320 hits=0 mismatches=0 below=0
+DONE [ 48, 13 ] abelian=false reps=398 hits=0 mismatches=0 below=0
+DONE [ 48, 14 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 48, 15 ] abelian=false reps=28 hits=0 mismatches=0 below=0
+DONE [ 48, 16 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 48, 17 ] abelian=false reps=28 hits=0 mismatches=0 below=0
+DONE [ 48, 18 ] abelian=false reps=38 hits=0 mismatches=0 below=0
+DONE [ 48, 19 ] abelian=false reps=310 hits=0 mismatches=0 below=0
+DONE [ 48, 21 ] abelian=false reps=3820 hits=0 mismatches=0 below=0
+DONE [ 48, 22 ] abelian=false reps=3875 hits=0 mismatches=0 below=0
+DONE [ 48, 24 ] abelian=false reps=4564 hits=0 mismatches=0 below=0
+DONE [ 48, 25 ] abelian=false reps=948 hits=0 mismatches=0 below=0
+DONE [ 48, 26 ] abelian=false reps=916 hits=0 mismatches=0 below=0
+DONE [ 48, 27 ] abelian=false reps=978 hits=0 mismatches=0 below=0
+HIT [ 48, 28 ] n=2 irr=[ [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 48, 28 ] n=2 irr=[ [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 48, 28 ] abelian=false reps=28 hits=2 mismatches=0 below=0
+DONE [ 48, 29 ] abelian=false reps=20 hits=0 mismatches=0 below=0
+DONE [ 48, 30 ] abelian=false reps=23 hits=0 mismatches=0 below=0
+DONE [ 48, 31 ] abelian=false reps=105 hits=0 mismatches=0 below=0
+DONE [ 48, 32 ] abelian=false reps=180 hits=0 mismatches=0 below=0
+DONE [ 48, 33 ] abelian=false reps=216 hits=0 mismatches=0 below=0
+DONE [ 48, 34 ] abelian=false reps=408 hits=0 mismatches=0 below=0
+DONE [ 48, 35 ] abelian=false reps=1728 hits=0 mismatches=0 below=0
+DONE [ 48, 36 ] abelian=false reps=376 hits=0 mismatches=0 below=0
+DONE [ 48, 37 ] abelian=false reps=400 hits=0 mismatches=0 below=0
+DONE [ 48, 38 ] abelian=false reps=40 hits=0 mismatches=0 below=0
+DONE [ 48, 39 ] abelian=false reps=40 hits=0 mismatches=0 below=0
+DONE [ 48, 40 ] abelian=false reps=62 hits=0 mismatches=0 below=0
+DONE [ 48, 41 ] abelian=false reps=72 hits=0 mismatches=0 below=0
+DONE [ 48, 42 ] abelian=false reps=1192 hits=0 mismatches=0 below=0
+DONE [ 48, 43 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 48, 45 ] abelian=false reps=3856 hits=0 mismatches=0 below=0
+DONE [ 48, 46 ] abelian=false reps=3966 hits=0 mismatches=0 below=0
+DONE [ 48, 47 ] abelian=false reps=4600 hits=0 mismatches=0 below=0
+DONE [ 48, 48 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 48, 49 ] abelian=false reps=72 hits=0 mismatches=0 below=0
+DONE [ 48, 50 ] abelian=false reps=10 hits=0 mismatches=0 below=0
+DONE [ 48, 51 ] abelian=false reps=1176 hits=0 mismatches=0 below=0
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 50, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 50, 1 ] abelian=false reps=170 hits=10 mismatches=0 below=0
+DONE [ 50, 3 ] abelian=false reps=1020 hits=0 mismatches=0 below=0
+DONE [ 50, 4 ] abelian=false reps=120 hits=0 mismatches=0 below=0
+HIT [ 52, 1 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 52, 1 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 52, 1 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 52, 1 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 52, 1 ] n=2 irr=[ [ 15, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 52, 1 ] n=2 irr=[ [ 16, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 52, 1 ] abelian=false reps=476 hits=6 mismatches=0 below=0
+DONE [ 52, 3 ] abelian=false reps=9 hits=0 mismatches=0 below=0
+DONE [ 52, 4 ] abelian=false reps=354 hits=0 mismatches=0 below=0
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 14, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 54, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 15, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 54, 1 ] abelian=false reps=180 hits=9 mismatches=0 below=0
+DONE [ 54, 3 ] abelian=false reps=444 hits=0 mismatches=0 below=0
+DONE [ 54, 4 ] abelian=false reps=3336 hits=0 mismatches=0 below=0
+DONE [ 54, 5 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 54, 6 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 54, 7 ] abelian=false reps=108 hits=0 mismatches=0 below=0
+DONE [ 54, 8 ] abelian=false reps=30 hits=0 mismatches=0 below=0
+DONE [ 54, 10 ] abelian=false reps=225 hits=0 mismatches=0 below=0
+DONE [ 54, 11 ] abelian=false reps=217 hits=0 mismatches=0 below=0
+DONE [ 54, 12 ] abelian=false reps=3096 hits=0 mismatches=0 below=0
+DONE [ 54, 13 ] abelian=false reps=204 hits=0 mismatches=0 below=0
+DONE [ 54, 14 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 55, 1 ] abelian=false reps=2 hits=0 mismatches=0 below=0
+DONE [ 56, 1 ] abelian=false reps=843 hits=0 mismatches=0 below=0
+HIT [ 56, 3 ] n=2 irr=[ [ 9, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 56, 3 ] n=2 irr=[ [ 10, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 56, 3 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 56, 3 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 56, 3 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 56, 3 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 56, 3 ] abelian=false reps=488 hits=6 mismatches=0 below=0
+DONE [ 56, 4 ] abelian=false reps=816 hits=0 mismatches=0 below=0
+DONE [ 56, 5 ] abelian=false reps=324 hits=0 mismatches=0 below=0
+DONE [ 56, 6 ] abelian=false reps=798 hits=0 mismatches=0 below=0
+DONE [ 56, 7 ] abelian=false reps=240 hits=0 mismatches=0 below=0
+DONE [ 56, 9 ] abelian=false reps=8276 hits=0 mismatches=0 below=0
+DONE [ 56, 10 ] abelian=false reps=8389 hits=0 mismatches=0 below=0
+DONE [ 56, 11 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 56, 12 ] abelian=false reps=744 hits=0 mismatches=0 below=0
+DONE [ 57, 1 ] abelian=false reps=45 hits=0 mismatches=0 below=0
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 14, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 15, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 58, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 16, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 58, 1 ] abelian=false reps=238 hits=14 mismatches=0 below=0
+DONE [ 60, 1 ] abelian=false reps=4616 hits=0 mismatches=0 below=0
+DONE [ 60, 2 ] abelian=false reps=1722 hits=0 mismatches=0 below=0
+HIT [ 60, 3 ] n=2 irr=[ [ 11, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 60, 3 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 60, 3 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 60, 3 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 60, 3 ] abelian=false reps=564 hits=4 mismatches=0 below=0
+HIT [ 60, 5 ] n=3 irr=[ [ 2, 3, 1 ] ] Gab=[  ] K_SNF=[  ] snf_match=true pred=true
+HIT [ 60, 5 ] n=3 irr=[ [ 3, 3, 1 ] ] Gab=[  ] K_SNF=[  ] snf_match=true pred=true
+DONE [ 60, 5 ] abelian=false reps=7 hits=2 mismatches=0 below=0
+DONE [ 60, 6 ] abelian=false reps=18 hits=0 mismatches=0 below=0
+DONE [ 60, 7 ] abelian=false reps=9 hits=0 mismatches=0 below=0
+DONE [ 60, 8 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 60, 9 ] abelian=false reps=228 hits=0 mismatches=0 below=0
+DONE [ 60, 10 ] abelian=false reps=1702 hits=0 mismatches=0 below=0
+DONE [ 60, 11 ] abelian=false reps=4596 hits=0 mismatches=0 below=0
+DONE [ 60, 12 ] abelian=false reps=376 hits=0 mismatches=0 below=0
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 3, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 4, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 5, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 6, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 7, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 14, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 15, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 16, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 62, 1 ] n=3 irr=[ [ 2, 1, 1 ], [ 17, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 62, 1 ] abelian=false reps=270 hits=15 mismatches=0 below=0
+DONE [ 63, 1 ] abelian=false reps=110 hits=0 mismatches=0 below=0
+DONE [ 63, 3 ] abelian=false reps=136 hits=0 mismatches=0 below=0
+DONE [ 64, 3 ] abelian=false reps=11584 hits=0 mismatches=0 below=0
+DONE [ 64, 4 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 5 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 6 ] abelian=false reps=2080 hits=0 mismatches=0 below=0
+DONE [ 64, 7 ] abelian=false reps=2118 hits=0 mismatches=0 below=0
+DONE [ 64, 8 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 9 ] abelian=false reps=86 hits=0 mismatches=0 below=0
+DONE [ 64, 10 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 11 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 64, 12 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 13 ] abelian=false reps=102 hits=0 mismatches=0 below=0
+DONE [ 64, 14 ] abelian=false reps=140 hits=0 mismatches=0 below=0
+DONE [ 64, 15 ] abelian=false reps=2048 hits=0 mismatches=0 below=0
+DONE [ 64, 16 ] abelian=false reps=2182 hits=0 mismatches=0 below=0
+DONE [ 64, 17 ] abelian=false reps=8180 hits=0 mismatches=0 below=0
+DONE [ 64, 18 ] abelian=false reps=22 hits=0 mismatches=0 below=0
+DONE [ 64, 19 ] abelian=false reps=22 hits=0 mismatches=0 below=0
+DONE [ 64, 20 ] abelian=false reps=2068 hits=0 mismatches=0 below=0
+DONE [ 64, 21 ] abelian=false reps=1358 hits=0 mismatches=0 below=0
+DONE [ 64, 22 ] abelian=false reps=2048 hits=0 mismatches=0 below=0
+DONE [ 64, 23 ] abelian=false reps=10 hits=0 mismatches=0 below=0
+DONE [ 64, 24 ] abelian=false reps=10 hits=0 mismatches=0 below=0
+DONE [ 64, 25 ] abelian=false reps=22 hits=0 mismatches=0 below=0
+DONE [ 64, 27 ] abelian=false reps=11584 hits=0 mismatches=0 below=0
+DONE [ 64, 28 ] abelian=false reps=18 hits=0 mismatches=0 below=0
+DONE [ 64, 29 ] abelian=false reps=11584 hits=0 mismatches=0 below=0
+DONE [ 64, 30 ] abelian=false reps=20 hits=0 mismatches=0 below=0
+DONE [ 64, 31 ] abelian=false reps=2536 hits=0 mismatches=0 below=0
+DONE [ 64, 32 ] abelian=false reps=10 hits=0 mismatches=0 below=0
+DONE [ 64, 33 ] abelian=false reps=10 hits=0 mismatches=0 below=0
+DONE [ 64, 34 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 35 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 36 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 37 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 38 ] abelian=false reps=608 hits=0 mismatches=0 below=0
+DONE [ 64, 39 ] abelian=false reps=664 hits=0 mismatches=0 below=0
+DONE [ 64, 40 ] abelian=false reps=728 hits=0 mismatches=0 below=0
+DONE [ 64, 41 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 42 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 43 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 44 ] abelian=false reps=11694 hits=0 mismatches=0 below=0
+DONE [ 64, 45 ] abelian=false reps=2572 hits=0 mismatches=0 below=0
+DONE [ 64, 46 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 47 ] abelian=false reps=844 hits=0 mismatches=0 below=0
+DONE [ 64, 48 ] abelian=false reps=644 hits=0 mismatches=0 below=0
+DONE [ 64, 49 ] abelian=false reps=836 hits=0 mismatches=0 below=0

@@ -1,6 +1,7 @@
 # Jacobians of abelian Cayley digraphs: an answer to Reiner's question
 
 > **Standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`
+> (prior-art check against BKR Proposition 6.19 outstanding)
 
 Permanent claim ID: `CBMD-COMB-CAYLEY-JAC-001`
 
@@ -48,6 +49,10 @@ The proof uses only the order of the Jacobian:
 
 ## What is not established
 
+- **Prior art may exist.** BKR's Proposition 6.19 answers their Question 6.11
+  for abelian groups, with a proof credited to S. Koplewitz. Its text could
+  not be read in this session, and it may already contain this theorem. See
+  `review/PRIOR_ART.md`.
 - Review by a human specialist. An independent agent review found the proof
   correct, and its minor fixes are applied.
 - A characterisation for non-abelian groups. The naive analogue is false:

@@ -172,5 +172,6 @@ multiplicities. They agree with the order formula
 In these examples every group element has at most two eigenvalues different
 from 1, so the AM–GM step (Lemma 4) has nothing to bite on. Lemma 3 also
 weakens, because the norm over a Galois orbit of conjugacy classes can drop to
-`p` once the classes `g^k` fuse. Which pairs `(G, γ)` give `K(γ) ≅ (G^{ab})^`
-in general is left open.
+`p` once the classes `g^k` fuse. Which pairs `(G, γ)` give `K(γ) ≅ (G^{ab})^` in general is BKR's
+Question 6.11. Dossier `CBMD-COMB-MCKAY-MIN-001` proposes a conjectural answer
+and proves it for orthogonal 3-dimensional representations.

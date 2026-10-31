@@ -301,11 +301,31 @@
       "path": "discoveries/combinatorics/cayley-digraph-jacobian",
       "title": "Jacobians of abelian Cayley digraphs: an answer to Reiner's question",
       "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Independent specialist review of the written proof; consider the non-abelian analogue.",
+      "next_obligation": "Check BKR Proposition 6.19 (possible prior answer); independent specialist review of the written proof. Non-abelian analogue: CBMD-COMB-MCKAY-MIN-001.",
       "promotion_blockers": [
-        "written argument not yet specialist-reviewed"
+        "written argument not yet specialist-reviewed",
+        "prior-art check against BKR Proposition 6.19 outstanding"
       ],
       "status": [
+        "PROVISIONAL_WRITTEN_ARGUMENT",
+        "EXACT_MODEL_VERIFIED"
+      ]
+    },
+    {
+      "id": "CBMD-COMB-MCKAY-MIN-001",
+      "field": "combinatorics",
+      "slug": "mckay-critical-group-minimal",
+      "path": "discoveries/combinatorics/mckay-critical-group-minimal",
+      "title": "Minimal critical groups of McKay quivers: a conjectured answer to BKR Question 6.11, proved for orthogonal 3-dimensional representations",
+      "pipeline_stage": "QUALIFYING",
+      "next_obligation": "Read BKR Section 6 (Proposition 6.19) for prior art; attack the non-real n = 3 cases (monomial, reducible); specialist review of Proposition 3 and Theorem 4.",
+      "promotion_blockers": [
+        "general conjecture unproved (n = 3 non-real, n >= 4)",
+        "written arguments not yet specialist-reviewed",
+        "prior-art check of BKR Section 6 incomplete"
+      ],
+      "status": [
+        "CONJECTURE",
         "PROVISIONAL_WRITTEN_ARGUMENT",
         "EXACT_MODEL_VERIFIED"
       ]

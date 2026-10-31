@@ -1,0 +1,106 @@
+{
+ "schema": "cbmd.mckay-minimal.check.v1",
+ "gates": {
+  "SO3_PROPOSITION": {
+   "pass": true,
+   "groups": 25,
+   "failures": [],
+   "iso_cases": [
+    "A4",
+    "A5",
+    "C10",
+    "C11",
+    "C12",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "D10",
+    "D14",
+    "D18",
+    "D22",
+    "D6"
+   ]
+  },
+  "PRIMITIVE_SL3": {
+   "pass": true,
+   "characters": 26,
+   "types": [
+    "3.A6",
+    "A5",
+    "A5xC3",
+    "Hessian108",
+    "Hessian216",
+    "Hessian648",
+    "L2(7)",
+    "L2(7)xC3"
+   ],
+   "iso_types": [
+    "A5"
+   ],
+   "rows": [
+    "PRIM A5#1 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[ ] agree=true iso=true",
+    "PRIM A5#2 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[ ] agree=true iso=true",
+    "PRIM L2(7)#1 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false",
+    "PRIM L2(7)#2 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false",
+    "PRIM 3.A6#1 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+    "PRIM 3.A6#2 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+    "PRIM 3.A6#3 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+    "PRIM 3.A6#4 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+    "PRIM A5xC3#1 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+    "PRIM A5xC3#2 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+    "PRIM A5xC3#3 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+    "PRIM A5xC3#4 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+    "PRIM L2(7)xC3#1 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+    "PRIM L2(7)xC3#2 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+    "PRIM L2(7)xC3#3 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+    "PRIM L2(7)xC3#4 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+    "PRIM Hessian108#1 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false",
+    "PRIM Hessian108#2 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false",
+    "PRIM Hessian216#1 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false",
+    "PRIM Hessian216#2 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false",
+    "PRIM Hessian648#1 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+    "PRIM Hessian648#2 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+    "PRIM Hessian648#3 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+    "PRIM Hessian648#4 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+    "PRIM Hessian648#5 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+    "PRIM Hessian648#6 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false"
+   ]
+  },
+  "SCAN_SMALL": {
+   "pass": true,
+   "groups": 73,
+   "representations": 33389,
+   "hits": 114,
+   "n3_hit_groups": [
+    "[ 10, 1 ]",
+    "[ 12, 3 ]",
+    "[ 14, 1 ]",
+    "[ 18, 1 ]",
+    "[ 22, 1 ]",
+    "[ 6, 1 ]"
+   ],
+   "mismatches": [],
+   "below": []
+  },
+  "ATLAS_SMALL": {
+   "pass": true,
+   "groups": 6,
+   "hits": [
+    "HIT A5 n=3 degs=[ [ 3, 1 ] ] ratio=1",
+    "HIT A5 n=3 degs=[ [ 3, 1 ] ] ratio=1",
+    "HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1",
+    "HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1"
+   ]
+  },
+  "EVIDENCE_SUMMARY": {
+   "pass": true,
+   "scans": 2
+  }
+ },
+ "pass": true
+}

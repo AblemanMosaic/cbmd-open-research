@@ -1,0 +1,26 @@
+PRIM A5#1 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[  ] agree=true iso=true
+PRIM A5#2 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[  ] agree=true iso=true
+PRIM L2(7)#1 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false
+PRIM L2(7)#2 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false
+PRIM 3.A6#1 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false
+PRIM 3.A6#2 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false
+PRIM 3.A6#3 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false
+PRIM 3.A6#4 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false
+PRIM A5xC3#1 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false
+PRIM A5xC3#2 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false
+PRIM A5xC3#3 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false
+PRIM A5xC3#4 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false
+PRIM L2(7)xC3#1 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false
+PRIM L2(7)xC3#2 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false
+PRIM L2(7)xC3#3 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false
+PRIM L2(7)xC3#4 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false
+PRIM Hessian108#1 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false
+PRIM Hessian108#2 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false
+PRIM Hessian216#1 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false
+PRIM Hessian216#2 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false
+PRIM Hessian648#1 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false
+PRIM Hessian648#2 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false
+PRIM Hessian648#3 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false
+PRIM Hessian648#4 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false
+PRIM Hessian648#5 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false
+PRIM Hessian648#6 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false

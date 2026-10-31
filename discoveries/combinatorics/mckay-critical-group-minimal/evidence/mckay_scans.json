@@ -1,0 +1,585 @@
+{
+ "schema": "cbmd.mckay-minimal.evidence.v1",
+ "gap": "GAP 4.12.1, SmallGrp 1.5.3, CTblLib 1.3.7",
+ "scans": [
+  {
+   "name": "all groups of order <= 40, n <= 5",
+   "raw": "raw/scan_all_le40_n5.txt",
+   "params": {
+    "ORDERS": "2..40",
+    "DMAX": 5,
+    "SKIPAB": false
+   },
+   "groups": 180,
+   "orders_covered": [
+    2,
+    40
+   ],
+   "representations": 380521,
+   "hits": 310,
+   "hits_n2": 268,
+   "hits_n3": 42,
+   "hits_n_ge4": 0,
+   "n3_hit_groups": {
+    "[ 6, 1 ]": 1,
+    "[ 10, 1 ]": 2,
+    "[ 12, 3 ]": 1,
+    "[ 14, 1 ]": 3,
+    "[ 18, 1 ]": 3,
+    "[ 22, 1 ]": 5,
+    "[ 26, 1 ]": 6,
+    "[ 30, 3 ]": 4,
+    "[ 34, 1 ]": 8,
+    "[ 38, 1 ]": 9
+   },
+   "mismatches": 0,
+   "below": 0,
+   "snf_failures": 0
+  },
+  {
+   "name": "non-abelian groups of order <= 150 except 128, n <= 6",
+   "raw": "raw/scan_nonabelian_le150_n6.txt",
+   "params": {
+    "ORDERS": "2..150 without 128",
+    "DMAX": 6,
+    "SKIPAB": true
+   },
+   "groups": 259,
+   "orders_covered": [
+    6,
+    64
+   ],
+   "representations": 200532,
+   "hits": 159,
+   "hits_n2": 50,
+   "hits_n3": 109,
+   "hits_n_ge4": 0,
+   "n3_hit_groups": {
+    "[ 6, 1 ]": 1,
+    "[ 10, 1 ]": 2,
+    "[ 12, 3 ]": 1,
+    "[ 14, 1 ]": 3,
+    "[ 18, 1 ]": 3,
+    "[ 22, 1 ]": 5,
+    "[ 26, 1 ]": 6,
+    "[ 30, 3 ]": 4,
+    "[ 34, 1 ]": 8,
+    "[ 38, 1 ]": 9,
+    "[ 42, 5 ]": 6,
+    "[ 46, 1 ]": 11,
+    "[ 50, 1 ]": 10,
+    "[ 54, 1 ]": 9,
+    "[ 58, 1 ]": 14,
+    "[ 60, 5 ]": 2,
+    "[ 62, 1 ]": 15
+   },
+   "mismatches": 0,
+   "below": 0,
+   "snf_failures": 0
+  }
+ ],
+ "atlas": [
+  {
+   "name": "A5",
+   "order": 60,
+   "dmax": 8,
+   "representations": 12,
+   "hits": 2,
+   "min_ratio_K_over_Gab": "1",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.A5",
+   "order": 120,
+   "dmax": 8,
+   "representations": 50,
+   "hits": 2,
+   "min_ratio_K_over_Gab": "1",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "S5",
+   "order": 120,
+   "dmax": 8,
+   "representations": 12,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "42",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.S5",
+   "order": 240,
+   "dmax": 8,
+   "representations": 17,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "12288",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(7)",
+   "order": 168,
+   "dmax": 8,
+   "representations": 8,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "2",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(7)",
+   "order": 336,
+   "dmax": 8,
+   "representations": 12,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "7040",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(7).2",
+   "order": 336,
+   "dmax": 8,
+   "representations": 5,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "5952",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "A6",
+   "order": 360,
+   "dmax": 8,
+   "representations": 4,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "30",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.A6",
+   "order": 720,
+   "dmax": 8,
+   "representations": 7,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "28800",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "3.A6",
+   "order": 1080,
+   "dmax": 8,
+   "representations": 24,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "101556",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "6.A6",
+   "order": 2160,
+   "dmax": 8,
+   "representations": 12,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "613962604538477752320",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "S6",
+   "order": 720,
+   "dmax": 8,
+   "representations": 8,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "5760",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(8)",
+   "order": 504,
+   "dmax": 8,
+   "representations": 5,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "10486",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(11)",
+   "order": 660,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "120",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(11)",
+   "order": 1320,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "128595600",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(13)",
+   "order": 1092,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "4704",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(13)",
+   "order": 2184,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "1928934000",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "A7",
+   "order": 2520,
+   "dmax": 8,
+   "representations": 1,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "294",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.A7",
+   "order": 5040,
+   "dmax": 8,
+   "representations": 5,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "337920",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "3.A7",
+   "order": 7560,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "48656717770752",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "6.A7",
+   "order": 15120,
+   "dmax": 8,
+   "representations": 4,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "883885123997774111349964800",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(17)",
+   "order": 2448,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(19)",
+   "order": 3420,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(19)",
+   "order": 6840,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L3(3)",
+   "order": 5616,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "U3(3)",
+   "order": 6048,
+   "dmax": 8,
+   "representations": 4,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "4032000",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "A8",
+   "order": 20160,
+   "dmax": 8,
+   "representations": 1,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "1204224",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(16)",
+   "order": 4080,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(25)",
+   "order": 7800,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(25)",
+   "order": 15600,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "M11",
+   "order": 7920,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L3(4)",
+   "order": 20160,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "U4(2)",
+   "order": 25920,
+   "dmax": 8,
+   "representations": 3,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "1128677760",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.U4(2)",
+   "order": 51840,
+   "dmax": 8,
+   "representations": 5,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "3228389649838080",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "Sz(8)",
+   "order": 29120,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(27)",
+   "order": 9828,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(29)",
+   "order": 12180,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(29)",
+   "order": 24360,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "L2(31)",
+   "order": 14880,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.L2(31)",
+   "order": 29760,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "A9",
+   "order": 181440,
+   "dmax": 8,
+   "representations": 1,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "1128701952",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.A9",
+   "order": 362880,
+   "dmax": 8,
+   "representations": 2,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "487140856633176883200",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "J1",
+   "order": 175560,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "M12",
+   "order": 95040,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "2.M12",
+   "order": 190080,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "U3(4)",
+   "order": 62400,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  },
+  {
+   "name": "U3(5)",
+   "order": 126000,
+   "dmax": 8,
+   "representations": 0,
+   "hits": 0,
+   "min_ratio_K_over_Gab": "infinity",
+   "unexpected_hits": 0
+  }
+ ],
+ "so3": {
+  "groups": 61,
+  "all_ok": true,
+  "iso_cases": [
+   "C2",
+   "C3",
+   "C4",
+   "C5",
+   "C6",
+   "C7",
+   "C8",
+   "C9",
+   "C10",
+   "C11",
+   "C12",
+   "C13",
+   "C14",
+   "C15",
+   "C16",
+   "C17",
+   "C18",
+   "C19",
+   "C20",
+   "C21",
+   "C22",
+   "C23",
+   "C24",
+   "C25",
+   "C26",
+   "C27",
+   "C28",
+   "C29",
+   "C30",
+   "D6",
+   "D10",
+   "D14",
+   "D18",
+   "D22",
+   "D26",
+   "D30",
+   "D34",
+   "D38",
+   "D42",
+   "D46",
+   "D50",
+   "D54",
+   "D58",
+   "A4",
+   "A5"
+  ]
+ },
+ "primitive_sl3": [
+  "PRIM A5#1 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[ ] agree=true iso=true",
+  "PRIM A5#2 |G|=60 |Gab|=1 irreducible=true |K|_Gaetz=1 K_SNF=[ ] agree=true iso=true",
+  "PRIM L2(7)#1 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false",
+  "PRIM L2(7)#2 |G|=168 |Gab|=1 irreducible=true |K|_Gaetz=2 K_SNF=[ 2 ] agree=true iso=false",
+  "PRIM 3.A6#1 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+  "PRIM 3.A6#2 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+  "PRIM 3.A6#3 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+  "PRIM 3.A6#4 |G|=1080 |Gab|=1 irreducible=true |K|_Gaetz=101556 K_SNF=[ 6, 16926 ] agree=true iso=false",
+  "PRIM A5xC3#1 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+  "PRIM A5xC3#2 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+  "PRIM A5xC3#3 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+  "PRIM A5xC3#4 |G|=180 |Gab|=3 irreducible=true |K|_Gaetz=70308 K_SNF=[ 18, 3906 ] agree=true iso=false",
+  "PRIM L2(7)xC3#1 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+  "PRIM L2(7)xC3#2 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+  "PRIM L2(7)xC3#3 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+  "PRIM L2(7)xC3#4 |G|=504 |Gab|=3 irreducible=true |K|_Gaetz=633906 K_SNF=[ 9, 70434 ] agree=true iso=false",
+  "PRIM Hessian108#1 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false",
+  "PRIM Hessian108#2 |G|=108 |Gab|=4 irreducible=true |K|_Gaetz=42588 K_SNF=[ 39, 1092 ] agree=true iso=false",
+  "PRIM Hessian216#1 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false",
+  "PRIM Hessian216#2 |G|=216 |Gab|=4 irreducible=true |K|_Gaetz=184548 K_SNF=[ 13, 26, 546 ] agree=true iso=false",
+  "PRIM Hessian648#1 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+  "PRIM Hessian648#2 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+  "PRIM Hessian648#3 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+  "PRIM Hessian648#4 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+  "PRIM Hessian648#5 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false",
+  "PRIM Hessian648#6 |G|=648 |Gab|=3 irreducible=true |K|_Gaetz=295363341 K_SNF=[ 3, 171, 575757 ] agree=true iso=false"
+ ]
+}

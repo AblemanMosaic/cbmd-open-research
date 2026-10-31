@@ -1,0 +1,62 @@
+SO3 C2 |G|=2 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 C3 |G|=3 u=0 minus1_in_derived=false Gt_ab=[ 2, 3 ] G_ab=[ 3 ] K(rho)=[ 6 ] K(gamma)=[ 3 ] iso=true predicted=true ok=true
+SO3 C4 |G|=4 u=0 minus1_in_derived=false Gt_ab=[ 8 ] G_ab=[ 4 ] K(rho)=[ 8 ] K(gamma)=[ 4 ] iso=true predicted=true ok=true
+SO3 C5 |G|=5 u=0 minus1_in_derived=false Gt_ab=[ 2, 5 ] G_ab=[ 5 ] K(rho)=[ 10 ] K(gamma)=[ 5 ] iso=true predicted=true ok=true
+SO3 C6 |G|=6 u=0 minus1_in_derived=false Gt_ab=[ 3, 4 ] G_ab=[ 2, 3 ] K(rho)=[ 12 ] K(gamma)=[ 6 ] iso=true predicted=true ok=true
+SO3 C7 |G|=7 u=0 minus1_in_derived=false Gt_ab=[ 2, 7 ] G_ab=[ 7 ] K(rho)=[ 14 ] K(gamma)=[ 7 ] iso=true predicted=true ok=true
+SO3 C8 |G|=8 u=0 minus1_in_derived=false Gt_ab=[ 16 ] G_ab=[ 8 ] K(rho)=[ 16 ] K(gamma)=[ 8 ] iso=true predicted=true ok=true
+SO3 C9 |G|=9 u=0 minus1_in_derived=false Gt_ab=[ 2, 9 ] G_ab=[ 9 ] K(rho)=[ 18 ] K(gamma)=[ 9 ] iso=true predicted=true ok=true
+SO3 C10 |G|=10 u=0 minus1_in_derived=false Gt_ab=[ 4, 5 ] G_ab=[ 2, 5 ] K(rho)=[ 20 ] K(gamma)=[ 10 ] iso=true predicted=true ok=true
+SO3 C11 |G|=11 u=0 minus1_in_derived=false Gt_ab=[ 2, 11 ] G_ab=[ 11 ] K(rho)=[ 22 ] K(gamma)=[ 11 ] iso=true predicted=true ok=true
+SO3 C12 |G|=12 u=0 minus1_in_derived=false Gt_ab=[ 3, 8 ] G_ab=[ 3, 4 ] K(rho)=[ 24 ] K(gamma)=[ 12 ] iso=true predicted=true ok=true
+SO3 C13 |G|=13 u=0 minus1_in_derived=false Gt_ab=[ 2, 13 ] G_ab=[ 13 ] K(rho)=[ 26 ] K(gamma)=[ 13 ] iso=true predicted=true ok=true
+SO3 C14 |G|=14 u=0 minus1_in_derived=false Gt_ab=[ 4, 7 ] G_ab=[ 2, 7 ] K(rho)=[ 28 ] K(gamma)=[ 14 ] iso=true predicted=true ok=true
+SO3 C15 |G|=15 u=0 minus1_in_derived=false Gt_ab=[ 2, 3, 5 ] G_ab=[ 3, 5 ] K(rho)=[ 30 ] K(gamma)=[ 15 ] iso=true predicted=true ok=true
+SO3 C16 |G|=16 u=0 minus1_in_derived=false Gt_ab=[ 32 ] G_ab=[ 16 ] K(rho)=[ 32 ] K(gamma)=[ 16 ] iso=true predicted=true ok=true
+SO3 C17 |G|=17 u=0 minus1_in_derived=false Gt_ab=[ 2, 17 ] G_ab=[ 17 ] K(rho)=[ 34 ] K(gamma)=[ 17 ] iso=true predicted=true ok=true
+SO3 C18 |G|=18 u=0 minus1_in_derived=false Gt_ab=[ 4, 9 ] G_ab=[ 2, 9 ] K(rho)=[ 36 ] K(gamma)=[ 18 ] iso=true predicted=true ok=true
+SO3 C19 |G|=19 u=0 minus1_in_derived=false Gt_ab=[ 2, 19 ] G_ab=[ 19 ] K(rho)=[ 38 ] K(gamma)=[ 19 ] iso=true predicted=true ok=true
+SO3 C20 |G|=20 u=0 minus1_in_derived=false Gt_ab=[ 5, 8 ] G_ab=[ 4, 5 ] K(rho)=[ 40 ] K(gamma)=[ 20 ] iso=true predicted=true ok=true
+SO3 C21 |G|=21 u=0 minus1_in_derived=false Gt_ab=[ 2, 3, 7 ] G_ab=[ 3, 7 ] K(rho)=[ 42 ] K(gamma)=[ 21 ] iso=true predicted=true ok=true
+SO3 C22 |G|=22 u=0 minus1_in_derived=false Gt_ab=[ 4, 11 ] G_ab=[ 2, 11 ] K(rho)=[ 44 ] K(gamma)=[ 22 ] iso=true predicted=true ok=true
+SO3 C23 |G|=23 u=0 minus1_in_derived=false Gt_ab=[ 2, 23 ] G_ab=[ 23 ] K(rho)=[ 46 ] K(gamma)=[ 23 ] iso=true predicted=true ok=true
+SO3 C24 |G|=24 u=0 minus1_in_derived=false Gt_ab=[ 3, 16 ] G_ab=[ 3, 8 ] K(rho)=[ 48 ] K(gamma)=[ 24 ] iso=true predicted=true ok=true
+SO3 C25 |G|=25 u=0 minus1_in_derived=false Gt_ab=[ 2, 25 ] G_ab=[ 25 ] K(rho)=[ 50 ] K(gamma)=[ 25 ] iso=true predicted=true ok=true
+SO3 C26 |G|=26 u=0 minus1_in_derived=false Gt_ab=[ 4, 13 ] G_ab=[ 2, 13 ] K(rho)=[ 52 ] K(gamma)=[ 26 ] iso=true predicted=true ok=true
+SO3 C27 |G|=27 u=0 minus1_in_derived=false Gt_ab=[ 2, 27 ] G_ab=[ 27 ] K(rho)=[ 54 ] K(gamma)=[ 27 ] iso=true predicted=true ok=true
+SO3 C28 |G|=28 u=0 minus1_in_derived=false Gt_ab=[ 7, 8 ] G_ab=[ 4, 7 ] K(rho)=[ 56 ] K(gamma)=[ 28 ] iso=true predicted=true ok=true
+SO3 C29 |G|=29 u=0 minus1_in_derived=false Gt_ab=[ 2, 29 ] G_ab=[ 29 ] K(rho)=[ 58 ] K(gamma)=[ 29 ] iso=true predicted=true ok=true
+SO3 C30 |G|=30 u=0 minus1_in_derived=false Gt_ab=[ 3, 4, 5 ] G_ab=[ 2, 3, 5 ] K(rho)=[ 60 ] K(gamma)=[ 30 ] iso=true predicted=true ok=true
+SO3 D4 |G|=4 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D6 |G|=6 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D8 |G|=8 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D10 |G|=10 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D12 |G|=12 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D14 |G|=14 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D16 |G|=16 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D18 |G|=18 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D20 |G|=20 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D22 |G|=22 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D24 |G|=24 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D26 |G|=26 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D28 |G|=28 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D30 |G|=30 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D32 |G|=32 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D34 |G|=34 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D36 |G|=36 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D38 |G|=38 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D40 |G|=40 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D42 |G|=42 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D44 |G|=44 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D46 |G|=46 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D48 |G|=48 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D50 |G|=50 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D52 |G|=52 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D54 |G|=54 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D56 |G|=56 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 D58 |G|=58 u=0 minus1_in_derived=false Gt_ab=[ 4 ] G_ab=[ 2 ] K(rho)=[ 4 ] K(gamma)=[ 2 ] iso=true predicted=true ok=true
+SO3 D60 |G|=60 u=3 minus1_in_derived=true Gt_ab=[ 2, 2 ] G_ab=[ 2, 2 ] K(rho)=[ 2, 2 ] K(gamma)=[ 4, 4 ] iso=false predicted=false ok=true
+SO3 A4 |G|=12 u=1 minus1_in_derived=true Gt_ab=[ 3 ] G_ab=[ 3 ] K(rho)=[ 3 ] K(gamma)=[ 3 ] iso=true predicted=true ok=true
+SO3 S4 |G|=24 u=2 minus1_in_derived=true Gt_ab=[ 2 ] G_ab=[ 2 ] K(rho)=[ 2 ] K(gamma)=[ 4 ] iso=false predicted=false ok=true
+SO3 A5 |G|=60 u=1 minus1_in_derived=true Gt_ab=[ ] G_ab=[ ] K(rho)=[ ] K(gamma)=[ ] iso=true predicted=true ok=true
+SO3_ALL_OK true
