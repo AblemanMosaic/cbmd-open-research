@@ -318,7 +318,7 @@
       "path": "discoveries/combinatorics/mckay-critical-group-minimal",
       "title": "Minimal critical groups of McKay quivers: Gaetz's Question 2 settled for n = 3 (computer-assisted), conjectured for n >= 4",
       "pipeline_stage": "QUALIFYING",
-      "next_obligation": "Read arXiv:1704.03778 past the middle of section 6 (PDF requested) to settle prior art for Lemma A, Proposition B and Theorem M; then specialist review of the arborescence section; Conjecture 10 for n >= 4.",
+      "next_obligation": "Specialist review of the arborescence section and of Theorems 7-9; Conjecture 10 for n >= 4. Prior art for Lemma A, Proposition B and Theorem M is discharged against the five closest sources, all read in full.",
       "promotion_blockers": [
         "Conjecture 10 (n >= 4) unproved",
         "Theorems 7-9 not yet independently reviewed"

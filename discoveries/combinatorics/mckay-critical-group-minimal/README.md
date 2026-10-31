@@ -105,11 +105,20 @@ of order ≤ 60, dimensions ≤ 4) is now explained, including its zero
 equalities: that scan excluded multiples of the trivial character from
 `γ_2`, which is exactly the equality case.
 
-**No novelty is claimed for Lemma A, Proposition B or Theorem M.** One
-source, Grinberg–Huang–Reiner (arXiv:1704.03778), could plausibly contain
-them — the proofs use only facts that have Hopf-algebra analogues there —
-and its text past the middle of §6 cannot be retrieved by the fetch tools.
-They are recorded as proved, not as new; see `review/PRIOR_ART.md`.
+**Prior art.** The five closest sources have now been read in full —
+Benkart–Klivans–Reiner, Gaetz's thesis, Gaetz's paper,
+Grinberg–Huang–Reiner (arXiv:1704.03778v4, all 24 pages) and Browne — and
+none of them states the arborescence formula for McKay–Cartan matrices or
+any monotonicity in the summand. Grinberg–Huang–Reiner was the one that
+could plausibly have contained all of this, since the facts the proofs use
+have Hopf-algebra analogues there; it does not, and its own order formula
+goes through Lorenzini's theorem, which is the route Proposition B replaces.
+Its equation (5.1) applies an adjugate identity to the *Cartan* matrix for a
+different purpose, which is recorded as a near miss.
+
+That is the absence of a located statement in five papers, not a survey of
+the field, and no specialist has looked at it. See
+[`review/PRIOR_ART.md`](review/PRIOR_ART.md).
 
 **Checked**, with no exception. The scans cover every faithful
 representation into `SL_n` without trivial constituent, from GAP's
