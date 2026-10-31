@@ -14,9 +14,15 @@ characters, with degrees `δ_i`.
 
 Three known facts are used throughout.
 
-- **(F1)** BKR, Theorem 1.3: there is a surjection `K(γ) ↠ (G^{ab})^`.
+- **(F1)** BKR, Theorem 1.3: for a faithful `γ` **with `det γ = 1`**, that
+  is `γ : G ↪ SL_n(ℂ)`, there is a surjection `K(γ) ↠ (G^{ab})^`. The
+  determinant hypothesis is stated inline because Lemma A and Theorem M below
+  deliberately drop it, and (F1) is false without it: for `G = ℤ/2` and `γ`
+  the sign character, `|K(γ)| = 1 < 2 = |G^{ab}|` (gate `M1_HYPOTHESIS`).
 - **(F2)** BKR, Theorem 1.4: if `n = 2`, this surjection is an isomorphism.
-- **(F3)** Gaetz, *Critical groups of group representations*, Theorem 3(i):
+- **(F3)** Gaetz, *Critical groups of group representations*, Theorem 3(i)
+  (the same statement is Theorem 1(i) of his thesis, which is how the
+  verification scripts cite it):
   `|G| · |K(γ)| = Π_{c ≠ 1} (n − χ(c))`. The product runs over the
   nontrivial conjugacy classes, one factor per class. Proposition B below
   gives a second, self-contained proof of (F3); it is listed here as a known
@@ -77,16 +83,27 @@ Everything in this section and the next is *proved by hand*, for arbitrary
 For a representation `γ` of `G` of degree `n`, write `M = M(γ)`,
 `C̃(γ) = nI − M`, and let `Q(γ)` be the McKay quiver: vertices `0, …, ℓ`,
 with `M_{ij}` arcs `i → j`. Let `D = diag(δ_0, …, δ_ℓ)` be the diagonal
-matrix of degrees, `δ_0 = 1`. An *arborescence rooted at `v`* is a choice of
-one out-arc `i → T(i)` for every `i ≠ v` such that every vertex has a
-directed path to `v`; write `Arb_v` for the set of these and
+matrix of degrees, `δ_0 = 1`. An *arborescence rooted at `v`* is a **function**
+`T : {0, …, ℓ} ∖ {v} → {0, …, ℓ}` with `M_{i,T(i)} > 0` for every `i`, such
+that every vertex has a directed path to `v`. It is a choice of out-*neighbour*,
+not of one among the `M_{ij}` parallel arcs: the multiplicity enters through
+the weight, which is why `M_{ij}` appears in `w` below and must not be counted
+twice. Write `Arb_v` for the set of these and
 
     A_v(γ) = Σ_{T ∈ Arb_v} Π_{i ≠ v} w(i → T(i)),    w(i → j) := M_{ij} δ_j / δ_i ≥ 0.
 
+Self-loops play no part: `T(i) = i` is excluded, matching `L̃_{ii} = n − M_{ii}`
+below, which is the loop-free weighted out-degree. Loops do occur, for instance
+`M_{ii} = 1` for `G = S_3` at the standard character.
+
 **Lemma A.** `det C(γ) = A_0(γ)`, for *any* representation `γ`, faithful or
-not. In particular `det C(γ) ≥ 0`, as a sum of nonnegative terms. (When `γ`
-is faithful, `det C(γ) = |K(γ)|`; when it is not, both sides can vanish, and
-only the inequality is used below.)
+not. In particular `det C(γ) ≥ 0`, as a sum of nonnegative terms. When `γ` is
+faithful, `det C(γ) = |K(γ)|`. When it is not, **both sides are 0**: the corank
+of `C̃(γ)` is the number of conjugacy classes inside `ker γ`, which is then at
+least 2, so every `ℓ × ℓ` minor vanishes; equivalently, the `ker γ`-isotype of
+`χ_i` is constant along arcs of `Q(γ)`, so no vertex whose restriction to
+`ker γ` is nontrivial can reach `0` and `Arb_0` is empty. Only the inequality
+`det C(γ) ≥ 0` is used below.
 
 *Proof.* Evaluating `χ_γ χ_i = Σ_j M_{ij} χ_j` at the identity gives
 `Σ_j M_{ij} δ_j = n δ_i`, that is `M δ = n δ` where `δ = (δ_0, …, δ_ℓ)`
@@ -95,11 +112,18 @@ weight vector of a McKay quiver is its dimension vector). Put
 
     L̃ := D^{-1} C̃(γ) D,     L̃_{ij} = −M_{ij} δ_j / δ_i  (i ≠ j),   L̃_{ii} = n − M_{ii}.
 
-Its off-diagonal entries are `≤ 0` and, by `M δ = n δ`, its row sums vanish.
-So `L̃` is the Laplacian of the weighted digraph on `{0, …, ℓ}` with arc
-weights `w(i → j)`, and Tutte's weighted matrix-tree theorem for digraphs
+Its off-diagonal entries are `≤ 0` and, by `M δ = n δ`, its **row** sums
+vanish. So `L̃` is the Laplacian of the weighted digraph on `{0, …, ℓ}` with
+arc weights `w(i → j)`, and Tutte's weighted matrix-tree theorem for digraphs
 gives that the determinant of `L̃` with row and column `v` struck is
-`A_v(γ)`. Striking the same index from rows and from columns commutes with
+`A_v(γ)`. The orientation is load-bearing: vanishing *row* sums are the
+convention under which the minor counts arborescences pointing **toward** the
+struck vertex, which is what `Arb_v` is. Tutte's theorem is as often quoted for
+out-trees, and the two readings genuinely differ — for `G = A_4` with its
+3-dimensional irreducible, `δ = (1,1,1,3)` and `det C = 3 = A_0`, while the
+same sum over arborescences oriented away from `0` is `1/3`. They agree for
+abelian `G`, where `M` is a sum of permutation matrices and both row and
+column sums are `n`, which is why small abelian examples hide the issue. Striking the same index from rows and from columns commutes with
 conjugating by a diagonal matrix, so that determinant equals
 `det(C̃(γ)` with row and column `v` struck`)`; for `v = 0` this is
 `det C(γ)`. ∎
@@ -113,6 +137,12 @@ vertex.
 **Proposition B.** Let `γ` be **faithful**. Then `A_v(γ) = δ_v² · det C(γ)`
 for every `v`, and consequently `|G| · det C(γ) = Π_{c ≠ 1}(n − χ_γ(c))`.
 
+(The first identity in fact holds for every representation: if `γ` is not
+faithful then `C̃(γ)` has corank `≥ 2`, so every `ℓ × ℓ` minor vanishes and
+both sides are 0. Faithfulness is needed for the *argument* below, which uses
+corank exactly 1, and for the second identity. This matters because Theorem M
+applies the arborescence picture to a `γ_2` that may well be non-faithful.)
+
 *Proof.* By Lemma A's proof, `A_v(γ)` is the `(v,v)` cofactor of `C̃(γ)`.
 Faithfulness gives `χ_γ(c) ≠ n` for `c ≠ 1`, so by Gaetz, Proposition 4,
 `C̃(γ)` has corank exactly 1; it has right nullvector `δ`, as above, and also left
@@ -124,15 +154,27 @@ the adjugate is `κ · x yᵗ` with `x`, `y` spanning the right and left
 nullspaces, so the `(v,v)` cofactor is `κ δ_v²`; taking `v = 0` gives
 `κ = A_0(γ) = det C(γ)` since `δ_0 = 1`.
 
-For the second claim, the coefficient of `x¹` in `det(xI − C̃(γ))` is the
-elementary symmetric function `e_ℓ` of the eigenvalue multiset
-`{0} ∪ {n − χ_γ(c) : c ≠ 1}` (Gaetz, Proposition 4(ii)), which is
-`Π_{c≠1}(n − χ_γ(c))`; it is also the sum of the principal `ℓ × ℓ` minors,
-i.e. `Σ_v A_v(γ) = det C(γ) · Σ_v δ_v² = |G| · det C(γ)`. ∎
+For the second claim, the coefficient of `x¹` in `det(xI − C̃(γ))` is
+`(−1)^ℓ e_ℓ`, where `e_ℓ` is the elementary symmetric function of the
+eigenvalue multiset `{0} ∪ {n − χ_γ(c) : c ≠ 1}` (Gaetz, Proposition 4(ii)),
+so `e_ℓ = Π_{c≠1}(n − χ_γ(c))`, the only `ℓ`-subset of the multiset that
+avoids the eigenvalue `0`. That same coefficient is `(−1)^ℓ` times the sum of
+the principal `ℓ × ℓ` minors of `C̃(γ)`. The two factors `(−1)^ℓ` cancel, so
+
+    Π_{c≠1}(n − χ_γ(c)) = Σ_v (v,v) cofactor of C̃(γ) = Σ_v A_v(γ)
+                        = det C(γ) · Σ_v δ_v² = |G| · det C(γ). ∎
+
+Both signs are needed; neither alone. For `G = ℤ/2` and `γ = sgn`,
+`C̃ = [[1,−1],[−1,1]]` and `det(xI − C̃) = x² − 2x`, whose `x¹` coefficient is
+`−2`, while `Σ_v A_v = 2`. An earlier draft of this proof asserted the
+unsigned form of both statements; they are false for odd `ℓ`, and the
+conclusion survived only because the error occurred twice with opposite
+effect. It was caught in independent review (0.4.2).
 
 So (F3) is recovered, by elementary linear algebra and without Lorenzini's
-cokernel theorem; only the identification of `A_v` with a minor uses the
-matrix-tree theorem, and the second half of Proposition B uses none. For a
+cokernel theorem; only the identification of the `(v,v)` cofactor with `A_v`
+uses the matrix-tree theorem, and the second half of Proposition B — read as
+a statement about cofactors — uses none. For a
 one-dimensional `χ_v` the identity `A_v = A_0` also has a direct reason:
 `χ_i ↦ χ_i ⊗ χ_v` is a quiver automorphism carrying `0` to `v` (Browne,
 Lemma 4.1), hence a weight-preserving bijection `Arb_0 → Arb_v`. Dropping
@@ -146,8 +188,14 @@ representation of `G`. Then
 
     |K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)|,
 
-with equality if and only if `γ_2` is a multiple of the trivial
-representation.
+with equality if and only if `γ_2` is a multiple `m · χ_0` of the trivial
+representation, `m ≥ 0` included (for `m = 0` there is nothing to prove).
+
+In the form `det C(γ_1 ⊕ γ_2) ≥ det C(γ_1)` the inequality holds for
+*arbitrary* `γ_1`, faithful or not, since that is all the expansion below
+uses. Faithfulness of `γ_1` enters twice: to read both determinants as orders
+of critical groups, and for strictness, where it is genuinely needed — if
+`γ_1 ⊕ γ_2` is not faithful then both sides are `0` by Lemma A.
 
 *Proof.* Since `χ_{γ_1⊕γ_2} = χ_{γ_1} + χ_{γ_2}` and `n = n_1 + n_2`, we have
 `M(γ_1 ⊕ γ_2) = M(γ_1) + M(γ_2)` and `C̃(γ_1 ⊕ γ_2) = C̃(γ_1) + C̃(γ_2)`; the
@@ -206,12 +254,16 @@ uses (F1). This is also why Theorem 8 is still needed: its
 `γ = det ρ^{−1} ⊕ ρ` has `det γ = 1` but `det ρ ≠ 1`, so Corollary M1 does
 not apply to it, even though Theorem M does give `|K(γ)| > det C(ρ)`.
 
-**Corollary M2.** The terms with `S = ∅` sum to `det C(γ_2) ≥ 0`, so
+**Corollary M2.** Let `G ≠ 1`, so that `ℓ ≥ 1` and the blocks `S = ∅` and
+`S = {1, …, ℓ}` are distinct. The terms with `S = ∅` sum to `det C(γ_2)`, so
 `|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + det C(γ_2)`; when `γ_2` is also faithful this
 reads `|K(γ_1 ⊕ γ_2)| ≥ |K(γ_1)| + |K(γ_2)|`, and the same expansion gives
-`|K(γ_1 ⊕ ⋯ ⊕ γ_r)| ≥ Σ_t |K(γ_t)|` for faithful `γ_t`. The bound is tight:
-for `ℓ = 1` the expansion has only its two extreme terms, and for `G = ℤ/2`
-with `γ_1 = γ_2` the sign character, `1 + 1 = 2`.
+`|K(γ_1 ⊕ ⋯ ⊕ γ_r)| ≥ Σ_t |K(γ_t)|` for faithful `γ_t`. The hypothesis
+`G ≠ 1` is not idle: for `ℓ = 0` the two blocks coincide and the bound would
+read `1 ≥ 1 + 1`. The added term is informative only for faithful `γ_2`,
+since otherwise `det C(γ_2) = 0` by Lemma A. The bound is tight: for `ℓ = 1`
+the expansion has only its two extreme terms, and for `G = ℤ/2` with
+`γ_1 = γ_2` the sign character, `1 + 1 = 2`.
 
 Theorem M supersedes the sector form of Lemma 2 below, which proved the
 strict inequality only under `det γ_1 = det γ_2 = 1` together with "`χ_1`

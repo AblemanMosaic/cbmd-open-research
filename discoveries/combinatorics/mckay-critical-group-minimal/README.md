@@ -132,9 +132,12 @@ No minimal case with `n ≥ 4` was found.
   - of Lemmas 1–2 (the real case), Proposition 3 and Theorem 4, in 0.1.0;
   - of Lemma 6 and Theorems 7–9, in 0.2.0.
   
-  Their fixes are applied. The sector form of Lemma 2 (0.3.0) and the
-  arborescence section (Lemma A, Proposition B, Theorem M; 0.4.0) have not
-  been reviewed.
+  Their fixes are applied. A third reviewed the arborescence section
+  (Lemma A, Proposition B, Theorem M; 0.4.2): it confirmed Lemma A,
+  Theorem M and Corollary M2, found no counterexample to Theorem M in
+  157,232 pairs, reached the Corollary M1 error independently, and caught a
+  sign error in Proposition B that cancelled against itself. Its fixes are
+  applied. The sector form of Lemma 2 (0.3.0) has not been reviewed.
 - **Prior art.**
   - The abelian case is BKR's Proposition 6.19.
   - The `SO(3)` classification and the conjecture itself are Gaetz's (2016).

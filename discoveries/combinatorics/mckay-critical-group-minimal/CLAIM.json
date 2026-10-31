@@ -4,7 +4,7 @@
  "title": "Minimal critical groups of McKay quivers: Gaetz's Question 2 settled for n = 3 (computer-assisted), conjectured for n >= 4",
  "field": "combinatorics",
  "slug": "mckay-critical-group-minimal",
- "public_version": "0.4.1",
+ "public_version": "0.4.2",
  "status": [
   "CONJECTURE",
   "PROVISIONAL_WRITTEN_ARGUMENT",
@@ -23,12 +23,13 @@
   "arborescence_check.g (gate ARBORESCENCE): on all groups of order <= 24 with at most 6 conjugacy classes and all representations of degree <= 4 without trivial constituent, in exact arithmetic -- Lemma A (372 cases), the order formula of Proposition B (372), Proposition B(i)'s delta_v^2 ratio (1545 vertex checks), and Theorem M's row expansion with every mixed term nonnegative together with the strictness witness and the strict inequality (24584 pairs each); 0 failures. The same script at ORDMAX = 48, LMAX = 8, DEG = 5 is recorded separately.",
   "super.g: Corollary M2 on 45 groups of order <= 48 with at most 9 classes and degrees <= 5, with no determinant condition: 4,632,464 pairwise and 120,613 three-fold tests, 0 failures; minimum slack 0, so the bound is tight.",
   "mono2.g: Theorem M itself (the inequality and the equality case) with no determinant condition on either summand, over SmallGroups -- see evidence/raw/monotonicity_unconditional_le48.txt.",
-  "m1_hypothesis_check.g (gate M1_HYPOTHESIS): among the faithful representations of degree <= 3 of the groups of order <= 20, all 591 with det = 1 satisfy |K| >= |G^ab| as (F1) requires, while 136 of the 10,963 with det != 1 do not. This pins the determinant hypothesis of Corollary M1 as necessary; it was found by checking Corollary M1 against Theorem 8 rather than by the gate."
+  "m1_hypothesis_check.g (gate M1_HYPOTHESIS): among the faithful representations of degree <= 3 of the groups of order <= 20, all 591 with det = 1 satisfy |K| >= |G^ab| as (F1) requires, while 136 of the 10,963 with det != 1 do not. This pins the determinant hypothesis of Corollary M1 as necessary; it was found by checking Corollary M1 against Theorem 8 rather than by the gate.",
+  "Independent review of the arborescence section (fresh agent, own GAP exporter and own Python checkers: Bareiss determinant, Smith normal form, Faddeev-LeVerrier characteristic polynomial, arborescence enumeration over exact rationals; |K| taken from its own SNF, never from the product formula or from arborescences). Verdict: Lemma A correct; Proposition B's conclusions correct; Theorem M correct and unbroken in 157,232 pairs with no determinant or reality restriction (including 99,296+ with non-real character, 53,126+ with some M_ii > 0, 29,782+ where gamma_2 mixes trivial with nontrivial constituents, 46,463+ abelian, dimension pairs up to (12,2) and (7,7)); Corollary M2 correct. It confirmed independently that Corollary M1 was false as stated in 0.4.0 (330 counterexamples up to order 32 and 254 more up to order 64, 0 after adding det gamma_1 = 1), and found one error this dossier had missed: the x^1 coefficient claims in Proposition B were both off by (-1)^l. Also verified: det C = A_0 on 9420 representations, A_v = delta_v^2 det C on all of them including the 3593 non-faithful ones, the order formula on 27,495 records, det C = 0 for all 8798 non-faithful records, the upper bound det C <= prod (n - M_ii) on 17,730, and the full S-expansion on 4000 pairs with no negative term. Its arborescence-level checks were exhaustive on the order <= 32 set; the larger sets were checked via the order formula, SNF and Theorem M itself."
  ],
  "unresolved": [
   "Conjecture 10 (n >= 4)",
   "read arXiv:1704.03778 (Grinberg-Huang-Reiner) from the end of section 6 onwards: the fetch tools truncate there and the authors' copy is robots_disallowed, so novelty of Lemma A, Proposition B and Theorem M is not asserted",
-  "specialist review (agent reviews only so far; the sector form of Lemma 2 and the arborescence section are unreviewed)",
+  "specialist review (agent reviews only so far; the sector form of Lemma 2 is unreviewed; the arborescence section had one agent review in 0.4.2)",
   "Theorem 9 depends on Blichfeldt's classification of finite subgroups of SL3(C) (as tabulated by Yau-Yu)",
   "structure of K beyond its order outside the cases computed by Gaetz"
  ],
