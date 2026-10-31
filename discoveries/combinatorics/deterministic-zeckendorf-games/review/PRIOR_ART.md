@@ -17,6 +17,20 @@
   - Theorem 1.4: only-split-and-ones-add play exists exactly when
     `n = F_k − 1`;
   - they note the bound could be tightened by counting combining moves.
+- **J. Cheigh et al., *Towards the Gaussianity of random Zeckendorf games*,
+  arXiv 2210.11038; in Combinatorial and Additive Number Theory VI, Springer
+  PMS 464 (2025).**
+  - Theorem 1.6 tightens the longest-game bound to
+    `⌊φ²n − Z_I(n) − 2Z(n) + (φ − 1)⌋`, and states it is sharp for infinitely
+    many `n`.
+  - It says in print that "finding a convenient closed form for the length of
+    the longest game for non-Fibonacci input N remains open", with the
+    Fibonacci inputs credited to Cusenza et al.
+  - Since Cusenza et al. Theorem 1.2 identifies SS as a longest game, that
+    open problem is exactly the SS closed form proved here. The gate
+    `CHEIGH_PUBLISHED_BOUND` checks the exact formula against their bound for
+    `n ≤ 3000`: no exceedance, and equality in exactly the 15 cases
+    `n = F_k − 1`, matching Cusenza et al. Theorem 1.4.
 - Later work, such as the ordered Zeckendorf game (arXiv 2508.20222), cites
   the deterministic games without determining SS or CS lengths.
 
@@ -36,10 +50,14 @@ CS constant: `L_CS(n) = c n + O(log² n)` with `c = Σ 1/f_{2k−1} − 1/φ`.
   (`1.8245151574…`). Its theta-function form goes back to Landau (1899). Its
   transcendence is due to D. Duverney, Ke. Nishioka, Ku. Nishioka and
   I. Shiokawa, Proc. Japan Acad. 73A (1997) 140–142.
-- Searches (October 2026) found no later paper that determines the CS
-  constant or proves Conjecture 1.4. The random-game work (arXiv 2210.11038)
-  and the ordered and reversed variants (arXiv 2508.20222, 2309.12748) do not
-  address it.
+- Searches (October 2026), and an independent literature audit (October
+  2026) covering Cusenza et al., Cheigh et al., the ordered, reversed,
+  generalized and black-hole variants, Boldyriew et al. and Miller's REU
+  listing, found no later paper that determines the CS constant or proves the
+  CS half of Conjecture 1.4, and none that gives a closed form for the
+  longest game at non-Fibonacci inputs. The audit read these sources through
+  a fetch layer that caps verbatim quotation, so it confirmed statements of
+  results, not their proofs.
 
 Since 0.5.0, SS regularity, the block law and the `G_k` closed form are proved
 as well (computer-assisted, on top of the written exact formula). The rational

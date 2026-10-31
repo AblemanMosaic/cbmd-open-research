@@ -4,7 +4,7 @@
  "title": "Labeled chip-firing on trees: the ballot conjecture is false",
  "field": "dynamics",
  "slug": "labeled-chip-firing-ballot",
- "public_version": "0.1.2",
+ "public_version": "0.1.3",
  "status": [
   "EXACT_MODEL_VERIFIED",
   "PROVISIONAL_WRITTEN_ARGUMENT"
@@ -14,7 +14,8 @@
  "verified": [
   "check_ballot.py replays eight certificates (31, 31, 63, 127, 255 chips on the binary tree; 40, 121 on the ternary; 85 on the 4-ary): every firing legal, stable end with the expected shape, ballot violation; exhaustive two-colour search proves the property for (2, l <= 4), (3, l <= 3), (4, l <= 3); a corrupted certificate fails the replay.",
   "Independent review (fresh agent): model and conjecture scope confirmed from both papers; all certificates replayed with independent code; exhaustive labeled search at 15 chips reproduces 36,220 stable configurations, none violating; independent two-colour search confirms the positive cases.",
-  "colour_census_relations.cpp at 31 chips, all thresholds: violating stable colour states exactly for t = 8..23 (1340 total); complete set of forced order relations chip(u) < chip(w): 196 (48 cover relations); at 15 chips 65 (20 cover relations). Hash-based visited sets; counts for t <= 12 match the unhashed search."
+  "colour_census_relations.cpp at 31 chips, all thresholds: violating stable colour states exactly for t = 8..23 (1340 total); complete set of forced order relations chip(u) < chip(w): 196 (48 cover relations); at 15 chips 65 (20 cover relations). Hash-based visited sets; counts for t <= 12 match the unhashed search.",
+  "Independent literature audit (October 2026): both conjectures open, numbering confirmed (IKL Conjecture 3.16 in Ann. Comb. 30 (2026) = 3.7 in arXiv 2410.00039v1; Inagaki-Lin Conjecture 5.1 unchanged in v1 and v2), and the published verification covers only l = 3, 4, so the certificates here are the first cases tested."
  ],
  "unresolved": [
   "failure for every larger l (certified for binary l = 5..8, ternary l = 4, 5, 4-ary l = 4)",

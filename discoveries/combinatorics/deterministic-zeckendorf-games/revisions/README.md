@@ -10,3 +10,4 @@
 | 0.5.0 | SS Fibonacci-regularity proved (computer-assisted): stop = lazy representation; rational series for the exact formula; Zeckendorf-to-lazy automaton; exact equivalence with the 9-dimensional representation; block law and closed forms at G_k follow. |
 | 0.5.1 | Third independent review of the SS regularity proof applied (order bound 24 at G_k − 1, Rel deterministic, lazy length, Fatou series, block law for k >= 2). |
 | 0.5.2 | Corollary: L_SS(n) = phi^2 n - O(log^2 n) (both directions of the SS part of Conjecture 1.4). |
+| 0.5.3 | Independent literature audit of the prior art. Corrected the Cheigh et al. entry: their Theorem 1.6 gives a tightened sharp bound and states the closed form open for non-Fibonacci inputs, which is what this dossier proves. Added the `CHEIGH_PUBLISHED_BOUND` gate (no exceedance for `n ≤ 3000`; equality exactly at `n = F_k − 1`). Recorded that Cusenza et al. Theorems 1.2 and 1.3 are prior art. |

@@ -57,6 +57,7 @@ import itertools
 import json
 import sys
 from fractions import Fraction
+from math import isqrt
 from functools import lru_cache
 from pathlib import Path
 
@@ -390,6 +391,38 @@ def exact_formula(n_max):
     return out
 
 
+def cheigh_bound(n):
+    """Published upper bound on the longest Zeckendorf game (Cheigh, Dantas e Moura, Jeong,
+    Lehmann Duke, Milgrim, Miller, Ngamlamai, 'Towards the Gaussianity of Random Zeckendorf Games',
+    arXiv:2210.11038, Theorem 1.6): floor(phi^2 n - Z_I(n) - 2 Z(n) + (phi - 1)), where Z(n) counts
+    the Zeckendorf summands and Z_I(n) sums their indices.  They state it is sharp for infinitely
+    many n; Cusenza et al. (arXiv:2009.09510, Thm 1.4) locate sharpness at n = F_k - 1."""
+    idx = zeck_indices(n)
+    # exact integer arithmetic: floor(phi^2 n + phi - 1 - c) with phi^2 = phi + 1,
+    # so phi^2 n + phi - 1 = phi (n + 1) + n - 1 and phi = (1 + sqrt 5) / 2.
+    c = sum(idx) + 2 * len(idx)
+    k = n + 1
+    # floor((k (1 + sqrt 5)) / 2 + n - 1 - c): compare k sqrt 5 against integers exactly
+    t = n - 1 - c + (k + (isqrt(5 * k * k) if k >= 0 else 0)) // 2
+    return t
+
+
+def cheigh_check(S_ss, n_max):
+    """SS length must never exceed the published bound, with equality exactly at n = F_k - 1."""
+    fib_minus_one = {f - 1 for f in FIB}
+    exceed, equal = [], []
+    for n in range(2, n_max + 1):
+        L = S_ss[n] + n - len(zeck_indices(n))      # length = splits + merges
+        b = cheigh_bound(n)
+        if L > b:
+            exceed.append(n)
+        elif L == b:
+            equal.append(n)
+    return {"exceedances": exceed, "equality_cases": len(equal),
+            "equality_all_fib_minus_one": all(n in fib_minus_one for n in equal),
+            "ok": not exceed and len(equal) > 4 and all(n in fib_minus_one for n in equal)}
+
+
 def main():
     counts = {}
     S = {g: {0: 0} for g in ("CL", "SL", "CS", "SS")}
@@ -435,7 +468,7 @@ def main():
                 blocks_ok = False
             blocks[key] = d
     hank = {g: [hankel_rank(S[g], L) for L in (6, 7, 8)] for g in ("SS", "CS")}
-    counts.update(n_max=N_MAX, ss_rep_mismatches=len(rep_bad), hankel_ranks=hank,
+    counts.update(cheigh=cheigh_check(S["SS"], N_MAX), n_max=N_MAX, ss_rep_mismatches=len(rep_bad), hankel_ranks=hank,
                   cs_length_ratio_at_n_max=play(N_MAX, "CS")[0] / N_MAX,
                   ss_length_ratio_at_n_max=play(N_MAX, "SS")[0] / N_MAX)
     gates = {
@@ -452,6 +485,7 @@ def main():
         "COUNTER_lazy_language_radix_order": counter_check(),
         "END_PHASE_block_formula": end_phase_check(),
         "EXACT_FORMULA_matches_simulation": all(v == S["SS"][n] for n, v in exact_formula(N_MAX).items()),
+        "CHEIGH_PUBLISHED_BOUND": cheigh_check(S["SS"], N_MAX)["ok"],
     }
     out = {"schema": "cbmd.deterministic-zeckendorf.v1", "counts": counts, "gates": gates,
            "status": "PASS" if all(gates.values()) else "FAIL",

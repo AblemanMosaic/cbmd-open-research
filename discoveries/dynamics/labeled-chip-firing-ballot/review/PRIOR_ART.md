@@ -16,5 +16,28 @@
   generalized ballot property for `k ≥ 2`. The paper says its validity for
   higher `ℓ` "remains uncertain".
 
+- **Independent literature audit (October 2026).** It traced the whole
+  cluster: the IKL directed-tree, permutation-strategy and lattice papers
+  (arXiv 2410.23265, 2503.09577 with its DMTCS version, 2506.20656,
+  2601.09125), Agrawal et al. (arXiv 2501.06675), Gonzalez-Zugasti, Lynch and
+  Snustad (arXiv 2510.27082), Musiker-Nguyen, and the labeled chip-firing
+  line of Hopkins, McConville, Propp, Klivans, Liscio and Galashin. It found:
+  - both conjectures are open, with no counterexample, proof, withdrawal or
+    revision; arXiv 2410.00039 has only a v1, and Conjecture 5.1 is
+    unchanged between v1 and v2 of arXiv 2509.17358;
+  - the published verification of the ballot property covers only `ℓ = 3, 4`
+    (15 chips, Liscio's data), so the certificates here (binary `ℓ = 5..8`,
+    ternary `ℓ = 4, 5`, 4-ary `ℓ = 4`) are the first cases tested;
+  - the conditional ballot bound (IKL Theorem 3.19, with Lemma 3.18) is the
+    downstream casualty; IKL's unconditional zigzag bound (Theorem 3.13)
+    survives.
+  
+  The audit reached the published Annals text through a fetch layer that caps
+  verbatim quotation, so it confirmed the statements of Definition 3.14 and
+  Theorem 3.19 in fragments rather than reading their proofs, and it could
+  not diff v2 and v3 of arXiv 2503.09577 (the published version has no
+  conjectures). Citation indexes were unavailable, so the sweep is
+  bibliography-based rather than index-complete.
+
 Searches (October 2026) found no counterexample in the literature. Not a
 novelty determination.

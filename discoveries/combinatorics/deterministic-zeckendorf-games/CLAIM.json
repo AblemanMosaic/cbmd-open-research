@@ -4,7 +4,7 @@
  "title": "Deterministic Zeckendorf games: Split Smallest exactly, Combine Smallest's constant",
  "field": "combinatorics",
  "slug": "deterministic-zeckendorf-games",
- "public_version": "0.5.2",
+ "public_version": "0.5.3",
  "status": [
   "PROVISIONAL_WRITTEN_ARGUMENT",
   "EXACT_MODEL_VERIFIED",
@@ -22,7 +22,8 @@
   "Combine Smallest (cs_constant.py, n <= 3000): the counter's one-feed rule matches direct simulation for every normal state, s <= 14; the counter cycle for s <= 18; the pile cycle for i <= 10; every tail case for even P <= 14; the level form at every level start; the three forms of c agree to 45 digits; a mutated counter model fails. The C simulators give L_CS(n) - c n in [-16.41, -1.21] for n <= 30,000 and between -22 and -5 at n = 10^3, ..., 10^9 and 4 x 10^9.",
   "Second independent review (fresh agent, own simulators): the Combine Smallest proof is correct up to wording fixes, now applied; one-feed lemma for s <= 16, round and tail lemmas in place for even P <= 18, level form to n <= 30,000 and samples to 10^9, budget lemma on 3,000 random configurations. The exact polylog algorithm cs_exact.py, built only from the lemmas, matches direct simulation for every n <= 30,000 and the C simulator at n up to 4 x 10^9.",
   "SS regularity (ss_regularity.py): component automata W, T, E' replayed exhaustively against their definitions; the counter's stop equals lazy(n) for n < 2000; Rel sound on all aligned pairs of length <= 10 and complete by subset construction, stable under a larger bound; the composed 252-dimensional representation matches the game for n <= 600 and is exactly equivalent to the 9-dimensional one (reachable space of dimension 36); block law and closed forms decided; perturbing the 9-dimensional representation breaks equivalence.",
-  "Third independent review (fresh agent): SS regularity proof correct given the §4 lemmas; independent simulator confirms the stop equals lazy(n) for n <= 4000; T, E', S_lazy on 300 random words up to length 80; Rel on random n up to 10^30; opposite-direction equivalence (dimension 42). Wording fixes applied."
+  "Third independent review (fresh agent): SS regularity proof correct given the §4 lemmas; independent simulator confirms the stop equals lazy(n) for n <= 4000; T, E', S_lazy on 300 random words up to length 80; Rel on random n up to 10^30; opposite-direction equivalence (dimension 42). Wording fixes applied.",
+  "CHEIGH_PUBLISHED_BOUND gate: the exact SS length never exceeds the published bound of Cheigh et al. (arXiv:2210.11038, Thm 1.6) for n <= 3000, with equality exactly in the 15 cases n = F_k - 1 (matching Cusenza et al. Thm 1.4 sharpness)."
  ],
  "unresolved": [
   "a proof-assistant version of the written proofs (SS counting and end-phase lemmas, CS counter lemma)",
@@ -35,7 +36,8 @@
   "CS non-regularity is evidenced by Hankel rank growth, not proved",
   "not a novelty determination",
   "the CS error term is O(log^2 n) by written proof; the observed growth -0.42 log_phi n is not proved",
-  "the SS regularity proof is computer-assisted on top of the written exact formula; the parity automaton's size is not computed"
+  "the SS regularity proof is computer-assisted on top of the written exact formula; the parity automaton's size is not computed",
+  "Cusenza et al. Thm 1.2 (Split Smallest realises the longest game) and Thm 1.3 (the phi^2 upper bound) are theirs; what is new here is the exact closed form, which Cheigh et al. state in print to be open for non-Fibonacci inputs"
  ],
  "smallest_decisive_test": "An n where the SS split count differs from the 9-dimensional representation, or a counter-language step that does not follow the counting-phase lemma; for CS, a counter state where one feed does not follow the A/B/C rule.",
  "checks": [
