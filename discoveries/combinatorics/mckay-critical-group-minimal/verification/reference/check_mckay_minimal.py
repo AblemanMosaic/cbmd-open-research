@@ -17,8 +17,15 @@ Gates (each required):
     form;
   * ATLAS_SMALL: ATLAS tables A5, 2.A5, L2(7), S5, A6, 2.A6 with n <= 6: hits are exactly the two
     3-dimensional representations of A5 and the two 2-dimensional ones of 2.A5;
+  * BOUNDS_N3: bounds_check.py -- the analytic inequalities of Theorems 7 and 9 leave only the finite
+    regions covered by the computations;
+  * MONOMIAL_ENUM: monomial_enum.py 76 reproduces evidence/raw/monomial_le76.jsonl (47 type C,
+    23 type D groups) and its only minimal groups are C3 (trivial constituent), S3 and A4;
+  * MONOMIAL_GAP_SMALL: GAP recomputes |G|, P and |G^ab| for the enumerated groups of order <= 60;
+  * TYPEB_EXCEPTIONAL: the type B groups with projective image A4, S4, A5 and centre of order
+    2, 4, 6 are minimal exactly when they lie in SL2 (trivial constituent);
   * EVIDENCE_SUMMARY: evidence/mckay_scans.json records zero mismatches and zero BKR violations in
-    the larger scans, and its counts match its raw files.
+    the larger scans (including the exhaustive n = 3 scan), and its counts match its raw files.
 """
 from __future__ import annotations
 import json
@@ -43,7 +50,7 @@ def run_gap(driver_lines, outname):
         with open(drv, 'w') as fh:
             fh.write(f'OUT := "{out}";; PrintTo(OUT, "");\n')
             fh.write('\n'.join(driver_lines) + '\n')
-        proc = subprocess.run(['gap', '-q', drv], cwd=HERE, capture_output=True, text=True, timeout=3600)
+        proc = subprocess.run(['gap', '-q', drv], cwd=HERE, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=3600)
         if not os.path.exists(out):
             return None
         text = open(out).read()
@@ -59,7 +66,7 @@ def run_gap_stdout(driver_lines):
         drv = os.path.join(tmp, 'driver.g')
         with open(drv, 'w') as fh:
             fh.write('\n'.join(driver_lines) + '\n')
-        proc = subprocess.run(['gap', '-q', drv], cwd=HERE, capture_output=True, text=True, timeout=3600)
+        proc = subprocess.run(['gap', '-q', drv], cwd=HERE, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=3600)
         return proc.stdout
 
 
@@ -119,6 +126,46 @@ def gate_atlas():
     return {'pass': ok, 'groups': len(done), 'hits': hits}
 
 
+def gate_bounds():
+    proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'bounds_check.py')], capture_output=True, text=True)
+    return {'pass': proc.returncode == 0 and 'ALL OK' in proc.stdout, 'output': proc.stdout.strip().splitlines()}
+
+
+def gate_monomial():
+    with tempfile.TemporaryDirectory() as tmp:
+        out = os.path.join(tmp, 'm.jsonl')
+        proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'monomial_enum.py'), '76', out],
+                              capture_output=True, text=True)
+        strip = lambda p: [json.dumps({k: v for k, v in json.loads(l).items() if k != 'P_rounding_error'}, sort_keys=True)
+                           for l in open(p)]
+        new = strip(out)
+        ref = strip(os.path.join(EVIDENCE, 'raw', 'monomial_le76.jsonl'))
+    recs = [json.loads(l) for l in new]
+    minimal = sorted((r['type'], r['A_order'], r['order']) for r in recs if r['P'] == r['order'] * r['Gab'])
+    counts = {t: sum(r['type'] == t for r in recs) for t in 'CD'}
+    ok = proc.returncode == 0 and new == ref and counts == {'C': 47, 'D': 23} \
+        and minimal == [('C', 1, 3), ('C', 4, 12), ('D', 1, 6)]
+    return {'pass': ok, 'counts': counts, 'minimal': minimal, 'reproduces_evidence': new == ref}
+
+
+def gate_monomial_gap():
+    if shutil.which('gap') is None:
+        return {'pass': False, 'reason': 'GAP unavailable'}
+    proc = subprocess.run([sys.executable, '-B', os.path.join(HERE, 'monomial_gap_crosscheck.py'),
+                           os.path.join(EVIDENCE, 'raw', 'monomial_le76.jsonl'), '60'], capture_output=True, text=True)
+    return {'pass': proc.returncode == 0, 'output': proc.stdout.strip()}
+
+
+def gate_typeb():
+    txt = run_gap(['Read("typeB_exceptional.g");'], 'typeb.out')
+    if txt is None:
+        return {'pass': False, 'reason': 'GAP unavailable or produced no output'}
+    lines = [re.sub(r'\s+', ' ', l) for l in txt.splitlines() if l.startswith('TYPEB ')]
+    ok = len(lines) == 18 and all('agree=true' in l for l in lines) and \
+        all(('minimal=true' in l) == ('trivial_constituent=1' in l) for l in lines)
+    return {'pass': ok, 'groups': len(lines), 'rows': lines}
+
+
 def gate_evidence():
     path = os.path.join(EVIDENCE, 'mckay_scans.json')
     if not os.path.exists(path):
@@ -137,6 +184,10 @@ def gate_evidence():
         ok &= not any(l.startswith(('MISMATCH', 'BELOW')) for l in lines)
     for t in ev.get('atlas', []):
         ok &= t['unexpected_hits'] == 0
+    ok &= ev.get('typeB_exceptional', {}).get('minimal_iff_trivial_constituent') is True
+    cc = ev.get('monomial', {}).get('gap_crosscheck', '')
+    ok &= cc.startswith('CROSSCHECK') and cc.splitlines()[0].endswith(' true')
+    ok &= any(s['name'].endswith('n = 3') and s['groups'] > 0 for s in ev['scans'])
     return {'pass': bool(ok), 'scans': len(ev['scans'])}
 
 
@@ -146,6 +197,10 @@ def main():
         'PRIMITIVE_SL3': gate_primitive(),
         'SCAN_SMALL': gate_scan(),
         'ATLAS_SMALL': gate_atlas(),
+        'BOUNDS_N3': gate_bounds(),
+        'MONOMIAL_ENUM': gate_monomial(),
+        'MONOMIAL_GAP_SMALL': gate_monomial_gap(),
+        'TYPEB_EXCEPTIONAL': gate_typeb(),
         'EVIDENCE_SUMMARY': gate_evidence(),
     }
     allp = all(v['pass'] for v in results.values())

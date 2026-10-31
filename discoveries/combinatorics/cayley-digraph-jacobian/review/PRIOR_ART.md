@@ -14,17 +14,20 @@
   arXiv:1606.00798.** Gives an order formula `|K(γ)| = (1/|G|) Π_i (n − χ_γ(c_i))`
   and examples, including the cyclic 2-dimensional case `K ≅ ℤ/m`. It does
   not characterise when `K ≅ G^{ab}`.
-- **Unresolved prior-art risk (found in 0.1.2).** The BIRS workshop was in 2015,
-  before BKR appeared (January 2016). BKR's Section 6 poses Question 6.11
-  (for which faithful `γ : G ↪ SL_n(ℂ)` is the surjection `K(γ) ↠ (G^{ab})^`
-  an isomorphism?). It says the answer for abelian groups is given in their
-  Proposition 6.19, and the acknowledgements thank S. Koplewitz for a proof
-  sketched there. The text of Proposition 6.19 could not be retrieved in this
-  session: the fetch tools truncate the PDF just before it, and arXiv and the
-  authors' pages are blocked from the workspace shell and the browser. If
-  Proposition 6.19 is the full abelian classification, then the theorem in
-  this dossier is **already in BKR**, and this dossier at most supplies an
-  independent proof plus the quantitative bounds. This must be checked
-  against the paper before any novelty claim.
-- Other searches in 2026 turned up no published answer to problem 1.9. Not a
-  novelty determination.
+- **Resolved (0.2.0): the qualitative theorem is prior art.** BKR
+  (arXiv:1601.06849v2, §6.2) prove the following as Proposition 6.19, with a
+  proof sketch due to S. Koplewitz: for finite abelian `G` and faithful
+  `γ : G ↪ SL_n(ℂ)` with no copies of `1_G`, `K(γ) ≅ Ĝ` iff `n = 2`. This is
+  the same statement as the theorem here.
+  - **Their method:** a Hamilton path in the Cayley digraph (Gallian–Witte)
+    gives an injection from `A` into the arborescences directed toward 0,
+    which is not surjective when `r ≥ 3`.
+  - **Our method is different:** cyclotomic norms, `p`-adic counting and an
+    AM–GM bound. Our bounds `|Jac| ≥ (3/2)^{φ(n)} n` and
+    `p^{2+v_p(n)} | |Jac|` are not in their sketch.
+  - **BIRS problem 1.9** (2015) predates BKR (January 2016). So it was
+    answered there.
+  - **C. Gaetz's honors thesis** (Minnesota, 2016) restates Proposition 6.19
+    in a remark after its Question 2.
+- Whether the quantitative bounds are known was not searched specifically.
+  This is not a novelty determination.

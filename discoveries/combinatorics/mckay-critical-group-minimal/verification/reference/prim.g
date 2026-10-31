@@ -1,9 +1,16 @@
 # Input variable: OUT.
 # Primitive finite subgroups of SL_3(C) (Blichfeldt types E-L): K(gamma) versus (G^ab)^ for the natural 3-dim representation.
 SizeScreen([4000,100]);;
+# Irreducible characters with the trivial character first (GAP does not guarantee this order).
+IrrTrivialFirst := function(tbl)
+  local irr, i;
+  irr := ShallowCopy(Irr(tbl));
+  i := PositionProperty(irr, x -> ForAll(ValuesOfClassFunction(x), y -> y = 1));
+  return Concatenation([irr[i]], irr{Difference([1..Length(irr)], [i])});
+end;
 Report := function(name, tbl, chi)
   local irr, k, vals, nG, nab, P, M, C, ed;
-  irr := Irr(tbl); k := Length(irr); vals := ValuesOfClassFunction(chi);
+  irr := IrrTrivialFirst(tbl); k := Length(irr); vals := ValuesOfClassFunction(chi);
   if vals[1] <> 3 then Error("dim"); fi;
   if not ForAll([2..k], c -> vals[c] <> 3) then Error("not faithful"); fi;
   if not ForAll(ValuesOfClassFunction(DeterminantOfCharacter(chi)), x -> x = 1) then Error("det"); fi;
@@ -17,7 +24,7 @@ Report := function(name, tbl, chi)
 end;
 AllFaithful3 := function(tbl)
   local irr, k;
-  irr := Irr(tbl); k := Length(irr);
+  irr := IrrTrivialFirst(tbl); k := Length(irr);
   return Filtered(irr, x -> x[1] = 3 and ForAll([2..k], c -> x[c] <> 3)
      and ForAll(ValuesOfClassFunction(DeterminantOfCharacter(x)), y -> y = 1));
 end;

@@ -9,6 +9,13 @@
 # (|K| < |G^ab|, which would contradict BKR).
 # Input variables: ORDERS, DMAX, SKIPAB, OUT.
 SizeScreen([4000, 100]);;
+# Irreducible characters with the trivial character first (GAP does not guarantee this order).
+IrrTrivialFirst := function(tbl)
+  local irr, i;
+  irr := ShallowCopy(Irr(tbl));
+  i := PositionProperty(irr, x -> ForAll(ValuesOfClassFunction(x), y -> y = 1));
+  return Concatenation([irr[i]], irr{Difference([1..Length(irr)], [i])});
+end;
 
 McKayK := function(tbl, irr, gamvals, n)
   local l, gam, M, C;
@@ -21,7 +28,7 @@ end;
 
 ScanGroup := function(G, id, DMAX, out)
   local tbl, irr, irrv, k, dets, degs, ab, nG, nab, triv, so3type, stats, rec_;
-  tbl := CharacterTable(G); irr := Irr(tbl); k := Length(irr);
+  tbl := CharacterTable(G); irr := IrrTrivialFirst(tbl); k := Length(irr);
   if not ForAll(irr[1], x -> x = 1) then Error("irr[1] not trivial"); fi;
   degs := List(irr, x -> x[1]);
   irrv := List(irr, ValuesOfClassFunction);

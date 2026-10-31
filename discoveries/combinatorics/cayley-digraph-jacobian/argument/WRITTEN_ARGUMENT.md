@@ -23,7 +23,12 @@ is always a surjection `Jac(G) ↠ A` (Benkart–Klivans–Reiner). Is
 `Jac(G) ≅ A` if and only if `A ≅ ℤ/nℤ` and `S = {a, −a}` for a generator
 `a`?
 
-**Theorem.** Yes. If `A` is not cyclic, or if `s ≥ 3`, then `|Jac(G)| > |A|`.
+**Prior art.** Yes. This is Proposition 6.19 of Benkart–Klivans–Reiner
+(arXiv:1601.06849v2), with a combinatorial proof sketch due to S. Koplewitz:
+a Hamilton-path injection from `A` into the arborescences. The proof below is
+an independent algebraic one, and it also gives quantitative bounds.
+
+**Theorem.** If `A` is not cyclic, or if `s ≥ 3`, then `|Jac(G)| > |A|`.
 Quantitatively:
 
 - if `A` is cyclic and `s ≥ 3`, then `|Jac(G)| ≥ (3/2)^{φ(n)} · n`;

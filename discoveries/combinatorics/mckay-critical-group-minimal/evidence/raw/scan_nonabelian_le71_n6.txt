@@ -416,3 +416,260 @@ DONE [ 64, 46 ] abelian=false reps=12 hits=0 mismatches=0 below=0
 DONE [ 64, 47 ] abelian=false reps=844 hits=0 mismatches=0 below=0
 DONE [ 64, 48 ] abelian=false reps=644 hits=0 mismatches=0 below=0
 DONE [ 64, 49 ] abelian=false reps=836 hits=0 mismatches=0 below=0
+DONE [ 64, 51 ] abelian=false reps=13704 hits=0 mismatches=0 below=0
+DONE [ 64, 52 ] abelian=false reps=432 hits=0 mismatches=0 below=0
+DONE [ 64, 53 ] abelian=false reps=320 hits=0 mismatches=0 below=0
+HIT [ 64, 54 ] n=2 irr=[ [ 12, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 15, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 16, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 17, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 18, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+HIT [ 64, 54 ] n=2 irr=[ [ 19, 2, 1 ] ] Gab=[ 2, 2 ] K_SNF=[ 2, 2 ] snf_match=true pred=true
+DONE [ 64, 54 ] abelian=false reps=688 hits=8 mismatches=0 below=0
+DONE [ 64, 56 ] abelian=false reps=3584 hits=0 mismatches=0 below=0
+DONE [ 64, 57 ] abelian=false reps=8128 hits=0 mismatches=0 below=0
+DONE [ 64, 58 ] abelian=false reps=8128 hits=0 mismatches=0 below=0
+DONE [ 64, 59 ] abelian=false reps=8232 hits=0 mismatches=0 below=0
+DONE [ 64, 60 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 61 ] abelian=false reps=272 hits=0 mismatches=0 below=0
+DONE [ 64, 62 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 63 ] abelian=false reps=272 hits=0 mismatches=0 below=0
+DONE [ 64, 64 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 65 ] abelian=false reps=368 hits=0 mismatches=0 below=0
+DONE [ 64, 66 ] abelian=false reps=208 hits=0 mismatches=0 below=0
+DONE [ 64, 67 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 68 ] abelian=false reps=208 hits=0 mismatches=0 below=0
+DONE [ 64, 69 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 70 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 71 ] abelian=false reps=288 hits=0 mismatches=0 below=0
+DONE [ 64, 72 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 73 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 74 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 75 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 76 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 77 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 78 ] abelian=false reps=40 hits=0 mismatches=0 below=0
+DONE [ 64, 79 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 80 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 81 ] abelian=false reps=40 hits=0 mismatches=0 below=0
+DONE [ 64, 82 ] abelian=false reps=56 hits=0 mismatches=0 below=0
+DONE [ 64, 84 ] abelian=false reps=8160 hits=0 mismatches=0 below=0
+DONE [ 64, 85 ] abelian=false reps=11616 hits=0 mismatches=0 below=0
+DONE [ 64, 86 ] abelian=false reps=11616 hits=0 mismatches=0 below=0
+DONE [ 64, 87 ] abelian=false reps=8160 hits=0 mismatches=0 below=0
+DONE [ 64, 88 ] abelian=false reps=416 hits=0 mismatches=0 below=0
+DONE [ 64, 89 ] abelian=false reps=448 hits=0 mismatches=0 below=0
+DONE [ 64, 90 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 91 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 92 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 93 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 94 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 95 ] abelian=false reps=1360 hits=0 mismatches=0 below=0
+DONE [ 64, 96 ] abelian=false reps=1388 hits=0 mismatches=0 below=0
+DONE [ 64, 97 ] abelian=false reps=2064 hits=0 mismatches=0 below=0
+DONE [ 64, 98 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 99 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 100 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 101 ] abelian=false reps=2104 hits=0 mismatches=0 below=0
+DONE [ 64, 102 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 103 ] abelian=false reps=8264 hits=0 mismatches=0 below=0
+DONE [ 64, 104 ] abelian=false reps=520 hits=0 mismatches=0 below=0
+DONE [ 64, 105 ] abelian=false reps=424 hits=0 mismatches=0 below=0
+DONE [ 64, 106 ] abelian=false reps=1344 hits=0 mismatches=0 below=0
+DONE [ 64, 107 ] abelian=false reps=1468 hits=0 mismatches=0 below=0
+DONE [ 64, 108 ] abelian=false reps=2136 hits=0 mismatches=0 below=0
+DONE [ 64, 109 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 64, 110 ] abelian=false reps=2156 hits=0 mismatches=0 below=0
+DONE [ 64, 111 ] abelian=false reps=28 hits=0 mismatches=0 below=0
+DONE [ 64, 112 ] abelian=false reps=11616 hits=0 mismatches=0 below=0
+DONE [ 64, 113 ] abelian=false reps=416 hits=0 mismatches=0 below=0
+DONE [ 64, 114 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 115 ] abelian=false reps=11616 hits=0 mismatches=0 below=0
+DONE [ 64, 116 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 117 ] abelian=false reps=448 hits=0 mismatches=0 below=0
+DONE [ 64, 118 ] abelian=false reps=2160 hits=0 mismatches=0 below=0
+DONE [ 64, 119 ] abelian=false reps=2064 hits=0 mismatches=0 below=0
+DONE [ 64, 120 ] abelian=false reps=2236 hits=0 mismatches=0 below=0
+DONE [ 64, 121 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 122 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 123 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 124 ] abelian=false reps=2608 hits=0 mismatches=0 below=0
+DONE [ 64, 125 ] abelian=false reps=24 hits=0 mismatches=0 below=0
+DONE [ 64, 126 ] abelian=false reps=11836 hits=0 mismatches=0 below=0
+DONE [ 64, 127 ] abelian=false reps=424 hits=0 mismatches=0 below=0
+DONE [ 64, 128 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 129 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 130 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 131 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 64, 132 ] abelian=false reps=92 hits=0 mismatches=0 below=0
+DONE [ 64, 133 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 64, 134 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 135 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 136 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 137 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 138 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 139 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 140 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 141 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 142 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 143 ] abelian=false reps=108 hits=0 mismatches=0 below=0
+DONE [ 64, 144 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 145 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 146 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 64, 147 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 148 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 64, 149 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 150 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 151 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 152 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 153 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 154 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 155 ] abelian=false reps=102 hits=0 mismatches=0 below=0
+DONE [ 64, 156 ] abelian=false reps=102 hits=0 mismatches=0 below=0
+DONE [ 64, 157 ] abelian=false reps=134 hits=0 mismatches=0 below=0
+DONE [ 64, 158 ] abelian=false reps=146 hits=0 mismatches=0 below=0
+DONE [ 64, 159 ] abelian=false reps=86 hits=0 mismatches=0 below=0
+DONE [ 64, 160 ] abelian=false reps=86 hits=0 mismatches=0 below=0
+DONE [ 64, 161 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 162 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 64, 163 ] abelian=false reps=96 hits=0 mismatches=0 below=0
+DONE [ 64, 164 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 64, 165 ] abelian=false reps=92 hits=0 mismatches=0 below=0
+DONE [ 64, 166 ] abelian=false reps=80 hits=0 mismatches=0 below=0
+DONE [ 64, 167 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 168 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 64, 169 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 64, 170 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 171 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 172 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 173 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 174 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 175 ] abelian=false reps=480 hits=0 mismatches=0 below=0
+DONE [ 64, 176 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 177 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 178 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 179 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 64, 180 ] abelian=false reps=304 hits=0 mismatches=0 below=0
+DONE [ 64, 181 ] abelian=false reps=480 hits=0 mismatches=0 below=0
+DONE [ 64, 182 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 184 ] abelian=false reps=11656 hits=0 mismatches=0 below=0
+DONE [ 64, 185 ] abelian=false reps=13776 hits=0 mismatches=0 below=0
+DONE [ 64, 186 ] abelian=false reps=752 hits=0 mismatches=0 below=0
+DONE [ 64, 187 ] abelian=false reps=608 hits=0 mismatches=0 below=0
+DONE [ 64, 188 ] abelian=false reps=864 hits=0 mismatches=0 below=0
+DONE [ 64, 189 ] abelian=false reps=800 hits=0 mismatches=0 below=0
+DONE [ 64, 190 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 191 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 193 ] abelian=false reps=3584 hits=0 mismatches=0 below=0
+DONE [ 64, 194 ] abelian=false reps=3584 hits=0 mismatches=0 below=0
+DONE [ 64, 195 ] abelian=false reps=8192 hits=0 mismatches=0 below=0
+DONE [ 64, 196 ] abelian=false reps=8192 hits=0 mismatches=0 below=0
+DONE [ 64, 197 ] abelian=false reps=8400 hits=0 mismatches=0 below=0
+DONE [ 64, 198 ] abelian=false reps=11680 hits=0 mismatches=0 below=0
+DONE [ 64, 199 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 200 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 201 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 202 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 64, 203 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 204 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 205 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 64, 206 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 207 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 208 ] abelian=false reps=224 hits=0 mismatches=0 below=0
+DONE [ 64, 209 ] abelian=false reps=192 hits=0 mismatches=0 below=0
+DONE [ 64, 210 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 211 ] abelian=false reps=384 hits=0 mismatches=0 below=0
+DONE [ 64, 212 ] abelian=false reps=320 hits=0 mismatches=0 below=0
+DONE [ 64, 213 ] abelian=false reps=512 hits=0 mismatches=0 below=0
+DONE [ 64, 214 ] abelian=false reps=464 hits=0 mismatches=0 below=0
+DONE [ 64, 215 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 216 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 217 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 218 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 219 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 220 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 221 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 222 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 223 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 224 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 225 ] abelian=false reps=8 hits=0 mismatches=0 below=0
+DONE [ 64, 226 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 227 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 228 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 229 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 230 ] abelian=false reps=172 hits=0 mismatches=0 below=0
+DONE [ 64, 231 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 232 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 233 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 234 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 235 ] abelian=false reps=172 hits=0 mismatches=0 below=0
+DONE [ 64, 236 ] abelian=false reps=256 hits=0 mismatches=0 below=0
+DONE [ 64, 237 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 238 ] abelian=false reps=172 hits=0 mismatches=0 below=0
+DONE [ 64, 239 ] abelian=false reps=344 hits=0 mismatches=0 below=0
+DONE [ 64, 240 ] abelian=false reps=128 hits=0 mismatches=0 below=0
+DONE [ 64, 241 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 242 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 243 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 244 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 245 ] abelian=false reps=0 hits=0 mismatches=0 below=0
+DONE [ 64, 247 ] abelian=false reps=8224 hits=0 mismatches=0 below=0
+DONE [ 64, 248 ] abelian=false reps=11760 hits=0 mismatches=0 below=0
+DONE [ 64, 249 ] abelian=false reps=48 hits=0 mismatches=0 below=0
+DONE [ 64, 250 ] abelian=false reps=1472 hits=0 mismatches=0 below=0
+DONE [ 64, 251 ] abelian=false reps=1376 hits=0 mismatches=0 below=0
+DONE [ 64, 252 ] abelian=false reps=1528 hits=0 mismatches=0 below=0
+DONE [ 64, 253 ] abelian=false reps=2208 hits=0 mismatches=0 below=0
+DONE [ 64, 254 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 255 ] abelian=false reps=16 hits=0 mismatches=0 below=0
+DONE [ 64, 256 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 257 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 258 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 259 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 261 ] abelian=false reps=3584 hits=0 mismatches=0 below=0
+DONE [ 64, 262 ] abelian=false reps=3584 hits=0 mismatches=0 below=0
+DONE [ 64, 263 ] abelian=false reps=8320 hits=0 mismatches=0 below=0
+DONE [ 64, 264 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 265 ] abelian=false reps=32 hits=0 mismatches=0 below=0
+DONE [ 64, 266 ] abelian=false reps=64 hits=0 mismatches=0 below=0
+DONE [ 66, 1 ] abelian=false reps=7080 hits=0 mismatches=0 below=0
+DONE [ 66, 2 ] abelian=false reps=740 hits=0 mismatches=0 below=0
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 14, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 15, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 16, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 17, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 66, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 18, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 66, 3 ] abelian=false reps=260 hits=10 mismatches=0 below=0
+HIT [ 68, 1 ] n=2 irr=[ [ 13, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 14, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 15, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 16, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 17, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 18, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 19, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+HIT [ 68, 1 ] n=2 irr=[ [ 20, 2, 1 ] ] Gab=[ 4 ] K_SNF=[ 4 ] snf_match=true pred=true
+DONE [ 68, 1 ] abelian=false reps=880 hits=8 mismatches=0 below=0
+DONE [ 68, 3 ] abelian=false reps=12 hits=0 mismatches=0 below=0
+DONE [ 68, 4 ] abelian=false reps=584 hits=0 mismatches=0 below=0
+DONE [ 70, 1 ] abelian=false reps=3182 hits=0 mismatches=0 below=0
+DONE [ 70, 2 ] abelian=false reps=1752 hits=0 mismatches=0 below=0
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 8, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 9, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 10, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 11, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 12, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 13, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 14, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 15, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 16, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 17, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 18, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+HIT [ 70, 3 ] n=3 irr=[ [ 2, 1, 1 ], [ 19, 2, 1 ] ] Gab=[ 2 ] K_SNF=[ 2 ] snf_match=true pred=true
+DONE [ 70, 3 ] abelian=false reps=312 hits=12 mismatches=0 below=0

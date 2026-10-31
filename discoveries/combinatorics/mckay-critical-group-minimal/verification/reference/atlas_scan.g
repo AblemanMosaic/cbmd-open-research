@@ -2,9 +2,16 @@
 # constituent, n <= DMAX.  Prints HIT lines when |K| = |G^ab| (Gaetz formula), and one DONE line per group.
 # Input variables: NAMES, DMAX.
 SizeScreen([4000,100]);;
+# Irreducible characters with the trivial character first (GAP does not guarantee this order).
+IrrTrivialFirst := function(tbl)
+  local irr, i;
+  irr := ShallowCopy(Irr(tbl));
+  i := PositionProperty(irr, x -> ForAll(ValuesOfClassFunction(x), y -> y = 1));
+  return Concatenation([irr[i]], irr{Difference([1..Length(irr)], [i])});
+end;
 ScanTbl := function(tbl, name, DMAX)
   local irr, irrv, k, degs, dets, triv, nG, nab, rec_, hits, cnt, best;
-  irr := Irr(tbl); k := Length(irr);
+  irr := IrrTrivialFirst(tbl); k := Length(irr);
   if not ForAll(irr[1], x -> x = 1) then Error("irr[1]"); fi;
   degs := List(irr, x -> x[1]); irrv := List(irr, ValuesOfClassFunction);
   dets := List(irr, x -> ValuesOfClassFunction(DeterminantOfCharacter(x)));

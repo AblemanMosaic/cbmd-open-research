@@ -97,9 +97,74 @@
     "HIT 2.A5 n=2 degs=[ [ 2, 1 ] ] ratio=1"
    ]
   },
+  "BOUNDS_N3": {
+   "pass": true,
+   "output": [
+    "typeC_f1 OK {}",
+    "typeC_f3 OK {}",
+    "typeD_f1 OK {'max_by_m': {1: 75, 2: 36}}",
+    "typeD_f3 OK {}",
+    "typeB_exceptional_zmax OK {'zmax': {'A4': 6, 'S4': 7, 'A5': 7}}",
+    "typeB_dihedral_cmax OK {'cmax': 23}",
+    "ALL OK"
+   ]
+  },
+  "MONOMIAL_ENUM": {
+   "pass": true,
+   "counts": {
+    "C": 47,
+    "D": 23
+   },
+   "minimal": [
+    [
+     "C",
+     1,
+     3
+    ],
+    [
+     "C",
+     4,
+     12
+    ],
+    [
+     "D",
+     1,
+     6
+    ]
+   ],
+   "reproduces_evidence": true
+  },
+  "MONOMIAL_GAP_SMALL": {
+   "pass": true,
+   "output": "CROSSCHECK 18 true\nFAILURES [  ]"
+  },
+  "TYPEB_EXCEPTIONAL": {
+   "pass": true,
+   "groups": 18,
+   "rows": [
+    "TYPEB A5type z=2 |G|=120 centre=2 Gab=[ ] trivial_constituent=1 |K|=1 K_SNF=[ ] agree=true minimal=true",
+    "TYPEB S4type z=2 untwisted |G|=48 centre=2 Gab=[ 2 ] trivial_constituent=1 |K|=2 K_SNF=[ 2 ] agree=true minimal=true",
+    "TYPEB S4type z=2 twisted |G|=48 centre=2 Gab=[ 2 ] trivial_constituent=0 |K|=36 K_SNF=[ 36 ] agree=true minimal=false",
+    "TYPEB A4type z=2 zeta=E(3z)^0 |G|=24 centre=2 Gab=[ 3 ] trivial_constituent=1 |K|=3 K_SNF=[ 3 ] agree=true minimal=true",
+    "TYPEB A4type z=2 zeta=E(3z)^1 |G|=24 centre=2 Gab=[ 3 ] trivial_constituent=0 |K|=57 K_SNF=[ 57 ] agree=true minimal=false",
+    "TYPEB A4type z=2 zeta=E(3z)^2 |G|=24 centre=2 Gab=[ 3 ] trivial_constituent=0 |K|=57 K_SNF=[ 57 ] agree=true minimal=false",
+    "TYPEB A5type z=4 |G|=240 centre=4 Gab=[ 2 ] trivial_constituent=0 |K|=207400 K_SNF=[ 207400 ] agree=true minimal=false",
+    "TYPEB S4type z=4 untwisted |G|=96 centre=4 Gab=[ 2, 2 ] trivial_constituent=0 |K|=97920 K_SNF=[ 8, 12240 ] agree=true minimal=false",
+    "TYPEB S4type z=4 twisted |G|=96 centre=4 Gab=[ 4 ] trivial_constituent=0 |K|=272000 K_SNF=[ 10, 20, 1360 ] agree=true minimal=false",
+    "TYPEB A4type z=4 zeta=E(3z)^0 |G|=48 centre=4 Gab=[ 2, 3 ] trivial_constituent=0 |K|=34680 K_SNF=[ 17, 2040 ] agree=true minimal=false",
+    "TYPEB A4type z=4 zeta=E(3z)^1 |G|=48 centre=4 Gab=[ 2, 3 ] trivial_constituent=0 |K|=84360 K_SNF=[ 84360 ] agree=true minimal=false",
+    "TYPEB A4type z=4 zeta=E(3z)^2 |G|=48 centre=4 Gab=[ 2, 3 ] trivial_constituent=0 |K|=84360 K_SNF=[ 84360 ] agree=true minimal=false",
+    "TYPEB A5type z=6 |G|=360 centre=6 Gab=[ 3 ] trivial_constituent=0 |K|=4237322544 K_SNF=[ 36, 117703404 ] agree=true minimal=false",
+    "TYPEB S4type z=6 untwisted |G|=144 centre=6 Gab=[ 2, 3 ] trivial_constituent=0 |K|=637222950 K_SNF=[ 4095, 155610 ] agree=true minimal=false",
+    "TYPEB S4type z=6 twisted |G|=144 centre=6 Gab=[ 2, 3 ] trivial_constituent=0 |K|=952893396 K_SNF=[ 3, 3, 9, 63, 186732 ] agree=true minimal=false",
+    "TYPEB A4type z=6 zeta=E(3z)^0 |G|=72 centre=6 Gab=[ 3, 3 ] trivial_constituent=0 |K|=71845137 K_SNF=[ 3, 3, 3, 171, 15561 ] agree=true minimal=false",
+    "TYPEB A4type z=6 zeta=E(3z)^1 |G|=72 centre=6 Gab=[ 9 ] trivial_constituent=0 |K|=98454447 K_SNF=[ 171, 575757 ] agree=true minimal=false",
+    "TYPEB A4type z=6 zeta=E(3z)^2 |G|=72 centre=6 Gab=[ 9 ] trivial_constituent=0 |K|=98454447 K_SNF=[ 171, 575757 ] agree=true minimal=false"
+   ]
+  },
   "EVIDENCE_SUMMARY": {
    "pass": true,
-   "scans": 2
+   "scans": 3
   }
  },
  "pass": true

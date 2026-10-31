@@ -1,7 +1,7 @@
-# Jacobians of abelian Cayley digraphs: an answer to Reiner's question
+# Jacobians of abelian Cayley digraphs: quantitative bounds and a full proof of BKR Proposition 6.19
 
 > **Standing:** `PROVISIONAL_WRITTEN_ARGUMENT`, `EXACT_MODEL_VERIFIED`
-> (prior-art check against BKR Proposition 6.19 outstanding)
+> (the qualitative theorem is BKR's Proposition 6.19; see below)
 
 Permanent claim ID: `CBMD-COMB-CAYLEY-JAC-001`
 
@@ -11,14 +11,24 @@ Let `A` be a finite abelian group, and `S` a multiset of nonzero elements
 that sums to 0 and generates `A`. The Cayley digraph `Cay(A, S)` is the
 McKay quiver of the corresponding representation. Benkart, Klivans and
 Reiner showed that its Jacobian (sandpile group) always surjects onto `A`.
-V. Reiner asked (BIRS sandpile-group workshop, open problem 1.9) whether
-`Jac ≅ A` happens only in the obvious case: `A` cyclic and `S = {a, −a}`,
-where the digraph is just a cycle.
+V. Reiner asked (BIRS sandpile-group workshop, 2015, open problem 1.9)
+whether `Jac ≅ A` happens only in the obvious case: `A` cyclic and
+`S = {a, −a}`, where the digraph is just a cycle.
+
+**This was already answered.** Benkart–Klivans–Reiner (arXiv:1601.06849v2,
+Proposition 6.19) state that the answer is yes, and include a proof sketch
+due to S. Koplewitz. Their sketch builds an injection from `A` into the set of
+arborescences, using a Hamilton path in the Cayley digraph, and asserts that
+it is not surjective when `|S| ≥ 3`. This dossier was written without
+knowledge of that proposition, which could not be retrieved until the PDF was
+supplied by hand.
 
 ## What this dossier records
 
-**Answer: yes.** `argument/WRITTEN_ARGUMENT.md` gives a written proof that
-`|Jac(Cay(A, S))| > |A|` whenever `A` is not cyclic or `|S| ≥ 3`. Moreover:
+**What is added.** `argument/WRITTEN_ARGUMENT.md` gives a different, complete
+written proof (algebraic, via cyclotomic norms) that `|Jac(Cay(A, S))| > |A|`
+whenever `A` is not cyclic or `|S| ≥ 3`. It also gives quantitative bounds,
+which do not appear in BKR's sketch:
 
 - if `A` is cyclic of order `n` and `|S| ≥ 3`, then
   `|Jac| ≥ (3/2)^{φ(n)} · n`;
@@ -49,10 +59,9 @@ The proof uses only the order of the Jacobian:
 
 ## What is not established
 
-- **Prior art may exist.** BKR's Proposition 6.19 answers their Question 6.11
-  for abelian groups, with a proof credited to S. Koplewitz. Its text could
-  not be read in this session, and it may already contain this theorem. See
-  `review/PRIOR_ART.md`.
+- **Novelty of the qualitative statement: none.** It is BKR's
+  Proposition 6.19. Whether the quantitative bounds are new has not been
+  determined.
 - Review by a human specialist. An independent agent review found the proof
   correct, and its minor fixes are applied.
 - A characterisation for non-abelian groups. The naive analogue is false:

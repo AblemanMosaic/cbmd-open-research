@@ -12,63 +12,89 @@ critical group `K(γ)` of the McKay quiver always surjects onto the dual of
 BKR ask (Question 6.11) for which `γ` it is an isomorphism in general. Call
 such `γ` *minimal*. Trivial summands do not matter, so assume there are none.
 
+C. Gaetz (honors thesis, 2016) listed the known minimal pairs. They are the
+finite subgroups of `SL_2(ℂ)`, and the rotation groups `C_m`, `D_{2m}`
+(`m` odd), `A_4`, `A_5` in `SO(3)`. He proved that list complete inside
+`SO(3)`, and asked whether these pairs are the only ones (his Question 2).
+
 ## What this dossier records
 
-**Conjecture.** `γ` is minimal if and only if `n = 2`, or `n = 3` and `γ(G)`
-is one of the following rotation groups acting on `ℂ³` without a fixed
-vector:
+**Theorem 9 (`n = 3`, computer-assisted; Gaetz's Question 2 in dimension
+3).** A faithful `γ : G ↪ SL_3(ℂ)`
+without trivial constituent is minimal if and only if `χ_γ` is real-valued
+and `G` is one of:
 
-- the dihedral group of order `2m` with `m` odd;
+- dihedral of order `2m` with `m ≥ 3` odd;
 - `A_4`;
 - `A_5`.
 
-**Proved** (`argument/WRITTEN_ARGUMENT.md`):
+These are rotation groups in `SO(3)`.
 
-- **Proposition 3.** For `G ⊂ SO(3)` with preimage `G̃ ⊂ SU(2)`,
-  `|K(γ)| = 2^{u−1} |G̃^{ab}|`, where `u` counts the classes of `G̃` that
-  equal their negatives. The proof uses the factorisation
-  `3 − χ_γ = (2 − χ_ρ)(2 + χ_ρ)` on `G̃`, Gaetz's order formula and the
-  `n = 2` theorem.
-- **Theorem 4.** It settles every orthogonal 3-dimensional case, which is
-  the same as every case with `n = 3` and real-valued character:
-  - minimal: cyclic groups, dihedral groups of order `2m` with `m` odd,
-    `A_4` and `A_5`;
-  - not minimal: dihedral groups with `m` even, where `|K| = 16` versus
-    `|G^{ab}| = 4`;
-  - not minimal: `S_4`, where `|K| = 4` versus `|G^{ab}| = 2`.
-- **Lemma 2.** For real characters, adding a nontrivial summand of
-  determinant 1 strictly enlarges `|K|`.
-- **Proposition 5.** An exact computation from character tables for all
-  eight primitive subgroup types of `SL_3(ℂ)`. Only `A_5` is minimal. For
-  example, Klein's group `PSL(2,7)` has `K ≅ ℤ/2`.
+**Conjecture 10 (Gaetz's Question 2 for `n ≥ 4`).** There is no minimal `γ`
+with `n ≥ 4`. Together with BKR (`n = 2`) and Theorem 9, this would answer
+Question 6.11 completely.
 
-**Checked**, with no exception:
+How Theorem 9 is proved (`argument/WRITTEN_ARGUMENT.md`), case by case
+following Blichfeldt's classification of finite subgroups of `SL_3(ℂ)`:
 
-- exhaustive scans of GAP's SmallGroups library, covering every faithful
-  representation into `SL_n` without trivial constituent:
-  - all groups of order ≤ 40 with `n ≤ 5`: 380,521 representations;
-  - all non-abelian groups of order ≤ 150 except 128, with `n ≤ 6`;
+- **Real characters: Proposition 3 and Theorem 4.** The classification is
+  Gaetz's (Theorem 8(ii), case by case). What is new here is a uniform
+  formula: for `G ⊂ SO(3)` with
+  preimage `G̃ ⊂ SU(2)`, `|K(γ)| = 2^{u−1} |G̃^{ab}|`, where `u` counts the
+  classes of `G̃` equal to their negatives. The proof uses
+  `3 − χ_γ(πx) = (2 − χ_ρ(x))(2 − χ_ρ(−x))`, Gaetz's order formula and the
+  `n = 2` theorem. The non-minimal rotation groups are:
+  - dihedral with `m` even, where `|K| = 16` versus 4;
+  - `S_4`, where `|K| = 4` versus 2.
+- **Monomial groups (types C, D): Theorem 7.** Explicit lower bounds reduce
+  everything to diagonal parts of order `≤ 75`, built on Lemma 6, a product
+  bound from the abelian case. An exact enumeration of those groups (70 in
+  normal form) leaves only `A_4` and `S_3 = D_6`.
+- **Reducible groups (type B): Theorem 8.**
+  - The centre contributes `z²|1 − (−2)^z|/3` to Gaetz's product, which
+    bounds the centre.
+  - The dihedral case reduces to order `≤ 46`, or to the real dihedral
+    family.
+  - The 18 exceptional groups (projective image `A_4`, `S_4`, `A_5`) are
+    computed directly.
+- **Primitive groups (types E–L): Proposition 5.** Exact computation for
+  all eight. Only `A_5` is minimal; Klein's `PSL(2,7)` has `K ≅ ℤ/2`.
+- **Abelian groups (type A):** `CBMD-COMB-CAYLEY-JAC-001`.
+
+**Also proved: Lemma 2.** Let `γ_1` be faithful with determinant 1. If all
+characters are real, adding to `γ_1` a nontrivial summand of determinant 1
+strictly enlarges `|K|`.
+
+**Checked**, with no exception. The scans cover every faithful
+representation into `SL_n` without trivial constituent, from GAP's
+SmallGroups library:
+
+- all groups of order ≤ 40 with `n ≤ 5`;
+- non-abelian groups of order ≤ 71 with `n ≤ 6`;
+- non-abelian groups of order ≤ 150 with `n = 3`;
 - 47 ATLAS character tables with `n ≤ 8`.
 
-In all of these the minimal representations are exactly the conjectured
-ones, and nothing violates the BKR surjection. No minimal case with
-`n ≥ 4` was found.
+No minimal case with `n ≥ 4` was found.
 
 ## What is not established
 
-- The conjecture for `n = 3` with a non-real character (monomial or
-  reducible), and for all `n ≥ 4`.
-- Specialist review of the written arguments.
-- **Prior art.** BKR's Proposition 6.19 (the abelian case) and the rest of
-  their Section 6 could not be fully read here. BKR already list `A_4` as a
-  minimal example with `n = 3`. See `review/PRIOR_ART.md`.
-- Structural statements beyond orders. Examples: `K ≅ (ℤ/4)²` for dihedral
-  groups with `m` even, and `K ≅ ℤ/4` for `S_4`. These are computed for
-  `m ≤ 30` only.
+- Conjecture 10 (`n ≥ 4`).
+- Specialist review. An independent agent review of Lemmas 1–2,
+  Proposition 3 and Theorem 4 (version 0.1.0) found no error. Theorems 7–9
+  (added in 0.2.0) have not yet been reviewed.
+- **Prior art.**
+  - The abelian case is BKR's Proposition 6.19.
+  - The `SO(3)` classification and the conjecture itself are Gaetz's (2016).
+  - No later answer to Gaetz's Question 2 was found. This is not a novelty
+    determination.
+  
+  See `review/PRIOR_ART.md`.
+- Structure beyond orders. For example, `K ≅ (ℤ/4)²` for dihedral groups with
+  `m` even is computed for `m ≤ 30` only.
 
 ## Reproduction
 
-Needs GAP 4 with SmallGrp and CTblLib.
+Needs GAP 4 with SmallGrp and CTblLib, Python 3 and mpmath.
 
 ```text
 python -B discoveries/combinatorics/mckay-critical-group-minimal/verification/reference/check_mckay_minimal.py

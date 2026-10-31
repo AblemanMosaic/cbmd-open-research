@@ -6,6 +6,13 @@
 #   (3) K(gamma) ~= (G^ab)^  iff  (u = 0 and -1 notin [G~,G~]) or (u = 1 and -1 in [G~,G~]);
 #   (4) Gaetz's order formula agrees with the Smith normal form, for rho and for gamma.
 SizeScreen([4000, 100]);;
+# Irreducible characters with the trivial character first (GAP does not guarantee this order).
+IrrTrivialFirst := function(tbl)
+  local irr, i;
+  irr := ShallowCopy(Irr(tbl));
+  i := PositionProperty(irr, x -> ForAll(ValuesOfClassFunction(x), y -> y = 1));
+  return Concatenation([irr[i]], irr{Difference([1..Length(irr)], [i])});
+end;
 
 Sym2 := function(M)
   local a, b, c, d;
@@ -16,7 +23,7 @@ end;
 
 KofMatGroup := function(G, n)
   local tbl, irr, k, vals, chi, P, M, C, ed;
-  tbl := CharacterTable(G); irr := Irr(tbl); k := Length(irr);
+  tbl := CharacterTable(G); irr := IrrTrivialFirst(tbl); k := Length(irr);
   vals := List(ConjugacyClasses(tbl), c -> TraceMat(Representative(c)));
   chi := ClassFunction(tbl, vals);
   P := Product(List([2..k], c -> n - vals[c]));
